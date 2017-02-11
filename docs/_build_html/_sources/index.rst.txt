@@ -134,13 +134,13 @@ If that doesn't work, `try following this advice <http://virtualenv.readthedocs.
 Code compiler
 ~~~~~~~~~~~~~
 
-A code compiler is a tool that lets your computer installed more advanced software. It is required to take advantage of the pandas
+A `code compiler <https://en.wikipedia.org/wiki/Compiler>`_ is a tool that lets your computer installed more advanced software. It is required to take advantage of the pandas
 data analysis library.
 
 For Apples
 ^^^^^^^^^^
 
-If you are using Mac OSX, you need to have XCode, Apple's toolkit for compiling heavy-duty software.
+If you are using Mac OSX, you need to have XCode, Apple's developer kit that includes a tool for compiling heavy-duty software.
 
 You can make sure you've got it by running this on your command prompt.
 
