@@ -17,7 +17,7 @@ What you will learn
 This three-hour tutuorial will guide you through an investigation of money in politics using data from the `California Civic Data Coalition <http://www.californiacivicdata.org/>`_.
 
 You will learn just enough Python to do damage with the powerful `pandas <http://pandas.pydata.org/>`_  data analysis library, the most popular open-source
-library for working with large data files. You will also learn how to record, remix and republish your analysis
+tool for working with large data files. You will also learn how to record, remix and republish your analysis
 using the `Jupyter Notebook <http://jupyter.org/>`_, a browser-based tool for writing code
 that is emerging as the standard for sharing reproducible research in the sciences.
 
