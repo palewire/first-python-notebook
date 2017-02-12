@@ -135,16 +135,11 @@
   <div class="section" id="first-python-notebook">
 <h1>First Python Notebook<a class="headerlink" href="#first-python-notebook" title="Permalink to this headline">¶</a></h1>
 <p>A step-by-step guide to analyzing data with Python and the Jupyter Notebook.</p>
-<p>It was developed by <a class="reference external" href="http://palewi.re/who-is-ben-welsh/">Ben Welsh</a> for a <a class="reference external" href="http://ire.org/events-and-training/event/2819/2841/">Oct. 2, 2016, &#8220;watchdog workshop&#8221; organized by Investigative Reporters and Editors</a>
-at San Diego State University&#8217;s school of journalism. It is scheduled to be taught to students at Stanford&#8217;s Journalism School
-and at the annual conference of the National Institute for Computer-Assisted Reporting in early 2017.</p>
+<p>It was developed by <a class="reference external" href="http://palewi.re/who-is-ben-welsh/">Ben Welsh</a> for a <a class="reference external" href="http://ire.org/events-and-training/event/2819/2841/">Oct. 2, 2016, &#8220;watchdog workshop&#8221; organized by Investigative Reporters and Editors</a> at San Diego State University&#8217;s school of journalism. It is scheduled to be taught to students at Stanford&#8217;s Journalism School and at the annual conference of the National Institute for Computer-Assisted Reporting in early 2017.</p>
 <div class="section" id="what-you-will-learn">
 <h2>What you will learn<a class="headerlink" href="#what-you-will-learn" title="Permalink to this headline">¶</a></h2>
 <p>This three-hour tutuorial will guide you through an investigation of money in politics using data from the <a class="reference external" href="http://www.californiacivicdata.org/">California Civic Data Coalition</a>.</p>
-<p>You will learn just enough Python to do damage with the powerful <a class="reference external" href="http://pandas.pydata.org/">pandas</a>  data analysis library, the most popular open-source
-tool for working with large data files. You will also learn how to record, remix and republish your analysis
-using the <a class="reference external" href="http://jupyter.org/">Jupyter Notebook</a>, a browser-based app for writing code
-that is emerging as the standard for sharing reproducible research in the sciences.</p>
+<p>You will learn just enough Python to do damage with the powerful <a class="reference external" href="http://pandas.pydata.org/">pandas</a>  data analysis library, the most popular open-source tool for working with large data files. You will also learn how to record, remix and republish your analysis using the <a class="reference external" href="http://jupyter.org/">Jupyter Notebook</a>, a browser-based app for writing code that is emerging as the standard for sharing reproducible research in the sciences.</p>
 <p>And most important: you will see how these tools can increase the speed and veracity of your journalism.</p>
 </div>
 <div class="section" id="prelude-prequisites">
@@ -163,16 +158,13 @@ that is emerging as the standard for sharing reproducible research in the scienc
 <div class="section" id="id1">
 <h3>Command-line interface<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Unless something is wrong with your computer, there should be a way to open a window that lets you type in commands. Different operating systems give this tool slightly different names, but they all have some form of it, and there are alternative programs you can install as well.</p>
-<p>On Windows you can find the command-line interface by opening the &#8220;command prompt.&#8221; Here are instructions for <a class="reference external" href="http://www.howtogeek.com/235101/10-ways-to-open-the-command-prompt-in-windows-10/)andfor[Windows8](http://windows.microsoft.com/en-us/windows/command-prompt-faq#1TC=windows-8)and[earlierversions](http://windows.microsoft.com/en-us/windows-vista/open-a-command-prompt-window">Windows 10</a>.
-On Apple computers, you open the <a class="reference external" href="http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line">&#8220;Terminal&#8221; application</a>.
-Ubuntu Linux comes with a program of the <a class="reference external" href="http://askubuntu.com/questions/38162/what-is-a-terminal-and-how-do-i-open-and-use-it">same name</a>.</p>
+<p>On Windows you can find the command-line interface by opening the &#8220;command prompt.&#8221; Here are instructions for <a class="reference external" href="http://www.howtogeek.com/235101/10-ways-to-open-the-command-prompt-in-windows-10/)andfor[Windows8](http://windows.microsoft.com/en-us/windows/command-prompt-faq#1TC=windows-8)and[earlierversions](http://windows.microsoft.com/en-us/windows-vista/open-a-command-prompt-window">Windows 10</a>. On Apple computers, you open the <a class="reference external" href="http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line">&#8220;Terminal&#8221; application</a>. Ubuntu Linux comes with a program of the <a class="reference external" href="http://askubuntu.com/questions/38162/what-is-a-terminal-and-how-do-i-open-and-use-it">same name</a>.</p>
 </div>
 <div class="section" id="id2">
 <h3>Python<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="for-apples">
 <h4>For Apples<a class="headerlink" href="#for-apples" title="Permalink to this headline">¶</a></h4>
-<p>If you are using Mac OSX, Python version 2.7 is probably already installed and you can test to see what version,
-if any, is already available by typing the following into your terminal.</p>
+<p>If you are using Mac OSX, Python version 2.7 is probably already installed and you can test to see what version, if any, is already available by typing the following into your terminal.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>python -V
 </pre></div>
 </div>
@@ -181,8 +173,7 @@ if any, is already available by typing the following into your terminal.</p>
 Python <span class="m">2</span>.7.12
 </pre></div>
 </div>
-<p>If you get an error instead, Mac users should install Python by following
-<a class="reference external" href="http://docs.python-guide.org/en/latest/starting/install/osx/">these instructions</a> offered by The Hitchhikers Guide to Python.</p>
+<p>If you get an error instead, Mac users should install Python by following <a class="reference external" href="http://docs.python-guide.org/en/latest/starting/install/osx/">these instructions</a> offered by The Hitchhikers Guide to Python.</p>
 </div>
 <div class="section" id="for-windows">
 <h4>For Windows<a class="headerlink" href="#for-windows" title="Permalink to this headline">¶</a></h4>
@@ -195,24 +186,19 @@ Python <span class="m">2</span>.7.12
 Python <span class="m">2</span>.7.12
 </pre></div>
 </div>
-<p>If not Windows users can find a similar installation guide <a class="reference external" href="http://docs.python-guide.org/en/latest/starting/install/win/">here</a> which will have you try
-downloading and installing Python from <a class="reference external" href="https://www.python.org/downloads/release/python-2712/">here</a>. After that&#8217;s done, ensure
-Python is installed by reopening the command prompt and running the command above again.</p>
+<p>If not Windows users can find a similar installation guide <a class="reference external" href="http://docs.python-guide.org/en/latest/starting/install/win/">here</a> which will have you try downloading and installing Python from <a class="reference external" href="https://www.python.org/downloads/release/python-2712/">here</a>. After that&#8217;s done, ensure Python is installed by reopening the command prompt and running the command above again.</p>
 </div>
 </div>
 <div class="section" id="pip-and-virtualenv">
 <h3>pip and virtualenv<a class="headerlink" href="#pip-and-virtualenv" title="Permalink to this headline">¶</a></h3>
-<p>The <a class="reference external" href="https://pip.pypa.io/en/latest/">pip package manager</a> makes it easy to install open-source libraries that expand
-what you&#8217;re able to do with Python. Later, we will use it to install everything needed to create a working web application.</p>
+<p>The <a class="reference external" href="https://pip.pypa.io/en/latest/">pip package manager</a> makes it easy to install open-source libraries that expand what you&#8217;re able to do with Python. Later, we will use it to install everything needed to create a working web application.</p>
 <p>Verify pip is installed with the following.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>pip -V
 </pre></div>
 </div>
 <p>If you don&#8217;t have it already, you can get pip by following <a class="reference external" href="https://https://pip.pypa.io/en/latest/ip.pypa.io/en/latest/installing.html">these instructions</a>.</p>
-<p>The <a class="reference external" href="http://www.virtualenv.org/en/latest/">virtualenv environment manager</a> makes it possible to create an
-isolated corner of your computer where all the different tools you use to build an application are sealed off.</p>
-<p>It might not be obvious why you need this, but it quickly becomes important when you need to juggle different tools
-for different projects on one computer. By developing your applications inside separate virtualenv environments, you can use different versions of the same third-party Python libraries without a conflict. You can also more easily recreate your project on another machine, handy when you want to copy your code to a server that publishes pages on the Internet.</p>
+<p>The <a class="reference external" href="http://www.virtualenv.org/en/latest/">virtualenv environment manager</a> makes it possible to create an isolated corner of your computer where all the different tools you use to build an application are sealed off.</p>
+<p>It might not be obvious why you need this, but it quickly becomes important when you need to juggle different tools for different projects on one computer. By developing your applications inside separate virtualenv environments, you can use different versions of the same third-party Python libraries without a conflict. You can also more easily recreate your project on another machine, handy when you want to copy your code to a server that publishes pages on the Internet.</p>
 <p>You can check if virtualenv is installed with the following.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>virtualenv --version
 </pre></div>
@@ -228,8 +214,7 @@ sudo pip install virtualenv
 </div>
 <div class="section" id="code-compiler">
 <h3>Code compiler<a class="headerlink" href="#code-compiler" title="Permalink to this headline">¶</a></h3>
-<p>A <a class="reference external" href="https://en.wikipedia.org/wiki/Compiler">code compiler</a> is a tool that lets your computer installed more advanced software. It is required to take advantage of the pandas
-data analysis library.</p>
+<p>A <a class="reference external" href="https://en.wikipedia.org/wiki/Compiler">code compiler</a> is a tool that lets your computer installed more advanced software. It is required to take advantage of the pandas data analysis library.</p>
 <div class="section" id="id6">
 <h4>For Apples<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
 <p>If you are using Mac OSX, you need to have XCode, Apple&#8217;s developer kit that includes a tool for compiling heavy-duty software.</p>
@@ -246,17 +231,14 @@ data analysis library.</p>
 </div>
 <div class="section" id="act-1-hello-jupyter-notebook">
 <h2>Act 1: Hello Jupyter Notebook<a class="headerlink" href="#act-1-hello-jupyter-notebook" title="Permalink to this headline">¶</a></h2>
-<p>A <a class="reference external" href="http://jupyter.org/">Jupyter Notebook</a> is a browser application where you can write, run, remix and republish code. It is free
-software you can install and run like any other open-source library. It is used by scientists, scholars, investors
-and corporations to create and share their work.</p>
-<p>It&#8217;s also used by journalists to develop stories and show their work. Examples include:</p>
+<p>A <a class="reference external" href="http://jupyter.org/">Jupyter Notebook</a> is a browser application where you can write, run, remix and republish code. It is free software you can install and run like any other open-source library. It is used by scientists, scholars, investors and corporations to create and share their work.</p>
+<p>It is also used by journalists to develop stories and show their work. Examples include:</p>
 <ul class="simple">
 <li><a class="reference external" href="https://github.com/BuzzFeedNews/2016-01-tennis-betting-analysis/blob/master/notebooks/tennis-analysis.ipynb">&#8220;The Tennis Racket&#8221;</a> by BuzzFeed and the BBC</li>
 <li><a class="reference external" href="https://github.com/datadesk/california-electricity-capacity-analysis/blob/master/analysis.ipynb">&#8220;Californians are paying billions for power they don&#8217;t need&#8221;</a> by the Los Angeles Times</li>
 <li><a class="reference external" href="https://github.com/propublica/compas-analysis/blob/master/Compas%20Analysis.ipynb">&#8220;Machine bias&#8221;</a> by ProPublica</li>
 </ul>
-<p>The first step in our lesson is to get Jupyter&#8217;s software installed. We&#8217;re going to start that process
-by creating a new development environment with virtualenv in your terminal. Name it after our application.</p>
+<p>The first step in our lesson is to get Jupyter&#8217;s software installed. We&#8217;re going to start that process by creating a new development environment with virtualenv in your terminal. Name it after our application.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>virtualenv first-python-notebook
 </pre></div>
 </div>
@@ -264,9 +246,7 @@ by creating a new development environment with virtualenv in your terminal. Name
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> first-python-notebook
 </pre></div>
 </div>
-<p>Turn on the new virtualenv, which will instruct your terminal to only use those libraries installed
-inside its sealed space. You only need to create the virtual environment once, but you&#8217;ll need to repeat these
-&#8220;activation&#8221; steps each time you return to working on this project.</p>
+<p>Turn on the new virtualenv, which will instruct your terminal to only use those libraries installed inside its sealed space. You only need to create the virtual environment once, but you will need to repeat these &#8220;activation&#8221; steps each time you return to working on this project.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># In Linux or Mac OSX try this...</span>
 . bin/activate
 <span class="c1"># In Windows it might take something more like...</span>
@@ -285,14 +265,14 @@ activate
 </div>
 <p>That will open up a new tab in your default web browser that looks something like this:</p>
 <img alt="_images/notebook.png" src="_images/notebook.png" />
-<p>Click the &#8220;New&#8221; button in the upper right and create a new Python 2 notebook. Now you&#8217;re all setup and ready to start writing code.</p>
-<p>Don&#8217;t stress. There&#8217;s nothing too fancy about it. You can start by just doing a little simple math.</p>
+<p>Click the &#8220;New&#8221; button in the upper right and create a new Python 2 notebook. Now you are all setup and ready to start writing code.</p>
+<p>Do not stress. There is nothing too fancy about it. You can start by just doing a little simple math.</p>
 <p>Type the following into the first box, then hit the play button in the toolbox (or hit SHIFT+ENTER on your keyboard).</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span>
 </pre></div>
 </div>
-<p>There. You&#8217;ve just written your first Python code. You&#8217;ve entered two integers (the 2&#8217;s) and added them together using the plus sign operator. Not so bad, right?</p>
-<p>Now&#8217;s the time for us to get our hands on some real data and get some real work done. To do that, we need some real tools.</p>
+<p>There. You have just written your first Python code. You have entered two integers and added them together using the plus sign operator. Not so bad, right?</p>
+<p>Now it is the time for us to get our hands on some real data and get some real work done. To do that, we need some real tools.</p>
 </div>
 <div class="section" id="act-2-hello-pandas">
 <h2>Act 2: Hello pandas<a class="headerlink" href="#act-2-hello-pandas" title="Permalink to this headline">¶</a></h2>
@@ -316,10 +296,8 @@ activate
 <h2>Act 3: Hello analysis<a class="headerlink" href="#act-3-hello-analysis" title="Permalink to this headline">¶</a></h2>
 <p>Until last November, the use and sale of marijuana for recreational purposes was illegal in California. That changed when voters approved
 Proposition 64, which appeared, which asked voters if it ought to be legalized. A &#8220;yes&#8221; vote supported legalization. A &#8220;no&#8221; vote opposed it. In the final tally, 57% voted yes.</p>
-<p>According to California&#8217;s Secretary of State, approximately $23 million was raised to campaign in support of
-Prop. 64. Almost 2 million was been raised to oppose it.</p>
-<p>Your mission, should you choose to accept it, is to download a list of campaign committees and contributors to figure out
-the biggest donors both for and against the measure.</p>
+<p>According to California&#8217;s Secretary of State, approximately $23 million was raised to campaign in support of Prop. 64. Almost 2 million was been raised to oppose it.</p>
+<p>Your mission, should you choose to accept it, is to download a list of campaign committees and contributors to figure out the biggest donors both for and against the measure.</p>
 <p>Click here to download the file as a list of comma-separated values. This is known as a CSV file. It is the most common way you will find data published online. Save the file with the name first-python-notebook.csv in the same directory where you made this notebook.</p>
 <p>Download a list of committees that supported and opposed one or more of the 17 measures on last November&#8217;s ballot.</p>
 </div>

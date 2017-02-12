@@ -6,9 +6,7 @@ First Python Notebook
 
 A step-by-step guide to analyzing data with Python and the Jupyter Notebook.
 
-It was developed by `Ben Welsh <http://palewi.re/who-is-ben-welsh/>`_ for a `Oct. 2, 2016, "watchdog workshop" organized by Investigative Reporters and Editors <http://ire.org/events-and-training/event/2819/2841/>`_
-at San Diego State University's school of journalism. It is scheduled to be taught to students at Stanford's Journalism School
-and at the annual conference of the National Institute for Computer-Assisted Reporting in early 2017.
+It was developed by `Ben Welsh <http://palewi.re/who-is-ben-welsh/>`_ for a `Oct. 2, 2016, "watchdog workshop" organized by Investigative Reporters and Editors <http://ire.org/events-and-training/event/2819/2841/>`_ at San Diego State University's school of journalism. It is scheduled to be taught to students at Stanford's Journalism School and at the annual conference of the National Institute for Computer-Assisted Reporting in early 2017.
 
 
 What you will learn
@@ -16,10 +14,7 @@ What you will learn
 
 This three-hour tutuorial will guide you through an investigation of money in politics using data from the `California Civic Data Coalition <http://www.californiacivicdata.org/>`_.
 
-You will learn just enough Python to do damage with the powerful `pandas <http://pandas.pydata.org/>`_  data analysis library, the most popular open-source
-tool for working with large data files. You will also learn how to record, remix and republish your analysis
-using the `Jupyter Notebook <http://jupyter.org/>`_, a browser-based app for writing code
-that is emerging as the standard for sharing reproducible research in the sciences.
+You will learn just enough Python to do damage with the powerful `pandas <http://pandas.pydata.org/>`_  data analysis library, the most popular open-source tool for working with large data files. You will also learn how to record, remix and republish your analysis using the `Jupyter Notebook <http://jupyter.org/>`_, a browser-based app for writing code that is emerging as the standard for sharing reproducible research in the sciences.
 
 And most important: you will see how these tools can increase the speed and veracity of your journalism.
 
@@ -43,9 +38,7 @@ Command-line interface
 
 Unless something is wrong with your computer, there should be a way to open a window that lets you type in commands. Different operating systems give this tool slightly different names, but they all have some form of it, and there are alternative programs you can install as well.
 
-On Windows you can find the command-line interface by opening the "command prompt." Here are instructions for `Windows 10 <http://www.howtogeek.com/235101/10-ways-to-open-the-command-prompt-in-windows-10/) and for [Windows 8](http://windows.microsoft.com/en-us/windows/command-prompt-faq#1TC=windows-8) and [earlier versions](http://windows.microsoft.com/en-us/windows-vista/open-a-command-prompt-window>`_.
-On Apple computers, you open the `"Terminal" application <http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line>`_.
-Ubuntu Linux comes with a program of the `same name <http://askubuntu.com/questions/38162/what-is-a-terminal-and-how-do-i-open-and-use-it>`_.
+On Windows you can find the command-line interface by opening the "command prompt." Here are instructions for `Windows 10 <http://www.howtogeek.com/235101/10-ways-to-open-the-command-prompt-in-windows-10/) and for [Windows 8](http://windows.microsoft.com/en-us/windows/command-prompt-faq#1TC=windows-8) and [earlier versions](http://windows.microsoft.com/en-us/windows-vista/open-a-command-prompt-window>`_. On Apple computers, you open the `"Terminal" application <http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line>`_. Ubuntu Linux comes with a program of the `same name <http://askubuntu.com/questions/38162/what-is-a-terminal-and-how-do-i-open-and-use-it>`_.
 
 
 Python
@@ -54,8 +47,7 @@ Python
 For Apples
 ^^^^^^^^^^
 
-If you are using Mac OSX, Python version 2.7 is probably already installed and you can test to see what version,
-if any, is already available by typing the following into your terminal.
+If you are using Mac OSX, Python version 2.7 is probably already installed and you can test to see what version, if any, is already available by typing the following into your terminal.
 
 .. code-block:: bash
 
@@ -68,8 +60,7 @@ You should see something like this after you hit enter:
     $ python -V
     Python 2.7.12
 
-If you get an error instead, Mac users should install Python by following
-`these instructions <http://docs.python-guide.org/en/latest/starting/install/osx/>`_ offered by The Hitchhikers Guide to Python.
+If you get an error instead, Mac users should install Python by following `these instructions <http://docs.python-guide.org/en/latest/starting/install/osx/>`_ offered by The Hitchhikers Guide to Python.
 
 For Windows
 ^^^^^^^^^^^
@@ -88,15 +79,12 @@ You should see something like this after you hit enter:
     Python 2.7.12
 
 
-If not Windows users can find a similar installation guide `here <http://docs.python-guide.org/en/latest/starting/install/win/>`_ which will have you try
-downloading and installing Python from `here <https://www.python.org/downloads/release/python-2712/>`_. After that's done, ensure
-Python is installed by reopening the command prompt and running the command above again.
+If not Windows users can find a similar installation guide `here <http://docs.python-guide.org/en/latest/starting/install/win/>`_ which will have you try downloading and installing Python from `here <https://www.python.org/downloads/release/python-2712/>`_. After that's done, ensure Python is installed by reopening the command prompt and running the command above again.
 
 pip and virtualenv
 ~~~~~~~~~~~~~~~~~~
 
-The `pip package manager <https://pip.pypa.io/en/latest/>`_ makes it easy to install open-source libraries that expand
-what you're able to do with Python. Later, we will use it to install everything needed to create a working web application.
+The `pip package manager <https://pip.pypa.io/en/latest/>`_ makes it easy to install open-source libraries that expand what you're able to do with Python. Later, we will use it to install everything needed to create a working web application.
 
 Verify pip is installed with the following.
 
@@ -106,11 +94,9 @@ Verify pip is installed with the following.
 
 If you don't have it already, you can get pip by following `these instructions <https://https://pip.pypa.io/en/latest/ip.pypa.io/en/latest/installing.html>`_.
 
-The `virtualenv environment manager <http://www.virtualenv.org/en/latest/>`_ makes it possible to create an
-isolated corner of your computer where all the different tools you use to build an application are sealed off.
+The `virtualenv environment manager <http://www.virtualenv.org/en/latest/>`_ makes it possible to create an isolated corner of your computer where all the different tools you use to build an application are sealed off.
 
-It might not be obvious why you need this, but it quickly becomes important when you need to juggle different tools
-for different projects on one computer. By developing your applications inside separate virtualenv environments, you can use different versions of the same third-party Python libraries without a conflict. You can also more easily recreate your project on another machine, handy when you want to copy your code to a server that publishes pages on the Internet.
+It might not be obvious why you need this, but it quickly becomes important when you need to juggle different tools for different projects on one computer. By developing your applications inside separate virtualenv environments, you can use different versions of the same third-party Python libraries without a conflict. You can also more easily recreate your project on another machine, handy when you want to copy your code to a server that publishes pages on the Internet.
 
 You can check if virtualenv is installed with the following.
 
@@ -134,8 +120,7 @@ If that doesn't work, `try following this advice <http://virtualenv.readthedocs.
 Code compiler
 ~~~~~~~~~~~~~
 
-A `code compiler <https://en.wikipedia.org/wiki/Compiler>`_ is a tool that lets your computer installed more advanced software. It is required to take advantage of the pandas
-data analysis library.
+A `code compiler <https://en.wikipedia.org/wiki/Compiler>`_ is a tool that lets your computer installed more advanced software. It is required to take advantage of the pandas data analysis library.
 
 For Apples
 ^^^^^^^^^^
@@ -157,19 +142,16 @@ Windows users will need to download and install `this Microsoft package <https:/
 Act 1: Hello Jupyter Notebook
 -----------------------------
 
-A `Jupyter Notebook <http://jupyter.org/>`_ is a browser application where you can write, run, remix and republish code. It is free
-software you can install and run like any other open-source library. It is used by scientists, scholars, investors
-and corporations to create and share their work.
+A `Jupyter Notebook <http://jupyter.org/>`_ is a browser application where you can write, run, remix and republish code. It is free software you can install and run like any other open-source library. It is used by scientists, scholars, investors and corporations to create and share their work.
 
-It's also used by journalists to develop stories and show their work. Examples include:
+It is also used by journalists to develop stories and show their work. Examples include:
 
 * `"The Tennis Racket" <https://github.com/BuzzFeedNews/2016-01-tennis-betting-analysis/blob/master/notebooks/tennis-analysis.ipynb>`_ by BuzzFeed and the BBC
 * `"Californians are paying billions for power they don't need" <https://github.com/datadesk/california-electricity-capacity-analysis/blob/master/analysis.ipynb>`_ by the Los Angeles Times
 * `"Machine bias" <https://github.com/propublica/compas-analysis/blob/master/Compas%20Analysis.ipynb>`_ by ProPublica
 
 
-The first step in our lesson is to get Jupyter's software installed. We're going to start that process
-by creating a new development environment with virtualenv in your terminal. Name it after our application.
+The first step in our lesson is to get Jupyter's software installed. We're going to start that process by creating a new development environment with virtualenv in your terminal. Name it after our application.
 
 .. code-block:: bash
 
@@ -181,9 +163,7 @@ Jump into the directory it created.
 
     cd first-python-notebook
 
-Turn on the new virtualenv, which will instruct your terminal to only use those libraries installed
-inside its sealed space. You only need to create the virtual environment once, but you'll need to repeat these
-"activation" steps each time you return to working on this project.
+Turn on the new virtualenv, which will instruct your terminal to only use those libraries installed inside its sealed space. You only need to create the virtual environment once, but you will need to repeat these "activation" steps each time you return to working on this project.
 
 .. code-block:: bash
 
@@ -212,9 +192,9 @@ That will open up a new tab in your default web browser that looks something lik
 .. image:: /_static/notebook.png
 
 
-Click the "New" button in the upper right and create a new Python 2 notebook. Now you're all setup and ready to start writing code.
+Click the "New" button in the upper right and create a new Python 2 notebook. Now you are all setup and ready to start writing code.
 
-Don't stress. There's nothing too fancy about it. You can start by just doing a little simple math.
+Do not stress. There is nothing too fancy about it. You can start by just doing a little simple math.
 
 Type the following into the first box, then hit the play button in the toolbox (or hit SHIFT+ENTER on your keyboard).
 
@@ -222,9 +202,9 @@ Type the following into the first box, then hit the play button in the toolbox (
 
     2+2
 
-There. You've just written your first Python code. You've entered two integers (the 2's) and added them together using the plus sign operator. Not so bad, right?
+There. You have just written your first Python code. You have entered two integers and added them together using the plus sign operator. Not so bad, right?
 
-Now's the time for us to get our hands on some real data and get some real work done. To do that, we need some real tools.
+Now it is the time for us to get our hands on some real data and get some real work done. To do that, we need some real tools.
 
 
 Act 2: Hello pandas
@@ -261,11 +241,9 @@ Act 3: Hello analysis
 Until last November, the use and sale of marijuana for recreational purposes was illegal in California. That changed when voters approved
 Proposition 64, which appeared, which asked voters if it ought to be legalized. A "yes" vote supported legalization. A "no" vote opposed it. In the final tally, 57% voted yes.
 
-According to California's Secretary of State, approximately $23 million was raised to campaign in support of
-Prop. 64. Almost 2 million was been raised to oppose it.
+According to California's Secretary of State, approximately $23 million was raised to campaign in support of Prop. 64. Almost 2 million was been raised to oppose it.
 
-Your mission, should you choose to accept it, is to download a list of campaign committees and contributors to figure out
-the biggest donors both for and against the measure.
+Your mission, should you choose to accept it, is to download a list of campaign committees and contributors to figure out the biggest donors both for and against the measure.
 
 Click here to download the file as a list of comma-separated values. This is known as a CSV file. It is the most common way you will find data published online. Save the file with the name first-python-notebook.csv in the same directory where you made this notebook.
 
