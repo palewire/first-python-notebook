@@ -83,6 +83,7 @@
 <li><a class="reference internal" href="#">First Python Notebook</a><ul>
 <li><a class="reference internal" href="#what-you-will-learn">What you will learn</a></li>
 <li><a class="reference internal" href="#prelude-prequisites">Prelude: Prequisites</a></li>
+<li><a class="reference internal" href="#act-1-hello-jupyter-notebook">Act 1: Hello Jupyter Notebook</a></li>
 </ul>
 </li>
 </ul>
@@ -240,6 +241,48 @@ data analysis library.</p>
 <p>Windows users will need to download and install <a class="reference external" href="https://www.microsoft.com/en-us/download/details.aspx?id=44266">this Microsoft package</a>, a compiler that will allow us to install other Python tools later.</p>
 </div>
 </div>
+</div>
+<div class="section" id="act-1-hello-jupyter-notebook">
+<h2>Act 1: Hello Jupyter Notebook<a class="headerlink" href="#act-1-hello-jupyter-notebook" title="Permalink to this headline">¶</a></h2>
+<p>A <a class="reference external" href="http://jupyter.org/">Jupyter Notebook</a> is a browser application where you can write, run, remix and republish code. It is free
+software you can install and run like any other open-source library. It is used by scientists, researchers
+and corporations to create and share their analysis.</p>
+<p>It&#8217;s also used by journalists to develop stories and show their work. Examples include:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/BuzzFeedNews/2016-01-tennis-betting-analysis/blob/master/notebooks/tennis-analysis.ipynb">&#8220;The Tennis Racket&#8221;</a> by BuzzFeed and the BBC</li>
+<li><a class="reference external" href="https://github.com/datadesk/california-electricity-capacity-analysis/blob/master/analysis.ipynb">&#8220;Californians are paying billions for power they don&#8217;t need&#8221;</a> by the Los Angeles Times</li>
+<li><a class="reference external" href="https://github.com/propublica/compas-analysis/blob/master/Compas%20Analysis.ipynb">&#8220;Machine bias&#8221;</a> by ProPublica</li>
+</ul>
+<p>The first step in our lesson is to get Jupyter&#8217;s software installed. We&#8217;re going to start that process
+by creating a new development environment with virtualenv in your terminal. Name it after our application.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>virtualenv first-python-notebook
+</pre></div>
+</div>
+<p>Jump into the directory it created.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> first-python-notebook
+</pre></div>
+</div>
+<p>Turn on the new virtualenv, which will instruct your terminal to only use those libraries installed
+inside its sealed space. You only need to create the virtual environment once, but you&#8217;ll need to repeat these
+&#8220;activation&#8221; steps each time you return to working on this project.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># In Linux or Mac OSX try this...</span>
+. bin/activate
+<span class="c1"># In Windows it might take something more like...</span>
+<span class="nb">cd</span> Scripts
+activate
+<span class="nb">cd</span> ..
+</pre></div>
+</div>
+<p>Use <code class="docutils literal"><span class="pre">pip</span></code> on the command line to install Jupyter Notebook.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>pip install jupyter
+</pre></div>
+</div>
+<p>Start up the notebook from your terminal.</p>
+<div class="highlight-base"><div class="highlight"><pre><span></span>jupyter notebook
+</pre></div>
+</div>
+<p>That will open up a new tab in your default web browser that looks something like this:</p>
+<img alt="_images/notebook.png" src="_images/notebook.png" />
 </div>
 </div>
 

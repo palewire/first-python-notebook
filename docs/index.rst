@@ -152,3 +152,61 @@ For Windows
 ^^^^^^^^^^^
 
 Windows users will need to download and install `this Microsoft package <https://www.microsoft.com/en-us/download/details.aspx?id=44266>`_, a compiler that will allow us to install other Python tools later.
+
+
+Act 1: Hello Jupyter Notebook
+-----------------------------
+
+A `Jupyter Notebook <http://jupyter.org/>`_ is a browser application where you can write, run, remix and republish code. It is free
+software you can install and run like any other open-source library. It is used by scientists, researchers
+and corporations to create and share their analysis.
+
+It's also used by journalists to develop stories and show their work. Examples include:
+
+* `"The Tennis Racket" <https://github.com/BuzzFeedNews/2016-01-tennis-betting-analysis/blob/master/notebooks/tennis-analysis.ipynb>`_ by BuzzFeed and the BBC
+* `"Californians are paying billions for power they don't need" <https://github.com/datadesk/california-electricity-capacity-analysis/blob/master/analysis.ipynb>`_ by the Los Angeles Times
+* `"Machine bias" <https://github.com/propublica/compas-analysis/blob/master/Compas%20Analysis.ipynb>`_ by ProPublica
+
+
+The first step in our lesson is to get Jupyter's software installed. We're going to start that process
+by creating a new development environment with virtualenv in your terminal. Name it after our application.
+
+.. code-block:: bash
+
+    virtualenv first-python-notebook
+
+Jump into the directory it created.
+
+.. code-block:: bash
+
+    cd first-python-notebook
+
+Turn on the new virtualenv, which will instruct your terminal to only use those libraries installed
+inside its sealed space. You only need to create the virtual environment once, but you'll need to repeat these
+"activation" steps each time you return to working on this project.
+
+.. code-block:: bash
+
+    # In Linux or Mac OSX try this...
+    . bin/activate
+    # In Windows it might take something more like...
+    cd Scripts
+    activate
+    cd ..
+
+Use ``pip`` on the command line to install Jupyter Notebook.
+
+.. code-block:: bash
+
+    pip install jupyter
+
+
+Start up the notebook from your terminal.
+
+.. code-block:: base
+
+    jupyter notebook
+
+That will open up a new tab in your default web browser that looks something like this:
+
+.. image:: /_static/notebook.png
