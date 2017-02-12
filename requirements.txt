@@ -1,4 +1,4 @@
 sphinx
-sphinx-quickstart
+sphinx-autobuild
 jupyter
 pandas
