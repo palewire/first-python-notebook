@@ -210,7 +210,7 @@ Now it is the time for us to get our hands on some real data and get some real w
 Act 2: Hello pandas
 -------------------
 
-Lucky for us, Python is filled with functions to do pretty much anything you’d ever want to do with a programming language: navigate the web, parse data, interact with a database, run fancy statistics, build a pretty website and so much more.
+Lucky for us, Python is filled with functions to do pretty much anything you’d ever want to do with a programming language: `navigate the web <http://docs.python-requests.org/>`_, `parse data <https://docs.python.org/2/library/csv.html>`_, `interact with a database <http://www.sqlalchemy.org/>`_, `run fancy statistics <https://www.scipy.org/>`_, `build a pretty website <https://www.djangoproject.com/>`_ and `so <https://www.crummy.com/software/BeautifulSoup/>`_ `much <http://www.nltk.org/>`_ `more <http://pillow.readthedocs.io/en/3.4.x/index.html>`_.
 
 Some of those tools are included a toolbox that comes with the language, known as the standard library. Others have been built by members of Python's developer community and need to be downloaded and installed from the web.
 
