@@ -239,8 +239,8 @@ Run the notebook cell. If nothing happens, that's good. It means you have pandas
 If you get an error message, return to the prequisites section above and make sure you have everything installed properly. If you do and it still doesn't work, copy and paste the tail end of your error message into Google. Among the results there will almost certainly be others working through the same problem.
 
 
-Act 3: Hello analysis
----------------------
+Act 3: Hello data
+-----------------
 
 Until last November, the use and sale of marijuana for recreational purposes was illegal in California. That changed when voters approved Proposition 64, which asked voters if the practice ought to be legalized. A "yes" vote supported legalization. A "no" vote opposed it. `In the final tally <http://elections.cdn.sos.ca.gov/sov/2016-general/sov/65-ballot-measures-formatted.pdf>`_, 57% of voters said yes.
 
@@ -291,3 +291,51 @@ To get a look at all of the columns and what type of data they store, try `info 
     props.info()
 
 .. image:: /_static/info.png
+
+Look carefully at those results and you see we have more than 100 links between committees and propositions. That's interesting on its own, but our goal is to focus in on just one: Prop 64.
+
+Quick studies will have already noted the ``prop_name`` column where each committee's affiliation is stored. Let's use pandas to drill down on it. To see its contents separate from the rest of the ``DataFrame``, add its name to the variable following a period. That should list out the whole thing.
+
+.. code-block:: python
+
+    props.prop_name
+
+.. image:: /_static/column.png
+
+TK
+
+.. code-block:: python
+
+    props.prop_name.value_counts()
+
+.. image:: /_static/value_counts.png
+
+TK
+
+.. code-block:: python
+
+    props.prop_name.value_counts().reset_index()
+
+.. image:: /_static/value_counts_df.png
+
+TK
+
+.. code-block:: python
+
+    props[props.prop_name == 'PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.']
+
+.. image:: /_static/prop_filter.png
+
+TK
+
+.. code-block:: python
+
+    prop = props[props.prop_name == 'PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.']
+
+TK
+
+.. code-block:: python
+
+    len(prop)
+
+.. image:: /_static/prop_len.png

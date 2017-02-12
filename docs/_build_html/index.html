@@ -85,7 +85,7 @@
 <li><a class="reference internal" href="#prelude-prequisites">Prelude: Prequisites</a></li>
 <li><a class="reference internal" href="#act-1-hello-jupyter-notebook">Act 1: Hello Jupyter Notebook</a></li>
 <li><a class="reference internal" href="#act-2-hello-pandas">Act 2: Hello pandas</a></li>
-<li><a class="reference internal" href="#act-3-hello-analysis">Act 3: Hello analysis</a></li>
+<li><a class="reference internal" href="#act-3-hello-data">Act 3: Hello data</a></li>
 </ul>
 </li>
 </ul>
@@ -294,8 +294,8 @@ activate
 <p>Run the notebook cell. If nothing happens, that&#8217;s good. It means you have pandas installed and ready to work.</p>
 <p>If you get an error message, return to the prequisites section above and make sure you have everything installed properly. If you do and it still doesn&#8217;t work, copy and paste the tail end of your error message into Google. Among the results there will almost certainly be others working through the same problem.</p>
 </div>
-<div class="section" id="act-3-hello-analysis">
-<h2>Act 3: Hello analysis<a class="headerlink" href="#act-3-hello-analysis" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="act-3-hello-data">
+<h2>Act 3: Hello data<a class="headerlink" href="#act-3-hello-data" title="Permalink to this headline">¶</a></h2>
 <p>Until last November, the use and sale of marijuana for recreational purposes was illegal in California. That changed when voters approved Proposition 64, which asked voters if the practice ought to be legalized. A &#8220;yes&#8221; vote supported legalization. A &#8220;no&#8221; vote opposed it. <a class="reference external" href="http://elections.cdn.sos.ca.gov/sov/2016-general/sov/65-ballot-measures-formatted.pdf">In the final tally</a>, 57% of voters said yes.</p>
 <p><a class="reference external" href="http://www.sos.ca.gov/campaign-lobbying/cal-access-resources/measure-contributions/marijuana-legalization-initiative-statute/">According to California&#8217;s Secretary of State</a>, approximately $23 million was raised to campaign in support of Prop. 64. Almost 2 million was raised to oppose it.</p>
 <p>Your mission, should you choose to accept it, is to analyze lists of campaign committees and contributors to figure out the biggest donors both for and against the measure.</p>
@@ -325,6 +325,36 @@ use all the time.</p>
 </pre></div>
 </div>
 <img alt="_images/info.png" src="_images/info.png" />
+<p>Look carefully at those results and you see we have more than 100 links between committees and propositions. That&#8217;s interesting on its own, but our goal is to focus in on just one: Prop 64.</p>
+<p>Quick studies will have already noted the <code class="docutils literal"><span class="pre">prop_name</span></code> column where each committee&#8217;s affiliation is stored. Let&#8217;s use pandas to drill down on it. To see its contents separate from the rest of the <code class="docutils literal"><span class="pre">DataFrame</span></code>, add its name to the variable following a period. That should list out the whole thing.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">props</span><span class="o">.</span><span class="n">prop_name</span>
+</pre></div>
+</div>
+<img alt="_images/column.png" src="_images/column.png" />
+<p>TK</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">props</span><span class="o">.</span><span class="n">prop_name</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="_images/value_counts.png" src="_images/value_counts.png" />
+<p>TK</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">props</span><span class="o">.</span><span class="n">prop_name</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="_images/value_counts_df.png" src="_images/value_counts_df.png" />
+<p>TK</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">props</span><span class="p">[</span><span class="n">props</span><span class="o">.</span><span class="n">prop_name</span> <span class="o">==</span> <span class="s1">&#39;PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<img alt="_images/prop_filter.png" src="_images/prop_filter.png" />
+<p>TK</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">prop</span> <span class="o">=</span> <span class="n">props</span><span class="p">[</span><span class="n">props</span><span class="o">.</span><span class="n">prop_name</span> <span class="o">==</span> <span class="s1">&#39;PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>TK</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/prop_len.png" src="_images/prop_len.png" />
 </div>
 </div>
 
