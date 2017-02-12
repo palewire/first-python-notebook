@@ -291,16 +291,40 @@ activate
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span>
 </pre></div>
 </div>
-<p>Run the notebook cell. If nothing happens, that&#8217;s good. It means you have pandas installed and ready to work. If you get an error message, return to the prequisites section above and make sure you have everything installed properly. If you do and it still doesn&#8217;t work, copy and paste the tail end of your error message into Google. Among the results there will almost certainly be others working through the same problem.</p>
+<p>Run the notebook cell. If nothing happens, that&#8217;s good. It means you have pandas installed and ready to work.</p>
+<p>If you get an error message, return to the prequisites section above and make sure you have everything installed properly. If you do and it still doesn&#8217;t work, copy and paste the tail end of your error message into Google. Among the results there will almost certainly be others working through the same problem.</p>
 </div>
 <div class="section" id="act-3-hello-analysis">
 <h2>Act 3: Hello analysis<a class="headerlink" href="#act-3-hello-analysis" title="Permalink to this headline">¶</a></h2>
-<p>Until last November, the use and sale of marijuana for recreational purposes was illegal in California. That changed when voters approved
-Proposition 64, which appeared, which asked voters if it ought to be legalized. A &#8220;yes&#8221; vote supported legalization. A &#8220;no&#8221; vote opposed it. In the final tally, 57% voted yes.</p>
-<p>According to California&#8217;s Secretary of State, approximately $23 million was raised to campaign in support of Prop. 64. Almost 2 million was been raised to oppose it.</p>
-<p>Your mission, should you choose to accept it, is to download a list of campaign committees and contributors to figure out the biggest donors both for and against the measure.</p>
-<p>Click here to download the file as a list of comma-separated values. This is known as a CSV file. It is the most common way you will find data published online. Save the file with the name first-python-notebook.csv in the same directory where you made this notebook.</p>
-<p>Download a list of committees that supported and opposed one or more of the 17 measures on last November&#8217;s ballot.</p>
+<p>Until last November, the use and sale of marijuana for recreational purposes was illegal in California. That changed when voters approved Proposition 64, which asked voters if the practice ought to be legalized. A &#8220;yes&#8221; vote supported legalization. A &#8220;no&#8221; vote opposed it. <a class="reference external" href="http://elections.cdn.sos.ca.gov/sov/2016-general/sov/65-ballot-measures-formatted.pdf">In the final tally</a>, 57% of voters said yes.</p>
+<p><a class="reference external" href="http://www.sos.ca.gov/campaign-lobbying/cal-access-resources/measure-contributions/marijuana-legalization-initiative-statute/">According to California&#8217;s Secretary of State</a>, approximately $23 million was raised to campaign in support of Prop. 64. Almost 2 million was raised to oppose it.</p>
+<p>Your mission, should you choose to accept it, is to analyze lists of campaign committees and contributors to figure out the biggest donors both for and against the measure.</p>
+<p>To start <a class="reference external" href="https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/_static/prop-committees.csv">click here</a> to download a list of last November&#8217;s 17 ballot measures and their affiliated fundraising committees.</p>
+<p>The data are structured in rows of comma-separated values. This is known as a CSV file. It is the most common way you will find data published online. Save the file with the name <code class="docutils literal"><span class="pre">prop-committees.csv</span></code> in the same directory where you made your notebook.</p>
+<p>Open the file in your notebook using the <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html">read_csv</a> function in <code class="docutils literal"><span class="pre">pandas</span></code>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;./docs/_static/prop-committees.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>After you run the cell, you should see something like this.</p>
+<img alt="_images/read_csv.png" src="_images/read_csv.png" />
+<p>It is a <code class="docutils literal"><span class="pre">DataFrame</span></code> where <code class="docutils literal"><span class="pre">pandas</span></code> has structured the CSV data into rows in columns, just like Excel or another spreadsheet software might. The advantage offered here is that rather than manipulating the data through a haphazard series of clicks and keypunches, we will be gradually grinding down the data using a computer programming script that is 100% transparent and reproducible.</p>
+<p>In order to do that, we need to store our <code class="docutils literal"><span class="pre">DataFrame</span></code> so it can be reused in subsequent cells. We can do this by saving in a <a class="reference external" href="https://en.wikipedia.org/wiki/Variable_(computer_science)">&#8220;variable&#8221;</a>, which is a fancy computer programming word for a named shortcut where we save our work as we go.</p>
+<p>Go back to your initial cell and change it to this. Then rerun it.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">props</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;./docs/_static/prop-committees.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>After you run it, you shouldn&#8217;t see anything. That&#8217;s a good thing. It means our <code class="docutils literal"><span class="pre">DataFrame</span></code> has been saved under the name <code class="docutils literal"><span class="pre">props</span></code>, which we can now begin interacting with in the cells that follow. We can do this by calling <a class="reference external" href="https://en.wikipedia.org/wiki/Method_(computer_programming)">&#8220;methods&#8221;</a> that <code class="docutils literal"><span class="pre">pandas</span></code> has made available to all <code class="docutils literal"><span class="pre">DataFrames</span></code>. There are dozens of these that can do all sorts of interesting things. Let&#8217;s start with some easy ones that analysts
+use all the time.</p>
+<p>First, to preview the first few rows of the dataset, try the <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.head.html">head</a> method.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">props</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="_images/head.png" src="_images/head.png" />
+<p>To get a look at all of the columns and what type of data they store, try <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.info.html">info</a>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">props</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="_images/info.png" src="_images/info.png" />
 </div>
 </div>
 

@@ -234,19 +234,60 @@ Use the next open box to import pandas into our script, so we can use all its fa
 
     import pandas
 
-Run the notebook cell. If nothing happens, that's good. It means you have pandas installed and ready to work. If you get an error message, return to the prequisites section above and make sure you have everything installed properly. If you do and it still doesn't work, copy and paste the tail end of your error message into Google. Among the results there will almost certainly be others working through the same problem.
+Run the notebook cell. If nothing happens, that's good. It means you have pandas installed and ready to work.
+
+If you get an error message, return to the prequisites section above and make sure you have everything installed properly. If you do and it still doesn't work, copy and paste the tail end of your error message into Google. Among the results there will almost certainly be others working through the same problem.
 
 
 Act 3: Hello analysis
 ---------------------
 
-Until last November, the use and sale of marijuana for recreational purposes was illegal in California. That changed when voters approved
-Proposition 64, which appeared, which asked voters if it ought to be legalized. A "yes" vote supported legalization. A "no" vote opposed it. In the final tally, 57% voted yes.
+Until last November, the use and sale of marijuana for recreational purposes was illegal in California. That changed when voters approved Proposition 64, which asked voters if the practice ought to be legalized. A "yes" vote supported legalization. A "no" vote opposed it. `In the final tally <http://elections.cdn.sos.ca.gov/sov/2016-general/sov/65-ballot-measures-formatted.pdf>`_, 57% of voters said yes.
 
-According to California's Secretary of State, approximately $23 million was raised to campaign in support of Prop. 64. Almost 2 million was been raised to oppose it.
+`According to California's Secretary of State <http://www.sos.ca.gov/campaign-lobbying/cal-access-resources/measure-contributions/marijuana-legalization-initiative-statute/>`_, approximately $23 million was raised to campaign in support of Prop. 64. Almost 2 million was raised to oppose it.
 
-Your mission, should you choose to accept it, is to download a list of campaign committees and contributors to figure out the biggest donors both for and against the measure.
+Your mission, should you choose to accept it, is to analyze lists of campaign committees and contributors to figure out the biggest donors both for and against the measure.
 
-Click here to download the file as a list of comma-separated values. This is known as a CSV file. It is the most common way you will find data published online. Save the file with the name first-python-notebook.csv in the same directory where you made this notebook.
+To start `click here <https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/_static/prop-committees.csv>`_ to download a list of last November's 17 ballot measures and their affiliated fundraising committees.
 
-Download a list of committees that supported and opposed one or more of the 17 measures on last November's ballot.
+The data are structured in rows of comma-separated values. This is known as a CSV file. It is the most common way you will find data published online. Save the file with the name ``prop-committees.csv`` in the same directory where you made your notebook.
+
+Open the file in your notebook using the `read_csv <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html>`_ function in ``pandas``.
+
+.. code-block:: python
+
+    pandas.read_csv("./docs/_static/prop-committees.csv")
+
+After you run the cell, you should see something like this.
+
+.. image:: /_static/read_csv.png
+
+
+It is a ``DataFrame`` where ``pandas`` has structured the CSV data into rows in columns, just like Excel or another spreadsheet software might. The advantage offered here is that rather than manipulating the data through a haphazard series of clicks and keypunches, we will be gradually grinding down the data using a computer programming script that is 100% transparent and reproducible.
+
+In order to do that, we need to store our ``DataFrame`` so it can be reused in subsequent cells. We can do this by saving in a `"variable" <https://en.wikipedia.org/wiki/Variable_(computer_science)>`_, which is a fancy computer programming word for a named shortcut where we save our work as we go.
+
+Go back to your initial cell and change it to this. Then rerun it.
+
+.. code-block:: python
+
+    props = pandas.read_csv("./docs/_static/prop-committees.csv")
+
+After you run it, you shouldn't see anything. That's a good thing. It means our ``DataFrame`` has been saved under the name ``props``, which we can now begin interacting with in the cells that follow. We can do this by calling `"methods" <https://en.wikipedia.org/wiki/Method_(computer_programming)>`_ that ``pandas`` has made available to all ``DataFrames``. There are dozens of these that can do all sorts of interesting things. Let's start with some easy ones that analysts
+use all the time.
+
+First, to preview the first few rows of the dataset, try the `head <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.head.html>`_ method.
+
+.. code-block:: python
+
+    props.head()
+
+.. image:: /_static/head.png
+
+To get a look at all of the columns and what type of data they store, try `info <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.info.html>`_.
+
+.. code-block:: python
+
+    props.info()
+
+.. image:: /_static/info.png
