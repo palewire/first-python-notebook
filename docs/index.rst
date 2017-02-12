@@ -382,6 +382,125 @@ Act 4: Hello analysis
 
 TK
 
+.. code-block:: python
+
+    merged.sort_values("amount")
+
+TK
+
+.. code-block:: python
+
+    merged.sort_values("amount", ascending=False)
+
+TK
+
+.. code-block:: python
+
+    merged.sort_values("amount", ascending=False).head(10)
+
+TK
+
+.. code-block:: python
+
+    merged.amount
+
+TK
+
+.. code-block:: python
+
+    merged.amount.sum()
+
+TK
+
+.. code-block:: python
+
+    merged.committee_position
+
+TK
+
+.. code-block:: python
+
+    merged[merged.committee_position == 'SUPPORT']
+
+TK
+
+.. code-block:: python
+
+    support = merged[merged.committee_position == 'SUPPORT']
+
+TK
+
+.. code-block:: python
+
+    len(support)
+
+TK
+
+.. code-block:: python
+
+    support.sort_values("amount", ascending=False).head(10)
+
+TK
+
+.. code-block:: python
+
+    oppose = merged[merged.committee_position == 'OPPOSE']
+
+TK
+
+.. code-block:: python
+
+    len(oppose)
+
+TK
+
+.. code-block:: python
+
+    oppose.sort_values("amount", ascending=False).head(10)
+
+TK
+
+.. code-block:: python
+
+    oppose.amount.sum()
+
+TK
+
+.. code-block:: python
+
+    support.amount.sum()
+
+TK
+
+.. code-block:: python
+
+    support.amount.sum() / merged.amount.sum()
+
+TK
+
+.. code-block:: python
+
+    merged.groupby("committee_name_x").amount.sum()
+
+TK
+
+.. code-block:: python
+
+    merged.groupby("committee_name_x").amount.sum().reset_index()
+
+TK
+
+.. code-block:: python
+
+    merged.groupby(["contributor_firstname", "contributor_lastname"]).amount.sum().reset_index().sort_values("amount", ascending=False)
+
+TK
+
+.. code-block:: python
+
+    merged.groupby(["contributor_firstname", "contributor_lastname", "committee_position"]).amount.sum().reset_index().sort_values("amount", ascending=False)
+
+TK
 
 Act 5: Hello science
 --------------------
