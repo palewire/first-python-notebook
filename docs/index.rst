@@ -248,7 +248,8 @@ Now let's restart our notebook and get back to work.
 
 Use the next open box to import pandas into our script, so we can use all its fancy methods here in our script.
 
-
 .. code-block:: python
 
-    import pandas as pd
+    import pandas
+
+Download a list of committees that supported and opposed one or more of the 17 measures on last November's ballot.
