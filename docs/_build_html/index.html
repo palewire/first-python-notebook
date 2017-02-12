@@ -86,6 +86,8 @@
 <li><a class="reference internal" href="#act-1-hello-notebook">Act 1: Hello notebook</a></li>
 <li><a class="reference internal" href="#act-2-hello-pandas">Act 2: Hello pandas</a></li>
 <li><a class="reference internal" href="#act-3-hello-data">Act 3: Hello data</a></li>
+<li><a class="reference internal" href="#act-4-hello-analysis">Act 4: Hello analysis</a></li>
+<li><a class="reference internal" href="#act-5-hello-science">Act 5: Hello science</a></li>
 </ul>
 </li>
 </ul>
@@ -302,7 +304,7 @@ activate
 <p>To start <a class="reference external" href="https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/_static/prop-committees.csv">click here</a> to download a list of last November&#8217;s 17 ballot measures and their affiliated fundraising committees.</p>
 <p>The data are structured in rows of comma-separated values. This is known as a CSV file. It is the most common way you will find data published online. Save the file with the name <code class="docutils literal"><span class="pre">prop-committees.csv</span></code> in the same directory where you made your notebook.</p>
 <p>Open the file in your notebook using the <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html">read_csv</a> function in <code class="docutils literal"><span class="pre">pandas</span></code>.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;./docs/_static/prop-committees.csv&quot;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;prop-committees.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>After you run the cell, you should see something like this.</p>
@@ -355,6 +357,37 @@ use all the time.</p>
 </pre></div>
 </div>
 <img alt="_images/prop_len.png" src="_images/prop_len.png" />
+<p>TK</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">contribs</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;contributions.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>TK</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">contribs</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="_images/contribs_head.png" src="_images/contribs_head.png" />
+<p>TK</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">contribs</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="_images/contribs_info.png" src="_images/contribs_info.png" />
+<p>TK</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">contribs</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;calaccess_committee_id&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>TK</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="_images/merged_head.png" src="_images/merged_head.png" />
+</div>
+<div class="section" id="act-4-hello-analysis">
+<h2>Act 4: Hello analysis<a class="headerlink" href="#act-4-hello-analysis" title="Permalink to this headline">¶</a></h2>
+<p>TK</p>
+</div>
+<div class="section" id="act-5-hello-science">
+<h2>Act 5: Hello science<a class="headerlink" href="#act-5-hello-science" title="Permalink to this headline">¶</a></h2>
+<p>TK</p>
 </div>
 </div>
 

@@ -256,7 +256,7 @@ Open the file in your notebook using the `read_csv <http://pandas.pydata.org/pan
 
 .. code-block:: python
 
-    pandas.read_csv("./docs/_static/prop-committees.csv")
+    pandas.read_csv("prop-committees.csv")
 
 After you run the cell, you should see something like this.
 
@@ -339,3 +339,51 @@ TK
     len(prop)
 
 .. image:: /_static/prop_len.png
+
+TK
+
+.. code-block:: python
+
+    contribs = pandas.read_csv("contributions.csv")
+
+TK
+
+.. code-block:: python
+
+    contribs.head()
+
+.. image:: /_static/contribs_head.png
+
+TK
+
+.. code-block:: python
+
+    contribs.info()
+
+.. image:: /_static/contribs_info.png
+
+TK
+
+.. code-block:: python
+
+    merged = pandas.merge(prop, contribs, on="calaccess_committee_id")
+
+TK
+
+.. code-block:: python
+
+    merged.head()
+
+.. image:: /_static/merged_head.png
+
+
+Act 4: Hello analysis
+---------------------
+
+TK
+
+
+Act 5: Hello science
+--------------------
+
+TK
