@@ -210,11 +210,11 @@ Now it is the time for us to get our hands on some real data and get some real w
 Act 2: Hello pandas
 -------------------
 
-Lucky for us, Python is filled with functions to do pretty much anything you’d ever want to do with a programming language: `navigate the web <http://docs.python-requests.org/>`_, `parse data <https://docs.python.org/2/library/csv.html>`_, `interact with a database <http://www.sqlalchemy.org/>`_, `run fancy statistics <https://www.scipy.org/>`_, `build a pretty website <https://www.djangoproject.com/>`_ and `so <https://www.crummy.com/software/BeautifulSoup/>`_ `much <http://www.nltk.org/>`_ `more <http://pillow.readthedocs.io/en/3.4.x/index.html>`_.
+Lucky for us, Python is filled with functions to do pretty much anything you’d ever want to do with a programming language: `navigate the web <http://docs.python-requests.org/>`_, `parse data <https://docs.python.org/2/library/csv.html>`_, `interact with a database <http://www.sqlalchemy.org/>`_, `run fancy statistics <https://www.scipy.org/>`_, `build a pretty website <https://www.djangoproject.com/>`_ and `so <https://www.crummy.com/software/BeautifulSoup/>`_ `much <http://www.nltk.org/>`_ `more <http://pillow.readthedocs.io/en/3.4.x/index.html>`_. Creative people have put these tools to work to get `a wide range of things done <https://www.python.org/about/success/>`_ in the arts, technology and even outer space.
 
 Some of those tools are included a toolbox that comes with the language, known as the standard library. Others have been built by members of Python's developer community and need to be downloaded and installed from the web.
 
-For this exercise, we're going to install and use [pandas](http://pandas.pydata.org/), a tool developed at a financial investment firm that has become the leading open-source tool for accessing and analyzing data.
+For this exercise, we're going to install and use `pandas <http://pandas.pydata.org/>`_, a tool developed at a financial investment firm that has become the leading open-source tool for accessing and analyzing data.
 
 We'll install pandas the same way we installed the Jupyter Notebook earlier: Our friend ``pip``. Save your notebook, switch to your window/command prompt and hit ``CTRL-C``. That will kill your notebook and return you to the command line. There we'll install pandas.
 
@@ -233,6 +233,8 @@ Use the next open box to import pandas into our script, so we can use all its fa
 .. code-block:: python
 
     import pandas
+
+Run the notebook cell. If nothing happens, that's good. It means you have pandas installed and ready to work. If you get an error message, return to the prequisites section above and make sure you have everything installed properly. If you do and it still doesn't work, copy and paste the tail end of your error message into Google. Among the results there will almost certainly be others working through the same problem.
 
 
 Act 3: Hello analysis
