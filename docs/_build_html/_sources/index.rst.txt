@@ -139,8 +139,8 @@ For Windows
 Windows users will need to download and install `this Microsoft package <https://www.microsoft.com/en-us/download/details.aspx?id=44266>`_, a compiler that will allow us to install other Python tools later.
 
 
-Act 1: Hello Jupyter Notebook
------------------------------
+Act 1: Hello notebook
+---------------------
 
 A `Jupyter Notebook <http://jupyter.org/>`_ is a browser application where you can write, run, remix and republish code. It is free software you can install and run like any other open-source library. It is used by scientists, scholars, investors and corporations to create and share their work.
 
