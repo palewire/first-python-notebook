@@ -158,8 +158,8 @@ Act 1: Hello Jupyter Notebook
 -----------------------------
 
 A `Jupyter Notebook <http://jupyter.org/>`_ is a browser application where you can write, run, remix and republish code. It is free
-software you can install and run like any other open-source library. It is used by scientists, researchers
-and corporations to create and share their analysis.
+software you can install and run like any other open-source library. It is used by scientists, scholars, investors
+and corporations to create and share their work.
 
 It's also used by journalists to develop stories and show their work. Examples include:
 
@@ -210,3 +210,45 @@ Start up the notebook from your terminal.
 That will open up a new tab in your default web browser that looks something like this:
 
 .. image:: /_static/notebook.png
+
+
+Click the "New" button in the upper right and create a new Python 2 notebook. Now you're all setup and ready to start writing code.
+
+Don't stress. There's nothing too fancy about it. You can start by just doing a little simple math.
+
+Type the following into the first box, then hit the play button in the toolbox (or hit SHIFT+ENTER on your keyboard).
+
+.. code-block:: python
+
+    2+2
+
+There. You've just written your first Python code. You've entered two integers (the 2's) and added them together using the plus sign operator. Not so bad, right?
+
+Now's the time for us to get our hands on some real data and get some real work done.
+
+Act 2: Hello pandas
+
+Lucky for us, Python already has tools filled with functions to do pretty much anything you’d ever want to do with a programming language: navigate the web, parse data, interact with a database, run fancy statistics, build a pretty website and so much more.
+
+Some of those tools are included a toolbox that comes with the language, known as the standard library. Others have been built by members of Python's developer community and need to be downloaded and installed from the web.
+
+For this exercise, we're going to install and use [pandas](http://pandas.pydata.org/), a tool developed at a financial investment firm that has become the leading open-source tool for accessing and analyzing data.
+
+We'll install pandas the same way we installed the Jupyter Notebook earlier: Our friend ``pip``. Save your notebook, switch to your window/command prompt and hit ``CTRL-C``. That will kill your notebook and return you to the command line. There we'll install pandas.
+
+.. code-block:: python
+
+    pip install pandas
+
+Now let's restart our notebook and get back to work.
+
+.. code-block:: python
+
+    jupyter notebook
+
+Use the next open box to import pandas into our script, so we can use all its fancy methods here in our script.
+
+
+.. code-block:: python
+
+    import pandas as pd

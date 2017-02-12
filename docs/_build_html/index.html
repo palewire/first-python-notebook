@@ -245,8 +245,8 @@ data analysis library.</p>
 <div class="section" id="act-1-hello-jupyter-notebook">
 <h2>Act 1: Hello Jupyter Notebook<a class="headerlink" href="#act-1-hello-jupyter-notebook" title="Permalink to this headline">¶</a></h2>
 <p>A <a class="reference external" href="http://jupyter.org/">Jupyter Notebook</a> is a browser application where you can write, run, remix and republish code. It is free
-software you can install and run like any other open-source library. It is used by scientists, researchers
-and corporations to create and share their analysis.</p>
+software you can install and run like any other open-source library. It is used by scientists, scholars, investors
+and corporations to create and share their work.</p>
 <p>It&#8217;s also used by journalists to develop stories and show their work. Examples include:</p>
 <ul class="simple">
 <li><a class="reference external" href="https://github.com/BuzzFeedNews/2016-01-tennis-betting-analysis/blob/master/notebooks/tennis-analysis.ipynb">&#8220;The Tennis Racket&#8221;</a> by BuzzFeed and the BBC</li>
@@ -283,6 +283,30 @@ activate
 </div>
 <p>That will open up a new tab in your default web browser that looks something like this:</p>
 <img alt="_images/notebook.png" src="_images/notebook.png" />
+<p>Click the &#8220;New&#8221; button in the upper right and create a new Python 2 notebook. Now you&#8217;re all setup and ready to start writing code.</p>
+<p>Don&#8217;t stress. There&#8217;s nothing too fancy about it. You can start by just doing a little simple math.</p>
+<p>Type the following into the first box, then hit the play button in the toolbox (or hit SHIFT+ENTER on your keyboard).</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span>
+</pre></div>
+</div>
+<p>There. You&#8217;ve just written your first Python code. You&#8217;ve entered two integers (the 2&#8217;s) and added them together using the plus sign operator. Not so bad, right?</p>
+<p>Now&#8217;s the time for us to get our hands on some real data and get some real work done.</p>
+<p>Act 2: Hello pandas</p>
+<p>Lucky for us, Python already has tools filled with functions to do pretty much anything you’d ever want to do with a programming language: navigate the web, parse data, interact with a database, run fancy statistics, build a pretty website and so much more.</p>
+<p>Some of those tools are included a toolbox that comes with the language, known as the standard library. Others have been built by members of Python&#8217;s developer community and need to be downloaded and installed from the web.</p>
+<p>For this exercise, we&#8217;re going to install and use [pandas](<a class="reference external" href="http://pandas.pydata.org/">http://pandas.pydata.org/</a>), a tool developed at a financial investment firm that has become the leading open-source tool for accessing and analyzing data.</p>
+<p>We&#8217;ll install pandas the same way we installed the Jupyter Notebook earlier: Our friend <code class="docutils literal"><span class="pre">pip</span></code>. Save your notebook, switch to your window/command prompt and hit <code class="docutils literal"><span class="pre">CTRL-C</span></code>. That will kill your notebook and return you to the command line. There we&#8217;ll install pandas.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pandas</span>
+</pre></div>
+</div>
+<p>Now let&#8217;s restart our notebook and get back to work.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">notebook</span>
+</pre></div>
+</div>
+<p>Use the next open box to import pandas into our script, so we can use all its fancy methods here in our script.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
 </div>
 </div>
 
