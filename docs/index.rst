@@ -224,11 +224,13 @@ Type the following into the first box, then hit the play button in the toolbox (
 
 There. You've just written your first Python code. You've entered two integers (the 2's) and added them together using the plus sign operator. Not so bad, right?
 
-Now's the time for us to get our hands on some real data and get some real work done.
+Now's the time for us to get our hands on some real data and get some real work done. To do that, we need some real tools.
+
 
 Act 2: Hello pandas
+-------------------
 
-Lucky for us, Python already has tools filled with functions to do pretty much anything you’d ever want to do with a programming language: navigate the web, parse data, interact with a database, run fancy statistics, build a pretty website and so much more.
+Lucky for us, Python is filled with functions to do pretty much anything you’d ever want to do with a programming language: navigate the web, parse data, interact with a database, run fancy statistics, build a pretty website and so much more.
 
 Some of those tools are included a toolbox that comes with the language, known as the standard library. Others have been built by members of Python's developer community and need to be downloaded and installed from the web.
 
@@ -251,5 +253,20 @@ Use the next open box to import pandas into our script, so we can use all its fa
 .. code-block:: python
 
     import pandas
+
+
+Act 3: Hello analysis
+---------------------
+
+Until last November, the use and sale of marijuana for recreational purposes was illegal in California. That changed when voters approved
+Proposition 64, which appeared, which asked voters if it ought to be legalized. A "yes" vote supported legalization. A "no" vote opposed it. In the final tally, 57% voted yes.
+
+According to California's Secretary of State, approximately $23 million was raised to campaign in support of
+Prop. 64. Almost 2 million was been raised to oppose it.
+
+Your mission, should you choose to accept it, is to download a list of campaign committees and contributors to figure out
+the biggest donors both for and against the measure.
+
+Click here to download the file as a list of comma-separated values. This is known as a CSV file. It is the most common way you will find data published online. Save the file with the name first-python-notebook.csv in the same directory where you made this notebook.
 
 Download a list of committees that supported and opposed one or more of the 17 measures on last November's ballot.
