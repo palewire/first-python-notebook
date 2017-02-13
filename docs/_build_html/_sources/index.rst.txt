@@ -398,12 +398,14 @@ That new ``DataFrame`` variable can inspected just as the ones above.
 
 .. image:: /_static/merged_head.png
 
-After all that we have created a new dataset that includes only contributions supporting and opposing Proposition 64. We're ready to move on from preparing our data and begin our analysis.
+After all that we have created a new dataset that includes only contributions supporting and opposing Proposition 64. We're ready to move on from preparing our data and to interviewing it.
 
 Act 4: Hello analysis
 ---------------------
 
-TK
+In some ways, your database is no different from a human source. Getting a good story requires careful, thorough questioning. In this section we will move ahead by conducting an interview with ``pandas`` to pursue our quest of finding out the biggest donors to Proposition 64.
+
+Let's start with something easy. What were the ten biggest contributions? We can find the answer by using the `sort_values <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.sort_values.html>`_ method to rearrange our list using the ``amount`` field.
 
 .. code-block:: python
 
@@ -411,7 +413,7 @@ TK
 
 .. image:: /_static/merged_sort.png
 
-TK
+Note that returns the ``DataFrame`` resorted in ascending order from lowest to highest. To answer our question you'll need to reverse it. Here's how:
 
 .. code-block:: python
 
@@ -419,7 +421,7 @@ TK
 
 .. image:: /_static/merged_sort_desc.png
 
-TK
+You can limit the result to the top five by returning to the ``head`` method and passing in the number of results we'd like.
 
 .. code-block:: python
 
@@ -427,7 +429,9 @@ TK
 
 .. image:: /_static/merged_sort_head.png
 
-TK
+Question one answered. Here's number two: What is the total sum of contributions that have been reported?
+
+To answer that let's start by getting our hands on ``amount``, the column with the numbers in it. We can do that just as we did with other columns above.
 
 .. code-block:: python
 
@@ -435,7 +439,7 @@ TK
 
 .. image:: /_static/merged_amount.png
 
-TK
+Now add up the column's total using the ``pandas`` method `sum <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.sum.html>`_.
 
 .. code-block:: python
 
@@ -443,7 +447,13 @@ TK
 
 .. image:: /_static/merged_amount_sum.png
 
-TK
+There's our big total. Fun fact: This number is guaranteed to be lower than the totals reported by the campaigns. Why? Campaigns are only required to report the names of donors over $200, so our data is missing all of the donors who gave smaller amounts of money.
+
+The overall totals are reported elsewhere in lump sums and cannot be replicated by adding up the individual contributions. Understanding this is crucial to understanding not just this data, but all campaign finance data.
+
+Adding up a big total is all well and good. But we're aiming for something more nuanced. We want to separate the money spent for the proposition from the money spent against it. To do that, we'll need to return to the filtering trick we learned above.
+
+First let's look at the column we're going to filter by, ``committee_position``.
 
 .. code-block:: python
 
@@ -451,7 +461,7 @@ TK
 
 .. image:: /_static/merged_position.png
 
-TK
+Now let's filter our merged table down using that column and the ``pandas`` filtering method that combines a column, an operator and the value we want to filter by.
 
 .. code-block:: python
 
@@ -459,13 +469,13 @@ TK
 
 .. image:: /_static/support_filter.png
 
-TK
+Let's stick the result in a variable.
 
 .. code-block:: python
 
     support = merged[merged.committee_position == 'SUPPORT']
 
-TK
+And count how many contributions are in this new, more limited set.
 
 .. code-block:: python
 
@@ -473,7 +483,7 @@ TK
 
 .. image:: /_static/support_len.png
 
-TK
+We can now use this new variable to rank the five biggest supporting contributions by using ``sort_values`` again.
 
 .. code-block:: python
 
@@ -481,13 +491,13 @@ TK
 
 .. image:: /_static/support_sort.png
 
-TK
+Now let's repeat all that for opposing contributions. First the filter into a new variable.
 
 .. code-block:: python
 
     oppose = merged[merged.committee_position == 'OPPOSE']
 
-TK
+Then a count.
 
 .. code-block:: python
 
@@ -495,7 +505,7 @@ TK
 
 .. image:: /_static/oppose_len.png
 
-TK
+Then a ranking.
 
 .. code-block:: python
 
@@ -503,7 +513,7 @@ TK
 
 .. image:: /_static/oppose_sort.png
 
-TK
+Now lets sum up the total disclosed contributions to each for comparison. First the opposition.
 
 .. code-block:: python
 
@@ -511,7 +521,7 @@ TK
 
 .. image:: /_static/oppose_amount_sum.png
 
-TK
+The the proponents.
 
 .. code-block:: python
 
@@ -519,7 +529,7 @@ TK
 
 .. image:: /_static/support_amount_sum.png
 
-TK
+The support is clearly larger. But what percent is it over the overall disclosed total? We can find out by combined two sum calculations using the division operator. By dividing the support sum into the merged table's overall sum, we get its percentage of the whole.
 
 .. code-block:: python
 
@@ -527,7 +537,13 @@ TK
 
 .. image:: /_static/support_amount_percent.png
 
-TK
+We've encountered a lot of different committees as we've explored the data. A natural question follows: Which ones have raised the most money?
+
+To figure that out, we'll need to group the data by that column and then sum up the ``amount`` for each. We can do that be using the ``pandas`` `groupby <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.groupby.html>`_ method and the `sum` trick we've already learned.
+
+If you scroll back up and look carefully as the ``info`` command we ran after merging out data, you will noticed it includes a column named ``committee_name_x`` and ``commitee_name_y``. That is because the field was present on both our committee list and our contributions list prior to joining them together. Rather than drop one of them, ``pandas`` is trained to keep them both and to append a suffix to the end.
+
+That's the field we want to group by here. Since they are identical, it doesn't matter which one we pick.
 
 .. code-block:: python
 
@@ -535,7 +551,7 @@ TK
 
 .. image:: /_static/committee_group.png
 
-TK
+Again our data has come back as an ugly ``Series``. To reformat it as a pretty ``DataFrame`` use the ``reset_index`` method again.
 
 .. code-block:: python
 
@@ -543,7 +559,7 @@ TK
 
 .. image:: /_static/committee_group_df.png
 
-TK
+Sorting the biggest totals to the top is as easy as appending the ``sort_values`` trick we already know to the end. And voila there's our answer.
 
 .. code-block:: python
 
@@ -551,7 +567,7 @@ TK
 
 .. image:: /_static/committee_group_sort.png
 
-TK
+Finding the top contributors is just as easy. We only need to substitute the name fields into the ``groupby`` method.
 
 .. code-block:: python
 
@@ -559,7 +575,11 @@ TK
 
 .. image:: /_static/name_group.png
 
-TK
+.. note::
+
+    You should be noticing that several of the top contributors appear to be the same person with their name entered in slightly different ways. This is another important lesson of campaign contributions data. Virtually none of the data is standardized by the campaigns or the government. The onus is on the analyst to show caution and responsibly combine records where the name fields refer to the same person.
+
+To find out if each contributor supported or opposed the measure, you simple add that field to our ``groupby`` method.
 
 .. code-block:: python
 
@@ -567,13 +587,30 @@ TK
 
 .. image:: /_static/name_position_group.png
 
-TK
+You've done it. Our brief interview is complete and you've answered the big question that started our inquiry. If you're interested in continuing the interview, see if you can answer a few more questions on your own. Here are some ideas:
 
+- What percentage of donations came from people who live outside of California?
+- What are the top employers of donors who gave for and against the measure?
+- Which committees had the fewest donors?
 
 Act 5: Hello science
 --------------------
 
-TK
+After all this, you might be thinking "Computer programming sounds great, but couldn't I have done it more efficiently in aExcel?"
+
+Depending on how slick you are with a spreadsheet, the answer might be yes. With the exception of the ``pandas`` trick that merged the two files most of what we did could be achieved with filters and pivot tables taught in spreadsheet classes.
+
+However, for all their flexibility, one of the great weaknesses of working with spreadsheets is that the numerous steps that go into conducting a complex analysis have to be repeated each time, by hand, whenever you want to replicate your work.
+
+For this reason, some scientific projects that aim for transparency and reproducibility are now requiring that each step in a data analysis be documented in a Jupyter Notebook.
+
+That's good for its own sake and will help catch errors during pre-publication review, but it has a huge added benefit. At any time you can slightly modify your code and rerun the entire thing from the start.
+
+In this case it means we could instantly reproduce our analysis for each of the 17 ballot measures and conduct a similar data interview in a matter of seconds.
+
+To give it a try, scroll back up to the stop of the notebook and reexamine the list of unique propositions we output with the ``value_counts`` method. You can pick any of them. For this example I am going to pick Proposition 66, which sought (and failed) to end California's death penalty.
+
+Copy the proposition's full name and replace Proposition 64's name in the nearby cell where we created the ``prop`` variable.
 
 .. code-block:: python
 
@@ -581,6 +618,10 @@ TK
 
 .. image:: /_static/new_prop.png
 
-TK
+Now pull down the ``Cell`` menu at the top of the notebook and select the ``Run all`` option.
 
 .. image:: /_static/run_all.png
+
+Moments later, the notebook will repopulate with the answers to all of questions. This time it will be analyzing Prop 66 instead. Try doing that with Excel.
+
+That's the end of our lesson for now. We'll be working to expand it in the coming weeks as we prepare a longer version for the National Insitute of Computer-Assisted Reporting conference in Jacksonville. If you have any thoughts about how it could be improved or expanded, please email me at `ben.welsh@gmail.com <mailto:ben.welsh@gmail.com>`_. You can learn more about our open-source effort to fix California's cryptic campaign-finance database at `californiacivicdata.org <http://www.californiacivicdata.org/>`_.
