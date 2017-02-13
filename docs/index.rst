@@ -555,7 +555,7 @@ Now lets sum up the total disclosed contributions to each for comparison. First 
 
 .. image:: /_static/oppose_amount_sum.png
 
-The the proponents.
+Then the proponents.
 
 .. code-block:: python
 
