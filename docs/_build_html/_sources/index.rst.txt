@@ -60,7 +60,7 @@ Command-line interface
 
 Unless something is wrong with your computer, there should be a way to open a window that lets you type in commands. Different operating systems give this tool slightly different names, but they all have some form of it, and there are alternative programs you can install as well.
 
-On Windows you can find the command-line interface by opening the "command prompt." Here are instructions for `Windows 10 <http://www.howtogeek.com/235101/10-ways-to-open-the-command-prompt-in-windows-10/) and for [Windows 8](http://windows.microsoft.com/en-us/windows/command-prompt-faq#1TC=windows-8) and [earlier versions](http://windows.microsoft.com/en-us/windows-vista/open-a-command-prompt-window>`_. On Apple computers, you open the `"Terminal" application <http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line>`_. Ubuntu Linux comes with a program of the `same name <http://askubuntu.com/questions/38162/what-is-a-terminal-and-how-do-i-open-and-use-it>`_.
+On Windows you can find the command-line interface by opening the "command prompt." Here are instructions for `Windows <https://www.bleepingcomputer.com/tutorials/windows-command-prompt-introduction/>`_. On Apple computers, you open the `"Terminal" application <http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line>`_. Ubuntu Linux comes with a program of the `same name <http://askubuntu.com/questions/38162/what-is-a-terminal-and-how-do-i-open-and-use-it>`_.
 
 
 Python
