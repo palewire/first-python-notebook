@@ -596,7 +596,7 @@ You've done it. Our brief interview is complete and you've answered the big ques
 Act 5: Hello science
 --------------------
 
-After all this, you might be thinking "Computer programming sounds great, but couldn't I have done it more efficiently in aExcel?"
+After all this, you might be thinking "Computer programming sounds great, but couldn't I have done it more efficiently in Excel?"
 
 Depending on how slick you are with a spreadsheet, the answer might be yes. With the exception of the ``pandas`` trick that merged the two files most of what we did could be achieved with filters and pivot tables taught in spreadsheet classes.
 
