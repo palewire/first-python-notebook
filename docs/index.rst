@@ -284,7 +284,7 @@ After you run the cell, you should see something like this.
 .. image:: /_static/read_csv.png
 
 
-It is a ``DataFrame`` where ``pandas`` has structured the CSV data into rows and columns, just like Excel or another spreadsheet software might. The advantage offered here is that rather than manipulating the data through a haphazard series of clicks and keypunches, we will be gradually grinding down the data using a computer programming script that is 100% transparent and reproducible.
+It is a ``DataFrame`` where ``pandas`` has structured the CSV data into rows and columns, just like Excel or other spreadsheet software might. The advantage offered here is that rather than manipulating the data through a haphazard series of clicks and keypunches, we will be gradually grinding down the data using a computer programming script that is 100% transparent and reproducible.
 
 In order to do that, we need to store our ``DataFrame`` so it can be reused in subsequent cells. We can do this by saving in a `"variable" <https://en.wikipedia.org/wiki/Variable_(computer_science)>`_, which is a fancy computer programming word for a named shortcut where we save our work as we go.
 
