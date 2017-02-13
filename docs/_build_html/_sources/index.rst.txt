@@ -307,6 +307,10 @@ First, to preview the first few rows of the dataset, try the `head <http://panda
 
 To get a look at all of the columns and what type of data they store, add another cell and try `info <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.info.html>`_.
 
+.. note::
+
+    As we continue through the lesson you should assume all of the code we write is in a new cell run separately from the previous line. Breaking up your code like this so you can run it bit by bit is one of the big advantages of the Jupyter Notebook.
+
 .. code-block:: python
 
     props.info()
