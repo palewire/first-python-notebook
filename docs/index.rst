@@ -6,8 +6,6 @@ First Python Notebook
 
 A step-by-step guide to analyzing data with Python and the Jupyter Notebook.
 
-It was developed by `Ben Welsh <http://palewi.re/who-is-ben-welsh/>`_ for a `Oct. 2, 2016, "watchdog workshop" organized by Investigative Reporters and Editors <http://ire.org/events-and-training/event/2819/2841/>`_ at San Diego State University's school of journalism. It is scheduled to be taught to students at Stanford's Journalism School and at the annual conference of the National Institute for Computer-Assisted Reporting in early 2017.
-
 
 What you will learn
 -------------------
@@ -18,6 +16,10 @@ You will learn just enough Python to do damage with the powerful `pandas <http:/
 
 And most important: you will see how these tools can increase the speed and veracity of your journalism.
 
+About the authors
+-----------------
+
+This course was first developed by `Ben Welsh <http://palewi.re/who-is-ben-welsh/>`_ for a `Oct. 2, 2016, "watchdog workshop" organized by Investigative Reporters and Editors <http://www.californiacivicdata.org/2016/10/08/first-python-notebook/>`_ at San Diego State University's school of journalism. It was revised for a Feb. 14-16, 2017, hands-on training of students at Stanford's journalism school. It will be expanded for `a six-hour class <https://www.ire.org/events-and-training/event/2702/2879/>`_ at the annual conference of the National Institute for Computer-Assisted Reporting in March 2017.
 
 Prelude: Prequisites
 --------------------
