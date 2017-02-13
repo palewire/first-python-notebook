@@ -384,15 +384,15 @@ With that we're ready to move on to a related, similar task: Importing all of th
 
 We'll start by downloading `this second CSV file <http://first-python-notebook.readthedocs.io/en/latest/_static/contributions.csv>`_ and saving it to the same directory as this notebook with the name ``contributions.csv``. We'll then open it with ``read_csv`` and save it as a new variable just as we did above.
 
+.. code-block:: python
+
+    contribs = pandas.read_csv("contributions.csv")
+
 .. warning::
 
     The contributions file you're downloading is an experimental early release from `the California Civic Data Coalition's effort <www.californiacivicdata.org>`_ to streamline the state's jumbled, dirty and disorganized official database. It has not yet been fully verified as accurate by our team and any conclusions you draw from it should be considered as provisional.
 
     If you want to base a news report off the analysis you do here, you should take the additional step of comparing the numbers you produce against the official data `released by the Secretary of State <http://cal-access.sos.ca.gov/>`_.
-
-.. code-block:: python
-
-    contribs = pandas.read_csv("contributions.csv")
 
 Just as we did earlier, you can inspect the contents of this new file with the ``head`` method.
 
@@ -410,15 +410,15 @@ You should also inspect the columns using the ``info`` method. Running these two
 
 .. image:: /_static/contribs_info.png
 
-Our next job is to filter down this list, which include all disclosed contributions to all proposition campaigns, to just those linked to Proposition 64.
+Our next job is to filter down this list, which includes all disclosed contributions to all proposition campaigns, to just those linked to Proposition 64.
 
-We could try to do this with a filter, as we did above with the committees. But look carefully at the columns listed above in the contribution file's ``info`` output. You will notice that this file contains a field called ``calaccess_committee_id`` that identical to the one found in the committee CSV.
+We could try to do this with a filter, as we did above with the committees. But look carefully at the columns listed above in the contribution file's ``info`` output. You will notice that this file contains a field called ``calaccess_committee_id`` that is identical to the one found in the committee CSV.
 
 That's because these two files are drawn from a `"relational database" <https://en.wikipedia.org/wiki/Relational_database>`_ that tracks a variety of information about campaigns using an array of tables linked by common identifiers. In this case, the unique identifying codes of committees in one table can be expected to match those found in another.
 
-We can therefore safely join the two files using the `pandas` `merge <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.merge.html>`_ method. By default this method will return only those rows that have matching ids. That means that if we join the full contributions file to our filtered list of Proposition 64 committees, only the contributions to those committees will remain.
+We can therefore safely join the two files using the ```pandas`` `merge <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.merge.html>`_ method. By default this method will return only those rows with ids found in both tables. That means that if we join the full contributions file to our filtered list of Proposition 64 committees, only the contributions to the Proposition 64 committees will remain.
 
-Here's how to do it. It's as simple as passing both variables to ``merge`` and specifying which field we'd like to join. We will save the result into another new variable.
+Here's how to do it. It's as simple as passing both variables to ``merge`` and specifying which field we'd like to join with. We will save the result into another new variable.
 
 .. code-block:: python
 
@@ -432,7 +432,7 @@ That new ``DataFrame`` variable can inspected just as the ones above.
 
 .. image:: /_static/merged_head.png
 
-After all that we have created a new dataset that includes only contributions supporting and opposing Proposition 64. We're ready to move on from preparing our data and to interviewing it.
+After all that we have created a new dataset that includes only contributions supporting and opposing Proposition 64. We're ready to move on from preparing our data to interviewing it.
 
 Act 4: Hello analysis
 ---------------------
@@ -547,7 +547,7 @@ Then a ranking.
 
 .. image:: /_static/oppose_sort.png
 
-Now lets sum up the total disclosed contributions to each for comparison. First the opposition.
+Now sum up the total disclosed contributions to each for comparison. First the opposition.
 
 .. code-block:: python
 
@@ -555,7 +555,7 @@ Now lets sum up the total disclosed contributions to each for comparison. First 
 
 .. image:: /_static/oppose_amount_sum.png
 
-The the proponents.
+Then the supporters.
 
 .. code-block:: python
 
@@ -563,7 +563,7 @@ The the proponents.
 
 .. image:: /_static/support_amount_sum.png
 
-The support is clearly larger. But what percent is it over the overall disclosed total? We can find out by combined two sum calculations using the division operator. By dividing the support sum into the merged table's overall sum, we get its percentage of the whole.
+The support is clearly larger. But what percent is it of the overall disclosed total? We can find out by combined two ``sum`` calculations using the division operator.
 
 .. code-block:: python
 
@@ -573,11 +573,11 @@ The support is clearly larger. But what percent is it over the overall disclosed
 
 We've encountered a lot of different committees as we've explored the data. A natural question follows: Which ones have raised the most money?
 
-To figure that out, we'll need to group the data by that column and then sum up the ``amount`` for each. We can do that be using the ``pandas`` `groupby <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.groupby.html>`_ method and the `sum` trick we've already learned.
+To figure that out, we'll need to group the data by that column and then sum up the ``amount`` for each. We can do that be using the ``pandas`` `groupby <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.groupby.html>`_ method and the ``sum`` trick we've already learned.
 
-If you scroll back up and look carefully as the ``info`` command we ran after merging out data, you will noticed it includes a column named ``committee_name_x`` and ``commitee_name_y``. That is because the field was present on both our committee list and our contributions list prior to joining them together. Rather than drop one of them, ``pandas`` is trained to keep them both and to append a suffix to the end.
+If you scroll back up and look carefully as the ``info`` command we ran after merging out data, you will noticed it includes a column named ``committee_name_x`` and ``commitee_name_y``. That is because the field was present on both our committee list and our contributions list prior to joining them together. Rather than drop one of them, ``pandas`` is trained to keep them both and to append suffixes to the end.
 
-That's the field we want to group by here. Since they are identical, it doesn't matter which one we pick.
+That's the field we want to group by here. Since they are identical, it doesn't matter which one we pick. Let's go with x.
 
 .. code-block:: python
 
