@@ -257,7 +257,7 @@ Use the next open box to import pandas into our script so we can use all its fan
 
     import pandas
 
-Run the notebook cell. If nothing happens, that's good. It means you have pandas installed and ready to work.
+Run the notebook cell with the play button. If nothing happens, that's good. It means you have pandas installed and ready to work.
 
 If you get an error message, return to the prequisites section above and make sure you have everything installed properly. If you do and it still doesn't work, copy and paste the tail end of your error message into Google. Among the results there will almost certainly be others working through the same problem.
 
