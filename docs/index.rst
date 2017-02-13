@@ -53,7 +53,7 @@ Before you can begin, your computer needs the following tools installed and work
 
 .. warning::
 
-    Stop and make sure you have all these tools installed and working properly. Otherwise, you're not gonna have a good time.
+    Stop and make sure you have all these tools installed and working properly. Otherwise, `you're gonna have a bad time <https://www.youtube.com/watch?v=ynxPshq8ERo>`_.
 
 Command-line interface
 ~~~~~~~~~~~~~~~~~~~~~~
