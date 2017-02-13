@@ -616,8 +616,6 @@ Copy the proposition's full name and replace Proposition 64's name in the nearby
 
     prop = props[props.prop_name == 'PROPOSITION 066- DEATH PENALTY. PROCEDURES. INITIATIVE STATUTE.']
 
-.. image:: /_static/new_prop.png
-
 Now pull down the ``Cell`` menu at the top of the notebook and select the ``Run all`` option.
 
 .. image:: /_static/run_all.png
