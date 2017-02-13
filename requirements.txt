@@ -1,4 +1,5 @@
 sphinx
 sphinx-autobuild
+sphinx-rtd-theme
 jupyter
 pandas

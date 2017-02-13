@@ -83,7 +83,7 @@
 <li><a class="reference internal" href="#">First Python Notebook</a><ul>
 <li><a class="reference internal" href="#what-you-will-learn">What you will learn</a></li>
 <li><a class="reference internal" href="#about-the-data">About the data</a></li>
-<li><a class="reference internal" href="#about-the-authors">About the authors</a></li>
+<li><a class="reference internal" href="#about-the-author">About the author</a></li>
 <li><a class="reference internal" href="#prelude-prequisites">Prelude: Prequisites</a></li>
 <li><a class="reference internal" href="#act-1-hello-notebook">Act 1: Hello notebook</a></li>
 <li><a class="reference internal" href="#act-2-hello-pandas">Act 2: Hello pandas</a></li>
@@ -159,8 +159,8 @@
 </ul>
 <p>The goal of the coalition&#8217;s work is to make the data those reporters used easier to access, understand and analyze. Learn more about the status of the project and the data you can download <a class="reference external" href="http://www.californiacivicdata.org/2016/09/15/website-launch/">here</a>.</p>
 </div>
-<div class="section" id="about-the-authors">
-<h2>About the authors<a class="headerlink" href="#about-the-authors" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="about-the-author">
+<h2>About the author<a class="headerlink" href="#about-the-author" title="Permalink to this headline">¶</a></h2>
 <p>This course was first developed by <a class="reference external" href="http://palewi.re/who-is-ben-welsh/">Ben Welsh</a> for a Oct. 2, 2016, <a class="reference external" href="http://www.californiacivicdata.org/2016/10/08/first-python-notebook/">&#8220;watchdog workshop&#8221;</a> organized by Investigative Reporters and Editors at San Diego State University&#8217;s school of journalism. It was revised for a Feb. 14-16, 2017, hands-on training of students at Stanford&#8217;s journalism school. It will be expanded for <a class="reference external" href="https://www.ire.org/events-and-training/event/2702/2879/">a six-hour class</a> at the annual conference of the National Institute for Computer-Assisted Reporting in March 2017.</p>
 <p>Ben is the editor of the Data Desk, a team of reporters and programmers in the Los Angeles Times newsroom. He is also a co-founder of the California Civic Data Coalition.</p>
 </div>
@@ -290,19 +290,20 @@ activate
 <img alt="_images/notebook.png" src="_images/notebook.png" />
 <p>Click the &#8220;New&#8221; button in the upper right and create a new Python 2 notebook. Now you are all setup and ready to start writing code.</p>
 <p>Do not stress. There is nothing too fancy about it. You can start by just doing a little simple math.</p>
-<p>Type the following into the first box, then hit the play button in the toolbox (or hit SHIFT+ENTER on your keyboard).</p>
+<p>Type the following into the first box, then hit the play button in the toolbar above the notebook (or hit SHIFT+ENTER on your keyboard).</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span>
 </pre></div>
 </div>
+<img alt="_images/2_plus_2.png" src="_images/2_plus_2.png" />
 <p>There. You have just written your first Python code. You have entered two integers and added them together using the plus sign operator. Not so bad, right?</p>
 <p>Now it is the time for us to get our hands on some real data and get some real work done. To do that, we need some real tools.</p>
 </div>
 <div class="section" id="act-2-hello-pandas">
 <h2>Act 2: Hello pandas<a class="headerlink" href="#act-2-hello-pandas" title="Permalink to this headline">¶</a></h2>
 <p>Lucky for us, Python is filled with functions to do pretty much anything you’d ever want to do with a programming language: <a class="reference external" href="http://docs.python-requests.org/">navigate the web</a>, <a class="reference external" href="https://docs.python.org/2/library/csv.html">parse data</a>, <a class="reference external" href="http://www.sqlalchemy.org/">interact with a database</a>, <a class="reference external" href="https://www.scipy.org/">run fancy statistics</a>, <a class="reference external" href="https://www.djangoproject.com/">build a pretty website</a> and <a class="reference external" href="https://www.crummy.com/software/BeautifulSoup/">so</a> <a class="reference external" href="http://www.nltk.org/">much</a> <a class="reference external" href="http://pillow.readthedocs.io/en/3.4.x/index.html">more</a>. Creative people have put these tools to work to get <a class="reference external" href="https://www.python.org/about/success/">a wide range of things done</a> in the arts, technology and even outer space.</p>
-<p>Some of those tools are included a toolbox that comes with the language, known as the standard library. Others have been built by members of Python&#8217;s developer community and need to be downloaded and installed from the web.</p>
-<p>For this exercise, we&#8217;re going to install and use <a class="reference external" href="http://pandas.pydata.org/">pandas</a>, a tool developed at a financial investment firm that has become the leading open-source tool for accessing and analyzing data.</p>
-<p>We&#8217;ll install pandas the same way we installed the Jupyter Notebook earlier: Our friend <code class="docutils literal"><span class="pre">pip</span></code>. Save your notebook, switch to your window/command prompt and hit <code class="docutils literal"><span class="pre">CTRL-C</span></code>. That will kill your notebook and return you to the command line. There we&#8217;ll install pandas.</p>
+<p>Some of those tools are included in a toolbox that comes with the language, known as the standard library. Others have been built by members of Python&#8217;s developer community and need to be downloaded and installed from the web.</p>
+<p>For this exercise, we&#8217;re going to install and use <a class="reference external" href="http://pandas.pydata.org/">pandas</a>, a tool developed at a financial investment firm that has become a leading open-source tool for accessing and analyzing data.</p>
+<p>We&#8217;ll install pandas the same way we installed the Jupyter Notebook earlier: Our friend <code class="docutils literal"><span class="pre">pip</span></code>. Save your notebook, switch to your command prompt and hit <code class="docutils literal"><span class="pre">CTRL-C</span></code>. That will kill your notebook and return you to the command line. There we&#8217;ll install pandas.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pandas</span>
 </pre></div>
 </div>
@@ -310,16 +311,23 @@ activate
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">notebook</span>
 </pre></div>
 </div>
-<p>Use the next open box to import pandas into our script, so we can use all its fancy methods here in our script.</p>
+<p>Use the next open notebook cell to import the pandas library for use in our script. Type in the following and hit the play button again.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span>
 </pre></div>
 </div>
-<p>Run the notebook cell. If nothing happens, that&#8217;s good. It means you have pandas installed and ready to work.</p>
+<img alt="_images/import_pandas.png" src="_images/import_pandas.png" />
+<p>If nothing happens, that&#8217;s good. It means you have pandas installed and ready to work.</p>
 <p>If you get an error message, return to the prequisites section above and make sure you have everything installed properly. If you do and it still doesn&#8217;t work, copy and paste the tail end of your error message into Google. Among the results there will almost certainly be others working through the same problem.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>As we continue through the lesson you should assume all of the code we write is in a new cell run separately from the previous line.</p>
+<p>Breaking up your code like this so you can run it bit by bit is one of the big advantages of the Jupyter Notebook. If you get an error after you run a cell, look carefully at your code and see that it exactly matches what&#8217;s been written in the example.</p>
+<p class="last">Once they match, try running it again. Don&#8217;t worry, that kind of feedback loop is the workaday struggle of computer programming.</p>
+</div>
 </div>
 <div class="section" id="act-3-hello-data">
 <h2>Act 3: Hello data<a class="headerlink" href="#act-3-hello-data" title="Permalink to this headline">¶</a></h2>
-<p>Until last November, the use and sale of marijuana for recreational purposes was illegal in California. That changed when voters approved Proposition 64, which asked voters if the practice ought to be legalized. A &#8220;yes&#8221; vote supported legalization. A &#8220;no&#8221; vote opposed it. <a class="reference external" href="http://elections.cdn.sos.ca.gov/sov/2016-general/sov/65-ballot-measures-formatted.pdf">In the final tally</a>, 57% of voters said yes.</p>
+<p>Until last November, the use and sale of marijuana for recreational purposes was illegal in California. That changed when voters approved Proposition 64, which asked voters if the practice ought to be legalized. A yes vote supported legalization. A no vote opposed it. <a class="reference external" href="http://elections.cdn.sos.ca.gov/sov/2016-general/sov/65-ballot-measures-formatted.pdf">In the final tally</a>, 57% of voters said yes.</p>
 <p>Your mission, <a class="reference external" href="https://www.youtube.com/watch?v=0TiqXFssKMY">should you choose to accept it</a>, is to analyze lists of campaign committees and contributors to figure out the biggest donors both for and against the measure.</p>
 <p>To start <a class="reference external" href="http://first-python-notebook.readthedocs.io/en/latest/_static/prop-committees.csv">click here</a> to download a list of last November&#8217;s 17 ballot measures and their affiliated fundraising committees.</p>
 <p>The data are structured in rows of comma-separated values. This is known as a CSV file. It is the most common way you will find data published online. Save the file with the name <code class="docutils literal"><span class="pre">prop-committees.csv</span></code> in the same directory where you made your notebook.</p>
@@ -329,7 +337,7 @@ activate
 </div>
 <p>After you run the cell, you should see something like this.</p>
 <img alt="_images/read_csv.png" src="_images/read_csv.png" />
-<p>It is a <code class="docutils literal"><span class="pre">DataFrame</span></code> where <code class="docutils literal"><span class="pre">pandas</span></code> has structured the CSV data into rows and columns, just like Excel or other spreadsheet software might. The advantage offered here is that rather than manipulating the data through a haphazard series of clicks and keypunches, we will be gradually grinding down the data using a computer programming script that is 100% transparent and reproducible.</p>
+<p>It is a <code class="docutils literal"><span class="pre">DataFrame</span></code> where <code class="docutils literal"><span class="pre">pandas</span></code> has structured the CSV data into rows and columns, just like Excel or other spreadsheet software might. The advantage offered here is that rather than manipulating the data through a haphazard series of clicks and keypunches we will be gradually grinding down the data using a computer programming script that is 100% transparent and reproducible.</p>
 <p>In order to do that, we need to store our <code class="docutils literal"><span class="pre">DataFrame</span></code> so it can be reused in subsequent cells. We can do this by saving in a <a class="reference external" href="https://en.wikipedia.org/wiki/Variable_(computer_science)">&#8220;variable&#8221;</a>, which is a fancy computer programming word for a named shortcut where we save our work as we go.</p>
 <p>Go back to your initial cell and change it to this. Then rerun it.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">props</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;./docs/_static/prop-committees.csv&quot;</span><span class="p">)</span>
@@ -343,10 +351,6 @@ use all the time.</p>
 </div>
 <img alt="_images/head.png" src="_images/head.png" />
 <p>To get a look at all of the columns and what type of data they store, add another cell and try <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.info.html">info</a>.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">As we continue through the lesson you should assume all of the code we write is in a new cell run separately from the previous line. Breaking up your code like this so you can run it bit by bit is one of the big advantages of the Jupyter Notebook. If you get an error after you run a cell, look carefully at your code and see that it exactly matches what&#8217;s been written in the example. Once they match, try running it again. Don&#8217;t worry, that kind of feedback loop is the workaday struggle of computer programming.</p>
-</div>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">props</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -386,7 +390,7 @@ use all the time.</p>
 </div>
 <img alt="_images/prop_len.png" src="_images/prop_len.png" />
 <p>With that we&#8217;re ready to move on to a related, similar task: Importing all of the individual contributions reported to last year&#8217;s 17 ballot measures and filtering them down to just those supporting and opposing Proposition 64.</p>
-<p>We&#8217;re start by downloading <a class="reference external" href="http://first-python-notebook.readthedocs.io/en/latest/_static/contributions.csv">this second CSV file</a> and saving it to the same directory as this notebook with the name <code class="docutils literal"><span class="pre">contributions.csv</span></code>. We&#8217;ll then open it with <code class="docutils literal"><span class="pre">read_csv</span></code> and save it as a new variable just as we did above.</p>
+<p>We&#8217;ll start by downloading <a class="reference external" href="http://first-python-notebook.readthedocs.io/en/latest/_static/contributions.csv">this second CSV file</a> and saving it to the same directory as this notebook with the name <code class="docutils literal"><span class="pre">contributions.csv</span></code>. We&#8217;ll then open it with <code class="docutils literal"><span class="pre">read_csv</span></code> and save it as a new variable just as we did above.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p>The contributions file you&#8217;re downloading is an experimental early release from <a class="reference external" href="www.californiacivicdata.org">the California Civic Data Coalition&#8217;s effort</a> to streamline the state&#8217;s jumbled, dirty and disorganized official database. It has not yet been fully verified as accurate by our team and any conclusions you draw from it should be considered as provisional.</p>

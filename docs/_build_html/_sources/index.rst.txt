@@ -34,8 +34,8 @@ The state's campaign and lobbying data has been used to develop insightful journ
 
 The goal of the coalition's work is to make the data those reporters used easier to access, understand and analyze. Learn more about the status of the project and the data you can download `here <http://www.californiacivicdata.org/2016/09/15/website-launch/>`_.
 
-About the authors
------------------
+About the author
+----------------
 
 This course was first developed by `Ben Welsh <http://palewi.re/who-is-ben-welsh/>`_ for a Oct. 2, 2016, `"watchdog workshop" <http://www.californiacivicdata.org/2016/10/08/first-python-notebook/>`_ organized by Investigative Reporters and Editors at San Diego State University's school of journalism. It was revised for a Feb. 14-16, 2017, hands-on training of students at Stanford's journalism school. It will be expanded for `a six-hour class <https://www.ire.org/events-and-training/event/2702/2879/>`_ at the annual conference of the National Institute for Computer-Assisted Reporting in March 2017.
 
@@ -219,11 +219,13 @@ Click the "New" button in the upper right and create a new Python 2 notebook. No
 
 Do not stress. There is nothing too fancy about it. You can start by just doing a little simple math.
 
-Type the following into the first box, then hit the play button in the toolbox (or hit SHIFT+ENTER on your keyboard).
+Type the following into the first box, then hit the play button in the toolbar above the notebook (or hit SHIFT+ENTER on your keyboard).
 
 .. code-block:: python
 
     2+2
+
+.. image:: /_static/2_plus_2.png
 
 There. You have just written your first Python code. You have entered two integers and added them together using the plus sign operator. Not so bad, right?
 
@@ -235,11 +237,11 @@ Act 2: Hello pandas
 
 Lucky for us, Python is filled with functions to do pretty much anything you’d ever want to do with a programming language: `navigate the web <http://docs.python-requests.org/>`_, `parse data <https://docs.python.org/2/library/csv.html>`_, `interact with a database <http://www.sqlalchemy.org/>`_, `run fancy statistics <https://www.scipy.org/>`_, `build a pretty website <https://www.djangoproject.com/>`_ and `so <https://www.crummy.com/software/BeautifulSoup/>`_ `much <http://www.nltk.org/>`_ `more <http://pillow.readthedocs.io/en/3.4.x/index.html>`_. Creative people have put these tools to work to get `a wide range of things done <https://www.python.org/about/success/>`_ in the arts, technology and even outer space.
 
-Some of those tools are included a toolbox that comes with the language, known as the standard library. Others have been built by members of Python's developer community and need to be downloaded and installed from the web.
+Some of those tools are included in a toolbox that comes with the language, known as the standard library. Others have been built by members of Python's developer community and need to be downloaded and installed from the web.
 
-For this exercise, we're going to install and use `pandas <http://pandas.pydata.org/>`_, a tool developed at a financial investment firm that has become the leading open-source tool for accessing and analyzing data.
+For this exercise, we're going to install and use `pandas <http://pandas.pydata.org/>`_, a tool developed at a financial investment firm that has become a leading open-source tool for accessing and analyzing data.
 
-We'll install pandas the same way we installed the Jupyter Notebook earlier: Our friend ``pip``. Save your notebook, switch to your window/command prompt and hit ``CTRL-C``. That will kill your notebook and return you to the command line. There we'll install pandas.
+We'll install pandas the same way we installed the Jupyter Notebook earlier: Our friend ``pip``. Save your notebook, switch to your command prompt and hit ``CTRL-C``. That will kill your notebook and return you to the command line. There we'll install pandas.
 
 .. code-block:: python
 
@@ -251,21 +253,30 @@ Now let's restart our notebook and get back to work.
 
     jupyter notebook
 
-Use the next open box to import pandas into our script, so we can use all its fancy methods here in our script.
+Use the next open notebook cell to import the pandas library for use in our script. Type in the following and hit the play button again.
 
 .. code-block:: python
 
     import pandas
 
-Run the notebook cell. If nothing happens, that's good. It means you have pandas installed and ready to work.
+.. image:: /_static/import_pandas.png
+
+If nothing happens, that's good. It means you have pandas installed and ready to work.
 
 If you get an error message, return to the prequisites section above and make sure you have everything installed properly. If you do and it still doesn't work, copy and paste the tail end of your error message into Google. Among the results there will almost certainly be others working through the same problem.
 
+.. note::
+
+    As we continue through the lesson you should assume all of the code we write is in a new cell run separately from the previous line.
+
+    Breaking up your code like this so you can run it bit by bit is one of the big advantages of the Jupyter Notebook. If you get an error after you run a cell, look carefully at your code and see that it exactly matches what's been written in the example.
+
+    Once they match, try running it again. Don't worry, that kind of feedback loop is the workaday struggle of computer programming.
 
 Act 3: Hello data
 -----------------
 
-Until last November, the use and sale of marijuana for recreational purposes was illegal in California. That changed when voters approved Proposition 64, which asked voters if the practice ought to be legalized. A "yes" vote supported legalization. A "no" vote opposed it. `In the final tally <http://elections.cdn.sos.ca.gov/sov/2016-general/sov/65-ballot-measures-formatted.pdf>`_, 57% of voters said yes.
+Until last November, the use and sale of marijuana for recreational purposes was illegal in California. That changed when voters approved Proposition 64, which asked voters if the practice ought to be legalized. A yes vote supported legalization. A no vote opposed it. `In the final tally <http://elections.cdn.sos.ca.gov/sov/2016-general/sov/65-ballot-measures-formatted.pdf>`_, 57% of voters said yes.
 
 Your mission, `should you choose to accept it <https://www.youtube.com/watch?v=0TiqXFssKMY>`_, is to analyze lists of campaign committees and contributors to figure out the biggest donors both for and against the measure.
 
@@ -284,7 +295,7 @@ After you run the cell, you should see something like this.
 .. image:: /_static/read_csv.png
 
 
-It is a ``DataFrame`` where ``pandas`` has structured the CSV data into rows and columns, just like Excel or other spreadsheet software might. The advantage offered here is that rather than manipulating the data through a haphazard series of clicks and keypunches, we will be gradually grinding down the data using a computer programming script that is 100% transparent and reproducible.
+It is a ``DataFrame`` where ``pandas`` has structured the CSV data into rows and columns, just like Excel or other spreadsheet software might. The advantage offered here is that rather than manipulating the data through a haphazard series of clicks and keypunches we will be gradually grinding down the data using a computer programming script that is 100% transparent and reproducible.
 
 In order to do that, we need to store our ``DataFrame`` so it can be reused in subsequent cells. We can do this by saving in a `"variable" <https://en.wikipedia.org/wiki/Variable_(computer_science)>`_, which is a fancy computer programming word for a named shortcut where we save our work as we go.
 
@@ -306,10 +317,6 @@ First, to preview the first few rows of the dataset, try the `head <http://panda
 .. image:: /_static/head.png
 
 To get a look at all of the columns and what type of data they store, add another cell and try `info <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.info.html>`_.
-
-.. note::
-
-    As we continue through the lesson you should assume all of the code we write is in a new cell run separately from the previous line. Breaking up your code like this so you can run it bit by bit is one of the big advantages of the Jupyter Notebook. If you get an error after you run a cell, look carefully at your code and see that it exactly matches what's been written in the example. Once they match, try running it again. Don't worry, that kind of feedback loop is the workaday struggle of computer programming.
 
 .. code-block:: python
 
@@ -375,7 +382,7 @@ The find out how many records are left after the filter, we can use Python's bui
 
 With that we're ready to move on to a related, similar task: Importing all of the individual contributions reported to last year's 17 ballot measures and filtering them down to just those supporting and opposing Proposition 64.
 
-We're start by downloading `this second CSV file <http://first-python-notebook.readthedocs.io/en/latest/_static/contributions.csv>`_ and saving it to the same directory as this notebook with the name ``contributions.csv``. We'll then open it with ``read_csv`` and save it as a new variable just as we did above.
+We'll start by downloading `this second CSV file <http://first-python-notebook.readthedocs.io/en/latest/_static/contributions.csv>`_ and saving it to the same directory as this notebook with the name ``contributions.csv``. We'll then open it with ``read_csv`` and save it as a new variable just as we did above.
 
 .. warning::
 

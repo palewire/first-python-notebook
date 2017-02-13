@@ -34,8 +34,8 @@ The state's campaign and lobbying data has been used to develop insightful journ
 
 The goal of the coalition's work is to make the data those reporters used easier to access, understand and analyze. Learn more about the status of the project and the data you can download `here <http://www.californiacivicdata.org/2016/09/15/website-launch/>`_.
 
-About the authors
------------------
+About the author
+----------------
 
 This course was first developed by `Ben Welsh <http://palewi.re/who-is-ben-welsh/>`_ for a Oct. 2, 2016, `"watchdog workshop" <http://www.californiacivicdata.org/2016/10/08/first-python-notebook/>`_ organized by Investigative Reporters and Editors at San Diego State University's school of journalism. It was revised for a Feb. 14-16, 2017, hands-on training of students at Stanford's journalism school. It will be expanded for `a six-hour class <https://www.ire.org/events-and-training/event/2702/2879/>`_ at the annual conference of the National Institute for Computer-Assisted Reporting in March 2017.
 
@@ -225,6 +225,8 @@ Type the following into the first box, then hit the play button in the toolbar a
 
     2+2
 
+.. image:: /_static/2_plus_2.png
+
 There. You have just written your first Python code. You have entered two integers and added them together using the plus sign operator. Not so bad, right?
 
 Now it is the time for us to get our hands on some real data and get some real work done. To do that, we need some real tools.
@@ -251,16 +253,25 @@ Now let's restart our notebook and get back to work.
 
     jupyter notebook
 
-Use the next open box to import pandas into our script so we can use all its fancy methods here in our notebook.
+Use the next open notebook cell to import the pandas library for use in our script. Type in the following and hit the play button again.
 
 .. code-block:: python
 
     import pandas
 
-Run the notebook cell with the play button. If nothing happens, that's good. It means you have pandas installed and ready to work.
+.. image:: /_static/import_pandas.png
+
+If nothing happens, that's good. It means you have pandas installed and ready to work.
 
 If you get an error message, return to the prequisites section above and make sure you have everything installed properly. If you do and it still doesn't work, copy and paste the tail end of your error message into Google. Among the results there will almost certainly be others working through the same problem.
 
+.. note::
+
+    As we continue through the lesson you should assume all of the code we write is in a new cell run separately from the previous line.
+
+    Breaking up your code like this so you can run it bit by bit is one of the big advantages of the Jupyter Notebook. If you get an error after you run a cell, look carefully at your code and see that it exactly matches what's been written in the example.
+
+    Once they match, try running it again. Don't worry, that kind of feedback loop is the workaday struggle of computer programming.
 
 Act 3: Hello data
 -----------------
@@ -306,10 +317,6 @@ First, to preview the first few rows of the dataset, try the `head <http://panda
 .. image:: /_static/head.png
 
 To get a look at all of the columns and what type of data they store, add another cell and try `info <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.info.html>`_.
-
-.. note::
-
-    As we continue through the lesson you should assume all of the code we write is in a new cell run separately from the previous line. Breaking up your code like this so you can run it bit by bit is one of the big advantages of the Jupyter Notebook. If you get an error after you run a cell, look carefully at your code and see that it exactly matches what's been written in the example. Once they match, try running it again. Don't worry, that kind of feedback loop is the workaday struggle of computer programming.
 
 .. code-block:: python
 
