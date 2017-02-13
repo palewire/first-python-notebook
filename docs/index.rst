@@ -251,7 +251,7 @@ Now let's restart our notebook and get back to work.
 
     jupyter notebook
 
-Use the next open box to import pandas into our script, so we can use all its fancy methods here in our script.
+Use the next open box to import pandas into our script so we can use all its fancy methods here in our notebook.
 
 .. code-block:: python
 
