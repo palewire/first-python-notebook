@@ -219,7 +219,7 @@ Click the "New" button in the upper right and create a new Python 2 notebook. No
 
 Do not stress. There is nothing too fancy about it. You can start by just doing a little simple math.
 
-Type the following into the first box, then hit the play button in the toolbox (or hit SHIFT+ENTER on your keyboard).
+Type the following into the first box, then hit the play button in the toolbar above the notebook (or hit SHIFT+ENTER on your keyboard).
 
 .. code-block:: python
 
@@ -235,7 +235,7 @@ Act 2: Hello pandas
 
 Lucky for us, Python is filled with functions to do pretty much anything you’d ever want to do with a programming language: `navigate the web <http://docs.python-requests.org/>`_, `parse data <https://docs.python.org/2/library/csv.html>`_, `interact with a database <http://www.sqlalchemy.org/>`_, `run fancy statistics <https://www.scipy.org/>`_, `build a pretty website <https://www.djangoproject.com/>`_ and `so <https://www.crummy.com/software/BeautifulSoup/>`_ `much <http://www.nltk.org/>`_ `more <http://pillow.readthedocs.io/en/3.4.x/index.html>`_. Creative people have put these tools to work to get `a wide range of things done <https://www.python.org/about/success/>`_ in the arts, technology and even outer space.
 
-Some of those tools are included a toolbox that comes with the language, known as the standard library. Others have been built by members of Python's developer community and need to be downloaded and installed from the web.
+Some of those tools are included in a toolbox that comes with the language, known as the standard library. Others have been built by members of Python's developer community and need to be downloaded and installed from the web.
 
 For this exercise, we're going to install and use `pandas <http://pandas.pydata.org/>`_, a tool developed at a financial investment firm that has become the leading open-source tool for accessing and analyzing data.
 
