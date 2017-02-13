@@ -551,3 +551,13 @@ Act 5: Hello science
 --------------------
 
 TK
+
+.. code-block:: python
+
+    prop = props[props.prop_name == 'PROPOSITION 066- DEATH PENALTY. PROCEDURES. INITIATIVE STATUTE.']
+
+.. image:: /_static/new_prop.png
+
+TK
+
+.. image:: /_static/run_all.png
