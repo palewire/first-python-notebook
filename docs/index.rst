@@ -160,6 +160,7 @@ For Windows
 
 Windows users will need to download and install `this Microsoft package <https://www.microsoft.com/en-us/download/details.aspx?id=44266>`_, a compiler that will allow us to install other Python tools later.
 
+With all that done, you're now ready to start the class. 
 
 Act 1: Hello notebook
 ---------------------
