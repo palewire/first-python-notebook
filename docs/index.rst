@@ -239,7 +239,7 @@ Some of those tools are included in a toolbox that comes with the language, know
 
 For this exercise, we're going to install and use `pandas <http://pandas.pydata.org/>`_, a tool developed at a financial investment firm that has become a leading open-source tool for accessing and analyzing data.
 
-We'll install pandas the same way we installed the Jupyter Notebook earlier: Our friend ``pip``. Save your notebook, switch to your window/command prompt and hit ``CTRL-C``. That will kill your notebook and return you to the command line. There we'll install pandas.
+We'll install pandas the same way we installed the Jupyter Notebook earlier: Our friend ``pip``. Save your notebook, switch to your command prompt and hit ``CTRL-C``. That will kill your notebook and return you to the command line. There we'll install pandas.
 
 .. code-block:: python
 
