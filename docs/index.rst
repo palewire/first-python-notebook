@@ -160,7 +160,7 @@ For Windows
 
 Windows users will need to download and install `this Microsoft package <https://www.microsoft.com/en-us/download/details.aspx?id=44266>`_, a compiler that will allow us to install other Python tools later.
 
-With all that done, you're now ready to start the class. 
+With all that done, you're now ready to start the class.
 
 Act 1: Hello notebook
 ---------------------
@@ -267,7 +267,7 @@ Act 3: Hello data
 
 Until last November, the use and sale of marijuana for recreational purposes was illegal in California. That changed when voters approved Proposition 64, which asked voters if the practice ought to be legalized. A "yes" vote supported legalization. A "no" vote opposed it. `In the final tally <http://elections.cdn.sos.ca.gov/sov/2016-general/sov/65-ballot-measures-formatted.pdf>`_, 57% of voters said yes.
 
-Your mission, should you choose to accept it, is to analyze lists of campaign committees and contributors to figure out the biggest donors both for and against the measure.
+Your mission, `should you choose to accept it <https://www.youtube.com/watch?v=0TiqXFssKMY>`_, is to analyze lists of campaign committees and contributors to figure out the biggest donors both for and against the measure.
 
 To start `click here <http://first-python-notebook.readthedocs.io/en/latest/_static/prop-committees.csv>`_ to download a list of last November's 17 ballot measures and their affiliated fundraising committees.
 
