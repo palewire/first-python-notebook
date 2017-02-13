@@ -144,7 +144,7 @@ Windows users will need to download and install `this Microsoft package <https:/
 Act 1: Hello notebook
 ---------------------
 
-A `Jupyter Notebook <http://jupyter.org/>`_ is a browser application where you can write, run, remix and republish code. It is free software you can install and run like any other open-source library. It is used by scientists, scholars, investors and corporations to create and share their work.
+A `Jupyter Notebook <http://jupyter.org/>`_ is a browser application where you can write, run, remix and republish code. It is free software you can install and run like any other open-source library. It is used by `scientists <http://nbviewer.jupyter.org/github/robertodealmeida/notebooks/blob/master/earth_day_data_challenge/Analyzing%20whale%20tracks.ipynb>`_, `scholars <http://nbviewer.jupyter.org/github/nealcaren/workshop_2014/blob/master/notebooks/5_Times_API.ipynb>`_, `investors <https://github.com/rsvp/fecon235/blob/master/nb/fred-debt-pop.ipynb>`_ and corporations to create and share their work.
 
 It is also used by journalists to develop stories and show their work. Examples include:
 
