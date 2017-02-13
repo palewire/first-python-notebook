@@ -299,9 +299,8 @@ activate
 <div class="section" id="act-3-hello-data">
 <h2>Act 3: Hello data<a class="headerlink" href="#act-3-hello-data" title="Permalink to this headline">¶</a></h2>
 <p>Until last November, the use and sale of marijuana for recreational purposes was illegal in California. That changed when voters approved Proposition 64, which asked voters if the practice ought to be legalized. A &#8220;yes&#8221; vote supported legalization. A &#8220;no&#8221; vote opposed it. <a class="reference external" href="http://elections.cdn.sos.ca.gov/sov/2016-general/sov/65-ballot-measures-formatted.pdf">In the final tally</a>, 57% of voters said yes.</p>
-<p><a class="reference external" href="http://www.sos.ca.gov/campaign-lobbying/cal-access-resources/measure-contributions/marijuana-legalization-initiative-statute/">According to California&#8217;s Secretary of State</a>, approximately $23 million was raised to campaign in support of Prop. 64. Almost 2 million was raised to oppose it.</p>
 <p>Your mission, should you choose to accept it, is to analyze lists of campaign committees and contributors to figure out the biggest donors both for and against the measure.</p>
-<p>To start <a class="reference external" href="https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/_static/prop-committees.csv">click here</a> to download a list of last November&#8217;s 17 ballot measures and their affiliated fundraising committees.</p>
+<p>To start <a class="reference external" href="http://first-python-notebook.readthedocs.io/en/latest/_static/prop-committees.csv">click here</a> to download a list of last November&#8217;s 17 ballot measures and their affiliated fundraising committees.</p>
 <p>The data are structured in rows of comma-separated values. This is known as a CSV file. It is the most common way you will find data published online. Save the file with the name <code class="docutils literal"><span class="pre">prop-committees.csv</span></code> in the same directory where you made your notebook.</p>
 <p>Open the file in your notebook using the <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html">read_csv</a> function in <code class="docutils literal"><span class="pre">pandas</span></code>.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;prop-committees.csv&quot;</span><span class="p">)</span>
@@ -362,28 +361,39 @@ use all the time.</p>
 </div>
 <img alt="_images/prop_len.png" src="_images/prop_len.png" />
 <p>With that we&#8217;re ready to move on to a related, similar task: Importing all of the individual contributions reported to last year&#8217;s 17 ballot measures and filtering them down to just those supporting and opposing Proposition 64.</p>
+<p>We&#8217;re start by downloading <a class="reference external" href="http://first-python-notebook.readthedocs.io/en/latest/_static/contributions.csv">this second CSV file</a> and saving it to the same directory as this notebook with the name <code class="docutils literal"><span class="pre">contributions.csv</span></code>. We&#8217;ll then open it with <code class="docutils literal"><span class="pre">read_csv</span></code> and save it as a new variable just as we did above.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>The contributions file you&#8217;re downloading is an experimental early release from <a class="reference external" href="www.californiacivicdata.org">the California Civic Data Coalition&#8217;s effort</a> to streamline the state&#8217;s jumbled, dirty and disorganized official database. It has not yet been fully verified as accurate by our team and any conclusions you draw from it should be considered as provisional.</p>
+<p class="last">If you want to base a news report off the analysis you do here, you should take the additional step of comparing the numbers you produce against the official data <a class="reference external" href="http://cal-access.sos.ca.gov/">released by the Secretary of State</a>.</p>
+</div>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">contribs</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;contributions.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>TK</p>
+<p>Just as we did earlier, you can inspect the contents of this new file with the <code class="docutils literal"><span class="pre">head</span></code> method.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">contribs</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 <img alt="_images/contribs_head.png" src="_images/contribs_head.png" />
-<p>TK</p>
+<p>You should also inspect the columns using the <code class="docutils literal"><span class="pre">info</span></code> method. Running these two tricks whenever you open a new file is a good habit to develop so that you can carefully examine the data you&#8217;re about to work with.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">contribs</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
 <img alt="_images/contribs_info.png" src="_images/contribs_info.png" />
-<p>TK</p>
+<p>Our next job is to filter down this list, which include all disclosed contributions to all proposition campaigns, to just those linked to Proposition 64.</p>
+<p>We could try to do this with a filter, as we did above with the committees. But look carefully at the columns listed above in the contribution file&#8217;s <code class="docutils literal"><span class="pre">info</span></code> output. You will notice that this file contains a field called <code class="docutils literal"><span class="pre">calaccess_committee_id</span></code> that identical to the one found in the committee CSV.</p>
+<p>That&#8217;s because these two files are drawn from a <a class="reference external" href="https://en.wikipedia.org/wiki/Relational_database">&#8220;relational database&#8221;</a> that tracks a variety of information about campaigns using an array of tables linked by common identifiers. In this case, the unique identifying codes of committees in one table can be expected to match those found in another.</p>
+<p>We can therefore safely join the two files using the <cite>pandas</cite> <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.merge.html">merge</a> method. By default this method will return only those rows that have matching ids. That means that if we join the full contributions file to our filtered list of Proposition 64 committees, only the contributions to those committees will remain.</p>
+<p>Here&#8217;s how to do it. It&#8217;s as simple as passing both variables to <code class="docutils literal"><span class="pre">merge</span></code> and specifying which field we&#8217;d like to join. We will save the result into another new variable.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">contribs</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;calaccess_committee_id&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>TK</p>
+<p>That new <code class="docutils literal"><span class="pre">DataFrame</span></code> variable can inspected just as the ones above.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 <img alt="_images/merged_head.png" src="_images/merged_head.png" />
+<p>After all that we have created a new dataset that includes only contributions supporting and opposing Proposition 64. We&#8217;re ready to move on from preparing our data and begin our analysis.</p>
 </div>
 <div class="section" id="act-4-hello-analysis">
 <h2>Act 4: Hello analysis<a class="headerlink" href="#act-4-hello-analysis" title="Permalink to this headline">¶</a></h2>

@@ -244,11 +244,9 @@ Act 3: Hello data
 
 Until last November, the use and sale of marijuana for recreational purposes was illegal in California. That changed when voters approved Proposition 64, which asked voters if the practice ought to be legalized. A "yes" vote supported legalization. A "no" vote opposed it. `In the final tally <http://elections.cdn.sos.ca.gov/sov/2016-general/sov/65-ballot-measures-formatted.pdf>`_, 57% of voters said yes.
 
-`According to California's Secretary of State <http://www.sos.ca.gov/campaign-lobbying/cal-access-resources/measure-contributions/marijuana-legalization-initiative-statute/>`_, approximately $23 million was raised to campaign in support of Prop. 64. Almost 2 million was raised to oppose it.
-
 Your mission, should you choose to accept it, is to analyze lists of campaign committees and contributors to figure out the biggest donors both for and against the measure.
 
-To start `click here <https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/_static/prop-committees.csv>`_ to download a list of last November's 17 ballot measures and their affiliated fundraising committees.
+To start `click here <http://first-python-notebook.readthedocs.io/en/latest/_static/prop-committees.csv>`_ to download a list of last November's 17 ballot measures and their affiliated fundraising committees.
 
 The data are structured in rows of comma-separated values. This is known as a CSV file. It is the most common way you will find data published online. Save the file with the name ``prop-committees.csv`` in the same directory where you made your notebook.
 
@@ -350,11 +348,19 @@ The find out how many records are left after the filter, we can use Python's bui
 
 With that we're ready to move on to a related, similar task: Importing all of the individual contributions reported to last year's 17 ballot measures and filtering them down to just those supporting and opposing Proposition 64.
 
+We're start by downloading `this second CSV file <http://first-python-notebook.readthedocs.io/en/latest/_static/contributions.csv>`_ and saving it to the same directory as this notebook with the name ``contributions.csv``. We'll then open it with ``read_csv`` and save it as a new variable just as we did above.
+
+.. warning::
+
+    The contributions file you're downloading is an experimental early release from `the California Civic Data Coalition's effort <www.californiacivicdata.org>`_ to streamline the state's jumbled, dirty and disorganized official database. It has not yet been fully verified as accurate by our team and any conclusions you draw from it should be considered as provisional.
+
+    If you want to base a news report off the analysis you do here, you should take the additional step of comparing the numbers you produce against the official data `released by the Secretary of State <http://cal-access.sos.ca.gov/>`_.
+
 .. code-block:: python
 
     contribs = pandas.read_csv("contributions.csv")
 
-TK
+Just as we did earlier, you can inspect the contents of this new file with the ``head`` method.
 
 .. code-block:: python
 
@@ -362,7 +368,7 @@ TK
 
 .. image:: /_static/contribs_head.png
 
-TK
+You should also inspect the columns using the ``info`` method. Running these two tricks whenever you open a new file is a good habit to develop so that you can carefully examine the data you're about to work with.
 
 .. code-block:: python
 
@@ -370,13 +376,21 @@ TK
 
 .. image:: /_static/contribs_info.png
 
-TK
+Our next job is to filter down this list, which include all disclosed contributions to all proposition campaigns, to just those linked to Proposition 64.
+
+We could try to do this with a filter, as we did above with the committees. But look carefully at the columns listed above in the contribution file's ``info`` output. You will notice that this file contains a field called ``calaccess_committee_id`` that identical to the one found in the committee CSV.
+
+That's because these two files are drawn from a `"relational database" <https://en.wikipedia.org/wiki/Relational_database>`_ that tracks a variety of information about campaigns using an array of tables linked by common identifiers. In this case, the unique identifying codes of committees in one table can be expected to match those found in another.
+
+We can therefore safely join the two files using the `pandas` `merge <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.merge.html>`_ method. By default this method will return only those rows that have matching ids. That means that if we join the full contributions file to our filtered list of Proposition 64 committees, only the contributions to those committees will remain.
+
+Here's how to do it. It's as simple as passing both variables to ``merge`` and specifying which field we'd like to join. We will save the result into another new variable.
 
 .. code-block:: python
 
     merged = pandas.merge(prop, contribs, on="calaccess_committee_id")
 
-TK
+That new ``DataFrame`` variable can inspected just as the ones above.
 
 .. code-block:: python
 
@@ -384,6 +398,7 @@ TK
 
 .. image:: /_static/merged_head.png
 
+After all that we have created a new dataset that includes only contributions supporting and opposing Proposition 64. We're ready to move on from preparing our data and begin our analysis.
 
 Act 4: Hello analysis
 ---------------------
