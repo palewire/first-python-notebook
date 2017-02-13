@@ -37,7 +37,7 @@ The goal of the coalition's work is to make the data those reporters used easier
 About the authors
 -----------------
 
-This course was first developed by `Ben Welsh <http://palewi.re/who-is-ben-welsh/>`_ for a `Oct. 2, 2016, "watchdog workshop" organized by Investigative Reporters and Editors <http://www.californiacivicdata.org/2016/10/08/first-python-notebook/>`_ at San Diego State University's school of journalism. It was revised for a Feb. 14-16, 2017, hands-on training of students at Stanford's journalism school. It will be expanded for `a six-hour class <https://www.ire.org/events-and-training/event/2702/2879/>`_ at the annual conference of the National Institute for Computer-Assisted Reporting in March 2017.
+This course was first developed by `Ben Welsh <http://palewi.re/who-is-ben-welsh/>`_ for a Oct. 2, 2016, `"watchdog workshop" <http://www.californiacivicdata.org/2016/10/08/first-python-notebook/>`_ organized by Investigative Reporters and Editors at San Diego State University's school of journalism. It was revised for a Feb. 14-16, 2017, hands-on training of students at Stanford's journalism school. It will be expanded for `a six-hour class <https://www.ire.org/events-and-training/event/2702/2879/>`_ at the annual conference of the National Institute for Computer-Assisted Reporting in March 2017.
 
 Ben is the editor of the Data Desk, a team of reporters and programmers in the Los Angeles Times newsroom. He is also a co-founder of the California Civic Data Coalition.
 
