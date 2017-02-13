@@ -237,7 +237,7 @@ Lucky for us, Python is filled with functions to do pretty much anything you’d
 
 Some of those tools are included in a toolbox that comes with the language, known as the standard library. Others have been built by members of Python's developer community and need to be downloaded and installed from the web.
 
-For this exercise, we're going to install and use `pandas <http://pandas.pydata.org/>`_, a tool developed at a financial investment firm that has become the leading open-source tool for accessing and analyzing data.
+For this exercise, we're going to install and use `pandas <http://pandas.pydata.org/>`_, a tool developed at a financial investment firm that has become a leading open-source tool for accessing and analyzing data.
 
 We'll install pandas the same way we installed the Jupyter Notebook earlier: Our friend ``pip``. Save your notebook, switch to your window/command prompt and hit ``CTRL-C``. That will kill your notebook and return you to the command line. There we'll install pandas.
 
