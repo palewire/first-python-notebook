@@ -309,7 +309,7 @@ To get a look at all of the columns and what type of data they store, add anothe
 
 .. note::
 
-    As we continue through the lesson you should assume all of the code we write is in a new cell run separately from the previous line. Breaking up your code like this so you can run it bit by bit is one of the big advantages of the Jupyter Notebook.
+    As we continue through the lesson you should assume all of the code we write is in a new cell run separately from the previous line. Breaking up your code like this so you can run it bit by bit is one of the big advantages of the Jupyter Notebook. If you get an error after you run a cell, look carefully at your code and see that it exactly matches what's been written in the example. Once they match, try running it again. Don't worry, that kind of feedback loop is the workaday struggle of computer programming.
 
 .. code-block:: python
 
