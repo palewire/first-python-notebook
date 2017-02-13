@@ -82,6 +82,7 @@
                 <div class="local-toc"><ul>
 <li><a class="reference internal" href="#">First Python Notebook</a><ul>
 <li><a class="reference internal" href="#what-you-will-learn">What you will learn</a></li>
+<li><a class="reference internal" href="#about-the-data">About the data</a></li>
 <li><a class="reference internal" href="#about-the-authors">About the authors</a></li>
 <li><a class="reference internal" href="#prelude-prequisites">Prelude: Prequisites</a></li>
 <li><a class="reference internal" href="#act-1-hello-notebook">Act 1: Hello notebook</a></li>
@@ -145,9 +146,23 @@
 <p>You will learn how to record, remix and republish your analysis using the <a class="reference external" href="http://jupyter.org/">Jupyter Notebook</a>, a browser-based app for writing code that is emerging as the standard for sharing reproducible research in the sciences.</p>
 <p>And most important: you will see how these tools can increase the speed and veracity of your journalism.</p>
 </div>
+<div class="section" id="about-the-data">
+<h2>About the data<a class="headerlink" href="#about-the-data" title="Permalink to this headline">¶</a></h2>
+<p>The course is based on data provided by the <a class="reference external" href="http://www.californiacivicdata.org/">California Civic Data Coalition</a>, an open-source network of journalists and computer programmers working to ease access to the state&#8217;s jumbled, dirty and difficult database tracking money in politics.</p>
+<p>The state&#8217;s campaign and lobbying data has been used to develop insightful journalism like:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://articles.latimes.com/print/2007/oct/05/local/me-nunez5">Campaign cash gives Nunez rich travel style</a>, <cite>Los Angeles Times</cite>, Oct. 5, 2007</li>
+<li><a class="reference external" href="http://cironline.org/reports/california-speaker-gives-assemblys-juiciest-jobs-biggest-fundraisers-4501">California speaker gives Assembly&#8217;s juiciest jobs to biggest fundraiser</a>, <cite>Center for Investigative Reporting</cite>, May 15, 2013</li>
+<li><a class="reference external" href="http://www.latimes.com/local/politics/la-me-ff-pol-1101-proposition47-20141101-story.html">Prop. 47 puts state at center of a national push for sentencing reform</a>, <cite>Los Angeles Times</cite>, Nov. 1, 2014</li>
+<li><a class="reference external" href="http://www.sacbee.com/news/politics-government/capitol-alert/article80197182.html">Connecting the donor dots in California outside spending campaigns</a>, <cite>Sacramento Bee</cite>, May 26, 2016</li>
+<li><a class="reference external" href="http://www.mercurynews.com/2016/08/20/sacramentos-new-slush-funds-ballot-measure-committees/">Sacramento&#8217;s new &#8216;slush funds&#8217;: Ballot-measure committees</a>, <cite>San Jose Mercury News</cite>, Aug. 20, 2016</li>
+</ul>
+<p>The goal of the coalition&#8217;s work is to make the data those reporters used easier to access, understand and analyze. Learn more about the status of the project and the data you can download <a class="reference external" href="http://www.californiacivicdata.org/2016/09/15/website-launch/">here</a>.</p>
+</div>
 <div class="section" id="about-the-authors">
 <h2>About the authors<a class="headerlink" href="#about-the-authors" title="Permalink to this headline">¶</a></h2>
 <p>This course was first developed by <a class="reference external" href="http://palewi.re/who-is-ben-welsh/">Ben Welsh</a> for a <a class="reference external" href="http://www.californiacivicdata.org/2016/10/08/first-python-notebook/">Oct. 2, 2016, &#8220;watchdog workshop&#8221; organized by Investigative Reporters and Editors</a> at San Diego State University&#8217;s school of journalism. It was revised for a Feb. 14-16, 2017, hands-on training of students at Stanford&#8217;s journalism school. It will be expanded for <a class="reference external" href="https://www.ire.org/events-and-training/event/2702/2879/">a six-hour class</a> at the annual conference of the National Institute for Computer-Assisted Reporting in March 2017.</p>
+<p>Ben is the editor of the Data Desk, a team of reporters and programmers in the Los Angeles Times newsroom. He is also a co-founder of the California Civic Data Coalition.</p>
 </div>
 <div class="section" id="prelude-prequisites">
 <h2>Prelude: Prequisites<a class="headerlink" href="#prelude-prequisites" title="Permalink to this headline">¶</a></h2>
@@ -162,13 +177,13 @@
 <p class="first admonition-title">Warning</p>
 <p class="last">Stop and make sure you have all these tools installed and working properly. Otherwise, you&#8217;re not gonna have a good time.</p>
 </div>
-<div class="section" id="id1">
-<h3>Command-line interface<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3>Command-line interface<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>Unless something is wrong with your computer, there should be a way to open a window that lets you type in commands. Different operating systems give this tool slightly different names, but they all have some form of it, and there are alternative programs you can install as well.</p>
 <p>On Windows you can find the command-line interface by opening the &#8220;command prompt.&#8221; Here are instructions for <a class="reference external" href="http://www.howtogeek.com/235101/10-ways-to-open-the-command-prompt-in-windows-10/)andfor[Windows8](http://windows.microsoft.com/en-us/windows/command-prompt-faq#1TC=windows-8)and[earlierversions](http://windows.microsoft.com/en-us/windows-vista/open-a-command-prompt-window">Windows 10</a>. On Apple computers, you open the <a class="reference external" href="http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line">&#8220;Terminal&#8221; application</a>. Ubuntu Linux comes with a program of the <a class="reference external" href="http://askubuntu.com/questions/38162/what-is-a-terminal-and-how-do-i-open-and-use-it">same name</a>.</p>
 </div>
-<div class="section" id="id2">
-<h3>Python<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>Python<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="for-apples">
 <h4>For Apples<a class="headerlink" href="#for-apples" title="Permalink to this headline">¶</a></h4>
 <p>If you are using Mac OSX, Python version 2.7 is probably already installed and you can test to see what version, if any, is already available by typing the following into your terminal.</p>
@@ -222,16 +237,16 @@ sudo pip install virtualenv
 <div class="section" id="code-compiler">
 <h3>Code compiler<a class="headerlink" href="#code-compiler" title="Permalink to this headline">¶</a></h3>
 <p>A <a class="reference external" href="https://en.wikipedia.org/wiki/Compiler">code compiler</a> is a tool that lets your computer installed more advanced software. It is required to take advantage of the pandas data analysis library.</p>
-<div class="section" id="id6">
-<h4>For Apples<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id8">
+<h4>For Apples<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
 <p>If you are using Mac OSX, you need to have XCode, Apple&#8217;s developer kit that includes a tool for compiling heavy-duty software.</p>
 <p>You can make sure you&#8217;ve got it by running this on your command prompt.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>xcode-select --install
 </pre></div>
 </div>
 </div>
-<div class="section" id="id7">
-<h4>For Windows<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id9">
+<h4>For Windows<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
 <p>Windows users will need to download and install <a class="reference external" href="https://www.microsoft.com/en-us/download/details.aspx?id=44266">this Microsoft package</a>, a compiler that will allow us to install other Python tools later.</p>
 </div>
 </div>
