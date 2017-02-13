@@ -386,17 +386,23 @@ TK
 
     merged.sort_values("amount")
 
+.. image:: /_static/merged_sort.png
+
 TK
 
 .. code-block:: python
 
     merged.sort_values("amount", ascending=False)
 
+.. image:: /_static/merged_sort_desc.png
+
 TK
 
 .. code-block:: python
 
-    merged.sort_values("amount", ascending=False).head(10)
+    merged.sort_values("amount", ascending=False).head(5)
+
+.. image:: /_static/merged_sort_head.png
 
 TK
 
@@ -404,11 +410,15 @@ TK
 
     merged.amount
 
+.. image:: /_static/merged_amount.png
+
 TK
 
 .. code-block:: python
 
     merged.amount.sum()
+
+.. image:: /_static/merged_amount_sum.png
 
 TK
 
@@ -416,11 +426,15 @@ TK
 
     merged.committee_position
 
+.. image:: /_static/merged_position.png
+
 TK
 
 .. code-block:: python
 
     merged[merged.committee_position == 'SUPPORT']
+
+.. image:: /_static/support_filter.png
 
 TK
 
@@ -434,11 +448,15 @@ TK
 
     len(support)
 
+.. image:: /_static/support_len.png
+
 TK
 
 .. code-block:: python
 
-    support.sort_values("amount", ascending=False).head(10)
+    support.sort_values("amount", ascending=False).head(5)
+
+.. image:: /_static/support_sort.png
 
 TK
 
@@ -452,11 +470,15 @@ TK
 
     len(oppose)
 
+.. image:: /_static/oppose_len.png
+
 TK
 
 .. code-block:: python
 
     oppose.sort_values("amount", ascending=False).head(10)
+
+.. image:: /_static/oppose_sort.png
 
 TK
 
@@ -464,11 +486,15 @@ TK
 
     oppose.amount.sum()
 
+.. image:: /_static/oppose_amount_sum.png
+
 TK
 
 .. code-block:: python
 
     support.amount.sum()
+
+.. image:: /_static/support_amount_sum.png
 
 TK
 
@@ -476,11 +502,15 @@ TK
 
     support.amount.sum() / merged.amount.sum()
 
+.. image:: /_static/support_amount_percent.png
+
 TK
 
 .. code-block:: python
 
     merged.groupby("committee_name_x").amount.sum()
+
+.. image:: /_static/committee_group.png
 
 TK
 
@@ -488,11 +518,23 @@ TK
 
     merged.groupby("committee_name_x").amount.sum().reset_index()
 
+.. image:: /_static/committee_group_df.png
+
+TK
+
+.. code-block:: python
+
+    merged.groupby("committee_name_x").amount.sum().reset_index().sort_values("amount", ascending=False)
+
+.. image:: /_static/committee_group_sort.png
+
 TK
 
 .. code-block:: python
 
     merged.groupby(["contributor_firstname", "contributor_lastname"]).amount.sum().reset_index().sort_values("amount", ascending=False)
+
+.. image:: /_static/name_group.png
 
 TK
 
@@ -500,7 +542,10 @@ TK
 
     merged.groupby(["contributor_firstname", "contributor_lastname", "committee_position"]).amount.sum().reset_index().sort_values("amount", ascending=False)
 
+.. image:: /_static/name_position_group.png
+
 TK
+
 
 Act 5: Hello science
 --------------------
