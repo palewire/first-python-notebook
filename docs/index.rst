@@ -305,7 +305,7 @@ First, to preview the first few rows of the dataset, try the `head <http://panda
 
 .. image:: /_static/head.png
 
-To get a look at all of the columns and what type of data they store, try `info <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.info.html>`_.
+To get a look at all of the columns and what type of data they store, add another cell and try `info <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.info.html>`_.
 
 .. code-block:: python
 
