@@ -87,10 +87,9 @@
 <li><a class="reference internal" href="#prelude-prequisites">Prelude: Prequisites</a></li>
 <li><a class="reference internal" href="#act-1-hello-notebook">Act 1: Hello notebook</a></li>
 <li><a class="reference internal" href="#act-2-hello-pandas">Act 2: Hello pandas</a></li>
-<li><a class="reference internal" href="#act-3-hello-data">Act 3: Hello data</a></li>
-<li><a class="reference internal" href="#act-4-hello-analysis">Act 4: Hello analysis</a></li>
-<li><a class="reference internal" href="#act-5-hello-science">Act 5: Hello science</a></li>
-<li><a class="reference internal" href="#act-6-hello-internet">Act 6: Hello Internet</a></li>
+<li><a class="reference internal" href="#act-3-hello-analysis">Act 3: Hello analysis</a></li>
+<li><a class="reference internal" href="#act-4-hello-science">Act 4: Hello science</a></li>
+<li><a class="reference internal" href="#act-5-hello-internet">Act 5: Hello Internet</a></li>
 </ul>
 </li>
 </ul>
@@ -347,9 +346,7 @@ activate
 <p>Breaking up your code like this so you can run it bit by bit is one of the big advantages of the Jupyter Notebook. If you get an error after you run a cell, look carefully at your code and see that it exactly matches what&#8217;s been written in the example.</p>
 <p class="last">Once they match, try running it again. Don&#8217;t worry, that kind of feedback loop is the workaday struggle of computer programming.</p>
 </div>
-</div>
-<div class="section" id="act-3-hello-data">
-<h2>Act 3: Hello data<a class="headerlink" href="#act-3-hello-data" title="Permalink to this headline">¶</a></h2>
+<p>Now that we&#8217;ve got <code class="docutils literal"><span class="pre">pandas</span></code> loaded, let&#8217;s put it to work.</p>
 <p>Until last November, the use and sale of marijuana for recreational purposes was illegal in California. That changed when voters approved Proposition 64, which asked voters if the practice ought to be legalized. A yes vote supported legalization. A no vote opposed it. <a class="reference external" href="http://elections.cdn.sos.ca.gov/sov/2016-general/sov/65-ballot-measures-formatted.pdf">In the final tally</a>, 57% of voters said yes.</p>
 <p>Your mission, <a class="reference external" href="https://www.youtube.com/watch?v=0TiqXFssKMY">should you choose to accept it</a>, is to analyze lists of campaign committees and contributors to figure out the biggest donors both for and against the measure.</p>
 <p>To start <a class="reference external" href="http://first-python-notebook.readthedocs.io/en/latest/_static/prop-committees.csv">click here</a> to download a list of last November&#8217;s 17 ballot measures and their affiliated fundraising committees.</p>
@@ -447,8 +444,8 @@ use all the time.</p>
 <img alt="_images/merged_head.png" src="_images/merged_head.png" />
 <p>After all that we have created a new dataset that includes only contributions supporting and opposing Proposition 64. We&#8217;re ready to move on from preparing our data to interviewing it.</p>
 </div>
-<div class="section" id="act-4-hello-analysis">
-<h2>Act 4: Hello analysis<a class="headerlink" href="#act-4-hello-analysis" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="act-3-hello-analysis">
+<h2>Act 3: Hello analysis<a class="headerlink" href="#act-3-hello-analysis" title="Permalink to this headline">¶</a></h2>
 <p>In some ways, your database is no different from a human source. Getting a good story requires careful, thorough questioning. In this section we will move ahead by conducting an interview with <code class="docutils literal"><span class="pre">pandas</span></code> to pursue our quest of finding out the biggest donors to Proposition 64.</p>
 <p>Let&#8217;s start with something easy. What were the ten biggest contributions? We can find the answer by using the <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.sort_values.html">sort_values</a> method to rearrange our list using the <code class="docutils literal"><span class="pre">amount</span></code> field.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">)</span>
@@ -571,8 +568,8 @@ use all the time.</p>
 <li>Which committees had the fewest donors?</li>
 </ul>
 </div>
-<div class="section" id="act-5-hello-science">
-<h2>Act 5: Hello science<a class="headerlink" href="#act-5-hello-science" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="act-4-hello-science">
+<h2>Act 4: Hello science<a class="headerlink" href="#act-4-hello-science" title="Permalink to this headline">¶</a></h2>
 <p>After all this, you might be thinking &#8220;Computer programming sounds great, but couldn&#8217;t I have done it more efficiently in Excel?&#8221;</p>
 <p>Depending on how slick you are with a spreadsheet, the answer might be yes. With the exception of the <code class="docutils literal"><span class="pre">pandas</span></code> trick that merged the two files most of what we did could be achieved with filters and pivot tables taught in spreadsheet classes.</p>
 <p>However, for all their flexibility, one of the great weaknesses of working with spreadsheets is that the numerous steps that go into conducting a complex analysis have to be repeated each time, by hand, whenever you want to replicate your work.</p>
@@ -589,8 +586,8 @@ use all the time.</p>
 <p>Moments later, the notebook will repopulate with the answers to all of questions. This time it will be analyzing Prop 66 instead. Try doing that with Excel.</p>
 <p>That&#8217;s the end of our lesson for now. We&#8217;ll be working to expand it in the coming weeks as we prepare a longer version for the National Insitute of Computer-Assisted Reporting conference in Jacksonville. If you have any thoughts about how it could be improved or expanded, please email me at <a class="reference external" href="mailto:ben&#46;welsh&#37;&#52;&#48;gmail&#46;com">ben<span>&#46;</span>welsh<span>&#64;</span>gmail<span>&#46;</span>com</a>. You can learn more about our open-source effort to fix California&#8217;s cryptic campaign-finance database at <a class="reference external" href="http://www.californiacivicdata.org/">californiacivicdata.org</a>.</p>
 </div>
-<div class="section" id="act-6-hello-internet">
-<h2>Act 6: Hello Internet<a class="headerlink" href="#act-6-hello-internet" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="act-5-hello-internet">
+<h2>Act 5: Hello Internet<a class="headerlink" href="#act-5-hello-internet" title="Permalink to this headline">¶</a></h2>
 <p>In this act, we will publish your notebook to the Internet using <a class="reference external" href="http://www.github.com/">GitHub</a>, a social network for sharing and collaborating on code. GitHub is a platform frequently used by journalists and others to publish their notebooks. As listed above, examples include:</p>
 <ul class="simple">
 <li><a class="reference external" href="https://github.com/BuzzFeedNews/2016-01-tennis-betting-analysis/blob/master/notebooks/tennis-analysis.ipynb">&#8220;The Tennis Racket&#8221;</a> by BuzzFeed and the BBC</li>

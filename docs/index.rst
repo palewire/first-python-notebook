@@ -301,8 +301,7 @@ If you get an error message, return to the prequisites section above and make su
 
     Once they match, try running it again. Don't worry, that kind of feedback loop is the workaday struggle of computer programming.
 
-Act 3: Hello data
------------------
+Now that we've got ``pandas`` loaded, let's put it to work.
 
 Until last November, the use and sale of marijuana for recreational purposes was illegal in California. That changed when voters approved Proposition 64, which asked voters if the practice ought to be legalized. A yes vote supported legalization. A no vote opposed it. `In the final tally <http://elections.cdn.sos.ca.gov/sov/2016-general/sov/65-ballot-measures-formatted.pdf>`_, 57% of voters said yes.
 
@@ -321,7 +320,6 @@ Open the file in your notebook using the `read_csv <http://pandas.pydata.org/pan
 After you run the cell, you should see something like this.
 
 .. image:: /_static/read_csv.png
-
 
 It is a ``DataFrame`` where ``pandas`` has structured the CSV data into rows and columns, just like Excel or other spreadsheet software might. The advantage offered here is that rather than manipulating the data through a haphazard series of clicks and keypunches we will be gradually grinding down the data using a computer programming script that is 100% transparent and reproducible.
 
@@ -462,7 +460,7 @@ That new ``DataFrame`` variable can inspected just as the ones above.
 
 After all that we have created a new dataset that includes only contributions supporting and opposing Proposition 64. We're ready to move on from preparing our data to interviewing it.
 
-Act 4: Hello analysis
+Act 3: Hello analysis
 ---------------------
 
 In some ways, your database is no different from a human source. Getting a good story requires careful, thorough questioning. In this section we will move ahead by conducting an interview with ``pandas`` to pursue our quest of finding out the biggest donors to Proposition 64.
@@ -655,7 +653,7 @@ You've done it. Our brief interview is complete and you've answered the big ques
 - What are the top employers of donors who gave for and against the measure?
 - Which committees had the fewest donors?
 
-Act 5: Hello science
+Act 4: Hello science
 --------------------
 
 After all this, you might be thinking "Computer programming sounds great, but couldn't I have done it more efficiently in Excel?"
@@ -687,7 +685,7 @@ Moments later, the notebook will repopulate with the answers to all of questions
 That's the end of our lesson for now. We'll be working to expand it in the coming weeks as we prepare a longer version for the National Insitute of Computer-Assisted Reporting conference in Jacksonville. If you have any thoughts about how it could be improved or expanded, please email me at `ben.welsh@gmail.com <mailto:ben.welsh@gmail.com>`_. You can learn more about our open-source effort to fix California's cryptic campaign-finance database at `californiacivicdata.org <http://www.californiacivicdata.org/>`_.
 
 
-Act 6: Hello Internet
+Act 5: Hello Internet
 ---------------------
 
 In this act, we will publish your notebook to the Internet using `GitHub <http://www.github.com/>`_, a social network for sharing and collaborating on code. GitHub is a platform frequently used by journalists and others to publish their notebooks. As listed above, examples include:
