@@ -90,6 +90,7 @@
 <li><a class="reference internal" href="#act-3-hello-analysis">Act 3: Hello analysis</a></li>
 <li><a class="reference internal" href="#act-4-hello-science">Act 4: Hello science</a></li>
 <li><a class="reference internal" href="#act-5-hello-internet">Act 5: Hello Internet</a></li>
+<li><a class="reference internal" href="#epilogue-hello-charts">Epilogue: Hello charts</a></li>
 </ul>
 </li>
 </ul>
@@ -657,6 +658,78 @@ Hello world!
 </pre></div>
 </div>
 <p>Soon after your Markdown edits should appear on the GitHub site alongside your code.</p>
+</div>
+<div class="section" id="epilogue-hello-charts">
+<h2>Epilogue: Hello charts<a class="headerlink" href="#epilogue-hello-charts" title="Permalink to this headline">¶</a></h2>
+<p>Python has a number of charting tools that can work hand-in-hand with <code class="docutils literal"><span class="pre">pandas</span></code>. The most popular is <a class="reference external" href="http://matplotlib.org/">matplotlib</a>. It isn&#8217;t the prettiest thing in the world, but it offers straightfoward tools for exploring your data by making quick charts. And, best of all, it can display in your Jupyter Notebook.</p>
+<p>Before we start, we&#8217;ll need to make sure <code class="docutils literal"><span class="pre">matplotlib</span></code> is installed. Return to your terminal and try installing it with our buddy pip, as we installed other things before.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ pip install matplotlib
+</pre></div>
+</div>
+<p>After that completes, once again restart your notebook.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ jupyter notebook
+</pre></div>
+</div>
+<p>Now you can open your notebook and add a new cell below the imports that lets the system know you plan to make some charts and that it&#8217;s okay to surface them in the notebook.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+</pre></div>
+</div>
+<img alt="_images/matplotlib_inline.png" src="_images/matplotlib_inline.png" />
+<p>Now lets scroll down to the bottom of the notebook and pick up where we last left off in Act 4. As you may recall, we had rerun the notebook from the top with Proposition 66, the question of whether to end California&#8217;s death penalty.</p>
+<p>If we want to chart out the top supporters of the proposition, we first need to select them from the dataset. Using the grouping and sorting tricks we learned earlier, the top 10 can returned like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">top_supporters</span> <span class="o">=</span> <span class="n">support</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+    <span class="p">[</span><span class="s2">&quot;contributor_firstname&quot;</span><span class="p">,</span> <span class="s2">&quot;contributor_lastname&quot;</span><span class="p">]</span>
+<span class="p">)</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We can then view them with a trick I bet you remember by now.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">top_supporters</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/top_supporters_df.png" src="_images/top_supporters_df.png" />
+<p>Now that matplotlib is installed, making a simple chart is as simple as stringing the <code class="docutils literal"><span class="pre">plot</span></code> method onto the end of your <code class="docutils literal"><span class="pre">DataFrame</span></code>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">top_supporters</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="_images/bar.png" src="_images/bar.png" />
+<p>You can rotate the bar chart so that it is horizontal by subituting in the <code class="docutils literal"><span class="pre">barh</span></code> method.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">top_supporters</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">barh</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="_images/barh.png" src="_images/barh.png" />
+<p>The chart can be limited to the first five records by slipping in the <code class="docutils literal"><span class="pre">head</span></code> command.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">top_supporters</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">barh</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="_images/barh_head.png" src="_images/barh_head.png" />
+<p>What are those y axis labels? Those are the row number (pandas calls them indexes) of each row. We don&#8217;t want that. We want the names. We can swap them in by saving our chart to a variable and then using another matplotlib option, <code class="docutils literal"><span class="pre">set_yticklabels</span></code> to instruct the system which field to use.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">chart</span> <span class="o">=</span> <span class="n">top_supporters</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">barh</span><span class="p">()</span>
+<span class="n">chart</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">top_supporters</span><span class="o">.</span><span class="n">contributor_lastname</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/barh_lastname.png" src="_images/barh_lastname.png" />
+<p>Okay, but what if I want to combine the first and last name? We have the data we need in two separate columns, which we can put together simply by inventing a new field on our data frame and, just like a variable, setting it equal to a combination of the other fields.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">top_supporters</span><span class="p">[</span><span class="s1">&#39;contributor_fullname&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">top_supporters</span><span class="o">.</span><span class="n">contributor_firstname</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">top_supporters</span><span class="o">.</span><span class="n">contributor_lastname</span>
+</pre></div>
+</div>
+<p>We can see the results right here.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">top_supporters</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Now using that in the chart is as simple as substituting in the <code class="docutils literal"><span class="pre">set_yticklabels</span></code> method we used above.</p>
+<img alt="_images/fullname.png" src="_images/fullname.png" />
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">chart</span> <span class="o">=</span> <span class="n">top_supporters</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">barh</span><span class="p">()</span>
+<span class="n">chart</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">top_supporters</span><span class="o">.</span><span class="n">contributor_fullname</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/barh_fullname.png" src="_images/barh_fullname.png" />
+<p>That&#8217;s all well and good, but this chart is still pretty ugly. If you wanted to hand this data off to your graphics department, or try your hand at a simple chart yourself using something like <cite>Chartbuilder &lt;https://quartz.github.io/Chartbuilder/&gt;`_</cite>, you&#8217;d need to export this data into a spreadsheet.</p>
+<p>Guess what? It&#8217;s this easy.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">top_supporters</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;top_supporters.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And that&#8217;s it. You&#8217;ve completed this class. If you want to keep working, try inventing your own questions to ask and answer with the database, or find more information to analyze at <a class="reference external" href="http://www.californiacivicdata.org/">californiacivicdata.org</a>.</p>
+<p>If you have any questions or feedback on the class, please contact me at <a class="reference external" href="mailto:ben&#46;welsh&#37;&#52;&#48;gmail&#46;com">ben<span>&#46;</span>welsh<span>&#64;</span>gmail<span>&#46;</span>com</a>.</p>
 </div>
 </div>
 
