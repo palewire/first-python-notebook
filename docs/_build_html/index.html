@@ -90,6 +90,7 @@
 <li><a class="reference internal" href="#act-3-hello-data">Act 3: Hello data</a></li>
 <li><a class="reference internal" href="#act-4-hello-analysis">Act 4: Hello analysis</a></li>
 <li><a class="reference internal" href="#act-5-hello-science">Act 5: Hello science</a></li>
+<li><a class="reference internal" href="#act-6-hello-internet">Act 6: Hello Internet</a></li>
 </ul>
 </li>
 </ul>
@@ -182,8 +183,30 @@
 <p>Unless something is wrong with your computer, there should be a way to open a window that lets you type in commands. Different operating systems give this tool slightly different names, but they all have some form of it, and there are alternative programs you can install as well.</p>
 <p>On Windows you can find the command-line interface by opening the &#8220;command prompt.&#8221; Here are instructions for <a class="reference external" href="https://www.bleepingcomputer.com/tutorials/windows-command-prompt-introduction/">Windows</a>. On Apple computers, you open the <a class="reference external" href="http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line">&#8220;Terminal&#8221; application</a>. Ubuntu Linux comes with a program of the <a class="reference external" href="http://askubuntu.com/questions/38162/what-is-a-terminal-and-how-do-i-open-and-use-it">same name</a>.</p>
 </div>
-<div class="section" id="id3">
-<h3>Python<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="git-and-github">
+<h3>Git and GitHub<a class="headerlink" href="#git-and-github" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://git-scm.com/">Git</a> is a version control program for saving the changes
+you make to files over time. This is useful when you&#8217;re working on your own,
+but quickly becomes essential with large software projects, especially if you work with other developers.</p>
+<p><a class="reference external" href="https://github.com/">GitHub</a> is a website that hosts git code repositories, both public and private. It comes
+with many helpful tools for reviewing code and managing projects. It also has some
+<a class="reference external" href="http://pages.github.com/">extra tricks</a> that make it easy to publish web pages, which we will use later.</p>
+<p>GitHub offers helpful guides for installing Git in
+<a class="reference external" href="https://help.github.com/articles/set-up-git#platform-windows">Windows</a>,
+<a class="reference external" href="https://help.github.com/articles/set-up-git#platform-mac">Macs</a> and
+<a class="reference external" href="https://help.github.com/articles/set-up-git#platform-linux">Linux</a>. You can verify
+it&#8217;s installed from your command line like so:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># You don&#39;t have to type the &quot;$&quot; It&#39;s just a generic symbol</span>
+<span class="c1"># geeks use to show they&#39;re working on the command line.</span>
+$ git --version
+</pre></div>
+</div>
+<p>Once that&#8217;s done, you should create an account at GitHub, if you don&#8217;t already have one.
+It shouldn&#8217;t cost you anything. <a class="reference external" href="https://github.com/pricing">The free plan</a>
+is all that&#8217;s required to complete this lesson.</p>
+</div>
+<div class="section" id="id4">
+<h3>Python<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="for-apples">
 <h4>For Apples<a class="headerlink" href="#for-apples" title="Permalink to this headline">¶</a></h4>
 <p>If you are using Mac OSX, Python version 2.7 is probably already installed and you can test to see what version, if any, is already available by typing the following into your terminal.</p>
@@ -237,16 +260,16 @@ sudo pip install virtualenv
 <div class="section" id="code-compiler">
 <h3>Code compiler<a class="headerlink" href="#code-compiler" title="Permalink to this headline">¶</a></h3>
 <p>A <a class="reference external" href="https://en.wikipedia.org/wiki/Compiler">code compiler</a> is a tool that lets your computer installed more advanced software. It is required to take advantage of the pandas data analysis library.</p>
-<div class="section" id="id8">
-<h4>For Apples<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id9">
+<h4>For Apples<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
 <p>If you are using Mac OSX, you need to have XCode, Apple&#8217;s developer kit that includes a tool for compiling heavy-duty software.</p>
 <p>You can make sure you&#8217;ve got it by running this on your command prompt.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>xcode-select --install
 </pre></div>
 </div>
 </div>
-<div class="section" id="id9">
-<h4>For Windows<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id10">
+<h4>For Windows<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
 <p>Windows users will need to download and install <a class="reference external" href="https://www.microsoft.com/en-us/download/details.aspx?id=44266">this Microsoft package</a>, a compiler that will allow us to install other Python tools later.</p>
 <p>With all that done, you&#8217;re now ready to start the class.</p>
 </div>
@@ -565,6 +588,45 @@ use all the time.</p>
 <img alt="_images/run_all.png" src="_images/run_all.png" />
 <p>Moments later, the notebook will repopulate with the answers to all of questions. This time it will be analyzing Prop 66 instead. Try doing that with Excel.</p>
 <p>That&#8217;s the end of our lesson for now. We&#8217;ll be working to expand it in the coming weeks as we prepare a longer version for the National Insitute of Computer-Assisted Reporting conference in Jacksonville. If you have any thoughts about how it could be improved or expanded, please email me at <a class="reference external" href="mailto:ben&#46;welsh&#37;&#52;&#48;gmail&#46;com">ben<span>&#46;</span>welsh<span>&#64;</span>gmail<span>&#46;</span>com</a>. You can learn more about our open-source effort to fix California&#8217;s cryptic campaign-finance database at <a class="reference external" href="http://www.californiacivicdata.org/">californiacivicdata.org</a>.</p>
+</div>
+<div class="section" id="act-6-hello-internet">
+<h2>Act 6: Hello Internet<a class="headerlink" href="#act-6-hello-internet" title="Permalink to this headline">¶</a></h2>
+<p>In this act, we will publish your notebook to the Internet using <a class="reference external" href="http://www.github.com/">GitHub</a>, a social network for sharing and collaborating on code. GitHub is a platform frequently used by journalists and others to publish their notebooks. As listed above, examples include:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/BuzzFeedNews/2016-01-tennis-betting-analysis/blob/master/notebooks/tennis-analysis.ipynb">&#8220;The Tennis Racket&#8221;</a> by BuzzFeed and the BBC</li>
+<li><a class="reference external" href="https://github.com/datadesk/california-electricity-capacity-analysis/blob/master/analysis.ipynb">&#8220;Californians are paying billions for power they don&#8217;t need&#8221;</a> by the Los Angeles Times</li>
+<li><a class="reference external" href="https://github.com/propublica/compas-analysis/blob/master/Compas%20Analysis.ipynb">&#8220;Machine bias&#8221;</a> by ProPublica</li>
+</ul>
+<p>GitHub is an online extension of a command-line tool called <a class="reference external" href="https://git-scm.com/">git</a>, a free and open-source version control tool for tracking and managing changes to code.</p>
+<p>The first step in working with git is to convert a directory on your computer into a <a class="reference external" href="https://en.wikipedia.org/wiki/Repository_(version_control)">repository</a> that will have its contents tracked going forward. You do that by returning to your terminal, hitting the <code class="docutils literal"><span class="pre">CTRL-C</span></code> key combination to return the standard command line and entering the following.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ git init .
+</pre></div>
+</div>
+<p>That will instruct git to initialize a new repository in your current folder.</p>
+<p>Now visit <a class="reference external" href="http://www.github.com">GitHub</a> and create a new public repository named <code class="docutils literal"><span class="pre">first-python-notebook</span></code>. Don&#8217;t check &#8220;Initialize with README.&#8221; You want to start with a blank repository.</p>
+<p>Then connect your local directory to GitHub&#8217;s site with the following.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ git remote add origin https://github.com/&lt;yourusername&gt;/first-python-notebook.git
+</pre></div>
+</div>
+<p>Then officially add your notebook file to your repository for tracking with git&#8217;s <code class="docutils literal"><span class="pre">add</span></code> command.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># Using the &#39;*&#39; will add all files that end with ipynb, the notebook&#39;s standard file extension.</span>
+$ git add *.ipynb
+</pre></div>
+</div>
+<p>Log its addition with Git&#8217;s <code class="docutils literal"><span class="pre">commit</span></code> command. You can include a personalized message after the <code class="docutils literal"><span class="pre">-m</span></code> flag.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ git commit -m <span class="s2">&quot;First commit&quot;</span>
+</pre></div>
+</div>
+<p>If this is your first time using Git, you may be prompted to configure you name and email. If so, take the time now. Then run the <code class="docutils literal"><span class="pre">commit</span></code> command above again.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ git config --global user.email <span class="s2">&quot;your@email.com&quot;</span>
+$ git config --global user.name <span class="s2">&quot;your name&quot;</span>
+</pre></div>
+</div>
+<p>Now, finally, push your commit up to GitHub.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ git push origin master
+</pre></div>
+</div>
+<p>Reload your repository on GitHub and see your handiwork.</p>
 </div>
 </div>
 

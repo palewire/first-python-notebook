@@ -63,6 +63,34 @@ Unless something is wrong with your computer, there should be a way to open a wi
 On Windows you can find the command-line interface by opening the "command prompt." Here are instructions for `Windows <https://www.bleepingcomputer.com/tutorials/windows-command-prompt-introduction/>`_. On Apple computers, you open the `"Terminal" application <http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line>`_. Ubuntu Linux comes with a program of the `same name <http://askubuntu.com/questions/38162/what-is-a-terminal-and-how-do-i-open-and-use-it>`_.
 
 
+Git and GitHub
+~~~~~~~~~~~~~~
+
+`Git <http://git-scm.com/>`_ is a version control program for saving the changes
+you make to files over time. This is useful when you're working on your own,
+but quickly becomes essential with large software projects, especially if you work with other developers.
+
+`GitHub <https://github.com/>`_ is a website that hosts git code repositories, both public and private. It comes
+with many helpful tools for reviewing code and managing projects. It also has some
+`extra tricks <http://pages.github.com/>`_ that make it easy to publish web pages, which we will use later.
+
+GitHub offers helpful guides for installing Git in
+`Windows <https://help.github.com/articles/set-up-git#platform-windows>`_,
+`Macs <https://help.github.com/articles/set-up-git#platform-mac>`_ and
+`Linux <https://help.github.com/articles/set-up-git#platform-linux>`_. You can verify
+it's installed from your command line like so:
+
+.. code-block:: bash
+
+    # You don't have to type the "$" It's just a generic symbol
+    # geeks use to show they're working on the command line.
+    $ git --version
+
+Once that's done, you should create an account at GitHub, if you don't already have one.
+It shouldn't cost you anything. `The free plan <https://github.com/pricing>`_
+is all that's required to complete this lesson.
+
+
 Python
 ~~~~~~
 
@@ -657,3 +685,60 @@ Now pull down the ``Cell`` menu at the top of the notebook and select the ``Run 
 Moments later, the notebook will repopulate with the answers to all of questions. This time it will be analyzing Prop 66 instead. Try doing that with Excel.
 
 That's the end of our lesson for now. We'll be working to expand it in the coming weeks as we prepare a longer version for the National Insitute of Computer-Assisted Reporting conference in Jacksonville. If you have any thoughts about how it could be improved or expanded, please email me at `ben.welsh@gmail.com <mailto:ben.welsh@gmail.com>`_. You can learn more about our open-source effort to fix California's cryptic campaign-finance database at `californiacivicdata.org <http://www.californiacivicdata.org/>`_.
+
+
+Act 6: Hello Internet
+---------------------
+
+In this act, we will publish your notebook to the Internet using `GitHub <http://www.github.com/>`_, a social network for sharing and collaborating on code. GitHub is a platform frequently used by journalists and others to publish their notebooks. As listed above, examples include:
+
+
+* `"The Tennis Racket" <https://github.com/BuzzFeedNews/2016-01-tennis-betting-analysis/blob/master/notebooks/tennis-analysis.ipynb>`_ by BuzzFeed and the BBC
+* `"Californians are paying billions for power they don't need" <https://github.com/datadesk/california-electricity-capacity-analysis/blob/master/analysis.ipynb>`_ by the Los Angeles Times
+* `"Machine bias" <https://github.com/propublica/compas-analysis/blob/master/Compas%20Analysis.ipynb>`_ by ProPublica
+
+GitHub is an online extension of a command-line tool called `git <https://git-scm.com/>`_, a free and open-source version control tool for tracking and managing changes to code.
+
+The first step in working with git is to convert a directory on your computer into a `repository <https://en.wikipedia.org/wiki/Repository_(version_control)>`_ that will have its contents tracked going forward. You do that by returning to your terminal, hitting the ``CTRL-C`` key combination to return the standard command line and entering the following.
+
+.. code-block:: bash
+
+    $ git init .
+
+That will instruct git to initialize a new repository in your current folder.
+
+Now visit `GitHub <http://www.github.com>`_ and create a new public repository named ``first-python-notebook``. Don't check "Initialize with README." You want to start with a blank repository.
+
+Then connect your local directory to GitHub's site with the following.
+
+.. code-block:: bash
+
+    $ git remote add origin https://github.com/<yourusername>/first-python-notebook.git
+
+Then officially add your notebook file to your repository for tracking with git's ``add`` command.
+
+.. code-block:: bash
+
+    # Using the '*' will add all files that end with ipynb, the notebook's standard file extension.
+    $ git add *.ipynb
+
+Log its addition with Git's ``commit`` command. You can include a personalized message after the ``-m`` flag.
+
+.. code-block:: bash
+
+    $ git commit -m "First commit"
+
+If this is your first time using Git, you may be prompted to configure you name and email. If so, take the time now. Then run the ``commit`` command above again.
+
+.. code-block:: bash
+
+    $ git config --global user.email "your@email.com"
+    $ git config --global user.name "your name"
+
+Now, finally, push your commit up to GitHub.
+
+.. code-block:: bash
+
+    $ git push origin master
+
+Reload your repository on GitHub and see your handiwork.
