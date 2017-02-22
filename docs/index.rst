@@ -895,7 +895,7 @@ Now using that in the chart is as simple as substituting in the ``set_yticklabel
 
 .. image:: /_static/barh_fullname.png
 
-That's all well and good, but this chart is still pretty ugly. If you wanted to hand this data off to your graphics department, or try your hand at a simple chart yourself using something like `Chartbuilder <https://quartz.github.io/Chartbuilder/>`_`, you'd need to export this data into a spreadsheet.
+That's all well and good, but this chart is still pretty ugly. If you wanted to hand this data off to your graphics department, or try your hand at a simple chart yourself using something like `Chartbuilder <https://quartz.github.io/Chartbuilder/>`_, you'd need to export this data into a spreadsheet.
 
 Guess what? It's this easy.
 
