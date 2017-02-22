@@ -10,7 +10,7 @@ A step-by-step guide to analyzing data with Python and the Jupyter Notebook.
 What you will learn
 -------------------
 
-This three-hour tutorial will guide you through an investigation of money in politics using data from the `California Civic Data Coalition <http://www.californiacivicdata.org/>`_.
+This six-hour tutorial will guide you through an investigation of money in politics using data from the `California Civic Data Coalition <http://www.californiacivicdata.org/>`_.
 
 You will learn just enough Python to work with the powerful `pandas <http://pandas.pydata.org/>`_  data analysis library, a popular open-source tool for working with large data files. The course will teach you how to use pandas to read, filter, join, rank, group and aggregate structured data.
 
@@ -37,7 +37,7 @@ The goal of the coalition's work is to make the data those reporters used easier
 About the author
 ----------------
 
-This course was first developed by `Ben Welsh <http://palewi.re/who-is-ben-welsh/>`_ for a Oct. 2, 2016, `"watchdog workshop" <http://www.californiacivicdata.org/2016/10/08/first-python-notebook/>`_ organized by Investigative Reporters and Editors at San Diego State University's school of journalism. It was revised for a Feb. 14-16, 2017, hands-on training of students at Stanford's journalism school. It will be expanded for `a six-hour class <https://www.ire.org/events-and-training/event/2702/2879/>`_ at the annual conference of the National Institute for Computer-Assisted Reporting in March 2017.
+This course was first developed by `Ben Welsh <http://palewi.re/who-is-ben-welsh/>`_ for a Octobert 2016, `"watchdog workshop" <http://www.californiacivicdata.org/2016/10/08/first-python-notebook/>`_ organized by Investigative Reporters and Editors at San Diego State University's school of journalism. It was revised for a February 2017, hands-on training of students at Stanford's journalism school. It is scheduled to be taught `a six-hour class <https://www.ire.org/events-and-training/event/2702/2879/>`_ at the annual conference of the National Institute for Computer-Assisted Reporting in March 2017.
 
 Ben is the editor of the Data Desk, a team of reporters and programmers in the Los Angeles Times newsroom. He is also a co-founder of the California Civic Data Coalition.
 
