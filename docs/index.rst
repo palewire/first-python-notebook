@@ -74,17 +74,30 @@ but quickly becomes essential with large software projects, especially if you wo
 with many helpful tools for reviewing code and managing projects. It also has some
 `extra tricks <http://pages.github.com/>`_ that make it easy to publish web pages, which we will use later.
 
-GitHub offers helpful guides for installing Git in
+For this class you will need to have git installed and working from your command prompt.
+
+If you need to install git, you can learned how by following one of these guides for
 `Windows <https://help.github.com/articles/set-up-git#platform-windows>`_,
-`Macs <https://help.github.com/articles/set-up-git#platform-mac>`_ and
-`Linux <https://help.github.com/articles/set-up-git#platform-linux>`_. You can verify
-it's installed from your command line like so:
+`Mac <https://help.github.com/articles/set-up-git#platform-mac>`_ and
+`Linux <https://help.github.com/articles/set-up-git#platform-linux>`_ computers. Or you can try to download and install the program directly from its creators' `website <https://git-scm.com/>`_.
+
+After git is installed, you can verify it's working on your command prompt by entering the follow code and hitting the enter key:
 
 .. code-block:: bash
 
-    # You don't have to type the "$" It's just a generic symbol
-    # geeks use to show they're working on the command line.
     $ git --version
+
+.. note::
+
+    You'll note that the example above begins with a "$". You do not need to type this. It is only a generic symbol
+    commonly used by geeks to indicate a piece of code should be run from the command line. On Windows, this prompt could even look quite different, likely starting with a phrase like ``C:\``.
+
+If git is installed and working, you should see something like this:
+
+.. code-block:: bash
+
+    $ git --version
+    git version 2.9.3
 
 Once that's done, you should create an account at GitHub, if you don't already have one.
 It shouldn't cost you anything. `The free plan <https://github.com/pricing>`_
@@ -101,7 +114,7 @@ If you are using Mac OSX, Python version 2.7 is probably already installed and y
 
 .. code-block:: bash
 
-    python -V
+    $ python -V
 
 You should see something like this after you hit enter:
 

@@ -142,7 +142,7 @@
 <p>A step-by-step guide to analyzing data with Python and the Jupyter Notebook.</p>
 <div class="section" id="what-you-will-learn">
 <h2>What you will learn<a class="headerlink" href="#what-you-will-learn" title="Permalink to this headline">¶</a></h2>
-<p>This three-hour tutorial will guide you through an investigation of money in politics using data from the <a class="reference external" href="http://www.californiacivicdata.org/">California Civic Data Coalition</a>.</p>
+<p>This six-hour tutorial will guide you through an investigation of money in politics using data from the <a class="reference external" href="http://www.californiacivicdata.org/">California Civic Data Coalition</a>.</p>
 <p>You will learn just enough Python to work with the powerful <a class="reference external" href="http://pandas.pydata.org/">pandas</a>  data analysis library, a popular open-source tool for working with large data files. The course will teach you how to use pandas to read, filter, join, rank, group and aggregate structured data.</p>
 <p>You will learn how to record, remix and republish your analysis using the <a class="reference external" href="http://jupyter.org/">Jupyter Notebook</a>, a browser-based app for writing code that is emerging as the standard for sharing reproducible research in the sciences.</p>
 <p>And most important: you will see how these tools can increase the speed and veracity of your journalism.</p>
@@ -162,7 +162,7 @@
 </div>
 <div class="section" id="about-the-author">
 <h2>About the author<a class="headerlink" href="#about-the-author" title="Permalink to this headline">¶</a></h2>
-<p>This course was first developed by <a class="reference external" href="http://palewi.re/who-is-ben-welsh/">Ben Welsh</a> for a Oct. 2, 2016, <a class="reference external" href="http://www.californiacivicdata.org/2016/10/08/first-python-notebook/">&#8220;watchdog workshop&#8221;</a> organized by Investigative Reporters and Editors at San Diego State University&#8217;s school of journalism. It was revised for a Feb. 14-16, 2017, hands-on training of students at Stanford&#8217;s journalism school. It will be expanded for <a class="reference external" href="https://www.ire.org/events-and-training/event/2702/2879/">a six-hour class</a> at the annual conference of the National Institute for Computer-Assisted Reporting in March 2017.</p>
+<p>This course was first developed by <a class="reference external" href="http://palewi.re/who-is-ben-welsh/">Ben Welsh</a> for a Octobert 2016, <a class="reference external" href="http://www.californiacivicdata.org/2016/10/08/first-python-notebook/">&#8220;watchdog workshop&#8221;</a> organized by Investigative Reporters and Editors at San Diego State University&#8217;s school of journalism. It was revised for a February 2017, hands-on training of students at Stanford&#8217;s journalism school. It is scheduled to be taught <a class="reference external" href="https://www.ire.org/events-and-training/event/2702/2879/">a six-hour class</a> at the annual conference of the National Institute for Computer-Assisted Reporting in March 2017.</p>
 <p>Ben is the editor of the Data Desk, a team of reporters and programmers in the Los Angeles Times newsroom. He is also a co-founder of the California Civic Data Coalition.</p>
 </div>
 <div class="section" id="prelude-prequisites">
@@ -191,14 +191,23 @@ but quickly becomes essential with large software projects, especially if you wo
 <p><a class="reference external" href="https://github.com/">GitHub</a> is a website that hosts git code repositories, both public and private. It comes
 with many helpful tools for reviewing code and managing projects. It also has some
 <a class="reference external" href="http://pages.github.com/">extra tricks</a> that make it easy to publish web pages, which we will use later.</p>
-<p>GitHub offers helpful guides for installing Git in
+<p>For this class you will need to have git installed and working from your command prompt.</p>
+<p>If you need to install git, you can learned how by following one of these guides for
 <a class="reference external" href="https://help.github.com/articles/set-up-git#platform-windows">Windows</a>,
-<a class="reference external" href="https://help.github.com/articles/set-up-git#platform-mac">Macs</a> and
-<a class="reference external" href="https://help.github.com/articles/set-up-git#platform-linux">Linux</a>. You can verify
-it&#8217;s installed from your command line like so:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># You don&#39;t have to type the &quot;$&quot; It&#39;s just a generic symbol</span>
-<span class="c1"># geeks use to show they&#39;re working on the command line.</span>
-$ git --version
+<a class="reference external" href="https://help.github.com/articles/set-up-git#platform-mac">Mac</a> and
+<a class="reference external" href="https://help.github.com/articles/set-up-git#platform-linux">Linux</a> computers. Or you can try to download and install the program directly from its creators&#8217; <a class="reference external" href="https://git-scm.com/">website</a>.</p>
+<p>After git is installed, you can verify it&#8217;s working on your command prompt by entering the follow code and hitting the enter key:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ git --version
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You&#8217;ll note that the example above begins with a &#8220;$&#8221;. You do not need to type this. It is only a generic symbol
+commonly used by geeks to indicate a piece of code should be run from the command line. On Windows, this prompt could even look quite different, likely starting with a phrase like <code class="docutils literal"><span class="pre">C:\</span></code>.</p>
+</div>
+<p>If git is installed and working, you should see something like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ git --version
+git version <span class="m">2</span>.9.3
 </pre></div>
 </div>
 <p>Once that&#8217;s done, you should create an account at GitHub, if you don&#8217;t already have one.
@@ -210,7 +219,7 @@ is all that&#8217;s required to complete this lesson.</p>
 <div class="section" id="for-apples">
 <h4>For Apples<a class="headerlink" href="#for-apples" title="Permalink to this headline">¶</a></h4>
 <p>If you are using Mac OSX, Python version 2.7 is probably already installed and you can test to see what version, if any, is already available by typing the following into your terminal.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>python -V
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ python -V
 </pre></div>
 </div>
 <p>You should see something like this after you hit enter:</p>
@@ -723,7 +732,7 @@ Hello world!
 </pre></div>
 </div>
 <img alt="_images/barh_fullname.png" src="_images/barh_fullname.png" />
-<p>That&#8217;s all well and good, but this chart is still pretty ugly. If you wanted to hand this data off to your graphics department, or try your hand at a simple chart yourself using something like <cite>Chartbuilder &lt;https://quartz.github.io/Chartbuilder/&gt;`_</cite>, you&#8217;d need to export this data into a spreadsheet.</p>
+<p>That&#8217;s all well and good, but this chart is still pretty ugly. If you wanted to hand this data off to your graphics department, or try your hand at a simple chart yourself using something like <a class="reference external" href="https://quartz.github.io/Chartbuilder/">Chartbuilder</a>, you&#8217;d need to export this data into a spreadsheet.</p>
 <p>Guess what? It&#8217;s this easy.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">top_supporters</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;top_supporters.csv&quot;</span><span class="p">)</span>
 </pre></div>
