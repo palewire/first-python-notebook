@@ -76,7 +76,7 @@ with many helpful tools for reviewing code and managing projects. It also has so
 
 For this class you will need to have git installed and working from your command prompt.
 
-If you need to install git, you can learned how by following one of these guides for
+If you need to install git, you can learn how by following one of these guides for
 `Windows <https://help.github.com/articles/set-up-git#platform-windows>`_,
 `Mac <https://help.github.com/articles/set-up-git#platform-mac>`_ and
 `Linux <https://help.github.com/articles/set-up-git#platform-linux>`_ computers. Or you can try to download and install the program directly from its creators' `website <https://git-scm.com/>`_.
