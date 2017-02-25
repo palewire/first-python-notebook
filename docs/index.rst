@@ -47,9 +47,10 @@ Prelude: Prequisites
 Before you can begin, your computer needs the following tools installed and working to participate.
 
 1. A `command-line interface <https://en.wikipedia.org/wiki/Command-line_interface>`_ to interact with your computer
-2. Version 2.7 of the `Python <http://python.org/download/releases/2.7.6/>`_ programming language
-3. The `pip <https://pip.pypa.io/en/latest/installing.html>`_ package manager and `virtualenv <http://www.virtualenv.org/en/latest/>`_ environment manager for Python
-4. A code compiler that can install our heavy-duty analysis tools
+2. The git version control software and a GitHub account
+3. Version 2.7 of the `Python <http://python.org/download/releases/2.7.6/>`_ programming language
+4. The `pip <https://pip.pypa.io/en/latest/installing.html>`_ package manager and `virtualenv <http://www.virtualenv.org/en/latest/>`_ environment manager for Python
+5. A code compiler that can install our heavy-duty analysis tools
 
 .. warning::
 
@@ -155,7 +156,7 @@ Verify pip is installed with the following.
 
     pip -V
 
-If you don't have it already, you can get pip by following `these instructions <https://https://pip.pypa.io/en/latest/ip.pypa.io/en/latest/installing.html>`_.
+If you don't have it already, you can get pip by following `these instructions <https://pip.pypa.io/en/latest/installing/>`_.
 
 The `virtualenv environment manager <http://www.virtualenv.org/en/latest/>`_ makes it possible to create an isolated corner of your computer where all the different tools you use to build an application are sealed off.
 
