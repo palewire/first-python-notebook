@@ -236,7 +236,7 @@ Turn on the new virtualenv, which will instruct your terminal to only use those 
     . bin/activate
     # In Windows it might take something more like...
     cd Scripts
-    activate
+    . .\activate
     cd ..
 
 Use ``pip`` on the command line to install Jupyter Notebook.
