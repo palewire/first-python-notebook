@@ -90,7 +90,8 @@
 <li><a class="reference internal" href="#act-3-hello-analysis">Act 3: Hello analysis</a></li>
 <li><a class="reference internal" href="#act-4-hello-science">Act 4: Hello science</a></li>
 <li><a class="reference internal" href="#act-5-hello-internet">Act 5: Hello Internet</a></li>
-<li><a class="reference internal" href="#epilogue-hello-charts">Epilogue: Hello charts</a></li>
+<li><a class="reference internal" href="#act-6-hello-charts">Act 6: Hello charts</a></li>
+<li><a class="reference internal" href="#act-7-hello-cleaning">Act 7: Hello cleaning</a></li>
 </ul>
 </li>
 </ul>
@@ -170,6 +171,7 @@
 <p>Before you can begin, your computer needs the following tools installed and working to participate.</p>
 <ol class="arabic simple">
 <li>A <a class="reference external" href="https://en.wikipedia.org/wiki/Command-line_interface">command-line interface</a> to interact with your computer</li>
+<li>The git version control software and a GitHub account</li>
 <li>Version 2.7 of the <a class="reference external" href="http://python.org/download/releases/2.7.6/">Python</a> programming language</li>
 <li>The <a class="reference external" href="https://pip.pypa.io/en/latest/installing.html">pip</a> package manager and <a class="reference external" href="http://www.virtualenv.org/en/latest/">virtualenv</a> environment manager for Python</li>
 <li>A code compiler that can install our heavy-duty analysis tools</li>
@@ -192,7 +194,7 @@ but quickly becomes essential with large software projects, especially if you wo
 with many helpful tools for reviewing code and managing projects. It also has some
 <a class="reference external" href="http://pages.github.com/">extra tricks</a> that make it easy to publish web pages, which we will use later.</p>
 <p>For this class you will need to have git installed and working from your command prompt.</p>
-<p>If you need to install git, you can learned how by following one of these guides for
+<p>If you need to install git, you can learn how by following one of these guides for
 <a class="reference external" href="https://help.github.com/articles/set-up-git#platform-windows">Windows</a>,
 <a class="reference external" href="https://help.github.com/articles/set-up-git#platform-mac">Mac</a> and
 <a class="reference external" href="https://help.github.com/articles/set-up-git#platform-linux">Linux</a> computers. Or you can try to download and install the program directly from its creators&#8217; <a class="reference external" href="https://git-scm.com/">website</a>.</p>
@@ -250,7 +252,7 @@ Python <span class="m">2</span>.7.12
 <div class="highlight-bash"><div class="highlight"><pre><span></span>pip -V
 </pre></div>
 </div>
-<p>If you don&#8217;t have it already, you can get pip by following <a class="reference external" href="https://https://pip.pypa.io/en/latest/ip.pypa.io/en/latest/installing.html">these instructions</a>.</p>
+<p>If you don&#8217;t have it already, you can get pip by following <a class="reference external" href="https://pip.pypa.io/en/latest/installing/">these instructions</a>.</p>
 <p>The <a class="reference external" href="http://www.virtualenv.org/en/latest/">virtualenv environment manager</a> makes it possible to create an isolated corner of your computer where all the different tools you use to build an application are sealed off.</p>
 <p>It might not be obvious why you need this, but it quickly becomes important when you need to juggle different tools for different projects on one computer. By developing your applications inside separate virtualenv environments, you can use different versions of the same third-party Python libraries without a conflict. You can also more easily recreate your project on another machine, handy when you want to copy your code to a server that publishes pages on the Internet.</p>
 <p>You can check if virtualenv is installed with the following.</p>
@@ -306,7 +308,7 @@ sudo pip install virtualenv
 . bin/activate
 <span class="c1"># In Windows it might take something more like...</span>
 <span class="nb">cd</span> Scripts
-activate
+. .<span class="se">\a</span>ctivate
 <span class="nb">cd</span> ..
 </pre></div>
 </div>
@@ -442,7 +444,7 @@ use all the time.</p>
 <p>Our next job is to filter down this list, which includes all disclosed contributions to all proposition campaigns, to just those linked to Proposition 64.</p>
 <p>We could try to do this with a filter, as we did above with the committees. But look carefully at the columns listed above in the contribution file&#8217;s <code class="docutils literal"><span class="pre">info</span></code> output. You will notice that this file contains a field called <code class="docutils literal"><span class="pre">calaccess_committee_id</span></code> that is identical to the one found in the committee CSV.</p>
 <p>That&#8217;s because these two files are drawn from a <a class="reference external" href="https://en.wikipedia.org/wiki/Relational_database">&#8220;relational database&#8221;</a> that tracks a variety of information about campaigns using an array of tables linked by common identifiers. In this case, the unique identifying codes of committees in one table can be expected to match those found in another.</p>
-<p>We can therefore safely join the two files using the <code class="docutils literal"><span class="pre">`pandas</span></code> <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.merge.html">merge</a> method. By default this method will return only those rows with ids found in both tables. That means that if we join the full contributions file to our filtered list of Proposition 64 committees, only the contributions to the Proposition 64 committees will remain.</p>
+<p>We can therefore safely join the two files using the <code class="docutils literal"><span class="pre">pandas</span></code> <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.merge.html">merge</a> method. By default this method will return only those rows with ids found in both tables. That means that if we join the full contributions file to our filtered list of Proposition 64 committees, only the contributions to the Proposition 64 committees will remain.</p>
 <p>Here&#8217;s how to do it. It&#8217;s as simple as passing both variables to <code class="docutils literal"><span class="pre">merge</span></code> and specifying which field we&#8217;d like to join with. We will save the result into another new variable.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">contribs</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;calaccess_committee_id&quot;</span><span class="p">)</span>
 </pre></div>
@@ -668,8 +670,8 @@ Hello world!
 </div>
 <p>Soon after your Markdown edits should appear on the GitHub site alongside your code.</p>
 </div>
-<div class="section" id="epilogue-hello-charts">
-<h2>Epilogue: Hello charts<a class="headerlink" href="#epilogue-hello-charts" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="act-6-hello-charts">
+<h2>Act 6: Hello charts<a class="headerlink" href="#act-6-hello-charts" title="Permalink to this headline">¶</a></h2>
 <p>Python has a number of charting tools that can work hand-in-hand with <code class="docutils literal"><span class="pre">pandas</span></code>. The most popular is <a class="reference external" href="http://matplotlib.org/">matplotlib</a>. It isn&#8217;t the prettiest thing in the world, but it offers straightfoward tools for exploring your data by making quick charts. And, best of all, it can display in your Jupyter Notebook.</p>
 <p>Before we start, we&#8217;ll need to make sure <code class="docutils literal"><span class="pre">matplotlib</span></code> is installed. Return to your terminal and try installing it with our buddy pip, as we installed other things before.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ pip install matplotlib
@@ -684,7 +686,12 @@ Hello world!
 </pre></div>
 </div>
 <img alt="_images/matplotlib_inline.png" src="_images/matplotlib_inline.png" />
-<p>Now lets scroll down to the bottom of the notebook and pick up where we last left off in Act 4. As you may recall, we had rerun the notebook from the top with Proposition 66, the question of whether to end California&#8217;s death penalty.</p>
+<p>Let&#8217;s return to where we set our proposition filter at the top and restore it our initial interest, Proposition 64.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">prop</span> <span class="o">=</span> <span class="n">props</span><span class="p">[</span><span class="n">props</span><span class="o">.</span><span class="n">prop_name</span> <span class="o">==</span> <span class="s1">&#39;PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Now rerun the entire notebook, as we learned above. You will need to do this when you halt and restart your notebook on the command line. Reminder, you can do this by pulling down the <code class="docutils literal"><span class="pre">Cell</span></code> menu at the top of the notebook and selecting the <code class="docutils literal"><span class="pre">Run</span> <span class="pre">all</span></code> option.</p>
+<p>Then scroll down to the bottom of the notebook and pick up where we last left off in Act 4.</p>
 <p>If we want to chart out the top supporters of the proposition, we first need to select them from the dataset. Using the grouping and sorting tricks we learned earlier, the top 10 can returned like this:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">top_supporters</span> <span class="o">=</span> <span class="n">support</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
     <span class="p">[</span><span class="s2">&quot;contributor_firstname&quot;</span><span class="p">,</span> <span class="s2">&quot;contributor_lastname&quot;</span><span class="p">]</span>
@@ -737,6 +744,38 @@ Hello world!
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">top_supporters</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;top_supporters.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="act-7-hello-cleaning">
+<h2>Act 7: Hello cleaning<a class="headerlink" href="#act-7-hello-cleaning" title="Permalink to this headline">¶</a></h2>
+<p>You&#8217;ve probably noticed that top two supporters are the same person, <a class="reference external" href="https://en.wikipedia.org/wiki/Sean_Parker">Sean Parker</a>. However, due to variations in how the <code class="docutils literal"><span class="pre">contributor_lastname</span></code> and <code class="docutils literal"><span class="pre">contributor_firstname</span></code> fields were filled out on the disclosure forms his contributions were not combined during our earlier grouping.</p>
+<p>A common approach to correcting this issue is to create a new column where cleaned up version of names are be stored alongside the raw values from the public data. If two rows with different raw names are given an identical name in the clean column, that field can then be used to group the data and aggregate their data together.</p>
+<p>There are several different approaches to making that happen. In this introductory lesson we&#8217;re going to take a simplified approach that will also teach you a valuable skill: How to use panda&#8217;s <code class="docutils literal"><span class="pre">apply</span></code> method to generate a new column.</p>
+<p>The first step is to write a Python <a class="reference external" href="https://docs.python.org/2.0/ref/function.html">function</a>. A function is a fundamental tool shipped with Python that allows you to define a chunk of code that you can rerun later. A typical function will take an input and return a result based on what&#8217;s passed in each time it&#8217;s run.</p>
+<p>Functions are useful when you have a series of statements you want to run again and again. In our case, we&#8217;re going to write a function that can inspect any row in our data frame. If that row&#8217;s name field starts with the phrase <code class="docutils literal"><span class="pre">SEAN</span> <span class="pre">PARKER</span></code> we&#8217;re going to return a common clean name that all Sean Parker rows can share. If it doesn&#8217;t, we&#8217;re just going to return the raw name value.</p>
+<p>That looks like the code below. Create a new cell and run it there.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">combine_names</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">row</span><span class="o">.</span><span class="n">contributor_fullname</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;SEAN PARKER&#39;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;SEAN PARKER&#39;</span>
+    <span class="k">return</span> <span class="n">row</span><span class="o">.</span><span class="n">contributor_fullname</span>
+</pre></div>
+</div>
+<p>You know it&#8217;s a function because it starts with <code class="docutils literal"><span class="pre">def</span></code>. The name we&#8217;re giving the function, <code class="docutils literal"><span class="pre">combine_names</span></code> is what follows. Then a parenthesis that defines the input the function will expect each time it&#8217;s run. Since we&#8217;re going to run this function on every row in a <code class="docutils literal"><span class="pre">DataFrame</span></code>, we will only have one input and we will name it <code class="docutils literal"><span class="pre">row</span></code>.</p>
+<p>Now that we have our function, we&#8217;ll want to run it across our DataFrame and store the result for each row in a new column. In pandas this can be done for a <code class="docutils literal"><span class="pre">DataFrame</span></code> with the <code class="docutils literal"><span class="pre">apply</span></code> method. To run the method row by row, pandas requires you pass the number 1 into the <code class="docutils literal"><span class="pre">axis</span></code> option.</p>
+<p>top_supporters.apply(combine_names, axis=1)</p>
+<p>That will spit out a <code class="docutils literal"><span class="pre">Series</span></code> with the returned value for each row. Notice that the two Sean Parker rows are now identical.</p>
+<img alt="_images/apply-series.png" src="_images/apply-series.png" />
+<p>That <code class="docutils literal"><span class="pre">Series</span></code> can now be saved into a new column on the <code class="docutils literal"><span class="pre">DataFrame</span></code> by assigning it with a new name.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">top_supporters</span><span class="p">[</span><span class="s1">&#39;contributor_cleanname&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">top_supporters</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">combine_names</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now you can regroup the data using this new column and total the columns again, exactly as we did before.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">top_supporters</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+    <span class="s2">&quot;contributor_cleanname&quot;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The money previously split between two variations on Sean Parker&#8217;s name are now combined. You could not remake the charts above without the duplication.</p>
+<img alt="_images/apply-group.png" src="_images/apply-group.png" />
 <p>And that&#8217;s it. You&#8217;ve completed this class. If you want to keep working, try inventing your own questions to ask and answer with the database, or find more information to analyze at <a class="reference external" href="http://www.californiacivicdata.org/">californiacivicdata.org</a>.</p>
 <p>If you have any questions or feedback on the class, please contact me at <a class="reference external" href="mailto:ben&#46;welsh&#37;&#52;&#48;gmail&#46;com">ben<span>&#46;</span>welsh<span>&#64;</span>gmail<span>&#46;</span>com</a>.</p>
 </div>
