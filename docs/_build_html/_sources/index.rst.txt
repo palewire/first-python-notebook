@@ -952,7 +952,9 @@ You know it's a function because it starts with ``def``. The name we're giving t
 
 Now that we have our function, we'll want to run it across our DataFrame and store the result for each row in a new column. In pandas this can be done for a ``DataFrame`` with the ``apply`` method. To run the method row by row, pandas requires you pass the number 1 into the ``axis`` option.
 
-top_supporters.apply(combine_names, axis=1)
+.. code-block:: python
+
+    top_supporters.apply(combine_names, axis=1)
 
 That will spit out a ``Series`` with the returned value for each row. Notice that the two Sean Parker rows are now identical.
 

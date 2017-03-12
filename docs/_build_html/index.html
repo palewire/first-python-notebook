@@ -761,7 +761,9 @@ Hello world!
 </div>
 <p>You know it&#8217;s a function because it starts with <code class="docutils literal"><span class="pre">def</span></code>. The name we&#8217;re giving the function, <code class="docutils literal"><span class="pre">combine_names</span></code> is what follows. Then a parenthesis that defines the input the function will expect each time it&#8217;s run. Since we&#8217;re going to run this function on every row in a <code class="docutils literal"><span class="pre">DataFrame</span></code>, we will only have one input and we will name it <code class="docutils literal"><span class="pre">row</span></code>.</p>
 <p>Now that we have our function, we&#8217;ll want to run it across our DataFrame and store the result for each row in a new column. In pandas this can be done for a <code class="docutils literal"><span class="pre">DataFrame</span></code> with the <code class="docutils literal"><span class="pre">apply</span></code> method. To run the method row by row, pandas requires you pass the number 1 into the <code class="docutils literal"><span class="pre">axis</span></code> option.</p>
-<p>top_supporters.apply(combine_names, axis=1)</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">top_supporters</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">combine_names</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
 <p>That will spit out a <code class="docutils literal"><span class="pre">Series</span></code> with the returned value for each row. Notice that the two Sean Parker rows are now identical.</p>
 <img alt="_images/apply-series.png" src="_images/apply-series.png" />
 <p>That <code class="docutils literal"><span class="pre">Series</span></code> can now be saved into a new column on the <code class="docutils literal"><span class="pre">DataFrame</span></code> by assigning it with a new name.</p>
