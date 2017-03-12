@@ -974,7 +974,7 @@ Now you can regroup the data using this new column and total the columns again, 
         "contributor_cleanname"
     ).amount.sum().reset_index().sort_values("amount", ascending=False).head(10)
 
-The money previously split between two variations on Sean Parker's name are now combined. You could not remake the charts above without the duplication.
+The money previously split between two variations on Sean Parker's name are now combined. You could now remake the charts above without the duplication.
 
 .. image:: /_static/apply-group.png
 
