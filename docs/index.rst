@@ -966,6 +966,8 @@ That ``Series`` can now be saved into a new column on the ``DataFrame`` by assig
 
     top_supporters['contributor_cleanname'] = top_supporters.apply(combine_names, axis=1)
 
+This same approach could be used to add new columns that do all kinds of things. One common trick is to use the apply method and a function to divide one column into another, or some other mathematical computation.
+
 Now you can regroup the data using this new column and total the columns again, exactly as we did before.
 
 .. code-block:: python

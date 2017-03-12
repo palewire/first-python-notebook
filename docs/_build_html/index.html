@@ -770,6 +770,7 @@ Hello world!
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">top_supporters</span><span class="p">[</span><span class="s1">&#39;contributor_cleanname&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">top_supporters</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">combine_names</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>This same approach could be used to add new columns that do all kinds of things. One common trick is to use the apply method and a function to divide one column into another, or some other mathematical computation.</p>
 <p>Now you can regroup the data using this new column and total the columns again, exactly as we did before.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">top_supporters</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
     <span class="s2">&quot;contributor_cleanname&quot;</span>
