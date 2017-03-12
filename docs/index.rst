@@ -931,7 +931,7 @@ Act 7: Hello cleaning
 
 You've probably noticed that top two supporters are the same person, `Sean Parker <https://en.wikipedia.org/wiki/Sean_Parker>`_. However, due to variations in how the ``contributor_lastname`` and ``contributor_firstname`` fields were filled out on the disclosure forms his contributions were not combined during our earlier grouping.
 
-A common approach to correcting this issue is to create a new column where the cleaned up version of names are stored alongside the raw values from the public data. If two rows with different raw names are given an identical name in the clean column, that field can then be used to group the data and aggregate their data together.
+A common approach to correcting this issue is to create a new column where the cleaned up version of names are stored alongside the raw values from the public data. If two rows with different raw names are given an identical name in the clean column, that field can then be used to group the data and aggregate their contributions together.
 
 There are several different approaches to making that happen. In this introductory lesson we're going to take a simplified approach that will also teach you a valuable skill: How to use panda's ``apply`` method to generate a new column.
 
