@@ -18,7 +18,7 @@ You will also learn how to record, remix and republish your analysis using the `
 
 ***************
 Who can take it
-***************
+*************** 
 
 This course is free. If you've tried Python once or twice, have good attitude and know how to take a few code crashes in stride, you are qualified. But before you begin be sure to review the :doc:`prerequisites </prerequisites/index>`.
 

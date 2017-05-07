@@ -24,7 +24,7 @@
 
   
   
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
   
 
   
@@ -34,7 +34,8 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="First Python Notebook  documentation" href="../index.html"/>
-        <link rel="up" title="Prelude: Prerequisites" href="index.html"/>
+        <link rel="up" title="Prologue: Prerequisites" href="index.html"/>
+        <link rel="next" title="Python" href="python.html"/>
         <link rel="prev" title="Command-line interface" href="cli.html"/> 
 
   
@@ -80,15 +81,25 @@
           
             
             
-                <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Prelude: Prerequisites</a><ul class="current">
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Prologue: Prerequisites</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="cli.html">Command-line interface</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Git</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id1">Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#pip-and-virtualenv">pip and virtualenv</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#code-compiler">Code compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pip.html">pip and virtualenv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtualenv.html">virtualenv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compiler.html">Code compiler</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../notebook/index.html">Chapter 1: Hello notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pandas/index.html">Chapter 2: Hello pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/index.html">Chapter 3: Hello analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../science/index.html">Chapter 4: Hello science</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internet/index.html">Chapter 5: Hello Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 6: Hello charts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cleaning/index.html">Chapter 7: Hello cleaning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/index.html">About the author</a></li>
 </ul>
 
             
@@ -119,7 +130,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-          <li><a href="index.html">Prelude: Prerequisites</a> &raquo;</li>
+          <li><a href="index.html">Prologue: Prerequisites</a> &raquo;</li>
       
     <li>Git</li>
       <li class="wy-breadcrumbs-aside">
@@ -140,28 +151,23 @@
 <p><a class="reference external" href="http://git-scm.com/">Git</a> is a version control program for saving the changes
 you make to files over time. This is useful when you&#8217;re working on your own,
 but quickly becomes essential with large software projects, especially if you work with other developers.</p>
-<p><a class="reference external" href="https://github.com/">GitHub</a> is a website that hosts git code repositories, both public and private. It comes
-with many helpful tools for reviewing code and managing projects. It also has some
-<a class="reference external" href="http://pages.github.com/">extra tricks</a> that make it easy to publish web pages, which we will use later.</p>
 <p>For this class you will need to have git installed and working from your command prompt.</p>
-<p>If you need to install git, you can learn how by following one of these guides for
-<a class="reference external" href="https://help.github.com/articles/set-up-git#platform-windows">Windows</a>,
-<a class="reference external" href="https://help.github.com/articles/set-up-git#platform-mac">Mac</a> and
-<a class="reference external" href="https://help.github.com/articles/set-up-git#platform-linux">Linux</a> computers. Or you can try to download and install the program directly from its creators&#8217; <a class="reference external" href="https://git-scm.com/">website</a>.</p>
-<p>After git is installed, you can verify it&#8217;s working on your command prompt by entering the follow code and hitting the enter key:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ git --version
+<p>You can verify it&#8217;s working on terminal by entering the follow code and hitting the enter key:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>git --version
 </pre></div>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">You&#8217;ll note that the example above begins with a &#8220;$&#8221;. You do not need to type this. It is only a generic symbol
-commonly used by geeks to indicate a piece of code should be run from the command line. On Windows, this prompt could even look quite different, likely starting with a phrase like <code class="docutils literal"><span class="pre">C:\</span></code>.</p>
 </div>
 <p>If git is installed and working, you should see something like this:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ git --version
-git version <span class="m">2</span>.9.3
+<div class="highlight-bash"><div class="highlight"><pre><span></span>git version <span class="m">2</span>.9.3
 </pre></div>
 </div>
+<p>If you don&#8217;t have it installed, here&#8217;s how to do it on Windows.</p>
+<iframe src="http://www.youtube.com/embed/F_CjRyoa45A"     width="560" height="315" frameborder="0"     webkitAllowFullScreen mozallowfullscreen allowfullscreen class="youtube"></iframe><br><ol class="arabic simple">
+<li>Verify the git is not already installed on the command prompt.</li>
+<li>Download the installer from <a class="reference external" href="https://git-for-windows.github.io/">git-for-windows.github.io</a>.</li>
+<li>Run the installer, accepting all of the default options.</li>
+<li>Return to the command prompt and verify git is now installed.</li>
+</ol>
+<p>And here&#8217;s how on Mac OSX:</p>
 </div>
 
 
@@ -170,6 +176,8 @@ git version <span class="m">2</span>.9.3
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="python.html" class="btn btn-neutral float-right" title="Python" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="cli.html" class="btn btn-neutral" title="Command-line interface" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
