@@ -1,5 +1,6 @@
-pip and virtualenv
-~~~~~~~~~~~~~~~~~~
+===
+pip
+===
 
 The `pip package manager <https://pip.pypa.io/en/latest/>`_ makes it easy to install open-source libraries that expand what you're able to do with Python. Later, we will use it to install everything needed to create a working web application.
 

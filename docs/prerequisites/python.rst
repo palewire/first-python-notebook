@@ -1,6 +1,6 @@
-
+======
 Python
-~~~~~~
+======
 
 For Apples
 ^^^^^^^^^^
@@ -37,4 +37,4 @@ You should see something like this after you hit enter:
     Python 2.7.12
 
 
-If not Windows users can find a similar installation guide `here <http://docs.python-guide.org/en/latest/starting/install/win/>`_ which will have you try downloading and installing Python from `here <https://www.python.org/downloads/release/python-2712/>`_. After that's done, ensure Python is installed by reopening the command prompt and running the command above again.  
+If not Windows users can find a similar installation guide `here <http://docs.python-guide.org/en/latest/starting/install/win/>`_ which will have you try downloading and installing Python from `here <https://www.python.org/downloads/release/python-2712/>`_. After that's done, ensure Python is installed by reopening the command prompt and running the command above again.

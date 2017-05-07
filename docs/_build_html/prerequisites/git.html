@@ -87,7 +87,7 @@
 <li class="toctree-l2"><a class="reference internal" href="cli.html">Command-line interface</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Git</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python.html">Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pip.html">pip and virtualenv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pip.html">pip</a></li>
 <li class="toctree-l2"><a class="reference internal" href="virtualenv.html">virtualenv</a></li>
 <li class="toctree-l2"><a class="reference internal" href="compiler.html">Code compiler</a></li>
 </ul>
@@ -161,12 +161,17 @@ but quickly becomes essential with large software projects, especially if you wo
 </pre></div>
 </div>
 <p>If you don&#8217;t have it installed, here&#8217;s how to do it on Windows.</p>
-<iframe src="http://www.youtube.com/embed/F_CjRyoa45A"     width="560" height="315" frameborder="0"     webkitAllowFullScreen mozallowfullscreen allowfullscreen class="youtube"></iframe><br><ol class="arabic simple">
+<div class="embed-container"><iframe src="http://www.youtube.com/embed/F_CjRyoa45A"     width="560" height="315" frameborder="0"     webkitAllowFullScreen mozallowfullscreen allowfullscreen class="youtube"></iframe></div><ol class="arabic simple">
 <li>Verify the git is not already installed on the command prompt.</li>
 <li>Download the installer from <a class="reference external" href="https://git-for-windows.github.io/">git-for-windows.github.io</a>.</li>
 <li>Run the installer, accepting all of the default options.</li>
 <li>Return to the command prompt and verify git is now installed.</li>
+<li>Configure git with your identity with these two commands:</li>
 </ol>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>git config --global user.email <span class="s2">&quot;your@email.com&quot;</span>
+git config --global user.name <span class="s2">&quot;your name&quot;</span>
+</pre></div>
+</div>
 <p>And here&#8217;s how on Mac OSX:</p>
 </div>
 
