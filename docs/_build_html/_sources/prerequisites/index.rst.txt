@@ -3,7 +3,7 @@
 Prologue: Prerequisites
 -----------------------
 
-Before you can begin, your computer needs the following tools installed and working to participate.
+Your computer needs the following tools installed and working to participate:
 
 .. toctree::
    :maxdepth: 1
