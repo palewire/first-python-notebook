@@ -1,0 +1,210 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Chapter 4: Hello science &mdash; First Python Notebook  documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="First Python Notebook  documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> First Python Notebook
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../prerequisites/index.html">Prologue: Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebook/index.html">Chapter 1: Hello notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pandas/index.html">Chapter 2: Hello pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/index.html">Chapter 3: Hello analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/index.html">About the author</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">First Python Notebook</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Chapter 4: Hello science</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/science/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="chapter-4-hello-science">
+<h1>Chapter 4: Hello science<a class="headerlink" href="#chapter-4-hello-science" title="Permalink to this headline">¶</a></h1>
+<p>After all this, you might be thinking &#8220;Computer programming sounds great, but couldn&#8217;t I have done it more efficiently in Excel?&#8221;</p>
+<p>Depending on how slick you are with a spreadsheet, the answer might be yes. With the exception of the <code class="docutils literal"><span class="pre">pandas</span></code> trick that merged the two files most of what we did could be achieved with filters and pivot tables taught in spreadsheet classes.</p>
+<p>However, for all their flexibility, one of the great weaknesses of working with spreadsheets is that the numerous steps that go into conducting a complex analysis have to be repeated each time, by hand, whenever you want to replicate your work.</p>
+<p>For this reason, some scientific projects that aim for transparency and reproducibility are now requiring that each step in a data analysis be documented in a Jupyter Notebook.</p>
+<p>That&#8217;s good for its own sake and will help catch errors during pre-publication review, but it has a huge added benefit. At any time you can slightly modify your code and rerun the entire thing from the start.</p>
+<p>In this case it means we could instantly reproduce our analysis for each of the 17 ballot measures and conduct a similar data interview in a matter of seconds.</p>
+<p>To give it a try, scroll back up to the stop of the notebook and reexamine the list of unique propositions we output with the <code class="docutils literal"><span class="pre">value_counts</span></code> method. You can pick any of them. For this example I am going to pick Proposition 66, which sought (and failed) to end California&#8217;s death penalty.</p>
+<p>Copy the proposition&#8217;s full name and replace Proposition 64&#8217;s name in the nearby cell where we created the <code class="docutils literal"><span class="pre">prop</span></code> variable.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">prop</span> <span class="o">=</span> <span class="n">props</span><span class="p">[</span><span class="n">props</span><span class="o">.</span><span class="n">prop_name</span> <span class="o">==</span> <span class="s1">&#39;PROPOSITION 066- DEATH PENALTY. PROCEDURES. INITIATIVE STATUTE.&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Now pull down the <code class="docutils literal"><span class="pre">Cell</span></code> menu at the top of the notebook and select the <code class="docutils literal"><span class="pre">Run</span> <span class="pre">all</span></code> option.</p>
+<img alt="../_images/run_all.png" src="../_images/run_all.png" />
+<p>Moments later, the notebook will repopulate with the answers to all of questions. This time it will be analyzing Prop 66 instead. Try doing that with Excel.</p>
+<p>That&#8217;s the end of our lesson for now. We&#8217;ll be working to expand it in the coming weeks as we prepare a longer version for the National Insitute of Computer-Assisted Reporting conference in Jacksonville. If you have any thoughts about how it could be improved or expanded, please email me at <a class="reference external" href="mailto:ben&#46;welsh&#37;&#52;&#48;gmail&#46;com">ben<span>&#46;</span>welsh<span>&#64;</span>gmail<span>&#46;</span>com</a>. You can learn more about our open-source effort to fix California&#8217;s cryptic campaign-finance database at <a class="reference external" href="http://www.californiacivicdata.org/">californiacivicdata.org</a>.</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Ben Welsh and the California Civic Data Coalition.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+==========
+virtualenv
+==========
+
+The `virtualenv environment manager <http://www.virtualenv.org/en/latest/>`_ makes it possible to create an isolated corner of your computer where all the different tools you use to build an application are sealed off.
+
+It might not be obvious why you need this, but it quickly becomes important when you need to juggle different tools for different projects on one computer. By developing your applications inside separate virtualenv environments, you can use different versions of the same third-party Python libraries without a conflict. You can also more easily recreate your project on another machine, handy when you want to copy your code to a server that publishes pages on the Internet.
+
+You can check if virtualenv is installed with the following.
+
+.. code-block:: bash
+
+    virtualenv --version
+
+If you don't have it, install it with pip.
+
+.. code-block:: bash
+
+    pip install virtualenv
+    # If you're on a Mac or Linux and get an error saying you lack permissions,
+    # try again as a superuser.
+    sudo pip install virtualenv
+
+
+If that doesn't work, `try following this advice <http://virtualenv.readthedocs.org/en/latest/installation.html>`_.

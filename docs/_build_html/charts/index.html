@@ -1,0 +1,267 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Chapter 6: Hello charts &mdash; First Python Notebook  documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="First Python Notebook  documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> First Python Notebook
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../prerequisites/index.html">Prologue: Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebook/index.html">Chapter 1: Hello notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pandas/index.html">Chapter 2: Hello pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../analysis/index.html">Chapter 3: Hello analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/index.html">About the author</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">First Python Notebook</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Chapter 6: Hello charts</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/charts/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="chapter-6-hello-charts">
+<h1>Chapter 6: Hello charts<a class="headerlink" href="#chapter-6-hello-charts" title="Permalink to this headline">¶</a></h1>
+<p>Python has a number of charting tools that can work hand-in-hand with <code class="docutils literal"><span class="pre">pandas</span></code>. The most popular is <a class="reference external" href="http://matplotlib.org/">matplotlib</a>. It isn&#8217;t the prettiest thing in the world, but it offers straightfoward tools for exploring your data by making quick charts. And, best of all, it can display in your Jupyter Notebook.</p>
+<p>Before we start, we&#8217;ll need to make sure <code class="docutils literal"><span class="pre">matplotlib</span></code> is installed. Return to your terminal and try installing it with our buddy pip, as we installed other things before.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ pip install matplotlib
+</pre></div>
+</div>
+<p>After that completes, once again restart your notebook.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ jupyter notebook
+</pre></div>
+</div>
+<p>Now you can open your notebook and add a new cell below the imports that lets the system know you plan to make some charts and that it&#8217;s okay to surface them in the notebook.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+</pre></div>
+</div>
+<img alt="../_images/matplotlib_inline.png" src="../_images/matplotlib_inline.png" />
+<p>Let&#8217;s return to where we set our proposition filter at the top and restore it our initial interest, Proposition 64.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">prop</span> <span class="o">=</span> <span class="n">props</span><span class="p">[</span><span class="n">props</span><span class="o">.</span><span class="n">prop_name</span> <span class="o">==</span> <span class="s1">&#39;PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Now rerun the entire notebook, as we learned above. You will need to do this when you halt and restart your notebook on the command line. Reminder, you can do this by pulling down the <code class="docutils literal"><span class="pre">Cell</span></code> menu at the top of the notebook and selecting the <code class="docutils literal"><span class="pre">Run</span> <span class="pre">all</span></code> option.</p>
+<p>Then scroll down to the bottom of the notebook and pick up where we last left off in Act 4.</p>
+<p>If we want to chart out the top supporters of the proposition, we first need to select them from the dataset. Using the grouping and sorting tricks we learned earlier, the top 10 can returned like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">top_supporters</span> <span class="o">=</span> <span class="n">support</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+    <span class="p">[</span><span class="s2">&quot;contributor_firstname&quot;</span><span class="p">,</span> <span class="s2">&quot;contributor_lastname&quot;</span><span class="p">]</span>
+<span class="p">)</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We can then view them with a trick I bet you remember by now.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">top_supporters</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/top_supporters_df.png" src="../_images/top_supporters_df.png" />
+<p>Now that matplotlib is installed, making a simple chart is as simple as stringing the <code class="docutils literal"><span class="pre">plot</span></code> method onto the end of your <code class="docutils literal"><span class="pre">DataFrame</span></code>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">top_supporters</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/bar.png" src="../_images/bar.png" />
+<p>You can rotate the bar chart so that it is horizontal by subituting in the <code class="docutils literal"><span class="pre">barh</span></code> method.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">top_supporters</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">barh</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/barh.png" src="../_images/barh.png" />
+<p>The chart can be limited to the first five records by slipping in the <code class="docutils literal"><span class="pre">head</span></code> command.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">top_supporters</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">barh</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/barh_head.png" src="../_images/barh_head.png" />
+<p>What are those y axis labels? Those are the row number (pandas calls them indexes) of each row. We don&#8217;t want that. We want the names. We can swap them in by saving our chart to a variable and then using another matplotlib option, <code class="docutils literal"><span class="pre">set_yticklabels</span></code> to instruct the system which field to use.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">chart</span> <span class="o">=</span> <span class="n">top_supporters</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">barh</span><span class="p">()</span>
+<span class="n">chart</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">top_supporters</span><span class="o">.</span><span class="n">contributor_lastname</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/barh_lastname.png" src="../_images/barh_lastname.png" />
+<p>Okay, but what if I want to combine the first and last name? We have the data we need in two separate columns, which we can put together simply by inventing a new field on our data frame and, just like a variable, setting it equal to a combination of the other fields.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">top_supporters</span><span class="p">[</span><span class="s1">&#39;contributor_fullname&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">top_supporters</span><span class="o">.</span><span class="n">contributor_firstname</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">top_supporters</span><span class="o">.</span><span class="n">contributor_lastname</span>
+</pre></div>
+</div>
+<p>We can see the results right here.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">top_supporters</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Now using that in the chart is as simple as substituting in the <code class="docutils literal"><span class="pre">set_yticklabels</span></code> method we used above.</p>
+<img alt="../_images/fullname.png" src="../_images/fullname.png" />
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">chart</span> <span class="o">=</span> <span class="n">top_supporters</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">barh</span><span class="p">()</span>
+<span class="n">chart</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">top_supporters</span><span class="o">.</span><span class="n">contributor_fullname</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/barh_fullname.png" src="../_images/barh_fullname.png" />
+<p>That&#8217;s all well and good, but this chart is still pretty ugly. If you wanted to hand this data off to your graphics department, or try your hand at a simple chart yourself using something like <a class="reference external" href="https://quartz.github.io/Chartbuilder/">Chartbuilder</a>, you&#8217;d need to export this data into a spreadsheet.</p>
+<p>Guess what? It&#8217;s this easy.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">top_supporters</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;top_supporters.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Ben Welsh and the California Civic Data Coalition.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

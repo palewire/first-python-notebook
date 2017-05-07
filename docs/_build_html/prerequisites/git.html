@@ -1,0 +1,233 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Git &mdash; First Python Notebook  documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="First Python Notebook  documentation" href="../index.html"/>
+        <link rel="up" title="Prelude: Prerequisites" href="index.html"/>
+        <link rel="prev" title="Command-line interface" href="cli.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> First Python Notebook
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Prelude: Prerequisites</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cli.html">Command-line interface</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id1">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#pip-and-virtualenv">pip and virtualenv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#code-compiler">Code compiler</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">First Python Notebook</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Prelude: Prerequisites</a> &raquo;</li>
+      
+    <li>Git</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/prerequisites/git.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="git">
+<h1>Git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="http://git-scm.com/">Git</a> is a version control program for saving the changes
+you make to files over time. This is useful when you&#8217;re working on your own,
+but quickly becomes essential with large software projects, especially if you work with other developers.</p>
+<p><a class="reference external" href="https://github.com/">GitHub</a> is a website that hosts git code repositories, both public and private. It comes
+with many helpful tools for reviewing code and managing projects. It also has some
+<a class="reference external" href="http://pages.github.com/">extra tricks</a> that make it easy to publish web pages, which we will use later.</p>
+<p>For this class you will need to have git installed and working from your command prompt.</p>
+<p>If you need to install git, you can learn how by following one of these guides for
+<a class="reference external" href="https://help.github.com/articles/set-up-git#platform-windows">Windows</a>,
+<a class="reference external" href="https://help.github.com/articles/set-up-git#platform-mac">Mac</a> and
+<a class="reference external" href="https://help.github.com/articles/set-up-git#platform-linux">Linux</a> computers. Or you can try to download and install the program directly from its creators&#8217; <a class="reference external" href="https://git-scm.com/">website</a>.</p>
+<p>After git is installed, you can verify it&#8217;s working on your command prompt by entering the follow code and hitting the enter key:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ git --version
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You&#8217;ll note that the example above begins with a &#8220;$&#8221;. You do not need to type this. It is only a generic symbol
+commonly used by geeks to indicate a piece of code should be run from the command line. On Windows, this prompt could even look quite different, likely starting with a phrase like <code class="docutils literal"><span class="pre">C:\</span></code>.</p>
+</div>
+<p>If git is installed and working, you should see something like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ git --version
+git version <span class="m">2</span>.9.3
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="cli.html" class="btn btn-neutral" title="Command-line interface" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Ben Welsh and the California Civic Data Coalition.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
