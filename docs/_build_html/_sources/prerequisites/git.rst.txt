@@ -18,7 +18,7 @@ If git is installed and working, you should see something like this:
 
 .. code-block:: bash
 
-    git version 2.9.3
+    git version 2.11.0
 
 If you don't have it installed, you'll need to follow the instructions below.
 
