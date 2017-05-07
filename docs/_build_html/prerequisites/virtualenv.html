@@ -88,7 +88,11 @@
 <li class="toctree-l2"><a class="reference internal" href="git.html">Git</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python.html">Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pip.html">pip</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">virtualenv</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">virtualenv</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#windows">Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mac-osx">Mac OSX</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="compiler.html">Code compiler</a></li>
 </ul>
 </li>
@@ -153,19 +157,29 @@
   <div class="section" id="virtualenv">
 <h1>virtualenv<a class="headerlink" href="#virtualenv" title="Permalink to this headline">¶</a></h1>
 <p>The <a class="reference external" href="http://www.virtualenv.org/en/latest/">virtualenv environment manager</a> makes it possible to create an isolated corner of your computer where all the different tools you use to build an application are sealed off.</p>
-<p>It might not be obvious why you need this, but it quickly becomes important when you need to juggle different tools for different projects on one computer. By developing your applications inside separate virtualenv environments, you can use different versions of the same third-party Python libraries without a conflict. You can also more easily recreate your project on another machine, handy when you want to copy your code to a server that publishes pages on the Internet.</p>
+<p>It might not be obvious why you need this, but it quickly becomes important when you need to juggle different tools for different projects on one computer.</p>
+<p>By developing your applications inside separate virtualenv environments, you can use different versions of the same third-party Python libraries without a conflict.</p>
+<p>You can also more easily recreate your project on another machine, handy when you want to copy your code to a server that publishes pages on the Internet.</p>
 <p>You can check if virtualenv is installed with the following.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>virtualenv --version
 </pre></div>
 </div>
-<p>If you don&#8217;t have it, install it with pip.</p>
+<p>If you don&#8217;t have it, you can install it with pip.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>pip install virtualenv
 <span class="c1"># If you&#39;re on a Mac or Linux and get an error saying you lack permissions,</span>
 <span class="c1"># try again as a superuser.</span>
 sudo pip install virtualenv
 </pre></div>
 </div>
-<p>If that doesn&#8217;t work, <a class="reference external" href="http://virtualenv.readthedocs.org/en/latest/installation.html">try following this advice</a>.</p>
+<div class="section" id="windows">
+<h2>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
+<p>Here&#8217;s a walkthrough of how to do it on Windows:</p>
+<div class="embed-container"><iframe src="http://www.youtube.com/embed/f-mYxXbPehI"     width="560" height="315" frameborder="0"     webkitAllowFullScreen mozallowfullscreen allowfullscreen class="youtube"></iframe></div></div>
+<div class="section" id="mac-osx">
+<h2>Mac OSX<a class="headerlink" href="#mac-osx" title="Permalink to this headline">¶</a></h2>
+<p>MAC ADVICE TK</p>
+<p>If the advice here doesn&#8217;t work, <a class="reference external" href="http://virtualenv.readthedocs.org/en/latest/installation.html">try following the instructions here</a>.</p>
+</div>
 </div>
 
 
