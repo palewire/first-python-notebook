@@ -14,7 +14,7 @@ This tutorial will guide you through an investigation of money in politics using
 
 You will learn just enough of the `Python <https://www.python.org/>`_ computer programming language to work with the `pandas <http://pandas.pydata.org/>`_ library, a popular open-source tool for analyzing data. The course will teach you how to use pandas to read, filter, join, group, aggregate and rank structured data.
 
-You will also learn how to record, remix and republish your analysis using the `Jupyter Notebook <http://jupyter.org/>`_, a browser-based application for writing code that is emerging as the standard for sharing reproducible research in the sciences.  
+You will also learn how to record, remix and republish your analysis using the `Jupyter Notebook <http://jupyter.org/>`_, a browser-based application for writing code that is emerging as the standard for sharing reproducible research in the sciences.
 
 ***************
 Who can take it
