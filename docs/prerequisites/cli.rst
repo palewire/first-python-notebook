@@ -3,6 +3,24 @@ Command-line interface
 
 A `command-line interface <https://en.wikipedia.org/wiki/Command-line_interface>`_ to interact with your computer is required.
 
-Unless something is wrong with your computer, there should be a way to open a window that lets you type in commands. Different operating systems give this tool slightly different names, but they all have some form of it, and there are alternative programs you can install as well.
+Whether you know about it or not, there should be a way to open a window and directly issue commands to your operating system. Different operating systems give this tool slightly different names, but they all have some form of it.
 
-On Windows you can find the command-line interface by opening the "command prompt." Here are instructions for `Windows <https://www.bleepingcomputer.com/tutorials/windows-command-prompt-introduction/>`_. On Apple computers, you open the `"Terminal" application <http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line>`_. Ubuntu Linux comes with a program of the `same name <http://askubuntu.com/questions/38162/what-is-a-terminal-and-how-do-i-open-and-use-it>`_. 
+*******
+Windows
+*******
+
+On Windows the command-line interface is called the "command prompt." It is a perfectly fine piece of software, but to ease your experience with Python you are asked to install the `cygwin <https://www.cygwin.com/>`_ alternative. Here's how:
+
+.. youtube:: nQQSmmY9KMk
+
+1. Download the installer from `cygwin.com <https://www.cygwin.com/>`_.
+2. Run the installer
+3. Verify it's working
+
+.. warning::
+
+    When the class begins, all the examples will assume you are using cygwin instead of the standard command prompt. Please take the time to install it now. You'll thank me later.
+
+*******
+Mac OSX
+*******
