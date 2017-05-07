@@ -20,7 +20,13 @@ If git is installed and working, you should see something like this:
 
     git version 2.9.3
 
-If you don't have it installed, here's how to do it on Windows.
+If you don't have it installed, you'll need to follow the instructions below.
+
+*******
+Windows
+*******
+
+Here's how to install git on Windows.
 
 .. youtube:: F_CjRyoa45A
 
@@ -28,11 +34,15 @@ If you don't have it installed, here's how to do it on Windows.
 2. Download the installer from `git-for-windows.github.io <https://git-for-windows.github.io/>`_.
 3. Run the installer, accepting all of the default options.
 4. Return to the command prompt and verify git is now installed.
-5. Configure git with your identity with these two commands: 
+5. Configure git with your identity with these two commands:
 
 .. code-block:: bash
 
     git config --global user.email "your@email.com"
     git config --global user.name "your name"
 
-And here's how on Mac OSX:
+*******
+Mac OSX
+*******
+
+Here's how on Mac OSX:
