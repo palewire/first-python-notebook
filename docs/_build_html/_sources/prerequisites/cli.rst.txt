@@ -24,3 +24,7 @@ On Windows the command-line interface is called the "command prompt." It is a pe
 *******
 Mac OSX
 *******
+
+On Apple's Mac OSX operating system, a suitable command-line program is already installed. It's called "Terminal." You should try opening it up and typing in some basic commands to verify it's working. Here's how:
+
+.. youtube:: 3xPHOH08IUU
