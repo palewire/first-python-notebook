@@ -2,7 +2,7 @@
 virtualenv
 ==========
 
-The `virtualenv environment manager <http://www.virtualenv.org/en/latest/>`_ makes it possible to create an isolated corner of your computer where all the different tools you use to build an application are sealed off.
+The `virtualenv environment manager <http://www.virtualenv.org/en/latest/>`_ makes it possible to create an isolated corner of your computer where all the Python tools you use to build an application are sealed off.
 
 It might not be obvious why you need this, but it quickly becomes important when you need to juggle different tools for different projects on one computer.
 
@@ -37,6 +37,6 @@ Here's a walkthrough of how to do it on Windows:
 Mac OSX
 #######
 
-MAC ADVICE TK
+Here's how to do it on Mac OSX:
 
-If the advice here doesn't work, `try following the instructions here <http://virtualenv.readthedocs.org/en/latest/installation.html>`_.
+.. youtube:: uL5QYHbVXE0
