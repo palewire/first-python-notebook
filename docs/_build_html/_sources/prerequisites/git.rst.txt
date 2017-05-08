@@ -3,10 +3,10 @@ Git
 ===
 
 `Git <http://git-scm.com/>`_ is a version control program for saving the changes
-you make to files over time. This is useful when you're working on your own,
-but quickly becomes essential with large software projects, especially if you work with other developers.
+you make to files over time. It is useful when you're working on your own,
+but quickly becomes essential with large software projects, especially when you work with others.
 
-For this class you will need to have git installed and working from your command prompt.
+For this class you will need to have git installed and working from your command-line interface.
 
 You can verify it's working from your terminal by typing in the follow code and hitting the enter key:
 

@@ -9,7 +9,7 @@ Whether you know about it or not, there should be a way to open a window and dir
 Windows
 *******
 
-On Windows the command-line interface is called the "command prompt." It is a perfectly fine piece of software, but to ease your experience with Python you are asked to install the `cygwin <https://www.cygwin.com/>`_ alternative. Here's how:
+On Windows the command-line interface is called the "command prompt." It is a perfectly fine piece of software, but to ease your experience with Python you should install `cygwin <https://www.cygwin.com/>`_, a free alternative. Here's how:
 
 .. youtube:: nQQSmmY9KMk
 
