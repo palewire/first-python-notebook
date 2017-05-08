@@ -99,6 +99,11 @@ h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
   font-weight: 600;
 }
 
+p {
+    font-size: 18px;
+    line-height: 26px; 
+}
+
 table.csv-data td,
 table.csv-data th {
     width: auto !important;
