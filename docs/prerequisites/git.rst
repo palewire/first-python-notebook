@@ -49,7 +49,7 @@ Here's how on Mac OSX:
 
 .. youtube:: quEyv0vd6K8
 
-1. Verify that git is installed
+1. Verify that git is installed.
 2. If it's not, visit `git-scm.com <http://www.git-scm.com>`_ and download the installer. Run it.
 3. Configure git with your identity using these two commands:
 

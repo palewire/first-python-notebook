@@ -14,8 +14,8 @@ On Windows the command-line interface is called the "command prompt." It is a pe
 .. youtube:: nQQSmmY9KMk
 
 1. Download the installer from `cygwin.com <https://www.cygwin.com/>`_.
-2. Run the installer
-3. Verify it's working
+2. Run the installer.
+3. Verify it's working.
 
 .. warning::
 

@@ -26,6 +26,6 @@ In some cases, pip will be already be installed on Mac OSX computers. But to mak
 
 .. youtube:: j3yH6FfD_Wk
 
-1. Check if pip is installed
-2. If not, install it using easy_install
-3. Verify pip is now available
+1. Check if pip is installed.
+2. If not, install it using easy_install.
+3. Verify pip is now available.
