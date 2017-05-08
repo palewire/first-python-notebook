@@ -4,9 +4,7 @@ Python
 
 `Python <https://www.python.org/>`_ is a free and open-source computer programming language. It's one of the most popular in the world and praised by its supporters as clear and easy to read.
 
-That makes it ideal for beginners, and is one reason it's been widely adopted by professionals in many fields, rangings from engineering and web development to journalism and music.
-
-And that's why we've chosen it as the basis for this class.
+That makes it ideal for beginners and is partly why it's been adopted by professionals in many fields, ranging from engineering and web development to journalism and music.
 
 You can check if Python is already installed on your computer by visiting your command line and entering the following:
 
