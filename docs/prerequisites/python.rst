@@ -37,4 +37,6 @@ Here's how to do so on Windows:
 Mac OSX
 *******
 
-If you're using Mac OSX, it's more likely that Python is already installed. If not, Mac users should install Python by following `these instructions <http://docs.python-guide.org/en/latest/starting/install/osx/>`_ offered by The Hitchhikers Guide to Python.
+If you're using Mac OSX, it's more likely that Python is already installed. Here's how to find out what version you have.
+
+.. youtube:: 3W6ZDfLYl_w

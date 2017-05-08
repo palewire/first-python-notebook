@@ -8,7 +8,7 @@ Verify pip is installed by typing the following into your command-line interface
 
 .. code-block:: bash
 
-    pip -V
+    pip --version
 
 #######
 Windows
@@ -21,3 +21,11 @@ If you don't have pip, carefully review the instructional video for Python and m
 #######
 Mac OSX
 #######
+
+In some cases, pip will be already be installed on Mac OSX computers. But to make sure you should take the following steps:
+
+.. youtube:: j3yH6FfD_Wk
+
+1. Check if pip is installed
+2. If not, install it using easy_install
+3. Verify pip is now available
