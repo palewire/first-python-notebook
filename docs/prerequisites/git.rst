@@ -8,7 +8,7 @@ but quickly becomes essential with large software projects, especially if you wo
 
 For this class you will need to have git installed and working from your command prompt.
 
-You can verify it's working on terminal by entering the follow code and hitting the enter key:
+You can verify it's working from your terminal by typing in the follow code and hitting the enter key:
 
 .. code-block:: bash
 
