@@ -8,11 +8,11 @@ Your computer needs the following tools installed and working to participate. Vi
    :maxdepth: 1
 
    cli
-   git
    python
    pip
    virtualenv
    compiler
+   git
 
 .. warning::
 

@@ -45,13 +45,17 @@ Here's how to install git on Windows.
 Mac OSX
 *******
 
-Here's how on Mac OSX:
-
 .. youtube:: quEyv0vd6K8
 
-1. Verify that git is installed.
-2. If it's not, visit `git-scm.com <http://www.git-scm.com>`_ and download the installer. Run it.
-3. Configure git with your identity using these two commands:
+If you've followed the previous installation instructions for :doc:`a code compiler </prerequisites/compiler>`, git should be already installed and ready to go. You can test it out by opening up the command prompt or cygwin and typing in the command above. Here it is again:
+
+.. code-block:: bash
+
+    git --version
+
+If it's not, visit `git-scm.com <http://www.git-scm.com>`_ and download the installer. Run it.
+
+Either way, configure git with your identity using these two commands:
 
 .. code-block:: bash
 
