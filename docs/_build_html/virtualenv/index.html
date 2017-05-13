@@ -147,65 +147,109 @@
 <h1>Chapter 1: Hello virtualenv<a class="headerlink" href="#chapter-1-hello-virtualenv" title="Permalink to this headline">¶</a></h1>
 <p>The <a class="reference external" href="http://www.virtualenv.org/en/latest/">virtualenv environment manager</a> makes it possible to create an isolated corner of your computer where all the Python tools you use to build an application are sealed off.</p>
 <p>Why do you need this?</p>
-<p>By developing each project you work on inside a separate virtual environment, you can easily juggle them all on one machine. You can:</p>
+<p>By developing each of your Python projects inside a separate virtual environment, you can easily juggle them all on one machine. You can:</p>
 <ul class="simple">
 <li>Use different versions of the same Python libraries without a conflict.</li>
-<li>Easily install your project on another machine.</li>
-<li>As can your colleagues.</li>
+<li>Easily install your project on another machine, as can your colleagues</li>
 <li>Quickly copy your code to a server that publishes pages on the Internet.</li>
 </ul>
 <p>For those reasons, virtualenv has become one of the most popular ways to manage Python projects. Alternatives include its more complex cousins <a class="reference external" href="https://virtualenvwrapper.readthedocs.io/en/latest/">virtualenvwrapper</a> and <a class="reference external" href="https://conda.io/docs/index.html">conda</a>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">All that said, working within a virtual environment is not required. At first, it might even feel like a little bit of a hassle. But in the long run, you will be glad you did it. And you don&#8217;t have to take my word for it, you can read extended discussions on <a class="reference external" href="https://conda.io/docs/index.html">StackOverflow</a> and <a class="reference external" href="https://www.reddit.com/r/Python/comments/2qq1d9/should_i_always_use_virtualenv/">Reddit</a>.</p>
+<p class="last">All that said, working within a virtual environment is not required. At first, it might even feel like a little bit of a hassle. But in the long run, you will be glad you did it. And you don&#8217;t have to take my word for it, you can read discussions on <a class="reference external" href="https://conda.io/docs/index.html">StackOverflow</a> and <a class="reference external" href="https://www.reddit.com/r/Python/comments/2qq1d9/should_i_always_use_virtualenv/">Reddit</a>.</p>
 </div>
 <div class="section" id="create-a-code-directory-to-store-all-your-work">
 <h2>Create a code directory to store all your work<a class="headerlink" href="#create-a-code-directory-to-store-all-your-work" title="Permalink to this headline">¶</a></h2>
+<p>Before we create your first virtualenv, the first step is to create a common folder where all you of your projects will be stored starting with this one.</p>
+<p>Open your <a class="reference internal" href="../prerequisites/cli.html"><span class="doc">command-line interface</span></a>, which will start you off in your home directory. Enter the following command and press enter to see all of the folders there now.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>ls
+</pre></div>
+</div>
+<p>Next use the <a class="reference external" href="https://en.wikipedia.org/wiki/Mkdir">mkdir</a> to create a new directory for your code. In the same style as the Desktop, Documents and Downloads folders included by most operating system, we will name this folder Code.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>mkdir Code
 </pre></div>
 </div>
+<p>To verify it&#8217;s worked, you can open in your file explorer and navigate to your home folder.</p>
 </div>
 <div class="section" id="create-a-virtualenv-to-store-this-project">
 <h2>Create a virtualenv to store this project<a class="headerlink" href="#create-a-virtualenv-to-store-this-project" title="Permalink to this headline">¶</a></h2>
+<p>Next use your terminal to navigate into the new directory with the <a class="reference external" href="https://en.wikipedia.org/wiki/Cd_(command)">cd</a> command.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> Code
 </pre></div>
 </div>
+<p>Now use the virtualenv command to create a new virtual environment. This is a one time thing necessary to initialize a new environment.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>virtualenv first-python-notebook
 </pre></div>
 </div>
+<p>If you inspect the new directory this command created in your file explorer, you will see that it has generated a set of folders inside. They are the basic tools that make the virtual environment work and include a complete copy of the Python programming language just for this project.</p>
 </div>
 <div class="section" id="activate-the-virtualenv">
 <h2>Activate the virtualenv<a class="headerlink" href="#activate-the-virtualenv" title="Permalink to this headline">¶</a></h2>
-<p>Jump into the directory it created.</p>
+<p>Now use cd jump into the directory that was created created.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> first-python-notebook
 </pre></div>
 </div>
-<p>Turn on the new virtualenv, which will instruct your terminal to only use those libraries installed inside its sealed space. You only need to create the virtual environment once, but you will need to repeat these &#8220;activation&#8221; steps each time you return to working on this project.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># In Linux or Mac OSX try this...</span>
-. bin/activate
-<span class="c1"># In Windows it might take something more like...</span>
-<span class="nb">cd</span> Scripts
+<p>Now the trickiest part. Each time you want to begin working on a virtualenv project, you need to start off by &#8220;activating&#8221; it inside your terminal.</p>
+<p>The activation program is called activate. It was created inside the new folders in this directory. You will need to run it each and every time you start work in this environment.</p>
+<p>On Mac OSX the program is inside a folder called bin. You can easily run it from your terminal by using the <a class="reference external" href="https://en.wikipedia.org/wiki/Source_(command)">source</a> command.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">source</span> bin/activate
+</pre></div>
+</div>
+<p>Fun fact: The source command has a shorter nickname if you don&#8217;t want to type as much. It is simply a period.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>. bin/activate
+</pre></div>
+</div>
+<p>On Windows the activate script is inside a folder called Scripts. You will need to move into that folder, run the script, and then back out to the folder we are in now.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> Scripts
 . .<span class="se">\a</span>ctivate
 <span class="nb">cd</span> ..
+</pre></div>
+</div>
+<p>You can verify that your virtualenv is running by using the <a href="#id1"><span class="problematic" id="id2">`which &lt;&gt;`_</span></a> command to ask your computer what installation of Python it is currently using.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>which python
+</pre></div>
+</div>
+<p>If you are in your virtualenv, it should return a path leading to the same folder inside your virtualenv as activate. My looks like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>/home/ben/Code/first-python-notebook/bin/python
 </pre></div>
 </div>
 </div>
 <div class="section" id="reactive-the-virtualenv">
 <h2>Reactive the virtualenv<a class="headerlink" href="#reactive-the-virtualenv" title="Permalink to this headline">¶</a></h2>
-<p>Jump into the directory it created.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> Code
-<span class="nb">cd</span> first-python-notebook
+<p>You will need to remember to activate your virtualenv environment every time you log on to your computer and start work on this project. Before we move on, let&#8217;s take a moment to practice this routine.</p>
+<p>Quit out of your command-line interface. Reopen it.</p>
+<p>This new terminal will not be activated and working inside your virtual environment. You can verify this by using the which command again.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>which python
 </pre></div>
 </div>
-<p>Turn on the new virtualenv, which will instruct your terminal to only use those libraries installed inside its sealed space. You only need to create the virtual environment once, but you will need to repeat these &#8220;activation&#8221; steps each time you return to working on this project.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># In Linux or Mac OSX try this...</span>
-. bin/activate
-<span class="c1"># In Windows it might take something more like...</span>
-<span class="nb">cd</span> Scripts
+<p>This time, you are likely to see a path to your computer system&#8217;s global installation of Python, which we do not want to use on this project. Here&#8217;s what mine looks like (yours will be slightly different):</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>/usr/bin/python
+</pre></div>
+</div>
+<p>We need to repeat the steps above to enter your new virtual environment and activate it.</p>
+<p>First navigate into your code folder.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> Code
+</pre></div>
+</div>
+<p>Then into your virtualenv folder</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> first-python-notebook
+</pre></div>
+</div>
+<p>Now activate your virtual environment with the source command. In you&#8217;re on Mac OSX, let&#8217;s use the shorter version this time.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>. bin/activate
+</pre></div>
+</div>
+<p>If you&#8217;re on Windows, here&#8217;s the routine again.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> Scripts
 . .<span class="se">\a</span>ctivate
 <span class="nb">cd</span> ..
 </pre></div>
 </div>
+<p>Finally, verify the process has succeeded using the which command. It should now return a path leading to your virtual environment.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>which python
+</pre></div>
+</div>
+<p>That&#8217;s it for this chapter. You&#8217;ve successfully created your first virtual environment. Now let&#8217;s put it to use.</p>
 </div>
 </div>
 
