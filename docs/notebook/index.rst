@@ -1,6 +1,6 @@
-=========================
-Chapter 2: Hello notebook
-=========================
+=================================
+Chapter 2: Hello Jupyter Notebook
+=================================
 
 A `Jupyter Notebook <http://jupyter.org/>`_ is a browser application where you can write, run, remix and republish code.
 
@@ -14,7 +14,7 @@ It is also used by journalists to develop stories and show their work. Examples 
 
 Learn how to install Jupyter and create your first notebook by following this video or the written instructions below.
 
-.. youtube:: t1vJzFbmfv8
+.. youtube:: kjrXSvX2JTk
 
 *********************************
 Activate your virtual environment
@@ -96,6 +96,12 @@ Type the following into the first box, then hit the play button in the toolbar a
 There. You have just written your first Python code. You have entered two integers and added them together using the plus sign operator.
 
 Not so bad, right?
+
+.. note::
+
+    If you get an error after you run a cell, look carefully at your code and see that it exactly matches what's been written in the example. Don't worry.
+
+    Code crashes are a normal part of life for computer programmers. They're usually caused by small typos that can be quickly corrected.
 
 This to-and-fro of writing Python code in a notebook cell and then running it with the play button is the rhythm of working in a notebook. Over time you will gradually stack cells to organize an analysis that runs from top to bottom.
 

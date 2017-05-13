@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Chapter 2: Hello pandas &mdash; First Python Notebook 1.0 documentation</title>
+  <title>Chapter 3: Hello pandas &mdash; First Python Notebook 1.0 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="First Python Notebook 1.0 documentation" href="../index.html"/>
         <link rel="next" title="Chapter 3: Hello analysis" href="../analysis/index.html"/>
-        <link rel="prev" title="Chapter 1: Hello notebook" href="../notebook/index.html"/> 
+        <link rel="prev" title="Chapter 2: Hello Jupyter Notebook" href="../notebook/index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -80,8 +80,14 @@
                 <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../prerequisites/index.html">Prologue: Prerequisites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebook/index.html">Chapter 1: Hello notebook</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 2: Hello pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../virtualenv/index.html">Chapter 1: Hello virtualenv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebook/index.html">Chapter 2: Hello Jupyter Notebook</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 3: Hello pandas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#install-pandas-with-pip">Install pandas with pip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#import-pandas-into-a-jupyter-notebook">Import pandas into a Jupyter Notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#conduct-a-simple-data-analysis">Conduct a simple data analysis</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../analysis/index.html">Chapter 3: Hello analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../science/index.html">Chapter 4: Hello science</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../internet/index.html">Chapter 5: Hello Internet</a></li>
@@ -125,7 +131,7 @@
       <li><a href="../index.html">Home</a> &raquo;</li>
         
       
-      <li>Chapter 2: Hello pandas</li>
+      <li>Chapter 3: Hello pandas</li>
       
     
   </ul>
@@ -136,129 +142,92 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="chapter-2-hello-pandas">
-<h1>Chapter 2: Hello pandas<a class="headerlink" href="#chapter-2-hello-pandas" title="Permalink to this headline">¶</a></h1>
-<p>Lucky for us, Python is filled with functions to do pretty much anything you’d ever want to do with a programming language: <a class="reference external" href="http://docs.python-requests.org/">navigate the web</a>, <a class="reference external" href="https://docs.python.org/2/library/csv.html">parse data</a>, <a class="reference external" href="http://www.sqlalchemy.org/">interact with a database</a>, <a class="reference external" href="https://www.scipy.org/">run fancy statistics</a>, <a class="reference external" href="https://www.djangoproject.com/">build a pretty website</a> and <a class="reference external" href="https://www.crummy.com/software/BeautifulSoup/">so</a> <a class="reference external" href="http://www.nltk.org/">much</a> <a class="reference external" href="http://pillow.readthedocs.io/en/3.4.x/index.html">more</a>. Creative people have put these tools to work to get <a class="reference external" href="https://www.python.org/about/success/">a wide range of things done</a> in the arts, technology and even outer space.</p>
+  <div class="section" id="chapter-3-hello-pandas">
+<h1>Chapter 3: Hello pandas<a class="headerlink" href="#chapter-3-hello-pandas" title="Permalink to this headline">¶</a></h1>
+<p>Lucky for us, Python is filled with functions to do pretty much anything you’d ever want to do with a programming language: <a class="reference external" href="http://docs.python-requests.org/">navigate the web</a>, <a class="reference external" href="https://docs.python.org/2/library/csv.html">parse data</a>, <a class="reference external" href="http://www.sqlalchemy.org/">interact with a database</a>, <a class="reference external" href="https://www.scipy.org/">run fancy statistics</a>, <a class="reference external" href="https://www.djangoproject.com/">build a pretty website</a> and <a class="reference external" href="https://www.crummy.com/software/BeautifulSoup/">so</a> <a class="reference external" href="http://www.nltk.org/">much</a> <a class="reference external" href="http://pillow.readthedocs.io/en/3.4.x/index.html">more</a>.</p>
+<p>Creative people have put these tools to work to get <a class="reference external" href="https://www.python.org/about/success/">a wide range of things done</a> in the arts, technology and even outer space.</p>
 <p>Some of those tools are included in a toolbox that comes with the language, known as the standard library. Others have been built by members of Python&#8217;s developer community and need to be downloaded and installed from the web.</p>
-<p>For this exercise, we&#8217;re going to install and use <a class="reference external" href="http://pandas.pydata.org/">pandas</a>, a tool developed at a financial investment firm that has become a leading open-source tool for accessing and analyzing data.</p>
-<p>We&#8217;ll install pandas the same way we installed the Jupyter Notebook earlier: Our friend <code class="docutils literal"><span class="pre">pip</span></code>. Save your notebook, switch to your command prompt and hit <code class="docutils literal"><span class="pre">CTRL-C</span></code>. That will kill your notebook and return you to the command line. There we&#8217;ll install pandas.</p>
+<p>One that&#8217;s important for this class is called <a class="reference external" href="http://pandas.pydata.org/">pandas</a>. It is a tool invented at a financial investment firm that has become a leading open-source library for accessing and analyzing data in many different fields.</p>
+<div class="section" id="install-pandas-with-pip">
+<h2>Install pandas with pip<a class="headerlink" href="#install-pandas-with-pip" title="Permalink to this headline">¶</a></h2>
+<p>We&#8217;ll install pandas the same way we installed the Jupyter Notebook earlier: Our friend <code class="docutils literal"><span class="pre">pip</span></code>.</p>
+<p>Pick up where we left off at the end of <a class="reference internal" href="../notebook/index.html"><span class="doc">chapter 2</span></a>, save your notebook, switch to your command prompt and hit <code class="docutils literal"><span class="pre">CTRL-C</span></code>.</p>
+<p>That will kill your notebook and return you to the command line. There we&#8217;ll install pandas using pip.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pandas</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="import-pandas-into-a-jupyter-notebook">
+<h2>Import pandas into a Jupyter Notebook<a class="headerlink" href="#import-pandas-into-a-jupyter-notebook" title="Permalink to this headline">¶</a></h2>
 <p>Now let&#8217;s restart our notebook and get back to work.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">notebook</span>
 </pre></div>
 </div>
-<p>Use the next open notebook cell to import the pandas library for use in our script. Type in the following and hit the play button again.</p>
+<p>Reopen you notebook and create a new cell at the top. There we will import the pandas library for use in our script. Type in the following and hit the play button again.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span>
 </pre></div>
 </div>
 <img alt="../_images/import_pandas.png" src="../_images/import_pandas.png" />
-<p>If nothing happens, that&#8217;s good. It means you have pandas installed and ready to work.</p>
-<p>If you get an error message, return to the prequisites section above and make sure you have everything installed properly. If you do and it still doesn&#8217;t work, copy and paste the tail end of your error message into Google. Among the results there will almost certainly be others working through the same problem.</p>
+<p>If nothing happens, that&#8217;s good. It means you have pandas installed and ready.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>As we continue through the lesson you should assume all of the code we write is in a new cell run separately from the previous line.</p>
-<p>Breaking up your code like this so you can run it bit by bit is one of the big advantages of the Jupyter Notebook. If you get an error after you run a cell, look carefully at your code and see that it exactly matches what&#8217;s been written in the example.</p>
-<p class="last">Once they match, try running it again. Don&#8217;t worry, that kind of feedback loop is the workaday struggle of computer programming.</p>
+<p>If you get an error message, return to the prerequisites section make sure you have everything installed properly.</p>
+<p class="last">If you do and it still doesn&#8217;t work, copy and paste the tail end of your error message into Google. Among the results there will almost certainly be others working through the same problem.</p>
 </div>
-<p>Now that we&#8217;ve got <code class="docutils literal"><span class="pre">pandas</span></code> loaded, let&#8217;s put it to work.</p>
-<p>Until last November, the use and sale of marijuana for recreational purposes was illegal in California. That changed when voters approved Proposition 64, which asked voters if the practice ought to be legalized. A yes vote supported legalization. A no vote opposed it. <a class="reference external" href="http://elections.cdn.sos.ca.gov/sov/2016-general/sov/65-ballot-measures-formatted.pdf">In the final tally</a>, 57% of voters said yes.</p>
-<p>Your mission, <a class="reference external" href="https://www.youtube.com/watch?v=0TiqXFssKMY">should you choose to accept it</a>, is to analyze lists of campaign committees and contributors to figure out the biggest donors both for and against the measure.</p>
-<p>To start <a class="reference external" href="http://first-python-notebook.readthedocs.io/en/latest/_static/prop-committees.csv">click here</a> to download a list of last November&#8217;s 17 ballot measures and their affiliated fundraising committees.</p>
-<p>The data are structured in rows of comma-separated values. This is known as a CSV file. It is the most common way you will find data published online. Save the file with the name <code class="docutils literal"><span class="pre">prop-committees.csv</span></code> in the same directory where you made your notebook.</p>
-<p>Open the file in your notebook using the <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html">read_csv</a> function in <code class="docutils literal"><span class="pre">pandas</span></code>.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;prop-committees.csv&quot;</span><span class="p">)</span>
+<p>Return to the cell with the import and rewrite it like this.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 </pre></div>
 </div>
-<p>After you run the cell, you should see something like this.</p>
-<img alt="../_images/read_csv.png" src="../_images/read_csv.png" />
-<p>It is a <code class="docutils literal"><span class="pre">DataFrame</span></code> where <code class="docutils literal"><span class="pre">pandas</span></code> has structured the CSV data into rows and columns, just like Excel or other spreadsheet software might. The advantage offered here is that rather than manipulating the data through a haphazard series of clicks and keypunches we will be gradually grinding down the data using a computer programming script that is 100% transparent and reproducible.</p>
-<p>In order to do that, we need to store our <code class="docutils literal"><span class="pre">DataFrame</span></code> so it can be reused in subsequent cells. We can do this by saving in a <a class="reference external" href="https://en.wikipedia.org/wiki/Variable_(computer_science)">&#8220;variable&#8221;</a>, which is a fancy computer programming word for a named shortcut where we save our work as we go.</p>
-<p>Go back to your initial cell and change it to this. Then rerun it.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">props</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;./docs/_static/prop-committees.csv&quot;</span><span class="p">)</span>
+<p>This will import the pandas library at the shorter variable name of pd. This is not required but it is standard practice in the pandas community and you will frequently see examples of pandas code online using it as shorthand.</p>
+</div>
+<div class="section" id="conduct-a-simple-data-analysis">
+<h2>Conduct a simple data analysis<a class="headerlink" href="#conduct-a-simple-data-analysis" title="Permalink to this headline">¶</a></h2>
+<p>Those two little letters contain dozens of data analysis tools that we&#8217;ll use in future lessons.</p>
+<p>They can import massive data files, compute advanced statistics, filter, sort, rank and just about anything else you&#8217;d want to do.</p>
+<p>We&#8217;ll get to that soon, but let&#8217;s start out with something simple.</p>
+<p>First let&#8217;s make a list of numbers in a new notebook cell. To keep things simple, I am going to enter all of the even numbers between zero and ten and press play.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>After you run it, you shouldn&#8217;t see anything. That&#8217;s a good thing. It means our <code class="docutils literal"><span class="pre">DataFrame</span></code> has been saved under the name <code class="docutils literal"><span class="pre">props</span></code>, which we can now begin interacting with in the cells that follow. We can do this by calling <a class="reference external" href="https://en.wikipedia.org/wiki/Method_(computer_programming)">&#8220;methods&#8221;</a> that <code class="docutils literal"><span class="pre">pandas</span></code> has made available to all <code class="docutils literal"><span class="pre">DataFrames</span></code>. There are dozens of these that can do all sorts of interesting things. Let&#8217;s start with some easy ones that analysts
-use all the time.</p>
-<p>First, to preview the first few rows of the dataset, try the <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.head.html">head</a> method. Hit the <code class="docutils literal"><span class="pre">+</span></code> button in the toolbar to add a new cell below the first one. Type this in it and hit the run button again.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">props</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<p>If you&#8217;re a skilled Python programmer, you can do some cool stuff with any list. But hand it over pandas instead, and you can analyze it without knowing much computer code at all.</p>
+<p>In this case, it&#8217;s as simple as converting that plain Python list into what pandas calls a <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html">Series</a>. Make it happen in your next cell.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">my_series</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../_images/head.png" src="../_images/head.png" />
-<p>To get a look at all of the columns and what type of data they store, add another cell and try <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.info.html">info</a>.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">props</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<p>Once the data becomes a Series, you can immediately run a wide range of <a class="reference external" href="https://en.wikipedia.org/wiki/Descriptive_statistics">descriptive statistics</a>. Let&#8217;s try a few.</p>
+<p>First, let&#8217;s sum all the numbers. Make a new cell and run this. It should spit out the total.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">my_series</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/info.png" src="../_images/info.png" />
-<p>Look carefully at those results and you see we have more than 100 links between committees and propositions. That&#8217;s interesting on its own, but our goal is to focus in on just one: Prop 64.</p>
-<p>Quick studies will have already noted the <code class="docutils literal"><span class="pre">prop_name</span></code> column where each committee&#8217;s affiliation is stored. Let&#8217;s use pandas to drill down on it. To see its contents separate from the rest of the <code class="docutils literal"><span class="pre">DataFrame</span></code>, add its name to the variable following a period. That should list out the whole thing.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">props</span><span class="o">.</span><span class="n">prop_name</span>
+<p>Then find the maximum value in the next.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">my_series</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/column.png" src="../_images/column.png" />
-<p>One of the many cool tricks built in to <code class="docutils literal"><span class="pre">pandas</span></code> is the ability to total up the frequency of values in a column with the <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.value_counts.html">value_counts</a> method. We can use it here to total up how many committees were active for each proposition.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">props</span><span class="o">.</span><span class="n">prop_name</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<p>The minimum value in the next.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">my_series</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/value_counts.png" src="../_images/value_counts.png" />
-<p>You may have noticed that both of the previous methods did not return a clean looking table in the same way as <code class="docutils literal"><span class="pre">head</span></code>. It&#8217;s often hard to anticipate, but in these cases and many others <code class="docutils literal"><span class="pre">pandas</span></code> will sometimes return an ugly <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html">Series</a> rather than more aesthetically pleasing (and powerful) <code class="docutils literal"><span class="pre">DataFrame</span></code>.</p>
-<p>If that sounds like a bunch of mumbo jumbo, that&#8217;s because it is! Like most computer programming tools, <code class="docutils literal"><span class="pre">pandas</span></code> has its own odd quirks that you have to pick up as you go. The difference between a <code class="docutils literal"><span class="pre">Series</span></code> and a <code class="docutils literal"><span class="pre">DataFrame</span></code> is one of those. The key is to not worry about it too much and keep hacking.</p>
-<p>In most instances, if you have an ugly series generated by a method like <code class="docutils literal"><span class="pre">value_counts</span></code> and you want to convert it into a <code class="docutils literal"><span class="pre">DataFrame</span></code> you can do so by tacking on the <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.reset_index.html">reset_index</a> method onto the tail end. Why? Again the answer is &#8220;because <code class="docutils literal"><span class="pre">pandas</span></code> says so.&#8221; So let&#8217;s play along.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">props</span><span class="o">.</span><span class="n">prop_name</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<p>How about the average (also known as the mean)? Keep adding cells and calculating new statistics.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">my_series</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/value_counts_df.png" src="../_images/value_counts_df.png" />
-<p>Now that we&#8217;ve seen all the propositions in the dataset, we&#8217;re ready to take a crucial step towards our goal by filtering the list down to just those committees that supported or opposed Proposition 64.</p>
-<p>We can do that by copying the full name of the proposition that appears in the dataset and inserting it into the following statement, which follows the <code class="docutils literal"><span class="pre">pandas</span></code> system for filtering a <code class="docutils literal"><span class="pre">DataFrame</span></code>.</p>
-<p>You start with the variable you want to filter, and then create an evaluation by combining a column with an <a class="reference external" href="https://en.wikipedia.org/wiki/Operator_(computer_programming)">&#8220;operator&#8221;</a> like <code class="docutils literal"><span class="pre">==</span></code> or <code class="docutils literal"><span class="pre">&gt;</span></code> or <code class="docutils literal"><span class="pre">&lt;</span></code> with a value to compare the field against.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">props</span><span class="p">[</span><span class="n">props</span><span class="o">.</span><span class="n">prop_name</span> <span class="o">==</span> <span class="s1">&#39;PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.&#39;</span><span class="p">]</span>
+<p>The median?</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">my_series</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/prop_filter.png" src="../_images/prop_filter.png" />
-<p>Now that we&#8217;ve seen what it outputs, we should save the results of that filter into new variable separate from the full list we imported from the CSV file.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">prop</span> <span class="o">=</span> <span class="n">props</span><span class="p">[</span><span class="n">props</span><span class="o">.</span><span class="n">prop_name</span> <span class="o">==</span> <span class="s1">&#39;PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.&#39;</span><span class="p">]</span>
+<p>The standard deviation?</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">my_series</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>The find out how many records are left after the filter, we can use Python&#8217;s built-in <a class="reference external" href="https://docs.python.org/2/library/functions.html#len">len</a> function to inspect our new variable.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span>
+<p>And all of the above, plus a little more about the distribution, in one simple command.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">my_series</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/prop_len.png" src="../_images/prop_len.png" />
-<p>With that we&#8217;re ready to move on to a related, similar task: Importing all of the individual contributions reported to last year&#8217;s 17 ballot measures and filtering them down to just those supporting and opposing Proposition 64.</p>
-<p>We&#8217;ll start by downloading <a class="reference external" href="http://first-python-notebook.readthedocs.io/en/latest/_static/contributions.csv">this second CSV file</a> and saving it to the same directory as this notebook with the name <code class="docutils literal"><span class="pre">contributions.csv</span></code>. We&#8217;ll then open it with <code class="docutils literal"><span class="pre">read_csv</span></code> and save it as a new variable just as we did above.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">contribs</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;contributions.csv&quot;</span><span class="p">)</span>
-</pre></div>
+<p>Add all of the above to your notebook as new cells. With those simple techniques, we&#8217;re only scratching the surface of what pandas makes possible.</p>
+<p>Substitute in a series of 10 million records at the top of the notebook, and it would calculate all those statistics again without you having to write any more code.</p>
+<p>Once you&#8217;re data, however large or complex, is imported into pandas, there&#8217;s little limit to what you can do to filter, merge, group, aggregate, compute or chart using simple methods like the ones above.</p>
+<p>In the next chapter we&#8217;ll get started doing just using data tracking the flow of money in California politics.</p>
 </div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p>The contributions file you&#8217;re downloading is an experimental early release from <a class="reference external" href="www.californiacivicdata.org">the California Civic Data Coalition&#8217;s effort</a> to streamline the state&#8217;s jumbled, dirty and disorganized official database. It has not yet been fully verified as accurate by our team and any conclusions you draw from it should be considered as provisional.</p>
-<p class="last">If you want to base a news report off the analysis you do here, you should take the additional step of comparing the numbers you produce against the official data <a class="reference external" href="http://cal-access.sos.ca.gov/">released by the Secretary of State</a>.</p>
-</div>
-<p>Just as we did earlier, you can inspect the contents of this new file with the <code class="docutils literal"><span class="pre">head</span></code> method.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">contribs</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-<img alt="../_images/contribs_head.png" src="../_images/contribs_head.png" />
-<p>You should also inspect the columns using the <code class="docutils literal"><span class="pre">info</span></code> method. Running these two tricks whenever you open a new file is a good habit to develop so that you can carefully examine the data you&#8217;re about to work with.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">contribs</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-</pre></div>
-</div>
-<img alt="../_images/contribs_info.png" src="../_images/contribs_info.png" />
-<p>Our next job is to filter down this list, which includes all disclosed contributions to all proposition campaigns, to just those linked to Proposition 64.</p>
-<p>We could try to do this with a filter, as we did above with the committees. But look carefully at the columns listed above in the contribution file&#8217;s <code class="docutils literal"><span class="pre">info</span></code> output. You will notice that this file contains a field called <code class="docutils literal"><span class="pre">calaccess_committee_id</span></code> that is identical to the one found in the committee CSV.</p>
-<p>That&#8217;s because these two files are drawn from a <a class="reference external" href="https://en.wikipedia.org/wiki/Relational_database">&#8220;relational database&#8221;</a> that tracks a variety of information about campaigns using an array of tables linked by common identifiers. In this case, the unique identifying codes of committees in one table can be expected to match those found in another.</p>
-<p>We can therefore safely join the two files using the <code class="docutils literal"><span class="pre">pandas</span></code> <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.merge.html">merge</a> method. By default this method will return only those rows with ids found in both tables. That means that if we join the full contributions file to our filtered list of Proposition 64 committees, only the contributions to the Proposition 64 committees will remain.</p>
-<p>Here&#8217;s how to do it. It&#8217;s as simple as passing both variables to <code class="docutils literal"><span class="pre">merge</span></code> and specifying which field we&#8217;d like to join with. We will save the result into another new variable.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">contribs</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;calaccess_committee_id&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>That new <code class="docutils literal"><span class="pre">DataFrame</span></code> variable can inspected just as the ones above.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-<img alt="../_images/merged_head.png" src="../_images/merged_head.png" />
-<p>After all that we have created a new dataset that includes only contributions supporting and opposing Proposition 64. We&#8217;re ready to move on from preparing our data to interviewing it.</p>
 </div>
 
 
@@ -271,7 +240,7 @@ use all the time.</p>
         <a href="../analysis/index.html" class="btn btn-neutral float-right" title="Chapter 3: Hello analysis" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../notebook/index.html" class="btn btn-neutral" title="Chapter 1: Hello notebook" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../notebook/index.html" class="btn btn-neutral" title="Chapter 2: Hello Jupyter Notebook" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
