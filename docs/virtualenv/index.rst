@@ -94,7 +94,7 @@ On Windows the activate script is inside a folder called Scripts. You will need 
     . .\activate
     cd ..
 
-You can verify that your virtualenv is running by using the `which <>`_ command to ask your computer what installation of Python it is currently using.
+You can verify that your virtualenv is running by using the `which <https://en.wikipedia.org/wiki/Which_(Unix)>`_ command to ask your computer what installation of Python it is currently using.
 
 .. code-block:: bash
 
