@@ -7,7 +7,7 @@ A step-by-step guide to analyzing data with Python and the Jupyter Notebook.
 What you will learn
 ===================
 
-This tutorial will guide you through an investigation of money in politics using data from the `California Civic Data Coalition <http://www.californiacivicdata.org/>`_.
+This textbook will guide you through an investigation of money in politics using data from the `California Civic Data Coalition <http://www.californiacivicdata.org/>`_.
 
 You will learn just enough of the `Python <https://www.python.org/>`_ computer programming language to work with the `pandas <http://pandas.pydata.org/>`_ library, a popular open-source tool for analyzing data. The course will teach you how to use pandas to read, filter, join, group, aggregate and rank structured data.
 
