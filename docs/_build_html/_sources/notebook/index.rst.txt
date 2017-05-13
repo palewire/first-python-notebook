@@ -1,5 +1,5 @@
 =========================
-Chapter 1: Hello notebook
+Chapter 2: Hello notebook
 =========================
 
 A `Jupyter Notebook <http://jupyter.org/>`_ is a browser application where you can write, run, remix and republish code. It is free software you can install and run like any other open-source library. It is used by `scientists <http://nbviewer.jupyter.org/github/robertodealmeida/notebooks/blob/master/earth_day_data_challenge/Analyzing%20whale%20tracks.ipynb>`_, `scholars <http://nbviewer.jupyter.org/github/nealcaren/workshop_2014/blob/master/notebooks/5_Times_API.ipynb>`_, `investors <https://github.com/rsvp/fecon235/blob/master/nb/fred-debt-pop.ipynb>`_ and corporations to create and share their work.
@@ -11,11 +11,11 @@ It is also used by journalists to develop stories and show their work. Examples 
 * `"Machine bias" <https://github.com/propublica/compas-analysis/blob/master/Compas%20Analysis.ipynb>`_ by ProPublica
 
 
-The first step in our lesson is to get Jupyter's software installed. We're going to start that process by creating a new development environment with virtualenv in your terminal. Name it after our application.
+The first step in our lesson is to get Jupyter's software installed.
 
 .. code-block:: bash
 
-    virtualenv first-python-notebook
+    cd Code
 
 Jump into the directory it created.
 
@@ -23,7 +23,7 @@ Jump into the directory it created.
 
     cd first-python-notebook
 
-Turn on the new virtualenv, which will instruct your terminal to only use those libraries installed inside its sealed space. You only need to create the virtual environment once, but you will need to repeat these "activation" steps each time you return to working on this project.
+Turn on the new virtualenv, which will instruct your terminal to only use those libraries installed inside its sealed space.
 
 .. code-block:: bash
 
@@ -34,12 +34,16 @@ Turn on the new virtualenv, which will instruct your terminal to only use those 
     . .\activate
     cd ..
 
-Use ``pip`` on the command line to install Jupyter Notebook.
+Use :doc:`pip </prerequisites/pip>` on the command line to install Jupyter Notebook into the virtual environment.
 
 .. code-block:: bash
 
     pip install jupyter
 
+
+.. code-block:: bash
+
+    pip freeze
 
 Start up the notebook from your terminal.
 
@@ -50,7 +54,6 @@ Start up the notebook from your terminal.
 That will open up a new tab in your default web browser that looks something like this:
 
 .. image:: /_static/notebook.png
-
 
 Click the "New" button in the upper right and create a new Python 2 notebook. Now you are all setup and ready to start writing code.
 

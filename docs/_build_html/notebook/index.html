@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Chapter 1: Hello notebook &mdash; First Python Notebook 1.0 documentation</title>
+  <title>Chapter 2: Hello notebook &mdash; First Python Notebook 1.0 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="First Python Notebook 1.0 documentation" href="../index.html"/>
         <link rel="next" title="Chapter 2: Hello pandas" href="../pandas/index.html"/>
-        <link rel="prev" title="Git" href="../prerequisites/git.html"/> 
+        <link rel="prev" title="Chapter 1: Hello virtualenv" href="../virtualenv/index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -80,7 +80,8 @@
                 <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../prerequisites/index.html">Prologue: Prerequisites</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 1: Hello notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../virtualenv/index.html">Chapter 1: Hello virtualenv</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 2: Hello notebook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pandas/index.html">Chapter 2: Hello pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../analysis/index.html">Chapter 3: Hello analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../science/index.html">Chapter 4: Hello science</a></li>
@@ -125,7 +126,7 @@
       <li><a href="../index.html">Home</a> &raquo;</li>
         
       
-      <li>Chapter 1: Hello notebook</li>
+      <li>Chapter 2: Hello notebook</li>
       
     
   </ul>
@@ -136,8 +137,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="chapter-1-hello-notebook">
-<h1>Chapter 1: Hello notebook<a class="headerlink" href="#chapter-1-hello-notebook" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="chapter-2-hello-notebook">
+<h1>Chapter 2: Hello notebook<a class="headerlink" href="#chapter-2-hello-notebook" title="Permalink to this headline">¶</a></h1>
 <p>A <a class="reference external" href="http://jupyter.org/">Jupyter Notebook</a> is a browser application where you can write, run, remix and republish code. It is free software you can install and run like any other open-source library. It is used by <a class="reference external" href="http://nbviewer.jupyter.org/github/robertodealmeida/notebooks/blob/master/earth_day_data_challenge/Analyzing%20whale%20tracks.ipynb">scientists</a>, <a class="reference external" href="http://nbviewer.jupyter.org/github/nealcaren/workshop_2014/blob/master/notebooks/5_Times_API.ipynb">scholars</a>, <a class="reference external" href="https://github.com/rsvp/fecon235/blob/master/nb/fred-debt-pop.ipynb">investors</a> and corporations to create and share their work.</p>
 <p>It is also used by journalists to develop stories and show their work. Examples include:</p>
 <ul class="simple">
@@ -145,15 +146,15 @@
 <li><a class="reference external" href="https://github.com/datadesk/california-electricity-capacity-analysis/blob/master/analysis.ipynb">&#8220;Californians are paying billions for power they don&#8217;t need&#8221;</a> by the Los Angeles Times</li>
 <li><a class="reference external" href="https://github.com/propublica/compas-analysis/blob/master/Compas%20Analysis.ipynb">&#8220;Machine bias&#8221;</a> by ProPublica</li>
 </ul>
-<p>The first step in our lesson is to get Jupyter&#8217;s software installed. We&#8217;re going to start that process by creating a new development environment with virtualenv in your terminal. Name it after our application.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>virtualenv first-python-notebook
+<p>The first step in our lesson is to get Jupyter&#8217;s software installed.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> Code
 </pre></div>
 </div>
 <p>Jump into the directory it created.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> first-python-notebook
 </pre></div>
 </div>
-<p>Turn on the new virtualenv, which will instruct your terminal to only use those libraries installed inside its sealed space. You only need to create the virtual environment once, but you will need to repeat these &#8220;activation&#8221; steps each time you return to working on this project.</p>
+<p>Turn on the new virtualenv, which will instruct your terminal to only use those libraries installed inside its sealed space.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># In Linux or Mac OSX try this...</span>
 . bin/activate
 <span class="c1"># In Windows it might take something more like...</span>
@@ -162,8 +163,11 @@
 <span class="nb">cd</span> ..
 </pre></div>
 </div>
-<p>Use <code class="docutils literal"><span class="pre">pip</span></code> on the command line to install Jupyter Notebook.</p>
+<p>Use <a class="reference internal" href="../prerequisites/pip.html"><span class="doc">pip</span></a> on the command line to install Jupyter Notebook into the virtual environment.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>pip install jupyter
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>pip freeze
 </pre></div>
 </div>
 <p>Start up the notebook from your terminal.</p>
@@ -193,7 +197,7 @@
         <a href="../pandas/index.html" class="btn btn-neutral float-right" title="Chapter 2: Hello pandas" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../prerequisites/git.html" class="btn btn-neutral" title="Git" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../virtualenv/index.html" class="btn btn-neutral" title="Chapter 1: Hello virtualenv" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

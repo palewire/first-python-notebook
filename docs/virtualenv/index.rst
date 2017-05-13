@@ -6,9 +6,9 @@ The `virtualenv environment manager <http://www.virtualenv.org/en/latest/>`_ mak
 
 Why do you need this?
 
-By developing each of your Python projects inside a separate virtual environment, you can easily juggle them all on one machine. You can:
+By developing each of your Python projects inside a separate virtual environment, you can:You can:
 
-* Use different versions of the same Python libraries without a conflict.
+* Juggle different versions of the same Python libraries without a conflict.
 * Easily install your project on another machine, as can your colleagues
 * Quickly copy your code to a server that publishes pages on the Internet.
 
@@ -16,7 +16,11 @@ For those reasons, virtualenv has become one of the most popular ways to manage 
 
 .. note::
 
-    All that said, working within a virtual environment is not required. At first, it might even feel like a little bit of a hassle. But in the long run, you will be glad you did it. And you don't have to take my word for it, you can read discussions on `StackOverflow <https://conda.io/docs/index.html>`_ and `Reddit <https://www.reddit.com/r/Python/comments/2qq1d9/should_i_always_use_virtualenv/>`_.
+    All that said, working within a virtual environment is not required. At first, it might even feel like a hassle. But in the long run, you will be glad you did it. And you don't have to take my word for it, you can read discussions on `StackOverflow <https://conda.io/docs/index.html>`_ and `Reddit <https://www.reddit.com/r/Python/comments/2qq1d9/should_i_always_use_virtualenv/>`_.
+
+Learn how to create your first virtualenv by following this video or the written instructions below.
+
+.. youtube:: t1vJzFbmfv8
 
 **********************************************
 Create a code directory to store all your work
@@ -156,4 +160,4 @@ Finally, verify the process has succeeded using the which command. It should now
 
     which python
 
-That's it for this chapter. You've successfully created your first virtual environment. Now let's put it to use. 
+That's it for this chapter. You've successfully created your first virtual environment. Now let's put it to use.
