@@ -28,3 +28,9 @@ Mac OSX
 On Apple's Mac OSX operating system, a suitable command-line program is already installed. It's called "Terminal." You should try opening it up and typing in some basic commands to verify it's working. Here's how:
 
 .. youtube:: 3xPHOH08IUU
+
+1. Click on the magnifying glass in the upper right hand corner.
+2. Type in "Terminal".
+3. Press enter or select the first search result.
+4. A command line prompt should appear.
+5. Verify it works by typing a simple command like ``whoami`` and pressing enter.

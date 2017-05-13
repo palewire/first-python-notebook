@@ -40,3 +40,8 @@ Mac OSX
 If you're using Mac OSX, it's more likely that Python is already installed. Here's how to find out what version you have.
 
 .. youtube:: 3W6ZDfLYl_w
+
+You'll start going to your terminal.
+
+1. Go to your Terminal.
+2. Type the ``python --version`` command described at the top of the page.

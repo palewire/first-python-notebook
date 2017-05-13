@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>virtualenv &mdash; First Python Notebook  documentation</title>
+  <title>virtualenv &mdash; First Python Notebook 1.0 documentation</title>
   
 
   
@@ -33,7 +33,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="First Python Notebook  documentation" href="../index.html"/>
+    <link rel="top" title="First Python Notebook 1.0 documentation" href="../index.html"/>
         <link rel="up" title="Prologue: Prerequisites" href="index.html"/>
         <link rel="next" title="Code compiler" href="compiler.html"/>
         <link rel="prev" title="pip" href="pip.html"/> 
@@ -62,6 +62,10 @@
 
           
             
+            
+              <div class="version">
+                1.0
+              </div>
             
           
 
@@ -160,25 +164,52 @@
 <p>It might not be obvious why you need this, but it quickly becomes important when you need to juggle different tools for different projects on one computer.</p>
 <p>By developing your applications inside separate virtualenv environments, you can use different versions of the same third-party Python libraries without a conflict.</p>
 <p>You can also more easily recreate your project on another machine, handy when you want to copy your code to a server that publishes pages on the Internet.</p>
-<p>You can check if virtualenv is installed with the following.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>virtualenv --version
-</pre></div>
-</div>
-<p>If you don&#8217;t have it, you can install it with pip.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>pip install virtualenv
-<span class="c1"># If you&#39;re on a Mac or Linux and get an error saying you lack permissions,</span>
-<span class="c1"># try again as a superuser.</span>
-sudo pip install virtualenv
-</pre></div>
-</div>
 <div class="section" id="windows">
 <h2>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
 <p>Here&#8217;s a walkthrough of how to do it on Windows:</p>
-<div class="embed-container"><iframe src="http://www.youtube.com/embed/f-mYxXbPehI"     width="560" height="315" frameborder="0"     webkitAllowFullScreen mozallowfullscreen allowfullscreen class="youtube"></iframe></div></div>
+<div class="embed-container"><iframe src="http://www.youtube.com/embed/f-mYxXbPehI"     width="560" height="315" frameborder="0"     webkitAllowFullScreen mozallowfullscreen allowfullscreen class="youtube"></iframe></div><ol class="arabic simple">
+<li>Verify pip and python are already installed as we did in the previous installers.</li>
+<li>Verify if virtualenv is not already installed.</li>
+</ol>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>virtualenv --version
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>Install virtualenv with pip.</li>
+</ol>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>pip install virtualenv
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li>Verify that virtualenv has been installed.</li>
+</ol>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>virtualenv --version
+</pre></div>
+</div>
+</div>
 <div class="section" id="mac-osx">
 <h2>Mac OSX<a class="headerlink" href="#mac-osx" title="Permalink to this headline">¶</a></h2>
 <p>Here&#8217;s how to do it on Mac OSX:</p>
-<div class="embed-container"><iframe src="http://www.youtube.com/embed/uL5QYHbVXE0"     width="560" height="315" frameborder="0"     webkitAllowFullScreen mozallowfullscreen allowfullscreen class="youtube"></iframe></div></div>
+<div class="embed-container"><iframe src="http://www.youtube.com/embed/uL5QYHbVXE0"     width="560" height="315" frameborder="0"     webkitAllowFullScreen mozallowfullscreen allowfullscreen class="youtube"></iframe></div><ol class="arabic simple">
+<li>Verify pip and python are already installed as we did in the previous installers.</li>
+<li>Verify if virtualenv is not already installed.</li>
+</ol>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>virtualenv --version
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>Install virtualenv with pip. We&#8217;ll need to use <code class="docutils literal"><span class="pre">sudo</span></code> to install it in the system folders.</li>
+</ol>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo pip install virtualenv
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li>Verify that virtualenv has been installed.</li>
+</ol>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>virtualenv --version
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -222,7 +253,7 @@ sudo pip install virtualenv
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'',
+            VERSION:'1.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
