@@ -6,7 +6,7 @@ Your computer needs the following tools installed and working to participate. Vi
 
 .. toctree::
    :caption: Table of contents
-   :name: mastertoc
+   :name: prerequisitestoc
    :maxdepth: 1
 
    cli

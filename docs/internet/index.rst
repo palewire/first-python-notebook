@@ -75,7 +75,7 @@ Click on the box and use your mouse to pull down the option menu that current re
 
 Now click into the cell and type the following:
 
-.. code-block:: markdown
+.. code-block:: text
 
     # First Python Notebook
 
