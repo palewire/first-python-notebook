@@ -4,11 +4,15 @@ Chapter 3: Hello pandas
 
 Lucky for us, Python is filled with functions to do pretty much anything you’d ever want to do with a programming language: `navigate the web <http://docs.python-requests.org/>`_, `parse data <https://docs.python.org/2/library/csv.html>`_, `interact with a database <http://www.sqlalchemy.org/>`_, `run fancy statistics <https://www.scipy.org/>`_, `build a pretty website <https://www.djangoproject.com/>`_ and `so <https://www.crummy.com/software/BeautifulSoup/>`_ `much <http://www.nltk.org/>`_ `more <http://pillow.readthedocs.io/en/3.4.x/index.html>`_.
 
-Creative people have put these tools to work to get `a wide range of things done <https://www.python.org/about/success/>`_ in the arts, technology and even outer space.
+Creative people have put these tools to work to get `a wide range of things done <https://www.python.org/about/success/>`_ in the academy, the laboratory and even in outer space.
 
 Some of those tools are included in a toolbox that comes with the language, known as the standard library. Others have been built by members of Python's developer community and need to be downloaded and installed from the web.
 
 One that's important for this class is called `pandas <http://pandas.pydata.org/>`_. It is a tool invented at a financial investment firm that has become a leading open-source library for accessing and analyzing data in many different fields.
+
+Learn how to install panda and conduct a simple data analysis by following this video or the written instructions below.
+
+.. youtube:: 5cGYsvoyZWs
 
 
 ***********************
@@ -37,7 +41,7 @@ Now let's restart our notebook and get back to work.
 
     jupyter notebook
 
-Reopen you notebook and create a new cell at the top. There we will import the pandas library for use in our script. Type in the following and hit the play button again.
+Reopen your notebook and create a new cell at the top. There we will import the pandas library for use in our script. Type in the following and hit the play button again.
 
 .. code-block:: python
 
@@ -59,7 +63,7 @@ Return to the cell with the import and rewrite it like this.
 
     import pandas as pd
 
-This will import the pandas library at the shorter variable name of pd. This is not required but it is standard practice in the pandas community and you will frequently see examples of pandas code online using it as shorthand.
+This will import the pandas library at the shorter variable name of pd. This is not required but it is standard practice in the pandas community and you will frequently see examples of pandas code online using it as shorthand. It's not required, but it's good to get in the habit so that your code will be understood by other computer programmers.
 
 ******************************
 Conduct a simple data analysis
@@ -77,7 +81,7 @@ First let's make a list of numbers in a new notebook cell. To keep things simple
 
     my_list = [2, 4, 6, 8]
 
-If you're a skilled Python programmer, you can do some cool stuff with any list. But hand it over pandas instead, and you can analyze it without knowing much computer code at all.
+If you're a skilled Python programmer, you can do some cool stuff with any list. But hand it over to pandas instead, and you can analyze it without knowing much computer code at all.
 
 In this case, it's as simple as converting that plain Python list into what pandas calls a `Series <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html>`_. Make it happen in your next cell.
 
@@ -129,10 +133,10 @@ And all of the above, plus a little more about the distribution, in one simple c
 
     my_series.describe()
 
-Add all of the above to your notebook as new cells. With those simple techniques, we're only scratching the surface of what pandas makes possible.
+With those simple techniques, we're only scratching the surface of what pandas makes possible.
 
-Substitute in a series of 10 million records at the top of the notebook, and it would calculate all those statistics again without you having to write any more code.
+Substitute in a series of 10 million records at the top of the stack (or even just the odd numbers between zero and ten), and your notebook would calculate all those statistics again without you having to write any more code.
 
-Once you're data, however large or complex, is imported into pandas, there's little limit to what you can do to filter, merge, group, aggregate, compute or chart using simple methods like the ones above.
+Once your  data, however large or complex, is imported into pandas, there's little limit to what you can do to filter, merge, group, aggregate, compute or chart using simple methods like the ones above.
 
 In the next chapter we'll get started doing just using data tracking the flow of money in California politics.
