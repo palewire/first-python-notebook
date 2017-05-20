@@ -1,8 +1,9 @@
-=========================
-Chapter 3: Hello analysis
-=========================
 
-Until last November, the use and sale of marijuana for recreational purposes was illegal in California. That changed when voters approved Proposition 64, which asked voters if the practice ought to be legalized. A yes vote supported legalization. A no vote opposed it. `In the final tally <http://elections.cdn.sos.ca.gov/sov/2016-general/sov/65-ballot-measures-formatted.pdf>`_, 57% of voters said yes.
+************
+Getting real
+************
+
+the use and sale of marijuana for recreational purposes was illegal in California. That changed when voters approved Proposition 64, which asked voters if the practice ought to be legalized. A yes vote supported legalization. A no vote opposed it. `In the final tally <http://elections.cdn.sos.ca.gov/sov/2016-general/sov/65-ballot-measures-formatted.pdf>`_, 57% of voters said yes.
 
 Your mission, `should you choose to accept it <https://www.youtube.com/watch?v=0TiqXFssKMY>`_, is to analyze lists of campaign committees and contributors to figure out the biggest donors both for and against the measure.
 

@@ -28,7 +28,7 @@ This course is free. If you've tried Python once or twice, have good attitude an
     virtualenv/index
     notebook/index
     pandas/index
-    analysis/index
+    money/index
     science/index
     internet/index
     charts/index

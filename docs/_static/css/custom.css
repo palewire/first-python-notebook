@@ -104,6 +104,12 @@ p, li {
     line-height: 26px;
 }
 
+p.caption {
+    font-size: 14px;
+    line-height: 20px;
+    margin: 4px 0;
+}
+
 table.csv-data td,
 table.csv-data th {
     width: auto !important;
