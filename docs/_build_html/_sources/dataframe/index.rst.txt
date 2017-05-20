@@ -2,7 +2,7 @@
 Chapter 5: Hello DataFrame
 ==========================
 
-Now it's time to get real. It's time to start working on a real analysis.
+Now it's time to get real. It's time to start working on our analysis.
 
 Our data source will be the `California Civic Data Coalition <http://www.californiacivicdata.org/>`_, an open-source network of journalists and developers that maintains an archive of data tracking money in California politics.
 
