@@ -1,0 +1,338 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Chapter 6: Hello merge &mdash; First Python Notebook 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="First Python Notebook 1.0 documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> First Python Notebook
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../prerequisites/index.html">Prologue: Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../virtualenv/index.html">Chapter 1: Hello virtualenv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebook/index.html">Chapter 2: Hello Jupyter Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pandas/index.html">Chapter 3: Hello pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../money/index.html">Chapter 4: Hello money in politics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dataframe/index.html">Chapter 5: Hello DataFrame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../science/index.html">Chapter 4: Hello science</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internet/index.html">Chapter 5: Hello Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 6: Hello charts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cleaning/index.html">Chapter 7: Hello cleaning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/index.html">About the author</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">First Python Notebook</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Home</a> &raquo;</li>
+        
+      
+      <li>Chapter 6: Hello merge</li>
+      
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="chapter-6-hello-merge">
+<h1>Chapter 6: Hello merge<a class="headerlink" href="#chapter-6-hello-merge" title="Permalink to this headline">¶</a></h1>
+<p>Our next job is to filter down this list, which includes all disclosed contributions to all proposition campaigns, to just those linked to Proposition 64.</p>
+<p>We could try to do this with a filter, as we did above with the committees. But look carefully at the columns listed above in the contribution file&#8217;s <code class="docutils literal"><span class="pre">info</span></code> output. You will notice that this file contains a field called <code class="docutils literal"><span class="pre">calaccess_committee_id</span></code> that is identical to the one found in the committee CSV.</p>
+<p>That&#8217;s because these two files are drawn from a <a class="reference external" href="https://en.wikipedia.org/wiki/Relational_database">&#8220;relational database&#8221;</a> that tracks a variety of information about campaigns using an array of tables linked by common identifiers. In this case, the unique identifying codes of committees in one table can be expected to match those found in another.</p>
+<p>We can therefore safely join the two files using the <code class="docutils literal"><span class="pre">pandas</span></code> <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.merge.html">merge</a> method. By default this method will return only those rows with ids found in both tables. That means that if we join the full contributions file to our filtered list of Proposition 64 committees, only the contributions to the Proposition 64 committees will remain.</p>
+<p>Here&#8217;s how to do it. It&#8217;s as simple as passing both variables to <code class="docutils literal"><span class="pre">merge</span></code> and specifying which field we&#8217;d like to join with. We will save the result into another new variable.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">contribs</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;calaccess_committee_id&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>That new <code class="docutils literal"><span class="pre">DataFrame</span></code> variable can inspected just as the ones above.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/merged_head.png" src="../_images/merged_head.png" />
+<p>After all that we have created a new dataset that includes only contributions supporting and opposing Proposition 64. We&#8217;re ready to move on from preparing our data to interviewing it.</p>
+<hr class="docutils" />
+<p>In some ways, your database is no different from a human source. Getting a good story requires careful, thorough questioning. In this section we will move ahead by conducting an interview with <code class="docutils literal"><span class="pre">pandas</span></code> to pursue our quest of finding out the biggest donors to Proposition 64.</p>
+<p>Let&#8217;s start with something easy. What were the ten biggest contributions? We can find the answer by using the <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.sort_values.html">sort_values</a> method to rearrange our list using the <code class="docutils literal"><span class="pre">amount</span></code> field.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/merged_sort.png" src="../_images/merged_sort.png" />
+<p>Note that returns the <code class="docutils literal"><span class="pre">DataFrame</span></code> resorted in ascending order from lowest to highest. To answer our question you&#8217;ll need to reverse it. Here&#8217;s how:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/merged_sort_desc.png" src="../_images/merged_sort_desc.png" />
+<p>You can limit the result to the top five by returning to the <code class="docutils literal"><span class="pre">head</span></code> method and passing in the number of results we&#8217;d like.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/merged_sort_head.png" src="../_images/merged_sort_head.png" />
+<p>Question one answered. Here&#8217;s number two: What is the total sum of contributions that have been reported?</p>
+<p>To answer that let&#8217;s start by getting our hands on <code class="docutils literal"><span class="pre">amount</span></code>, the column with the numbers in it. We can do that just as we did with other columns above.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">amount</span>
+</pre></div>
+</div>
+<img alt="../_images/merged_amount.png" src="../_images/merged_amount.png" />
+<p>Now add up the column&#8217;s total using the <code class="docutils literal"><span class="pre">pandas</span></code> method <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.sum.html">sum</a>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/merged_amount_sum.png" src="../_images/merged_amount_sum.png" />
+<p>There&#8217;s our big total. Fun fact: This number is guaranteed to be lower than the totals reported by the campaigns. Why? Campaigns are only required to report the names of donors over $200, so our data is missing all of the donors who gave smaller amounts of money.</p>
+<p>The overall totals are reported elsewhere in lump sums and cannot be replicated by adding up the individual contributions. Understanding this is crucial to understanding not just this data, but all campaign finance data.</p>
+<p>Adding up a big total is all well and good. But we&#8217;re aiming for something more nuanced. We want to separate the money spent for the proposition from the money spent against it. To do that, we&#8217;ll need to return to the filtering trick we learned above.</p>
+<p>First let&#8217;s look at the column we&#8217;re going to filter by, <code class="docutils literal"><span class="pre">committee_position</span></code>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">committee_position</span>
+</pre></div>
+</div>
+<img alt="../_images/merged_position.png" src="../_images/merged_position.png" />
+<p>Now let&#8217;s filter our merged table down using that column and the <code class="docutils literal"><span class="pre">pandas</span></code> filtering method that combines a column, an operator and the value we want to filter by.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="p">[</span><span class="n">merged</span><span class="o">.</span><span class="n">committee_position</span> <span class="o">==</span> <span class="s1">&#39;SUPPORT&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<img alt="../_images/support_filter.png" src="../_images/support_filter.png" />
+<p>Let&#8217;s stick the result in a variable.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">support</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="n">merged</span><span class="o">.</span><span class="n">committee_position</span> <span class="o">==</span> <span class="s1">&#39;SUPPORT&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>And count how many contributions are in this new, more limited set.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">support</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/support_len.png" src="../_images/support_len.png" />
+<p>We can now use this new variable to rank the five biggest supporting contributions by using <code class="docutils literal"><span class="pre">sort_values</span></code> again.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">support</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/support_sort.png" src="../_images/support_sort.png" />
+<p>Now let&#8217;s repeat all that for opposing contributions. First the filter into a new variable.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">oppose</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="n">merged</span><span class="o">.</span><span class="n">committee_position</span> <span class="o">==</span> <span class="s1">&#39;OPPOSE&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Then a count.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">oppose</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/oppose_len.png" src="../_images/oppose_len.png" />
+<p>Then a ranking.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">oppose</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/oppose_sort.png" src="../_images/oppose_sort.png" />
+<p>Now sum up the total disclosed contributions to each for comparison. First the opposition.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">oppose</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/oppose_amount_sum.png" src="../_images/oppose_amount_sum.png" />
+<p>Then the supporters.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">support</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/support_amount_sum.png" src="../_images/support_amount_sum.png" />
+<p>The support is clearly larger. But what percent is it of the overall disclosed total? We can find out by combined two <code class="docutils literal"><span class="pre">sum</span></code> calculations using the division operator.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">support</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="n">merged</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/support_amount_percent.png" src="../_images/support_amount_percent.png" />
+<p>We&#8217;ve encountered a lot of different committees as we&#8217;ve explored the data. A natural question follows: Which ones have raised the most money?</p>
+<p>To figure that out, we&#8217;ll need to group the data by that column and then sum up the <code class="docutils literal"><span class="pre">amount</span></code> for each. We can do that be using the <code class="docutils literal"><span class="pre">pandas</span></code> <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.groupby.html">groupby</a> method and the <code class="docutils literal"><span class="pre">sum</span></code> trick we&#8217;ve already learned.</p>
+<p>If you scroll back up and look carefully as the <code class="docutils literal"><span class="pre">info</span></code> command we ran after merging out data, you will noticed it includes a column named <code class="docutils literal"><span class="pre">committee_name_x</span></code> and <code class="docutils literal"><span class="pre">commitee_name_y</span></code>. That is because the field was present on both our committee list and our contributions list prior to joining them together. Rather than drop one of them, <code class="docutils literal"><span class="pre">pandas</span></code> is trained to keep them both and to append suffixes to the end.</p>
+<p>That&#8217;s the field we want to group by here. Since they are identical, it doesn&#8217;t matter which one we pick. Let&#8217;s go with x.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;committee_name_x&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/committee_group.png" src="../_images/committee_group.png" />
+<p>Again our data has come back as an ugly <code class="docutils literal"><span class="pre">Series</span></code>. To reformat it as a pretty <code class="docutils literal"><span class="pre">DataFrame</span></code> use the <code class="docutils literal"><span class="pre">reset_index</span></code> method again.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;committee_name_x&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/committee_group_df.png" src="../_images/committee_group_df.png" />
+<p>Sorting the biggest totals to the top is as easy as appending the <code class="docutils literal"><span class="pre">sort_values</span></code> trick we already know to the end. And voila there&#8217;s our answer.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;committee_name_x&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/committee_group_sort.png" src="../_images/committee_group_sort.png" />
+<p>Finding the top contributors is just as easy. We only need to substitute the name fields into the <code class="docutils literal"><span class="pre">groupby</span></code> method.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;contributor_firstname&quot;</span><span class="p">,</span> <span class="s2">&quot;contributor_lastname&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/name_group.png" src="../_images/name_group.png" />
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You should be noticing that several of the top contributors appear to be the same person with their name entered in slightly different ways. This is another important lesson of campaign contributions data. Virtually none of the data is standardized by the campaigns or the government. The onus is on the analyst to show caution and responsibly combine records where the name fields refer to the same person.</p>
+</div>
+<p>To find out if each contributor supported or opposed the measure, you simple add that field to our <code class="docutils literal"><span class="pre">groupby</span></code> method.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;contributor_firstname&quot;</span><span class="p">,</span> <span class="s2">&quot;contributor_lastname&quot;</span><span class="p">,</span> <span class="s2">&quot;committee_position&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/name_position_group.png" src="../_images/name_position_group.png" />
+<p>You&#8217;ve done it. Our brief interview is complete and you&#8217;ve answered the big question that started our inquiry. If you&#8217;re interested in continuing the interview, see if you can answer a few more questions on your own. Here are some ideas:</p>
+<ul class="simple">
+<li>What percentage of donations came from people who live outside of California?</li>
+<li>What are the top employers of donors who gave for and against the measure?</li>
+<li>Which committees had the fewest donors?</li>
+</ul>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Ben Welsh and the California Civic Data Coalition.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
