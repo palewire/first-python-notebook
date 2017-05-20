@@ -6,7 +6,7 @@ Now it's time to get real. It's time to start working on our analysis.
 
 Our data source will be the `California Civic Data Coalition <http://www.californiacivicdata.org/>`_, an open-source network of journalists and developers that maintains an archive of data tracking money in California politics.
 
-The coalition has created simplified data files containing the disclosure forms that committees campaigning either for against one of the 17 propositions on the ballots in November 2016 filed with the state of California.
+The coalition has created simplified data files containing the disclosure forms that committees campaigning either for against one of the 17 propositions on the ballot in November 2016 filed with the state of California.
 
 They are:
 
