@@ -1,11 +1,21 @@
+==========================
+Chapter 5: Hello DataFrame
+==========================
 
-************
-Getting real
-************
+Now it's time to get real. It's time to start working on a real analysis.
 
-the use and sale of marijuana for recreational purposes was illegal in California. That changed when voters approved Proposition 64, which asked voters if the practice ought to be legalized. A yes vote supported legalization. A no vote opposed it. `In the final tally <http://elections.cdn.sos.ca.gov/sov/2016-general/sov/65-ballot-measures-formatted.pdf>`_, 57% of voters said yes.
+Our data source will be the `California Civic Data Coalition <http://www.californiacivicdata.org/>`_, an open-source network of journalists and developers that maintains an archive of data tracking money in California politics.
 
-Your mission, `should you choose to accept it <https://www.youtube.com/watch?v=0TiqXFssKMY>`_, is to analyze lists of campaign committees and contributors to figure out the biggest donors both for and against the measure.
+The coalition has created simplified data files containing the disclosure forms that committees campaigning either for against one of the 17 propositions on the ballots in November 2016 filed with the state of California.
+
+They are:
+
+================= ===========
+Name              Description
+================= ===========
+committees.csv    Committees active in the election linked to propositions supported or opposed
+contributions.csv Donors reported by each of the committees
+================= ===========
 
 To start `click here <http://first-python-notebook.readthedocs.io/en/latest/_static/prop-committees.csv>`_ to download a list of last November's 17 ballot measures and their affiliated fundraising committees.
 
