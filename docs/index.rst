@@ -29,6 +29,7 @@ This course is free. If you've tried Python once or twice, have good attitude an
     notebook/index
     pandas/index
     money/index
+    dataframe/index
     science/index
     internet/index
     charts/index
