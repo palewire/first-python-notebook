@@ -1,6 +1,6 @@
-======================
-Chapter 4: Hello money
-======================
+==================================
+Chapter 4: Hello money in politics
+==================================
 
 In November 2016, California voters had a lot of decisions to make.
 
