@@ -66,6 +66,6 @@ You can review, install and contribute to the coalition's open-source codebase `
 
 Currently, the coalition's `website <http://www.californiacivicdata.org/>`_ archives the data published each day by the state and offers more complete documentation and easier access to the original files.
 
-In the near future, the site will offer simplified data files free to the public that make it signficantly easier to understand and investigate. Until they reach that goal we will be working with experimental early versions created for this class.
+In the near future, the site will offer simplified files free to the public that make the data significantly easier to understand and interrogate. Until the coalition reaches that goal we will be working with experimental early versions created for this class.
 
 In the next chapter, we will show how to import that data into pandas and your notebook to start an analysis.
