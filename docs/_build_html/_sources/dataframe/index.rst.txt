@@ -33,7 +33,7 @@ Scroll down to the first open cell. There we will import the first CSV file list
 
 .. code-block:: python
 
-    pandas.read_csv("http://www.firstpythonnotebook.org/_static/committees.csv")
+    pd.read_csv("http://www.firstpythonnotebook.org/_static/committees.csv")
 
 .. warning::
 
@@ -57,7 +57,7 @@ Go back to your initial cell and change it to this. Then rerun it.
 
 .. code-block:: python
 
-    props = pandas.read_csv("http://www.firstpythonnotebook.org/_static/committees.csv")
+    props = pd.read_csv("http://www.firstpythonnotebook.org/_static/committees.csv")
 
 After you run it, you shouldn't see anything. That's a good thing. It means our DataFrame has been saved under the name props, which we can now begin interacting with in the cells that follow.
 

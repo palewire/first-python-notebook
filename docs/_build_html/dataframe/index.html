@@ -34,7 +34,7 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="First Python Notebook 1.0 documentation" href="../index.html"/>
-        <link rel="next" title="Chapter 6: Hello value_counts" href="../value_counts/index.html"/>
+        <link rel="next" title="Chapter 6: Hello columns" href="../value_counts/index.html"/>
         <link rel="prev" title="Chapter 4: Hello money in politics" href="../money/index.html"/> 
 
   
@@ -92,13 +92,17 @@
 <li class="toctree-l2"><a class="reference internal" href="#creating-another-dataframe">Creating another DataFrame</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../value_counts/index.html">Chapter 6: Hello value_counts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../value_counts/index.html">Chapter 6: Hello columns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../filter/index.html">Chapter 7: Hello filter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../merge/index.html">Chapter 8: Hello merge</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../science/index.html">Chapter 4: Hello science</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../internet/index.html">Chapter 5: Hello Internet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 6: Hello charts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cleaning/index.html">Chapter 7: Hello cleaning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../totals/index.html">Chapter 9: Hello totals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sort_values/index.html">Chapter 10: Hello sorting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../groupby/index.html">Chapter 11: Hello groupby</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">Chapter 12: Hello git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown/index.html">Chapter 13: Hello Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../github/index.html">Chapter 14: Hello GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 15: Hello charts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cleaning/index.html">Chapter 16: Hello cleaning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about/index.html">About the author</a></li>
 </ul>
 
@@ -179,7 +183,7 @@
 <p>The pandas library is able to read in files from a variety formats, including CSV.</p>
 <p>If it&#8217;s not currently running start up your Jupyter Notebook as described in <a class="reference internal" href="../notebook/index.html"><span class="doc">chapter two</span></a>.</p>
 <p>Scroll down to the first open cell. There we will import the first CSV file listed above using the <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html">read_csv</a> function included with pandas.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;http://www.firstpythonnotebook.org/_static/committees.csv&quot;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;http://www.firstpythonnotebook.org/_static/committees.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="admonition warning">
@@ -195,7 +199,7 @@
 <h2>Creating a variable<a class="headerlink" href="#creating-a-variable" title="Permalink to this headline">¶</a></h2>
 <p>In order to do that, we need to store our DataFrame so it can be reused in subsequent cells. We can do this by saving in a <a class="reference external" href="https://en.wikipedia.org/wiki/Variable_(computer_science)">&#8220;variable&#8221;</a>, which is a fancy computer programming word for a named shortcut where we save our work as we go.</p>
 <p>Go back to your initial cell and change it to this. Then rerun it.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">props</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;http://www.firstpythonnotebook.org/_static/committees.csv&quot;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">props</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;http://www.firstpythonnotebook.org/_static/committees.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>After you run it, you shouldn&#8217;t see anything. That&#8217;s a good thing. It means our DataFrame has been saved under the name props, which we can now begin interacting with in the cells that follow.</p>
@@ -247,7 +251,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../value_counts/index.html" class="btn btn-neutral float-right" title="Chapter 6: Hello value_counts" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../value_counts/index.html" class="btn btn-neutral float-right" title="Chapter 6: Hello columns" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../money/index.html" class="btn btn-neutral" title="Chapter 4: Hello money in politics" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
