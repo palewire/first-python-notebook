@@ -16,7 +16,7 @@ After that completes, once again restart your notebook.
 
     $ jupyter notebook
 
-Now you can open your notebook and add a new cell below the imports that lets the system know you plan to make some charts and that it's okay to surface them in the notebook.
+Now you can open your notebook and add a new cell below the imports that lets the system know you plan to make some charts and that it's okay to surface them in the notebook. 
 
 .. code-block:: python
 

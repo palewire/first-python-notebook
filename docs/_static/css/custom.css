@@ -110,6 +110,10 @@ p.caption {
     margin: 4px 0;
 }
 
+.rst-content .toctree-wrapper ul {
+    margin-top: 24px;
+}
+
 table.csv-data td,
 table.csv-data th {
     width: auto !important;
