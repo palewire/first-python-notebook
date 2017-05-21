@@ -1,0 +1,256 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Chapter 11: Hello groupby &mdash; First Python Notebook 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="First Python Notebook 1.0 documentation" href="../index.html"/>
+        <link rel="next" title="Chapter 5: Hello Internet" href="../internet/index.html"/>
+        <link rel="prev" title="Chapter 10: Hello sorting" href="../sort_values/index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> First Python Notebook
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../prerequisites/index.html">Prologue: Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../virtualenv/index.html">Chapter 1: Hello virtualenv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebook/index.html">Chapter 2: Hello Jupyter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pandas/index.html">Chapter 3: Hello pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../money/index.html">Chapter 4: Hello money in politics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dataframe/index.html">Chapter 5: Hello data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../value_counts/index.html">Chapter 6: Hello columns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filter/index.html">Chapter 7: Hello filter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merge/index.html">Chapter 8: Hello merge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../totals/index.html">Chapter 9: Hello totals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sort_values/index.html">Chapter 10: Hello sorting</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 11: Hello groupby</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internet/index.html">Chapter 5: Hello Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 6: Hello charts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cleaning/index.html">Chapter 7: Hello cleaning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/index.html">About the author</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">First Python Notebook</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Home</a> &raquo;</li>
+        
+      
+      <li>Chapter 11: Hello groupby</li>
+      
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="chapter-11-hello-groupby">
+<h1>Chapter 11: Hello groupby<a class="headerlink" href="#chapter-11-hello-groupby" title="Permalink to this headline">¶</a></h1>
+<p>We&#8217;ve encountered a lot of different committees as we&#8217;ve explored the data. A natural question follows: Which ones have raised the most money?</p>
+<p>To figure that out, we&#8217;ll need to group the data by that column and then sum up the <code class="docutils literal"><span class="pre">amount</span></code> for each. We can do that be using the <code class="docutils literal"><span class="pre">pandas</span></code> <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.groupby.html">groupby</a> method and the <code class="docutils literal"><span class="pre">sum</span></code> trick we&#8217;ve already learned.</p>
+<p>If you scroll back up and look carefully as the <code class="docutils literal"><span class="pre">info</span></code> command we ran after merging out data, you will noticed it includes a column named <code class="docutils literal"><span class="pre">committee_name_x</span></code> and <code class="docutils literal"><span class="pre">commitee_name_y</span></code>. That is because the field was present on both our committee list and our contributions list prior to joining them together. Rather than drop one of them, <code class="docutils literal"><span class="pre">pandas</span></code> is trained to keep them both and to append suffixes to the end.</p>
+<p>That&#8217;s the field we want to group by here. Since they are identical, it doesn&#8217;t matter which one we pick. Let&#8217;s go with x.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;committee_name_x&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/committee_group.png" src="../_images/committee_group.png" />
+<p>Again our data has come back as an ugly <code class="docutils literal"><span class="pre">Series</span></code>. To reformat it as a pretty <code class="docutils literal"><span class="pre">DataFrame</span></code> use the <code class="docutils literal"><span class="pre">reset_index</span></code> method again.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;committee_name_x&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/committee_group_df.png" src="../_images/committee_group_df.png" />
+<p>Sorting the biggest totals to the top is as easy as appending the <code class="docutils literal"><span class="pre">sort_values</span></code> trick we already know to the end. And voila there&#8217;s our answer.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;committee_name_x&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/committee_group_sort.png" src="../_images/committee_group_sort.png" />
+<p>Finding the top contributors is just as easy. We only need to substitute the name fields into the <code class="docutils literal"><span class="pre">groupby</span></code> method.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;contributor_firstname&quot;</span><span class="p">,</span> <span class="s2">&quot;contributor_lastname&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/name_group.png" src="../_images/name_group.png" />
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You should be noticing that several of the top contributors appear to be the same person with their name entered in slightly different ways. This is another important lesson of campaign contributions data. Virtually none of the data is standardized by the campaigns or the government. The onus is on the analyst to show caution and responsibly combine records where the name fields refer to the same person.</p>
+</div>
+<p>To find out if each contributor supported or opposed the measure, you simple add that field to our <code class="docutils literal"><span class="pre">groupby</span></code> method.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;contributor_firstname&quot;</span><span class="p">,</span> <span class="s2">&quot;contributor_lastname&quot;</span><span class="p">,</span> <span class="s2">&quot;committee_position&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/name_position_group.png" src="../_images/name_position_group.png" />
+<p>You&#8217;ve done it. Our brief interview is complete and you&#8217;ve answered the big question that started our inquiry. If you&#8217;re interested in continuing the interview, see if you can answer a few more questions on your own. Here are some ideas:</p>
+<ul class="simple">
+<li>What percentage of donations came from people who live outside of California?</li>
+<li>What are the top employers of donors who gave for and against the measure?</li>
+<li>Which committees had the fewest donors?</li>
+</ul>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../internet/index.html" class="btn btn-neutral float-right" title="Chapter 5: Hello Internet" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../sort_values/index.html" class="btn btn-neutral" title="Chapter 10: Hello sorting" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Ben Welsh and the California Civic Data Coalition.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

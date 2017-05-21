@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Chapter 7: Hello cleaning &mdash; First Python Notebook 1.0 documentation</title>
+  <title>Chapter 16: Hello cleaning &mdash; First Python Notebook 1.0 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="First Python Notebook 1.0 documentation" href="../index.html"/>
         <link rel="next" title="About the author" href="../about/index.html"/>
-        <link rel="prev" title="Chapter 6: Hello charts" href="../charts/index.html"/> 
+        <link rel="prev" title="Chapter 15: Hello charts" href="../charts/index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -81,17 +81,18 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../prerequisites/index.html">Prologue: Prerequisites</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../virtualenv/index.html">Chapter 1: Hello virtualenv</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebook/index.html">Chapter 2: Hello Jupyter Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebook/index.html">Chapter 2: Hello Jupyter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pandas/index.html">Chapter 3: Hello pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../money/index.html">Chapter 4: Hello money in politics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dataframe/index.html">Chapter 5: Hello data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../value_counts/index.html">Chapter 6: Hello value_counts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../value_counts/index.html">Chapter 6: Hello columns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../filter/index.html">Chapter 7: Hello filter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../merge/index.html">Chapter 8: Hello merge</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../science/index.html">Chapter 4: Hello science</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../internet/index.html">Chapter 5: Hello Internet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 6: Hello charts</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 7: Hello cleaning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../totals/index.html">Chapter 9: Hello totals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sort_values/index.html">Chapter 10: Hello sorting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../groupby/index.html">Chapter 11: Hello groupby</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 15: Hello charts</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 16: Hello cleaning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about/index.html">About the author</a></li>
 </ul>
 
@@ -130,7 +131,7 @@
       <li><a href="../index.html">Home</a> &raquo;</li>
         
       
-      <li>Chapter 7: Hello cleaning</li>
+      <li>Chapter 16: Hello cleaning</li>
       
     
   </ul>
@@ -141,8 +142,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="chapter-7-hello-cleaning">
-<h1>Chapter 7: Hello cleaning<a class="headerlink" href="#chapter-7-hello-cleaning" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="chapter-16-hello-cleaning">
+<h1>Chapter 16: Hello cleaning<a class="headerlink" href="#chapter-16-hello-cleaning" title="Permalink to this headline">¶</a></h1>
 <p>You&#8217;ve probably noticed that top two supporters are the same person, <a class="reference external" href="https://en.wikipedia.org/wiki/Sean_Parker">Sean Parker</a>. However, due to variations in how the <code class="docutils literal"><span class="pre">contributor_lastname</span></code> and <code class="docutils literal"><span class="pre">contributor_firstname</span></code> fields were filled out on the disclosure forms his contributions were not combined during our earlier grouping.</p>
 <p>A common approach to correcting this issue is to create a new column where the cleaned up version of names are stored alongside the raw values from the public data. If two rows with different raw names are given an identical name in the clean column, that field can then be used to group the data and aggregate their contributions together.</p>
 <p>There are several different approaches to making that happen. In this introductory lesson we&#8217;re going to take a simplified approach that will also teach you a valuable skill: How to use panda&#8217;s <code class="docutils literal"><span class="pre">apply</span></code> method to generate a new column.</p>
@@ -189,7 +190,7 @@
         <a href="../about/index.html" class="btn btn-neutral float-right" title="About the author" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../charts/index.html" class="btn btn-neutral" title="Chapter 6: Hello charts" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../charts/index.html" class="btn btn-neutral" title="Chapter 15: Hello charts" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

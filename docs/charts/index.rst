@@ -1,6 +1,6 @@
-=======================
-Chapter 6: Hello charts
-=======================
+========================
+Chapter 15: Hello charts
+========================
 
 Python has a number of charting tools that can work hand-in-hand with ``pandas``. The most popular is `matplotlib <http://matplotlib.org/>`_. It isn't the prettiest thing in the world, but it offers straightfoward tools for exploring your data by making quick charts. And, best of all, it can display in your Jupyter Notebook.
 

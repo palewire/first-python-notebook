@@ -1,6 +1,6 @@
-=================================
-Chapter 2: Hello Jupyter Notebook
-=================================
+========================
+Chapter 2: Hello Jupyter
+========================
 
 A `Jupyter Notebook <http://jupyter.org/>`_ is a browser application where you can write, run, remix and republish code.
 

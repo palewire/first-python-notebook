@@ -33,8 +33,12 @@ This course is free. If you've tried Python once or twice, have good attitude an
     value_counts/index
     filter/index
     merge/index
-    science/index
-    internet/index
+    totals/index
+    sort_values/index
+    groupby/index
+    git/index
+    markdown/index
+    github/index
     charts/index
     cleaning/index
     about/index

@@ -1,6 +1,6 @@
-=========================
-Chapter 7: Hello cleaning
-=========================
+==========================
+Chapter 16: Hello cleaning
+==========================
 
 You've probably noticed that top two supporters are the same person, `Sean Parker <https://en.wikipedia.org/wiki/Sean_Parker>`_. However, due to variations in how the ``contributor_lastname`` and ``contributor_firstname`` fields were filled out on the disclosure forms his contributions were not combined during our earlier grouping.
 

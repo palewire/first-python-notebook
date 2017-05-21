@@ -1,6 +1,6 @@
-=============================
-Chapter 6: Hello value_counts
-=============================
+========================
+Chapter 6: Hello columns
+========================
 
 In this chapter we'll begin our analysis by learning how to analyze a column from a DataFrame.
 

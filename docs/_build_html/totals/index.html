@@ -1,0 +1,273 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Chapter 9: Hello totals &mdash; First Python Notebook 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="First Python Notebook 1.0 documentation" href="../index.html"/>
+        <link rel="next" title="&lt;no title&gt;" href="../sort_values/index.html"/>
+        <link rel="prev" title="Chapter 8: Hello merge" href="../merge/index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> First Python Notebook
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../prerequisites/index.html">Prologue: Prerequisites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../virtualenv/index.html">Chapter 1: Hello virtualenv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebook/index.html">Chapter 2: Hello Jupyter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pandas/index.html">Chapter 3: Hello pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../money/index.html">Chapter 4: Hello money in politics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dataframe/index.html">Chapter 5: Hello data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../value_counts/index.html">Chapter 6: Hello value_counts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filter/index.html">Chapter 7: Hello filter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../merge/index.html">Chapter 8: Hello merge</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 9: Hello totals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internet/index.html">Chapter 5: Hello Internet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 6: Hello charts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cleaning/index.html">Chapter 7: Hello cleaning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/index.html">About the author</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">First Python Notebook</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Home</a> &raquo;</li>
+        
+      
+      <li>Chapter 9: Hello totals</li>
+      
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="chapter-9-hello-totals">
+<h1>Chapter 9: Hello totals<a class="headerlink" href="#chapter-9-hello-totals" title="Permalink to this headline">¶</a></h1>
+<p>Question one answered. Here&#8217;s number two: What is the total sum of contributions that have been reported?</p>
+<p>To answer that let&#8217;s start by getting our hands on <code class="docutils literal"><span class="pre">amount</span></code>, the column with the numbers in it. We can do that just as we did with other columns above.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">amount</span>
+</pre></div>
+</div>
+<img alt="../_images/merged_amount.png" src="../_images/merged_amount.png" />
+<p>Now add up the column&#8217;s total using the <code class="docutils literal"><span class="pre">pandas</span></code> method <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.sum.html">sum</a>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/merged_amount_sum.png" src="../_images/merged_amount_sum.png" />
+<p>There&#8217;s our big total. Fun fact: This number is guaranteed to be lower than the totals reported by the campaigns. Why? Campaigns are only required to report the names of donors over $200, so our data is missing all of the donors who gave smaller amounts of money.</p>
+<p>The overall totals are reported elsewhere in lump sums and cannot be replicated by adding up the individual contributions. Understanding this is crucial to understanding not just this data, but all campaign finance data.</p>
+<p>Adding up a big total is all well and good. But we&#8217;re aiming for something more nuanced. We want to separate the money spent for the proposition from the money spent against it. To do that, we&#8217;ll need to return to the filtering trick we learned above.</p>
+<p>First let&#8217;s look at the column we&#8217;re going to filter by, <code class="docutils literal"><span class="pre">committee_position</span></code>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">committee_position</span>
+</pre></div>
+</div>
+<img alt="../_images/merged_position.png" src="../_images/merged_position.png" />
+<p>Now let&#8217;s filter our merged table down using that column and the <code class="docutils literal"><span class="pre">pandas</span></code> filtering method that combines a column, an operator and the value we want to filter by.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="p">[</span><span class="n">merged</span><span class="o">.</span><span class="n">committee_position</span> <span class="o">==</span> <span class="s1">&#39;SUPPORT&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<img alt="../_images/support_filter.png" src="../_images/support_filter.png" />
+<p>Let&#8217;s stick the result in a variable.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">support</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="n">merged</span><span class="o">.</span><span class="n">committee_position</span> <span class="o">==</span> <span class="s1">&#39;SUPPORT&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>And count how many contributions are in this new, more limited set.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">support</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/support_len.png" src="../_images/support_len.png" />
+<p>Now let&#8217;s repeat all that for opposing contributions. First the filter into a new variable.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">oppose</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="n">merged</span><span class="o">.</span><span class="n">committee_position</span> <span class="o">==</span> <span class="s1">&#39;OPPOSE&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Then a count.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">oppose</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/oppose_len.png" src="../_images/oppose_len.png" />
+<p>Now sum up the total disclosed contributions to each for comparison. First the opposition.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">oppose</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/oppose_amount_sum.png" src="../_images/oppose_amount_sum.png" />
+<p>Then the supporters.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">support</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/support_amount_sum.png" src="../_images/support_amount_sum.png" />
+<p>The support is clearly larger. But what percent is it of the overall disclosed total? We can find out by combined two <code class="docutils literal"><span class="pre">sum</span></code> calculations using the division operator.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">support</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="n">merged</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../_images/support_amount_percent.png" src="../_images/support_amount_percent.png" />
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../sort_values/index.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../merge/index.html" class="btn btn-neutral" title="Chapter 8: Hello merge" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Ben Welsh and the California Civic Data Coalition.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
