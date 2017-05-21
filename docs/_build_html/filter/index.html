@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Chapter 7: Hello filter &mdash; First Python Notebook 1.0 documentation</title>
+  <title>Chapter 7: Hello filters &mdash; First Python Notebook 1.0 documentation</title>
   
 
   
@@ -86,7 +86,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../money/index.html">Chapter 4: Hello money in politics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dataframe/index.html">Chapter 5: Hello data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../value_counts/index.html">Chapter 6: Hello columns</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 7: Hello filter</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 7: Hello filters</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#filtering-a-dataframe">Filtering a DataFrame</a></li>
 </ul>
 </li>
@@ -137,7 +137,7 @@
       <li><a href="../index.html">Home</a> &raquo;</li>
         
       
-      <li>Chapter 7: Hello filter</li>
+      <li>Chapter 7: Hello filters</li>
       
     
   </ul>
@@ -148,8 +148,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="chapter-7-hello-filter">
-<h1>Chapter 7: Hello filter<a class="headerlink" href="#chapter-7-hello-filter" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="chapter-7-hello-filters">
+<h1>Chapter 7: Hello filters<a class="headerlink" href="#chapter-7-hello-filters" title="Permalink to this headline">¶</a></h1>
 <p>Until last November, the use and sale of marijuana for recreational purposes was illegal in California. That changed when voters approved Proposition 64, which asked if the practice ought to be legalized.</p>
 <p>A yes vote supported legalization. A no vote opposed it. <a class="reference external" href="http://elections.cdn.sos.ca.gov/sov/2016-general/sov/65-ballot-measures-formatted.pdf">In the final tally</a>, 57% of voters said yes.</p>
 <p>Our next mission is to use the DataFrames containing campaign committees and contributors to figure out the biggest donors both for and against the measure.</p>
@@ -158,22 +158,28 @@
 <h2>Filtering a DataFrame<a class="headerlink" href="#filtering-a-dataframe" title="Permalink to this headline">¶</a></h2>
 <p>The most common way to filter a DataFrame is to pass an expression as an &#8220;index&#8221; that can be used to decide which records should be kept and which discarded.</p>
 <p>You write the expression by combining a column on your DataFrame with an <a class="reference external" href="https://en.wikipedia.org/wiki/Operator_(computer_programming)">&#8220;operator&#8221;</a> like <code class="docutils literal"><span class="pre">==</span></code> or <code class="docutils literal"><span class="pre">&gt;</span></code> or <code class="docutils literal"><span class="pre">&lt;</span></code> and a value to compare the column against.</p>
-<p>In our case, the column we want to filter against is prop.prop_name. We only want to keep those records where the value there matches the full name of Proposition 64. And do we get that? Our friend <a class="reference internal" href="../value_counts/index.html"><span class="doc">value counts</span></a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you are familiar with writing SQL to manipulate databases, pandas&#8217; filtering system is somewhat similar to a WHERE query. The <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/comparison_with_sql.html#where">official pandas documentation</a> offers direct translations between the two.</p>
+</div>
+<p>In our case, the column we want to filter against is prop.prop_name. We only want to keep those records where the value there matches the full name of Proposition 64.</p>
+<p>Where do we get that? Our friend <a class="reference internal" href="../value_counts/index.html"><span class="doc">value counts</span></a>.</p>
 <p>Running the command we learned before to list and count all of the proposition names will spit out the full name of all 17 measures.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">props</span><span class="o">.</span><span class="n">prop_name</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>From that result we can copy the full name of the proposition place it between quotation marks to form the filter expression expected by pandas.</p>
+<p>From that result we can copy the full name of the proposition and place it between quotation marks to form the filter expression expected by pandas.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">props</span><span class="o">.</span><span class="n">prop_name</span> <span class="o">==</span> <span class="s1">&#39;PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.&#39;</span>
 </pre></div>
 </div>
-<p>That expression is then placed between two flat brackets following the variable we want to filter. Place this code in the next open cell in your notebook.</p>
+<p>That expression is then placed between two flat brackets following the variable we want to filter. Place the following code in the next open cell in your notebook.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">props</span><span class="p">[</span><span class="n">props</span><span class="o">.</span><span class="n">prop_name</span> <span class="o">==</span> <span class="s1">&#39;PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Run it and here&#8217;s what it outputs, the filtered dataset.</p>
+<p>Run it and it outputs the filtered dataset, just those committees active on Proposition 64.</p>
 <img alt="../_images/prop_filter.png" src="../_images/prop_filter.png" />
-<p>Now we should save the results of that filter into new variable separate from the full list we imported from the CSV file. Since it includes only the committees for one proposition I am going to call it the singular prop.</p>
+<p>Now we should save the results of that filter into new variable separate from the full list we imported from the CSV file.</p>
+<p>Since it includes only the committees for one proposition lets call it the singular prop.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">prop</span> <span class="o">=</span> <span class="n">props</span><span class="p">[</span><span class="n">props</span><span class="o">.</span><span class="n">prop_name</span> <span class="o">==</span> <span class="s1">&#39;PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
