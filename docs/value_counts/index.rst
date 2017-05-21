@@ -4,6 +4,8 @@ Chapter 6: Hello value_counts
 
 In this chapter we'll begin our analysis by learning how to analyze a column from a DataFrame.
 
+.. youtube:: ofWJDeC8bB4
+
 ******************
 Accessing a column
 ******************
