@@ -22,7 +22,7 @@ You write the expression by combining a column on your DataFrame with an `"opera
 
 .. note::
 
-    If you are familiar with writing SQL to manipulate databases, pandas' filtering system is somewhat similar to a WHERE query. The `official pandas documentation <http://pandas.pydata.org/pandas-docs/stable/comparison_with_sql.html#where>`_ offers direct translations between the two.
+    If you are familiar with writing `SQL <https://en.wikipedia.org/wiki/SQL>`_ to manipulate databases, pandas' filtering system is somewhat similar to a WHERE query. The `official pandas documentation <http://pandas.pydata.org/pandas-docs/stable/comparison_with_sql.html#where>`_ offers direct translations between the two.
 
 In our case, the column we want to filter against is prop.prop_name. We only want to keep those records where the value there matches the full name of Proposition 64.
 
