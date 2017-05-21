@@ -35,7 +35,7 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="First Python Notebook 1.0 documentation" href="../index.html"/>
         <link rel="next" title="Chapter 8: Hello merge" href="../merge/index.html"/>
-        <link rel="prev" title="Chapter 6: Hello value_counts" href="../value_counts/index.html"/> 
+        <link rel="prev" title="Chapter 6: Hello columns" href="../value_counts/index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -85,13 +85,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../pandas/index.html">Chapter 3: Hello pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../money/index.html">Chapter 4: Hello money in politics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dataframe/index.html">Chapter 5: Hello data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../value_counts/index.html">Chapter 6: Hello value_counts</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 7: Hello filter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../value_counts/index.html">Chapter 6: Hello columns</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 7: Hello filter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#filtering-a-dataframe">Filtering a DataFrame</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../merge/index.html">Chapter 8: Hello merge</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../science/index.html">Chapter 4: Hello science</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../internet/index.html">Chapter 5: Hello Internet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 6: Hello charts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cleaning/index.html">Chapter 7: Hello cleaning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../totals/index.html">Chapter 9: Hello totals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sort_values/index.html">Chapter 10: Hello sorting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../groupby/index.html">Chapter 11: Hello groupby</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">Chapter 12: Hello git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown/index.html">Chapter 13: Hello Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../github/index.html">Chapter 14: Hello GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 15: Hello charts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cleaning/index.html">Chapter 16: Hello cleaning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about/index.html">About the author</a></li>
 </ul>
 
@@ -143,22 +150,43 @@
             
   <div class="section" id="chapter-7-hello-filter">
 <h1>Chapter 7: Hello filter<a class="headerlink" href="#chapter-7-hello-filter" title="Permalink to this headline">¶</a></h1>
-<p>Now that we&#8217;ve seen all the propositions in the dataset, we&#8217;re ready to take a crucial step towards our goal by filtering the list down to just those committees that supported or opposed Proposition 64.</p>
-<p>We can do that by copying the full name of the proposition that appears in the dataset and inserting it into the following statement, which follows the <code class="docutils literal"><span class="pre">pandas</span></code> system for filtering a <code class="docutils literal"><span class="pre">DataFrame</span></code>.</p>
-<p>You start with the variable you want to filter, and then create an evaluation by combining a column with an <a class="reference external" href="https://en.wikipedia.org/wiki/Operator_(computer_programming)">&#8220;operator&#8221;</a> like <code class="docutils literal"><span class="pre">==</span></code> or <code class="docutils literal"><span class="pre">&gt;</span></code> or <code class="docutils literal"><span class="pre">&lt;</span></code> with a value to compare the field against.</p>
+<p>Until last November, the use and sale of marijuana for recreational purposes was illegal in California. That changed when voters approved Proposition 64, which asked if the practice ought to be legalized.</p>
+<p>A yes vote supported legalization. A no vote opposed it. <a class="reference external" href="http://elections.cdn.sos.ca.gov/sov/2016-general/sov/65-ballot-measures-formatted.pdf">In the final tally</a>, 57% of voters said yes.</p>
+<p>Our next mission is to use the DataFrames containing campaign committees and contributors to figure out the biggest donors both for and against the measure.</p>
+<p>To do that, the first thing we need to do is isolate the fundraising committees active on Proposition 64, which are now buried among of the list of more than 100 groups active last November.</p>
+<div class="section" id="filtering-a-dataframe">
+<h2>Filtering a DataFrame<a class="headerlink" href="#filtering-a-dataframe" title="Permalink to this headline">¶</a></h2>
+<p>The most common way to filter a DataFrame is to pass an expression as an &#8220;index&#8221; that can be used to decide which records should be kept and which discarded.</p>
+<p>You write the expression by combining a column on your DataFrame with an <a class="reference external" href="https://en.wikipedia.org/wiki/Operator_(computer_programming)">&#8220;operator&#8221;</a> like <code class="docutils literal"><span class="pre">==</span></code> or <code class="docutils literal"><span class="pre">&gt;</span></code> or <code class="docutils literal"><span class="pre">&lt;</span></code> and a value to compare the column against.</p>
+<p>In our case, the column we want to filter against is prop.prop_name. We only want to keep those records where the value there matches the full name of Proposition 64. And do we get that? Our friend <a class="reference internal" href="../value_counts/index.html"><span class="doc">value counts</span></a>.</p>
+<p>Running the command we learned before to list and count all of the proposition names will spit out the full name of all 17 measures.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">props</span><span class="o">.</span><span class="n">prop_name</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>From that result we can copy the full name of the proposition place it between quotation marks to form the filter expression expected by pandas.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">props</span><span class="o">.</span><span class="n">prop_name</span> <span class="o">==</span> <span class="s1">&#39;PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.&#39;</span>
+</pre></div>
+</div>
+<p>That expression is then placed between two flat brackets following the variable we want to filter. Place this code in the next open cell in your notebook.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">props</span><span class="p">[</span><span class="n">props</span><span class="o">.</span><span class="n">prop_name</span> <span class="o">==</span> <span class="s1">&#39;PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
+<p>Run it and here&#8217;s what it outputs, the filtered dataset.</p>
 <img alt="../_images/prop_filter.png" src="../_images/prop_filter.png" />
-<p>Now that we&#8217;ve seen what it outputs, we should save the results of that filter into new variable separate from the full list we imported from the CSV file.</p>
+<p>Now we should save the results of that filter into new variable separate from the full list we imported from the CSV file. Since it includes only the committees for one proposition I am going to call it the singular prop.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">prop</span> <span class="o">=</span> <span class="n">props</span><span class="p">[</span><span class="n">props</span><span class="o">.</span><span class="n">prop_name</span> <span class="o">==</span> <span class="s1">&#39;PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>The find out how many records are left after the filter, we can use Python&#8217;s built-in <a class="reference external" href="https://docs.python.org/2/library/functions.html#len">len</a> function to inspect our new variable.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span>
+<p>To check our work find out how many committees are left after the filter, let&#8217;s run the DataFrame inspection commands we learned earlier.</p>
+<p>First head.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">prop</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/prop_len.png" src="../_images/prop_len.png" />
+<p>Then info.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">prop</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -171,7 +199,7 @@
         <a href="../merge/index.html" class="btn btn-neutral float-right" title="Chapter 8: Hello merge" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../value_counts/index.html" class="btn btn-neutral" title="Chapter 6: Hello value_counts" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../value_counts/index.html" class="btn btn-neutral" title="Chapter 6: Hello columns" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

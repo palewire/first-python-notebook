@@ -2,28 +2,62 @@
 Chapter 7: Hello filter
 =======================
 
-Now that we've seen all the propositions in the dataset, we're ready to take a crucial step towards our goal by filtering the list down to just those committees that supported or opposed Proposition 64.
+Until last November, the use and sale of marijuana for recreational purposes was illegal in California. That changed when voters approved Proposition 64, which asked if the practice ought to be legalized.
 
-We can do that by copying the full name of the proposition that appears in the dataset and inserting it into the following statement, which follows the ``pandas`` system for filtering a ``DataFrame``.
+A yes vote supported legalization. A no vote opposed it. `In the final tally <http://elections.cdn.sos.ca.gov/sov/2016-general/sov/65-ballot-measures-formatted.pdf>`_, 57% of voters said yes.
 
-You start with the variable you want to filter, and then create an evaluation by combining a column with an `"operator" <https://en.wikipedia.org/wiki/Operator_(computer_programming)>`_ like ``==`` or ``>`` or ``<`` with a value to compare the field against.
+Our next mission is to use the DataFrames containing campaign committees and contributors to figure out the biggest donors both for and against the measure.
+
+To do that, the first thing we need to do is isolate the fundraising committees active on Proposition 64, which are now buried among of the list of more than 100 groups active last November.
+
+*********************
+Filtering a DataFrame
+*********************
+
+The most common way to filter a DataFrame is to pass an expression as an "index" that can be used to decide which records should be kept and which discarded.
+
+You write the expression by combining a column on your DataFrame with an `"operator" <https://en.wikipedia.org/wiki/Operator_(computer_programming)>`_ like ``==`` or ``>`` or ``<`` and a value to compare the column against.
+
+In our case, the column we want to filter against is prop.prop_name. We only want to keep those records where the value there matches the full name of Proposition 64. And do we get that? Our friend :doc:`value counts </value_counts/index>`.
+
+Running the command we learned before to list and count all of the proposition names will spit out the full name of all 17 measures.
+
+.. code-block:: python
+
+    props.prop_name.value_counts()
+
+From that result we can copy the full name of the proposition place it between quotation marks to form the filter expression expected by pandas.
+
+.. code-block:: python
+
+    props.prop_name == 'PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.'
+
+That expression is then placed between two flat brackets following the variable we want to filter. Place this code in the next open cell in your notebook.
 
 .. code-block:: python
 
     props[props.prop_name == 'PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.']
 
+Run it and here's what it outputs, the filtered dataset.
+
 .. image:: /_static/prop_filter.png
 
-Now that we've seen what it outputs, we should save the results of that filter into new variable separate from the full list we imported from the CSV file.
+Now we should save the results of that filter into new variable separate from the full list we imported from the CSV file. Since it includes only the committees for one proposition I am going to call it the singular prop.
 
 .. code-block:: python
 
     prop = props[props.prop_name == 'PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.']
 
-The find out how many records are left after the filter, we can use Python's built-in `len <https://docs.python.org/2/library/functions.html#len>`_ function to inspect our new variable.
+To check our work find out how many committees are left after the filter, let's run the DataFrame inspection commands we learned earlier.
+
+First head.
 
 .. code-block:: python
 
-    len(prop)
+    prop.head()
 
-.. image:: /_static/prop_len.png
+Then info.
+
+.. code-block:: python
+
+    prop.info()
