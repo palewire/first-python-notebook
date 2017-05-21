@@ -30,6 +30,7 @@ This course is free. If you've tried Python once or twice, have good attitude an
     pandas/index
     money/index
     dataframe/index
+    value_counts/index
     filter/index
     merge/index
     science/index

@@ -1,5 +1,5 @@
 =======================
-Chapter 6: Hello filter
+Chapter 7: Hello filter
 =======================
 
 Now that we've seen all the propositions in the dataset, we're ready to take a crucial step towards our goal by filtering the list down to just those committees that supported or opposed Proposition 64.
