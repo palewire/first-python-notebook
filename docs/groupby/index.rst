@@ -6,6 +6,8 @@ To take the next step towards ranking the top contributors, we'll need to learn 
 
 It's a pandas method that allows you to group a DataFrame by a column and then calculate a sum, or any other statistic, for each unique value. This is necessary when you want to rack up statistics on a long list of values, or about a combination of fields.
 
+.. youtube:: ceoIUOMRTDI
+
 *********************
 Grouping by one field
 *********************
