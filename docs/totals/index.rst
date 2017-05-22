@@ -12,23 +12,21 @@ Using tricks we learned as far back as :doc:`chapter three <pandas/index>`, we c
 Summing a column
 ****************
 
-To answer that let's start by getting our hands on ``amount``, the column from the contributions DataFrame with the numbers in it. We can do that just as we did with other columns above.
+To answer that let's start by getting our hands on amount, the column from the contributions DataFrame with the numbers in it. We can do that just as we did with other columns above.
 
 .. code-block:: python
 
     merged.amount
 
-.. image:: /_static/merged_amount.png
-
-Now we can add up the column's total using the ``pandas`` method `sum <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.sum.html>`_, just as we did when we were first getting started with pandas.
+Now we can add up the column's total using the pandas method `sum <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.sum.html>`_, just as we did when we were first getting started with pandas.
 
 .. code-block:: python
 
     merged.amount.sum()
 
-.. image:: /_static/merged_amount_sum.png
+And printed out below your cell, there's our answer.
 
-And there's our answer. We've completed our first piece of analysis and discovered the total amount spent on this proposition.
+We've completed our first piece of analysis and discovered the total amount spent on this proposition.
 
 Time to run off to Twitter and publish our results to the world, right?
 
@@ -70,8 +68,6 @@ First let's look at the column we're going to filter by, committee_position.
 
     merged.committee_position.value_counts()
 
-.. image:: /_static/merged_position.png
-
 Now let's filter our merged table down using that column and the pandas filtering method that combines a column, an operator and the value we want to filter by. Let's stick the result in a variable.
 
 .. code-block:: python
@@ -90,21 +86,14 @@ Now sum up the total disclosed contributions to each for comparison. First the o
 
     oppose.amount.sum()
 
-.. image:: /_static/oppose_amount_sum.png
-
 Then the supporters.
 
 .. code-block:: python
 
     support.amount.sum()
 
-.. image:: /_static/support_amount_sum.png
-
-
 The support is clearly larger. But what percent is it of the overall disclosed total? We can find out by combined two ``sum`` calculations using the division operator.
 
 .. code-block:: python
 
     support.amount.sum() / merged.amount.sum()
-
-.. image:: /_static/support_amount_percent.png

@@ -10,11 +10,11 @@ Our next mission is to use the DataFrames containing campaign committees and con
 
 To do that, the first thing we need to do is isolate the fundraising committees active on Proposition 64, which are now buried among of the list of more than 100 groups active last November.
 
-.. youtube:: lRyABONedV4
-
 *********************
 Filtering a DataFrame
 *********************
+
+.. youtube:: lRyABONedV4
 
 The most common way to filter a DataFrame is to pass an expression as an "index" that can be used to decide which records should be kept and which discarded.
 
@@ -47,8 +47,6 @@ That expression is then placed between two flat brackets following the variable 
     props[props.prop_name == 'PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.']
 
 Run it and it outputs the filtered dataset, just those committees active on Proposition 64.
-
-.. image:: /_static/prop_filter.png
 
 Now we should save the results of that filter into new variable separate from the full list we imported from the CSV file.
 

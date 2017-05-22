@@ -88,12 +88,12 @@
 <li class="toctree-l2"><a class="reference internal" href="#creating-a-dataframe">Creating a DataFrame</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#creating-a-variable">Creating a variable</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#using-the-head-method">Using the head method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#uising-the-info-method">Uising the info method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-the-info-method">Using the info method</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#creating-another-dataframe">Creating another DataFrame</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../value_counts/index.html">Chapter 6: Hello columns</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../filter/index.html">Chapter 7: Hello filter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filter/index.html">Chapter 7: Hello filters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../merge/index.html">Chapter 8: Hello merge</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../totals/index.html">Chapter 9: Hello totals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sort_values/index.html">Chapter 10: Hello sorting</a></li>
@@ -190,8 +190,7 @@
 <p class="first admonition-title">Warning</p>
 <p class="last">You will need to precisely type in the URL to the file. Feel free to copy and paste it from the example above into your notebook.</p>
 </div>
-<p>After you run the cell, you should see something like this.</p>
-<img alt="../_images/read_csv.png" src="../_images/read_csv.png" />
+<p>After you run the cell, you should see a big table printed below.</p>
 <p>It is a DataFrame where pandas has structured the CSV data into rows and columns, just like Excel or other spreadsheet software might.</p>
 <p>The advantage here is that rather than manipulating the data through a haphazard series of clicks and keypunches we will be gradually grinding down the data using a computer programming script that is 100% transparent and reproducible.</p>
 </div>
@@ -212,15 +211,13 @@
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">props</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/head.png" src="../_images/head.png" />
 </div>
-<div class="section" id="uising-the-info-method">
-<h2>Uising the info method<a class="headerlink" href="#uising-the-info-method" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="using-the-info-method">
+<h2>Using the info method<a class="headerlink" href="#using-the-info-method" title="Permalink to this headline">¶</a></h2>
 <p>To get a look at all of the columns and what type of data they store, add another cell and try <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.info.html">info</a>.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">props</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/info.png" src="../_images/info.png" />
 <p>Look carefully at those results and you see we have more than 100 links between committees and propositions.</p>
 </div>
 <div class="section" id="creating-another-dataframe">
@@ -230,16 +227,14 @@
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">contribs</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;http://www.firstpythonnotebook.org/_static/contributions.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Just as we did earlier, you can inspect the contents of this new file with the <code class="docutils literal"><span class="pre">head</span></code> method.</p>
+<p>Just as we did earlier, you can inspect the contents of this new file with the head method.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">contribs</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/contribs_head.png" src="../_images/contribs_head.png" />
-<p>You should also inspect the columns using the <code class="docutils literal"><span class="pre">info</span></code> method. Running these two tricks whenever you open a new file is a good habit to develop so that you can carefully examine the data you&#8217;re about to work with.</p>
+<p>You should also inspect the columns using the info method. Running these two tricks whenever you open a new file is a good habit to develop so that you can carefully examine the data you&#8217;re about to work with.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">contribs</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/contribs_info.png" src="../_images/contribs_info.png" />
 <p>Now that you&#8217;ve got some data imported, we&#8217;re ready to begin our analysis.</p>
 </div>
 </div>

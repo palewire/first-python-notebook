@@ -34,7 +34,7 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="First Python Notebook 1.0 documentation" href="../index.html"/>
-        <link rel="next" title="Chapter 7: Hello filter" href="../filter/index.html"/>
+        <link rel="next" title="Chapter 7: Hello filters" href="../filter/index.html"/>
         <link rel="prev" title="Chapter 5: Hello data" href="../dataframe/index.html"/> 
 
   
@@ -91,13 +91,16 @@
 <li class="toctree-l2"><a class="reference internal" href="#resetting-a-dataframe">Resetting a DataFrame</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../filter/index.html">Chapter 7: Hello filter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filter/index.html">Chapter 7: Hello filters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../merge/index.html">Chapter 8: Hello merge</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../totals/index.html">Chapter 9: Hello totals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sort_values/index.html">Chapter 10: Hello sorting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../internet/index.html">Chapter 5: Hello Internet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 6: Hello charts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cleaning/index.html">Chapter 7: Hello cleaning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../groupby/index.html">Chapter 11: Hello groupby</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">Chapter 12: Hello git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown/index.html">Chapter 13: Hello Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../github/index.html">Chapter 14: Hello GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 15: Hello charts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cleaning/index.html">Chapter 16: Hello cleaning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about/index.html">About the author</a></li>
 </ul>
 
@@ -158,7 +161,6 @@
 </pre></div>
 </div>
 <p>That will list the column out as a Series, just like the ones we created from scratch in <a class="reference internal" href="../pandas/index.html"><span class="doc">chapter three</span></a>.</p>
-<img alt="../_images/column.png" src="../_images/column.png" />
 <p>And, just as we did in <a class="reference internal" href="../pandas/index.html"><span class="doc">then</span></a>, you can now start tacking on additional methods that will analyze the contents of the column.</p>
 <p>In this case, the column is filled with characters. So we don&#8217;t want to calculate statistics like the median and average, as we did before.</p>
 </div>
@@ -169,8 +171,7 @@
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">props</span><span class="o">.</span><span class="n">prop_name</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Run the code and here&#8217;s what you should see.</p>
-<img alt="../_images/value_counts.png" src="../_images/value_counts.png" />
+<p>Run the code and you should see the lengthy proposition names ranked by their number of committees.</p>
 </div>
 <div class="section" id="resetting-a-dataframe">
 <h2>Resetting a DataFrame<a class="headerlink" href="#resetting-a-dataframe" title="Permalink to this headline">¶</a></h2>
@@ -180,7 +181,6 @@
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">props</span><span class="o">.</span><span class="n">prop_name</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/value_counts_df.png" src="../_images/value_counts_df.png" />
 <p>Why do Series and DataFrames behave differently? Why does reset_index have such a weird name?</p>
 <p>Like so much in computer programming, the answer is simply &#8220;because the people who created the library said so.&#8221;&#8220;</p>
 <p>That&#8217;s not worth stressing about in this case, but it&#8217;s important to learn that all open-source programming tools have their quirks. Over time you&#8217;ll learn pandas has more than a few.</p>
@@ -195,7 +195,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../filter/index.html" class="btn btn-neutral float-right" title="Chapter 7: Hello filter" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../filter/index.html" class="btn btn-neutral float-right" title="Chapter 7: Hello filters" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../dataframe/index.html" class="btn btn-neutral" title="Chapter 5: Hello data" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

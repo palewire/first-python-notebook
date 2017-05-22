@@ -47,8 +47,6 @@ Reopen your notebook and create a new cell at the top. There we will import the 
 
     import pandas
 
-.. image:: /_static/import_pandas.png
-
 If nothing happens, that's good. It means you have pandas installed and ready.
 
 .. note::

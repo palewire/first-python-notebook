@@ -39,9 +39,7 @@ Scroll down to the first open cell. There we will import the first CSV file list
 
     You will need to precisely type in the URL to the file. Feel free to copy and paste it from the example above into your notebook.
 
-After you run the cell, you should see something like this.
-
-.. image:: /_static/read_csv.png
+After you run the cell, you should see a big table printed below.
 
 It is a DataFrame where pandas has structured the CSV data into rows and columns, just like Excel or other spreadsheet software might.
 
@@ -75,19 +73,15 @@ First, to preview the first few rows of the dataset, try the `head <http://panda
 
     props.head()
 
-.. image:: /_static/head.png
-
-**********************
-Uising the info method
-**********************
+*********************
+Using the info method
+*********************
 
 To get a look at all of the columns and what type of data they store, add another cell and try `info <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.info.html>`_.
 
 .. code-block:: python
 
     props.info()
-
-.. image:: /_static/info.png
 
 Look carefully at those results and you see we have more than 100 links between committees and propositions.
 
@@ -103,20 +97,16 @@ We'll start by using the read_csv method to import the second CSV file linked ab
 
     contribs = pandas.read_csv("http://www.firstpythonnotebook.org/_static/contributions.csv")
 
-Just as we did earlier, you can inspect the contents of this new file with the ``head`` method.
+Just as we did earlier, you can inspect the contents of this new file with the head method.
 
 .. code-block:: python
 
     contribs.head()
 
-.. image:: /_static/contribs_head.png
-
-You should also inspect the columns using the ``info`` method. Running these two tricks whenever you open a new file is a good habit to develop so that you can carefully examine the data you're about to work with.
+You should also inspect the columns using the info method. Running these two tricks whenever you open a new file is a good habit to develop so that you can carefully examine the data you're about to work with.
 
 .. code-block:: python
 
     contribs.info()
-
-.. image:: /_static/contribs_info.png
 
 Now that you've got some data imported, we're ready to begin our analysis.

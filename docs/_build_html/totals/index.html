@@ -156,17 +156,16 @@
 <div class="embed-container"><iframe src="http://www.youtube.com/embed/-xjprU5jlO0"     width="560" height="315" frameborder="0"     webkitAllowFullScreen mozallowfullscreen allowfullscreen class="youtube"></iframe></div><p>Using tricks we learned as far back as <span class="xref doc">chapter three</span>, we can start off by answering a simple question: What is the total sum of Proposition 64 contributions that have been reported?</p>
 <div class="section" id="summing-a-column">
 <h2>Summing a column<a class="headerlink" href="#summing-a-column" title="Permalink to this headline">¶</a></h2>
-<p>To answer that let&#8217;s start by getting our hands on <code class="docutils literal"><span class="pre">amount</span></code>, the column from the contributions DataFrame with the numbers in it. We can do that just as we did with other columns above.</p>
+<p>To answer that let&#8217;s start by getting our hands on amount, the column from the contributions DataFrame with the numbers in it. We can do that just as we did with other columns above.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">amount</span>
 </pre></div>
 </div>
-<img alt="../_images/merged_amount.png" src="../_images/merged_amount.png" />
-<p>Now we can add up the column&#8217;s total using the <code class="docutils literal"><span class="pre">pandas</span></code> method <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.sum.html">sum</a>, just as we did when we were first getting started with pandas.</p>
+<p>Now we can add up the column&#8217;s total using the pandas method <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.sum.html">sum</a>, just as we did when we were first getting started with pandas.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/merged_amount_sum.png" src="../_images/merged_amount_sum.png" />
-<p>And there&#8217;s our answer. We&#8217;ve completed our first piece of analysis and discovered the total amount spent on this proposition.</p>
+<p>And printed out below your cell, there&#8217;s our answer.</p>
+<p>We&#8217;ve completed our first piece of analysis and discovered the total amount spent on this proposition.</p>
 <p>Time to run off to Twitter and publish our results to the world, right?</p>
 <p>Wrong.</p>
 </div>
@@ -190,7 +189,6 @@
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">committee_position</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/merged_position.png" src="../_images/merged_position.png" />
 <p>Now let&#8217;s filter our merged table down using that column and the pandas filtering method that combines a column, an operator and the value we want to filter by. Let&#8217;s stick the result in a variable.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">support</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="n">merged</span><span class="o">.</span><span class="n">committee_position</span> <span class="o">==</span> <span class="s1">&#39;SUPPORT&#39;</span><span class="p">]</span>
 </pre></div>
@@ -203,17 +201,14 @@
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">oppose</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/oppose_amount_sum.png" src="../_images/oppose_amount_sum.png" />
 <p>Then the supporters.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">support</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/support_amount_sum.png" src="../_images/support_amount_sum.png" />
 <p>The support is clearly larger. But what percent is it of the overall disclosed total? We can find out by combined two <code class="docutils literal"><span class="pre">sum</span></code> calculations using the division operator.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">support</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="n">merged</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/support_amount_percent.png" src="../_images/support_amount_percent.png" />
 </div>
 </div>
 
