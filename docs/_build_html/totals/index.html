@@ -34,7 +34,7 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="First Python Notebook 1.0 documentation" href="../index.html"/>
-        <link rel="next" title="&lt;no title&gt;" href="../sort_values/index.html"/>
+        <link rel="next" title="Chapter 10: Hello sorting" href="../sort_values/index.html"/>
         <link rel="prev" title="Chapter 8: Hello merge" href="../merge/index.html"/> 
 
   
@@ -85,13 +85,22 @@
 <li class="toctree-l1"><a class="reference internal" href="../pandas/index.html">Chapter 3: Hello pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../money/index.html">Chapter 4: Hello money in politics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dataframe/index.html">Chapter 5: Hello data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../value_counts/index.html">Chapter 6: Hello value_counts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../filter/index.html">Chapter 7: Hello filter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../value_counts/index.html">Chapter 6: Hello columns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filter/index.html">Chapter 7: Hello filters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../merge/index.html">Chapter 8: Hello merge</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 9: Hello totals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../internet/index.html">Chapter 5: Hello Internet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 6: Hello charts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cleaning/index.html">Chapter 7: Hello cleaning</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 9: Hello totals</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#summing-a-column">Summing a column</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-not-to-be-wrong">How not to be wrong</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#which-side-got-more-large-donations">Which side got more large donations?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../sort_values/index.html">Chapter 10: Hello sorting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../groupby/index.html">Chapter 11: Hello groupby</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">Chapter 12: Hello git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown/index.html">Chapter 13: Hello Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../github/index.html">Chapter 14: Hello GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 15: Hello charts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cleaning/index.html">Chapter 16: Hello cleaning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about/index.html">About the author</a></li>
 </ul>
 
@@ -143,48 +152,53 @@
             
   <div class="section" id="chapter-9-hello-totals">
 <h1>Chapter 9: Hello totals<a class="headerlink" href="#chapter-9-hello-totals" title="Permalink to this headline">¶</a></h1>
-<p>Question one answered. Here&#8217;s number two: What is the total sum of contributions that have been reported?</p>
-<p>To answer that let&#8217;s start by getting our hands on <code class="docutils literal"><span class="pre">amount</span></code>, the column with the numbers in it. We can do that just as we did with other columns above.</p>
+<p>Now that we&#8217;ve filtered down and prepared our Proposition 64 data set, we can begin our analysis.</p>
+<p>Using tricks we learned as far back as <span class="xref doc">chapter three</span>, we can start off by answering a simple question: What is the total sum of Proposition 64 contributions that have been reported?</p>
+<div class="section" id="summing-a-column">
+<h2>Summing a column<a class="headerlink" href="#summing-a-column" title="Permalink to this headline">¶</a></h2>
+<p>To answer that let&#8217;s start by getting our hands on <code class="docutils literal"><span class="pre">amount</span></code>, the column from the contributions DataFrame with the numbers in it. We can do that just as we did with other columns above.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">amount</span>
 </pre></div>
 </div>
 <img alt="../_images/merged_amount.png" src="../_images/merged_amount.png" />
-<p>Now add up the column&#8217;s total using the <code class="docutils literal"><span class="pre">pandas</span></code> method <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.sum.html">sum</a>.</p>
+<p>Now we can add up the column&#8217;s total using the <code class="docutils literal"><span class="pre">pandas</span></code> method <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.sum.html">sum</a>, just as we did when we were first getting started with pandas.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 </div>
 <img alt="../_images/merged_amount_sum.png" src="../_images/merged_amount_sum.png" />
-<p>There&#8217;s our big total. Fun fact: This number is guaranteed to be lower than the totals reported by the campaigns. Why? Campaigns are only required to report the names of donors over $200, so our data is missing all of the donors who gave smaller amounts of money.</p>
-<p>The overall totals are reported elsewhere in lump sums and cannot be replicated by adding up the individual contributions. Understanding this is crucial to understanding not just this data, but all campaign finance data.</p>
-<p>Adding up a big total is all well and good. But we&#8217;re aiming for something more nuanced. We want to separate the money spent for the proposition from the money spent against it. To do that, we&#8217;ll need to return to the filtering trick we learned above.</p>
-<p>First let&#8217;s look at the column we&#8217;re going to filter by, <code class="docutils literal"><span class="pre">committee_position</span></code>.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">committee_position</span>
+<p>And there&#8217;s our answer. We&#8217;ve completed our first piece of analysis and discovered the total amount spent on this proposition.</p>
+<p>Time to run off to Twitter and publish our results to the world, right?</p>
+<p>Wrong.</p>
+</div>
+<div class="section" id="how-not-to-be-wrong">
+<h2>How not to be wrong<a class="headerlink" href="#how-not-to-be-wrong" title="Permalink to this headline">¶</a></h2>
+<p>The total we generated is not the overall total raised in the campaign, and is guaranteed to be lower than the totals reported in the media and by the campaigns.</p>
+<p>Why?</p>
+<p>In California, campaigns are <a class="reference external" href="http://www.documentcloud.org/documents/2781363-460-2016-01.html#document/p10">only required</a> to disclose the names of donors who give over $100, so our data is missing all of the donors who gave less than that amount.</p>
+<p>The cutoff varies, and there are some exceptions, but the same thing is true in other states and also at the federal level in races for Congress and the White House.</p>
+<p>The overall totals are instead reported on cover sheets included with disclosure reports that lump together all the smaller contributions as part of a grand total. Those are the records most commonly cited to total up a campaign&#8217;s fundraising.</p>
+<p>The result is that an itemized list of contributions, like the one we have, cannot be used to calculate a grand total. That&#8217;s true in California and virtually anywhere else you work with campaign data. Overlooking that limitation is a rookie mistake routinely made by analysts new to this field.</p>
+<p>But that doesn&#8217;t mean our data is worthless. We just have to use it responsibly. In many cases, professional campaign reporters will refer to an analysis drawn from a list like ours as applying only to &#8220;large donors.&#8221;</p>
+<p>Since large donors typically account for most of the money, the results are still significant. And the high level of detail included in each record — like the donor&#8217;s name, employer and occupation — makes the limitations worth working through.</p>
+</div>
+<div class="section" id="which-side-got-more-large-donations">
+<h2>Which side got more large donations?<a class="headerlink" href="#which-side-got-more-large-donations" title="Permalink to this headline">¶</a></h2>
+<p>Adding up a big total is all well and good. But we&#8217;re aiming for something more nuanced.</p>
+<p>We want to separate the money spent supporting the proposition from the money opposing it. Then we want to find out who raised more.</p>
+<p>To answer that question, lets return to the filtering technique we learned in <span class="xref doc">chapter seven</span>.</p>
+<p>First let&#8217;s look at the column we&#8217;re going to filter by, committee_position.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">committee_position</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 <img alt="../_images/merged_position.png" src="../_images/merged_position.png" />
-<p>Now let&#8217;s filter our merged table down using that column and the <code class="docutils literal"><span class="pre">pandas</span></code> filtering method that combines a column, an operator and the value we want to filter by.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="p">[</span><span class="n">merged</span><span class="o">.</span><span class="n">committee_position</span> <span class="o">==</span> <span class="s1">&#39;SUPPORT&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-<img alt="../_images/support_filter.png" src="../_images/support_filter.png" />
-<p>Let&#8217;s stick the result in a variable.</p>
+<p>Now let&#8217;s filter our merged table down using that column and the pandas filtering method that combines a column, an operator and the value we want to filter by. Let&#8217;s stick the result in a variable.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">support</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="n">merged</span><span class="o">.</span><span class="n">committee_position</span> <span class="o">==</span> <span class="s1">&#39;SUPPORT&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>And count how many contributions are in this new, more limited set.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">support</span><span class="p">)</span>
-</pre></div>
-</div>
-<img alt="../_images/support_len.png" src="../_images/support_len.png" />
 <p>Now let&#8217;s repeat all that for opposing contributions. First the filter into a new variable.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">oppose</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="n">merged</span><span class="o">.</span><span class="n">committee_position</span> <span class="o">==</span> <span class="s1">&#39;OPPOSE&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Then a count.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">oppose</span><span class="p">)</span>
-</pre></div>
-</div>
-<img alt="../_images/oppose_len.png" src="../_images/oppose_len.png" />
 <p>Now sum up the total disclosed contributions to each for comparison. First the opposition.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">oppose</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
@@ -201,6 +215,7 @@
 </div>
 <img alt="../_images/support_amount_percent.png" src="../_images/support_amount_percent.png" />
 </div>
+</div>
 
 
            </div>
@@ -209,7 +224,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../sort_values/index.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../sort_values/index.html" class="btn btn-neutral float-right" title="Chapter 10: Hello sorting" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../merge/index.html" class="btn btn-neutral" title="Chapter 8: Hello merge" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

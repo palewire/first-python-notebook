@@ -34,7 +34,7 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="First Python Notebook 1.0 documentation" href="../index.html"/>
-        <link rel="next" title="Chapter 5: Hello Internet" href="../internet/index.html"/>
+        <link rel="next" title="Chapter 12: Hello git" href="../git/index.html"/>
         <link rel="prev" title="Chapter 10: Hello sorting" href="../sort_values/index.html"/> 
 
   
@@ -86,14 +86,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../money/index.html">Chapter 4: Hello money in politics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dataframe/index.html">Chapter 5: Hello data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../value_counts/index.html">Chapter 6: Hello columns</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../filter/index.html">Chapter 7: Hello filter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filter/index.html">Chapter 7: Hello filters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../merge/index.html">Chapter 8: Hello merge</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../totals/index.html">Chapter 9: Hello totals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sort_values/index.html">Chapter 10: Hello sorting</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 11: Hello groupby</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../internet/index.html">Chapter 5: Hello Internet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 6: Hello charts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cleaning/index.html">Chapter 7: Hello cleaning</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 11: Hello groupby</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#grouping-by-one-field">Grouping by one field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#grouping-by-multiple-fields">Grouping by multiple fields</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">Chapter 12: Hello git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown/index.html">Chapter 13: Hello Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../github/index.html">Chapter 14: Hello GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 15: Hello charts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cleaning/index.html">Chapter 16: Hello cleaning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about/index.html">About the author</a></li>
 </ul>
 
@@ -148,6 +154,8 @@
 <p>We&#8217;ve encountered a lot of different committees as we&#8217;ve explored the data. A natural question follows: Which ones have raised the most money?</p>
 <p>To figure that out, we&#8217;ll need to group the data by that column and then sum up the <code class="docutils literal"><span class="pre">amount</span></code> for each. We can do that be using the <code class="docutils literal"><span class="pre">pandas</span></code> <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.groupby.html">groupby</a> method and the <code class="docutils literal"><span class="pre">sum</span></code> trick we&#8217;ve already learned.</p>
 <p>If you scroll back up and look carefully as the <code class="docutils literal"><span class="pre">info</span></code> command we ran after merging out data, you will noticed it includes a column named <code class="docutils literal"><span class="pre">committee_name_x</span></code> and <code class="docutils literal"><span class="pre">commitee_name_y</span></code>. That is because the field was present on both our committee list and our contributions list prior to joining them together. Rather than drop one of them, <code class="docutils literal"><span class="pre">pandas</span></code> is trained to keep them both and to append suffixes to the end.</p>
+<div class="section" id="grouping-by-one-field">
+<h2>Grouping by one field<a class="headerlink" href="#grouping-by-one-field" title="Permalink to this headline">¶</a></h2>
 <p>That&#8217;s the field we want to group by here. Since they are identical, it doesn&#8217;t matter which one we pick. Let&#8217;s go with x.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;committee_name_x&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
@@ -163,6 +171,9 @@
 </pre></div>
 </div>
 <img alt="../_images/committee_group_sort.png" src="../_images/committee_group_sort.png" />
+</div>
+<div class="section" id="grouping-by-multiple-fields">
+<h2>Grouping by multiple fields<a class="headerlink" href="#grouping-by-multiple-fields" title="Permalink to this headline">¶</a></h2>
 <p>Finding the top contributors is just as easy. We only need to substitute the name fields into the <code class="docutils literal"><span class="pre">groupby</span></code> method.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;contributor_firstname&quot;</span><span class="p">,</span> <span class="s2">&quot;contributor_lastname&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 </pre></div>
@@ -184,6 +195,7 @@
 <li>Which committees had the fewest donors?</li>
 </ul>
 </div>
+</div>
 
 
            </div>
@@ -192,7 +204,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../internet/index.html" class="btn btn-neutral float-right" title="Chapter 5: Hello Internet" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../git/index.html" class="btn btn-neutral float-right" title="Chapter 12: Hello git" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../sort_values/index.html" class="btn btn-neutral" title="Chapter 10: Hello sorting" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

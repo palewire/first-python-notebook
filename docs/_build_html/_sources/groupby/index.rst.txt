@@ -8,6 +8,10 @@ To figure that out, we'll need to group the data by that column and then sum up 
 
 If you scroll back up and look carefully as the ``info`` command we ran after merging out data, you will noticed it includes a column named ``committee_name_x`` and ``commitee_name_y``. That is because the field was present on both our committee list and our contributions list prior to joining them together. Rather than drop one of them, ``pandas`` is trained to keep them both and to append suffixes to the end.
 
+*********************
+Grouping by one field
+*********************
+
 That's the field we want to group by here. Since they are identical, it doesn't matter which one we pick. Let's go with x.
 
 .. code-block:: python
@@ -31,6 +35,10 @@ Sorting the biggest totals to the top is as easy as appending the ``sort_values`
     merged.groupby("committee_name_x").amount.sum().reset_index().sort_values("amount", ascending=False)
 
 .. image:: /_static/committee_group_sort.png
+
+***************************
+Grouping by multiple fields
+***************************
 
 Finding the top contributors is just as easy. We only need to substitute the name fields into the ``groupby`` method.
 
