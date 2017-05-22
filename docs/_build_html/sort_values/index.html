@@ -147,28 +147,30 @@
             
   <div class="section" id="chapter-10-hello-sorting">
 <h1>Chapter 10: Hello sorting<a class="headerlink" href="#chapter-10-hello-sorting" title="Permalink to this headline">¶</a></h1>
-<p>Let&#8217;s start with something easy. What were the ten biggest contributions? We can find the answer by using the <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.sort_values.html">sort_values</a> method to rearrange our list using the <code class="docutils literal"><span class="pre">amount</span></code> field.</p>
+<p>Another simple but common technique for analyzing data is sorting.</p>
+<p>What were the ten biggest contributions? We can find the answer by using the <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.sort_values.html">sort_values</a> method to rearrange our list using the amount field.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="../_images/merged_sort.png" src="../_images/merged_sort.png" />
-<p>Note that returns the <code class="docutils literal"><span class="pre">DataFrame</span></code> resorted in ascending order from lowest to highest. To answer our question you&#8217;ll need to reverse it. Here&#8217;s how:</p>
+<p>Note that returns the <code class="docutils literal"><span class="pre">DataFrame</span></code> resorted in ascending order from lowest to highest. That is pandas default way of sorting.</p>
+<p>To answer our question you&#8217;ll need to reverse that, so that values are sorted in descending order from biggest to smallest. It&#8217;s a little tricky at first, but here&#8217;s how to do it with sort_values.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="../_images/merged_sort_desc.png" src="../_images/merged_sort_desc.png" />
-<p>You can limit the result to the top five by returning to the <code class="docutils literal"><span class="pre">head</span></code> method and passing in the number of results we&#8217;d like.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<p>You can limit the result to the top five by chaining the <code class="docutils literal"><span class="pre">head</span></code> method at the end.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 <img alt="../_images/merged_sort_head.png" src="../_images/merged_sort_head.png" />
-<p>We can now use this new variable to rank the five biggest supporting contributions by using <code class="docutils literal"><span class="pre">sort_values</span></code> again.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">support</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<p>We can now use the new variable to rank the five biggest supporting contributions by using <code class="docutils literal"><span class="pre">sort_values</span></code> again.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">support</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 <img alt="../_images/support_sort.png" src="../_images/support_sort.png" />
-<p>Then a ranking.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">oppose</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<p>And now how about the opposition.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">oppose</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 <img alt="../_images/oppose_sort.png" src="../_images/oppose_sort.png" />
