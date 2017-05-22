@@ -95,7 +95,7 @@ We'll start by using the read_csv method to import the second CSV file linked ab
 
 .. code-block:: python
 
-    contribs = pandas.read_csv("http://www.firstpythonnotebook.org/_static/contributions.csv")
+    contribs = pd.read_csv("http://www.firstpythonnotebook.org/_static/contributions.csv")
 
 Just as we did earlier, you can inspect the contents of this new file with the head method.
 
