@@ -151,12 +151,14 @@
             
   <div class="section" id="chapter-11-hello-groupby">
 <h1>Chapter 11: Hello groupby<a class="headerlink" href="#chapter-11-hello-groupby" title="Permalink to this headline">¶</a></h1>
-<p>We&#8217;ve encountered a lot of different committees as we&#8217;ve explored the data. A natural question follows: Which ones have raised the most money?</p>
-<p>To figure that out, we&#8217;ll need to group the data by that column and then sum up the amount for each. We can do that be using the pandas <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.groupby.html">groupby</a> method and the sum trick we&#8217;ve already learned.</p>
-<p>If you scroll back up and look carefully as the info command we ran after merging out data, you will noticed it includes a column named <code class="docutils literal"><span class="pre">committee_name_x</span></code> and <code class="docutils literal"><span class="pre">commitee_name_y</span></code>. That is because the field was present on both our committee list and our contributions list prior to joining them together. Rather than drop one of them, pandas is trained to keep them both and to append suffixes to the end.</p>
+<p>To take the next step towards ranking the top contributors, we&#8217;ll need to learn a new trick. It&#8217;s called <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.groupby.html">groupby</a>.</p>
+<p>It&#8217;s a pandas method that allows you to group a DataFrame by a column and then calculate a sum, or any other statistic, for each unique value. This is necessary when you want to rack up statistics on a long list of values, or about a combination of fields.</p>
 <div class="section" id="grouping-by-one-field">
 <h2>Grouping by one field<a class="headerlink" href="#grouping-by-one-field" title="Permalink to this headline">¶</a></h2>
-<p>That&#8217;s the field we want to group by here. Since they are identical, it doesn&#8217;t matter which one we pick. Let&#8217;s go with x.</p>
+<p>We&#8217;ve encountered a lot of different committees as we&#8217;ve explored the data. A natural question follows: Which ones have raised the most money?</p>
+<p>If you scroll back up and look carefully as the info command we ran after merging out data, you will noticed it includes a column named <code class="docutils literal"><span class="pre">committee_name_x</span></code> and <code class="docutils literal"><span class="pre">commitee_name_y</span></code>.</p>
+<p>That is because the field was present on both our committee list and our contributions list prior to joining them together. Rather than drop one of them, pandas is trained to keep them both and to append suffixes to the end.</p>
+<p>That&#8217;s the field we want to group with here. Since the two columns are identical, it doesn&#8217;t matter which one we pick. Let&#8217;s go with x.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;committee_name_x&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -171,7 +173,7 @@
 </div>
 <div class="section" id="grouping-by-multiple-fields">
 <h2>Grouping by multiple fields<a class="headerlink" href="#grouping-by-multiple-fields" title="Permalink to this headline">¶</a></h2>
-<p>Finding the top contributors is just as easy. We only need to substitute the name fields into the groupby method.</p>
+<p>Finding the top contributors is almost as easy, but since the first and last names are spread between two fields we&#8217;ll need to submit them to groupby as a list. Copy the last line above, and replace &#8220;committee_name_x&#8221; with a list like the one here:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;contributor_firstname&quot;</span><span class="p">,</span> <span class="s2">&quot;contributor_lastname&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -179,7 +181,7 @@
 <p class="first admonition-title">Note</p>
 <p class="last">You should be noticing that several of the top contributors appear to be the same person with their name entered in slightly different ways. This is another important lesson of campaign contributions data. Virtually none of the data is standardized by the campaigns or the government. The onus is on the analyst to show caution and responsibly combine records where the name fields refer to the same person.</p>
 </div>
-<p>To find out if each contributor supported or opposed the measure, you simple add that field to our <code class="docutils literal"><span class="pre">groupby</span></code> method.</p>
+<p>To find out if each contributor supported or opposed the measure, you simple add that field to our groupby method.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;contributor_firstname&quot;</span><span class="p">,</span> <span class="s2">&quot;contributor_lastname&quot;</span><span class="p">,</span> <span class="s2">&quot;committee_position&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 </pre></div>
 </div>
