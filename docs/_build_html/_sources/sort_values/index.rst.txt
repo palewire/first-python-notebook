@@ -4,6 +4,8 @@ Chapter 10: Hello sorting
 
 Another simple but common technique for analyzing data is sorting.
 
+.. youtube:: Wvoa6nyOUYQ
+
 What were the ten biggest contributions? We can find the answer by using the `sort_values <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.sort_values.html>`_ method to rearrange our list using the amount field.
 
 .. code-block:: python
