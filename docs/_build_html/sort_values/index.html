@@ -34,7 +34,7 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="First Python Notebook 1.0 documentation" href="../index.html"/>
-        <link rel="next" title="&lt;no title&gt;" href="../groupby/index.html"/>
+        <link rel="next" title="Chapter 11: Hello groupby" href="../groupby/index.html"/>
         <link rel="prev" title="Chapter 9: Hello totals" href="../totals/index.html"/> 
 
   
@@ -85,14 +85,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../pandas/index.html">Chapter 3: Hello pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../money/index.html">Chapter 4: Hello money in politics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dataframe/index.html">Chapter 5: Hello data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../value_counts/index.html">Chapter 6: Hello value_counts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../filter/index.html">Chapter 7: Hello filter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../value_counts/index.html">Chapter 6: Hello columns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filter/index.html">Chapter 7: Hello filters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../merge/index.html">Chapter 8: Hello merge</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../totals/index.html">Chapter 9: Hello totals</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 10: Hello sorting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../internet/index.html">Chapter 5: Hello Internet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 6: Hello charts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cleaning/index.html">Chapter 7: Hello cleaning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../groupby/index.html">Chapter 11: Hello groupby</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">Chapter 12: Hello git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown/index.html">Chapter 13: Hello Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../github/index.html">Chapter 14: Hello GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 15: Hello charts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cleaning/index.html">Chapter 16: Hello cleaning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about/index.html">About the author</a></li>
 </ul>
 
@@ -144,7 +147,6 @@
             
   <div class="section" id="chapter-10-hello-sorting">
 <h1>Chapter 10: Hello sorting<a class="headerlink" href="#chapter-10-hello-sorting" title="Permalink to this headline">¶</a></h1>
-<p>In some ways, your database is no different from a human source. Getting a good story requires careful, thorough questioning. In this section we will move ahead by conducting an interview with <code class="docutils literal"><span class="pre">pandas</span></code> to pursue our quest of finding out the biggest donors to Proposition 64.</p>
 <p>Let&#8217;s start with something easy. What were the ten biggest contributions? We can find the answer by using the <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.sort_values.html">sort_values</a> method to rearrange our list using the <code class="docutils literal"><span class="pre">amount</span></code> field.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">)</span>
 </pre></div>
@@ -179,7 +181,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../groupby/index.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../groupby/index.html" class="btn btn-neutral float-right" title="Chapter 11: Hello groupby" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../totals/index.html" class="btn btn-neutral" title="Chapter 9: Hello totals" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

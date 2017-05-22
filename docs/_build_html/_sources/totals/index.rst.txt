@@ -2,7 +2,7 @@
 Chapter 9: Hello totals
 =======================
 
-Now that we've filtered down and prepared our Proposition 64 data set, we can begin our analysis.
+In some ways, your database is no different from a human source. Getting a good story requires careful, thorough questioning. In this section we will move ahead by conducting an interview with pandas to pursue our quest of finding out the biggest donors to Proposition 64.
 
 Using tricks we learned as far back as :doc:`chapter three <pandas/index>`, we can start off by answering a simple question: What is the total sum of Proposition 64 contributions that have been reported?
 

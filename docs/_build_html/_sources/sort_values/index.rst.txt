@@ -2,7 +2,7 @@
 Chapter 10: Hello sorting
 =========================
 
-In some ways, your database is no different from a human source. Getting a good story requires careful, thorough questioning. In this section we will move ahead by conducting an interview with ``pandas`` to pursue our quest of finding out the biggest donors to Proposition 64.
+
 
 Let's start with something easy. What were the ten biggest contributions? We can find the answer by using the `sort_values <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.sort_values.html>`_ method to rearrange our list using the ``amount`` field.
 
