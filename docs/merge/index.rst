@@ -32,6 +32,8 @@ We can therefore safely join the two files using the pandas `merge <http://panda
 Merging DataFrames
 ******************
 
+.. youtube:: yLI8apA3QTo
+
 By default the merge method in pandas will return only those rows where a common identifier found in both tables, which is known as an "inner" join.
 
 That means that if we merge the full contributions file to our filtered list of Proposition 64 committees, only the contributions to the Proposition 64 committees will remain. The result will be equivalent to a filter.
