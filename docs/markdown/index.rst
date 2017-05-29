@@ -2,7 +2,7 @@
 Chapter 13: Hello Markdown
 ==========================
 
-If you looked at notebooks published by others, you've probably noticed that the authors have helpfully summarized and annotated their code by inserting text, links and images between code blocks.
+If you have looked at notebooks published by others, you've probably noticed that the authors have helpfully summarized and annotated their code by inserting text, links and images between code blocks.
 
 Here's an example from `a recent project by the Los Angeles Times <https://github.com/datadesk/california-electricity-capacity-analysis/blob/master/analysis.ipynb>`_.
 
