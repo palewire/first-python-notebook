@@ -92,7 +92,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../sort_values/index.html">Chapter 10: Hello sorting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../groupby/index.html">Chapter 11: Hello groupby</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 12: Hello git</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#creating-a-new-git-repository">Creating a new git repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-new-repository">Creating a new repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#committing-your-work">Committing your work</a></li>
 </ul>
 </li>
@@ -151,8 +151,11 @@
             
   <div class="section" id="chapter-12-hello-git">
 <h1>Chapter 12: Hello git<a class="headerlink" href="#chapter-12-hello-git" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="creating-a-new-git-repository">
-<h2>Creating a new git repository<a class="headerlink" href="#creating-a-new-git-repository" title="Permalink to this headline">¶</a></h2>
+<p>In this chapter, we&#8217;ll step away from Python and the notebook to introduce another important tool: <a class="reference external" href="https://en.wikipedia.org/wiki/Git">git</a>.</p>
+<p>Git a command-line tool that tracks changes in files and makes it easier to collaborate with our programmers. It is widely used in open-source software and by most professional software development teams.</p>
+<p>It will allow us to edit and delete our code without fear of losing past work. Ultimately it will enable to publish our notebook for the entire world to read and remix.</p>
+<div class="section" id="creating-a-new-repository">
+<h2>Creating a new repository<a class="headerlink" href="#creating-a-new-repository" title="Permalink to this headline">¶</a></h2>
 <p>The first step in working with git is to convert a directory on your computer into a <a class="reference external" href="https://en.wikipedia.org/wiki/Repository_(version_control)">repository</a> that will have its contents tracked going forward.</p>
 <p>You do that by returning to your terminal. If your notebook server is running, hit the <code class="docutils literal"><span class="pre">CTRL-C</span></code> key combination to return the standard command line. Then entering the following:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ git init .
@@ -164,14 +167,14 @@
 $ git config --global user.name <span class="s2">&quot;your name&quot;</span>
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you followed along with our git configuration instructions <a class="reference internal" href="../prerequisites/git.html"><span class="doc">in the prerequisites</span></a>, you should have done this already. But it wouldn&#8217;t hurt anything to do it again either.</p>
+</div>
 </div>
 <div class="section" id="committing-your-work">
 <h2>Committing your work<a class="headerlink" href="#committing-your-work" title="Permalink to this headline">¶</a></h2>
 <p>Now you&#8217;re ready to start logging your work. Changes to you code are logged by git in batches known as &#8220;commits.&#8221;</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">There&#8217;s no rule about when to you commit your work, but disciplined developers get in the habit of doing it as frequently. Whenever you&#8217;ve reached a small milestone or a breaking point in your work, it&#8217;s a good idea to make a commit.</p>
-</div>
 <p>It is not required by a good first step before committing any work is run git&#8217;s status command, which will output the current state of your repository.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>git status
 </pre></div>
@@ -191,6 +194,10 @@ $ git config --global user.name <span class="s2">&quot;your name&quot;</span>
 </pre></div>
 </div>
 <p>That&#8217;s it. You&#8217;ve made your first git commit.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">There&#8217;s no rule about when to you commit your work, but disciplined developers get in the habit of doing it as frequently. Whenever you&#8217;ve reached a small milestone or a breaking point in your work, it&#8217;s a good idea to make a commit.</p>
+</div>
 <p>To get some practice, save a change to your notebook and try to log another.</p>
 <p>It might seen a little burdonsome at first, but it is correct to follow the status to add to commit cycle each time. Take it slowly and carefully and you&#8217;ll quickly get the hang of it.</p>
 </div>

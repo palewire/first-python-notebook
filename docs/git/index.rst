@@ -2,10 +2,15 @@
 Chapter 12: Hello git
 =====================
 
+In this chapter, we'll step away from Python and the notebook to introduce another important tool: `git <https://en.wikipedia.org/wiki/Git>`_.
 
-*****************************
-Creating a new git repository
-*****************************
+Git a command-line tool that tracks changes in files and makes it easier to collaborate with our programmers. It is widely used in open-source software and by most professional software development teams.
+
+It will allow us to edit and delete our code without fear of losing past work. Ultimately it will enable to publish our notebook for the entire world to read and remix.
+
+*************************
+Creating a new repository
+*************************
 
 The first step in working with git is to convert a directory on your computer into a `repository <https://en.wikipedia.org/wiki/Repository_(version_control)>`_ that will have its contents tracked going forward.
 
@@ -24,15 +29,15 @@ If this is your first time using git, you should configure git with your name an
     $ git config --global user.email "your@email.com"
     $ git config --global user.name "your name"
 
+.. note::
+
+    If you followed along with our git configuration instructions :doc:`in the prerequisites </prerequisites/git>`, you should have done this already. But it wouldn't hurt anything to do it again either.
+
 ********************
 Committing your work
 ********************
 
 Now you're ready to start logging your work. Changes to you code are logged by git in batches known as "commits."
-
-.. note::
-
-    There's no rule about when to you commit your work, but disciplined developers get in the habit of doing it as frequently. Whenever you've reached a small milestone or a breaking point in your work, it's a good idea to make a commit.
 
 It is not required by a good first step before committing any work is run git's status command, which will output the current state of your repository.
 
@@ -63,6 +68,10 @@ Log its addition with git's `commit command <https://git-scm.com/docs/git-commit
     $ git commit -m "First commit"
 
 That's it. You've made your first git commit.
+
+.. note::
+
+    There's no rule about when to you commit your work, but disciplined developers get in the habit of doing it as frequently. Whenever you've reached a small milestone or a breaking point in your work, it's a good idea to make a commit.
 
 To get some practice, save a change to your notebook and try to log another.
 
