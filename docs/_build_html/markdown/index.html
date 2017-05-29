@@ -33,7 +33,9 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="First Python Notebook 1.0 documentation" href="../index.html"/> 
+    <link rel="top" title="First Python Notebook 1.0 documentation" href="../index.html"/>
+        <link rel="next" title="Chapter 14: Hello GitHub" href="../github/index.html"/>
+        <link rel="prev" title="Chapter 12: Hello git" href="../git/index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -76,7 +78,7 @@
             
             
                 <p class="caption"><span class="caption-text">Table of Contents</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../prerequisites/index.html">Prologue: Prerequisites</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../virtualenv/index.html">Chapter 1: Hello virtualenv</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebook/index.html">Chapter 2: Hello Jupyter</a></li>
@@ -84,13 +86,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../money/index.html">Chapter 4: Hello money in politics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dataframe/index.html">Chapter 5: Hello data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../value_counts/index.html">Chapter 6: Hello columns</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../filter/index.html">Chapter 7: Hello filter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filter/index.html">Chapter 7: Hello filters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../merge/index.html">Chapter 8: Hello merge</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../totals/index.html">Chapter 9: Hello totals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sort_values/index.html">Chapter 10: Hello sorting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../groupby/index.html">Chapter 11: Hello groupby</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 6: Hello charts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cleaning/index.html">Chapter 7: Hello cleaning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">Chapter 12: Hello git</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 13: Hello Markdown</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#writing-markdown">Writing Markdown</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../github/index.html">Chapter 14: Hello GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 15: Hello charts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cleaning/index.html">Chapter 16: Hello cleaning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about/index.html">About the author</a></li>
 </ul>
 
@@ -142,9 +150,12 @@
             
   <div class="section" id="chapter-13-hello-markdown">
 <h1>Chapter 13: Hello Markdown<a class="headerlink" href="#chapter-13-hello-markdown" title="Permalink to this headline">¶</a></h1>
-<p>If looked at the example above, you&#8217;ve probably noticed that other notebook authors have helpfully summarized and annotated their code by inserting text, links and images between code blocks.</p>
+<p>If you looked at notebooks published by others, you&#8217;ve probably noticed that the authors have helpfully summarized and annotated their code by inserting text, links and images between code blocks.</p>
+<p>Here&#8217;s an example from <a class="reference external" href="https://github.com/datadesk/california-electricity-capacity-analysis/blob/master/analysis.ipynb">a recent project by the Los Angeles Times</a>.</p>
 <img alt="../_images/markdown_example.png" src="../_images/markdown_example.png" />
-<p>This is accomplished by adding new cells to your notebook and converting them from the default output, python code, to an alternative called Markdown. <a class="reference external" href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> is a markup language that formats text. It&#8217;s a common lightweight alternative to HTML.</p>
+<p>This is accomplished by adding new cells to your notebook and converting them from the default output, Python code, to an alternative called Markdown. <a class="reference external" href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> is a markup language that formats text. It&#8217;s a common, lightweight alternative to HTML.</p>
+<div class="section" id="writing-markdown">
+<h2>Writing Markdown<a class="headerlink" href="#writing-markdown" title="Permalink to this headline">¶</a></h2>
 <p>To create and print a new Markdown cell in your notebook, start up your notebook again from the terminal.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ jupyter notebook
 </pre></div>
@@ -158,25 +169,38 @@
 Hello world!
 </pre></div>
 </div>
-<p>Now hit the play button you will see the result. The first line has been turned into a header because that is how Markdown formats <code class="docutils literal"><span class="pre">#</span></code> at the front of lines. To learn more Markdown rules refer to <a class="reference external" href="http://daringfireball.net/projects/markdown/basics">its documentation</a>.</p>
+<p>Hit the play button you will see the result. The first line has been turned into a header because that is how Markdown formats <code class="docutils literal"><span class="pre">#</span></code> at the front of lines. To learn more Markdown rules refer to <a class="reference external" href="http://daringfireball.net/projects/markdown/basics">its documentation</a>.</p>
 <img alt="../_images/markdown_print.png" src="../_images/markdown_print.png" />
 <p>Now try adding more cells to your document lower down and annotating individual lines of code before they are run.</p>
 <p>After you&#8217;ve finished, save your notebook and return to your terminal so we can commit your work and push it to GitHub. Again, open the terminal and hit the <code class="docutils literal"><span class="pre">CTRL-C</span></code> key combination to halt the notebook.</p>
-<p>Again you&#8217;ll want to tell git to log your notebook file changes using <code class="docutils literal"><span class="pre">add</span></code>.</p>
+<p>You can see git has noticed the changes you&#8217;ve made by running the status command.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ git status
+</pre></div>
+</div>
+<p>Now tell git to log your notebook file changes using add.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ git add *.ipynb
 </pre></div>
 </div>
-<p>Now log your changes with <code class="docutils literal"><span class="pre">commit</span></code>.</p>
+<p>Now log your changes with commit.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ git commit -m <span class="s2">&quot;Markdown&quot;</span>
 </pre></div>
 </div>
-<p>Push your commit up to GitHub.</p>
+</div>
 </div>
 
 
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../github/index.html" class="btn btn-neutral float-right" title="Chapter 14: Hello GitHub" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../git/index.html" class="btn btn-neutral" title="Chapter 12: Hello git" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
