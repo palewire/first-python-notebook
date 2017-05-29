@@ -55,6 +55,10 @@ In this repository, the only file we need to track are your notebooks. You can a
 
     $ git add *.ipynb
 
+.. note::
+
+    The add command isn't only for when you are adding new files to your repository. You should run it each time a file has been changed and you'd like to commit the work.
+
 Run the status command again and you'll see something different. That's git telling you that the notebooks in your repository have been staged and are ready to commit.
 
 .. code-block:: bash
