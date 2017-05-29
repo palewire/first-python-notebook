@@ -152,8 +152,8 @@
   <div class="section" id="chapter-12-hello-git">
 <h1>Chapter 12: Hello git<a class="headerlink" href="#chapter-12-hello-git" title="Permalink to this headline">¶</a></h1>
 <p>In this chapter, we&#8217;ll step away from Python and the notebook to introduce another important tool: <a class="reference external" href="https://en.wikipedia.org/wiki/Git">git</a>.</p>
-<p>Git a command-line tool that tracks changes in files and makes it easier to collaborate with our programmers. It is widely used in open-source software and by most professional software development teams.</p>
-<p>It will allow us to edit and delete our code without fear of losing past work. Ultimately it will enable to publish our notebook for the entire world to read and remix.</p>
+<p>Git is a command-line tool that tracks changes in files and makes it easier to collaborate with our programmers. It is widely used in open-source software and by most professional software development teams.</p>
+<p>It will allow us to edit and delete our code without fear of losing past work. Ultimately it will enable us to publish our notebook for the entire world to read and remix.</p>
 <div class="section" id="creating-a-new-repository">
 <h2>Creating a new repository<a class="headerlink" href="#creating-a-new-repository" title="Permalink to this headline">¶</a></h2>
 <p>The first step in working with git is to convert a directory on your computer into a <a class="reference external" href="https://en.wikipedia.org/wiki/Repository_(version_control)">repository</a> that will have its contents tracked going forward.</p>
@@ -162,7 +162,7 @@
 </pre></div>
 </div>
 <p>That will instruct git to initialize a new repository in your current folder, which is represented by the period.</p>
-<p>If this is your first time using git, you should configure git with your name and email. This will ensure that your work is properly logged by the respository&#8217;s history file. Like the init a command above, this is something that only needs to be done once.</p>
+<p>If this is your first time using git, you should configure git with your name and email. This will ensure that your work is properly logged by the respository&#8217;s history file. Like the init command above, this is something that only needs to be done once.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ git config --global user.email <span class="s2">&quot;your@email.com&quot;</span>
 $ git config --global user.name <span class="s2">&quot;your name&quot;</span>
 </pre></div>
@@ -175,7 +175,7 @@ $ git config --global user.name <span class="s2">&quot;your name&quot;</span>
 <div class="section" id="committing-your-work">
 <h2>Committing your work<a class="headerlink" href="#committing-your-work" title="Permalink to this headline">¶</a></h2>
 <p>Now you&#8217;re ready to start logging your work. Changes to you code are logged by git in batches known as &#8220;commits.&#8221;</p>
-<p>It is not required by a good first step before committing any work is run git&#8217;s status command, which will output the current state of your repository.</p>
+<p>It is not required but a good first step before committing any work is to run git&#8217;s status command, which will output the current state of your repository.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>git status
 </pre></div>
 </div>
@@ -196,10 +196,10 @@ $ git config --global user.name <span class="s2">&quot;your name&quot;</span>
 <p>That&#8217;s it. You&#8217;ve made your first git commit.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">There&#8217;s no rule about when to you commit your work, but disciplined developers get in the habit of doing it as frequently. Whenever you&#8217;ve reached a small milestone or a breaking point in your work, it&#8217;s a good idea to make a commit.</p>
+<p class="last">There&#8217;s no rule about when to commit your work, but disciplined developers get in the habit of doing it frequently. Whenever you&#8217;ve reached a small milestone or a breaking point in your work, it&#8217;s a good idea to make a commit.</p>
 </div>
 <p>To get some practice, save a change to your notebook and try to log another.</p>
-<p>It might seen a little burdonsome at first, but it is correct to follow the status to add to commit cycle each time. Take it slowly and carefully and you&#8217;ll quickly get the hang of it.</p>
+<p>It might seen a little burdonsome at first, but it is correct to run the status, add and commit commands each time. Take it slowly and carefully. You&#8217;ll quickly get the hang of it.</p>
 </div>
 </div>
 

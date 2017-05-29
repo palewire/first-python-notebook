@@ -4,9 +4,9 @@ Chapter 12: Hello git
 
 In this chapter, we'll step away from Python and the notebook to introduce another important tool: `git <https://en.wikipedia.org/wiki/Git>`_.
 
-Git a command-line tool that tracks changes in files and makes it easier to collaborate with our programmers. It is widely used in open-source software and by most professional software development teams.
+Git is a command-line tool that tracks changes in files and makes it easier to collaborate with our programmers. It is widely used in open-source software and by most professional software development teams.
 
-It will allow us to edit and delete our code without fear of losing past work. Ultimately it will enable to publish our notebook for the entire world to read and remix.
+It will allow us to edit and delete our code without fear of losing past work. Ultimately it will enable us to publish our notebook for the entire world to read and remix.
 
 *************************
 Creating a new repository
@@ -22,7 +22,7 @@ You do that by returning to your terminal. If your notebook server is running, h
 
 That will instruct git to initialize a new repository in your current folder, which is represented by the period.
 
-If this is your first time using git, you should configure git with your name and email. This will ensure that your work is properly logged by the respository's history file. Like the init a command above, this is something that only needs to be done once.
+If this is your first time using git, you should configure git with your name and email. This will ensure that your work is properly logged by the respository's history file. Like the init command above, this is something that only needs to be done once.
 
 .. code-block:: bash
 
@@ -39,7 +39,7 @@ Committing your work
 
 Now you're ready to start logging your work. Changes to you code are logged by git in batches known as "commits."
 
-It is not required by a good first step before committing any work is run git's status command, which will output the current state of your repository.
+It is not required but a good first step before committing any work is to run git's status command, which will output the current state of your repository.
 
 .. code-block:: bash
 
@@ -71,8 +71,8 @@ That's it. You've made your first git commit.
 
 .. note::
 
-    There's no rule about when to you commit your work, but disciplined developers get in the habit of doing it as frequently. Whenever you've reached a small milestone or a breaking point in your work, it's a good idea to make a commit.
+    There's no rule about when to commit your work, but disciplined developers get in the habit of doing it frequently. Whenever you've reached a small milestone or a breaking point in your work, it's a good idea to make a commit.
 
 To get some practice, save a change to your notebook and try to log another.
 
-It might seen a little burdonsome at first, but it is correct to follow the status to add to commit cycle each time. Take it slowly and carefully and you'll quickly get the hang of it.
+It might seen a little burdonsome at first, but it is correct to run the status, add and commit commands each time. Take it slowly and carefully. You'll quickly get the hang of it.
