@@ -91,7 +91,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../totals/index.html">Chapter 9: Hello totals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sort_values/index.html">Chapter 10: Hello sorting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../groupby/index.html">Chapter 11: Hello groupby</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 12: Hello git</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 12: Hello git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-new-git-repository">Creating a new git repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#committing-your-work">Committing your work</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../markdown/index.html">Chapter 13: Hello Markdown</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../github/index.html">Chapter 14: Hello GitHub</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 15: Hello charts</a></li>
@@ -147,24 +151,48 @@
             
   <div class="section" id="chapter-12-hello-git">
 <h1>Chapter 12: Hello git<a class="headerlink" href="#chapter-12-hello-git" title="Permalink to this headline">¶</a></h1>
-<p>The first step in working with git is to convert a directory on your computer into a <a class="reference external" href="https://en.wikipedia.org/wiki/Repository_(version_control)">repository</a> that will have its contents tracked going forward. You do that by returning to your terminal, hitting the <code class="docutils literal"><span class="pre">CTRL-C</span></code> key combination to return the standard command line and entering the following.</p>
+<div class="section" id="creating-a-new-git-repository">
+<h2>Creating a new git repository<a class="headerlink" href="#creating-a-new-git-repository" title="Permalink to this headline">¶</a></h2>
+<p>The first step in working with git is to convert a directory on your computer into a <a class="reference external" href="https://en.wikipedia.org/wiki/Repository_(version_control)">repository</a> that will have its contents tracked going forward.</p>
+<p>You do that by returning to your terminal. If your notebook server is running, hit the <code class="docutils literal"><span class="pre">CTRL-C</span></code> key combination to return the standard command line. Then entering the following:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ git init .
 </pre></div>
 </div>
-<p>That will instruct git to initialize a new repository in your current folder.</p>
-<p>Then officially add your notebook file to your repository for tracking with git&#8217;s <code class="docutils literal"><span class="pre">add</span></code> command.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># Using the &#39;*&#39; will add all files that end with ipynb, the notebook&#39;s standard file extension.</span>
-$ git add *.ipynb
-</pre></div>
-</div>
-<p>Log its addition with Git&#8217;s <code class="docutils literal"><span class="pre">commit</span></code> command. You can include a personalized message after the <code class="docutils literal"><span class="pre">-m</span></code> flag.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ git commit -m <span class="s2">&quot;First commit&quot;</span>
-</pre></div>
-</div>
-<p>If this is your first time using Git, you may be prompted to configure you name and email. If so, take the time now. Then run the <code class="docutils literal"><span class="pre">commit</span></code> command above again.</p>
+<p>That will instruct git to initialize a new repository in your current folder, which is represented by the period.</p>
+<p>If this is your first time using git, you should configure git with your name and email. This will ensure that your work is properly logged by the respository&#8217;s history file. Like the init a command above, this is something that only needs to be done once.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ git config --global user.email <span class="s2">&quot;your@email.com&quot;</span>
 $ git config --global user.name <span class="s2">&quot;your name&quot;</span>
 </pre></div>
+</div>
+</div>
+<div class="section" id="committing-your-work">
+<h2>Committing your work<a class="headerlink" href="#committing-your-work" title="Permalink to this headline">¶</a></h2>
+<p>Now you&#8217;re ready to start logging your work. Changes to you code are logged by git in batches known as &#8220;commits.&#8221;</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">There&#8217;s no rule about when to you commit your work, but disciplined developers get in the habit of doing it as frequently. Whenever you&#8217;ve reached a small milestone or a breaking point in your work, it&#8217;s a good idea to make a commit.</p>
+</div>
+<p>It is not required by a good first step before committing any work is run git&#8217;s status command, which will output the current state of your repository.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>git status
+</pre></div>
+</div>
+<p>Since your repository is brand new, all of the files will be listed as &#8220;untracked.&#8221; That means that while git sees that these files exist it is not monitoring them for changes.</p>
+<p>The first step in logging your work is to ask git to start tracking your files using the <a class="reference external" href="https://git-scm.com/docs/git-add">add command</a>.</p>
+<p>In this repository, the only file we need to track are your notebooks. You can add all of them by running the command below, which uses the &#8220;wildcard&#8221; asterisk to start tracking all files with the notebook extension.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ git add *.ipynb
+</pre></div>
+</div>
+<p>Run the status command again and you&#8217;ll see something different. That&#8217;s git telling you that the notebooks in your repository have been staged and are ready to commit.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>git status
+</pre></div>
+</div>
+<p>Log its addition with git&#8217;s <a class="reference external" href="https://git-scm.com/docs/git-commit">commit command</a>. You must include a personalized message, which can you provided along with the command by adding on the <code class="docutils literal"><span class="pre">-m</span></code> flag along with a description of the work you&#8217;ve done.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ git commit -m <span class="s2">&quot;First commit&quot;</span>
+</pre></div>
+</div>
+<p>That&#8217;s it. You&#8217;ve made your first git commit.</p>
+<p>To get some practice, save a change to your notebook and try to log another.</p>
+<p>It might seen a little burdonsome at first, but it is correct to follow the status to add to commit cycle each time. Take it slowly and carefully and you&#8217;ll quickly get the hang of it.</p>
 </div>
 </div>
 
