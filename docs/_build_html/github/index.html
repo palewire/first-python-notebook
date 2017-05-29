@@ -33,7 +33,9 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="First Python Notebook 1.0 documentation" href="../index.html"/> 
+    <link rel="top" title="First Python Notebook 1.0 documentation" href="../index.html"/>
+        <link rel="next" title="Chapter 15: Hello charts" href="../charts/index.html"/>
+        <link rel="prev" title="Chapter 13: Hello Markdown" href="../markdown/index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -76,7 +78,7 @@
             
             
                 <p class="caption"><span class="caption-text">Table of Contents</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../prerequisites/index.html">Prologue: Prerequisites</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../virtualenv/index.html">Chapter 1: Hello virtualenv</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebook/index.html">Chapter 2: Hello Jupyter</a></li>
@@ -84,13 +86,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../money/index.html">Chapter 4: Hello money in politics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dataframe/index.html">Chapter 5: Hello data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../value_counts/index.html">Chapter 6: Hello columns</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../filter/index.html">Chapter 7: Hello filter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filter/index.html">Chapter 7: Hello filters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../merge/index.html">Chapter 8: Hello merge</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../totals/index.html">Chapter 9: Hello totals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sort_values/index.html">Chapter 10: Hello sorting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../groupby/index.html">Chapter 11: Hello groupby</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 6: Hello charts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cleaning/index.html">Chapter 7: Hello cleaning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/index.html">Chapter 12: Hello git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown/index.html">Chapter 13: Hello Markdown</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 14: Hello GitHub</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-github-repository">Creating a GitHub repository</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 15: Hello charts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cleaning/index.html">Chapter 16: Hello cleaning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about/index.html">About the author</a></li>
 </ul>
 
@@ -142,14 +150,38 @@
             
   <div class="section" id="chapter-14-hello-github">
 <h1>Chapter 14: Hello GitHub<a class="headerlink" href="#chapter-14-hello-github" title="Permalink to this headline">¶</a></h1>
-<p>Now visit <a class="reference external" href="http://www.github.com">GitHub</a> and create a new public repository named <code class="docutils literal"><span class="pre">first-python-notebook</span></code>. Don&#8217;t check &#8220;Initialize with README.&#8221; You want to start with a blank repository.</p>
-<p>Then connect your local directory to GitHub&#8217;s site with the following.</p>
+<p>In this section, we will publish your notebook to the Internet using <a class="reference external" href="http://www.github.com/">GitHub</a>, a social network for sharing and collaborating on code. GitHub is a platform frequently used by journalists and others to publish their notebooks. Examples include:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/BuzzFeedNews/2016-01-tennis-betting-analysis/blob/master/notebooks/tennis-analysis.ipynb">&#8220;The Tennis Racket&#8221;</a> by BuzzFeed and the BBC</li>
+<li><a class="reference external" href="https://github.com/datadesk/california-h2a-visas-analysis/blob/master/04_analysis.ipynb">&#8220;California H-2A visas analysis&#8221;</a> by the Los Angeles Times</li>
+<li><a class="reference external" href="https://github.com/propublica/compas-analysis/blob/master/Compas%20Analysis.ipynb">&#8220;Machine bias&#8221;</a> by ProPublica</li>
+</ul>
+<p>GitHub is an online extension of the git command-line tool we installed in <a class="reference internal" href="../git/index.html"><span class="doc">a previous chapter</span></a>. In may help to think of GitHub as a social network that publishes and connects git code repositories.</p>
+<p>GitHub also offers free hosting to open-source software projects. It is where many of the world&#8217;s largest are developed, including <a class="reference external" href="https://github.com/pandas-dev/pandas">pandas</a>, <a class="reference external" href="https://github.com/jupyter/notebook">the Jupyter Notebook</a> and the <a class="reference external" href="https://github.com/ipython/ipython">flavor of Python</a> they favor.</p>
+<div class="section" id="creating-a-github-repository">
+<h2>Creating a GitHub repository<a class="headerlink" href="#creating-a-github-repository" title="Permalink to this headline">¶</a></h2>
+<p>Visit <a class="reference external" href="http://www.github.com">GitHub</a> and create a new public repository named <code class="docutils literal"><span class="pre">first-python-notebook</span></code>. Don&#8217;t check &#8220;Initialize with README.&#8221; You want to start with a blank repository.</p>
+<p>This will create a new repository page. It needs to be syncronized with the local repository we&#8217;ve already created.</p>
+<p>You can connect your local directory to GitHub&#8217;s site by returning to the terminal and using git&#8217;s &#8220;remote add&#8221; command to connect it with GitHub.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ git remote add origin https://github.com/&lt;yourusername&gt;/first-python-notebook.git
 </pre></div>
 </div>
-<p>Now, finally, push your commit up to GitHub.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The tradition among developers is to label your default remote repository as the &#8220;origin&#8221;, which is why you see it included in the command above. You could substitute a different nickname for GitHub there if you wanted, but it&#8217;s probably best to stick with the standard terminology.</p>
+</div>
+<p>Next we&#8217;ll try &#8220;pushing&#8221; the latest commit from your repository up to GitHub. Assuming all of your work has been properly logged to your local repository, here&#8217;s what it takes.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ git push origin master
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>That might seem like a long weird command (it is!) but it&#8217;s one you&#8217;ll need to memorize to continue working with GitHub.</p>
+<p class="last">If you pick it apart, it&#8217;s not that complicated. The first two terms, git push, tell git you&#8217;d like to move your code from your local directory to a remote repository. The third, origin, indicates the destination you&#8217;d like to update. Remember, we gave our GitHub repository the alias. The fourth tells it was branch of your code you&#8217;d like to sycnronize. We haven&#8217;t covered it yet in this class, but the standard branch of code in any new git repository is called the master branch. If you&#8217;re interested, you can read more about branches <a class="reference external" href="https://git-scm.com/book/id/v2/Git-Branching-Branches-in-a-Nutshell">in the git user manual</a>.</p>
+</div>
+<p>Now reload the GitHub page in your browser and you should see your code online. Congratulations, you&#8217;ve published you work.</p>
+<p>To see how your notebook appears on the web, click on the ipynb file in the browser and it should render much like it does in the live notebook on your localhost server. This URL can now be used to share your work with the entire world.</p>
+<p>As a parting challenge, try saving a change to your local notebook. Then add and commit it to your repository with git. Finally push it back up to GitHub to see your published the change arrive online.</p>
 </div>
 </div>
 
@@ -157,6 +189,15 @@
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../charts/index.html" class="btn btn-neutral float-right" title="Chapter 15: Hello charts" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../markdown/index.html" class="btn btn-neutral" title="Chapter 13: Hello Markdown" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
