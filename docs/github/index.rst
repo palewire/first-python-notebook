@@ -12,6 +12,12 @@ GitHub is an online extension of the git command-line tool we installed in :doc:
 
 GitHub also offers free hosting to open-source software projects. It is where many of the world's largest are developed, including `pandas <https://github.com/pandas-dev/pandas>`_, `the Jupyter Notebook <https://github.com/jupyter/notebook>`_ and the `flavor of Python <https://github.com/ipython/ipython>`_ they favor.
 
+.. warning::
+
+    If you've set up your GitHub account with two-factor authentication, you will need to take the extra step of generating an SSH key that allows you to publish your work.
+
+    If you've just made a GitHub account for the first time, do not worry about this. If you have turned on two-factor authentication, but don't have SSH keys, read more how to set it up in `GitHub's documentation <https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/>`_.
+
 ****************************
 Creating a GitHub repository
 ****************************
