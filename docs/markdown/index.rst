@@ -10,6 +10,8 @@ Here's an example from `a recent project by the Los Angeles Times <https://githu
 
 This is accomplished by adding new cells to your notebook and converting them from the default output, Python code, to an alternative called Markdown. `Markdown <https://en.wikipedia.org/wiki/Markdown>`_ is a markup language that formats text. It's a common, lightweight alternative to HTML.
 
+.. youtube:: F8k2qegIZKQ
+
 ****************
 Writing Markdown
 ****************
