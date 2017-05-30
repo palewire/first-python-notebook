@@ -8,6 +8,8 @@ Git is a command-line tool that tracks changes in files and makes it easier to c
 
 It will allow us to edit and delete our code without fear of losing past work. Ultimately it will enable us to publish our notebook for the entire world to read and remix.
 
+.. youtube:: 7jB2YnWw_cQ
+
 *************************
 Creating a new repository
 *************************
