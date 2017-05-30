@@ -106,9 +106,9 @@ If you are in your virtualenv, it should return a path leading to the same folde
 
     /home/ben/Code/first-python-notebook/bin/python
 
-***********************
-Reactive the virtualenv
-***********************
+*************************
+Reactivate the virtualenv
+*************************
 
 You will need to remember to activate your virtualenv environment every time you log on to your computer and start work on this project. Before we move on, let's take a moment to practice this routine.
 
