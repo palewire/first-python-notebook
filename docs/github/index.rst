@@ -8,6 +8,8 @@ In this section, we will publish your notebook to the Internet using `GitHub <ht
 * `"California H-2A visas analysis" <https://github.com/datadesk/california-h2a-visas-analysis/blob/master/04_analysis.ipynb>`_ by the Los Angeles Times
 * `"Machine bias" <https://github.com/propublica/compas-analysis/blob/master/Compas%20Analysis.ipynb>`_ by ProPublica
 
+.. youtube:: XPdr5bCv-T4
+
 GitHub is an online extension of the git command-line tool we installed in :doc:`a previous chapter </git/index>`. In may help to think of GitHub as a social network that publishes and connects git code repositories.
 
 GitHub also offers free hosting to open-source software projects. It is where many of the world's largest are developed, including `pandas <https://github.com/pandas-dev/pandas>`_, `the Jupyter Notebook <https://github.com/jupyter/notebook>`_ and the `flavor of Python <https://github.com/ipython/ipython>`_ they favor.
