@@ -22,7 +22,11 @@ He is originally from Swisher, Iowa.
 About this class
 ****************
 
-This course was first developed for an October 2016, `"watchdog workshop" <http://www.californiacivicdata.org/2016/10/08/first-python-notebook/>`_ organized by Investigative Reporters and Editors at San Diego State University's school of journalism. It was revised for a February 2017 hands-on training of students at Stanford's journalism school and expanded into `a six-hour class <https://www.ire.org/events-and-training/event/2702/2879/>`_ at the annual conference of the National Institute for Computer-Assisted Reporting in March 2017.
+This course was first developed for an October 2016, `"watchdog workshop" <http://www.californiacivicdata.org/2016/10/08/first-python-notebook/>`_ organized by Investigative Reporters and Editors at San Diego State University's school of journalism.
+
+It was revised for a February 2017 hands-on training of students at Stanford's journalism school and expanded into `a six-hour class <https://www.ire.org/events-and-training/event/2702/2879/>`_ at the annual conference of the National Institute for Computer-Assisted Reporting in March 2017.
+
+It was expanded into its current for `a massive open online course <https://knightcenter.utexas.edu/blog/00-18396-sign-now-our-new-online-course-data-journalism-python-data-journalists-analyzing-money>`_ offered by the Knight Center for Journalism in the Americas in May 2017.
 
 **************
 About the data
