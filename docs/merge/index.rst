@@ -44,7 +44,7 @@ Merging two DataFrames is as simple as passing both to pandas built-in merge met
 
 .. code-block:: python
 
-    merged = pd.merge(prop, contribs, on="calaccess_committee_id")
+    merged = pd.merge(props, contribs, on="calaccess_committee_id")
 
 That new ``DataFrame`` variable can be inspected like any other.
 
