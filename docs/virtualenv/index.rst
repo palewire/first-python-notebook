@@ -88,10 +88,27 @@ Fun fact: The source command has a shorter nickname if you don't want to type as
 
 On Windows the activate script is inside a folder called Scripts. You will need to move into that folder, run the script, and then back out to the folder we are in now.
 
+First move into the folder.
+
 .. code-block:: bash
 
     cd Scripts
-    . .\activate
+
+Activate the environment. If you are in Cygwin, it will be something like this.
+
+.. code-block::  bash 
+    . .\activate    
+
+If you are in the default Windows command prompt, more like this.
+
+.. code-block:: bash
+
+   activate
+
+Then move back to where we were before.
+
+.. code-block:: bash
+
     cd ..
 
 You can verify that your virtualenv is running by using the `which <https://en.wikipedia.org/wiki/Which_(Unix)>`_ command to ask your computer what installation of Python it is currently using.
