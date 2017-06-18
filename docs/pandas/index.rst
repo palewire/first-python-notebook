@@ -22,7 +22,7 @@ Install pandas with pip
 We'll install pandas the same way we installed the Jupyter Notebook earlier: Our friend ``pip``.
 
 
-Pick up where we left off at the end of :doc:`chapter 2 </notebook/index>`, save your notebook, switch to your command prompt and hit ``CTRL-C``.
+Let's pick up where we left off at the end of :doc:`chapter 2 </notebook/index>`. Save your notebook by clicking the disk icon or selecting "save and checkpoint" from the file menu. Then switch to your command prompt and hit ``CTRL-C``.
 
 That will kill your notebook and return you to the command line. There we'll install pandas using pip.
 
