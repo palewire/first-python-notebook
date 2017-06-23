@@ -62,7 +62,7 @@ The coalition's effort has drawn hundreds of contributions from developers and j
 
 Experimental versions of the coalition's data files enabled `the Los Angeles Times <http://www.latimes.com/politics/la-pol-ca-road-map-california-2018-campaign-spending-20170219-story.html?foo=bar>`_ to calculate the $500 million figure quoted earlier in this chapter. It has also powered `interactive graphics <http://www.latimes.com/projects/la-pol-ca-california-governor-2018-money/>`_ and `several <http://www.latimes.com/local/politics/la-me-pol-brown-money-20141031-story.html>`_ `other <http://www.latimes.com/politics/la-pol-ca-newsom-waterfront-governor-20170519-story.html>`_ investigations into the role of money in state politics.
 
-You can review, install and contribute to the coalition's open-source codebase `on GitHub <www.github.com/california-civic-data-coalition>`_.
+You can review, install and contribute to the coalition's open-source codebase `on GitHub <https://www.github.com/california-civic-data-coalition>`_.
 
 Currently, the coalition's `website <http://www.californiacivicdata.org/>`_ archives the data published each day by the state and offers more complete documentation and easier access to the original files.
 
