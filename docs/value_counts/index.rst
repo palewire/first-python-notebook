@@ -12,7 +12,7 @@ Accessing a column
 
 We'll begin with the prop_name column where the proposition each committee is seeking to influence is stored.
 
-To see the contents of a column separate from the rest of the DataFrame, add the columns' name to the variable following a period.
+To see the contents of a column separate from the rest of the DataFrame, add the column's name to the variable following a period.
 
 .. code-block:: python
 
@@ -42,7 +42,7 @@ Run the code and you should see the lengthy proposition names ranked by their nu
 Resetting a DataFrame
 *********************
 
-You may have noticed that even though the result has two columns, pandas did not return a clean looking table in the same way as head did for our DataFrame.
+You may have noticed that even though the result has two columns, pandas did not return a clean-looking table in the same way as head did for our DataFrame.
 
 That's because our column, a Series, acts a little bit different than the DataFrame created by read_csv.
 
