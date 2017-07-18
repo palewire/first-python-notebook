@@ -67,7 +67,7 @@ Run the status command again and you'll see something different. That's git tell
 
     git status
 
-Log its addition with git's `commit command <https://git-scm.com/docs/git-commit>`_. You must include a personalized message, which can you provided along with the command by adding on the ``-m`` flag along with a description of the work you've done.
+Log its addition with git's `commit command <https://git-scm.com/docs/git-commit>`_. You must include a personalized message, which you can provide along with the command by adding on the ``-m`` flag along with a description of the work you've done.
 
 .. code-block:: bash
 
@@ -81,4 +81,4 @@ That's it. You've made your first git commit.
 
 To get some practice, save a change to your notebook and try to log another.
 
-It might seen a little burdonsome at first, but it is correct to run the status, add and commit commands each time. Take it slowly and carefully. You'll quickly get the hang of it.
+It might seen a little burdensome at first, but it is correct to run the status, add and commit commands each time. Take it slowly and carefully. You'll quickly get the hang of it.
