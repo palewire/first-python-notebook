@@ -26,7 +26,7 @@ Creating a GitHub repository
 
 Visit `GitHub <http://www.github.com>`_ and create a new public repository named ``first-python-notebook``. Don't check "Initialize with README." You want to start with a blank repository.
 
-This will create a new repository page. It needs to be syncronized with the local repository we've already created.
+This will create a new repository page. It needs to be synchronized with the local repository we've already created.
 
 You can connect your local directory to GitHub's site by returning to the terminal and using git's "remote add" command to connect it with GitHub.
 
@@ -48,7 +48,7 @@ Next we'll try "pushing" the latest commit from your repository up to GitHub. As
 
     That might seem like a long weird command (it is!) but it's one you'll need to memorize to continue working with GitHub.
 
-    If you pick it apart, it's not that complicated. The first two terms, git push, tell git you'd like to move your code from your local directory to a remote repository. The third, origin, indicates the destination you'd like to update. Remember, we gave our GitHub repository the alias. The fourth tells it was branch of your code you'd like to sycnronize. We haven't covered it yet in this class, but the standard branch of code in any new git repository is called the master branch. If you're interested, you can read more about branches `in the git user manual <https://git-scm.com/book/id/v2/Git-Branching-Branches-in-a-Nutshell>`_.
+    If you pick it apart, it's not that complicated. The first two terms, git push, tell git you'd like to copy your code from your local directory to a remote repository. The third, origin, indicates the destination you'd like to update. Remember, we gave our GitHub repository the alias origin. The fourth tells it which branch of your code you'd like to synchronize. We haven't covered it yet in this class, but the standard branch of code in any new git repository is called the master branch. If you're interested, you can read more about branches `in the git user manual <https://git-scm.com/book/id/v2/Git-Branching-Branches-in-a-Nutshell>`_.
 
 Now reload the GitHub page in your browser and you should see your code online. Congratulations, you've published you work.
 
