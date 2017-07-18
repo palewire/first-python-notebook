@@ -36,7 +36,7 @@ Wrong.
 How not to be wrong
 *******************
 
-The total we generated is not the overall total raised in the campaign, and is guaranteed to be lower than the totals reported in the media and by the campaigns.
+The total we generated is not the overall total raised in the campaign, and it is guaranteed to be lower than the totals reported in the media and by the campaigns.
 
 Why?
 
@@ -60,7 +60,7 @@ Adding up a big total is all well and good. But we're aiming for something more 
 
 We want to separate the money spent supporting the proposition from the money opposing it. Then we want to find out who raised more.
 
-To answer that question, lets return to the filtering technique we learned in :doc:`chapter seven <filters/index>`.
+To answer that question, let's return to the filtering technique we learned in :doc:`chapter seven <filters/index>`.
 
 First let's look at the column we're going to filter by, committee_position.
 
@@ -92,7 +92,7 @@ Then the supporters.
 
     support.amount.sum()
 
-The support is clearly larger. But what percent is it of the overall disclosed total? We can find out by combined two ``sum`` calculations using the division operator.
+The support is clearly larger. But what percent is it of the overall disclosed total? We can find out by combining two ``sum`` calculations using the division operator.
 
 .. code-block:: python
 
