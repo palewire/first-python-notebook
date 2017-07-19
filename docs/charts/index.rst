@@ -32,7 +32,7 @@ Let's return to where we set our proposition filter at the top and restore it ou
 
 Now rerun the entire notebook, as we learned above. You will need to do this when you halt and restart your notebook on the command line. Reminder, you can do this by pulling down the ``Cell`` menu at the top of the notebook and selecting the ``Run all`` option.
 
-Then scroll down to the bottom of the notebook and pick up where we last left off in Act 4.
+Then scroll down to the bottom of the notebook and pick up where we last left off in :doc:`the previous chapter </github/index>`.
 
 If we want to chart out the top supporters of the proposition, we first need to select them from the dataset. Using the grouping and sorting tricks we learned earlier, the top 10 can returned like this:
 
