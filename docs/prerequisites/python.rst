@@ -20,6 +20,10 @@ You should see something like this after you hit enter:
 
 If not, you'll need to install Python on your system.
 
+.. note::
+
+    If you have a version of Python 3, don't sweat it. It will work fine.
+
 *******
 Windows
 *******
