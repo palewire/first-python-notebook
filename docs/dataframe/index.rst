@@ -15,8 +15,8 @@ They are:
 ================================================= ===========
 Name                                              Description
 ================================================= ===========
-`committees.csv </_static/committees.csv>`_       Committees active in the election linked to propositions supported or opposed
-`contributions.csv </_static/contributions.csv>`_ Donors reported by each of the committees
+`committees.csv <https://first-python-notebook.readthedocs.io/_static/committees.csv>`_       Committees active in the election linked to propositions supported or opposed
+`contributions.csv <https://first-python-notebook.readthedocs.io/_static/contributions.csv>`_ Donors reported by each of the committees
 ================================================= ===========
 
 The data are structured in rows of comma-separated values. This is known as a `CSV file <https://en.wikipedia.org/wiki/Comma-separated_values>`_. It is the most common way you will find data published online.
@@ -33,7 +33,7 @@ Scroll down to the first open cell. There we will import the first CSV file list
 
 .. code-block:: python
 
-    pd.read_csv("http://www.firstpythonnotebook.org/_static/committees.csv")
+    pd.read_csv("https://first-python-notebook.readthedocs.io/_static/committees.csv")
 
 .. warning::
 
@@ -55,7 +55,7 @@ Go back to your initial cell and change it to this. Then rerun it.
 
 .. code-block:: python
 
-    props = pd.read_csv("http://www.firstpythonnotebook.org/_static/committees.csv")
+    props = pd.read_csv("https://first-python-notebook.readthedocs.io/_static/committees.csv")
 
 After you run it, you shouldn't see anything. That's a good thing. It means our DataFrame has been saved under the name props, which we can now begin interacting with in the cells that follow.
 
@@ -95,7 +95,7 @@ We'll start by using the read_csv method to import the second CSV file linked ab
 
 .. code-block:: python
 
-    contribs = pd.read_csv("http://www.firstpythonnotebook.org/_static/contributions.csv")
+    contribs = pd.read_csv("https://first-python-notebook.readthedocs.io/_static/contributions.csv")
 
 Just as we did earlier, you can inspect the contents of this new file with the head method.
 
