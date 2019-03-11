@@ -45,13 +45,13 @@ class IframeVideo(Directive):
 
 
 class Youtube(IframeVideo):
-    html = '<div class="embed-container"><iframe src="http://www.youtube.com/embed/%(video_id)s" \
+    html = '<div class="embed-container"><iframe src="https://www.youtube.com/embed/%(video_id)s" \
     width="%(width)u" height="%(height)u" frameborder="0" \
     webkitAllowFullScreen mozallowfullscreen allowfullscreen class="youtube"></iframe></div>'
 
 
 class Vimeo(IframeVideo):
-    html = '<div class="embed-container"><iframe src="http://player.vimeo.com/video/%(video_id)s" \
+    html = '<div class="embed-container"><iframe src="https://player.vimeo.com/video/%(video_id)s" \
     width="%(width)u" height="%(height)u" frameborder="0" \
     webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>'
 
