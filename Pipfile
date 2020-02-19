@@ -4,6 +4,10 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+sphinx = "*"
+sphinx-autobuild = "*"
+sphinx-rtd-theme = "*"
+rst2pdf = "*"
 
 [packages]
 jupyter = "*"
