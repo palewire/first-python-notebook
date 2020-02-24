@@ -25,7 +25,7 @@ This course is free. If you've tried Python once or twice, have good attitude an
     :name: mastertoc
 
     prerequisites/index
-    virtualenv/index
+    pipenv/index
     notebook/index
     pandas/index
     money/index

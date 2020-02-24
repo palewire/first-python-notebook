@@ -8,13 +8,13 @@ Before we start, we'll need to make sure ``matplotlib`` is installed. Return to 
 
 .. code-block:: bash
 
-    $ pip install matplotlib
+    $ pipenv install matplotlib
 
 After that completes, once again restart your notebook.
 
 .. code-block:: bash
 
-    $ jupyter notebook
+    $ pipenv run jupyter notebook
 
 Now you can open your notebook and add a new cell below the imports that lets the system know you plan to make some charts and that it's okay to surface them in the notebook. 
 

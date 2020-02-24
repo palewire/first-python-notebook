@@ -10,38 +10,13 @@ Some of those tools are included in a toolbox that comes with the language, know
 
 One that's important for this class is called `pandas <http://pandas.pydata.org/>`_. It is a tool invented at a financial investment firm that has become a leading open-source library for accessing and analyzing data in many different fields.
 
-Learn how to install panda and conduct a simple data analysis by following this video or the written instructions below.
-
-.. youtube:: 5cGYsvoyZWs
-
-
-***********************
-Install pandas with pip
-***********************
-
-We'll install pandas the same way we installed the Jupyter Notebook earlier: Our friend ``pip``.
-
-
-Let's pick up where we left off at the end of :doc:`chapter 2 </notebook/index>`. Save your notebook by clicking the disk icon or selecting "save and checkpoint" from the file menu. Then switch to your command prompt and hit ``CTRL-C``.
-
-That will kill your notebook and return you to the command line. There we'll install pandas using pip.
-
-.. code-block:: python
-
-    pip install pandas
-
-
 *************************************
 Import pandas into a Jupyter Notebook
 *************************************
 
-Now let's restart our notebook and get back to work.
+We installed pandas via Pipenv back in `chapter 1`_. Now let's put it to use.
 
-.. code-block:: python
-
-    jupyter notebook
-
-Reopen your notebook and create a new cell at the top. There we will import the pandas library for use in our script. Type in the following and hit the play button again.
+Create a new cell at the top of your Jupyter notebook. There we will import the pandas library for use in our script. Type in the following and hit the play button again.
 
 .. code-block:: python
 
@@ -135,6 +110,8 @@ With those simple techniques, we're only scratching the surface of what pandas m
 
 Substitute in a series of 10 million records at the top of the stack (or even just the odd numbers between zero and ten), and your notebook would calculate all those statistics again without you having to write any more code.
 
-Once your  data, however large or complex, is imported into pandas, there's little limit to what you can do to filter, merge, group, aggregate, compute or chart using simple methods like the ones above.
+Once your data, however large or complex, is imported into pandas, there's little limit to what you can do to filter, merge, group, aggregate, compute or chart using simple methods like the ones above.
 
 In the next chapter we'll get started doing just using data tracking the flow of money in California politics.
+
+.. _chapter 1: ../pipenv/
