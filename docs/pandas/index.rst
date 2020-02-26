@@ -2,7 +2,7 @@
 Chapter 3: Hello pandas
 =======================
 
-Lucky for us, Python is filled with functions to do pretty much anything you’d ever want to do with a programming language: `navigate the web <http://docs.python-requests.org/>`_, `parse data <https://docs.python.org/2/library/csv.html>`_, `interact with a database <http://www.sqlalchemy.org/>`_, `run fancy statistics <https://www.scipy.org/>`_, `build a pretty website <https://www.djangoproject.com/>`_ and `so <https://www.crummy.com/software/BeautifulSoup/>`_ `much <http://www.nltk.org/>`_ `more <http://pillow.readthedocs.io/en/3.4.x/index.html>`_.
+Lucky for us, Python is filled with functions to do pretty much anything you’d ever want to do with a programming language: `navigate the web`_, `parse data`_, `interact with a database`_, `run fancy statistics`_, `build a pretty website`_ and `so`_ `much`_ `more`_.
 
 Creative people have put these tools to work to get `a wide range of things done <https://www.python.org/about/success/>`_ in the academy, the laboratory and even in outer space.
 
@@ -114,4 +114,13 @@ Once your data, however large or complex, is imported into pandas, there's littl
 
 In the next chapter we'll get started doing just using data tracking the flow of money in California politics.
 
+
+.. _navigate the web: http://docs.python-requests.org/
+.. _parse data: https://docs.python.org/2/library/csv.html
+.. _interact with a database: http://www.sqlalchemy.org/
+.. _run fancy statistics: https://www.scipy.org/
+.. _build a pretty website: https://www.djangoproject.com/
+.. _so: https://www.crummy.com/software/BeautifulSoup/
+.. _much: http://www.nltk.org/
+.. _more: https://pillow.readthedocs.io/en/stable/
 .. _chapter 1: ../pipenv/
