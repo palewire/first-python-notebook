@@ -8,15 +8,34 @@ Creative people have put these tools to work to get `a wide range of things done
 
 Some of those tools are included in a toolbox that comes with the language, known as the standard library. Others have been built by members of Python's developer community and need to be downloaded and installed from the web.
 
-One that's important for this class is called `pandas <http://pandas.pydata.org/>`_. It is a tool invented at a financial investment firm that has become a leading open-source library for accessing and analyzing data in many different fields.
+One that's important for this class is called `pandas`_. It is a tool invented at a financial investment firm that has become a leading open-source library for accessing and analyzing data in many different fields.
+
+***************************
+Install pandas with Pipenv
+***************************
+
+We'll install pandas the same way we installed the Jupyter Notebook earlier: Our new friend :doc:`Pipenv </pipenv/index>`.
+
+Let's pick up where we left off at the end of :doc:`chapter 2 </notebook/index>`. Save your notebook by clicking the disk icon or selecting "save and checkpoint" from the file menu. Then switch to your command prompt and hit ``CTRL-C``.
+
+That will kill your notebook and return you to the command line. There we'll install pandas:
+
+.. code-block:: python
+
+    pipenv install pandas
+
 
 *************************************
 Import pandas into a Jupyter Notebook
 *************************************
 
-We installed pandas via Pipenv back in `chapter 1`_. Now let's put it to use.
+Now let's restart our notebook and get back to work.
 
-Create a new cell at the top of your Jupyter notebook. There we will import the pandas library for use in our script. Type in the following and hit the play button again.
+.. code-block:: python
+
+    pipenv run jupyter notebook
+
+Reopen your notebook and create a new cell at the top of your Jupyter notebook. There we will import the pandas library for use in our script. Type in the following and hit the play button again.
 
 .. code-block:: python
 
@@ -123,4 +142,5 @@ In the next chapter we'll get started doing just using data tracking the flow of
 .. _so: https://www.crummy.com/software/BeautifulSoup/
 .. _much: http://www.nltk.org/
 .. _more: https://pillow.readthedocs.io/en/stable/
-.. _chapter 1: ../pipenv/
+.. _pandas: http://pandas.pydata.org/
+.. _Pipenv: ../pipenv/

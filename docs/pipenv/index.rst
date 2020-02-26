@@ -177,27 +177,33 @@ Next use your terminal to navigate into the new directory with the `cd`_ command
     cd Code/first-python-notebook
 
 
-**********************************
-Install the project's dependencies
-**********************************
+****************************
+Install your first package
+****************************
 
-Now let's install the essential third-party packages for this course: Jupyter Notebook (see `chapter 2`_) and pandas (see `chapter 3`_):
+Now let's install one of the essential third-party packages for this course: Jupyter Notebook, which we will discuss in more depth in `chapter 2`_.
 
 .. code-block:: bash
 
-   pipenv install jupyter pandas
+    pipenv install jupyter
 
 
-When you invoke Pipenv's ``install`` command, it checks for an existing virtual environment connected to your project's directory. Finding none, it creates one, then installs Jupyter and pandas into it.
+When you invoke Pipenv's ``install`` command, it checks for an existing virtual environment connected to your project's directory. Finding none, it creates one, then installs Jupyter into it.
 
-As a result, two files are added to your project directory: Pipfile and Pipfile.lock. These are an `alternative`_ to the standard requirements.txt file previously mentioned.
+As a result, two files are added to your project directory: Pipfile and Pipfile.lock. These are an `alternative`_ to the standard requirements.txt file mentioned earlier.
 
-Open these files in your text editor and see how they describe your project's Python requirements:
+Open these files in a text editor (such as `Sublime Text`_, `Atom`_ or `Visual Studio Code`_), and you'll see how they describe your project's Python requirements.
 
-- Pipfile includes the names of the packages we installed along with specified versions (or ``'*'`` if no version was specified when installed).
-- Pipfile.lock has a much more complicated, nested structure that specifies the exact version of your project's direct dependencies along with all their sub-dependencies.
+In Pipfile, you'll see the name and exact version of any package we directed Pipenv to install. So far, we've only installed Jupyter, and we didn't specify an exact version of Jupyter, so you'll see: 
+
+.. code-block:: bash
+
+    [packages]
+    jupyter = "*"
+
+Pipfile.lock has a much more complicated, nested structure that specifies the exact version of your project's direct dependencies along with all their sub-dependencies.
   
-You've completed the setup process for First Python Notebook. Now the real fun begins, starting with Jupyter Notebook in the next chapter.
+You've completed the setup process for First Python Notebook. Now the real fun begins.
 
 .. _Pipenv: https://pipenv.kennethreitz.org/en/latest/
 .. _Cheese Shop: https://youtu.be/Hz1JWzyvv8A
@@ -219,7 +225,9 @@ You've completed the setup process for First Python Notebook. Now the real fun b
 .. _docs: https://pipenv.kennethreitz.org/en/latest/install/#pragmatic-installation-of-pipenv
 .. _user install: https://pip.pypa.io/en/stable/user_guide/#user-installs
 .. _chapter 2: ../notebook/
-.. _chapter 3: ../pandas/
 .. _mkdir: https://en.wikipedia.org/wiki/Mkdir
 .. _cd: https://en.wikipedia.org/wiki/Cd_(command)
 .. _alternative: https://github.com/pypa/pipfile
+.. _Sublime Text: https://www.sublimetext.com/
+.. _Atom: https://atom.io/
+.. _Visual Studio Code: https://code.visualstudio.com/
