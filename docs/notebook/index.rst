@@ -22,7 +22,7 @@ For starters, let's check where we are in our computer's file system. For this w
 
     pwd
 
-The output is the full path of your current location, something like ``/Users/palewire/Code/first-python-notebook``. Unless you're currently in the project directory we created in `chapter 1`_, you need to change directories.
+The output is the full path of your location in the file system, something like ``/Users/palewire/Code/first-python-notebook``. If you aren't currently in the project directory we created in `chapter 1`_, you need to change directories.
 
 First, jump into the code directory:
 
@@ -30,14 +30,13 @@ First, jump into the code directory:
 
     cd Code
 
-Then, jump into virtual environment directory:
+Then, jump into project directory:
 
 .. code-block:: bash
 
     cd first-python-notebook
 
-
-Note the command-line is *case-sensitive*, so be sure your typing is exact.
+This is where you'll store a local copy of all the code and files you create for this project.
 
 .. note::
 
