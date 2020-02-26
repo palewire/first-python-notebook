@@ -14,15 +14,13 @@ To do that, the first thing we need to do is isolate the fundraising committees 
 Filtering a DataFrame
 *********************
 
-.. youtube:: lRyABONedV4
-
 The most common way to filter a DataFrame is to pass an expression as an "index" that can be used to decide which records should be kept and which discarded.
 
 You write the expression by combining a column on your DataFrame with an `"operator" <https://en.wikipedia.org/wiki/Operator_(computer_programming)>`_ like ``==`` or ``>`` or ``<`` and a value to compare the column against.
 
 .. note::
 
-    If you are familiar with writing `SQL <https://en.wikipedia.org/wiki/SQL>`_ to manipulate databases, pandas' filtering system is somewhat similar to a WHERE query. The `official pandas documentation <http://pandas.pydata.org/pandas-docs/stable/comparison_with_sql.html#where>`_ offers direct translations between the two.
+    If you are familiar with writing `SQL <https://en.wikipedia.org/wiki/SQL>`_ to manipulate databases, pandas' filtering system is somewhat similar to a ``WHERE`` query. The `official pandas documentation <http://pandas.pydata.org/pandas-docs/stable/comparison_with_sql.html#where>`_ offers direct translations between the two.
 
 In our case, the column we want to filter against is prop.prop_name. We only want to keep those records where the value there matches the full name of Proposition 64.
 
