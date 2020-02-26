@@ -4,9 +4,7 @@ Chapter 9: Hello totals
 
 In some ways, your database is no different from a human source. Getting a good story requires careful, thorough questioning. In this section we will move ahead by conducting an interview with pandas to pursue our quest of finding out the biggest donors to Proposition 64.
 
-.. youtube:: -xjprU5jlO0
-
-Using tricks we learned as far back as :doc:`chapter three <pandas/index>`, we can start off by answering a simple question: What is the total sum of Proposition 64 contributions that have been reported?
+Using tricks we learned as far back as :doc:`chapter three </pandas/index>`, we can start off by answering a simple question: What is the total sum of Proposition 64 contributions that have been reported?
 
 ****************
 Summing a column
@@ -18,7 +16,7 @@ To answer that let's start by getting our hands on amount, the column from the c
 
     merged.amount
 
-Now we can add up the column's total using the pandas method `sum <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.sum.html>`_, just as we did when we were first getting started with pandas.
+Now we can add up the column's total using the pandas method `sum`_, just as we did when we were first getting started with pandas.
 
 .. code-block:: python
 
@@ -40,7 +38,7 @@ The total we generated is not the overall total raised in the campaign, and it i
 
 Why?
 
-In California, campaigns are `only required <http://www.documentcloud.org/documents/2781363-460-2016-01.html#document/p10>`_ to disclose the names of donors who give over $100, so our data is missing all of the donors who gave less than that amount.
+In California, campaigns are `only required`_ to disclose the names of donors who give over $100, so our data is missing all of the donors who gave less than that amount.
 
 The cutoff varies, and there are some exceptions, but the same thing is true in other states and also at the federal level in races for Congress and the White House.
 
@@ -60,7 +58,7 @@ Adding up a big total is all well and good. But we're aiming for something more 
 
 We want to separate the money spent supporting the proposition from the money opposing it. Then we want to find out who raised more.
 
-To answer that question, let's return to the filtering technique we learned in :doc:`chapter seven <filters/index>`.
+To answer that question, let's return to the filtering technique we learned in :doc:`chapter seven </filter/index>`.
 
 First let's look at the column we're going to filter by, committee_position.
 
@@ -97,3 +95,7 @@ The support is clearly larger. But what percent is it of the overall disclosed t
 .. code-block:: python
 
     support.amount.sum() / merged.amount.sum()
+
+
+.. _sum: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.sum.html
+.. _only required: http://www.documentcloud.org/documents/2781363-460-2016-01.html#document/p10
