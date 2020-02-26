@@ -4,8 +4,6 @@ Chapter 6: Hello columns
 
 In this chapter we'll begin our analysis by learning how to analyze a column from a DataFrame.
 
-.. youtube:: ofWJDeC8bB4
-
 ******************
 Accessing a column
 ******************
@@ -20,7 +18,7 @@ To see the contents of a column separate from the rest of the DataFrame, add the
 
 That will list the column out as a Series, just like the ones we created from scratch in :doc:`chapter three </pandas/index>`.
 
-And, just as we did in :doc:`then </pandas/index>`, you can now start tacking on additional methods that will analyze the contents of the column.
+And, just as we did :doc:`then </pandas/index>`, you can now start tacking on additional methods that will analyze the contents of the column.
 
 In this case, the column is filled with characters. So we don't want to calculate statistics like the median and average, as we did before.
 
@@ -58,4 +56,4 @@ Like so much in computer programming, the answer is simply "because the people w
 
 That's not worth stressing about in this case, but it's important to learn that all open-source programming tools have their quirks. Over time you'll learn pandas has more than a few.
 
-As a beginner, you should just figure out the ones you need and roll with it. As you get more advanced, if there's something about the system you think could be improved you should consider `contributing <http://pandas.pydata.org/pandas-docs/stable/contributing.html>`_ to the Python code that runs pandas.
+As a beginner, you should just figure out the ones you need and roll with it. As you get more advanced, if there's something about the system you think could be improved you should consider `contributing <https://pandas.pydata.org/pandas-docs/stable/development/contributing.html>`_ to the Python code that runs pandas.
