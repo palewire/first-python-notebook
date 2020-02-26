@@ -20,19 +20,17 @@ Now compare that to the committees file.
 
 You will notice that this file contains a field called ``calaccess_committee_id`` that is identical to the one found in the committee CSV.
 
-That's because these two files are drawn from a `"relational database" <https://en.wikipedia.org/wiki/Relational_database>`_ that stores data in an array of tables linked together by common identifiers. In this case, the unique identifying codes of committees in one table can be expected to match those found in another.
+That's because these two files are drawn from a `"relational database"`_ that stores data in an array of tables linked together by common identifiers. In this case, the unique identifying codes of committees in one table can be expected to match those found in another.
 
-We can therefore safely join the two files using the pandas `merge <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.merge.html>`_ method.
+We can therefore safely join the two files using the pandas `merge`_ method.
 
 .. note::
 
-    Again, if you are familar with traditional databases, you may recognize that the merge method in pandas is similar to SQL's JOIN statement. If you dig into `merge's documentation <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.merge.html>`_ you will see it has many of the same options, such as the ability to conduct "inner" and "outer" joins.
+    Again, if you are familar with traditional databases, you may recognize that the merge method in pandas is similar to SQL's ``JOIN`` statement. If you dig into `merge's documentation`_ you will see it has many of the same options, such as the ability to conduct "inner" and "outer" joins.
 
 ******************
 Merging DataFrames
 ******************
-
-.. youtube:: yLI8apA3QTo
 
 By default the merge method in pandas will return only those rows where a common identifier found in both tables, which is known as an "inner" join.
 
@@ -61,3 +59,8 @@ By looking at the columns you can check how many rows survived the merged.
 You can also see that the DataFrame now contains all of the columns in both tables. Columns with the same name have had a suffix automatically appended to indicate whether they came from the first or second DataFrame submitted to the merge.
 
 We have now created a new dataset that includes only contributions supporting and opposing Proposition 64. We're ready to move on from preparing our data. It's time to interview it.
+
+
+.. _"relational database": https://en.wikipedia.org/wiki/Relational_database
+.. _merge: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html
+.. _merge's documentation: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html
