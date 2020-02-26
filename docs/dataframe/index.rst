@@ -4,22 +4,20 @@ Chapter 5: Hello data
 
 Now it's time to get our hands on some real data.
 
-.. youtube:: 2WmHjX5V4v0
-
-Our data source will be the `California Civic Data Coalition <http://www.californiacivicdata.org/>`_, an open-source network of journalists and developers that maintains an archive of data tracking money in California politics.
+Our data source will be the `California Civic Data Coalition`_, an open-source network of journalists and developers that maintains an archive of data tracking money in California politics.
 
 The coalition has created simplified data files containing the disclosure forms that committees campaigning either for against one of the 17 propositions on the ballot in November 2016 filed with the state of California.
 
 They are:
 
-================================================= ===========
-Name                                              Description
-================================================= ===========
-`committees.csv <https://first-python-notebook.readthedocs.io/_static/committees.csv>`_       Committees active in the election linked to propositions supported or opposed
-`contributions.csv <https://first-python-notebook.readthedocs.io/_static/contributions.csv>`_ Donors reported by each of the committees
-================================================= ===========
+====================  =============================================================================
+Name                  Description                                                                
+====================  =============================================================================
+`committees.csv`_     Committees active in the election linked to propositions supported or opposed
+`contributions.csv`_  Donors reported by each of the committees
+====================  =============================================================================
 
-The data are structured in rows of comma-separated values. This is known as a `CSV file <https://en.wikipedia.org/wiki/Comma-separated_values>`_. It is the most common way you will find data published online.
+The data are structured in rows of comma-separated values. This is known as a `CSV file`_. It is the most common way you will find data published online.
 
 ********************
 Creating a DataFrame
@@ -29,7 +27,7 @@ The pandas library is able to read in files from a variety formats, including CS
 
 If it's not currently running start up your Jupyter Notebook as described in :doc:`chapter two </notebook/index>`.
 
-Scroll down to the first open cell. There we will import the first CSV file listed above using the `read_csv <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html>`_ function included with pandas.
+Scroll down to the first open cell. There we will import the first CSV file listed above using the `read_csv`_ function included with pandas.
 
 .. code-block:: python
 
@@ -49,7 +47,7 @@ The advantage here is that rather than manipulating the data through a haphazard
 Creating a variable
 *******************
 
-In order to do that, we need to store our DataFrame so it can be reused in subsequent cells. We can do this by saving in a `"variable" <https://en.wikipedia.org/wiki/Variable_(computer_science)>`_, which is a fancy computer programming word for a named shortcut where we save our work as we go.
+In order to do that, we need to store our DataFrame so it can be reused in subsequent cells. We can do this by saving in a `"variable"`_, which is a fancy computer programming word for a named shortcut where we save our work as we go.
 
 Go back to your initial cell and change it to this. Then rerun it.
 
@@ -59,7 +57,7 @@ Go back to your initial cell and change it to this. Then rerun it.
 
 After you run it, you shouldn't see anything. That's a good thing. It means our DataFrame has been saved under the name props, which we can now begin interacting with in the cells that follow.
 
-We can do this by calling `"methods" <https://en.wikipedia.org/wiki/Method_(computer_programming)>`_ that pandas has made available to all DataFrames.
+We can do this by calling `"methods"`_ that pandas has made available to all DataFrames.
 
 You may not have known it at the time, but read_csv was one of these methods. There are dozens more that can do all sorts of interesting things. Let's start with some easy ones that analysts use all the time.
 
@@ -67,7 +65,7 @@ You may not have known it at the time, but read_csv was one of these methods. Th
 Using the head method
 *********************
 
-First, to preview the first few rows of the dataset, try the `head <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.head.html>`_ method. Hit the ``+`` button in the toolbar to add a new cell below the first one. Type this in it and hit the run button again.
+First, to preview the first few rows of the dataset, try the `head`_ method. Hit the ``+`` button in the toolbar to add a new cell below the first one. Type this in it and hit the run button again.
 
 .. code-block:: python
 
@@ -77,7 +75,7 @@ First, to preview the first few rows of the dataset, try the `head <http://panda
 Using the info method
 *********************
 
-To get a look at all of the columns and what type of data they store, add another cell and try `info <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.info.html>`_.
+To get a look at all of the columns and what type of data they store, add another cell and try `info`_.
 
 .. code-block:: python
 
@@ -110,3 +108,14 @@ You should also inspect the columns using the info method. Running these two tri
     contribs.info()
 
 Now that you've got some data imported, we're ready to begin our analysis.
+
+
+.. _California Civic Data Coalition: http://www.californiacivicdata.org/
+.. _committees.csv: https://first-python-notebook.readthedocs.io/_static/committees.csv
+.. _contributions.csv: https://first-python-notebook.readthedocs.io/_static/contributions.csv
+.. _CSV file: https://en.wikipedia.org/wiki/Comma-separated_values
+.. _read_csv: http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html
+.. _"variable": https://en.wikipedia.org/wiki/Variable_(computer_science)
+.. _"methods": https://en.wikipedia.org/wiki/Method_(computer_programming)
+.. _head: http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.head.html
+.. _info: http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.info.html
