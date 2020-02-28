@@ -39,7 +39,7 @@ Now that we have ``altair`` imported, we can pop that dataframe into a quick cha
         y="amount"
     )
 
-.. image:: /_static/bar.png
+.. image:: /_static/bar_vertical.png
 
 Look at that chart!
 
@@ -52,7 +52,7 @@ Here's an idea — maybe we want to do horizontal, not vertical bars. How would 
         y="contributor_lastname"
     )
 
-.. image:: /_static/barh.png
+.. image:: /_static/bar_horizontal.png
 
 What if we wanted to focus on the top five records? We can use that ``head`` command we already know.
 
@@ -63,7 +63,7 @@ What if we wanted to focus on the top five records? We can use that ``head`` com
         y="contributor_lastname"
     )
 
-.. image:: /_static/barh_head.png
+.. image:: /_static/bar_head.png
 
 Okay, but what if I want to combine the first and last name? We have the data we need in two separate columns, which we can put together simply by inventing a new field on our data frame and, just like a variable, setting it equal to a combination of the other fields.
 
@@ -78,11 +78,13 @@ Now we can use that column instead of``contributor_lastname`` in our chart.
     alt.Chart(top_supporters.head(5)).mark_bar().encode(
         x="amount",
         y="contributor_fullname"
-    ).properties()
+    )
 
-There's one big thing that's making this chart look pretty sloppy — and visually difficult to parse. Let's figure out how to sort the bars from highest to lowest.
+.. image:: /_static/bar_fullname.png
 
-By default, the y-axis values are sorted alphabetically. We want to sort the y-axis values by their corresponding x values. We've been using the shorthand syntax to pass in our axis columns so far, but to add more customization to our chart we'll have to switch to the longform way of defining the y axis.
+Notice how the sort order changed when we changed the contributor column? This chart is sorted alphabetically by y-axis value, and it's making everything look pretty sloppy and hard to parse. Let's fix that.
+
+We want to sort the y-axis values by their corresponding x values. We've been using the shorthand syntax to pass in our axis columns so far, but to add more customization to our chart we'll have to switch to the longform way of defining the y axis.
 
 That will look something like the way we define the chart in the first place: ``alt.Y(column_name, arg="value")``. There are lots of options that you might want to pass in, like ones that will sum your data on the fly or define the number range you want your axis to display. In this case, we'll just be using the ``sort`` command.
 
@@ -93,7 +95,7 @@ That will look something like the way we define the chart in the first place: ``
         y=alt.Y("contributor_fullname", sort="-x")
     )
 
-.. image:: /_static/barh_fullname.png
+.. image:: /_static/bar_sort.png
 
 And we can't have a chart without context. Let's throw in a title for good measure.
 
@@ -106,7 +108,7 @@ And we can't have a chart without context. Let's throw in a title for good measu
         title="Top Contributors in Support of Proposition 64"
     )
 
-.. image:: /_static/barh_fullname.png
+.. image:: /_static/bar_title.png
 
 Yay, we made a chart!
 
