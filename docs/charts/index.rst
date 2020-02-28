@@ -2,37 +2,17 @@
 Chapter 15: Hello charts
 ========================
 
-Python has a number of charting tools that can work hand-in-hand with ``pandas``. The most popular is `matplotlib <http://matplotlib.org/>`_. It isn't the prettiest thing in the world, but it offers straightfoward tools for exploring your data by making quick charts. And, best of all, it can display in your Jupyter Notebook.
+Python has a number of charting tools that can work hand-in-hand with ``pandas``. `Altair <https://altair-viz.github.io/>`_ is a relative newbie in that space, but it's got good documentation and can display charts right in your Jupyter Notebook — and export to lots of other formats.
 
-Before we start, we'll need to make sure ``matplotlib`` is installed. Return to your terminal and try installing it with our buddy pip, as we installed other things before.
+Let's take it for a spin.
 
-.. code-block:: bash
-
-    $ pip install matplotlib
-
-After that completes, once again restart your notebook.
-
-.. code-block:: bash
-
-    $ jupyter notebook
-
-Now you can open your notebook and add a new cell below the imports that lets the system know you plan to make some charts and that it's okay to surface them in the notebook. 
+Let's pick up where we last left off in :doc:`the previous chapter </github/index>`. First, we'll want to import Altair. We'll usually import it as ``alt`` so we don't have to type out the whole thing every time we make a chart.
 
 .. code-block:: python
 
-    %matplotlib inline
+    import altair as alt
 
-.. image:: /_static/matplotlib_inline.png
-
-Let's return to where we set our proposition filter at the top and restore it our initial interest, Proposition 64.
-
-.. code-block:: python
-
-    prop = props[props.prop_name == 'PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.']
-
-Now rerun the entire notebook, as we learned above. You will need to do this when you halt and restart your notebook on the command line. Reminder, you can do this by pulling down the ``Cell`` menu at the top of the notebook and selecting the ``Run all`` option.
-
-Then scroll down to the bottom of the notebook and pick up where we last left off in :doc:`the previous chapter </github/index>`.
+Typically you'd import all the libraries you'll need at the top of the notebook, where you imported ``pandas``, but as long as this block appears above the code for your first chart, it'll work.
 
 If we want to chart out the top supporters of the proposition, we first need to select them from the dataset. Using the grouping and sorting tricks we learned earlier, the top 10 can returned like this:
 
@@ -50,38 +30,40 @@ We can then view them with a trick I bet you remember by now.
 
 .. image:: /_static/top_supporters_df.png
 
-Now that matplotlib is installed, making a simple chart is as simple as stringing the ``plot`` method onto the end of your ``DataFrame``.
+Now that we have ``altair`` imported, we can pop that dataframe into a quick chart. Let's step through the building blocks of a chart.
 
 .. code-block:: python
 
-    top_supporters.amount.plot.bar()
+    alt.Chart(top_supporters).mark_bar().encode(
+        x="contributor_lastname",
+        y="amount"
+    )
 
 .. image:: /_static/bar.png
 
-You can rotate the bar chart so that it is horizontal by subituting in the ``barh`` method.
+Look at that chart!
+
+Here's an idea — maybe we want to do horizontal, not vertical bars. How would you rewrite this chart code to reverse those bars?
 
 .. code-block:: python
 
-    top_supporters.amount.plot.barh()
+    alt.Chart(top_supporters).mark_bar().encode(
+        x="amount",
+        y="contributor_lastname"
+    )
 
 .. image:: /_static/barh.png
 
-The chart can be limited to the first five records by slipping in the ``head`` command.
+What if we wanted to focus on the top five records? We can use that ``head`` command we already know.
 
 .. code-block:: python
 
-    top_supporters.head(5).amount.plot.barh()
+    alt.Chart(top_supporters.head(5)).mark_bar().encode(
+        x="amount",
+        y="contributor_lastname"
+    )
 
 .. image:: /_static/barh_head.png
-
-What are those y axis labels? Those are the row number (pandas calls them indexes) of each row. We don't want that. We want the names. We can swap them in by saving our chart to a variable and then using another matplotlib option, ``set_yticklabels`` to instruct the system which field to use.
-
-.. code-block:: python
-
-    chart = top_supporters.head(5).amount.plot.barh()
-    chart.set_yticklabels(top_supporters.contributor_lastname)
-
-.. image:: /_static/barh_lastname.png
 
 Okay, but what if I want to combine the first and last name? We have the data we need in two separate columns, which we can put together simply by inventing a new field on our data frame and, just like a variable, setting it equal to a combination of the other fields.
 
@@ -89,24 +71,54 @@ Okay, but what if I want to combine the first and last name? We have the data we
 
     top_supporters['contributor_fullname'] = top_supporters.contributor_firstname + " " + top_supporters.contributor_lastname
 
-We can see the results right here.
+Now we can use that column instead of``contributor_lastname`` in our chart.
 
 .. code-block:: python
 
-    top_supporters.head()
+    alt.Chart(top_supporters.head(5)).mark_bar().encode(
+        x="amount",
+        y="contributor_fullname"
+    ).properties()
 
-Now using that in the chart is as simple as substituting in the ``set_yticklabels`` method we used above.
+There's one big thing that's making this chart look pretty sloppy — and visually difficult to parse. Let's figure out how to sort the bars from highest to lowest.
 
-.. image:: /_static/fullname.png
+By default, the y-axis values are sorted alphabetically. We want to sort the y-axis values by their corresponding x values. We've been using the shorthand syntax to pass in our axis columns so far, but to add more customization to our chart we'll have to switch to the longform way of defining the y axis.
+
+That will look something like the way we define the chart in the first place: ``alt.Y(column_name, arg="value")``. There are lots of options that you might want to pass in, like ones that will sum your data on the fly or define the number range you want your axis to display. In this case, we'll just be using the ``sort`` command.
 
 .. code-block:: python
 
-    chart = top_supporters.head(5).amount.plot.barh()
-    chart.set_yticklabels(top_supporters.contributor_fullname)
+    alt.Chart(top_supporters.head(5)).mark_bar().encode(
+        x="amount",
+        y=alt.Y("contributor_fullname", sort="-x")
+    )
 
 .. image:: /_static/barh_fullname.png
 
-That's all well and good, but this chart is still pretty ugly. If you wanted to hand this data off to your graphics department, or try your hand at a simple chart yourself using something like `Chartbuilder <https://quartz.github.io/Chartbuilder/>`_, you'd need to export this data into a spreadsheet.
+And we can't have a chart without context. Let's throw in a title for good measure.
+
+.. code-block:: python
+
+    alt.Chart(top_supporters.head(5)).mark_bar().encode(
+        x="amount",
+        y=alt.Y("contributor_fullname", sort="-x")
+    ).properties(
+        title="Top Contributors in Support of Proposition 64"
+    )
+
+.. image:: /_static/barh_fullname.png
+
+Yay, we made a chart!
+
+That's all well and good, but this isn't ready to pop into a news story quite yet. There are lots of additional formatting and design options that you can start digging into in the `Altair docs <https://altair-viz.github.io/index.html>`_ — you can even create Altair themes to specify default color schemes and fonts.
+
+But you don't have to do all that in code. If you wanted to hand this chart off to a graphics department, all you'd have to do is head to the top right corner of your chart.
+
+.. image:: TK
+
+See those three dots? Click on that, and you'll see lots of options. Downloading the file as an SVG will let anyone with graphics software like Adobe Illustrator take this file and run with it.
+
+Want to recreate this chart in a tool like `Chartbuilder <https://quartz.github.io/Chartbuilder/>`_ or `Datawrapper <https://www.datawrapper.de/>`_?  In that case, you'll want to export this data into a spreadsheet.
 
 Guess what? It's this easy.
 
