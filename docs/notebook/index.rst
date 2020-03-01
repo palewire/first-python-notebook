@@ -9,8 +9,8 @@ It is free software you can install and run like any other open-source library. 
 It is also used by journalists to develop stories and show their work. Examples include:
 
 * `"The Tennis Racket"`_ by BuzzFeed and the BBC
-* `"Fire officials were concerned about Westlake building where 5 died in a blaze"`_ by the Los Angeles Times
 * `"Machine bias"`_ by ProPublica
+* `More than 30 different notebooks published`_ by the Los Angeles Times
 
 **************************************
 Navigate into your project directory
@@ -119,7 +119,7 @@ Once you've got the hang of making the notebook run, you're ready to introduce p
 .. _scholars: http://nbviewer.jupyter.org/github/nealcaren/workshop_2014/blob/master/notebooks/5_Times_API.ipynb
 .. _investors: https://github.com/rsvp/fecon235/blob/master/nb/fred-debt-pop.ipynb
 .. _"The Tennis Racket": https://github.com/BuzzFeedNews/2016-01-tennis-betting-analysis/blob/master/notebooks/tennis-analysis.ipynb
-.. _"Fire officials were concerned about Westlake building where 5 died in a blaze": https://github.com/datadesk/la-vacant-building-complaints-analysis/blob/master/la-vacant-building-complaints-analysis.ipynb
+.. _More than 30 different notebooks published: https://github.com/datadesk/notebooks
 .. _"Machine bias": https://github.com/propublica/compas-analysis/blob/master/Compas%20Analysis.ipynb
 .. _Jupyter Notebook: http://jupyter.org/
 .. _chapter 1: ../pipenv/
