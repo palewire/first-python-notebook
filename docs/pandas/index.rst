@@ -25,15 +25,15 @@ That will kill your notebook and return you to the command line. There we'll ins
     pipenv install pandas
 
 
-*************************************
-Import pandas into a Jupyter Notebook
-*************************************
+*************
+Import pandas
+*************
 
 Now let's restart our notebook and get back to work.
 
 .. code-block:: python
 
-    pipenv run jupyter notebook
+    pipenv run jupyterlab
 
 Reopen your notebook and create a new cell at the top of your Jupyter notebook. There we will import the pandas library for use in our script. Type in the following and hit the play button again.
 
