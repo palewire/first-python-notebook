@@ -38,7 +38,7 @@ If not, you'll need to install Python on your system.
 
 If you see a number starting with 2, like say ...
 
-...code:: bash
+.. code:: bash
 
     Python 2.7.12
 
