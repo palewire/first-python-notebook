@@ -13,43 +13,38 @@
 
   
   
+  
+  
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="First Python Notebook 1.0 documentation" href="../index.html"/>
-        <link rel="next" title="About the author" href="../about/index.html"/>
-        <link rel="prev" title="Chapter 15: Hello charts" href="../charts/index.html"/> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
+   
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -77,11 +72,14 @@
           
             
             
-                <p class="caption"><span class="caption-text">Table of Contents</span></p>
-<ul class="current">
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../prerequisites/index.html">Prologue: Prerequisites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../virtualenv/index.html">Chapter 1: Hello virtualenv</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebook/index.html">Chapter 2: Hello Jupyter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pipenv/index.html">Chapter 1: Hello pipenv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebook/index.html">Chapter 2: Hello notebook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pandas/index.html">Chapter 3: Hello pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../money/index.html">Chapter 4: Hello money in politics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dataframe/index.html">Chapter 5: Hello data</a></li>
@@ -91,11 +89,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../totals/index.html">Chapter 9: Hello totals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sort_values/index.html">Chapter 10: Hello sorting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../groupby/index.html">Chapter 11: Hello groupby</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../git/index.html">Chapter 12: Hello git</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../markdown/index.html">Chapter 13: Hello Markdown</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../github/index.html">Chapter 14: Hello GitHub</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 15: Hello charts</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 16: Hello cleaning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 12: Hello charts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about/index.html">About the author</a></li>
 </ul>
 
@@ -108,15 +102,18 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">First Python Notebook</a>
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">First Python Notebook</a>
+        
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -147,66 +144,58 @@
             
   <div class="section" id="chapter-16-hello-cleaning">
 <h1>Chapter 16: Hello cleaning<a class="headerlink" href="#chapter-16-hello-cleaning" title="Permalink to this headline">¶</a></h1>
-<p>You&#8217;ve probably noticed that top two supporters are the same person, <a class="reference external" href="https://en.wikipedia.org/wiki/Sean_Parker">Sean Parker</a>. However, due to variations in how the <code class="docutils literal"><span class="pre">contributor_lastname</span></code> and <code class="docutils literal"><span class="pre">contributor_firstname</span></code> fields were filled out on the disclosure forms his contributions were not combined during our earlier grouping.</p>
+<p>You’ve probably noticed that top two supporters are the same person, <a class="reference external" href="https://en.wikipedia.org/wiki/Sean_Parker">Sean Parker</a>. However, due to variations in how the <code class="docutils literal notranslate"><span class="pre">contributor_lastname</span></code> and <code class="docutils literal notranslate"><span class="pre">contributor_firstname</span></code> fields were filled out on the disclosure forms his contributions were not combined during our earlier grouping.</p>
 <p>A common approach to correcting this issue is to create a new column where the cleaned up version of names are stored alongside the raw values from the public data. If two rows with different raw names are given an identical name in the clean column, that field can then be used to group the data and aggregate their contributions together.</p>
-<p>There are several different approaches to making that happen. In this introductory lesson we&#8217;re going to take a simplified approach that will also teach you a valuable skill: How to use panda&#8217;s <code class="docutils literal"><span class="pre">apply</span></code> method to generate a new column.</p>
-<p>The first step is to write a Python <a class="reference external" href="https://docs.python.org/2.0/ref/function.html">function</a>. A function is a fundamental tool shipped with Python that allows you to define a chunk of code that you can rerun later. A typical function will take an input and return a result based on what&#8217;s passed in each time it&#8217;s run.</p>
-<p>Functions are useful when you have a series of statements you want to run again and again. In our case, we&#8217;re going to write a function that can inspect any row in our data frame. If that row&#8217;s name field starts with the phrase <code class="docutils literal"><span class="pre">SEAN</span> <span class="pre">PARKER</span></code> we&#8217;re going to return a common clean name that all Sean Parker rows can share. If it doesn&#8217;t, we&#8217;re just going to return the raw name value.</p>
+<p>There are several different approaches to making that happen. In this introductory lesson we’re going to take a simplified approach that will also teach you a valuable skill: How to use panda’s <code class="docutils literal notranslate"><span class="pre">apply</span></code> method to generate a new column.</p>
+<p>The first step is to write a Python <a class="reference external" href="https://docs.python.org/2.0/ref/function.html">function</a>. A function is a fundamental tool shipped with Python that allows you to define a chunk of code that you can rerun later. A typical function will take an input and return a result based on what’s passed in each time it’s run.</p>
+<p>Functions are useful when you have a series of statements you want to run again and again. In our case, we’re going to write a function that can inspect any row in our data frame. If that row’s name field starts with the phrase <code class="docutils literal notranslate"><span class="pre">SEAN</span> <span class="pre">PARKER</span></code> we’re going to return a common clean name that all Sean Parker rows can share. If it doesn’t, we’re just going to return the raw name value.</p>
 <p>That looks like the code below. Create a new cell and run it there.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">combine_names</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">combine_names</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">row</span><span class="o">.</span><span class="n">contributor_fullname</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;SEAN PARKER&#39;</span><span class="p">):</span>
         <span class="k">return</span> <span class="s1">&#39;SEAN PARKER&#39;</span>
     <span class="k">return</span> <span class="n">row</span><span class="o">.</span><span class="n">contributor_fullname</span>
 </pre></div>
 </div>
-<p>You know it&#8217;s a function because it starts with <code class="docutils literal"><span class="pre">def</span></code>. The name we&#8217;re giving the function, <code class="docutils literal"><span class="pre">combine_names</span></code> is what follows. Then a parenthesis that defines the input the function will expect each time it&#8217;s run. Since we&#8217;re going to run this function on every row in a <code class="docutils literal"><span class="pre">DataFrame</span></code>, we will only have one input and we will name it <code class="docutils literal"><span class="pre">row</span></code>.</p>
-<p>Now that we have our function, we&#8217;ll want to run it across our DataFrame and store the result for each row in a new column. In pandas this can be done for a <code class="docutils literal"><span class="pre">DataFrame</span></code> with the <code class="docutils literal"><span class="pre">apply</span></code> method. To run the method row by row, pandas requires you pass the number 1 into the <code class="docutils literal"><span class="pre">axis</span></code> option.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">top_supporters</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">combine_names</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<p>You know it’s a function because it starts with <code class="docutils literal notranslate"><span class="pre">def</span></code>. The name we’re giving the function, <code class="docutils literal notranslate"><span class="pre">combine_names</span></code> is what follows. Then a parenthesis that defines the input the function will expect each time it’s run. Since we’re going to run this function on every row in a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, we will only have one input and we will name it <code class="docutils literal notranslate"><span class="pre">row</span></code>.</p>
+<p>Now that we have our function, we’ll want to run it across our DataFrame and store the result for each row in a new column. In pandas this can be done for a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> with the <code class="docutils literal notranslate"><span class="pre">apply</span></code> method. To run the method row by row, pandas requires you pass the number 1 into the <code class="docutils literal notranslate"><span class="pre">axis</span></code> option.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">top_supporters</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">combine_names</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>That will spit out a <code class="docutils literal"><span class="pre">Series</span></code> with the returned value for each row. Notice that the two Sean Parker rows are now identical.</p>
+<p>That will spit out a <code class="docutils literal notranslate"><span class="pre">Series</span></code> with the returned value for each row. Notice that the two Sean Parker rows are now identical.</p>
 <img alt="../_images/apply-series.png" src="../_images/apply-series.png" />
-<p>That <code class="docutils literal"><span class="pre">Series</span></code> can now be saved into a new column on the <code class="docutils literal"><span class="pre">DataFrame</span></code> by assigning it with a new name.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">top_supporters</span><span class="p">[</span><span class="s1">&#39;contributor_cleanname&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">top_supporters</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">combine_names</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<p>That <code class="docutils literal notranslate"><span class="pre">Series</span></code> can now be saved into a new column on the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> by assigning it with a new name.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">top_supporters</span><span class="p">[</span><span class="s1">&#39;contributor_cleanname&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">top_supporters</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">combine_names</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>This same approach can be used to add new columns that do all kinds of things. One common trick is to use the apply method and a function to divide one column into another, or some other mathematical computation.</p>
 <p>Now you can regroup the data using this new column and total the columns again, exactly as we did before.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">top_supporters</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">top_supporters</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
     <span class="s2">&quot;contributor_cleanname&quot;</span>
-<span class="p">)</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The money previously split between two variations on Sean Parker&#8217;s name are now combined. You could now remake the charts above without the duplication.</p>
+<p>The money previously split between two variations on Sean Parker’s name are now combined. You could now remake the charts above without the duplication.</p>
 <img alt="../_images/apply-group.png" src="../_images/apply-group.png" />
-<p>And that&#8217;s it. You&#8217;ve completed this class. If you want to keep working, try inventing your own questions to ask and answer with the database, or find more information to analyze at <a class="reference external" href="http://www.californiacivicdata.org/">californiacivicdata.org</a>.</p>
+<p>And that’s it. You’ve completed this class. If you want to keep working, try inventing your own questions to ask and answer with the database, or find more information to analyze at <a class="reference external" href="http://www.californiacivicdata.org/">californiacivicdata.org</a>.</p>
 <p>If you have any questions or feedback on the class, please contact me at <a class="reference external" href="mailto:ben&#46;welsh&#37;&#52;&#48;gmail&#46;com">ben<span>&#46;</span>welsh<span>&#64;</span>gmail<span>&#46;</span>com</a>.</p>
 </div>
 
 
            </div>
+           
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../about/index.html" class="btn btn-neutral float-right" title="About the author" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../charts/index.html" class="btn btn-neutral" title="Chapter 15: Hello charts" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017, Ben Welsh and the California Civic Data Coalition.
+        &copy; Copyright 2020, Ben Welsh and the California Civic Data Coalition
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -219,35 +208,15 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'1.0',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

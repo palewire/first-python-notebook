@@ -13,43 +13,40 @@
 
   
   
+  
+  
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="First Python Notebook 1.0 documentation" href="../index.html"/>
-        <link rel="next" title="Chapter 7: Hello filters" href="../filter/index.html"/>
-        <link rel="prev" title="Chapter 5: Hello data" href="../dataframe/index.html"/> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Chapter 7: Hello filters" href="../filter/index.html" />
+    <link rel="prev" title="Chapter 5: Hello data" href="../dataframe/index.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
+   
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -77,17 +74,20 @@
           
             
             
-                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../prerequisites/index.html">Prologue: Prerequisites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../virtualenv/index.html">Chapter 1: Hello virtualenv</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebook/index.html">Chapter 2: Hello Jupyter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pipenv/index.html">Chapter 1: Hello pipenv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebook/index.html">Chapter 2: Hello notebook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pandas/index.html">Chapter 3: Hello pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../money/index.html">Chapter 4: Hello money in politics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dataframe/index.html">Chapter 5: Hello data</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 6: Hello columns</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#accessing-a-column">Accessing a column</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#counting-a-column-s-values">Counting a column&#8217;s values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#counting-a-column-s-values">Counting a column’s values</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#resetting-a-dataframe">Resetting a DataFrame</a></li>
 </ul>
 </li>
@@ -96,11 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../totals/index.html">Chapter 9: Hello totals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sort_values/index.html">Chapter 10: Hello sorting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../groupby/index.html">Chapter 11: Hello groupby</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../git/index.html">Chapter 12: Hello git</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../markdown/index.html">Chapter 13: Hello Markdown</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../github/index.html">Chapter 14: Hello GitHub</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 15: Hello charts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cleaning/index.html">Chapter 16: Hello cleaning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 12: Hello charts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about/index.html">About the author</a></li>
 </ul>
 
@@ -113,15 +109,18 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">First Python Notebook</a>
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">First Python Notebook</a>
+        
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -152,53 +151,54 @@
             
   <div class="section" id="chapter-6-hello-columns">
 <h1>Chapter 6: Hello columns<a class="headerlink" href="#chapter-6-hello-columns" title="Permalink to this headline">¶</a></h1>
-<p>In this chapter we&#8217;ll begin our analysis by learning how to analyze a column from a DataFrame.</p>
-<div class="embed-container"><iframe src="http://www.youtube.com/embed/ofWJDeC8bB4"     width="560" height="315" frameborder="0"     webkitAllowFullScreen mozallowfullscreen allowfullscreen class="youtube"></iframe></div><div class="section" id="accessing-a-column">
+<p>In this chapter we’ll begin our analysis by learning how to analyze a column from a DataFrame.</p>
+<div class="section" id="accessing-a-column">
 <h2>Accessing a column<a class="headerlink" href="#accessing-a-column" title="Permalink to this headline">¶</a></h2>
-<p>We&#8217;ll begin with the prop_name column where the proposition each committee is seeking to influence is stored.</p>
-<p>To see the contents of a column separate from the rest of the DataFrame, add the columns&#8217; name to the variable following a period.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">props</span><span class="o">.</span><span class="n">prop_name</span>
+<p>We’ll begin with the prop_name column where the proposition each committee is seeking to influence is stored.</p>
+<p>To see the contents of a column separate from the rest of the DataFrame, add the column’s name to the variable following a period.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">props</span><span class="o">.</span><span class="n">prop_name</span>
 </pre></div>
 </div>
 <p>That will list the column out as a Series, just like the ones we created from scratch in <a class="reference internal" href="../pandas/index.html"><span class="doc">chapter three</span></a>.</p>
-<p>And, just as we did in <a class="reference internal" href="../pandas/index.html"><span class="doc">then</span></a>, you can now start tacking on additional methods that will analyze the contents of the column.</p>
-<p>In this case, the column is filled with characters. So we don&#8217;t want to calculate statistics like the median and average, as we did before.</p>
+<p>And, just as we did <a class="reference internal" href="../pandas/index.html"><span class="doc">then</span></a>, you can now start tacking on additional methods that will analyze the contents of the column.</p>
+<p>In this case, the column is filled with characters. So we don’t want to calculate statistics like the median and average, as we did before.</p>
 </div>
 <div class="section" id="counting-a-column-s-values">
-<h2>Counting a column&#8217;s values<a class="headerlink" href="#counting-a-column-s-values" title="Permalink to this headline">¶</a></h2>
-<p>There&#8217;s another built-in pandas tool that will total up the frequency of values in a column. In this case that could be used to answer the question: Which proposition had the most committees?</p>
-<p>The method is called <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.value_counts.html">value_counts</a> and it&#8217;s just as easy to use as any other method. All you need to do it is add a second period after the column name and chain it on the tail end of your cell.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">props</span><span class="o">.</span><span class="n">prop_name</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<h2>Counting a column’s values<a class="headerlink" href="#counting-a-column-s-values" title="Permalink to this headline">¶</a></h2>
+<p>There’s another built-in pandas tool that will total up the frequency of values in a column. In this case that could be used to answer the question: Which proposition had the most committees?</p>
+<p>The method is called <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.value_counts.html">value_counts</a> and it’s just as easy to use as any other method. All you need to do it is add a second period after the column name and chain it on the tail end of your cell.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">props</span><span class="o">.</span><span class="n">prop_name</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Run the code and you should see the lengthy proposition names ranked by their number of committees.</p>
 </div>
 <div class="section" id="resetting-a-dataframe">
 <h2>Resetting a DataFrame<a class="headerlink" href="#resetting-a-dataframe" title="Permalink to this headline">¶</a></h2>
-<p>You may have noticed that even though the result has two columns, pandas did not return a clean looking table in the same way as head did for our DataFrame.</p>
-<p>That&#8217;s because our column, a Series, acts a little bit different than the DataFrame created by read_csv.</p>
+<p>You may have noticed that even though the result has two columns, pandas did not return a clean-looking table in the same way as head did for our DataFrame.</p>
+<p>That’s because our column, a Series, acts a little bit different than the DataFrame created by read_csv.</p>
 <p>In most instances, if you have an ugly Series generated by a method like value_counts and you want to convert it into a pretty DataFrame you can do so by tacking on the <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.reset_index.html">reset_index</a> method onto the tail end.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">props</span><span class="o">.</span><span class="n">prop_name</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">props</span><span class="o">.</span><span class="n">prop_name</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Why do Series and DataFrames behave differently? Why does reset_index have such a weird name?</p>
-<p>Like so much in computer programming, the answer is simply &#8220;because the people who created the library said so.&#8221;&#8220;</p>
-<p>That&#8217;s not worth stressing about in this case, but it&#8217;s important to learn that all open-source programming tools have their quirks. Over time you&#8217;ll learn pandas has more than a few.</p>
-<p>As a beginner, you should just figure out the ones you need and roll with it. As you get more advanced, if there&#8217;s something about the system you think could be improved you should consider <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/contributing.html">contributing</a> to the Python code that runs pandas.</p>
+<p>Like so much in computer programming, the answer is simply “because the people who created the library said so.”</p>
+<p>That’s not worth stressing about in this case, but it’s important to learn that all open-source programming tools have their quirks. Over time you’ll learn pandas has more than a few.</p>
+<p>As a beginner, you should just figure out the ones you need and roll with it. As you get more advanced, if there’s something about the system you think could be improved you should consider <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/development/contributing.html">contributing</a> to the Python code that runs pandas.</p>
 </div>
 </div>
 
 
            </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../filter/index.html" class="btn btn-neutral float-right" title="Chapter 7: Hello filters" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../filter/index.html" class="btn btn-neutral float-right" title="Chapter 7: Hello filters" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../dataframe/index.html" class="btn btn-neutral" title="Chapter 5: Hello data" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../dataframe/index.html" class="btn btn-neutral float-left" title="Chapter 5: Hello data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -207,11 +207,11 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017, Ben Welsh and the California Civic Data Coalition.
+        &copy; Copyright 2020, Ben Welsh and the California Civic Data Coalition
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -224,35 +224,15 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'1.0',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

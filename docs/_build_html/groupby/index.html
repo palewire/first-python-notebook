@@ -13,43 +13,40 @@
 
   
   
+  
+  
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="First Python Notebook 1.0 documentation" href="../index.html"/>
-        <link rel="next" title="Chapter 12: Hello git" href="../git/index.html"/>
-        <link rel="prev" title="Chapter 10: Hello sorting" href="../sort_values/index.html"/> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Chapter 12: Hello charts" href="../charts/index.html" />
+    <link rel="prev" title="Chapter 10: Hello sorting" href="../sort_values/index.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
+   
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -77,11 +74,14 @@
           
             
             
-                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../prerequisites/index.html">Prologue: Prerequisites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../virtualenv/index.html">Chapter 1: Hello virtualenv</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebook/index.html">Chapter 2: Hello Jupyter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pipenv/index.html">Chapter 1: Hello pipenv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebook/index.html">Chapter 2: Hello notebook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pandas/index.html">Chapter 3: Hello pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../money/index.html">Chapter 4: Hello money in politics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dataframe/index.html">Chapter 5: Hello data</a></li>
@@ -95,11 +95,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#grouping-by-multiple-fields">Grouping by multiple fields</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../git/index.html">Chapter 12: Hello git</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../markdown/index.html">Chapter 13: Hello Markdown</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../github/index.html">Chapter 14: Hello GitHub</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 15: Hello charts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cleaning/index.html">Chapter 16: Hello cleaning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 12: Hello charts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about/index.html">About the author</a></li>
 </ul>
 
@@ -112,15 +108,18 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">First Python Notebook</a>
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">First Python Notebook</a>
+        
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -151,60 +150,61 @@
             
   <div class="section" id="chapter-11-hello-groupby">
 <h1>Chapter 11: Hello groupby<a class="headerlink" href="#chapter-11-hello-groupby" title="Permalink to this headline">¶</a></h1>
-<p>To take the next step towards ranking the top contributors, we&#8217;ll need to learn a new trick. It&#8217;s called <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.groupby.html">groupby</a>.</p>
-<p>It&#8217;s a pandas method that allows you to group a DataFrame by a column and then calculate a sum, or any other statistic, for each unique value. This is necessary when you want to rack up statistics on a long list of values, or about a combination of fields.</p>
-<div class="embed-container"><iframe src="http://www.youtube.com/embed/ceoIUOMRTDI"     width="560" height="315" frameborder="0"     webkitAllowFullScreen mozallowfullscreen allowfullscreen class="youtube"></iframe></div><div class="section" id="grouping-by-one-field">
+<p>To take the next step towards ranking the top contributors, we’ll need to learn a new trick. It’s called <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.groupby.html">groupby</a>.</p>
+<p>It’s a pandas method that allows you to group a DataFrame by a column and then calculate a sum, or any other statistic, for each unique value. This is necessary when you want to rack up statistics on a long list of values, or about a combination of fields.</p>
+<div class="section" id="grouping-by-one-field">
 <h2>Grouping by one field<a class="headerlink" href="#grouping-by-one-field" title="Permalink to this headline">¶</a></h2>
-<p>We&#8217;ve encountered a lot of different committees as we&#8217;ve explored the data. A natural question follows: Which ones have raised the most money?</p>
-<p>If you scroll back up and look carefully as the info command we ran after merging out data, you will noticed it includes a column named <code class="docutils literal"><span class="pre">committee_name_x</span></code> and <code class="docutils literal"><span class="pre">commitee_name_y</span></code>.</p>
+<p>We’ve encountered a lot of different committees as we’ve explored the data. A natural question follows: Which ones have raised the most money?</p>
+<p>If you scroll back up and look carefully as the info command we ran after merging out data, you will noticed it includes a column named <code class="docutils literal notranslate"><span class="pre">committee_name_x</span></code> and <code class="docutils literal notranslate"><span class="pre">commitee_name_y</span></code>.</p>
 <p>That is because the field was present on both our committee list and our contributions list prior to joining them together. Rather than drop one of them, pandas is trained to keep them both and to append suffixes to the end.</p>
-<p>That&#8217;s the field we want to group with here. Since the two columns are identical, it doesn&#8217;t matter which one we pick. Let&#8217;s go with x.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;committee_name_x&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<p>That’s the field we want to group with here. Since the two columns are identical, it doesn’t matter which one we pick. Let’s go with x.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;committee_name_x&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Again our data has come back as an ugly Series. To reformat it as a pretty DataFrame use the reset_index method again.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;committee_name_x&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;committee_name_x&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Sorting the biggest totals to the top is as easy as appending the sort_values trick we already know to the end. And voila there&#8217;s our answer.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;committee_name_x&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<p>Sorting the biggest totals to the top is as easy as appending the sort_values trick we already know to the end. And voila there’s our answer.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;committee_name_x&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="grouping-by-multiple-fields">
 <h2>Grouping by multiple fields<a class="headerlink" href="#grouping-by-multiple-fields" title="Permalink to this headline">¶</a></h2>
-<p>Finding the top contributors is almost as easy, but since the first and last names are spread between two fields we&#8217;ll need to submit them to groupby as a list. Copy the last line above, and replace &#8220;committee_name_x&#8221; with a list like the one here:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;contributor_firstname&quot;</span><span class="p">,</span> <span class="s2">&quot;contributor_lastname&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<p>Finding the top contributors is almost as easy, but since the first and last names are spread between two fields we’ll need to submit them to groupby as a list. Copy the last line above, and replace “committee_name_x” with a list like the one here:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;contributor_firstname&quot;</span><span class="p">,</span> <span class="s2">&quot;contributor_lastname&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">You should be noticing that several of the top contributors appear to be the same person with their name entered in slightly different ways. This is another important lesson of campaign contributions data. Virtually none of the data is standardized by the campaigns or the government. The onus is on the analyst to show caution and responsibly combine records where the name fields refer to the same person.</p>
+<p class="admonition-title">Note</p>
+<p>You should be noticing that several of the top contributors appear to be the same person with their name entered in slightly different ways. This is another important lesson of campaign contributions data. Virtually none of the data is standardized by the campaigns or the government. The onus is on the analyst to show caution and responsibly combine records where the name fields refer to the same person.</p>
 </div>
 <p>To find out if each contributor supported or opposed the measure, you simple add that field to our groupby method.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;contributor_firstname&quot;</span><span class="p">,</span> <span class="s2">&quot;contributor_lastname&quot;</span><span class="p">,</span> <span class="s2">&quot;committee_position&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;contributor_firstname&quot;</span><span class="p">,</span> <span class="s2">&quot;contributor_lastname&quot;</span><span class="p">,</span> <span class="s2">&quot;committee_position&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>You&#8217;ve done it. Our brief interview is complete and you&#8217;ve answered the big question that started our inquiry. If you&#8217;re interested in continuing the interview, see if you can answer a few more questions on your own. Here are some ideas:</p>
+<p>You’ve done it. Our brief interview is complete and you’ve answered the big question that started our inquiry. If you’re interested in continuing the interview, see if you can answer a few more questions on your own. Here are some ideas:</p>
 <ul class="simple">
-<li>What percentage of donations came from people who live outside of California?</li>
-<li>What are the top employers of donors who gave for and against the measure?</li>
-<li>Which committees had the fewest donors?</li>
+<li><p>What percentage of donations came from people who live outside of California?</p></li>
+<li><p>What are the top employers of donors who gave for and against the measure?</p></li>
+<li><p>Which committees had the fewest donors?</p></li>
 </ul>
 </div>
 </div>
 
 
            </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../git/index.html" class="btn btn-neutral float-right" title="Chapter 12: Hello git" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../charts/index.html" class="btn btn-neutral float-right" title="Chapter 12: Hello charts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../sort_values/index.html" class="btn btn-neutral" title="Chapter 10: Hello sorting" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../sort_values/index.html" class="btn btn-neutral float-left" title="Chapter 10: Hello sorting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -213,11 +213,11 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017, Ben Welsh and the California Civic Data Coalition.
+        &copy; Copyright 2020, Ben Welsh and the California Civic Data Coalition
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -230,35 +230,15 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'1.0',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

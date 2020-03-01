@@ -4,9 +4,7 @@ Chapter 10: Hello sorting
 
 Another simple but common technique for analyzing data is sorting.
 
-.. youtube:: Wvoa6nyOUYQ
-
-What were the ten biggest contributions? We can find the answer by using the `sort_values <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.sort_values.html>`_ method to rearrange our list using the amount field.
+What were the ten biggest contributions? We can find the answer by using the `sort_values`_ method to rearrange our list using the amount field.
 
 .. code-block:: python
 
@@ -37,3 +35,6 @@ And now how about the opposition.
 .. code-block:: python
 
     oppose.sort_values("amount", ascending=False).head()
+
+
+.. _sort_values: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sort_values.html

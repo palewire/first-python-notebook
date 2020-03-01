@@ -2,46 +2,40 @@
 Chapter 3: Hello pandas
 =======================
 
-Lucky for us, Python is filled with functions to do pretty much anything you’d ever want to do with a programming language: `navigate the web <http://docs.python-requests.org/>`_, `parse data <https://docs.python.org/2/library/csv.html>`_, `interact with a database <http://www.sqlalchemy.org/>`_, `run fancy statistics <https://www.scipy.org/>`_, `build a pretty website <https://www.djangoproject.com/>`_ and `so <https://www.crummy.com/software/BeautifulSoup/>`_ `much <http://www.nltk.org/>`_ `more <http://pillow.readthedocs.io/en/3.4.x/index.html>`_.
+Lucky for us, Python is filled with functions to do pretty much anything you’d ever want to do with a programming language: `navigate the web`_, `parse data`_, `interact with a database`_, `run fancy statistics`_, `build a pretty website`_ and `so`_ `much`_ `more`_.
 
 Creative people have put these tools to work to get `a wide range of things done <https://www.python.org/about/success/>`_ in the academy, the laboratory and even in outer space.
 
 Some of those tools are included in a toolbox that comes with the language, known as the standard library. Others have been built by members of Python's developer community and need to be downloaded and installed from the web.
 
-One that's important for this class is called `pandas <http://pandas.pydata.org/>`_. It is a tool invented at a financial investment firm that has become a leading open-source library for accessing and analyzing data in many different fields.
+One that's important for this class is called `pandas`_. It is a tool invented at a financial investment firm that has become a leading open-source library for accessing and analyzing data in many different fields.
 
-Learn how to install panda and conduct a simple data analysis by following this video or the written instructions below.
+***************************
+Install pandas with Pipenv
+***************************
 
-.. youtube:: 5cGYsvoyZWs
+We'll install pandas the same way we installed the Jupyter Notebook earlier: Our new friend :doc:`Pipenv </pipenv/index>`.
 
+Let's pick up where we left off at the end of :doc:`chapter 2 </notebook/index>`. Save your notebook by clicking the disk icon or selecting "save and checkpoint" from the file menu. Then switch to your command prompt and hit ``CTRL-C``.
 
-***********************
-Install pandas with pip
-***********************
-
-We'll install pandas the same way we installed the Jupyter Notebook earlier: Our friend ``pip``.
-
-
-Pick up where we left off at the end of :doc:`chapter 2 </notebook/index>`, save your notebook, switch to your command prompt and hit ``CTRL-C``.
-
-That will kill your notebook and return you to the command line. There we'll install pandas using pip.
+That will kill your notebook and return you to the command line. There we'll install pandas:
 
 .. code-block:: python
 
-    pip install pandas
+    pipenv install pandas
 
 
-*************************************
-Import pandas into a Jupyter Notebook
-*************************************
+*************
+Import pandas
+*************
 
 Now let's restart our notebook and get back to work.
 
 .. code-block:: python
 
-    jupyter notebook
+    pipenv run jupyter lab
 
-Reopen your notebook and create a new cell at the top. There we will import the pandas library for use in our script. Type in the following and hit the play button again.
+Reopen your notebook and create a new cell at the top of your Jupyter notebook. There we will import the pandas library for use in our script. Type in the following and hit the play button again.
 
 .. code-block:: python
 
@@ -135,6 +129,18 @@ With those simple techniques, we're only scratching the surface of what pandas m
 
 Substitute in a series of 10 million records at the top of the stack (or even just the odd numbers between zero and ten), and your notebook would calculate all those statistics again without you having to write any more code.
 
-Once your  data, however large or complex, is imported into pandas, there's little limit to what you can do to filter, merge, group, aggregate, compute or chart using simple methods like the ones above.
+Once your data, however large or complex, is imported into pandas, there's little limit to what you can do to filter, merge, group, aggregate, compute or chart using simple methods like the ones above.
 
 In the next chapter we'll get started doing just using data tracking the flow of money in California politics.
+
+
+.. _navigate the web: http://docs.python-requests.org/
+.. _parse data: https://docs.python.org/2/library/csv.html
+.. _interact with a database: http://www.sqlalchemy.org/
+.. _run fancy statistics: https://www.scipy.org/
+.. _build a pretty website: https://www.djangoproject.com/
+.. _so: https://www.crummy.com/software/BeautifulSoup/
+.. _much: http://www.nltk.org/
+.. _more: https://pillow.readthedocs.io/en/stable/
+.. _pandas: http://pandas.pydata.org/
+.. _Pipenv: ../pipenv/

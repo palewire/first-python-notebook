@@ -13,42 +13,39 @@
 
   
   
+  
+  
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="First Python Notebook 1.0 documentation" href="../index.html"/>
-        <link rel="prev" title="Chapter 16: Hello cleaning" href="../cleaning/index.html"/> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Chapter 12: Hello charts" href="../charts/index.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
+   
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -76,11 +73,14 @@
           
             
             
-                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../prerequisites/index.html">Prologue: Prerequisites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../virtualenv/index.html">Chapter 1: Hello virtualenv</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebook/index.html">Chapter 2: Hello Jupyter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pipenv/index.html">Chapter 1: Hello pipenv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebook/index.html">Chapter 2: Hello notebook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pandas/index.html">Chapter 3: Hello pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../money/index.html">Chapter 4: Hello money in politics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dataframe/index.html">Chapter 5: Hello data</a></li>
@@ -90,11 +90,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../totals/index.html">Chapter 9: Hello totals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sort_values/index.html">Chapter 10: Hello sorting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../groupby/index.html">Chapter 11: Hello groupby</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../git/index.html">Chapter 12: Hello git</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../markdown/index.html">Chapter 13: Hello Markdown</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../github/index.html">Chapter 14: Hello GitHub</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 15: Hello charts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cleaning/index.html">Chapter 16: Hello cleaning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 12: Hello charts</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">About the author</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#about-this-class">About this class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#about-the-data">About the data</a></li>
@@ -111,15 +107,18 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">First Python Notebook</a>
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">First Python Notebook</a>
+        
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -150,35 +149,37 @@
             
   <div class="section" id="about-the-author">
 <h1>About the author<a class="headerlink" href="#about-the-author" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="http://palewi.re/who-is-ben-welsh/">Ben Welsh</a> is the editor of the Los Angeles Times Data Desk, a team of reporters and computer programmers in the newsroom that works to collect, organize, analyze and present large amounts of information.</p>
+<p><a class="reference external" href="http://palewi.re/who-is-ben-welsh/">Ben Welsh</a> is the editor of the Los Angeles Times Data and Graphics Department, a team of reporters and computer programmers in the newsroom that works to collect, organize, analyze and present large amounts of information.</p>
 <a class="reference internal image-reference" href="../_images/ben-blue-800.jpg"><img alt="../_images/ben-blue-800.jpg" class="align-right" src="../_images/ben-blue-800.jpg" style="width: 250px;" /></a>
 <p>He is also a cofounder of the <a class="reference external" href="http://www.californiacivicdata.org/">California Civic Data Coalition</a>, an open-source network of developers working to open up public data, and the creator of <a class="reference external" href="http://www.pastpages.org/">PastPages</a>, an archive dedicated to the preservation of online news.</p>
-<p>Ben has worked at the Los Angeles Times since 2007.  Before working at The Times, Ben conducted data analysis for investigative projects at The Center for Public Integrity in Washington DC.</p>
-<p>Projects he has contributed to have been awarded the Pulitzer Prize, the Library of Congress&#8217; Innovation Award and numerous other prizes for investigative reporting, digital design and online journalism.</p>
+<p>Ben has worked at the Los Angeles Times since 2007.  Before working at The Times, Ben conducted data analysis for investigative projects at The Center for Public Integrity in Washington D.C.</p>
+<p>Projects he has contributed to have been awarded the Pulitzer Prize, the Library of Congress’ Innovation Award and numerous other prizes for investigative reporting, digital design and online journalism.</p>
 <p>Ben graduated from DePaul University in 2004. During his time there, he worked with Carol Marin and Don Moseley at the DePaul Documentary Project. He later earned a master’s degree from the Missouri School of Journalism — where he served as a graduate assistant at the National Institute for Computer-Assisted Reporting.</p>
 <p>He is originally from Swisher, Iowa.</p>
 <div class="section" id="about-this-class">
 <h2>About this class<a class="headerlink" href="#about-this-class" title="Permalink to this headline">¶</a></h2>
-<p>This course was first developed for an October 2016, <a class="reference external" href="http://www.californiacivicdata.org/2016/10/08/first-python-notebook/">&#8220;watchdog workshop&#8221;</a> organized by Investigative Reporters and Editors at San Diego State University&#8217;s school of journalism.</p>
-<p>It was revised for a February 2017 hands-on training of students at Stanford&#8217;s journalism school and expanded into <a class="reference external" href="https://www.ire.org/events-and-training/event/2702/2879/">a six-hour class</a> at the annual conference of the National Institute for Computer-Assisted Reporting in March 2017.</p>
-<p>It was expanded into its current for <a class="reference external" href="https://knightcenter.utexas.edu/blog/00-18396-sign-now-our-new-online-course-data-journalism-python-data-journalists-analyzing-money">a massive open online course</a> offered by the Knight Center for Journalism in the Americas in May 2017.</p>
+<p>This course was first developed for an October 2016, <a class="reference external" href="http://www.californiacivicdata.org/2016/10/08/first-python-notebook/">“watchdog workshop”</a> organized by Investigative Reporters and Editors at San Diego State University’s school of journalism.</p>
+<p>It was revised for a February 2017 hands-on training of students at Stanford’s journalism school and expanded into <a class="reference external" href="https://www.ire.org/events-and-training/event/2702/2879/">a six-hour class</a> at the annual conference of the National Institute for Computer-Assisted Reporting in March 2017.</p>
+<p>It was expanded into its current form for <a class="reference external" href="https://knightcenter.utexas.edu/blog/00-18396-sign-now-our-new-online-course-data-journalism-python-data-journalists-analyzing-money">a massive open online course</a> offered by the Knight Center for Journalism in the Americas in May 2017.</p>
+<p>Since then, the course has been taught more than a dozen times in classrooms and at conferences across America and around the world.</p>
 </div>
 <div class="section" id="about-the-data">
 <h2>About the data<a class="headerlink" href="#about-the-data" title="Permalink to this headline">¶</a></h2>
-<p>The course is based on data provided by the <a class="reference external" href="http://www.californiacivicdata.org/">California Civic Data Coalition</a>, an open-source network of journalists and computer programmers working to ease access to the state&#8217;s jumbled, dirty and difficult database tracking money in politics.</p>
-<p>The goal of the coalition&#8217;s work is to make the data those reporters used easier to access, understand and analyze. Learn more about the status of the project and the data you can download at <a class="reference external" href="http://www.californiacivicdata.org/2016/09/15/website-launch/">californiacivicdata.org</a>.</p>
+<p>The course is based on data provided by the <a class="reference external" href="http://www.californiacivicdata.org/">California Civic Data Coalition</a>, an open-source network of journalists and computer programmers working to ease access to the state’s jumbled, dirty and difficult database tracking money in politics.</p>
+<p>The goal of the coalition’s work is to make the data those reporters used easier to access, understand and analyze. Learn more about the status of the project and the data you can download at <a class="reference external" href="http://www.californiacivicdata.org/2016/09/15/website-launch/">californiacivicdata.org</a>.</p>
 </div>
 </div>
 
 
            </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="../cleaning/index.html" class="btn btn-neutral" title="Chapter 16: Hello cleaning" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../charts/index.html" class="btn btn-neutral float-left" title="Chapter 12: Hello charts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -187,11 +188,11 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017, Ben Welsh and the California Civic Data Coalition.
+        &copy; Copyright 2020, Ben Welsh and the California Civic Data Coalition
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -204,35 +205,15 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'1.0',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

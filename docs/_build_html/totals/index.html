@@ -13,43 +13,40 @@
 
   
   
+  
+  
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="First Python Notebook 1.0 documentation" href="../index.html"/>
-        <link rel="next" title="Chapter 10: Hello sorting" href="../sort_values/index.html"/>
-        <link rel="prev" title="Chapter 8: Hello merge" href="../merge/index.html"/> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Chapter 10: Hello sorting" href="../sort_values/index.html" />
+    <link rel="prev" title="Chapter 8: Hello merge" href="../merge/index.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
+   
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -77,11 +74,14 @@
           
             
             
-                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../prerequisites/index.html">Prologue: Prerequisites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../virtualenv/index.html">Chapter 1: Hello virtualenv</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebook/index.html">Chapter 2: Hello Jupyter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pipenv/index.html">Chapter 1: Hello pipenv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebook/index.html">Chapter 2: Hello notebook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pandas/index.html">Chapter 3: Hello pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../money/index.html">Chapter 4: Hello money in politics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dataframe/index.html">Chapter 5: Hello data</a></li>
@@ -96,11 +96,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../sort_values/index.html">Chapter 10: Hello sorting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../groupby/index.html">Chapter 11: Hello groupby</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../git/index.html">Chapter 12: Hello git</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../markdown/index.html">Chapter 13: Hello Markdown</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../github/index.html">Chapter 14: Hello GitHub</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 15: Hello charts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cleaning/index.html">Chapter 16: Hello cleaning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 12: Hello charts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about/index.html">About the author</a></li>
 </ul>
 
@@ -113,15 +109,18 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">First Python Notebook</a>
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">First Python Notebook</a>
+        
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -153,60 +152,60 @@
   <div class="section" id="chapter-9-hello-totals">
 <h1>Chapter 9: Hello totals<a class="headerlink" href="#chapter-9-hello-totals" title="Permalink to this headline">¶</a></h1>
 <p>In some ways, your database is no different from a human source. Getting a good story requires careful, thorough questioning. In this section we will move ahead by conducting an interview with pandas to pursue our quest of finding out the biggest donors to Proposition 64.</p>
-<div class="embed-container"><iframe src="http://www.youtube.com/embed/-xjprU5jlO0"     width="560" height="315" frameborder="0"     webkitAllowFullScreen mozallowfullscreen allowfullscreen class="youtube"></iframe></div><p>Using tricks we learned as far back as <span class="xref doc">chapter three</span>, we can start off by answering a simple question: What is the total sum of Proposition 64 contributions that have been reported?</p>
+<p>Using tricks we learned as far back as <a class="reference internal" href="../pandas/index.html"><span class="doc">chapter three</span></a>, we can start off by answering a simple question: What is the total sum of Proposition 64 contributions that have been reported?</p>
 <div class="section" id="summing-a-column">
 <h2>Summing a column<a class="headerlink" href="#summing-a-column" title="Permalink to this headline">¶</a></h2>
-<p>To answer that let&#8217;s start by getting our hands on amount, the column from the contributions DataFrame with the numbers in it. We can do that just as we did with other columns above.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">amount</span>
+<p>To answer that let’s start by getting our hands on amount, the column from the contributions DataFrame with the numbers in it. We can do that just as we did with other columns above.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">amount</span>
 </pre></div>
 </div>
-<p>Now we can add up the column&#8217;s total using the pandas method <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.sum.html">sum</a>, just as we did when we were first getting started with pandas.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<p>Now we can add up the column’s total using the pandas method <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.sum.html">sum</a>, just as we did when we were first getting started with pandas.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>And printed out below your cell, there&#8217;s our answer.</p>
-<p>We&#8217;ve completed our first piece of analysis and discovered the total amount spent on this proposition.</p>
+<p>And printed out below your cell, there’s our answer.</p>
+<p>We’ve completed our first piece of analysis and discovered the total amount spent on this proposition.</p>
 <p>Time to run off to Twitter and publish our results to the world, right?</p>
 <p>Wrong.</p>
 </div>
 <div class="section" id="how-not-to-be-wrong">
 <h2>How not to be wrong<a class="headerlink" href="#how-not-to-be-wrong" title="Permalink to this headline">¶</a></h2>
-<p>The total we generated is not the overall total raised in the campaign, and is guaranteed to be lower than the totals reported in the media and by the campaigns.</p>
+<p>The total we generated is not the overall total raised in the campaign, and it is guaranteed to be lower than the totals reported in the media and by the campaigns.</p>
 <p>Why?</p>
 <p>In California, campaigns are <a class="reference external" href="http://www.documentcloud.org/documents/2781363-460-2016-01.html#document/p10">only required</a> to disclose the names of donors who give over $100, so our data is missing all of the donors who gave less than that amount.</p>
 <p>The cutoff varies, and there are some exceptions, but the same thing is true in other states and also at the federal level in races for Congress and the White House.</p>
-<p>The overall totals are instead reported on cover sheets included with disclosure reports that lump together all the smaller contributions as part of a grand total. Those are the records most commonly cited to total up a campaign&#8217;s fundraising.</p>
-<p>The result is that an itemized list of contributions, like the one we have, cannot be used to calculate a grand total. That&#8217;s true in California and virtually anywhere else you work with campaign data. Overlooking that limitation is a rookie mistake routinely made by analysts new to this field.</p>
-<p>But that doesn&#8217;t mean our data is worthless. We just have to use it responsibly. In many cases, professional campaign reporters will refer to an analysis drawn from a list like ours as applying only to &#8220;large donors.&#8221;</p>
-<p>Since large donors typically account for most of the money, the results are still significant. And the high level of detail included in each record — like the donor&#8217;s name, employer and occupation — makes the limitations worth working through.</p>
+<p>The overall totals are instead reported on cover sheets included with disclosure reports that lump together all the smaller contributions as part of a grand total. Those are the records most commonly cited to total up a campaign’s fundraising.</p>
+<p>The result is that an itemized list of contributions, like the one we have, cannot be used to calculate a grand total. That’s true in California and virtually anywhere else you work with campaign data. Overlooking that limitation is a rookie mistake routinely made by analysts new to this field.</p>
+<p>But that doesn’t mean our data is worthless. We just have to use it responsibly. In many cases, professional campaign reporters will refer to an analysis drawn from a list like ours as applying only to “large donors.”</p>
+<p>Since large donors typically account for most of the money, the results are still significant. And the high level of detail included in each record — like the donor’s name, employer and occupation — makes the limitations worth working through.</p>
 </div>
 <div class="section" id="which-side-got-more-large-donations">
 <h2>Which side got more large donations?<a class="headerlink" href="#which-side-got-more-large-donations" title="Permalink to this headline">¶</a></h2>
-<p>Adding up a big total is all well and good. But we&#8217;re aiming for something more nuanced.</p>
+<p>Adding up a big total is all well and good. But we’re aiming for something more nuanced.</p>
 <p>We want to separate the money spent supporting the proposition from the money opposing it. Then we want to find out who raised more.</p>
-<p>To answer that question, lets return to the filtering technique we learned in <span class="xref doc">chapter seven</span>.</p>
-<p>First let&#8217;s look at the column we&#8217;re going to filter by, committee_position.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">committee_position</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<p>To answer that question, let’s return to the filtering technique we learned in <a class="reference internal" href="../filter/index.html"><span class="doc">chapter seven</span></a>.</p>
+<p>First let’s look at the column we’re going to filter by, committee_position.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">committee_position</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Now let&#8217;s filter our merged table down using that column and the pandas filtering method that combines a column, an operator and the value we want to filter by. Let&#8217;s stick the result in a variable.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">support</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="n">merged</span><span class="o">.</span><span class="n">committee_position</span> <span class="o">==</span> <span class="s1">&#39;SUPPORT&#39;</span><span class="p">]</span>
+<p>Now let’s filter our merged table down using that column and the pandas filtering method that combines a column, an operator and the value we want to filter by. Let’s stick the result in a variable.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">support</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="n">merged</span><span class="o">.</span><span class="n">committee_position</span> <span class="o">==</span> <span class="s1">&#39;SUPPORT&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Now let&#8217;s repeat all that for opposing contributions. First the filter into a new variable.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">oppose</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="n">merged</span><span class="o">.</span><span class="n">committee_position</span> <span class="o">==</span> <span class="s1">&#39;OPPOSE&#39;</span><span class="p">]</span>
+<p>Now let’s repeat all that for opposing contributions. First the filter into a new variable.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">oppose</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[</span><span class="n">merged</span><span class="o">.</span><span class="n">committee_position</span> <span class="o">==</span> <span class="s1">&#39;OPPOSE&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Now sum up the total disclosed contributions to each for comparison. First the opposition.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">oppose</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">oppose</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Then the supporters.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">support</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">support</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>The support is clearly larger. But what percent is it of the overall disclosed total? We can find out by combined two <code class="docutils literal"><span class="pre">sum</span></code> calculations using the division operator.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">support</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="n">merged</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<p>The support is clearly larger. But what percent is it of the overall disclosed total? We can find out by combining two <code class="docutils literal notranslate"><span class="pre">sum</span></code> calculations using the division operator.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">support</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="n">merged</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -214,15 +213,16 @@
 
 
            </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../sort_values/index.html" class="btn btn-neutral float-right" title="Chapter 10: Hello sorting" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../sort_values/index.html" class="btn btn-neutral float-right" title="Chapter 10: Hello sorting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../merge/index.html" class="btn btn-neutral" title="Chapter 8: Hello merge" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../merge/index.html" class="btn btn-neutral float-left" title="Chapter 8: Hello merge" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -231,11 +231,11 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017, Ben Welsh and the California Civic Data Coalition.
+        &copy; Copyright 2020, Ben Welsh and the California Civic Data Coalition
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -248,35 +248,15 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'1.0',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

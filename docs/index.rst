@@ -13,6 +13,8 @@ You will learn just enough of the `Python <https://www.python.org/>`_ computer p
 
 You will also learn how to record, remix and republish your analysis using the `Jupyter notebook <http://jupyter.org/>`_, a browser-based application for writing code that is emerging as the standard for sharing reproducible research.
 
+You will also learn how to plot and chart your data inside the notebook using the `Altair data visualization <https://altair-viz.github.io/>`_ library, which is on the cutting-edge of developing a simple, structured grammar for generating graphics.
+
 
 Who can take it
 ===============

@@ -4,7 +4,7 @@ Chapter 7: Hello filters
 
 Until last November, the use and sale of marijuana for recreational purposes was illegal in California. That changed when voters approved Proposition 64, which asked if the practice ought to be legalized.
 
-A yes vote supported legalization. A no vote opposed it. `In the final tally <http://elections.cdn.sos.ca.gov/sov/2016-general/sov/65-ballot-measures-formatted.pdf>`_, 57% of voters said yes.
+A yes vote supported legalization. A no vote opposed it. `In the final tally`_, 57% of voters said yes.
 
 Our next mission is to use the DataFrames containing campaign committees and contributors to figure out the biggest donors both for and against the measure.
 
@@ -14,15 +14,13 @@ To do that, the first thing we need to do is isolate the fundraising committees 
 Filtering a DataFrame
 *********************
 
-.. youtube:: lRyABONedV4
-
 The most common way to filter a DataFrame is to pass an expression as an "index" that can be used to decide which records should be kept and which discarded.
 
-You write the expression by combining a column on your DataFrame with an `"operator" <https://en.wikipedia.org/wiki/Operator_(computer_programming)>`_ like ``==`` or ``>`` or ``<`` and a value to compare the column against.
+You write the expression by combining a column on your DataFrame with an `"operator"`_ like ``==`` or ``>`` or ``<`` and a value to compare the column against.
 
 .. note::
 
-    If you are familiar with writing `SQL <https://en.wikipedia.org/wiki/SQL>`_ to manipulate databases, pandas' filtering system is somewhat similar to a WHERE query. The `official pandas documentation <http://pandas.pydata.org/pandas-docs/stable/comparison_with_sql.html#where>`_ offers direct translations between the two.
+    If you are familiar with writing `SQL`_ to manipulate databases, pandas' filtering system is somewhat similar to a ``WHERE`` query. The `official pandas documentation`_ offers direct translations between the two.
 
 In our case, the column we want to filter against is prop.prop_name. We only want to keep those records where the value there matches the full name of Proposition 64.
 
@@ -69,3 +67,9 @@ Then info.
 .. code-block:: python
 
     prop.info()
+
+
+.. _In the final tally: http://elections.cdn.sos.ca.gov/sov/2016-general/sov/65-ballot-measures-formatted.pdf
+.. _"operator": https://en.wikipedia.org/wiki/Operator_(computer_programming)
+.. _SQL: https://en.wikipedia.org/wiki/SQL
+.. _official pandas documentation: https://pandas.pydata.org/pandas-docs/stable/getting_started/comparison/comparison_with_sql.html#where

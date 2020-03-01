@@ -8,48 +8,45 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Chapter 2: Hello Jupyter &mdash; First Python Notebook 1.0 documentation</title>
+  <title>Chapter 2: Hello notebook &mdash; First Python Notebook 1.0 documentation</title>
   
 
   
   
+  
+  
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="First Python Notebook 1.0 documentation" href="../index.html"/>
-        <link rel="next" title="Chapter 3: Hello pandas" href="../pandas/index.html"/>
-        <link rel="prev" title="Chapter 1: Hello virtualenv" href="../virtualenv/index.html"/> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Chapter 3: Hello pandas" href="../pandas/index.html" />
+    <link rel="prev" title="Chapter 1: Hello pipenv" href="../pipenv/index.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
+   
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -77,13 +74,15 @@
           
             
             
-                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../prerequisites/index.html">Prologue: Prerequisites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../virtualenv/index.html">Chapter 1: Hello virtualenv</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 2: Hello Jupyter</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#activate-your-virtual-environment">Activate your virtual environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#install-jupyter-notebook-with-pip">Install Jupyter Notebook with pip</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pipenv/index.html">Chapter 1: Hello pipenv</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 2: Hello notebook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#navigate-into-your-project-directory">Navigate into your project directory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#create-your-first-notebook">Create your first notebook</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#write-python-in-the-notebook">Write Python in the notebook</a></li>
 </ul>
@@ -97,11 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../totals/index.html">Chapter 9: Hello totals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sort_values/index.html">Chapter 10: Hello sorting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../groupby/index.html">Chapter 11: Hello groupby</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../git/index.html">Chapter 12: Hello git</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../markdown/index.html">Chapter 13: Hello Markdown</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../github/index.html">Chapter 14: Hello GitHub</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 15: Hello charts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cleaning/index.html">Chapter 16: Hello cleaning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 12: Hello charts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about/index.html">About the author</a></li>
 </ul>
 
@@ -114,15 +109,18 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">First Python Notebook</a>
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">First Python Notebook</a>
+        
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -140,7 +138,7 @@
       <li><a href="../index.html">Home</a> &raquo;</li>
         
       
-      <li>Chapter 2: Hello Jupyter</li>
+      <li>Chapter 2: Hello notebook</li>
       
     
   </ul>
@@ -151,105 +149,97 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="chapter-2-hello-jupyter">
-<h1>Chapter 2: Hello Jupyter<a class="headerlink" href="#chapter-2-hello-jupyter" title="Permalink to this headline">¶</a></h1>
-<p>A <a class="reference external" href="http://jupyter.org/">Jupyter Notebook</a> is a browser application where you can write, run, remix and republish code.</p>
+  <div class="section" id="chapter-2-hello-notebook">
+<h1>Chapter 2: Hello notebook<a class="headerlink" href="#chapter-2-hello-notebook" title="Permalink to this headline">¶</a></h1>
+<p>A <a class="reference external" href="http://jupyter.org/">Jupyter notebook</a> is a browser application where you can write, run, remix and republish code.</p>
 <p>It is free software you can install and run like any other open-source library. It is used by <a class="reference external" href="http://nbviewer.jupyter.org/github/robertodealmeida/notebooks/blob/master/earth_day_data_challenge/Analyzing%20whale%20tracks.ipynb">scientists</a>, <a class="reference external" href="http://nbviewer.jupyter.org/github/nealcaren/workshop_2014/blob/master/notebooks/5_Times_API.ipynb">scholars</a>, <a class="reference external" href="https://github.com/rsvp/fecon235/blob/master/nb/fred-debt-pop.ipynb">investors</a> and corporations to create and share their research.</p>
 <p>It is also used by journalists to develop stories and show their work. Examples include:</p>
 <ul class="simple">
-<li><a class="reference external" href="https://github.com/BuzzFeedNews/2016-01-tennis-betting-analysis/blob/master/notebooks/tennis-analysis.ipynb">&#8220;The Tennis Racket&#8221;</a> by BuzzFeed and the BBC</li>
-<li><a class="reference external" href="https://github.com/datadesk/la-vacant-building-complaints-analysis/blob/master/la-vacant-building-complaints-analysis.ipynb">&#8220;Fire officials were concerned about Westlake building where 5 died in a blaze&#8221;</a> by the Los Angeles Times</li>
-<li><a class="reference external" href="https://github.com/propublica/compas-analysis/blob/master/Compas%20Analysis.ipynb">&#8220;Machine bias&#8221;</a> by ProPublica</li>
+<li><p><a class="reference external" href="https://github.com/BuzzFeedNews/2016-01-tennis-betting-analysis/blob/master/notebooks/tennis-analysis.ipynb">“The Tennis Racket”</a> by BuzzFeed and the BBC</p></li>
+<li><p><a class="reference external" href="https://github.com/datadesk/la-vacant-building-complaints-analysis/blob/master/la-vacant-building-complaints-analysis.ipynb">“Fire officials were concerned about Westlake building where 5 died in a blaze”</a> by the Los Angeles Times</p></li>
+<li><p><a class="reference external" href="https://github.com/propublica/compas-analysis/blob/master/Compas%20Analysis.ipynb">“Machine bias”</a> by ProPublica</p></li>
 </ul>
-<p>Learn how to install Jupyter and create your first notebook by following this video or the written instructions below.</p>
-<div class="embed-container"><iframe src="http://www.youtube.com/embed/kjrXSvX2JTk"     width="560" height="315" frameborder="0"     webkitAllowFullScreen mozallowfullscreen allowfullscreen class="youtube"></iframe></div><div class="section" id="activate-your-virtual-environment">
-<h2>Activate your virtual environment<a class="headerlink" href="#activate-your-virtual-environment" title="Permalink to this headline">¶</a></h2>
-<p>To start off, open up your <a class="reference internal" href="../prerequisites/cli.html"><span class="doc">command-line interface</span></a> and activate the <span class="xref doc">virtual environment</span> created for this project.</p>
-<p>After the terminal is open, navigate to the code directory.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> Code
+<div class="section" id="navigate-into-your-project-directory">
+<h2>Navigate into your project directory<a class="headerlink" href="#navigate-into-your-project-directory" title="Permalink to this headline">¶</a></h2>
+<p>For starters, let’s check where we are in our computer’s file system. For this we’ll use a command called <a class="reference external" href="https://en.wikipedia.org/wiki/Pwd">pwd</a>, which stands for <code class="docutils literal notranslate"><span class="pre">p</span></code>resent <code class="docutils literal notranslate"><span class="pre">w</span></code>orking <code class="docutils literal notranslate"><span class="pre">d</span></code>irectory.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">pwd</span>
 </pre></div>
 </div>
-<p>Jump into virtual environment directory.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> first-python-notebook
+<p>The output is the full path of your location in the file system, something like <code class="docutils literal notranslate"><span class="pre">/Users/palewire/Code/first-python-notebook</span></code>. If you aren’t currently in the project directory we created in <a class="reference external" href="../pipenv/">chapter 1</a>, you need to change directories.</p>
+<p>First, jump into the code directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> Code
 </pre></div>
 </div>
-<p>Activate the virtual environment, as we&#8217;ve done before.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># In Mac OSX ...</span>
-<span class="nb">source</span> bin/activate
-<span class="c1"># In Windows ...</span>
-<span class="nb">cd</span> Scripts
-. .<span class="se">\a</span>ctivate
-<span class="nb">cd</span> ..
+<p>Then, jump into project directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> first-python-notebook
 </pre></div>
 </div>
-</div>
-<div class="section" id="install-jupyter-notebook-with-pip">
-<h2>Install Jupyter Notebook with pip<a class="headerlink" href="#install-jupyter-notebook-with-pip" title="Permalink to this headline">¶</a></h2>
-<p>Now that we&#8217;re in the virtual environment, we will use the <a class="reference internal" href="../prerequisites/pip.html"><span class="doc">pip</span></a> command line tool to install the Jupyter Notebook software.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>pip install jupyter
+<p>This is where you’ll store a local copy of all the code and files you create for this project.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It isn’t necessary to change directories one level at a time. You can also specify the full path of directory you want to change into:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> Code/first-python-notebook
 </pre></div>
 </div>
-<p>You can verify it&#8217;s been installed by running pip&#8217;s freeze command, which will list all of the installed Python libraries.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>pip freeze
-</pre></div>
 </div>
 </div>
 <div class="section" id="create-your-first-notebook">
 <h2>Create your first notebook<a class="headerlink" href="#create-your-first-notebook" title="Permalink to this headline">¶</a></h2>
-<p>Now that Jupyter is installed, you can start its browser interface from your terminal.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>jupyter notebook
+<p>In <a class="reference external" href="../pipenv/">chapter 1</a> of this course, we used Pipenv to install Jupyter. Now we can use Pipenv’s <code class="docutils literal notranslate"><span class="pre">run</span></code> command to start its browser interface from your terminal.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pipenv run jupyter lab
 </pre></div>
 </div>
 <p>That will open up a new tab in your default web browser that looks something like this:</p>
 <img alt="../_images/notebook.png" src="../_images/notebook.png" />
-<p>Click the &#8220;New&#8221; button in the upper right and create a new Python 2 notebook.</p>
+<p>Click the “New” button in the upper right and create a new Python 3 notebook.</p>
 </div>
 <div class="section" id="write-python-in-the-notebook">
 <h2>Write Python in the notebook<a class="headerlink" href="#write-python-in-the-notebook" title="Permalink to this headline">¶</a></h2>
 <p>Now you are all setup and ready to start writing Python code.</p>
 <p>Do not stress. There is nothing too fancy about it. You can start by just doing a little simple math.</p>
 <p>Type the following into the first box, then hit the play button in the toolbar above the notebook (or hit SHIFT+ENTER on your keyboard).</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span>
 </pre></div>
 </div>
 <img alt="../_images/2_plus_2.png" src="../_images/2_plus_2.png" />
 <p>There. You have just written your first Python code. You have entered two integers and added them together using the plus sign operator.</p>
 <p>Not so bad, right?</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>If you get an error after you run a cell, look carefully at your code and see that it exactly matches what&#8217;s been written in the example. Don&#8217;t worry.</p>
-<p class="last">Code crashes are a normal part of life for computer programmers. They&#8217;re usually caused by small typos that can be quickly corrected.</p>
+<p class="admonition-title">Note</p>
+<p>If you get an error after you run a cell, look carefully at your code and see that it exactly matches what’s been written in the example. Don’t worry.</p>
+<p>Code crashes are a normal part of life for computer programmers. They’re usually caused by small typos that can be quickly corrected.</p>
 </div>
 <p>This to-and-fro of writing Python code in a notebook cell and then running it with the play button is the rhythm of working in a notebook. Over time you will gradually stack cells to organize an analysis that runs from top to bottom.</p>
 <p>The cells can contain variables, functions and other Python tools.</p>
-<p>A simple example would be storing your number in a variable in one cell ...</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">2</span>
+<p>A simple example would be storing your number in a variable in one cell …</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">2</span>
 </pre></div>
 </div>
-<p>... then adding it to another number in the next.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">+</span> <span class="mi">3</span>
+<p>… then adding it to another number in the next.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">+</span> <span class="mi">3</span>
 </pre></div>
 </div>
 <p>Run those two cells in succession and the notebook should output the number five. Change the number value to 3 and run both cells again and it should output six.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The video at the top of this page introduces more of these Python fundamentals by writing and running cells of code in the notebook. If you&#8217;ve never written Python before, be sure to watch the clip before you advance to the next chapter.</p>
+<p class="admonition-title">Note</p>
+<p>If you’ve never written Python before, we recommend <a class="reference external" href="https://docs.python.org/3/tutorial/introduction.html">An Informal Introduction to Python</a> and subsequent sections of python.org’s tutorial.</p>
 </div>
-<p>Once you&#8217;ve got the hang of making the notebook run, you&#8217;re ready to introduce pandas, the powerful Python analysis library that can do a whole lot more than add a few numbers together.</p>
+<p>Once you’ve got the hang of making the notebook run, you’re ready to introduce pandas, the powerful Python analysis library that can do a whole lot more than add a few numbers together.</p>
 </div>
 </div>
 
 
            </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../pandas/index.html" class="btn btn-neutral float-right" title="Chapter 3: Hello pandas" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../pandas/index.html" class="btn btn-neutral float-right" title="Chapter 3: Hello pandas" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../virtualenv/index.html" class="btn btn-neutral" title="Chapter 1: Hello virtualenv" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../pipenv/index.html" class="btn btn-neutral float-left" title="Chapter 1: Hello pipenv" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -258,11 +248,11 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017, Ben Welsh and the California Civic Data Coalition.
+        &copy; Copyright 2020, Ben Welsh and the California Civic Data Coalition
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -275,35 +265,15 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'1.0',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

@@ -13,43 +13,40 @@
 
   
   
+  
+  
 
   
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
-  
-  
-    <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="First Python Notebook 1.0 documentation" href="../index.html"/>
-        <link rel="next" title="Chapter 4: Hello money in politics" href="../money/index.html"/>
-        <link rel="prev" title="Chapter 2: Hello Jupyter" href="../notebook/index.html"/> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Chapter 4: Hello money in politics" href="../money/index.html" />
+    <link rel="prev" title="Chapter 2: Hello notebook" href="../notebook/index.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
+   
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -77,14 +74,17 @@
           
             
             
-                <p class="caption"><span class="caption-text">Table of Contents</span></p>
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../prerequisites/index.html">Prologue: Prerequisites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../virtualenv/index.html">Chapter 1: Hello virtualenv</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebook/index.html">Chapter 2: Hello Jupyter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pipenv/index.html">Chapter 1: Hello pipenv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebook/index.html">Chapter 2: Hello notebook</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 3: Hello pandas</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#install-pandas-with-pip">Install pandas with pip</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#import-pandas-into-a-jupyter-notebook">Import pandas into a Jupyter Notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-pandas-with-pipenv">Install pandas with Pipenv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#import-pandas">Import pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#conduct-a-simple-data-analysis">Conduct a simple data analysis</a></li>
 </ul>
 </li>
@@ -96,11 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../totals/index.html">Chapter 9: Hello totals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sort_values/index.html">Chapter 10: Hello sorting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../groupby/index.html">Chapter 11: Hello groupby</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../git/index.html">Chapter 12: Hello git</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../markdown/index.html">Chapter 13: Hello Markdown</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../github/index.html">Chapter 14: Hello GitHub</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 15: Hello charts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cleaning/index.html">Chapter 16: Hello cleaning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 12: Hello charts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about/index.html">About the author</a></li>
 </ul>
 
@@ -113,15 +109,18 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">First Python Notebook</a>
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">First Python Notebook</a>
+        
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -152,103 +151,103 @@
             
   <div class="section" id="chapter-3-hello-pandas">
 <h1>Chapter 3: Hello pandas<a class="headerlink" href="#chapter-3-hello-pandas" title="Permalink to this headline">¶</a></h1>
-<p>Lucky for us, Python is filled with functions to do pretty much anything you’d ever want to do with a programming language: <a class="reference external" href="http://docs.python-requests.org/">navigate the web</a>, <a class="reference external" href="https://docs.python.org/2/library/csv.html">parse data</a>, <a class="reference external" href="http://www.sqlalchemy.org/">interact with a database</a>, <a class="reference external" href="https://www.scipy.org/">run fancy statistics</a>, <a class="reference external" href="https://www.djangoproject.com/">build a pretty website</a> and <a class="reference external" href="https://www.crummy.com/software/BeautifulSoup/">so</a> <a class="reference external" href="http://www.nltk.org/">much</a> <a class="reference external" href="http://pillow.readthedocs.io/en/3.4.x/index.html">more</a>.</p>
+<p>Lucky for us, Python is filled with functions to do pretty much anything you’d ever want to do with a programming language: <a class="reference external" href="http://docs.python-requests.org/">navigate the web</a>, <a class="reference external" href="https://docs.python.org/2/library/csv.html">parse data</a>, <a class="reference external" href="http://www.sqlalchemy.org/">interact with a database</a>, <a class="reference external" href="https://www.scipy.org/">run fancy statistics</a>, <a class="reference external" href="https://www.djangoproject.com/">build a pretty website</a> and <a class="reference external" href="https://www.crummy.com/software/BeautifulSoup/">so</a> <a class="reference external" href="http://www.nltk.org/">much</a> <a class="reference external" href="https://pillow.readthedocs.io/en/stable/">more</a>.</p>
 <p>Creative people have put these tools to work to get <a class="reference external" href="https://www.python.org/about/success/">a wide range of things done</a> in the academy, the laboratory and even in outer space.</p>
-<p>Some of those tools are included in a toolbox that comes with the language, known as the standard library. Others have been built by members of Python&#8217;s developer community and need to be downloaded and installed from the web.</p>
-<p>One that&#8217;s important for this class is called <a class="reference external" href="http://pandas.pydata.org/">pandas</a>. It is a tool invented at a financial investment firm that has become a leading open-source library for accessing and analyzing data in many different fields.</p>
-<p>Learn how to install panda and conduct a simple data analysis by following this video or the written instructions below.</p>
-<div class="embed-container"><iframe src="http://www.youtube.com/embed/5cGYsvoyZWs"     width="560" height="315" frameborder="0"     webkitAllowFullScreen mozallowfullscreen allowfullscreen class="youtube"></iframe></div><div class="section" id="install-pandas-with-pip">
-<h2>Install pandas with pip<a class="headerlink" href="#install-pandas-with-pip" title="Permalink to this headline">¶</a></h2>
-<p>We&#8217;ll install pandas the same way we installed the Jupyter Notebook earlier: Our friend <code class="docutils literal"><span class="pre">pip</span></code>.</p>
-<p>Pick up where we left off at the end of <a class="reference internal" href="../notebook/index.html"><span class="doc">chapter 2</span></a>, save your notebook, switch to your command prompt and hit <code class="docutils literal"><span class="pre">CTRL-C</span></code>.</p>
-<p>That will kill your notebook and return you to the command line. There we&#8217;ll install pandas using pip.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pandas</span>
+<p>Some of those tools are included in a toolbox that comes with the language, known as the standard library. Others have been built by members of Python’s developer community and need to be downloaded and installed from the web.</p>
+<p>One that’s important for this class is called <a class="reference external" href="http://pandas.pydata.org/">pandas</a>. It is a tool invented at a financial investment firm that has become a leading open-source library for accessing and analyzing data in many different fields.</p>
+<div class="section" id="install-pandas-with-pipenv">
+<h2>Install pandas with Pipenv<a class="headerlink" href="#install-pandas-with-pipenv" title="Permalink to this headline">¶</a></h2>
+<p>We’ll install pandas the same way we installed the Jupyter Notebook earlier: Our new friend <a class="reference internal" href="../pipenv/index.html"><span class="doc">Pipenv</span></a>.</p>
+<p>Let’s pick up where we left off at the end of <a class="reference internal" href="../notebook/index.html"><span class="doc">chapter 2</span></a>. Save your notebook by clicking the disk icon or selecting “save and checkpoint” from the file menu. Then switch to your command prompt and hit <code class="docutils literal notranslate"><span class="pre">CTRL-C</span></code>.</p>
+<p>That will kill your notebook and return you to the command line. There we’ll install pandas:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pipenv</span> <span class="n">install</span> <span class="n">pandas</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="import-pandas-into-a-jupyter-notebook">
-<h2>Import pandas into a Jupyter Notebook<a class="headerlink" href="#import-pandas-into-a-jupyter-notebook" title="Permalink to this headline">¶</a></h2>
-<p>Now let&#8217;s restart our notebook and get back to work.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">notebook</span>
+<div class="section" id="import-pandas">
+<h2>Import pandas<a class="headerlink" href="#import-pandas" title="Permalink to this headline">¶</a></h2>
+<p>Now let’s restart our notebook and get back to work.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pipenv</span> <span class="n">run</span> <span class="n">jupyter</span> <span class="n">lab</span>
 </pre></div>
 </div>
-<p>Reopen your notebook and create a new cell at the top. There we will import the pandas library for use in our script. Type in the following and hit the play button again.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span>
+<p>Reopen your notebook and create a new cell at the top of your Jupyter notebook. There we will import the pandas library for use in our script. Type in the following and hit the play button again.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span>
 </pre></div>
 </div>
-<p>If nothing happens, that&#8217;s good. It means you have pandas installed and ready.</p>
+<p>If nothing happens, that’s good. It means you have pandas installed and ready.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p>If you get an error message, return to the prerequisites section make sure you have everything installed properly.</p>
-<p class="last">If you do and it still doesn&#8217;t work, copy and paste the tail end of your error message into Google. Among the results there will almost certainly be others working through the same problem.</p>
+<p>If you do and it still doesn’t work, copy and paste the tail end of your error message into Google. Among the results there will almost certainly be others working through the same problem.</p>
 </div>
 <p>Return to the cell with the import and rewrite it like this.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 </div>
-<p>This will import the pandas library at the shorter variable name of pd. This is not required but it is standard practice in the pandas community and you will frequently see examples of pandas code online using it as shorthand. It&#8217;s not required, but it&#8217;s good to get in the habit so that your code will be understood by other computer programmers.</p>
+<p>This will import the pandas library at the shorter variable name of pd. This is not required but it is standard practice in the pandas community and you will frequently see examples of pandas code online using it as shorthand. It’s not required, but it’s good to get in the habit so that your code will be understood by other computer programmers.</p>
 </div>
 <div class="section" id="conduct-a-simple-data-analysis">
 <h2>Conduct a simple data analysis<a class="headerlink" href="#conduct-a-simple-data-analysis" title="Permalink to this headline">¶</a></h2>
-<p>Those two little letters contain dozens of data analysis tools that we&#8217;ll use in future lessons.</p>
-<p>They can import massive data files, compute advanced statistics, filter, sort, rank and just about anything else you&#8217;d want to do.</p>
-<p>We&#8217;ll get to that soon, but let&#8217;s start out with something simple.</p>
-<p>First let&#8217;s make a list of numbers in a new notebook cell. To keep things simple, I am going to enter all of the even numbers between zero and ten and press play.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<p>Those two little letters contain dozens of data analysis tools that we’ll use in future lessons.</p>
+<p>They can import massive data files, compute advanced statistics, filter, sort, rank and just about anything else you’d want to do.</p>
+<p>We’ll get to that soon, but let’s start out with something simple.</p>
+<p>First let’s make a list of numbers in a new notebook cell. To keep things simple, I am going to enter all of the even numbers between zero and ten and press play.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>If you&#8217;re a skilled Python programmer, you can do some cool stuff with any list. But hand it over to pandas instead, and you can analyze it without knowing much computer code at all.</p>
-<p>In this case, it&#8217;s as simple as converting that plain Python list into what pandas calls a <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html">Series</a>. Make it happen in your next cell.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">my_series</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
+<p>If you’re a skilled Python programmer, you can do some cool stuff with any list. But hand it over to pandas instead, and you can analyze it without knowing much computer code at all.</p>
+<p>In this case, it’s as simple as converting that plain Python list into what pandas calls a <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html">Series</a>. Make it happen in your next cell.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_series</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Once the data becomes a Series, you can immediately run a wide range of <a class="reference external" href="https://en.wikipedia.org/wiki/Descriptive_statistics">descriptive statistics</a>. Let&#8217;s try a few.</p>
-<p>First, let&#8217;s sum all the numbers. Make a new cell and run this. It should spit out the total.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">my_series</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<p>Once the data becomes a Series, you can immediately run a wide range of <a class="reference external" href="https://en.wikipedia.org/wiki/Descriptive_statistics">descriptive statistics</a>. Let’s try a few.</p>
+<p>First, let’s sum all the numbers. Make a new cell and run this. It should spit out the total.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_series</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Then find the maximum value in the next.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">my_series</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_series</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>The minimum value in the next.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">my_series</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_series</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>How about the average (also known as the mean)? Keep adding cells and calculating new statistics.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">my_series</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_series</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>The median?</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">my_series</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_series</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>The standard deviation?</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">my_series</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_series</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>And all of the above, plus a little more about the distribution, in one simple command.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">my_series</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_series</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>With those simple techniques, we&#8217;re only scratching the surface of what pandas makes possible.</p>
+<p>With those simple techniques, we’re only scratching the surface of what pandas makes possible.</p>
 <p>Substitute in a series of 10 million records at the top of the stack (or even just the odd numbers between zero and ten), and your notebook would calculate all those statistics again without you having to write any more code.</p>
-<p>Once your  data, however large or complex, is imported into pandas, there&#8217;s little limit to what you can do to filter, merge, group, aggregate, compute or chart using simple methods like the ones above.</p>
-<p>In the next chapter we&#8217;ll get started doing just using data tracking the flow of money in California politics.</p>
+<p>Once your data, however large or complex, is imported into pandas, there’s little limit to what you can do to filter, merge, group, aggregate, compute or chart using simple methods like the ones above.</p>
+<p>In the next chapter we’ll get started doing just using data tracking the flow of money in California politics.</p>
 </div>
 </div>
 
 
            </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../money/index.html" class="btn btn-neutral float-right" title="Chapter 4: Hello money in politics" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../money/index.html" class="btn btn-neutral float-right" title="Chapter 4: Hello money in politics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../notebook/index.html" class="btn btn-neutral" title="Chapter 2: Hello Jupyter" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../notebook/index.html" class="btn btn-neutral float-left" title="Chapter 2: Hello notebook" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -257,11 +256,11 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017, Ben Welsh and the California Civic Data Coalition.
+        &copy; Copyright 2020, Ben Welsh and the California Civic Data Coalition
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -274,35 +273,15 @@
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'1.0',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>
