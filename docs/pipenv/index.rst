@@ -28,9 +28,9 @@ These issues arise because, by default, Python third-party packages are all inst
 
 Strictly speaking, working within a virtual environment is not required. At first, it might even feel like a hassle. But in the long run, you will be glad you did it. And you don’t have to take my word for it, you can read discussions on `StackOverflow`_ and `Reddit`_.
 
-***********************
+********************
 The convenient combo
-***********************
+********************
 
 By this point, you can see the appeal of a single tool that can:
 
