@@ -1,8 +1,8 @@
-========================
-Chapter 2: Hello Jupyter
+=========================
+Chapter 2: Hello notebook=
 ========================
 
-A `Jupyter Notebook`_ is a browser application where you can write, run, remix and republish code.
+A `Jupyter notebook`_ is a browser application where you can write, run, remix and republish code.
 
 It is free software you can install and run like any other open-source library. It is used by `scientists`_, `scholars`_, `investors`_ and corporations to create and share their research.
 
@@ -44,7 +44,7 @@ This is where you'll store a local copy of all the code and files you create for
 
     .. code-block:: bash
 
-        cd Code/first-python-notebook    
+        cd Code/first-python-notebook
 
 
 **************************
@@ -55,7 +55,7 @@ In `chapter 1`_ of this course, we used Pipenv to install Jupyter. Now we can us
 
 .. code-block:: bash
 
-    pipenv run jupyter notebook
+    pipenv run jupyterlab
 
 That will open up a new tab in your default web browser that looks something like this:
 
@@ -116,7 +116,7 @@ Once you've got the hang of making the notebook run, you're ready to introduce p
 
 
 .. _scientists: http://nbviewer.jupyter.org/github/robertodealmeida/notebooks/blob/master/earth_day_data_challenge/Analyzing%20whale%20tracks.ipynb
-.. _scholars: http://nbviewer.jupyter.org/github/nealcaren/workshop_2014/blob/master/notebooks/5_Times_API.ipynb 
+.. _scholars: http://nbviewer.jupyter.org/github/nealcaren/workshop_2014/blob/master/notebooks/5_Times_API.ipynb
 .. _investors: https://github.com/rsvp/fecon235/blob/master/nb/fred-debt-pop.ipynb
 .. _"The Tennis Racket": https://github.com/BuzzFeedNews/2016-01-tennis-betting-analysis/blob/master/notebooks/tennis-analysis.ipynb
 .. _"Fire officials were concerned about Westlake building where 5 died in a blaze": https://github.com/datadesk/la-vacant-building-complaints-analysis/blob/master/la-vacant-building-complaints-analysis.ipynb
