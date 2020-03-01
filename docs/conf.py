@@ -32,18 +32,9 @@ sys.path.insert(0, os.path.abspath('.'))
 # ones.
 extensions = [
     'ext.video',
-    'rst2pdf.pdfbuilder',
 ]
 
-pdf_documents = [
-    ('prerequisites/index', u'prologue', u'Prologue: Prerequisites', u'Ben Welsh'),
-    ('prerequisites/cli', u'prologue-01-cli', u'Prologue: Prerequisites, Command-line interface', u'Ben Welsh'),
-    ('prerequisites/python', u'prologue-02-python', u'Prologue: Prerequisites, Python', u'Ben Welsh'),
-    ('prerequisites/pip', u'prologue-03-pip', u'Prologue: Prerequisites, pip', u'Ben Welsh'),
-    ('prerequisites/virtualenv', u'prologue-04-virtualenv', u'Prologue: Prerequisites, virtualenv', u'Ben Welsh'),
-    ('prerequisites/compiler', u'prologue-05-compiler', u'Prologue: Prerequisites, compiler', u'Ben Welsh'),
-    ('prerequisites/git', u'prologue-06-git', u'Prologue: Prerequisites, git', u'Ben Welsh'),
-]
+pdf_documents = []
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -59,7 +50,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'First Python Notebook'
-copyright = u'2017, Ben Welsh and the California Civic Data Coalition'
+copyright = u'2020, Ben Welsh and the California Civic Data Coalition'
 author = u'Ben Welsh and the California Civic Data Coalition'
 
 # The version info for the project you're documenting, acts as replacement for

@@ -12,7 +12,7 @@ Python is a versatile language. You can use it analyze and visualize data, as yo
 
 Whatever the aim of your project, likely you will rely on one or more Python packages that extend the language’s standard library. This allows you to import modules written by other trusty Python developers into your own code so that you can focus on the work that matters to you.
 
-These third-party packages are available—for free—via the Python Package Index (aka, the `Cheese Shop`_). To install these packages on your own computer, you need a tool called a package manager.
+These third-party packages are available — for free — via the Python Package Index. To install these packages on your own computer, you need a tool called a package manager.
 
 Python’s default package manager is `pip`_. With pip, you can also document the exact version of each of package your project requires. Typically these dependencies are specified in a `requirements.txt`_ file. This document makes it easier to sync your project’s requirements across multiple machines if, for instance, you are collaborating with other developers.
 
@@ -32,7 +32,10 @@ Strictly speaking, working within a virtual environment is not required. At firs
 The convenient combo
 ***********************
 
-By this point, you can see the appeal of a single tool that can 1) install and document your project’s dependencies; and, 2) isolate these dependencies from your other Python projects.
+By this point, you can see the appeal of a single tool that can:
+
+# Install and document your project’s dependencies
+# Isolate these dependencies from your other Python projects
 
 With Pipenv, that’s exactly what you get. This added convenience has earned Pipenv broad support in the Python community. Like it’s predecessor pip, Pipenv now is maintained by the `Python Packaging Authority`_.
 
@@ -42,16 +45,16 @@ Enough exposition. Let's start setting up your workspace.
 Installing Pipenv
 ***********************
 
-Pipenv and it's prerequisites are installed via your computer's `command-line interface`_.
+Pipenv and its prerequisites are installed via your computer's `command-line interface`_.
 
 **If you are on a Mac**, Pipenv’s docs `recommend`_ installing via `Homebrew`_:
 
 .. code-block:: bash
 
-    brew install pipenv 
+    brew install pipenv
 
 
-**If you are on Windows 10**, consider installing both `Windows Subsystem for Linux`_ and selecting a Linux distribution from the Windows Store (we recommend Ubuntu). Once you've set up your Linux-based terminal, you can install `Linuxbrew`_ and use it to install Pipenv. 
+**If you are on Windows 10**, consider installing both `Windows Subsystem for Linux`_ and selecting a Linux distribution from the Windows Store (we recommend Ubuntu). Once you've set up your Linux-based terminal, you can install `Linuxbrew`_ and use it to install Pipenv.
 
 **If neither option makes sense for you**, Pipenv's `docs`_ recommend a `user install`_ via pip:
 
@@ -160,7 +163,7 @@ To verify it's worked, you can open in your file explorer and navigate to your h
 
 
 ***************************
-Create a project directory 
+Create a project directory
 ***************************
 
 Now let's make a folder for your first python notebook.
@@ -185,7 +188,7 @@ Now let's install one of the essential third-party packages for this course: Jup
 
 .. code-block:: bash
 
-    pipenv install jupyter
+    pipenv install jupyterlab
 
 
 When you invoke Pipenv's ``install`` command, it checks for an existing virtual environment connected to your project's directory. Finding none, it creates one, then installs Jupyter into it.
@@ -194,15 +197,15 @@ As a result, two files are added to your project directory: Pipfile and Pipfile.
 
 Open these files in a text editor (such as `Sublime Text`_, `Atom`_ or `Visual Studio Code`_), and you'll see how they describe your project's Python requirements.
 
-In Pipfile, you'll see the name and exact version of any package we directed Pipenv to install. So far, we've only installed Jupyter, and we didn't specify an exact version of Jupyter, so you'll see: 
+In Pipfile, you'll see the name and exact version of any package we directed Pipenv to install. So far, we've only installed Jupyter, and we didn't specify an exact version of Jupyter, so you'll see:
 
 .. code-block:: bash
 
     [packages]
-    jupyter = "*"
+    jupyterlab = "*"
 
 Pipfile.lock has a much more complicated, nested structure that specifies the exact version of your project's direct dependencies along with all their sub-dependencies.
-  
+
 You've completed the setup process for First Python Notebook. Now the real fun begins.
 
 .. _Pipenv: https://pipenv.kennethreitz.org/en/latest/

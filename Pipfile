@@ -7,13 +7,8 @@ verify_ssl = true
 sphinx = "*"
 sphinx-autobuild = "*"
 sphinx-rtd-theme = "*"
-rst2pdf = "*"
 
 [packages]
-jupyter = "*"
+jupyterlab = "*"
 pandas = "*"
 altair = "*"
-matplotlib = "*"
-
-[requires]
-python_version = "3.8"
