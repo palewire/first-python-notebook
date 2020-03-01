@@ -54,7 +54,7 @@ Pipenv and its prerequisites are installed via your computer's `command-line int
     brew install pipenv
 
 
-**If you are on Windows 10**, consider installing both `Windows Subsystem for Linux`_ and selecting a Linux distribution from the Windows Store (we recommend Ubuntu). Once you've set up your Linux-based terminal, you can install `Linuxbrew`_ and use it to install Pipenv.
+**If you are on Windows 10**, consider installing both `Windows Subsystem for Linux`_ and selecting a Linux distribution from the Windows Store. We recommend choosing Ubuntu. Once you've set up your Linux-based terminal, you can install `Linuxbrew`_ and use it to install Pipenv.
 
 **If neither option makes sense for you**, Pipenv's `docs`_ recommend a `user install`_ via pip:
 
