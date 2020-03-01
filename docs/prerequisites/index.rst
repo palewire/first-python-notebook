@@ -7,13 +7,11 @@ Your computer needs the following computer-programming tools to participate. Ver
 A command-line interface
 ------------------------
 
-A `command-line interface <https://en.wikipedia.org/wiki/Command-line_interface>`_ to interact with your computer is required.
-
 Whether you know about it or not, there should be a way to open a window and directly issue commands to your operating system. Different operating systems give this tool slightly different names, but they all have some form of it.
 
 On Windows this is called the "command prompt." On MacOS it is called the "terminal."
 
-On Windows 10, we recommend install the `Windows Subsystem for Linux <https://docs.microsoft.com/en-us/windows/wsl/install-win10>`_ and selecting the Ubuntu distribution from the Windows Store. This will give you access to generic open-source terminal without all the complications and quirks sintroduced by the Windows operating system. On MacOS, the standard terminal app will work fine.
+On Windows 10, we recommend you install the `Windows Subsystem for Linux <https://docs.microsoft.com/en-us/windows/wsl/install-win10>`_ and select the Ubuntu distribution from the Windows Store. This will give you access to a generic open-source terminal without all the complications and quirks introduced by Windows. On MacOS, the standard terminal app will work fine.
 
 Python 3.5 or higher
 --------------------
@@ -42,6 +40,6 @@ If you see a number starting with 2, like say ...
 
     Python 2.7.12
 
-... that means you have an outdated version of Python and will need to upgrade to a version starting with a three.
+... then you have an outdated version of Python and will need to upgrade to a version starting with a three. You can probably complete the class without doing so, but the maintainers of Python are gradually phasing out version two and officially recommend you upgrade.  
 
 Instructions for both new installations and upgrades can be found `here <https://docs.microsoft.com/en-us/windows/wsl/install-win10>`_.
