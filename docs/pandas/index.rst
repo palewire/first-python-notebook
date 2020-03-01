@@ -33,7 +33,7 @@ Now let's restart our notebook and get back to work.
 
 .. code-block:: python
 
-    pipenv run jupyterlab
+    pipenv run jupyter lab
 
 Reopen your notebook and create a new cell at the top of your Jupyter notebook. There we will import the pandas library for use in our script. Type in the following and hit the play button again.
 

@@ -1,6 +1,6 @@
 =========================
-Chapter 2: Hello notebook=
-========================
+Chapter 2: Hello notebook
+=========================
 
 A `Jupyter notebook`_ is a browser application where you can write, run, remix and republish code.
 
@@ -55,7 +55,7 @@ In `chapter 1`_ of this course, we used Pipenv to install Jupyter. Now we can us
 
 .. code-block:: bash
 
-    pipenv run jupyterlab
+    pipenv run jupyter lab
 
 That will open up a new tab in your default web browser that looks something like this:
 
