@@ -83,7 +83,6 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 1: Hello pipenv</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#the-pip-package-manager">The “pip” package manager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#the-env-environment-manager">The “env” environment manager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#the-convenient-combo">The convenient combo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#installing-pipenv">Installing pipenv</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#create-a-code-directory-to-store-all-your-work">Create a code directory to store all your work</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#create-a-project-directory">Create a project directory</a></li>
@@ -155,44 +154,56 @@
             
   <div class="section" id="chapter-1-hello-pipenv">
 <h1>Chapter 1: Hello pipenv<a class="headerlink" href="#chapter-1-hello-pipenv" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://pipenv.kennethreitz.org/en/latest/">Pipenv</a> is a package manager and virtual environment manager combined into one handy command-line tool. In this chapter, we will explain why it is crucial to establishing a sturdy development space before you begin to code.</p>
+<p>Before we can start programming, we need to do a little housekeeping on our computer. It’s not required, but every organized Python project should have a system for managing two highly technical, but very important, issues. They are:</p>
+<ol class="arabic simple">
+<li><p>How to install and manage your programming tools</p></li>
+<li><p>How to your keep your code from conflicting with other projects</p></li>
+</ol>
+<p>We will solve these problems with <a class="reference external" href="https://pipenv.kennethreitz.org/en/latest/">pipenv</a>. It handles both of the issues outlined above, a fact hinted about it but it’s two-part name, a programming portmanteau.</p>
 <div class="section" id="the-pip-package-manager">
 <h2>The “pip” package manager<a class="headerlink" href="#the-pip-package-manager" title="Permalink to this headline">¶</a></h2>
-<p>Python is a versatile language. You can use it analyze and visualize data, as you will learn in this course. You can also use Python to automate tasks, scrape websites, launch web applications and so much more.</p>
-<p>Whatever the aim of your project, likely you will rely on one or more Python packages that extend the language’s standard library. This allows you to import modules written by other trusty Python developers into your own code so that you can focus on the work that matters to you. The Jupyter notebook, pandas analysis kit and Altair chart library covered in this class are all examples.</p>
-<p>These third-party packages are available — for free — via the Python Package Index. To install these packages on your own computer, you need a tool called a package manager.</p>
-<p>Python’s default package manager is <a class="reference external" href="https://pip.pypa.io/en/latest/">pip</a>. With pip, you can also document the exact version of each of package your project requires. Typically these dependencies are specified in a <a class="reference external" href="https://pip.pypa.io/en/stable/user_guide/#requirements-files">requirements.txt</a> file. This document makes it easier to sync your project’s requirements across multiple machines if, for instance, you are collaborating with other developers.</p>
+<p>Whatever the aim of your project,  you likely will rely on one or more Python packages that extend the language’s standard library. This allows you to import modules written by other trusty Python developers into your own code so that you can focus on the work that matters to you. The Jupyter notebook, pandas analysis kit and Altair chart library covered in this class are all examples.</p>
+<p>These third-party packages are available — for free — via the <a class="reference external" href="https://pypi.org/">Python Package Index</a>, where they are published largely by volunteers. To download and install them on your computer, you need a tool called a package manager.</p>
+<p>Python’s default package manager is <a class="reference external" href="https://pip.pypa.io/en/latest/">pip</a>. It allows you to retrieve and unpack PyPi packages from your terminal. It goes something like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install jupyterlab
+</pre></div>
+</div>
+<p>With pip, you can also document the exact version of each of package your project requires and store in a list that records everything necessary to run your code.</p>
+<p>Typically these dependencies are specified in a <a class="reference external" href="https://pip.pypa.io/en/stable/user_guide/#requirements-files">requirements.txt</a> file. This document makes it easier to sync your project’s requirements across multiple machines if, for instance, you are collaborating with other developers.</p>
+<p>Lucky for us, all the functionality of pip is included in pipenv, as well as much more.</p>
 </div>
 <div class="section" id="the-env-environment-manager">
 <h2>The “env” environment manager<a class="headerlink" href="#the-env-environment-manager" title="Permalink to this headline">¶</a></h2>
-<p>By default, Python’s third-party packages are all installed in a shared “global” environment. By default, every project on your computer draws from the same set of installed programs. While is a simple and straightforward way to configure a computer, it quickly falls apart when you start to get serious about coding.</p>
-<p>What if you start a new, separate Python project that requires a <em>different</em> version of a previously installed package? Open-source projects are changing every day and such conflicts are common, especially when you factor in the sub-dependencies of your project’s direct dependencies, as well as the sub-dependencies of those sub-dependencies.</p>
-<p>For instance, say you develop an web application today with <a class="reference external" href="https://palletsprojects.com/p/flask/">Flask</a> version 1.1. A year later, you want to start a new project and use a newer version of Flask. However, your old app is still live and requires occasional patches. Flask has changed enough in the past year that code cannot be compatible with both versions.</p>
-<p>Programmers solve this problem by creating a <a href="#id1"><span class="problematic" id="id2">`virtual environment`_</span></a> for each project in order to isolate its packages from other projects on our computer as well as the global Python environment.</p>
+<p>By default, Python’s third-party packages are all installed in a shared “global” folder somewhere in the depths of your computer. By default, every Python project on your computer draws from this same set of installed programs.</p>
+<p>While is a simple and straightforward way to configure a computer, it quickly falls apart when you start to get serious about coding.</p>
+<p>Open-source projects are changing every day and such conflicts are common, especially when you factor in the sub-dependencies of your project’s direct dependencies, as well as the sub-dependencies of those sub-dependencies.</p>
+<p>What if you start a new, separate Python project that requires a <em>different</em> version of a previously installed package?</p>
+<p>For instance, say you develop an web application today with <a class="reference external" href="https://palletsprojects.com/p/flask/">Flask</a> version 1.1. What if, a year from now, you want to start a new project and use a newer version of Flask? Your old app is still live and requires occasional patches, but Flask has changed enough in the past year that code cannot be compatible with the new version.</p>
+<p>Programmers solve this problem by creating a <a href="#id1"><span class="problematic" id="id2">`virtual environment`_</span></a> for each project that isolates them into discrete, independent containers that do not rely on code in the global environment.</p>
 <p>Strictly speaking, working within a virtual environment is not required. At first, it might even feel like a hassle. But in the long run, you will be glad you did it. And you don’t have to take my word for it, you can read discussions on <a class="reference external" href="https://conda.io/docs/index.html">StackOverflow</a> and <a class="reference external" href="https://www.reddit.com/r/Python/comments/2qq1d9/should_i_always_use_virtualenv/">Reddit</a>.</p>
-</div>
-<div class="section" id="the-convenient-combo">
-<h2>The convenient combo<a class="headerlink" href="#the-convenient-combo" title="Permalink to this headline">¶</a></h2>
-<p>By this point, you can see the appeal of a single tool that can:</p>
-<p># Install and document your project’s dependencies
-# Isolate these dependencies from your other Python projects</p>
-<p>With Pipenv, that’s exactly what you get. This added convenience has earned pipenv broad support in the Python community. Like it’s predecessor pip, pipenv now is maintained by the <a class="reference external" href="https://www.pypa.io/en/latest/">Python Packaging Authority</a>.</p>
-<p>Enough exposition. Let’s start setting up your workspace.</p>
+<p>Good think pipenv can do this too.</p>
 </div>
 <div class="section" id="installing-pipenv">
 <h2>Installing pipenv<a class="headerlink" href="#installing-pipenv" title="Permalink to this headline">¶</a></h2>
 <p>Pipenv and its prerequisites are installed via your computer’s <a class="reference external" href="https://en.wikipedia.org/wiki/Command-line_interface">command-line interface</a>. You can verify its there by typing the following into your terminal:</p>
-<p>If you have it installed, you should see a print out with the version on your machine. If you get an error, you will need to install pipenv. Instructions for that can be found <a class="reference external" href="https://pipenv.readthedocs.io/en/latest/install/">here</a></p>
-<p><strong>If you are on a Mac</strong>, Pipenv’s docs <a class="reference external" href="https://pipenv.kennethreitz.org/en/latest/install/#homebrew-installation-of-pipenv">recommend</a> installing via <a class="reference external" href="https://brew.sh/">Homebrew</a>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pipenv --version
+</pre></div>
+</div>
+<p>If you have it installed, you should see the terminal respond with the version on your machine.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pipenv, version <span class="m">2018</span>.11.26
+</pre></div>
+</div>
+<p>If you get an error, you will need to install it.</p>
+<p>If you are on a Mac, pipenv’s maintainers <a class="reference external" href="https://pipenv.kennethreitz.org/en/latest/install/#homebrew-installation-of-pipenv">recommend</a> installing via <a class="reference external" href="https://brew.sh/">Homebrew</a>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew install pipenv
 </pre></div>
 </div>
-<p><strong>If you are on Windows 10</strong>, consider installing both <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux</a> and selecting a Linux distribution from the Windows Store. We recommend choosing Ubuntu. Once you’ve set up your Linux-based terminal, you can install <a class="reference external" href="https://docs.brew.sh/Homebrew-on-Linux">Linuxbrew</a> and use it to install Pipenv.</p>
-<p><strong>If neither option makes sense for you</strong>, Pipenv’s <a class="reference external" href="https://pipenv.kennethreitz.org/en/latest/install/#pragmatic-installation-of-pipenv">docs</a> recommend a <a class="reference external" href="https://pip.pypa.io/en/stable/user_guide/#user-installs">user install</a> via pip:</p>
+<p>If you are on Windows 10 and using the <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Windows Subsystem for Linux</a>, you can install <a class="reference external" href="https://docs.brew.sh/Homebrew-on-Linux">Linuxbrew</a> and use it to install Pipenv.</p>
+<p>If neither option makes sense for you, Pipenv’s <a class="reference external" href="https://pipenv.kennethreitz.org/en/latest/install/#pragmatic-installation-of-pipenv">docs</a> recommend a <a class="reference external" href="https://pip.pypa.io/en/stable/user_guide/#user-installs">user install</a> via pip:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install --user pipenv
 </pre></div>
 </div>
-<p>Whatever installation route you choose, you can confirm your success by calling up Pipenv’s help text:</p>
+<p>Whatever installation route you choose, you can confirm your success by testing for its version again:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pipenv --version
 </pre></div>
 </div>
@@ -200,7 +211,7 @@
 </div>
 <div class="section" id="create-a-code-directory-to-store-all-your-work">
 <h2>Create a code directory to store all your work<a class="headerlink" href="#create-a-code-directory-to-store-all-your-work" title="Permalink to this headline">¶</a></h2>
-<p>Now let’s create a common folder where all you of your projects will be stored starting with this one.</p>
+<p>Now let’s create a common folder where all you of your projects will be stored starting with this one. This is also where our virtualenv will be configured.</p>
 <p>Open your command-line interface, which will start you off in your home directory. Enter the following command and press enter to see all of the folders there now.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
 </pre></div>
@@ -209,11 +220,11 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir Code
 </pre></div>
 </div>
-<p>To verify it’s worked, you can open in your file explorer and navigate to your home folder.</p>
+<p>To verify that worked, you can open in your file explorer and navigate to your home folder.</p>
 </div>
 <div class="section" id="create-a-project-directory">
 <h2>Create a project directory<a class="headerlink" href="#create-a-project-directory" title="Permalink to this headline">¶</a></h2>
-<p>Now let’s make a folder for your first python notebook.</p>
+<p>Now let’s make a folder for your work in this class.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir Code/first-python-notebook
 </pre></div>
 </div>
@@ -229,16 +240,16 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pipenv install yolk3k
 </pre></div>
 </div>
-<p>When you invoke Pipenv’s <code class="docutils literal notranslate"><span class="pre">install</span></code> command, it checks for an existing virtual environment connected to your project’s directory. Finding none, it creates one, then installs Jupyter into it.</p>
-<p>As a result, two files are added to your project directory: Pipfile and Pipfile.lock. These are an <a class="reference external" href="https://github.com/pypa/pipfile">alternative</a> to the standard requirements.txt file mentioned earlier.</p>
+<p>When you invoke Pipenv’s <code class="docutils literal notranslate"><span class="pre">install</span></code> command, it checks for an existing virtual environment connected to your project’s directory. Finding none, it creates one, then installs yolk3k into it.</p>
+<p>As a result, two files are added to your project directory: Pipfile and Pipfile.lock. These are pipenv’s <a class="reference external" href="https://github.com/pypa/pipfile">alternative</a> to the requirements.txt file mentioned earlier.</p>
 <p>Open these files in a text editor (such as <a class="reference external" href="https://www.sublimetext.com/">Sublime Text</a>, <a class="reference external" href="https://atom.io/">Atom</a> or <a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a>), and you’ll see how they describe your project’s Python requirements.</p>
-<p>In Pipfile, you’ll see the name and exact version of any package we directed Pipenv to install. So far, we’ve only installed Jupyter, and we didn’t specify an exact version of Jupyter, so you’ll see:</p>
+<p>In the Pipfile, you’ll see the name and exact version of any package we directed Pipenv to install. So far, we’ve only installed yolk3k, and we didn’t specify an exact version of Jupyter, so you’ll see:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>packages<span class="o">]</span>
 <span class="nv">yolk3k</span> <span class="o">=</span> <span class="s2">&quot;*&quot;</span>
 </pre></div>
 </div>
-<p>Pipfile.lock has a much more complicated, nested structure that specifies the exact version of your project’s direct dependencies along with all their sub-dependencies.</p>
-<p>Now that yolk is installed, we can excecute it inside our environment using pipenv’s run command. Let’s use its simple command for listing all of our currently installed tools.</p>
+<p>Pipfile.lock has a more complicated, nested structure that specifies the exact version of your project’s direct dependencies along with all their sub-dependencies.</p>
+<p>Now that yolk is installed, we can execute it inside our environment using pipenv’s run command. Let’s use its simple command for listing all of our currently installed tools.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pipenv run yolk -l
 </pre></div>
 </div>

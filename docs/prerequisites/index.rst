@@ -36,10 +36,10 @@ If not, you'll need to install Python on your system.
 
 If you see a number starting with 2, like say ...
 
-.. code:: bash
+.. code-block:: bash
 
     Python 2.7.12
 
-... then you have an outdated version of Python and will need to upgrade to a version starting with a three. You can probably complete the class without doing so, but the maintainers of Python are gradually phasing out version two and officially recommend you upgrade.  
+... then you have an outdated version of Python and will need to upgrade to a version starting with a three. You can probably complete the class without doing so, but the maintainers of Python are gradually phasing out version two and officially recommend you upgrade.
 
 Instructions for both new installations and upgrades can be found `here <https://docs.microsoft.com/en-us/windows/wsl/install-win10>`_.
