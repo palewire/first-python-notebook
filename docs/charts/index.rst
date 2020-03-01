@@ -6,15 +6,27 @@ Python has a number of charting tools that can work hand-in-hand with ``pandas``
 
 Let's take it for a spin.
 
-Let's pick up where we last left off in :doc:`the previous chapter </github/index>`. First, we'll want to import Altair. We'll usually import it as ``alt`` so we don't have to type out the whole thing every time we make a chart.
+Before we start, we need to make sure ``altair`` is installed. Head back to your terminal and practice that pipenv install process.
+
+.. code-block:: bash
+
+    $ pipenv install altair
+
+After that completes, once again restart your notebook.
+
+.. code-block:: bash
+
+    $ pipenv run jupyter notebook
+
+Now you can head back to your notebook and add ``altair`` to your imports. We'll usually import it as ``alt`` so we don't have to type out the whole thing every time we make a chart.
 
 .. code-block:: python
 
     import altair as alt
 
-Typically you'd import all the libraries you'll need at the top of the notebook, where you imported ``pandas``, but as long as this block appears above the code for your first chart, it'll work.
+Now rerun the entire notebook, as we learned above. You will need to do this when you halt and restart your notebook on the command line. Reminder, you can do this by pulling down the ``Cell`` menu at the top of the notebook and selecting the ``Run all`` option.
 
-If we want to chart out the top supporters of the proposition, we first need to select them from the dataset. Using the grouping and sorting tricks we learned earlier, the top 10 can returned like this:
+Let's pick up where we last left off in :doc:`the previous chapter </github/index>`. If we want to chart out how much the top supporters of the proposition spent, we first need to select them from the dataset. Using the grouping and sorting tricks we learned earlier, the top 10 can returned like this:
 
 .. code-block:: python
 
@@ -22,7 +34,7 @@ If we want to chart out the top supporters of the proposition, we first need to 
         ["contributor_firstname", "contributor_lastname"]
     ).amount.sum().reset_index().sort_values("amount", ascending=False).head(10)
 
-We can then view them with a trick I bet you remember by now.
+We can then view them with a trick you may remember by now.
 
 .. code-block:: python
 
@@ -116,9 +128,9 @@ That's all well and good, but this isn't ready to pop into a news story quite ye
 
 But you don't have to do all that in code. If you wanted to hand this chart off to a graphics department, all you'd have to do is head to the top right corner of your chart.
 
-.. image:: TK
+See those three dots? Click on that, and you'll see lots of options. Downloading the file as an SVG will let anyone with graphics software like Adobe Illustrator take this file and tweak the design.
 
-See those three dots? Click on that, and you'll see lots of options. Downloading the file as an SVG will let anyone with graphics software like Adobe Illustrator take this file and run with it.
+.. image:: /_static/bar_export.gif
 
 Want to recreate this chart in a tool like `Chartbuilder <https://quartz.github.io/Chartbuilder/>`_ or `Datawrapper <https://www.datawrapper.de/>`_?  In that case, you'll want to export this data into a spreadsheet.
 
