@@ -117,16 +117,61 @@ And we can't have a chart without context. Let's throw in a title for good measu
         x="amount",
         y=alt.Y("contributor_fullname", sort="-x")
     ).properties(
-        title="Top Contributors in Support of Proposition 64"
+        title="Top Spenders in Support of Proposition 64"
     )
 
 .. image:: /_static/bar_title.png
 
 Yay, we made a chart!
 
-That's all well and good, but this isn't ready to pop into a news story quite yet. There are lots of additional formatting and design options that you can start digging into in the `Altair docs <https://altair-viz.github.io/index.html>`_ — you can even create Altair themes to specify default color schemes and fonts.
+Now, we have a good idea of who spent the most in support of Prop. 64. What if we wanted to see who spent money on both sides?
 
-But you don't have to do all that in code. If you wanted to hand this chart off to a graphics department, all you'd have to do is head to the top right corner of your chart.
+Add a new cell and a new dataframe, ``top_contributors``, summing up the top contributors in our whole ``merged`` dataframe. We're going to repeat a lot of the pandas functions we've stepped through before, all in one go this time.
+
+.. code-block:: python
+
+    top_contributors = merged.groupby(
+        ["contributor_firstname", "contributor_lastname","committee_position"]
+    ).amount.sum().reset_index().sort_values("amount", ascending=False).head(10)
+
+    top_contributors
+
+And once again, we're going to want a ``contributor_fullname`` column that combines our first and last name columns.
+
+.. code-block:: python
+
+    top_contributors["contributor_fullname"] = top_contributors["contributor_firstname"] + " " + top_contributors["contributor_lastname"]
+
+    top_contributors
+
+Now pop ``top_contributors`` into a chart, just like we did before. Remember that sort function!
+
+.. code-block:: python
+
+    alt.Chart(top_contributors.head(5)).mark_bar().encode(
+        x="amount",
+        y=alt.Y("contributor_fullname",sort="-x"),
+    )
+
+What facet of the data is this chart *not* showing? How might we add additional context?
+
+We have that ``committee_position`` column in our dataframe now. Let's try an ``altair`` option that we haven't used yet: color. Can you guess where we should add that in?
+
+.. code-block:: python
+
+    alt.Chart(top_contributors.head(5)).mark_bar().encode(
+        x="amount",
+        y=alt.Y("contributor_fullname",sort="-x"),
+        color="committee_position"
+    )
+
+.. image:: /_static/bar_color.png
+
+Hey now! That wasn't too hard, was it?
+
+To be fair, none of these charts are ready to pop into a news story quite yet. There *are* lots of additional formatting and design options that you can start digging into in the `Altair docs <https://altair-viz.github.io/index.html>`_ — you can even create Altair themes to specify default color schemes and fonts.
+
+But you may not want to do all that tweaking in code, especially if you're just working on a one-off graphic. If you wanted to hand this chart off to a graphics department, all you'd have to do is head to the top right corner of your chart.
 
 See those three dots? Click on that, and you'll see lots of options. Downloading the file as an SVG will let anyone with graphics software like Adobe Illustrator take this file and tweak the design.
 
