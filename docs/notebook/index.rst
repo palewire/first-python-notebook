@@ -51,7 +51,7 @@ This is where you'll store a local copy of all the code and files you create for
 Install JupyterLab
 *******************
 
-Now we will return pipenv and use it to JupyterLab, the web-based interactive development environment for Jupyter notebooks, code and data.
+Now we will return to Pipenv and use it to install JupyterLab, the web-based interactive development environment for Jupyter notebooks, code and data.
 
 .. code-block:: bash
 
