@@ -146,26 +146,13 @@
             
   <div class="section" id="chapter-12-hello-charts">
 <h1>Chapter 12: Hello charts<a class="headerlink" href="#chapter-12-hello-charts" title="Permalink to this headline">¶</a></h1>
-<p>Python has a number of charting tools that can work hand-in-hand with <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. The most popular is <a class="reference external" href="http://matplotlib.org/">matplotlib</a>. It isn’t the prettiest thing in the world, but it offers straightfoward tools for exploring your data by making quick charts. And, best of all, it can display in your Jupyter Notebook.</p>
-<p>Before we start, we’ll need to make sure <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> is installed. Return to your terminal and try installing it with our buddy pip, as we installed other things before.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pipenv install matplotlib
+<p>Python has a number of charting tools that can work hand-in-hand with <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. <a class="reference external" href="https://altair-viz.github.io/">Altair</a> is a relative newbie in that space, but it’s got good documentation and can display charts right in your Jupyter Notebook — and export to lots of other formats.</p>
+<p>Let’s take it for a spin.</p>
+<p>Let’s pick up where we last left off in <span class="xref std std-doc">the previous chapter</span>. First, we’ll want to import Altair. We’ll usually import it as <code class="docutils literal notranslate"><span class="pre">alt</span></code> so we don’t have to type out the whole thing every time we make a chart.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
 </pre></div>
 </div>
-<p>After that completes, once again restart your notebook.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pipenv run jupyter notebook
-</pre></div>
-</div>
-<p>Now you can open your notebook and add a new cell below the imports that lets the system know you plan to make some charts and that it’s okay to surface them in the notebook.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
-</pre></div>
-</div>
-<img alt="../_images/matplotlib_inline.png" src="../_images/matplotlib_inline.png" />
-<p>Let’s return to where we set our proposition filter at the top and restore it our initial interest, Proposition 64.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">prop</span> <span class="o">=</span> <span class="n">props</span><span class="p">[</span><span class="n">props</span><span class="o">.</span><span class="n">prop_name</span> <span class="o">==</span> <span class="s1">&#39;PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>Now rerun the entire notebook, as we learned above. You will need to do this when you halt and restart your notebook on the command line. Reminder, you can do this by pulling down the <code class="docutils literal notranslate"><span class="pre">Cell</span></code> menu at the top of the notebook and selecting the <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">all</span></code> option.</p>
-<p>Then scroll down to the bottom of the notebook and pick up where we last left off in <span class="xref std std-doc">the previous chapter</span>.</p>
+<p>Typically you’d import all the libraries you’ll need at the top of the notebook, where you imported <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, but as long as this block appears above the code for your first chart, it’ll work.</p>
 <p>If we want to chart out the top supporters of the proposition, we first need to select them from the dataset. Using the grouping and sorting tricks we learned earlier, the top 10 can returned like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">top_supporters</span> <span class="o">=</span> <span class="n">support</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
     <span class="p">[</span><span class="s2">&quot;contributor_firstname&quot;</span><span class="p">,</span> <span class="s2">&quot;contributor_lastname&quot;</span><span class="p">]</span>
@@ -177,43 +164,69 @@
 </pre></div>
 </div>
 <img alt="../_images/top_supporters_df.png" src="../_images/top_supporters_df.png" />
-<p>Now that matplotlib is installed, making a simple chart is as simple as stringing the <code class="docutils literal notranslate"><span class="pre">plot</span></code> method onto the end of your <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">top_supporters</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span>
+<p>Now that we have <code class="docutils literal notranslate"><span class="pre">altair</span></code> imported, we can pop that dataframe into a quick chart. Let’s step through the building blocks of a chart.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">top_supporters</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;contributor_lastname&quot;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;amount&quot;</span>
+<span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../_images/bar.png" src="../_images/bar.png" />
-<p>You can rotate the bar chart so that it is horizontal by subituting in the <code class="docutils literal notranslate"><span class="pre">barh</span></code> method.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">top_supporters</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">barh</span><span class="p">()</span>
+<img alt="../_images/bar_vertical.png" src="../_images/bar_vertical.png" />
+<p>Look at that chart!</p>
+<p>Here’s an idea — maybe we want to do horizontal, not vertical bars. How would you rewrite this chart code to reverse those bars?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">top_supporters</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;contributor_lastname&quot;</span>
+<span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../_images/barh.png" src="../_images/barh.png" />
-<p>The chart can be limited to the first five records by slipping in the <code class="docutils literal notranslate"><span class="pre">head</span></code> command.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">top_supporters</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">barh</span><span class="p">()</span>
+<img alt="../_images/bar_horizontal.png" src="../_images/bar_horizontal.png" />
+<p>What if we wanted to focus on the top five records? We can use that <code class="docutils literal notranslate"><span class="pre">head</span></code> command we already know.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">top_supporters</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;contributor_lastname&quot;</span>
+<span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../_images/barh_head.png" src="../_images/barh_head.png" />
-<p>What are those y axis labels? Those are the row number (pandas calls them indexes) of each row. We don’t want that. We want the names. We can swap them in by saving our chart to a variable and then using another matplotlib option, <code class="docutils literal notranslate"><span class="pre">set_yticklabels</span></code> to instruct the system which field to use.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">chart</span> <span class="o">=</span> <span class="n">top_supporters</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">barh</span><span class="p">()</span>
-<span class="n">chart</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">top_supporters</span><span class="o">.</span><span class="n">contributor_lastname</span><span class="p">)</span>
-</pre></div>
-</div>
-<img alt="../_images/barh_lastname.png" src="../_images/barh_lastname.png" />
+<img alt="../_images/bar_head.png" src="../_images/bar_head.png" />
 <p>Okay, but what if I want to combine the first and last name? We have the data we need in two separate columns, which we can put together simply by inventing a new field on our data frame and, just like a variable, setting it equal to a combination of the other fields.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">top_supporters</span><span class="p">[</span><span class="s1">&#39;contributor_fullname&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">top_supporters</span><span class="o">.</span><span class="n">contributor_firstname</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">top_supporters</span><span class="o">.</span><span class="n">contributor_lastname</span>
 </pre></div>
 </div>
-<p>We can see the results right here.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">top_supporters</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<p>Now we can use that column instead of``contributor_lastname`` in our chart.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">top_supporters</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;contributor_fullname&quot;</span>
+<span class="p">)</span>
 </pre></div>
 </div>
-<p>Now using that in the chart is as simple as substituting in the <code class="docutils literal notranslate"><span class="pre">set_yticklabels</span></code> method we used above.</p>
-<img alt="../_images/fullname.png" src="../_images/fullname.png" />
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">chart</span> <span class="o">=</span> <span class="n">top_supporters</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">barh</span><span class="p">()</span>
-<span class="n">chart</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">top_supporters</span><span class="o">.</span><span class="n">contributor_fullname</span><span class="p">)</span>
+<img alt="../_images/bar_fullname.png" src="../_images/bar_fullname.png" />
+<p>Notice how the sort order changed when we changed the contributor column? This chart is sorted alphabetically by y-axis value, and it’s making everything look pretty sloppy and hard to parse. Let’s fix that.</p>
+<p>We want to sort the y-axis values by their corresponding x values. We’ve been using the shorthand syntax to pass in our axis columns so far, but to add more customization to our chart we’ll have to switch to the longform way of defining the y axis.</p>
+<p>That will look something like the way we define the chart in the first place: <code class="docutils literal notranslate"><span class="pre">alt.Y(column_name,</span> <span class="pre">arg=&quot;value&quot;)</span></code>. There are lots of options that you might want to pass in, like ones that will sum your data on the fly or define the number range you want your axis to display. In this case, we’ll just be using the <code class="docutils literal notranslate"><span class="pre">sort</span></code> command.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">top_supporters</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;contributor_fullname&quot;</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="s2">&quot;-x&quot;</span><span class="p">)</span>
+<span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../_images/barh_fullname.png" src="../_images/barh_fullname.png" />
-<p>That’s all well and good, but this chart is still pretty ugly. If you wanted to hand this data off to your graphics department, or try your hand at a simple chart yourself using something like <a class="reference external" href="https://quartz.github.io/Chartbuilder/">Chartbuilder</a>, you’d need to export this data into a spreadsheet.</p>
+<img alt="../_images/bar_sort.png" src="../_images/bar_sort.png" />
+<p>And we can’t have a chart without context. Let’s throw in a title for good measure.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">top_supporters</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;contributor_fullname&quot;</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="s2">&quot;-x&quot;</span><span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Top Contributors in Support of Proposition 64&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<img alt="../_images/bar_title.png" src="../_images/bar_title.png" />
+<p>Yay, we made a chart!</p>
+<p>That’s all well and good, but this isn’t ready to pop into a news story quite yet. There are lots of additional formatting and design options that you can start digging into in the <a class="reference external" href="https://altair-viz.github.io/index.html">Altair docs</a> — you can even create Altair themes to specify default color schemes and fonts.</p>
+<p>But you don’t have to do all that in code. If you wanted to hand this chart off to a graphics department, all you’d have to do is head to the top right corner of your chart.</p>
+<img alt="charts/TK" src="charts/TK" />
+<p>See those three dots? Click on that, and you’ll see lots of options. Downloading the file as an SVG will let anyone with graphics software like Adobe Illustrator take this file and run with it.</p>
+<p>Want to recreate this chart in a tool like <a class="reference external" href="https://quartz.github.io/Chartbuilder/">Chartbuilder</a> or <a class="reference external" href="https://www.datawrapper.de/">Datawrapper</a>?  In that case, you’ll want to export this data into a spreadsheet.</p>
 <p>Guess what? It’s this easy.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">top_supporters</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;top_supporters.csv&quot;</span><span class="p">)</span>
 </pre></div>
