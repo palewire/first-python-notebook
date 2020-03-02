@@ -38,5 +38,6 @@ This course is free. If you've tried Python once or twice, have good attitude an
     totals/index
     sort_values/index
     groupby/index
+    remix/index
     charts/index
     about/index

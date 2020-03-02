@@ -93,6 +93,10 @@ The solution to this problem is easy. We need to replace those NaN first names w
 
 Now we've finally got a ranking we can work with. Congratulations, you've finished our analysis.
 
+************
+Extra credit
+************
+
 If you're interested in continuing the interview, see if you can answer a few more questions on your own. Here are some ideas:
 
 - What are the top employers of donors for and against the measure?
