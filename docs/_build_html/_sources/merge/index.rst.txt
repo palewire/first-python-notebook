@@ -10,13 +10,13 @@ But look carefully at the columns listed in the contribution file's info output.
 
 .. code-block:: python
 
-    contribs.info()
+    contrib_list.info()
 
 Now compare that to the committees file.
 
 .. code-block:: python
 
-    props.info()
+    committee_list.info()
 
 You will notice that this file contains a field called ``calaccess_committee_id`` that is identical to the one found in the committee CSV.
 
@@ -42,7 +42,7 @@ Merging two DataFrames is as simple as passing both to pandas built-in merge met
 
 .. code-block:: python
 
-    merged = pd.merge(prop, contribs, on="calaccess_committee_id")
+    merged = pd.merge(my_committees, contrib_list, on="calaccess_committee_id")
 
 That new ``DataFrame`` variable can be inspected like any other.
 

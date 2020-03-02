@@ -10,7 +10,7 @@ Using tricks we learned as far back as :doc:`chapter three </pandas/index>`, we 
 Summing a column
 ****************
 
-To answer that let's start by getting our hands on amount, the column from the contributions DataFrame with the numbers in it. We can do that just as we did with other columns above.
+To answer that let's start by getting our hands on ``amount``, the column from the contributions DataFrame with the numbers in it. We can do that just as we did with other columns earlier.
 
 .. code-block:: python
 

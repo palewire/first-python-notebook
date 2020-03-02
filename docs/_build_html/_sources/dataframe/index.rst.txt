@@ -11,7 +11,7 @@ The coalition has created simplified data files containing the disclosure forms 
 They are:
 
 ====================  =============================================================================
-Name                  Description                                                                
+Name                  Description
 ====================  =============================================================================
 `committees.csv`_     Committees active in the election linked to propositions supported or opposed
 `contributions.csv`_  Donors reported by each of the committees
@@ -53,7 +53,7 @@ Go back to your initial cell and change it to this. Then rerun it.
 
 .. code-block:: python
 
-    props = pd.read_csv("https://first-python-notebook.readthedocs.io/_static/committees.csv")
+    committee_list = pd.read_csv("https://first-python-notebook.readthedocs.io/_static/committees.csv")
 
 After you run it, you shouldn't see anything. That's a good thing. It means our DataFrame has been saved under the name props, which we can now begin interacting with in the cells that follow.
 
@@ -69,7 +69,7 @@ First, to preview the first few rows of the dataset, try the `head`_ method. Hit
 
 .. code-block:: python
 
-    props.head()
+    committee_list.head()
 
 *********************
 Using the info method
@@ -79,7 +79,7 @@ To get a look at all of the columns and what type of data they store, add anothe
 
 .. code-block:: python
 
-    props.info()
+    committee_list.info()
 
 Look carefully at those results and you see we have more than 100 links between committees and propositions.
 
@@ -93,7 +93,7 @@ We'll start by using the read_csv method to import the second CSV file linked ab
 
 .. code-block:: python
 
-    contribs = pd.read_csv("https://first-python-notebook.readthedocs.io/_static/contributions.csv")
+    contrib_list = pd.read_csv("https://first-python-notebook.readthedocs.io/_static/contributions.csv")
 
 Just as we did earlier, you can inspect the contents of this new file with the head method.
 

@@ -2,7 +2,7 @@
 Chapter 7: Hello filters
 ========================
 
-Until last November, the use and sale of marijuana for recreational purposes was illegal in California. That changed when voters approved Proposition 64, which asked if the practice ought to be legalized.
+Until November 2016, the use and sale of marijuana for recreational purposes was illegal in California. That changed when voters approved Proposition 64, which asked if the practice ought to be legalized.
 
 A yes vote supported legalization. A no vote opposed it. `In the final tally`_, 57% of voters said yes.
 
@@ -22,7 +22,7 @@ You write the expression by combining a column on your DataFrame with an `"opera
 
     If you are familiar with writing `SQL`_ to manipulate databases, pandas' filtering system is somewhat similar to a ``WHERE`` query. The `official pandas documentation`_ offers direct translations between the two.
 
-In our case, the column we want to filter against is prop.prop_name. We only want to keep those records where the value there matches the full name of Proposition 64.
+In our case, the column we want to filter against is ``prop_name``. We only want to keep those records where the value there matches the full name of Proposition 64.
 
 Where do we get that? Our friend :doc:`value counts </value_counts/index>`.
 
@@ -30,19 +30,25 @@ Running the command we learned before to list and count all of the proposition n
 
 .. code-block:: python
 
-    props.prop_name.value_counts()
+    committee_list.prop_name.value_counts()
 
-From that result we can copy the full name of the proposition and place it between quotation marks to form the filter expression expected by pandas.
+From that result we can copy the full name of the proposition and place it between quotation marks in a variable in a new cell. This will allow us to reuse it later.
 
 .. code-block:: python
 
-    props.prop_name == 'PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.'
+    my_prop = 'PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.'
+
+Now, in the next cell we will form the filter expression expected by pandas.
+
+.. code-block:: python
+
+    committee_list.prop_name == my_prop
 
 That expression is then placed between two flat brackets following the variable we want to filter. Place the following code in the next open cell in your notebook.
 
 .. code-block:: python
 
-    props[props.prop_name == 'PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.']
+    committee_list[committee_list.prop_name == my_prop]
 
 Run it and it outputs the filtered dataset, just those committees active on Proposition 64.
 
@@ -52,7 +58,7 @@ Since it includes only the committees for one proposition lets call it the singu
 
 .. code-block:: python
 
-    prop = props[props.prop_name == 'PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.']
+    my_committees = committee_list[committee_list.prop_name == my_prop]
 
 To check our work find out how many committees are left after the filter, let's run the DataFrame inspection commands we learned earlier.
 
@@ -60,13 +66,13 @@ First head.
 
 .. code-block:: python
 
-    prop.head()
+    my_committees.head()
 
 Then info.
 
 .. code-block:: python
 
-    prop.info()
+    my_committees.info()
 
 
 .. _In the final tally: http://elections.cdn.sos.ca.gov/sov/2016-general/sov/65-ballot-measures-formatted.pdf

@@ -197,7 +197,7 @@
 <h2>Creating a variable<a class="headerlink" href="#creating-a-variable" title="Permalink to this headline">¶</a></h2>
 <p>In order to do that, we need to store our DataFrame so it can be reused in subsequent cells. We can do this by saving in a <a class="reference external" href="https://en.wikipedia.org/wiki/Variable_(computer_science)">“variable”</a>, which is a fancy computer programming word for a named shortcut where we save our work as we go.</p>
 <p>Go back to your initial cell and change it to this. Then rerun it.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">props</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://first-python-notebook.readthedocs.io/_static/committees.csv&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">committee_list</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://first-python-notebook.readthedocs.io/_static/committees.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>After you run it, you shouldn’t see anything. That’s a good thing. It means our DataFrame has been saved under the name props, which we can now begin interacting with in the cells that follow.</p>
@@ -207,14 +207,14 @@
 <div class="section" id="using-the-head-method">
 <h2>Using the head method<a class="headerlink" href="#using-the-head-method" title="Permalink to this headline">¶</a></h2>
 <p>First, to preview the first few rows of the dataset, try the <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.head.html">head</a> method. Hit the <code class="docutils literal notranslate"><span class="pre">+</span></code> button in the toolbar to add a new cell below the first one. Type this in it and hit the run button again.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">props</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">committee_list</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="using-the-info-method">
 <h2>Using the info method<a class="headerlink" href="#using-the-info-method" title="Permalink to this headline">¶</a></h2>
 <p>To get a look at all of the columns and what type of data they store, add another cell and try <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.info.html">info</a>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">props</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">committee_list</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Look carefully at those results and you see we have more than 100 links between committees and propositions.</p>
@@ -223,7 +223,7 @@
 <h2>Creating another DataFrame<a class="headerlink" href="#creating-another-dataframe" title="Permalink to this headline">¶</a></h2>
 <p>With that we’re ready to move on to a related, similar task: Importing all of the individual contributions reported to last year’s 17 ballot measures.</p>
 <p>We’ll start by using the read_csv method to import the second CSV file linked above. Save it as a new variable just as we did before. Let’s call this one contribs.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">contribs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://first-python-notebook.readthedocs.io/_static/contributions.csv&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">contrib_list</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://first-python-notebook.readthedocs.io/_static/contributions.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Just as we did earlier, you can inspect the contents of this new file with the head method.</p>

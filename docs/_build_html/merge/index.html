@@ -152,11 +152,11 @@
 <p>Our next job is to filter down the contributions list, which includes all disclosed contributions to all proposition campaigns, to just those linked to Proposition 64.</p>
 <p>We <em>could</em> try to do this with a filter, as we did <a class="reference internal" href="../filter/index.html"><span class="doc">before</span></a> with the committees.</p>
 <p>But look carefully at the columns listed in the contribution file’s info output.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">contribs</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">contrib_list</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Now compare that to the committees file.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">props</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">committee_list</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>You will notice that this file contains a field called <code class="docutils literal notranslate"><span class="pre">calaccess_committee_id</span></code> that is identical to the one found in the committee CSV.</p>
@@ -172,7 +172,7 @@
 <p>That means that if we merge the full contributions file to our filtered list of Proposition 64 committees, only the contributions to the Proposition 64 committees will remain. The result will be equivalent to a filter.</p>
 <p>That’s exactly what we want. So let’s try it.</p>
 <p>Merging two DataFrames is as simple as passing both to pandas built-in merge method and specifying which field we’d like to use to connect them together. We will save the result into another new variable.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">contribs</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;calaccess_committee_id&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">my_committees</span><span class="p">,</span> <span class="n">contrib_list</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;calaccess_committee_id&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>That new <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> variable can be inspected like any other.</p>

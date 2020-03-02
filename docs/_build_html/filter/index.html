@@ -149,7 +149,7 @@
             
   <div class="section" id="chapter-7-hello-filters">
 <h1>Chapter 7: Hello filters<a class="headerlink" href="#chapter-7-hello-filters" title="Permalink to this headline">¶</a></h1>
-<p>Until last November, the use and sale of marijuana for recreational purposes was illegal in California. That changed when voters approved Proposition 64, which asked if the practice ought to be legalized.</p>
+<p>Until November 2016, the use and sale of marijuana for recreational purposes was illegal in California. That changed when voters approved Proposition 64, which asked if the practice ought to be legalized.</p>
 <p>A yes vote supported legalization. A no vote opposed it. <a class="reference external" href="http://elections.cdn.sos.ca.gov/sov/2016-general/sov/65-ballot-measures-formatted.pdf">In the final tally</a>, 57% of voters said yes.</p>
 <p>Our next mission is to use the DataFrames containing campaign committees and contributors to figure out the biggest donors both for and against the measure.</p>
 <p>To do that, the first thing we need to do is isolate the fundraising committees active on Proposition 64, which are now buried among of the list of more than 100 groups active last November.</p>
@@ -161,33 +161,37 @@
 <p class="admonition-title">Note</p>
 <p>If you are familiar with writing <a class="reference external" href="https://en.wikipedia.org/wiki/SQL">SQL</a> to manipulate databases, pandas’ filtering system is somewhat similar to a <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> query. The <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/getting_started/comparison/comparison_with_sql.html#where">official pandas documentation</a> offers direct translations between the two.</p>
 </div>
-<p>In our case, the column we want to filter against is prop.prop_name. We only want to keep those records where the value there matches the full name of Proposition 64.</p>
+<p>In our case, the column we want to filter against is <code class="docutils literal notranslate"><span class="pre">prop_name</span></code>. We only want to keep those records where the value there matches the full name of Proposition 64.</p>
 <p>Where do we get that? Our friend <a class="reference internal" href="../value_counts/index.html"><span class="doc">value counts</span></a>.</p>
 <p>Running the command we learned before to list and count all of the proposition names will spit out the full name of all 17 measures.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">props</span><span class="o">.</span><span class="n">prop_name</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">committee_list</span><span class="o">.</span><span class="n">prop_name</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>From that result we can copy the full name of the proposition and place it between quotation marks to form the filter expression expected by pandas.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">props</span><span class="o">.</span><span class="n">prop_name</span> <span class="o">==</span> <span class="s1">&#39;PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.&#39;</span>
+<p>From that result we can copy the full name of the proposition and place it between quotation marks in a variable in a new cell. This will allow us to reuse it later.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_prop</span> <span class="o">=</span> <span class="s1">&#39;PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.&#39;</span>
+</pre></div>
+</div>
+<p>Now, in the next cell we will form the filter expression expected by pandas.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">committee_list</span><span class="o">.</span><span class="n">prop_name</span> <span class="o">==</span> <span class="n">my_prop</span>
 </pre></div>
 </div>
 <p>That expression is then placed between two flat brackets following the variable we want to filter. Place the following code in the next open cell in your notebook.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">props</span><span class="p">[</span><span class="n">props</span><span class="o">.</span><span class="n">prop_name</span> <span class="o">==</span> <span class="s1">&#39;PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.&#39;</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">committee_list</span><span class="p">[</span><span class="n">committee_list</span><span class="o">.</span><span class="n">prop_name</span> <span class="o">==</span> <span class="n">my_prop</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Run it and it outputs the filtered dataset, just those committees active on Proposition 64.</p>
 <p>Now we should save the results of that filter into new variable separate from the full list we imported from the CSV file.</p>
 <p>Since it includes only the committees for one proposition lets call it the singular prop.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">prop</span> <span class="o">=</span> <span class="n">props</span><span class="p">[</span><span class="n">props</span><span class="o">.</span><span class="n">prop_name</span> <span class="o">==</span> <span class="s1">&#39;PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.&#39;</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_committees</span> <span class="o">=</span> <span class="n">committee_list</span><span class="p">[</span><span class="n">committee_list</span><span class="o">.</span><span class="n">prop_name</span> <span class="o">==</span> <span class="n">my_prop</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>To check our work find out how many committees are left after the filter, let’s run the DataFrame inspection commands we learned earlier.</p>
 <p>First head.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">prop</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_committees</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Then info.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">prop</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_committees</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>

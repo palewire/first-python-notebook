@@ -151,16 +151,16 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Note that returns the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> resorted in ascending order from lowest to highest. That is pandas default way of sorting.</p>
+<p>Note that returns the DataFrame resorted in ascending order from lowest to highest. That is pandas default way of sorting.</p>
 <p>To answer our question you’ll need to reverse that, so that values are sorted in descending order from biggest to smallest. It’s a little tricky at first, but here’s how to do it with sort_values.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>You can limit the result to the top five by chaining the <code class="docutils literal notranslate"><span class="pre">head</span></code> method at the end.</p>
+<p>You can limit the result to the top five by chaining the head method at the end.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>We can now use the new variable to rank the five biggest supporting contributions by using <code class="docutils literal notranslate"><span class="pre">sort_values</span></code> again.</p>
+<p>We can now use the new variable to rank the five biggest supporting contributions by using sort_values again.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">support</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>

@@ -10,7 +10,7 @@ What were the ten biggest contributions? We can find the answer by using the `so
 
     merged.sort_values("amount")
 
-Note that returns the ``DataFrame`` resorted in ascending order from lowest to highest. That is pandas default way of sorting.
+Note that returns the DataFrame resorted in ascending order from lowest to highest. That is pandas default way of sorting.
 
 To answer our question you'll need to reverse that, so that values are sorted in descending order from biggest to smallest. It's a little tricky at first, but here's how to do it with sort_values.
 
@@ -18,13 +18,13 @@ To answer our question you'll need to reverse that, so that values are sorted in
 
     merged.sort_values("amount", ascending=False)
 
-You can limit the result to the top five by chaining the ``head`` method at the end.
+You can limit the result to the top five by chaining the head method at the end.
 
 .. code-block:: python
 
     merged.sort_values("amount", ascending=False).head()
 
-We can now use the new variable to rank the five biggest supporting contributions by using ``sort_values`` again.
+We can now use the new variable to rank the five biggest supporting contributions by using sort_values again.
 
 .. code-block:: python
 
