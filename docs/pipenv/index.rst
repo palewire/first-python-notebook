@@ -7,13 +7,13 @@ Before we can start programming, we need to do a little housekeeping on our comp
 1. How to install and manage your programming tools
 2. How to your keep your code from conflicting with other projects
 
-We will solve these problems with `pipenv`_. It handles both of the issues outlined above, a fact hinted about it but it's two-part name, a programming portmanteau.
+We will solve these problems with `Pipenv`_. It handles both of the issues outlined above, hence the tool's two-part name, which is a programming portmanteau.
 
 *************************
 The “pip” package manager
 *************************
 
-Whatever the aim of your project,  you likely will rely on one or more Python packages that extend the language’s standard library. This allows you to import modules written by other trusty Python developers into your own code so that you can focus on the work that matters to you. The Jupyter notebook, pandas analysis kit and Altair chart library covered in this class are all examples.
+Whatever the aim of your project,  you likely will rely on one or more Python packages that extend the language’s standard library. This allows you to import modules written by other trusty Python developers into your own code so that you can focus on the work that matters to you. The JupyterLab development environment, pandas analysis kit and Altair chart library covered in this class are all examples.
 
 These third-party packages are available — for free — via the `Python Package Index <https://pypi.org/>`_, where they are published largely by volunteers. To download and install them on your computer, you need a tool called a package manager.
 
@@ -27,7 +27,7 @@ With pip, you can also document the exact version of each of package your projec
 
 Typically these dependencies are specified in a `requirements.txt`_ file. This document makes it easier to sync your project’s requirements across multiple machines if, for instance, you are collaborating with other developers.
 
-Lucky for us, all the functionality of pip is included in pipenv, as well as much more.
+Lucky for us, all the functionality of pip is included in Pipenv, as well as much more.
 
 *****************************
 The “env” environment manager
@@ -35,22 +35,20 @@ The “env” environment manager
 
 By default, Python's third-party packages are all installed in a shared "global" folder somewhere in the depths of your computer. By default, every Python project on your computer draws from this same set of installed programs.
 
-While is a simple and straightforward way to configure a computer, it quickly falls apart when you start to get serious about coding.
+This approach is fine for your first experiments with Python, but it quickly falls apart when you start to get serious about coding.
+
+For instance, say you develop an web application today with `Flask`_ version 1.1. What if, a year from now, you want to start a new project and use a newer version of Flask? Your old app is still live and requires occasional patches, but you don't have time to re-write all of your old to make it compatible with the latest version of Flask.
 
 Open-source projects are changing every day and such conflicts are common, especially when you factor in the sub-dependencies of your project’s direct dependencies, as well as the sub-dependencies of those sub-dependencies.
-
-What if you start a new, separate Python project that requires a *different* version of a previously installed package?
-
-For instance, say you develop an web application today with `Flask`_ version 1.1. What if, a year from now, you want to start a new project and use a newer version of Flask? Your old app is still live and requires occasional patches, but Flask has changed enough in the past year that code cannot be compatible with the new version.
 
 Programmers solve this problem by creating a `virtual environment`_ for each project that isolates them into discrete, independent containers that do not rely on code in the global environment.
 
 Strictly speaking, working within a virtual environment is not required. At first, it might even feel like a hassle. But in the long run, you will be glad you did it. And you don’t have to take my word for it, you can read discussions on `StackOverflow`_ and `Reddit`_.
 
-Good think pipenv can do this too.
+Good thing Pipenv can do this too.
 
 *****************
-Installing pipenv
+Installing Pipenv
 *****************
 
 Pipenv and its prerequisites are installed via your computer's `command-line interface`_. You can verify its there by typing the following into your terminal:
@@ -67,7 +65,7 @@ If you have it installed, you should see the terminal respond with the version o
 
 If you get an error, you will need to install it.
 
-If you are on a Mac, pipenv’s maintainers `recommend`_ installing via `Homebrew`_:
+If you are on a Mac, Pipenv’s maintainers `recommend`_ installing via `Homebrew`_:
 
 .. code-block:: bash
 
@@ -134,9 +132,9 @@ Next use your terminal to navigate into the new directory with the `cd`_ command
 Install your first package
 ****************************
 
-Now let's install a simple Python package to see pipenv in action. We'll choose `yolk3k <https://pypi.org/project/yolk3k/>`_, a simple command-line tool that can list all your installed python packages.
+Now let's install a simple Python package to see Pipenv in action. We'll choose `yolk3k <https://pypi.org/project/yolk3k/>`_, a simple command-line tool that can list all your installed python packages.
 
-We can add it to our project's private virtual environment by typing its name after pipenv's install command.
+We can add it to our project's private virtual environment by typing its name after Pipenv's install command.
 
 .. code-block:: bash
 
@@ -145,11 +143,11 @@ We can add it to our project's private virtual environment by typing its name af
 
 When you invoke Pipenv's ``install`` command, it checks for an existing virtual environment connected to your project's directory. Finding none, it creates one, then installs yolk3k into it.
 
-As a result, two files are added to your project directory: Pipfile and Pipfile.lock. These are pipenv's `alternative`_ to the requirements.txt file mentioned earlier.
+As a result, two files are added to your project directory: Pipfile and Pipfile.lock. These are Pipenv's `alternative`_ to the requirements.txt file mentioned earlier.
 
 Open these files in a text editor (such as `Sublime Text`_, `Atom`_ or `Visual Studio Code`_), and you'll see how they describe your project's Python requirements.
 
-In the Pipfile, you'll see the name and exact version of any package we directed Pipenv to install. So far, we've only installed yolk3k, and we didn't specify an exact version of Jupyter, so you'll see:
+In the Pipfile, you'll see the name and exact version of any package we directed Pipenv to install. So far, we've only installed yolk3k, and we didn't specify an exact version, so you'll see:
 
 .. code-block:: bash
 
@@ -158,7 +156,7 @@ In the Pipfile, you'll see the name and exact version of any package we directed
 
 Pipfile.lock has a more complicated, nested structure that specifies the exact version of your project's direct dependencies along with all their sub-dependencies.
 
-Now that yolk is installed, we can execute it inside our environment using pipenv's run command. Let's use its simple command for listing all of our currently installed tools.
+Now that yolk is installed, we can execute it inside our environment using Pipenv's run command. Let's use its simple command for listing all of our currently installed tools.
 
 .. code-block:: bash
 
@@ -171,7 +169,7 @@ You should see the computer spit out everything you have installed. You'll notic
 .. _pip: https://pip.pypa.io/en/latest/
 .. _requirements.txt: https://pip.pypa.io/en/stable/user_guide/#requirements-files
 .. _Flask: https://palletsprojects.com/p/flask/
-.. _virtual environments: https://docs.python.org/3/tutorial/venv.html
+.. _virtual environment: https://docs.python.org/3/tutorial/venv.html
 .. _venv: https://docs.python.org/3/library/venv.html
 .. _virtualenv: https://virtualenv.pypa.io/en/latest/
 .. _virtualenvwrapper: https://virtualenvwrapper.readthedocs.io/en/latest/
