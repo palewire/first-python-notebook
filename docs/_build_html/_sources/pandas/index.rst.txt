@@ -11,10 +11,10 @@ Some of those tools are included in a toolbox that comes with the language, know
 One that's important for this class is called `pandas`_. It is a tool invented at a financial investment firm that has become a leading open-source library for accessing and analyzing data in many different fields.
 
 ***************************
-Install pandas with Pipenv
+Install pandas with pipenv
 ***************************
 
-We'll install pandas the same way we installed the Jupyter Notebook earlier: Our new friend :doc:`Pipenv </pipenv/index>`.
+We'll install pandas the same way we installed the JupyterLab earlier: Our new friend :doc:`pipenv </pipenv/index>`.
 
 Let's pick up where we left off at the end of :doc:`chapter 2 </notebook/index>`. Save your notebook by clicking the disk icon or selecting "save and checkpoint" from the file menu. Then switch to your command prompt and hit ``CTRL-C``.
 

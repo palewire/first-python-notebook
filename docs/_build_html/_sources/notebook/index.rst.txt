@@ -47,11 +47,22 @@ This is where you'll store a local copy of all the code and files you create for
         cd Code/first-python-notebook
 
 
+*******************
+Install JupyterLab
+*******************
+
+Now we will return pipenv and use it to JupyterLab, the web-based interactive development environment for Jupyter notebooks, code and data.
+
+.. code-block:: bash
+
+    pipenv install jupyterlab
+
+
 **************************
 Create your first notebook
 **************************
 
-In `chapter 1`_ of this course, we used Pipenv to install Jupyter. Now we can use Pipenv's ``run`` command to start its browser interface from your terminal.
+Now we can use pipenv's run command to start JupyterLab from your terminal.
 
 .. code-block:: bash
 
@@ -59,9 +70,9 @@ In `chapter 1`_ of this course, we used Pipenv to install Jupyter. Now we can us
 
 That will open up a new tab in your default web browser that looks something like this:
 
-.. image:: /_static/notebook.png
+.. image:: /_static/labpreview.png
 
-Click the "New" button in the upper right and create a new Python 3 notebook.
+Click the "Python 3" button in the middle panel and create a new Python 3 notebook.
 
 ****************************
 Write Python in the notebook

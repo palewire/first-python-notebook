@@ -83,6 +83,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../pipenv/index.html">Chapter 1: Hello pipenv</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 2: Hello notebook</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#navigate-into-your-project-directory">Navigate into your project directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-jupyterlab">Install JupyterLab</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#create-your-first-notebook">Create your first notebook</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#write-python-in-the-notebook">Write Python in the notebook</a></li>
 </ul>
@@ -183,15 +184,22 @@
 </div>
 </div>
 </div>
+<div class="section" id="install-jupyterlab">
+<h2>Install JupyterLab<a class="headerlink" href="#install-jupyterlab" title="Permalink to this headline">¶</a></h2>
+<p>Now we will return pipenv and use it to JupyterLab, the web-based interactive development environment for Jupyter notebooks, code and data.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pipenv install jupyterlab
+</pre></div>
+</div>
+</div>
 <div class="section" id="create-your-first-notebook">
 <h2>Create your first notebook<a class="headerlink" href="#create-your-first-notebook" title="Permalink to this headline">¶</a></h2>
-<p>In <a class="reference external" href="../pipenv/">chapter 1</a> of this course, we used Pipenv to install Jupyter. Now we can use Pipenv’s <code class="docutils literal notranslate"><span class="pre">run</span></code> command to start its browser interface from your terminal.</p>
+<p>Now we can use pipenv’s run command to start JupyterLab from your terminal.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pipenv run jupyter lab
 </pre></div>
 </div>
 <p>That will open up a new tab in your default web browser that looks something like this:</p>
-<img alt="../_images/notebook.png" src="../_images/notebook.png" />
-<p>Click the “New” button in the upper right and create a new Python 3 notebook.</p>
+<img alt="../_images/labpreview.png" src="../_images/labpreview.png" />
+<p>Click the “Python 3” button in the middle panel and create a new Python 3 notebook.</p>
 </div>
 <div class="section" id="write-python-in-the-notebook">
 <h2>Write Python in the notebook<a class="headerlink" href="#write-python-in-the-notebook" title="Permalink to this headline">¶</a></h2>
