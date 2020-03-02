@@ -2,11 +2,11 @@
 Chapter 12: Hello charts
 ========================
 
-Python has a number of charting tools that can work hand-in-hand with ``pandas``. `Altair <https://altair-viz.github.io/>`_ is a relative newbie in that space, but it's got good documentation and can display charts right in your Jupyter Notebook — and export to lots of other formats.
+Python has a number of charting tools that can work hand-in-hand with pandas. `Altair <https://altair-viz.github.io/>`_ is a relative newbie, but it's got good documentation and can display charts right in your Jupyter Notebook — plus it can export to lots of other formats.
 
 Let's take it for a spin.
 
-Before we start, we need to make sure ``altair`` is installed. Head back to your terminal and practice that pipenv install process.
+Before we start, we need to make sure it is installed. Head back to your terminal and practice that pipenv install process.
 
 .. code-block:: bash
 
@@ -18,7 +18,7 @@ After that completes, once again restart your notebook.
 
     $ pipenv run jupyter notebook
 
-Now you can head back to your notebook and add ``altair`` to your imports. We'll usually import it as ``alt`` so we don't have to type out the whole thing every time we make a chart.
+Now you can head back to your notebook and add Altair to your imports. We'll usually import it with the alias ``alt`` so we don't have to type out the whole thing every time we make a chart.
 
 .. code-block:: python
 
@@ -30,7 +30,7 @@ Let's pick up where we last left off in :doc:`the previous chapter </github/inde
 
 .. code-block:: python
 
-    top_supporters = support.groupby(
+    top_supporters = support.fillna("").groupby(
         ["contributor_firstname", "contributor_lastname"]
     ).amount.sum().reset_index().sort_values("amount", ascending=False).head(10)
 
@@ -130,19 +130,15 @@ Add a new cell and a new dataframe, ``top_contributors``, summing up the top con
 
 .. code-block:: python
 
-    top_contributors = merged.groupby(
+    top_contributors = merged.fillna("").groupby(
         ["contributor_firstname", "contributor_lastname","committee_position"]
     ).amount.sum().reset_index().sort_values("amount", ascending=False).head(10)
-
-    top_contributors
 
 And once again, we're going to want a ``contributor_fullname`` column that combines our first and last name columns.
 
 .. code-block:: python
 
     top_contributors["contributor_fullname"] = top_contributors["contributor_firstname"] + " " + top_contributors["contributor_lastname"]
-
-    top_contributors
 
 Now pop ``top_contributors`` into a chart, just like we did before. Remember that sort function!
 
@@ -155,7 +151,7 @@ Now pop ``top_contributors`` into a chart, just like we did before. Remember tha
 
 What facet of the data is this chart *not* showing? How might we add additional context?
 
-We have that ``committee_position`` column in our dataframe now. Let's try an ``altair`` option that we haven't used yet: color. Can you guess where we should add that in?
+We have that ``committee_position`` column in our dataframe now. Let's try an altair option that we haven't used yet: color. Can you guess where we should add that in?
 
 .. code-block:: python
 
