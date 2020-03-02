@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Chapter 12: Hello charts" href="../charts/index.html" />
+    <link rel="next" title="Chapter 12: Hello remix" href="../remix/index.html" />
     <link rel="prev" title="Chapter 10: Hello sorting" href="../sort_values/index.html" /> 
 </head>
 
@@ -93,10 +93,12 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Chapter 11: Hello groupby</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#grouping-by-one-field">Grouping by one field</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#grouping-by-multiple-fields">Grouping by multiple fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-not-to-be-wrong">How not to be wrong</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#extra-credit">Extra credit</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 12: Hello charts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../remix/index.html">Chapter 12: Hello remix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../charts/index.html">Chapter 13: Hello charts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../about/index.html">About the authors</a></li>
 </ul>
 
@@ -197,12 +199,15 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">oppose</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;contributor_firstname&quot;</span><span class="p">,</span> <span class="s2">&quot;contributor_lastname&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="how-not-to-be-wrong">
+<h2>How not to be wrong<a class="headerlink" href="#how-not-to-be-wrong" title="Permalink to this headline">¶</a></h2>
 <p>You’ve done it. Our brief interview is complete and you’ve answered the big question that started our inquiry.</p>
 <p>Or so you think! Look again at our rankings above. Now compare them against the ranking we looked at earlier in our sorting lesson.</p>
 <p>Study it closely and you’ll see an important difference. All of the contributors without a first name are dropped from our groupby lists. And some of them gave a lot of money.</p>
-<p>This is happening because another pandas quirk. Empty fields are read in by pandas as <a class="reference external" href="https://en.wikipedia.org/wiki/Null_(mathematics)">null values</a>, which is a mathematical representation of nothing. In pandas a null is called a <a class="reference external" href="https://en.wikipedia.org/wiki/NaN">NaN</a> an abbreviation for “not a number” commonly used in computer programming.</p>
-<p>And, guess what, pandas’ groupby method will drop any rows with nulls in the grouping fields. So all those records without a first name were silently excluded from our analysis.</p>
-<p>Yikes! Whatever our opinion of pandas’ default behavior, it’s something we need to account for, and a reminder that we should never assume we know computer programming tools are doing under the hood. As with human sources, everything you code tells you should be viewed skeptically and verified.</p>
+<p>This is happening because if another pandas quirk. Empty fields are read in by pandas as <a class="reference external" href="https://en.wikipedia.org/wiki/Null_(mathematics)">null values</a>, which is a mathematical representation of nothing. In pandas a null is called a <a class="reference external" href="https://en.wikipedia.org/wiki/NaN">NaN</a>, an abbreviation for “not a number” commonly used in computer programming.</p>
+<p>And, guess what, pandas’ groupby method will drop any rows with nulls in the grouping fields. So all those records without a first name were silently excluded from our analysis. Yikes!</p>
+<p>Whatever our opinion of pandas’ default behavior, it’s something we need to account for, and a reminder that we should never assume we know what computer programming tools are doing under the hood. As with human sources, everything you code tells you should be viewed skeptically and verified.</p>
 <p>The solution to this problem is easy. We need to replace those NaN first names with empty strings, which pandas won’t drop. We can do that by using pandas’ fillna method ahead of the group.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">merged</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;contributor_firstname&quot;</span><span class="p">,</span> <span class="s2">&quot;contributor_lastname&quot;</span><span class="p">,</span> <span class="s2">&quot;committee_position&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
@@ -228,7 +233,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../charts/index.html" class="btn btn-neutral float-right" title="Chapter 12: Hello charts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../remix/index.html" class="btn btn-neutral float-right" title="Chapter 12: Hello remix" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../sort_values/index.html" class="btn btn-neutral float-left" title="Chapter 10: Hello sorting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

@@ -73,17 +73,22 @@ For the opponents:
 
     oppose.groupby(["contributor_firstname", "contributor_lastname"]).amount.sum().reset_index().sort_values("amount", ascending=False)
 
+
+*******************
+How not to be wrong
+*******************
+
 You've done it. Our brief interview is complete and you've answered the big question that started our inquiry.
 
 Or so you think! Look again at our rankings above. Now compare them against the ranking we looked at earlier in our sorting lesson.
 
 Study it closely and you'll see an important difference. All of the contributors without a first name are dropped from our groupby lists. And some of them gave a lot of money.
 
-This is happening because another pandas quirk. Empty fields are read in by pandas as `null values <https://en.wikipedia.org/wiki/Null_(mathematics)>`_, which is a mathematical representation of nothing. In pandas a null is called a `NaN <https://en.wikipedia.org/wiki/NaN>`_ an abbreviation for "not a number" commonly used in computer programming.
+This is happening because if another pandas quirk. Empty fields are read in by pandas as `null values <https://en.wikipedia.org/wiki/Null_(mathematics)>`_, which is a mathematical representation of nothing. In pandas a null is called a `NaN <https://en.wikipedia.org/wiki/NaN>`_, an abbreviation for "not a number" commonly used in computer programming.
 
-And, guess what, pandas' groupby method will drop any rows with nulls in the grouping fields. So all those records without a first name were silently excluded from our analysis.
+And, guess what, pandas' groupby method will drop any rows with nulls in the grouping fields. So all those records without a first name were silently excluded from our analysis. Yikes!
 
-Yikes! Whatever our opinion of pandas' default behavior, it's something we need to account for, and a reminder that we should never assume we know computer programming tools are doing under the hood. As with human sources, everything you code tells you should be viewed skeptically and verified.
+Whatever our opinion of pandas' default behavior, it's something we need to account for, and a reminder that we should never assume we know what computer programming tools are doing under the hood. As with human sources, everything you code tells you should be viewed skeptically and verified.
 
 The solution to this problem is easy. We need to replace those NaN first names with empty strings, which pandas won't drop. We can do that by using pandas' fillna method ahead of the group.
 
