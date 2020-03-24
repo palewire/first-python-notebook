@@ -37,7 +37,7 @@ By default, Python's third-party packages are all installed in a shared "global"
 
 This approach is fine for your first experiments with Python, but it quickly falls apart when you start to get serious about coding.
 
-For instance, say you develop an web application today with `Flask`_ version 1.1. What if, a year from now, you want to start a new project and use a newer version of Flask? Your old app is still live and requires occasional patches, but you don't have time to re-write all of your old to make it compatible with the latest version of Flask.
+For instance, say you develop a web application today with `Flask`_ version 1.1. What if, a year from now, you want to start a new project and use a newer version of Flask? Your old app is still live and requires occasional patches, but you don't have time to re-write all of your old to make it compatible with the latest version of Flask.
 
 Open-source projects are changing every day and such conflicts are common, especially when you factor in the sub-dependencies of your project’s direct dependencies, as well as the sub-dependencies of those sub-dependencies.
 
