@@ -91,3 +91,6 @@ ENV/
 
 # Vscode
 .vscode
+
+# rendered html
+docs/_build_html
