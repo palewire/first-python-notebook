@@ -13,7 +13,7 @@ On Windows this is called the "command prompt." On MacOS it is called the "termi
 
 On Windows 10, we recommend you install the `Windows Subsystem for Linux`_ and select the Ubuntu distribution from the Windows Store. This will give you access to a generic open-source terminal without all the complications and quirks introduced by Windows. On MacOS, the standard terminal app will work fine.
 
-Python 3.5 or higher
+Python 3.6 or higher
 --------------------
 
 `Python`_ is a free and open-source computer programming language. It's one of the most popular in the world and praised by its supporters as clear and easy to read.
@@ -30,7 +30,7 @@ You should see something like this after you hit enter:
 
 .. code-block:: bash
 
-    Python 3.5.2
+    Python 3.6.10
 
 If not, you'll need to install Python on your system.
 
