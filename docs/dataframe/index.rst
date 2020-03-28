@@ -99,13 +99,13 @@ Just as we did earlier, you can inspect the contents of this new file with the h
 
 .. code-block:: python
 
-    contribs.head()
+    contrib_list.head()
 
 You should also inspect the columns using the info method. Running these two tricks whenever you open a new file is a good habit to develop so that you can carefully examine the data you're about to work with.
 
 .. code-block:: python
 
-    contribs.info()
+    contrib_list.info()
 
 Now that you've got some data imported, we're ready to begin our analysis.
 
