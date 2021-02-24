@@ -82,6 +82,10 @@ Now you are all setup and ready to start writing Python code.
 
 Do not stress. There is nothing too fancy about it. You can start by just doing a little simple math.
 
+Set the notebook editing mode to Code.
+
+.. image:: /_static/notebook_edit_mode_code.png
+
 Type the following into the first box, then hit the play button in the toolbar above the notebook (or hit SHIFT+ENTER on your keyboard).
 
 .. code-block:: python

@@ -6,11 +6,13 @@ verify_ssl = true
 [packages]
 # For the class
 jupyterlab = "*"
+cython = "*"
 pandas = "*"
 altair = "*"
-yolk = "*"
+yolk = {version = "*", markers="python_version < '3.0'"}
+yolk3k = {version = "*", markers="python_version >= '3.0'"}
+
 # For the docs
 sphinx = "*"
 sphinx-autobuild = "*"
 sphinx-rtd-theme = "*"
-yolk3k = "*"
