@@ -1,3 +1,5 @@
+.. _sorting:
+
 =========================
 Chapter 10: Hello sorting
 =========================
@@ -12,7 +14,11 @@ What were the ten biggest contributions? We can find the answer by using the `so
 
 Note that returns the DataFrame resorted in ascending order from lowest to highest. That is pandas default way of sorting.
 
-To answer our question you'll need to reverse that, so that values are sorted in descending order from biggest to smallest. It's a little tricky at first, but here's how to do it with sort_values.
+To answer our question you'll need to reverse that, so that values are sorted in descending order from biggest to smallest. 
+
+.. _sort values trick:
+
+It's a little tricky at first, but here's how to do it with sort_values.
 
 .. code-block:: python
 
