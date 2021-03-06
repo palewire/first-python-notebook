@@ -16,7 +16,7 @@ After that completes, once again restart your notebook.
 
 .. code-block:: bash
 
-    $ pipenv run jupyter notebook
+    $ pipenv run jupyter lab
 
 Now you can head back to your notebook and add Altair to your imports. We'll usually import it with the alias ``alt`` so we don't have to type out the whole thing every time we make a chart.
 
