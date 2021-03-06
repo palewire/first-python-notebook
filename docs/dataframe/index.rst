@@ -31,7 +31,7 @@ Scroll down to the first open cell. There we will import the first CSV file list
 
 .. code-block:: python
 
-    pd.read_csv("https://first-python-notebook.readthedocs.io/_static/committees.csv")
+    pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/_static/committees.csv")
 
 .. warning::
 
