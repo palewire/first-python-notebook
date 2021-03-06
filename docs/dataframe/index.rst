@@ -53,7 +53,7 @@ Go back to your initial cell and change it to this. Then rerun it.
 
 .. code-block:: python
 
-    committee_list = pd.read_csv("https://first-python-notebook.readthedocs.io/_static/committees.csv")
+    committee_list = pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/_static/contributions.csv")
 
 After you run it, you shouldn't see anything. That's a good thing. It means our DataFrame has been saved under the name props, which we can now begin interacting with in the cells that follow.
 
@@ -112,7 +112,7 @@ Now that you've got some data imported, we're ready to begin our analysis.
 
 .. _California Civic Data Coalition: http://www.californiacivicdata.org/
 .. _committees.csv: https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/_static/committees.csv
-.. _contributions.csv: https://first-python-notebook.readthedocs.io/_static/contributions.csv
+.. _contributions.csv: https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/_static/contributions.csv
 .. _CSV file: https://en.wikipedia.org/wiki/Comma-separated_values
 .. _read_csv: http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html
 .. _"variable": https://en.wikipedia.org/wiki/Variable_(computer_science)
