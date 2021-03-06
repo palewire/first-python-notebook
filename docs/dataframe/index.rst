@@ -53,7 +53,7 @@ Go back to your initial cell and change it to this. Then rerun it.
 
 .. code-block:: python
 
-    committee_list = pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/_static/contributions.csv")
+    committee_list = pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/_static/committees.csv")
 
 After you run it, you shouldn't see anything. That's a good thing. It means our DataFrame has been saved under the name props, which we can now begin interacting with in the cells that follow.
 
@@ -93,7 +93,7 @@ We'll start by using the read_csv method to import the second CSV file linked ab
 
 .. code-block:: python
 
-    contrib_list = pd.read_csv("https://first-python-notebook.readthedocs.io/_static/contributions.csv")
+    contrib_list = pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/_static/contributions.csv")
 
 Just as we did earlier, you can inspect the contents of this new file with the head method.
 
