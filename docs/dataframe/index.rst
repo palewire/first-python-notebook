@@ -111,7 +111,7 @@ Now that you've got some data imported, we're ready to begin our analysis.
 
 
 .. _California Civic Data Coalition: http://www.californiacivicdata.org/
-.. _committees.csv: https://first-python-notebook.readthedocs.io/_static/committees.csv
+.. _committees.csv: https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/_static/committees.csv
 .. _contributions.csv: https://first-python-notebook.readthedocs.io/_static/contributions.csv
 .. _CSV file: https://en.wikipedia.org/wiki/Comma-separated_values
 .. _read_csv: http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html
