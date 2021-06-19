@@ -26,8 +26,7 @@ Now you can head back to your notebook and add Altair to your imports. We'll usu
 
 Now rerun the entire notebook, as we learned above. You will need to do this when you halt and restart your notebook on the command line. Reminder, you can do this by pulling down the ``Cell`` menu at the top of the notebook and selecting the ``Run all`` option.
 
-Let's pick up where we last left off in :ref:`the groupby chapter <merge fillna>`. If we want to chart out how much the top supporters of the proposition spent, we first need to select them from the dataset. 
-Using the grouping and sorting tricks we learned earlier, the top 10 can be returned like this:
+Let's pick up where we last left off in :ref:`the groupby chapter <merge fillna>`. If we want to chart out how much the top supporters of the proposition spent, we first need to select them from the dataset. Using the grouping and sorting tricks we learned earlier, the top 10 can be returned like this:
 
 .. code-block:: python
 

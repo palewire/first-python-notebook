@@ -5,9 +5,7 @@ Chapter 11: Hello groupby
 To take the next step towards ranking the top contributors, we'll need to learn a new trick.
 It's called `groupby <https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html>`_.
 
-It's a pandas method that allows you to group a DataFrame by a column and then calculate a sum,
-or any other statistic, for each unique value. This is necessary when you want to rack up statistics 
-on a long list of values, or about a combination of fields.
+It's a pandas method that allows you to group a DataFrame by a column and then calculate a sum, or any other statistic, for each unique value. This is necessary when you want to rack up statistics on a long list of values, or about a combination of fields.
 
 .. note::
 
@@ -40,8 +38,7 @@ Again our data has come back as an ugly Series. To reformat it as a pretty DataF
 
     merged.groupby("contributor_state").amount.sum().reset_index()
 
-Sorting totals from highest to lowest is easy. Remember the :ref:`sort values trick <sort values trick>`
-we learned earlier? Voila! Here's our answer:
+Sorting totals from highest to lowest is easy. Remember the :ref:`sort values trick <sort values trick>` we learned earlier? Voila! Here's our answer:
 
 .. code-block:: python
 
@@ -68,8 +65,7 @@ To find out if each contributor supported or opposed the measure, you simply add
 
     merged.groupby(["contributor_firstname", "contributor_lastname", "committee_position"]).amount.sum().reset_index().sort_values("amount", ascending=False)
 
-If you want the top supporters or opponents alone, run those same commands with the ``support`` and ``oppose`` datasets we 
-:ref:`filtered down to earlier <filter_support_oppose>`. Everything else about the commands would be the same as the first one above.
+If you want the top supporters or opponents alone, run those same commands with the ``support`` and ``oppose`` datasets we :ref:`filtered down to earlier <filter_support_oppose>`. Everything else about the commands would be the same as the first one above.
 
 For the supporters:
 
@@ -90,20 +86,17 @@ How not to be wrong
 
 You've done it. Our brief interview is complete and you've answered the big question that started our inquiry.
 
-Or so you think! Look again at our rankings above. Now compare them against the ranking we looked at
-earlier in our :ref:`sorting lesson <sorting>`.
+Or so you think! Look again at our rankings above. Now compare them against the ranking we looked at earlier in our :ref:`sorting lesson <sorting>`.
 
 Study it closely and you'll see an important difference. All of the contributors without a first name are dropped from our groupby lists. And some of them gave a lot of money.
 
 This is happening because of another pandas quirk. Empty fields are read in by pandas as `null values <https://en.wikipedia.org/wiki/Null_(mathematics)>`_, which is a mathematical representation of nothing. In pandas a null is called a `NaN <https://en.wikipedia.org/wiki/NaN>`_, an abbreviation for "not a number" commonly used in computer programming.
 
-And, guess what? pandas' groupby method will drop any rows with nulls in the grouping fields. So all those records without a first name were silently excluded from our analysis. Yikes!
+And, good news, pandas' groupby method will drop any rows with nulls in the grouping fields. So all those records without a first name were silently excluded from our analysis. Yikes!
 
 Whatever our opinion of pandas' default behavior, it's something we need to account for, and a reminder that we should never assume we know what computer programming tools are doing under the hood. As with human sources, everything you code tells you should be viewed skeptically and verified.
 
-The solution to this problem is easy. We need to replace those NaN first names with empty strings,
-which pandas won't drop. We can do that by using pandas' `fillna <https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html>`_
-method ahead of the group.
+The solution to this problem is easy. We need to replace those NaN first names with empty strings, which pandas won't drop. We can do that by using pandas' `fillna <https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html>`_ method ahead of the group.
 
 
 .. _merge fillna:

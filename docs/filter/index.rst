@@ -26,8 +26,7 @@ In our case, the column we want to filter against is ``prop_name``. We only want
 
 Where do we get that? Our friend :ref:`value counts <value counts>`.
 
-Running the command we learned before to :ref:`list <list data>` and :ref:`count <value counts>` 
-all of the proposition names will spit out the full name of all 17 measures.
+Running the command we learned before to :ref:`list <list data>` and :ref:`count <value counts>` all of the proposition names will spit out the full name of all 17 measures.
 
 .. code-block:: python
 
