@@ -60,11 +60,13 @@ We want to separate the money spent supporting the proposition from the money op
 
 To answer that question, let's return to the filtering technique we learned in :doc:`chapter seven </filter/index>`.
 
-First let's look at the column we're going to filter by, committee_position.
+First let's look at the column we're going to filter by, ``committee_position``.
 
 .. code-block:: python
 
     merged.committee_position.value_counts()
+
+.. _filter_support_oppose:
 
 Now let's filter our merged table down using that column and the pandas filtering method that combines a column, an operator and the value we want to filter by. Let's stick the result in a variable.
 

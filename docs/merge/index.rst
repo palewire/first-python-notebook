@@ -26,7 +26,9 @@ We can therefore safely join the two files using the pandas `merge`_ method.
 
 .. note::
 
-    Again, if you are familar with traditional databases, you may recognize that the merge method in pandas is similar to SQL's ``JOIN`` statement. If you dig into `merge's documentation`_ you will see it has many of the same options, such as the ability to conduct "inner" and "outer" joins.
+    Again, if you are familar with traditional databases, you may recognize that the merge method in
+    pandas is similar to SQL's ``JOIN`` statement. If you dig into `merge's documentation`_ you will see
+    it has many of the same options, such as the ability to conduct "inner" and "outer" joins.
 
 ******************
 Merging DataFrames
