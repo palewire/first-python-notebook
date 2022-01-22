@@ -20,4 +20,4 @@ Let's try it. I picked the death penalty ban that was on the same ballot and cha
 
     my_prop = 'PROPOSITION 062- DEATH PENALTY. INITIATIVE STATUTE.'
 
-Now I go to the Run menu at the top of the notebook and selected "Run All Cells." Wait a few seconds and, boom, you'll have a whole new of donors plotted out.
+Now I go to the Run menu at the top of the notebook and selected "Run All Cells." Wait a few seconds and, boom, you'll have a whole new group of donors plotted out.

@@ -81,7 +81,7 @@ For the opponents:
 
 
 *******************
-How not to be wrong
+How to not be wrong
 *******************
 
 You've done it. Our brief interview is complete and you've answered the big question that started our inquiry.
@@ -94,7 +94,7 @@ This is happening because of another pandas quirk. Empty fields are read in by p
 
 And, good news, pandas' groupby method will drop any rows with nulls in the grouping fields. So all those records without a first name were silently excluded from our analysis. Yikes!
 
-Whatever our opinion of pandas' default behavior, it's something we need to account for, and a reminder that we should never assume we know what computer programming tools are doing under the hood. As with human sources, everything you code tells you should be viewed skeptically and verified.
+Whatever our opinion of pandas' default behavior, it's something we need to account for, and a reminder that we should never assume we know what computer programming tools are doing under the hood. As with human sources, everything your code tells you should be viewed skeptically and verified.
 
 The solution to this problem is easy. We need to replace those NaN first names with empty strings, which pandas won't drop. We can do that by using pandas' `fillna <https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html>`_ method ahead of the group.
 

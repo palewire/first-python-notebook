@@ -83,7 +83,7 @@ Okay, but what if I want to combine the first and last name? We have the data we
 
     top_supporters['contributor_fullname'] = top_supporters.contributor_firstname + " " + top_supporters.contributor_lastname
 
-Now we can use that column instead of``contributor_lastname`` in our chart.
+Now we can use that column instead of ``contributor_lastname`` in our chart.
 
 .. code-block:: python
 
