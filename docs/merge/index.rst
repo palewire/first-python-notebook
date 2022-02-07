@@ -50,7 +50,7 @@ That new ``DataFrame`` variable can be inspected like any other.
 
     merged.head()
 
-By looking at the columns you can check how many rows survived the merged.
+By looking at the columns you can check how many rows survived the merge.
 
 .. code-block:: python
 

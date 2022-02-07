@@ -31,7 +31,7 @@ Time to run off to Twitter and publish our results to the world, right?
 Wrong.
 
 *******************
-How not to be wrong
+How to not be wrong
 *******************
 
 The total we generated is not the overall total raised in the campaign, and it is guaranteed to be lower than the totals reported in the media and by the campaigns.

@@ -46,15 +46,15 @@ In the next cell we will ask pandas to narrow down our list of committees to jus
 
 Run it and it outputs the filtered dataset, just those committees active on Proposition 64.
 
-Now we should save the results of that filter into new variable separate from the full list we imported from the CSV file.
+Now we should save the results of that filter into a new variable separate from the full list we imported from the CSV file.
 
-Since it includes only the committees for one proposition lets call it the singular prop.
+Since it includes only the committees for one proposition let's call it the singular prop.
 
 .. code-block:: python
 
     my_committees = committee_list[committee_list.prop_name == my_prop]
 
-To check our work find out how many committees are left after the filter, let's run the DataFrame inspection commands we learned earlier.
+To check our work and find out how many committees are left after the filter, let's run the DataFrame inspection commands we learned earlier.
 
 First head.
 
