@@ -1,4 +1,4 @@
 .PHONY: serve
 
 serve:
-	cd docs && make livehtml
+	cd docs && pipenv run make livehtml
