@@ -26,6 +26,7 @@ This course is free. If you've tried Python once or twice, have good attitude an
     :caption: Table of Contents
     :name: mastertoc
 
+    jupyter_desktop/index
     notebook/index
     pandas/index
     money/index
