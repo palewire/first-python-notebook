@@ -208,6 +208,95 @@ Now that yolk is installed, we can execute it inside our environment using Pipen
 
 You should see the computer spit out everything you have installed. You'll notice that yolk3k is on the list. You've completed the setup process for First Python Notebook. Now the real fun begins.
 
+
+Navigate to project directory
+-----------------------------
+
+Now let's check where we are in our computer's file system. For this we'll use a command called `pwd`_, which stands for ``p``\ resent ``w``\ orking ``d``\ irectory.
+
+.. code-block:: bash
+
+    pwd
+
+The output is the full path of your location in the file system, something like ``/Users/palewire/Code/first-python-notebook``. If you aren't currently in the project directory we created in `chapter 1`_, you need to change directories.
+
+First, jump into the code directory:
+
+.. code-block:: bash
+
+    cd Code
+
+Then, jump into project directory:
+
+.. code-block:: bash
+
+    cd first-python-notebook
+
+This is where you'll store a local copy of all the code and files you create for this project.
+
+.. note::
+
+    It isn't necessary to change directories one level at a time. You can also specify the full path of directory you want to change into:
+
+    .. code-block:: bash
+
+        cd Code/first-python-notebook
+
+
+Install JupyterLab
+------------------
+
+Now we will return to Pipenv and use it to install JupyterLab, the web-based interactive development environment for Jupyter notebooks, code and data.
+
+.. code-block:: bash
+
+    pipenv install jupyterlab
+
+
+Install pandas
+--------------
+
+We'll install pandas the same way we installed the JupyterLab:
+
+.. code-block:: python
+
+    pipenv install pandas
+
+Install altair
+--------------
+
+Install altair as well.
+
+.. code-block:: python
+
+    pipenv install altair
+
+
+.. note::
+
+    You can install more than one package at once. For instance, all three of the packages above could be added like so:
+
+    .. code-block:: bash
+
+        pipenv install jupyterlab pandas altair
+
+
+Create your first notebook
+--------------------------
+
+Now we can use pipenv's run command to start JupyterLab from your terminal.
+
+.. code-block:: bash
+
+    pipenv run jupyter lab
+
+That will open up a new tab in your default web browser that looks something like this:
+
+.. image:: /_static/labpreview.png
+
+Click the "Python 3" button in the middle panel and create a new Python 3 notebook. You should now be able to pick up in `chapter two <../notebook>`_ and start work from there.
+
+
 .. _Pipenv: https://pipenv.kennethreitz.org/en/latest/
 .. _Cheese Shop: https://youtu.be/Hz1JWzyvv8A
 .. _pip: https://pip.pypa.io/en/latest/
