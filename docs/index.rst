@@ -19,15 +19,13 @@ You will also learn how to plot and chart your data inside the notebook using th
 Who can take it
 ===============
 
-This course is free. If you've tried Python once or twice, have good attitude and know how to take a few code crashes in stride, you are qualified. But before you begin be sure to review the :doc:`prerequisites </prerequisites/index>`.
+This course is free. If you've tried Python once or twice, have good attitude and know how to take a few code crashes in stride, you are qualified.
 
 .. toctree::
     :maxdepth: 1
     :caption: Table of Contents
     :name: mastertoc
 
-    prerequisites/index
-    pipenv/index
     notebook/index
     pandas/index
     money/index
@@ -40,4 +38,5 @@ This course is free. If you've tried Python once or twice, have good attitude an
     groupby/index
     remix/index
     charts/index
+    appendix/index
     about/index
