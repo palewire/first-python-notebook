@@ -2,7 +2,7 @@
 Chapter 1: Hello JupyterLab Desktop
 ===================================
 
-A `Jupyter notebook`_ is a browser application where you can write, run, remix and republish code.
+A `Jupyter notebook`_ is a browser-based interface where you can write, run, remix and republish code.
 
 It is free software you can install and run like any other open-source library. It is used by `scientists`_, `scholars`_, `investors`_ and corporations to create and share their research.
 
