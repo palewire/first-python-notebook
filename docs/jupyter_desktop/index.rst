@@ -34,6 +34,12 @@ Then pick the link appropriate for your operating system. The installation file 
 
 Find the file in your downloads directory and double click it to begin the installation process. Follow the instructions presented by the pop-up windows, sticking to the default options. 
 
+.. warning::
+
+    Your computer's operating system might flag the JupyterLab Desktop installer as an unverified or insecure application. Don't worry. The tool has been vetted by Project Jupyter's core developers and it's safe to use.
+    
+    If your system is blocking you from installing the tool, you'll likely need to work around its barriers. For instance, on MacOS, this might require `visiting your system’s security settings <https://www.wikihow.com/Install-Software-from-Unsigned-Developers-on-a-Mac>`_ to allow the installation. 
+
 Once the program is installed, you can accept the installation wizard's offer to immediately open the program, or you can search for "Jupyter Lab" in your operating system’s application finder.
 
 That will open up a new window that looks something like this:
