@@ -10,38 +10,24 @@ Some of those tools are included in a toolbox that comes with the language, know
 
 One that's important for this class is called `pandas`_. It is a tool invented at a financial investment firm that has become a leading open-source library for accessing and analyzing data in many different fields.
 
-***************************
-Install pandas with pipenv
-***************************
-
-We'll install pandas the same way we installed the JupyterLab earlier: Our new friend :doc:`pipenv </pipenv/index>`.
-
-Let's pick up where we left off at the end of :doc:`chapter 2 </notebook/index>`. Save your notebook by clicking the disk icon or selecting "save and checkpoint" from the file menu. Then switch to your command prompt and hit ``CTRL-C``.
-
-That will kill your notebook and return you to the command line. There we'll install pandas:
-
-.. code-block:: python
-
-    pipenv install pandas
-
 
 *************
 Import pandas
 *************
 
-Reopen your notebook and create a new cell at the top of your Jupyter notebook. There we will import the pandas library for use in our script. Type in the following and hit the play button again.
+Create a new cell at the top of your Jupyter notebook. There we will import the pandas library for use in our script. Type in the following and hit the play button again.
 
 .. code-block:: python
 
     import pandas
 
-If nothing happens, that's good. It means you have pandas installed and ready.
+If nothing happens, that's good. It means you have pandas installed and ready as to use.
 
 .. note::
 
-    If you get an error message, return to the prerequisites section make sure you have everything installed properly.
+    Since pandas is created by a third-party separate from the core Python developers, it wouldn't be installed by default if you followed our `advanced installation <../appendix>`_ instructions.
 
-    If you do and it still doesn't work, copy and paste the tail end of your error message into Google. Among the results there will almost certainly be others working through the same problem.
+    It's available to you because the JupyterLab Desktop developers have pre-selected a curated list of common utilities to include with their installation. Another reason to love their easy installer.
 
 Return to the cell with the import and rewrite it like this.
 
@@ -49,7 +35,7 @@ Return to the cell with the import and rewrite it like this.
 
     import pandas as pd
 
-This will import the pandas library at the shorter variable name of pd. This is not required but it is standard practice in the pandas community and you will frequently see examples of pandas code online using it as shorthand. It's not required, but it's good to get in the habit so that your code will be understood by other computer programmers.
+This will import the pandas library at the shorter variable name of `pd`. This is not required but it is standard practice in the pandas community and you will frequently see examples of pandas code online using it as shorthand. It's not required, but it's good to get in the habit so that your code will be understood by other computer programmers.
 
 ******************************
 Conduct a simple data analysis

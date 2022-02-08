@@ -4,21 +4,7 @@ Chapter 13: Hello charts
 
 Python has a number of charting tools that can work hand-in-hand with pandas. `Altair <https://altair-viz.github.io/>`_ is a relative newbie, but it's got good documentation and can display charts right in your Jupyter Notebook — plus it can export to lots of other formats.
 
-Let's take it for a spin.
-
-Before we start, we need to make sure it is installed. Head back to your terminal and practice that pipenv install process.
-
-.. code-block:: bash
-
-    $ pipenv install altair
-
-After that completes, once again restart your notebook.
-
-.. code-block:: bash
-
-    $ pipenv run jupyter lab
-
-Now you can head back to your notebook and add Altair to your imports. We'll usually import it with the alias ``alt`` so we don't have to type out the whole thing every time we make a chart.
+Let's take it for a spin. Head back to the import cell at the top of your notebook and add Altair. We'll usually import it with the alias ``alt`` so we don't have to type out the whole thing every time we make a chart.
 
 .. code-block:: python
 

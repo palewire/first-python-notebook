@@ -2,7 +2,7 @@
 Appendix: Advanced installation
 ===============================
 
-Your computer needs the following computer-programming tools to participate. Verify you have them working before you begin.
+While there are numerous ways to install and configure Jupyter notebooks, advanced users like to take advantage of Python’s power tools to have more control over when and where code is installed on their system. This guide will demonstrate how to install everything you computer needs to play like the pros.
 
 A command-line interface
 ------------------------
@@ -323,3 +323,4 @@ Click the "Python 3" button in the middle panel and create a new Python 3 notebo
 .. _Sublime Text: https://www.sublimetext.com/
 .. _Atom: https://atom.io/
 .. _Visual Studio Code: https://code.visualstudio.com/
+.. _pwd: https://en.wikipedia.org/wiki/Pwd
