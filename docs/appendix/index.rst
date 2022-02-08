@@ -147,14 +147,24 @@ Open your command-line interface, which will start you off in your home director
     ls
 
 
+Now let's check where we are in our computer's file system. For this we'll use a command called `pwd`_, which stands for ``p``\ resent ``w``\ orking ``d``\ irectory. The output is the full path of your location in the file system, something like ``/Users/palewire/``.
+
+.. code-block:: bash
+
+    pwd
+
+
 Next use the `mkdir`_ to create a new directory for your code. In the same style as the Desktop, Documents and Downloads folders included by most operating system, we will name this folder Code.
 
 .. code-block:: bash
 
     mkdir Code
 
+To verify that worked, you can open in your file explorer and navigate to your home folder. Now jump into the code directory, which is the same as double clicking on a folder to enter it in your filesystem navigator.
 
-To verify that worked, you can open in your file explorer and navigate to your home folder.
+.. code-block:: bash
+
+    cd Code
 
 Create a project directory
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -163,15 +173,23 @@ Now let's make a folder for your work in this class.
 
 .. code-block:: bash
 
-    mkdir Code/first-python-notebook
+    mkdir first-python-notebook
 
-
-Next use your terminal to navigate into the new directory with the `cd`_ command:
+Then, jump into project directory:
 
 .. code-block:: bash
 
-    cd Code/first-python-notebook
+    cd first-python-notebook
 
+This is where you'll store a local copy of all the code and files you create for this project.
+
+.. note::
+
+    It isn't necessary to change directories one level at a time. You can also specify the full path of directory you want to change into. For instance, from your home directory you could running the following to move directly into your project directory.
+
+    .. code-block:: bash
+
+        cd Code/first-python-notebook
 
 Install your first package
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -209,52 +227,23 @@ Now that yolk is installed, we can execute it inside our environment using Pipen
 You should see the computer spit out everything you have installed. You'll notice that yolk3k is on the list. You've completed the setup process for First Python Notebook. Now the real fun begins.
 
 
-Navigate to project directory
------------------------------
+Python packages
+---------------
 
-Now let's check where we are in our computer's file system. For this we'll use a command called `pwd`_, which stands for ``p``\ resent ``w``\ orking ``d``\ irectory.
+Next we will install the extra Python packages used during the tutorial.
 
-.. code-block:: bash
+JupyterLab
+~~~~~~~~~~
 
-    pwd
-
-The output is the full path of your location in the file system, something like ``/Users/palewire/Code/first-python-notebook``. If you aren't currently in the project directory we created in `chapter 1`_, you need to change directories.
-
-First, jump into the code directory:
-
-.. code-block:: bash
-
-    cd Code
-
-Then, jump into project directory:
-
-.. code-block:: bash
-
-    cd first-python-notebook
-
-This is where you'll store a local copy of all the code and files you create for this project.
-
-.. note::
-
-    It isn't necessary to change directories one level at a time. You can also specify the full path of directory you want to change into:
-
-    .. code-block:: bash
-
-        cd Code/first-python-notebook
-
-
-Install JupyterLab
-------------------
-
-Now we will return to Pipenv and use it to install JupyterLab, the web-based interactive development environment for Jupyter notebooks, code and data.
+We will return to Pipenv and use it to install JupyterLab, the web-based interactive development environment for Jupyter notebooks, code and data.
 
 .. code-block:: bash
 
     pipenv install jupyterlab
 
 
-Install pandas
---------------
+pandas
+~~~~~~
 
 We'll install pandas the same way we installed the JupyterLab:
 
@@ -262,8 +251,8 @@ We'll install pandas the same way we installed the JupyterLab:
 
     pipenv install pandas
 
-Install altair
---------------
+altair
+~~~~~~
 
 Install altair as well.
 
@@ -281,8 +270,8 @@ Install altair as well.
         pipenv install jupyterlab pandas altair
 
 
-Create your first notebook
---------------------------
+Your first notebook
+-------------------
 
 Now we can use pipenv's run command to start JupyterLab from your terminal.
 
@@ -292,7 +281,7 @@ Now we can use pipenv's run command to start JupyterLab from your terminal.
 
 That will open up a new tab in your default web browser that looks something like this:
 
-.. image:: /_static/labpreview.png
+.. image:: /_static/jupyterlabdesktop.png
 
 Click the "Python 3" button in the middle panel and create a new Python 3 notebook. You should now be able to pick up in `chapter two <../notebook>`_ and start work from there.
 
