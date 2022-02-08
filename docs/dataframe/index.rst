@@ -4,8 +4,6 @@ Chapter 5: Hello data
 
 Now it's time to get our hands on some real data.
 
-Our data source will be the `California Civic Data Coalition`_, an open-source network of journalists and developers that maintains an archive of data tracking money in California politics.
-
 The coalition has created simplified data files containing the disclosure forms that committees campaigning either for against one of the 17 propositions on the ballot in November 2016 filed with the state of California.
 
 They are:
@@ -55,11 +53,11 @@ Go back to your initial cell and change it to this. Then rerun it.
 
     committee_list = pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/_static/committees.csv")
 
-After you run it, you shouldn't see anything. That's a good thing. It means our DataFrame has been saved under the name props, which we can now begin interacting with in the cells that follow.
+After you run it, you shouldn't see anything. That's a good thing. It means our DataFrame has been saved under the name ``committee_list``, which we can now begin interacting with in the cells that follow.
 
 We can do this by calling `"methods"`_ that pandas has made available to all DataFrames.
 
-You may not have known it at the time, but read_csv was one of these methods. There are dozens more that can do all sorts of interesting things. Let's start with some easy ones that analysts use all the time.
+You may not have known it at the time, but ``read_csv`` was one of these methods. There are dozens more that can do all sorts of interesting things. Let's start with some easy ones that analysts use all the time.
 
 *********************
 Using the head method
@@ -89,7 +87,7 @@ Creating another DataFrame
 
 With that we're ready to move on to a related, similar task: Importing all of the individual contributions reported to last year's 17 ballot measures.
 
-We'll start by using the read_csv method to import the second CSV file linked above. Save it as a new variable just as we did before. Let's call this one contribs.
+We'll start by using the ``read_csv`` method to import the second CSV file linked above. Save it as a new variable just as we did before. Let's call this one ``contrib_list``.
 
 .. code-block:: python
 

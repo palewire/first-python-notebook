@@ -25,9 +25,9 @@ If nothing happens, that's good. It means you have pandas installed and ready as
 
 .. note::
 
-    Since pandas is created by a third-party separate from the core Python developers, it wouldn't be installed by default if you followed our `advanced installation <../appendix>`_ instructions.
+    Since pandas is created by a third party separate from the core Python developers, it wouldn't be installed by default if you followed our `advanced installation <../appendix>`_ instructions.
 
-    It's available to you because the JupyterLab Desktop developers have pre-selected a curated list of common utilities to include with their installation. Another reason to love their easy installer.
+    It's available to you because the JupyterLab Desktop developers have pre-selected a curated list of common utilities to include with their installation, another reason to love their easy installer.
 
 Return to the cell with the import and rewrite it like this.
 
@@ -35,7 +35,7 @@ Return to the cell with the import and rewrite it like this.
 
     import pandas as pd
 
-This will import the pandas library at the shorter variable name of `pd`. This is not required but it is standard practice in the pandas community and you will frequently see examples of pandas code online using it as shorthand. It's not required, but it's good to get in the habit so that your code will be understood by other computer programmers.
+This will import the pandas library at the shorter variable name of ``pd``. This is standard practice in the pandas community and you will frequently see examples of pandas code online using it as shorthand. It's not required, but it's good to get in the habit so that your code will be understood by other computer programmers.
 
 ******************************
 Conduct a simple data analysis
@@ -43,19 +43,19 @@ Conduct a simple data analysis
 
 Those two little letters contain dozens of data analysis tools that we'll use in future lessons.
 
-They can import massive data files, compute advanced statistics, filter, sort, rank and just about anything else you'd want to do.
+They can import massive data files, compute advanced statistics, filter, sort, rank and do just about anything else you'd want to do.
 
-We'll get to that soon, but let's start out with something simple.
+We'll get to all of that soon enough, but let's start out with something simple.
 
-First let's make a list of numbers in a new notebook cell. To keep things simple, I am going to enter all of the even numbers between zero and ten and press play.
+Let's make a list of numbers in a new notebook cell. To keep things simple, enter all of the even numbers between zero and ten. Press play.
 
 .. code-block:: python
 
     my_list = [2, 4, 6, 8]
 
-If you're a skilled Python programmer, you can do some cool stuff with any list. But hand it over to pandas instead, and you can analyze it without knowing much computer code at all.
+If you're a skilled Python programmer, you can do some cool stuff with any list, and even run some stats. But if you hand over to pandas instead, you'll be impressed by how easily you can analyze the data without knowing much computer code at all.
 
-In this case, it's as simple as converting that plain Python list into what pandas calls a `Series <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html>`_. Make it happen in your next cell.
+In this case, it's as simple as converting that plain Python list into what pandas calls a `Series <http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html>`_. Here's how to make it happen in your next cell.
 
 .. code-block:: python
 
@@ -81,7 +81,7 @@ The minimum value in the next.
 
     my_series.min()
 
-How about the average (also known as the mean)? Keep adding cells and calculating new statistics.
+How about the average, which also known as the mean?
 
 .. code-block:: python
 
@@ -93,26 +93,23 @@ The median?
 
     my_series.median()
 
-The standard deviation?
+and the standard deviation?
 
 .. code-block:: python
 
     my_series.std()
 
-And all of the above, plus a little more about the distribution, in one simple command.
+Finally, all of the above, plus a little more about the distribution, in one simple command.
 
 .. code-block:: python
 
     my_series.describe()
 
-With those simple techniques, we're only scratching the surface of what pandas makes possible.
-
-Substitute in a series of 10 million records at the top of the stack (or even just the odd numbers between zero and ten), and your notebook would calculate all those statistics again without you having to write any more code.
+Substitute in a series of 10 million records at the top of the notebook — or even just the odd numbers between zero and ten — and your notebook would calculate all those same statistics without you needing to write any more code.
 
 Once your data, however large or complex, is imported into pandas, there's little limit to what you can do to filter, merge, group, aggregate, compute or chart using simple methods like the ones above.
 
 In the next chapter we'll get started doing just using data tracking the flow of money in California politics.
-
 
 .. _navigate the web: http://docs.python-requests.org/
 .. _parse data: https://docs.python.org/2/library/csv.html

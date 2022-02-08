@@ -26,13 +26,13 @@ We can therefore safely join the two files using the pandas `merge`_ method.
 
 .. note::
 
-    Again, if you are familar with traditional databases, you may recognize that the merge method in pandas is similar to SQL's ``JOIN`` statement. If you dig into `merge's documentation`_ you will see it has many of the same options, such as the ability to conduct "inner" and "outer" joins.
+    If you are familar with traditional databases, you may recognize that the merge method in pandas is similar to SQL's ``JOIN`` statement. If you dig into `merge's documentation`_ you will see it has many of the same options, such as the ability to conduct "inner" and "outer" joins.
 
 ******************
 Merging DataFrames
 ******************
 
-By default the merge method in pandas will return only those rows where a common identifier found in both tables, which is known as an "inner" join.
+By default the merge method in pandas will return only those rows where a common identifier is found in both tables, which is known as an "inner" join.
 
 That means that if we merge the full contributions file to our filtered list of Proposition 64 committees, only the contributions to the Proposition 64 committees will remain. The result will be equivalent to a filter.
 

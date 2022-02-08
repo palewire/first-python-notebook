@@ -12,7 +12,7 @@ Remember this line earlier?
 
 That's where we set which proposition we wanted to filter on. It was a key fork in the road, which shaped all the analysis that followed.
 
-That means that if we substituted a different proposition name from the value_counts list just above it we could rerun our notebook and conduct an identical analysis of another proposition, without writing another line of code.
+That means that if we substituted a different proposition name from the ``value_counts`` list just above it we could rerun our notebook and conduct an identical analysis of another proposition, without writing another line of code.
 
 Let's try it. I picked the death penalty ban that was on the same ballot and changed that cell of code to this:
 
