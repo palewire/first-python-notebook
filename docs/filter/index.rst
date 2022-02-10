@@ -16,7 +16,7 @@ Filtering a DataFrame
 
 The most common way to filter a DataFrame is to pass an expression as an "index" that can be used to decide which records should be kept and which discarded.
 
-You write the expression by combining a column on your DataFrame with an `"operator"`_ like ``==`` or ``>`` or ``<`` and a value to compare the column against.
+You write the expression by combining a column on your DataFrame with an `"operator"`_ like ``==`` or ``>`` or ``<`` and a value to compare against each row.
 
 .. note::
 
