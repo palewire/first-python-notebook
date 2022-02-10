@@ -56,13 +56,13 @@ Since it includes only the committees for one proposition let's call it the sing
 
 To check our work and find out how many committees are left after the filter, let's run the DataFrame inspection commands we learned earlier.
 
-First head.
+First ``head``.
 
 .. code-block:: python
 
     my_committees.head()
 
-Then info.
+Then ``info``.
 
 .. code-block:: python
 
