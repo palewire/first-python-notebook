@@ -38,7 +38,7 @@ From that result we can copy the full name of the proposition and place it betwe
 
     my_prop = 'PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.'
 
-In the next cell we will ask pandas to narrow down our list of committees to just those that match the proposition we're interested in. We will create a filter expression that looks like this: :code:`committee_list.prop_name == my_prop`, and place it between two flat brackets following the variable we want to filter. Place the following code in the next open cell in your notebook.
+In the next cell we will ask pandas to narrow down our list of committees to just those that match the proposition we're interested in. We will create a filter expression that looks like this: :code:`committee_list.prop_name == my_prop`, and place it between two flat brackets following the DataFrame we wish to filter.
 
 .. code-block:: python
 
