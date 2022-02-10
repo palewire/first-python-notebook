@@ -32,7 +32,7 @@ We can therefore safely join the two files using the pandas `merge`_ method.
 Merging DataFrames
 ******************
 
-By default the merge method in pandas will return only those rows where a common identifier is found in both tables, which is known as an "inner" join.
+By default the ``merge`` method in pandas will return only those rows where a common identifier is found in both tables, which is known as an "inner" join.
 
 That means that if we merge the full contributions file to our filtered list of Proposition 64 committees, only the contributions to the Proposition 64 committees will remain. The result will be equivalent to a filter.
 
@@ -44,7 +44,7 @@ Merging two DataFrames is as simple as passing both to pandas built-in merge met
 
     merged = pd.merge(my_committees, contrib_list, on="calaccess_committee_id")
 
-That new ``DataFrame`` variable can be inspected like any other.
+That new DataFrame variable can be inspected like any other.
 
 .. code-block:: python
 
