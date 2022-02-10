@@ -18,7 +18,7 @@ Now compare that to the committees file.
 
     committee_list.info()
 
-You will notice that this file contains a field called ``calaccess_committee_id`` that is identical to the one found in the committee CSV.
+You will notice that this file contains a field called ``calaccess_committee_id`` that is identical to the one found in the committee file.
 
 That's because these two files are drawn from a `"relational database"`_ that stores data in an array of tables linked together by common identifiers. In this case, the unique identifying codes of committees in one table can be expected to match those found in another.
 
