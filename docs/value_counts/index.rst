@@ -71,4 +71,4 @@ Why do Series and DataFrames behave differently? Why does ``reset_index`` have s
 
 Like so much in computer programming, the answer is simply, "because the people who created the library said so." It's important to learn that all open-source programming tools are made by humans, and humans have their quirks. Over time you'll see pandas has more than a few.
 
-As a beginner, you should just accept the oddities and roll with it. As you get more advanced, if there's something about the system you think could be improved you should consider `contributing <https://pandas.pydata.org/pandas-docs/stable/development/contributing.html>`_ to the Python code that operates the library you'd like to improve.
+As a beginner, you should just accept the oddities and keep moving. As you get more advanced, if there's something about the system you think could be improved you should consider `contributing <https://pandas.pydata.org/pandas-docs/stable/development/contributing.html>`_ to the Python code that operates the library.
