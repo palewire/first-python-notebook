@@ -1,0 +1,8 @@
+yolk3k = "*"
+jupyterlab = "*"
+pandas = "*"
+altair = "*"
+sphinx = "*"
+sphinx-autobuild = "*"
+sphinx-rtd-theme = "*"
+myst-nb = "*"
