@@ -13,6 +13,7 @@ sphinx = "*"
 sphinx-autobuild = "*"
 sphinx-rtd-theme = "*"
 yolk3k = "*"
+myst-nb = "*"
 
 [requires]
 python_version = "3.9"

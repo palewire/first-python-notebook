@@ -31,7 +31,7 @@ sys.path.insert(0, os.path.abspath('.'))
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'ext.video',
+    "myst_nb",
 ]
 
 pdf_documents = []
@@ -50,8 +50,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'First Python Notebook'
-copyright = u'2020, Ben Welsh and the California Civic Data Coalition'
-author = u'Ben Welsh and the California Civic Data Coalition'
+copyright = u'2020'
+author = u'Ben Welsh'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
