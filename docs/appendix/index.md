@@ -294,7 +294,7 @@ That will open up a new tab in your default web browser that looks something lik
 ```{image} /_static/jupyterlabdesktop.png
 ```
 
-Click the "Python 3" button in the middle panel and create a new Python 3 notebook. You should now be able to pick up in [chapter two](../notebook) and start work from there.
+Click the "Python 3" button in the middle panel and create a new Python 3 notebook. You should now be able to pick up in {doc}`chapter two </notebook/index>` and start work from there.
 
 [alternative]: https://github.com/pypa/pipfile
 [atom]: https://atom.io/

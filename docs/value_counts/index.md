@@ -89,8 +89,6 @@ committee_list['prop_name']
 
 This method isn't as pretty, but it's required if your column has a space in its name, which would break the simpler dot-based method.
 
-(value-counts)=
-
 ## Counting a column's values
 
 There's another built-in pandas tool that will total up the frequency of values in a column. In this case that could be used to answer the question: Which proposition had the most committees?
