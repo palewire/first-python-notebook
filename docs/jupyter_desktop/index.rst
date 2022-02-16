@@ -53,9 +53,9 @@ It is free software you can install and run like any other open-source library. 
 
 It is also used by journalists to develop stories and show their work. Examples include:
 
-* `"The Tennis Racket"`_ by BuzzFeed and the BBC
-* `"Machine bias"`_ by ProPublica
-* `As Opioid Crisis Ramped Up, Pills Flowed Into Vermont by the Millions <https://github.com/asuozzo/arcos-opioid-analysis-vt>`_ by Seven Days
+* `“The Tennis Racket”`_ by BuzzFeed and the BBC
+* `“Machine bias”`_ by ProPublica
+* `“As Opioid Crisis Ramped Up, Pills Flowed Into Vermont by the Millions” <https://github.com/asuozzo/arcos-opioid-analysis-vt>`_ by Seven Days
 * `More than 35 different notebooks`_ published by the Los Angeles Times
 
 There are numerous ways to install and configure Jupyter notebooks. Since this tutorial is designed for beginners, it will demonstrate how to use `JupyterLab Desktop <https://github.com/jupyterlab/jupyterlab-desktop>`_, a self-contained application that provides a ready-to-use Python environment with several popular libraries already bundled in. It can be installed on any operating system with a simple point-and-click interface.
