@@ -53,10 +53,10 @@ It is free software you can install and run like any other open-source library. 
 
 It is also used by journalists to develop stories and show their work. Examples include:
 
-* `“The Tennis Racket”`_ by BuzzFeed and the BBC
-* `“Machine bias”`_ by ProPublica
+* `“The Tennis Racket” <https://github.com/BuzzFeedNews/2016-01-tennis-betting-analysis/blob/master/notebooks/tennis-analysis.ipynb>`_ by BuzzFeed and the BBC
+* `“Machine bias” <https://github.com/propublica/compas-analysis/blob/master/Compas%20Analysis.ipynb>`_ by ProPublica
 * `“As Opioid Crisis Ramped Up, Pills Flowed Into Vermont by the Millions” <https://github.com/asuozzo/arcos-opioid-analysis-vt>`_ by Seven Days
-* `More than 35 different notebooks`_ published by the Los Angeles Times
+* `More than 35 different notebooks <https://github.com/datadesk/notebooks>`_ published by the Los Angeles Times
 
 There are numerous ways to install and configure Jupyter notebooks. Since this tutorial is designed for beginners, it will demonstrate how to use `JupyterLab Desktop <https://github.com/jupyterlab/jupyterlab-desktop>`_, a self-contained application that provides a ready-to-use Python environment with several popular libraries already bundled in. It can be installed on any operating system with a simple point-and-click interface.
 
@@ -97,7 +97,4 @@ Hit the "Python 3" button in the launcher panel on the right and you're ready to
 .. _scientists: http://nbviewer.jupyter.org/github/robertodealmeida/notebooks/blob/master/earth_day_data_challenge/Analyzing%20whale%20tracks.ipynb
 .. _scholars: http://nbviewer.jupyter.org/github/nealcaren/workshop_2014/blob/master/notebooks/5_Times_API.ipynb
 .. _investors: https://github.com/rsvp/fecon235/blob/master/nb/fred-debt-pop.ipynb
-.. _"The Tennis Racket": https://github.com/BuzzFeedNews/2016-01-tennis-betting-analysis/blob/master/notebooks/tennis-analysis.ipynb
-.. _More than 35 different notebooks: https://github.com/datadesk/notebooks
-.. _"Machine bias": https://github.com/propublica/compas-analysis/blob/master/Compas%20Analysis.ipynb
 .. _Jupyter Notebook: http://jupyter.org/
