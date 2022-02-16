@@ -4,5 +4,5 @@ pandas
 altair
 sphinx
 sphinx-autobuild
-sphinx-rtd-theme
+sphinx_multitoc_numbering
 myst-nb
