@@ -1,6 +1,6 @@
-=======================
-Chapter 3: Hello pandas
-=======================
+======
+Pandas
+======
 
 Lucky for us, Python is filled with functions to do pretty much anything you’d ever want to do with a programming language: `navigate the web`_, `parse data`_, `interact with a database`_, `run fancy statistics`_, `build a pretty website`_ and `so`_ `much`_ `more`_.
 

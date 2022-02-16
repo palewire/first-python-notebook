@@ -1,6 +1,6 @@
-=======================
-Chapter 9: Hello totals
-=======================
+======
+Totals
+======
 
 In some ways, your database is no different from a human source. Getting a good story requires careful, thorough questioning. In this section we will move ahead by conducting an interview with pandas to pursue our quest of finding out the biggest donors to Proposition 64.
 

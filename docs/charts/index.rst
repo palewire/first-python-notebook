@@ -1,6 +1,6 @@
-========================
-Chapter 13: Hello charts
-========================
+======
+Charts
+======
 
 Python has a number of charting tools that can work hand-in-hand with pandas. `Altair <https://altair-viz.github.io/>`_ is a relative newbie, but it's got good documentation and can display charts right in your Jupyter Notebook — plus it can export to lots of other formats.
 

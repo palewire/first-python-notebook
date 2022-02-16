@@ -1,8 +1,8 @@
 .. _sorting:
 
-=========================
-Chapter 10: Hello sorting
-=========================
+=======
+Sorting
+=======
 
 Another simple but common technique for analyzing data is sorting.
 

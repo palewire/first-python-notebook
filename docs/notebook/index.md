@@ -10,7 +10,7 @@ kernelspec:
   language: python
   name: python3
 ---
-# Chapter 2: Hello notebook
+# Notebooks
 
 Now you are all setup and ready to start writing Python code.
 

@@ -1,3 +1,48 @@
+.. raw:: html
+
+    <nav>
+      <div class="row">
+        <div class="sevencol">
+          <div class="shingle">
+            <a href="https://palewi.re/">
+              <div rel="rnews:copyrightedBy rnews:hasSource rnews:providedBy">
+                <div about="http://palewi.re/" typeof="rnews:Organization">
+                  <div property="rnews:name">palewire</div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="fivecol last links">
+          <ul>
+            <li>
+              <a href="http://palewi.re/posts/" title="Posts">
+                Posts
+              </a>
+            </li>
+            <li>
+              <a href="http://palewi.re/work/" title="Work">
+                Work
+              </a>
+            </li>
+            <li>
+              <a href="http://palewi.re/talks/" title="Talks">
+                Talks
+              </a>
+            </li>
+            <li>
+              <a href="http://palewi.re/who-is-ben-welsh/" title="Who is Ben Welsh?">
+                About
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="row topbar">
+        <div class="twelvecol last"></div>
+    </div>
+
 =====================
 First Python Notebook
 =====================
@@ -25,6 +70,7 @@ This course is free. If you've tried Python once or twice, have good attitude an
     :maxdepth: 1
     :caption: Table of Contents
     :name: mastertoc
+    :numbered:
 
     jupyter_desktop/index
     notebook/index
@@ -39,5 +85,12 @@ This course is free. If you've tried Python once or twice, have good attitude an
     groupby/index
     remix/index
     charts/index
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Appendix
+    :name: appendix
+    :numbered:
+
     appendix/index
     about/index

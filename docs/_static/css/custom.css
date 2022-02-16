@@ -1,138 +1,181 @@
-@import url("theme.css");
-@import url("https://fonts.googleapis.com/css?family=Raleway:400,600");
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,700;0,800;1,400;1,800&display=swap');
 
-@font-face{
-    font-family: 'Source Sans Pro';
-    font-weight: 300;
-    font-style: normal;
-    font-stretch: normal;
-    src: url('https://calaccess.californiacivicdata.org/static/calaccess_website/fonts/source-sans-pro/EOT/SourceSansPro-Light.eot') format('embedded-opentype'),
-         url('https://calaccess.californiacivicdata.org/static/calaccess_website/fonts/source-sans-pro/WOFF2/TTF/SourceSansPro-Light.ttf.woff2') format('woff2'),
-         url('https://calaccess.californiacivicdata.org/static/calaccess_website/fonts/source-sans-pro/WOFF/OTF/SourceSansPro-Light.otf.woff') format('woff'),
-         url('https://calaccess.californiacivicdata.org/static/calaccess_website/fonts/source-sans-pro/OTF/SourceSansPro-Light.otf') format('opentype'),
-         url('https://calaccess.californiacivicdata.org/static/calaccess_website/fonts/source-sans-pro/TTF/SourceSansPro-Light.ttf') format('truetype');
+div.document {
+    margin-top: 0;
 }
 
-@font-face{
-    font-family: 'Source Sans Pro';
-    font-weight: 400;
-    font-style: normal;
-    font-stretch: normal;
-    src: url('https://calaccess.californiacivicdata.org/static/calaccess_website/fonts/source-sans-pro/EOT/SourceSansPro-Regular.eot') format('embedded-opentype'),
-         url('https://calaccess.californiacivicdata.org/static/calaccess_website/fonts/source-sans-pro/WOFF2/TTF/SourceSansPro-Regular.ttf.woff2') format('woff2'),
-         url('https://calaccess.californiacivicdata.org/static/calaccess_website/fonts/source-sans-pro/WOFF/OTF/SourceSansPro-Regular.otf.woff') format('woff'),
-         url('https://calaccess.californiacivicdata.org/static/calaccess_website/fonts/source-sans-pro/OTF/SourceSansPro-Regular.otf') format('opentype'),
-         url('https://calaccess.californiacivicdata.org/static/calaccess_website/fonts/source-sans-pro/TTF/SourceSansPro-Regular.ttf') format('truetype');
+div.body {
+    min-width: 0 !important;
 }
 
-@font-face{
-    font-family: 'Source Sans Pro';
-    font-weight: 600;
-    font-style: normal;
-    font-stretch: normal;
-    src: url('https://calaccess.californiacivicdata.org/static/calaccess_website/fonts/source-sans-pro/EOT/SourceSansPro-Semibold.eot') format('embedded-opentype'),
-         url('https://calaccess.californiacivicdata.org/static/calaccess_website/fonts/source-sans-pro/WOFF2/TTF/SourceSansPro-Semibold.ttf.woff2') format('woff2'),
-         url('https://calaccess.californiacivicdata.org/static/calaccess_website/fonts/source-sans-pro/WOFF/OTF/SourceSansPro-Semibold.otf.woff') format('woff'),
-         url('https://calaccess.californiacivicdata.org/static/calaccess_website/fonts/source-sans-pro/OTF/SourceSansPro-Semibold.otf') format('opentype'),
-         url('https://calaccess.californiacivicdata.org/static/calaccess_website/fonts/source-sans-pro/TTF/SourceSansPro-Semibold.ttf') format('truetype');
+div.body p, div.body li {
+    line-height: 1.45;
 }
 
-@font-face{
-    font-family: 'Source Sans Pro';
-    font-weight: 700;
-    font-style: normal;
-    font-stretch: normal;
-    src: url('https://calaccess.californiacivicdata.org/static/calaccess_website/fonts/source-sans-pro/EOT/SourceSansPro-Bold.eot') format('embedded-opentype'),
-         url('https://calaccess.californiacivicdata.org/static/calaccess_website/fonts/source-sans-pro/WOFF2/TTF/SourceSansPro-Bold.ttf.woff2') format('woff2'),
-         url('https://calaccess.californiacivicdata.org/static/calaccess_website/fonts/source-sans-pro/WOFF/OTF/SourceSansPro-Bold.otf.woff') format('woff'),
-         url('https://calaccess.californiacivicdata.org/static/calaccess_website/fonts/source-sans-pro/OTF/SourceSansPro-Bold.otf') format('opentype'),
-         url('https://calaccess.californiacivicdata.org/static/calaccess_website/fonts/source-sans-pro/TTF/SourceSansPro-Bold.ttf') format('truetype');
+div.body li {
+    margin-bottom: 4px;
 }
 
-.doc_pages_container {
-    clear:both;
-    display:inline-block;
+div.topic {
+    margin: 0;
+    padding: 8px 12px;
 }
 
-.doc_page_frame {
-    float: left;
+p.topic-title {
+    margin: 0;
 }
 
-.doc_page_frame p {
-    text-align: center;
-    font-size: 0.85em;
+div.topic ul {
+    margin-top: 6px;
+}
+@media screen and (max-width: 870px) {
+    ul {
+        margin: 10px 0 10px 20px;
+    }
 }
 
-.doc_page {
-    border: 2px solid #aaa;
-    -webkit-box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.5);
-    -moz-box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.5);
-    box-shadow: 4px 4px 4px 0px rgba(0,0,0,0.5);
-    margin-right: 1em;
-    padding-bottom: 2px;
+div.sphinxsidebar h3 {
+  font-family: 'Libre Franklin', "Helvetica", "Liberation Sans", Arial, sans-serif;
 }
 
-.doc_page:hover {
-    border: 2px solid #3399ff;
-    border-radius: 3px;
-    -webkit-box-shadow: 2px 2px 4px 4px rgba(51,153,255,0.5);
-    -moz-box-shadow: 2px 2px 4px 4px rgba(51,153,255,0.5);
-    box-shadow: 2px 2px 4px 4px rgba(51,153,255,0.5);
-    padding-bottom: 2px;
-}
-
-.wy-nav-top {
-    background: #b71234;
-}
-
-.wy-side-nav-search {
-    background-color: #b71234;
+@media screen and (max-width: 875px) {
+  div.sphinxsidebar {
+    width: auto;
+    padding: 0px 20px;
+    margin: 50px 0 0 0;
+  }
 }
 
 body {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 300;
+  font-family: 'Libre Franklin', "Helvetica", "Liberation Sans", Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.45;
+  text-align: left;
+}
+@media screen and (max-width: 875px) {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    div.body > .section {
+        padding: 0 20px;
+    }
 }
 
-h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
-  font-family: 'Raleway', 'Source Sans Pro', sans-serif;
-  font-weight: 600;
+@media (max-width: 550px) {
+    body {
+        font-size: 0.85em;
+    }
 }
 
-p, li {
-    font-size: 18px;
-    line-height: 26px;
+div.body h1, div.body h2, div.body h3, div.body h4, div.body h5, div.body h6 {
+    font-family: 'Libre Franklin', "Helvetica", "Liberation Sans", Arial, sans-serif;
+    font-weight: 700;
 }
 
-p.caption {
-    font-size: 14px;
-    line-height: 20px;
-    margin: 4px 0;
+div.body h1 {
+    font-weight: 800;
+    font-size: 220%;
 }
 
-.rst-content .toctree-wrapper ul {
-    margin-top: 24px;
+pre {
+    padding: 7px;
 }
 
-table.csv-data td,
-table.csv-data th {
-    width: auto !important;
-}
-
-.embed-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
+.row {
+    width: 100%;
+    max-width: 660px;
+    margin: 0 auto;
     overflow: hidden;
-    max-width: 100%;
-    margin-bottom: 24px;
+}
+.row .fivecol {
+    width: 40%;
+    float: right;
+    min-height: 1px;
+}
+.row .sevencol {
+    width: 40%;
+    float: left;
+    min-height: 1px;
+}
+@media (max-width: 550px) {
+    .row .fivecol, .row .sevencol {
+        padding: 0 20px;
+    }
 }
 
- .embed-container iframe, .embed-container object, .embed-container embed {
-     position: absolute;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
+/* The header */
+nav {
+    display: block;
+    margin-top: 0.75em;
+    margin-bottom: 0.5em;
+    font-size: 1em;
+    line-height: 1.7em;
+}
+nav .shingle {
+    font-size: 1.7em;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 0.15em;
+}
+nav .shingle a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+}
+nav .shingle a:hover {
+    color: #686868;
+}
+@media (max-width: 550px) {
+    nav .shingle {
+        float: left;
+        margin-bottom: 5px;
+   }
+}
+nav .links {
+    text-align: right;
+}
+nav .links ul {
+    float: right;
+    list-style-type: none;
+    margin: 4px 0 0 0;
+}
+nav .links li {
+    float: left;
+    list-style-position: inside;
+    margin-left: 0.5em;
+    font-size: 0.9em;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+nav .links li a {
+    text-decoration: none;
+}
+nav .links li a:hover {
+    text-decoration: underline;
+}
+.last {
+    margin-right: 0;
+}
 
- }
+.topbar {
+    border-bottom: solid 10px #e5e5e5;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+a:link {
+  text-decoration: none;
+  color: #686868;
+}
+a:visited {
+  text-decoration: none;
+  color: #686868;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:active {
+  text-decoration: underline;
+  color: #000;
+}

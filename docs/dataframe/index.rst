@@ -1,6 +1,6 @@
-=====================
-Chapter 5: Hello data
-=====================
+====
+Data
+====
 
 Now it's time to get our hands on some real data.
 

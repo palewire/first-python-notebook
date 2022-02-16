@@ -1,6 +1,6 @@
-===================================
-Chapter 1: Hello JupyterLab Desktop
-===================================
+==================
+JupyterLab Desktop
+==================
 
 A `Jupyter notebook`_ is a browser-based interface where you can write, run, remix and republish code.
 

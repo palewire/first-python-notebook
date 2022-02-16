@@ -1,6 +1,6 @@
-========================
-Chapter 6: Hello columns
-========================
+=======
+Columns
+=======
 
 In this chapter we'll begin our analysis by learning how to inspect a column from a DataFrame.
 

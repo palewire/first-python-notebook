@@ -14,6 +14,7 @@ sphinx-autobuild = "*"
 sphinx-rtd-theme = "*"
 yolk3k = "*"
 myst-nb = "*"
+sphinx-multitoc-numbering = "*"
 
 [requires]
 python_version = "3.9"

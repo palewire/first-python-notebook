@@ -1,6 +1,6 @@
-======================
-Chapter 8: Hello merge
-======================
+=====
+Merge
+=====
 
 Our next job is to filter down the contributions list, which includes all disclosed contributions to all proposition campaigns, to just those linked to Proposition 64.
 

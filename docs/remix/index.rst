@@ -1,6 +1,6 @@
-=======================
-Chapter 12: Hello remix
-=======================
+=====
+Remix
+=====
 
 Now here's where things get fun. Your entire analysis is scripted top to bottom, which means it can be rerun and reproduced. It also be remixed.
 

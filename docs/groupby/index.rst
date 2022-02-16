@@ -1,6 +1,6 @@
-=========================
-Chapter 11: Hello groupby
-=========================
+=======
+Groupby
+=======
 
 To take the next step towards ranking the top contributors, we'll need to learn a new trick.
 It's called `groupby <https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html>`_.
