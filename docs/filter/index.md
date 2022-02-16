@@ -78,7 +78,7 @@ In our case, the column we want to filter against is `prop_name`. We only want t
 
 Where do we get that? Our friend `value_counts`.
 
-Running the command we learned before to {ref}`list <list data>` and {ref}`count <value counts>` all of the proposition names will spit out the full name of all 17 measures.
+Running the ``value_counts`` method to spit out the full name of all 17 measures.
 
 ```{code-cell}
 :tags: [hide-cell]

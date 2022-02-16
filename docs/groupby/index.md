@@ -103,7 +103,7 @@ Again our data has come back as an ugly Series. To reformat it as a pretty DataF
 merged.groupby("contributor_state").amount.sum().reset_index()
 ```
 
-Sorting totals from highest to lowest is easy. Remember the {ref}`sort values trick <sort values trick>` we learned earlier? Voila! Here's our answer:
+Sorting totals from highest to lowest is easy. Remember the {doc}`sort values trick </sort_values/index>` we learned earlier? Voila! Here's our answer:
 
 ```{code-cell}
 merged.groupby("contributor_state").amount.sum().reset_index().sort_values("amount", ascending=False)
@@ -125,7 +125,7 @@ To find out if each contributor supported or opposed the measure, you simply add
 merged.groupby(["contributor_firstname", "contributor_lastname", "committee_position"]).amount.sum().reset_index().sort_values("amount", ascending=False)
 ```
 
-If you want the top supporters or opponents alone, run those same commands with the `support` and `oppose` datasets we {ref}`filtered down to earlier <filter_support_oppose>`. Everything else about the commands would be the same as the first one above.
+If you want the top supporters or opponents alone, run those same commands with the `support` and `oppose` datasets we {doc}`filtered down to earlier </filter/index>`. Everything else about the commands would be the same as the first one above.
 
 For the supporters:
 
@@ -143,7 +143,7 @@ oppose.groupby(["contributor_firstname", "contributor_lastname"]).amount.sum().r
 
 You've done it. Our brief interview is complete and you've answered the big question that started our inquiry.
 
-Or so you think! Look again at our rankings above. Now compare them against the ranking we looked at earlier in our {ref}`sorting lesson <sorting>`.
+Or so you think! Look again at our rankings above. Now compare them against the ranking we looked at earlier in our {doc}`sorting lesson </sort_values/index>`.
 
 Study it closely and you'll see an important difference. All of the contributors without a first name are dropped from our groupby lists. And some of them gave a lot of money.
 

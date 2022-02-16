@@ -61,7 +61,7 @@ There are numerous ways to install and configure Jupyter notebooks. Since this t
 
 .. note::
 
-    Advanced users like to take advantage of Python’s power tools to have more control over when and where code is installed on their system. Readers interested in the techniques preferred by the pros should consult `our appendix <../appendix/>`_. It requires use of your computer’s command-line interface.
+    Advanced users like to take advantage of Python’s power tools to have more control over when and where code is installed on their system. Readers interested in the techniques preferred by the pros should consult {doc}`our appendix </appendix/index>`. It requires use of your computer’s command-line interface.
 
 
 Install JupyterLab Desktop

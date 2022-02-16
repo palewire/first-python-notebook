@@ -75,7 +75,7 @@ import pandas
 If nothing happens, that's good. It means you have pandas installed and ready as to use.
 
 ```{note}
-Since pandas is created by a third party separate from the core Python developers, it wouldn't be installed by default if you followed our [advanced installation](../appendix) instructions.
+Since pandas is created by a third party separate from the core Python developers, it wouldn't be installed by default if you followed our {doc}`our advanced installation </appendix/index>` instructions.
 
 It's available to you because the JupyterLab Desktop developers have pre-selected a curated list of common utilities to include with their installation, another reason to love their easy installer.
 ```

@@ -299,7 +299,7 @@ Click the "Python 3" button in the middle panel and create a new Python 3 notebo
 [alternative]: https://github.com/pypa/pipfile
 [atom]: https://atom.io/
 [cd]: https://en.wikipedia.org/wiki/Cd_(command)
-[chapter 2]: ../notebook/
+[chapter 2]: {doc}`chapter two </notebook/index>`
 [cheese shop]: https://youtu.be/Hz1JWzyvv8A
 [command-line interface]: https://en.wikipedia.org/wiki/Command-line_interface
 [docs]: https://pipenv.kennethreitz.org/en/latest/install/#pragmatic-installation-of-pipenv
