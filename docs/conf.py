@@ -17,7 +17,7 @@ exclude_patterns = ["_build"]
 html_theme = "alabaster"
 html_sidebars = {
     '**': [
-        # 'about.html',
+        'about.html',
         'navigation.html',
         'relations.html',
         'searchbox.html',
@@ -28,6 +28,7 @@ html_theme_options = {
     "canonical_url": f"https://palewi.re/docs/{project}/",
     "donate_url": "https://github.com/sponsors/palewire",
     "show_powered_by": False,
+    "show_relbar_bottom": True,
 }
 
 html_static_path = ['_static']

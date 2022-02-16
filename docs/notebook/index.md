@@ -10,6 +10,50 @@ kernelspec:
   language: python
   name: python3
 ---
+
+<nav>
+  <div class="row">
+    <div class="sevencol">
+      <div class="shingle">
+        <a href="https://palewi.re/">
+          <div rel="rnews:copyrightedBy rnews:hasSource rnews:providedBy">
+            <div about="http://palewi.re/" typeof="rnews:Organization">
+              <div property="rnews:name">palewire</div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="fivecol last links">
+      <ul>
+        <li>
+          <a href="http://palewi.re/posts/" title="Posts">
+            Posts
+          </a>
+        </li>
+        <li>
+          <a href="http://palewi.re/work/" title="Work">
+            Work
+          </a>
+        </li>
+        <li>
+          <a href="http://palewi.re/talks/" title="Talks">
+            Talks
+          </a>
+        </li>
+        <li>
+          <a href="http://palewi.re/who-is-ben-welsh/" title="Who is Ben Welsh?">
+            About
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="row topbar">
+    <div class="twelvecol last"></div>
+</div>
+
 # Notebooks
 
 Now you are all setup and ready to start writing Python code.
@@ -19,7 +63,7 @@ Do not stress. There is nothing too fancy about it. You can start by just doing 
 Type the following into the first box, then hit the play button in the toolbar above the notebook (or hit `SHIFT+ENTER` on your keyboard).
 
 ```{code-cell}
-    2+2
+2+2
 ```
 
 There. You have just written your first Python code. You have entered two integers and added them together using the plus sign operator.

@@ -4,15 +4,12 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [packages]
-# For the class
 jupyterlab = "*"
 pandas = "*"
 altair = "*"
-# For the docs
+yolk3k = "*"
 sphinx = "*"
 sphinx-autobuild = "*"
-sphinx-rtd-theme = "*"
-yolk3k = "*"
 myst-nb = "*"
 sphinx-multitoc-numbering = "*"
 
