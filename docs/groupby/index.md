@@ -174,9 +174,25 @@ merged.groupby(["contributor_firstname", "contributor_lastname","contributor_sta
 
 But we might want to quickly sort in-state vs. out-of-state donors, or perform similar calculations, and just adding the contributor state doesn't allow us to quickly evaluate trends. Plus, adding the "state" adds two more rows to our ranking list, probably because a donor with the same name reported their location differently across multiple donations.
 
-Instead, we can use conditionals to create a new column based on whether or not a candidate is in-state. Then we can group by that column. 
+Well, we could also group by state alone, to get a better sense of it.
 
-There are a few ways to achieve this. We're going to write a conditional directly into our Pandas statement. We'll use the Boolean data type to create a True/False flag.
+```{code-cell}
+merged.groupby(["contributor_state"], dropna=False).amount.sum().reset_index().sort_values("amount", ascending=False)
+```
+
+Or we could filter to calculate just to California, and then filter again to not California. The query function lets us check whether a statement is true (in this case, does ``contributor_state`` equal ``'CA'``). Then it performs an operation on the results.
+
+```{code-cell}
+merged.query("contributor_state == 'CA'")['amount'].sum()
+```
+
+```{code-cell}
+merged.query("contributor_state != 'CA'")['amount'].sum()
+```
+
+But what if we want a quick way to group by "California" vs. "not-California," and we want to be able to refer to that later? Instead, we can use conditionals to create a new column based on whether or not a candidate is in-state. Then we can group by that column. 
+
+There are a few ways to achieve this. We're going to write a conditional directly into our Pandas statement. We'll create a True/False flag, which is a Boolean data type.
 
 ```{code-cell}
 merged["in_state"] = [True if x == "CA" else False for x in merged["contributor_state"]]
@@ -195,6 +211,8 @@ Let's use our earlier groupby and sum code, but group by the ``in_state`` flag i
 ```{code-cell}
 merged.groupby(["in_state"], dropna=False).amount.sum().reset_index().sort_values("amount", ascending=False)
 ```
+
+Notice that these totals match our "California" vs. "not-California" sum totals that we calculated with the query function up above.
 
 We can also create a new dataframe for just in-state donors.
 
