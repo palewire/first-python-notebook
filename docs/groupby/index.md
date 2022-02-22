@@ -212,7 +212,7 @@ Let's use our earlier groupby and sum code, but group by the ``in_state`` flag i
 merged.groupby(["in_state"], dropna=False).amount.sum().reset_index().sort_values("amount", ascending=False)
 ```
 
-Notice that these totals match our "California" vs. "not-California" sum totals that we calculated with the query function up above.
+Notice that these totals match our "California" vs. "not-California" sum totals that we calculated with the query function up above. That's good! This is one way to QA your new column. If your totals didn't match, it means you should go back and double-check the logic in your conditional statement that's creating the new column.
 
 We can also create a new dataframe for just in-state donors.
 
