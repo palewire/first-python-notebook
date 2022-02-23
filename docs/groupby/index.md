@@ -123,6 +123,7 @@ merged_prop.groupby(["contributor_firstname", "contributor_lastname"], dropna=Fa
 
 Now we've finally got a ranking we can work with. Congratulations, you've finished our analysis.
 
+
 ## Bonus: Creating a New Column
 
 Let's say we wanted to take an extra step to learn whether these top contributors are from inside the state or outside of it.
