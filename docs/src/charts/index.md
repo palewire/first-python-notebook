@@ -36,6 +36,7 @@ merged_everything = pd.merge(committee_list, contrib_list, on="calaccess_committ
 merged_prop = merged_everything[merged_everything.prop_name == my_prop]
 support = merged_prop[merged_prop.committee_position == 'SUPPORT']
 oppose = merged_prop[merged_prop.committee_position == 'OPPOSE']
+merged_prop["in_state"] = merged_prop["contributor_state"] == "CA"
 ```
 
 ```{code-cell}
