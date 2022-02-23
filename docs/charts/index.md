@@ -20,7 +20,8 @@ Python has a number of charting tools that can work hand-in-hand with pandas. [A
 
 Let's take it for a spin.
 
-## A Basic Bar Chart
+
+## Make a basic bar chart
 
 Head back to the import cell at the top of your notebook and add Altair. We'll usually import it with the alias `alt` so we don't have to type out the whole thing every time we make a chart.
 
@@ -33,7 +34,6 @@ contrib_list = pd.read_csv("https://raw.githubusercontent.com/california-civic-d
 my_prop = 'PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.'
 merged_everything = pd.merge(committee_list, contrib_list, on="calaccess_committee_id")
 merged_prop = merged_everything[merged_everything.prop_name == my_prop]
-merged = pd.merge(my_committees, contrib_list, on="calaccess_committee_id")
 support = merged_prop[merged_prop.committee_position == 'SUPPORT']
 oppose = merged_prop[merged_prop.committee_position == 'OPPOSE']
 ```
@@ -112,7 +112,7 @@ Now, we have a good idea of who spent the most in support of Prop. 64. What if w
 
 ## Adding visual complexity
 
-Add a new cell and a new dataframe, `top_contributors`, summing up the top contributors in our whole `merged` dataframe. We're going to repeat a lot of the pandas functions we've stepped through before, all in one go this time.
+Add a new cell and a new dataframe, `top_contributors`, summing up the top contributors in our whole `merged_prop` dataframe. We're going to repeat a lot of the pandas functions we've stepped through before, all in one go this time.
 
 ```{code-cell}
 top_contributors = merged_prop.groupby(
@@ -144,14 +144,14 @@ alt.Chart(top_contributors).mark_bar().encode(
 
 Hey now! That wasn't too hard, was it?
 
-## Tackling time scales
+## Charting datetime data
 
 One thing you'll almost certainly find yourself grappling with time and time again is date (and time) fields, so let's talk about how to handle them.
 
-Particularly with campaign finance data, looking at contributions over time can be a useful way to explore. Let's make ourselves a slightly smaller version of the `merged` dataframe so we're not dealing with too many columns.
+With campaign finance data, looking at contributions over time can be a very useful way to find patterns. Let's make ourselves a slightly smaller version of the `merged_prop` dataframe so we're not dealing with too many columns.
 
 ```{code-cell}
-merged_small = merged[[
+merged_small = merged_prop[[
   "date_received","committee_name_x","committee_position",
   "contributor_lastname","contributor_firstname",
   "contributor_state","amount"
@@ -165,39 +165,46 @@ To do that, we can print out a list of `dtypes`, or data types, for each column.
 merged_small.dtypes
 ```
 
-So, you'll notice there that Pandas isn't treating our `date_received` column as a date column. We'll talk about how to change the column type in a little bit, but we're in luck here — Altair can actually parse column types independently of Pandas.
+So, you'll notice there that Pandas isn't treating our `date_received` column as a date column, but we can change that.
 
-Let's try that out with another simple bar chart, making sure to tell Altair that our x-axis column holds temporal data by adding `:T` after the column name. Try running the chart with and without that `:T` and see how that changes the chart.
+```{code-cell}
+merged_small['date_received'] = pd.to_datetime(merged_small['date_received])
+```
+
+This redefines each object in that column as a date. If your dates are in an unusual or ambiguous format, you may have to [pass in a specific formatter](https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html), but in this case Pandas should be able to guess correctly.
+
+Now that we've got that out of the way, let's see what it looks like! You know how to make a bar chart now, so which columns should we visualize here?
 
 ```{code-cell}
 alt.Chart(merged_small).mark_bar().encode(
-  x="date_received:T",
+  x="date_received",
   y="amount"
 )
 ```
 This is great on the x axis, but it's not quite accurate on the y. What do you think happens here if there are multiple donations on the same day?
 
-Altair doesnt know what to do with multiple amounts on the same day, so it'll just stack them on top of each other. To make sure this chart is accurate, we'll need to aggregate the y axis in some way.
+Altair doesnt know what to do with multiple amounts on the same day, so it'll just stack them all on top of each other. To make sure this chart is accurate, we'll need to aggregate the y axis in some way.
 
 We could back out and create a new dataset grouped by date, but Altair actually lets us do some of that grouping on the fly. We want to add everything that happens on the same date, so we'll pop in a `sum` function on that column.
 
 ```{code-cell}
 alt.Chart(merged_small).mark_bar().encode(
-  x="date_received:T",
+  x="date_received",
   y="sum(amount)"
 )
 ```
-OK, this is getting there. But sometimes plotting on a day-by-day basis isn't all that useful — especially over a long period of time, like we have here.
+This is getting there. But sometimes plotting on a day-by-day basis isn't all that useful — especially over a long period of time, like we have here.
 
 Again, we could back out and create a new dataframe grouping by month, but we don't have to — in addition to standard operations (sum, mean, median, etc.), Altair gives us some handy datetime aggregation options. You can find a list of options in the library documentation [here](https://altair-viz.github.io/user_guide/transform/timeunit.html).
 
-In this case, we have a multi-year time span, so let's try grouping by `yearmonth` (we can't just use `month`, because that will group all, say, January dates together regardless of what year they occurred in).
+In this case, we have a multi-year time span, so let's try grouping by `yearmonth` (we can't just use `month`, because that will, for example, group all January dates together regardless of what year they occurred in).
 
 ```{code-cell}
 alt.Chart(merged_small).mark_bar().encode(
-  x="yearmonth(date_received):T",
+  x="yearmonth(date_received)",
   y="sum(amount)"
 )
+```
 
 This is great for showing the pattern of donations over time, but it doesn't give us a whole lot of additional information that might be useful. For example, we almost certainly want to break these numbers down by whether they were in support of or against our proposition.
 
@@ -206,16 +213,16 @@ We could do that by adding a color encoding, like we did on the last chart. Reme
 In this case, though, stacking those bars makes it a little hard to focus on support/oppose amounts individually. What can do instead is to facet, which will separate this into two separate charts.
 
 ```{code-cell}
-alt.Chart(merged).mark_bar().encode(
-    x=alt.X("yearmonth(date_received):T"),
+alt.Chart(merged_small).mark_bar().encode(
+    x=alt.X("yearmonth(date_received)"),
     y=alt.Y("sum(amount)"),
     facet="committee_position"
 )
 ```
-Interesting! And heck, let's throw in a color encoding for our `in_state` column.
+Interesting! And heck, let's throw in a color encoding for our `in_state` column to see the breakdown of in-state vs. out-of-state money coming in by month.
 
 ```{code-cell}
-alt.Chart(merged).mark_bar().encode(
+alt.Chart(merged_small).mark_bar().encode(
     x=alt.X("yearmonth(date_received):T"),
     y=alt.Y("sum(amount)"),
     facet="committee_position",
@@ -223,15 +230,30 @@ alt.Chart(merged).mark_bar().encode(
 )
 ```
 
+This gives us some new things to dig in on. If we were producing this chart for publication, we'd want to do some filtering — for example, this is showing contributions that came in well after November 2016, which probably wouldn't be relevant to a story about how money shaped this particular election.
+
+For now, though, let's take an easier route and just make this chart interactive, which will let us zoom the x axis in and out so we can explore areas of interest.
+
+```{code-cell}
+alt.Chart(merged_small).mark_bar().encode(
+    x=alt.X("yearmonth(date_received):T"),
+    y=alt.Y("sum(amount)"),
+    facet="committee_position",
+    color="in_state",
+).interactive()
+```
+
+Hey, we did it!
+
 ## Taking it to production
 
-None of these charts are ready to pop into a news story quite yet. But there *are* lots of additional formatting and design options that you can start digging into in the [Altair docs](https://altair-viz.github.io/index.html) — you can even create Altair themes to specify default color schemes and fonts.
+These charts give us plenty of areas where we might want to dig in and ask more questions, but none are polished enough to pop into a news story quite yet. But there *are* lots of additional labeling, formatting and design options that you can dig into in the [Altair docs](https://altair-viz.github.io/index.html) — you can even create Altair themes to specify default color schemes and fonts.
 
-But you may not want to do all that tweaking in code, especially if you're just working on a one-off graphic. If you wanted to hand this chart off to a graphics department, all you'd have to do is head to the top right corner of your chart.
+But you may not want to do all that tweaking in Altair, especially if you're just working on a one-off graphic. If you wanted to hand this chart off to a graphics department, all you'd have to do is head to the top right corner of your chart.
 
 See those three dots? Click on that, and you'll see lots of options. Downloading the file as an SVG will let anyone with graphics software like Adobe Illustrator take this file and tweak the design.
 
-Want to recreate this chart in a tool like [Chartbuilder](https://quartz.github.io/Chartbuilder/) or [Datawrapper](https://www.datawrapper.de/)?  In that case, you'll want to export this data into a spreadsheet.
+Want to recreate a chart you make in a tool like [Datawrapper](https://www.datawrapper.de/)?  In that case, you'll want to export the relevant dataframe to a spreadsheet.
 
 Guess what? It's this easy.
 
