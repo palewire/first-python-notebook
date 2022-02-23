@@ -11,48 +11,8 @@ kernelspec:
   name: python3
 ---
 
-<nav>
-  <div class="row">
-    <div class="sevencol">
-      <div class="shingle">
-        <a href="https://palewi.re/">
-          <div rel="rnews:copyrightedBy rnews:hasSource rnews:providedBy">
-            <div about="http://palewi.re/" typeof="rnews:Organization">
-              <div property="rnews:name">palewire</div>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="fivecol last links">
-      <ul>
-        <li>
-          <a href="http://palewi.re/posts/" title="Posts">
-            Posts
-          </a>
-        </li>
-        <li>
-          <a href="http://palewi.re/work/" title="Work">
-            Work
-          </a>
-        </li>
-        <li>
-          <a href="http://palewi.re/talks/" title="Talks">
-            Talks
-          </a>
-        </li>
-        <li>
-          <a href="http://palewi.re/who-is-ben-welsh/" title="Who is Ben Welsh?">
-            About
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<div class="row topbar">
-    <div class="twelvecol last"></div>
-</div>
+```{include} _templates/nav.html
+```
 
 # Charts
 
@@ -71,10 +31,11 @@ import pandas as pd
 committee_list = pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/_static/committees.csv")
 contrib_list = pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/_static/contributions.csv")
 my_prop = 'PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.'
-my_committees = committee_list[committee_list.prop_name == my_prop]
+merged_everything = pd.merge(committee_list, contrib_list, on="calaccess_committee_id")
+merged_prop = merged_everything[merged_everything.prop_name == my_prop]
 merged = pd.merge(my_committees, contrib_list, on="calaccess_committee_id")
-support = merged[merged.committee_position == 'SUPPORT']
-oppose = merged[merged.committee_position == 'OPPOSE']
+support = merged_prop[merged_prop.committee_position == 'SUPPORT']
+oppose = merged_prop[merged_prop.committee_position == 'OPPOSE']
 ```
 
 ```{code-cell}
@@ -154,7 +115,7 @@ Now, we have a good idea of who spent the most in support of Prop. 64. What if w
 Add a new cell and a new dataframe, `top_contributors`, summing up the top contributors in our whole `merged` dataframe. We're going to repeat a lot of the pandas functions we've stepped through before, all in one go this time.
 
 ```{code-cell}
-top_contributors = merged.groupby(
+top_contributors = merged_prop.groupby(
     ["contributor_firstname", "contributor_lastname","committee_position"],
     dropna=True
 ).amount.sum().reset_index().sort_values("amount", ascending=False).head(10)

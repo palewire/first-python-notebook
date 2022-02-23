@@ -11,48 +11,8 @@ kernelspec:
   name: python3
 ---
 
-<nav>
-  <div class="row">
-    <div class="sevencol">
-      <div class="shingle">
-        <a href="https://palewi.re/">
-          <div rel="rnews:copyrightedBy rnews:hasSource rnews:providedBy">
-            <div about="http://palewi.re/" typeof="rnews:Organization">
-              <div property="rnews:name">palewire</div>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="fivecol last links">
-      <ul>
-        <li>
-          <a href="http://palewi.re/posts/" title="Posts">
-            Posts
-          </a>
-        </li>
-        <li>
-          <a href="http://palewi.re/work/" title="Work">
-            Work
-          </a>
-        </li>
-        <li>
-          <a href="http://palewi.re/talks/" title="Talks">
-            Talks
-          </a>
-        </li>
-        <li>
-          <a href="http://palewi.re/who-is-ben-welsh/" title="Who is Ben Welsh?">
-            About
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<div class="row topbar">
-    <div class="twelvecol last"></div>
-</div>
+```{include} _templates/nav.html
+```
 
 # Totals
 
@@ -71,18 +31,18 @@ import pandas as pd
 committee_list = pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/_static/committees.csv")
 contrib_list = pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/_static/contributions.csv")
 my_prop = 'PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.'
-my_committees = committee_list[committee_list.prop_name == my_prop]
-merged = pd.merge(my_committees, contrib_list, on="calaccess_committee_id")
+merged_everything = pd.merge(committee_list, contrib_list, on="calaccess_committee_id")
+merged_prop = merged_everything[merged_everything.prop_name == my_prop]
 ```
 
 ```{code-cell}
-merged.amount
+merged_prop.amount
 ```
 
 Now we can add up the column's total using the pandas method [sum], just as we did when we were first getting started with pandas.
 
 ```{code-cell}
-merged.amount.sum()
+merged_prop.amount.sum()
 ```
 
 And printed out below your cell, there's our answer.
@@ -122,18 +82,18 @@ To answer that question, let's return to the filtering technique we learned in {
 First let's look at the column we're going to filter by, `committee_position`.
 
 ```{code-cell}
-merged.committee_position.value_counts()
+merged_prop.committee_position.value_counts()
 ```
-Now let's filter our merged table down using that column and the pandas filtering method that combines a column, an operator and the value we want to filter by. Let's stick the result in a variable.
+Now let's filter our `merged_prop` table down using that column and the pandas filtering method that combines a column, an operator and the value we want to filter by. Let's stick the result in a variable.
 
 ```{code-cell}
-support = merged[merged.committee_position == 'SUPPORT']
+support = merged_prop[merged_prop.committee_position == 'SUPPORT']
 ```
 
 Now let's repeat all that for opposing contributions. First the filter into a new variable.
 
 ```{code-cell}
-oppose = merged[merged.committee_position == 'OPPOSE']
+oppose = merged_prop[merged_prop.committee_position == 'OPPOSE']
 ```
 
 Now sum up the total disclosed contributions to each for comparison. First the opposition.
@@ -151,7 +111,7 @@ support.amount.sum()
 The support is clearly larger. But what percent is it of the overall disclosed total? We can find out by combining two `sum` calculations using the division operator.
 
 ```{code-cell}
-support.amount.sum() / merged.amount.sum()
+support.amount.sum() / merged_prop.amount.sum()
 ```
 
 [only required]: http://www.documentcloud.org/documents/2781363-460-2016-01.html#document/p10

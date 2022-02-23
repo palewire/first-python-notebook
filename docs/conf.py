@@ -37,3 +37,5 @@ html_css_files = [
 ]
 
 pygments_style = 'sphinx'
+
+# jupyter_execute_notebooks = "off"
