@@ -123,10 +123,9 @@ merged_prop.groupby(["contributor_firstname", "contributor_lastname"], dropna=Fa
 
 Now we've finally got a ranking we can work with. Congratulations, you've finished our analysis.
 
+## Creating a New Column
 
-## Bonus: Creating a New Column
-
-Let's say we wanted to take an extra step to learn whether these top contributors are from inside the state or outside of it.
+Let's say we wanted to take an extra step to learn whether these top contributors donate from inside the state or outside of it.
 
 We could just add "contributor_state" to the ``groupby`` statement. 
 
@@ -134,30 +133,30 @@ We could just add "contributor_state" to the ``groupby`` statement.
 merged_prop.groupby(["contributor_firstname", "contributor_lastname","contributor_state"], dropna=False).amount.sum().reset_index().sort_values("amount", ascending=False)
 ```
 
-But we might want to quickly sort in-state vs. out-of-state donors, or perform similar calculations, and just adding the contributor state doesn't allow us to quickly evaluate trends. Plus, adding the "state" adds two more rows to our ranking list, probably because a donor with the same name reported their location differently across multiple donations.
+But we might want to quickly sort in-state vs. out-of-state donors, or perform similar calculations, and just adding the contributor state doesn't allow us to quickly evaluate trends. Plus, adding the "state" adds two more rows to our ranking list, probably because a donor within the same organization reported their location differently across multiple donations.
 
-Well, we could also group by state alone, to get a better sense of it.
+We could try grouping by state alone instead, to get a better sense of it.
 
 ```{code-cell}
 merged_prop.groupby(["contributor_state"], dropna=False).amount.sum().reset_index().sort_values("amount", ascending=False)
 ```
 
-Or we could filter to calculate just to California, and then filter again to not California. The query function lets us check whether a statement is true (in this case, does ``contributor_state`` equal ``'CA'``). Then it performs an operation on the results.
+Or we could filter to calculate just to California, and then filter again to not California. The filter lets us check whether a statement is true (in this case, does ``contributor_state`` equal ``'CA'``). Then it performs an operation on the results.
 
 ```{code-cell}
-merged_prop.query("contributor_state == 'CA'")['amount'].sum()
+merged_prop[merged_prop["contributor_state"] == "CA"]["amount"].sum()
 ```
 
 ```{code-cell}
-merged_prop.query("contributor_state != 'CA'")['amount'].sum()
+merged_prop[merged_prop["contributor_state"] != "CA"]["amount"].sum()
 ```
 
 But what if we want a quick way to group by "California" vs. "not-California," and we want to be able to refer to that later? Instead, we can use conditionals to create a new column based on whether or not a candidate is in-state. Then we can group by that column. 
 
-There are a few ways to achieve this. We're going to write a conditional directly into our Pandas statement. We'll create a True/False flag, which is a Boolean data type.
+There are a few ways to achieve this. We're going to use a filter to create a True/False flag, which is a Boolean data type.
 
 ```{code-cell}
-mermerged_propged["in_state"] = merged_prop["contributor_state"] == "CA"
+merged_prop["in_state"] = merged_prop["contributor_state"] == "CA"
 ```
 
 This basically says, "create a new column in merged called ``in_state``. Use ``contributor_state`` as the basis. When a row in ``contributor`` state equals the string ``CA``, that means ``in_state`` should be set to equal ``True``. In all other circumstances, ``in_state`` will equal ``False``."
@@ -174,7 +173,7 @@ Let's use our earlier groupby and sum code, but group by the ``in_state`` flag i
 merged_prop.groupby(["in_state"], dropna=False).amount.sum().reset_index().sort_values("amount", ascending=False)
 ```
 
-Notice that these totals match our "California" vs. "not-California" sum totals that we calculated with the query function up above. That's good! This is one way to QA your new column. If your totals didn't match, it means you should go back and double-check the logic in your conditional statement that's creating the new column.
+Notice that these totals match our "California" vs. "not-California" sum totals that we calculated with the filtered calculations up above. That's good! This is one way to QA your new column. If your totals didn't match, it means you should go back and double-check the logic in your conditional statement that's creating the new column.
 
 We can also create a new dataframe for just in-state donors.
 
