@@ -155,7 +155,8 @@ With campaign finance data, looking at contributions over time can be a very use
 merged_small = merged_prop[[
   "date_received","committee_name_x","committee_position",
   "contributor_lastname","contributor_firstname",
-  "contributor_state","amount"
+  "contributor_state","in_state",
+  "amount"
 ]]
 ```
 Now, let's just check to see what data types Pandas has assigned to each column. On import, it will take a guess at column types — for example, `integer`, `float`, `boolean`, `datetime` or `string` - but it will default to a generic `object` type, which will generally behave like a string, or text, field.
