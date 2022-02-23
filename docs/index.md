@@ -38,6 +38,7 @@ merge/index
 totals/index
 sort_values/index
 groupby/index
+compute
 remix/index
 charts/index
 ```
