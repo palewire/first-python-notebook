@@ -168,7 +168,7 @@ merged_small.dtypes
 So, you'll notice there that Pandas isn't treating our `date_received` column as a date column, but we can change that.
 
 ```{code-cell}
-merged_small['date_received'] = pd.to_datetime(merged_small['date_received])
+merged_small['date_received'] = pd.to_datetime(merged_small['date_received'])
 ```
 
 This redefines each object in that column as a date. If your dates are in an unusual or ambiguous format, you may have to [pass in a specific formatter](https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html), but in this case Pandas should be able to guess correctly.
