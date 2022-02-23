@@ -198,6 +198,29 @@ alt.Chart(merged_small).mark_bar().encode(
   x="yearmonth(date_received):T",
   y="sum(amount)"
 )
+
+This is great for showing the pattern of donations over time, but it doesn't give us a whole lot of additional information that might be useful. For example, we almost certainly want to break these numbers down by whether they were in support of or against our proposition.
+
+We could do that by adding a color encoding, like we did on the last chart. Remember how you'd do that?
+
+In this case, though, stacking those bars makes it a little hard to focus on support/oppose amounts individually. What can do instead is to facet, which will separate this into two separate charts.
+
+```{code-cell}
+alt.Chart(merged).mark_bar().encode(
+    x=alt.X("yearmonth(date_received):T"),
+    y=alt.Y("sum(amount)"),
+    facet="committee_position"
+)
+```
+Interesting! And heck, let's throw in a color encoding for our `in_state` column.
+
+```{code-cell}
+alt.Chart(merged).mark_bar().encode(
+    x=alt.X("yearmonth(date_received):T"),
+    y=alt.Y("sum(amount)"),
+    facet="committee_position",
+    color="in_state",
+)
 ```
 
 ## Taking it to production
