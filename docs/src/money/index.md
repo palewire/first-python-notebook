@@ -1,6 +1,5 @@
-```{include} _templates/nav.html
+```{include} ../_templates/nav.html
 ```
-
 
 # Money in politics
 

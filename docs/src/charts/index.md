@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-```{include} _templates/nav.html
+```{include} ../_templates/nav.html
 ```
 
 # Charts
@@ -29,8 +29,8 @@ Head back to the import cell at the top of your notebook and add Altair. We'll u
 :tags: [hide-cell]
 
 import pandas as pd
-committee_list = pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/_static/committees.csv")
-contrib_list = pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/_static/contributions.csv")
+committee_list = pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/src/_static/committees.csv")
+contrib_list = pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/src/_static/contributions.csv")
 my_prop = 'PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.'
 merged_everything = pd.merge(committee_list, contrib_list, on="calaccess_committee_id")
 merged_prop = merged_everything[merged_everything.prop_name == my_prop]

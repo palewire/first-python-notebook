@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-```{include} _templates/nav.html
+```{include} ../_templates/nav.html
 ```
 
 # Columns
@@ -28,7 +28,7 @@ To see the contents of a column separate from the rest of the DataFrame, add the
 :tags: [hide-cell]
 
 import pandas as pd
-committee_list = pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/_static/committees.csv")
+committee_list = pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/src/_static/committees.csv")
 ```
 
 ```{code-cell}

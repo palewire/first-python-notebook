@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-```{include} _templates/nav.html
+```{include} ../_templates/nav.html
 ```
 
 # Merge
@@ -24,8 +24,8 @@ When joining two tables together, the first step is to look carefully at the col
 :tags: [hide-cell]
 
 import pandas as pd
-committee_list = pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/_static/committees.csv")
-contrib_list = pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/_static/contributions.csv")
+committee_list = pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/src/_static/committees.csv")
+contrib_list = pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/src/_static/contributions.csv")
 my_prop = 'PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.'
 ```
 

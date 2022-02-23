@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-```{include} _templates/nav.html
+```{include} ../_templates/nav.html
 ```
 
 # Data
@@ -44,7 +44,7 @@ import pandas as pd
 ```
 
 ```{code-cell}
-pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/_static/committees.csv")
+pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/src/_static/committees.csv")
 ```
 
 ```{warning}
@@ -64,7 +64,7 @@ In order to do that, we need to store our DataFrame so it can be reused in subse
 Go back to your initial cell and change it to this. Then rerun it.
 
 ```{code-cell}
-committee_list = pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/_static/committees.csv")
+committee_list = pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/src/_static/committees.csv")
 ```
 
 After you run it, you shouldn't see anything. That's a good thing. It means our DataFrame has been saved under the name `committee_list`, which we can now begin interacting with in the cells that follow.
@@ -98,7 +98,7 @@ With that we're ready to move on to a related, similar task: Importing all of th
 We'll start by using the `read_csv` method to import the second CSV file linked above. Save it as a new variable just as we did before. Let's call this one `contrib_list`.
 
 ```{code-cell}
-contrib_list = pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/_static/contributions.csv")
+contrib_list = pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/src/_static/contributions.csv")
 ```
 
 Just as we did earlier, you can inspect the contents of this new file with the head method.
@@ -118,8 +118,8 @@ Now that you've got some data imported, we're ready to begin our analysis.
 ["methods"]: https://en.wikipedia.org/wiki/Method_(computer_programming)
 ["variable"]: https://en.wikipedia.org/wiki/Variable_(computer_science)
 [california civic data coalition]: http://www.californiacivicdata.org/
-[committees.csv]: https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/_static/committees.csv
-[contributions.csv]: https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/_static/contributions.csv
+[committees.csv]: https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/src/_static/committees.csv
+[contributions.csv]: https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/src/_static/contributions.csv
 [csv file]: https://en.wikipedia.org/wiki/Comma-separated_values
 [head]: http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.head.html
 [info]: http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.info.html
