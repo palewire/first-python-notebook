@@ -169,7 +169,7 @@ Let's say we wanted to take an extra step to learn whether these top contributor
 We could just add "contributor_state" to the ``groupby`` statement. 
 
 ```{code-cell}
-merged.groupby(["contributor_firstname", "contributor_lastname","contributor_state"], dropna=False).amount.sum().reset_index().sort_values("amount", ascending=False)
+merged_prop.groupby(["contributor_firstname", "contributor_lastname","contributor_state"], dropna=False).amount.sum().reset_index().sort_values("amount", ascending=False)
 ```
 
 But we might want to quickly sort in-state vs. out-of-state donors, or perform similar calculations, and just adding the contributor state doesn't allow us to quickly evaluate trends. Plus, adding the "state" adds two more rows to our ranking list, probably because a donor with the same name reported their location differently across multiple donations.
@@ -195,10 +195,10 @@ But what if we want a quick way to group by "California" vs. "not-California," a
 There are a few ways to achieve this. We're going to write a conditional directly into our Pandas statement. We'll create a True/False flag, which is a Boolean data type.
 
 ```{code-cell}
-merged["in_state"] = [True if x == "CA" else False for x in merged["contributor_state"]]
+merged["in_state"] = merged["contributor_state"] == "CA"
 ```
 
-This basically says, "create a new column in merged called ``in_state``. Use ``contributor_state`` as the basis. When a row in ``contributor`` state equals the string ``CA``, that means ``in_state`` should be set to equal ``True``. In all other circumstances, ``in_state`` equals ``False``."
+This basically says, "create a new column in merged called ``in_state``. Use ``contributor_state`` as the basis. When a row in ``contributor`` state equals the string ``CA``, that means ``in_state`` should be set to equal ``True``. In all other circumstances, ``in_state`` will equal ``False``."
 
 Now, we can see our new column in the dataframe. It will show up on the far right if you don't specify a location.
 
