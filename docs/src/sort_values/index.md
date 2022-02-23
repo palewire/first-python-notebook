@@ -24,8 +24,8 @@ What were the ten biggest contributions? We can find the answer by using the [so
 :tags: [hide-cell]
 
 import pandas as pd
-committee_list = pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/_static/committees.csv")
-contrib_list = pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/_static/contributions.csv")
+committee_list = pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/src/_static/committees.csv")
+contrib_list = pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/src/_static/contributions.csv")
 my_prop = 'PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.'
 my_committees = committee_list[committee_list.prop_name == my_prop]
 merged_everything = pd.merge(committee_list, contrib_list, on="calaccess_committee_id")

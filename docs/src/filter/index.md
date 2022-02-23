@@ -44,7 +44,7 @@ Running the ``value_counts`` method to spit out the full name of all 17 measures
 :tags: [hide-cell]
 
 import pandas as pd
-committee_list = pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/_static/committees.csv")
+committee_list = pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/src/_static/committees.csv")
 ```
 
 ```{code-cell}
