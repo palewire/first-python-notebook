@@ -1,4 +1,4 @@
-```{include} _templates/nav.html
+```{include} ../_templates/nav.html
 ```
 
 # Advanced installation

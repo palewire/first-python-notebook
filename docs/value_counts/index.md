@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-```{include} _templates/nav.html
+```{include} ../_templates/nav.html
 ```
 
 # Columns
