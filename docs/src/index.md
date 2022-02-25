@@ -28,7 +28,7 @@ This course is free. If you've tried Python once or twice, have good attitude an
 :numbered:
 
 jupyter_desktop
-notebook/index
+notebook
 pandas/index
 money/index
 dataframe/index
