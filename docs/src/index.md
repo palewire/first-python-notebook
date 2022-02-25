@@ -33,7 +33,7 @@ pandas
 money
 dataframe
 columns
-filter/index
+filters
 merge/index
 totals/index
 sort_values/index
