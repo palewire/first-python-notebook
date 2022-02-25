@@ -34,7 +34,7 @@ money
 dataframe
 columns
 filters
-merge/index
+merge
 totals/index
 sort_values/index
 groupby/index
