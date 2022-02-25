@@ -32,7 +32,7 @@ notebook
 pandas
 money
 dataframe
-value_counts/index
+columns
 filter/index
 merge/index
 totals/index

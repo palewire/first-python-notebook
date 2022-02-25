@@ -11,12 +11,17 @@ kernelspec:
   name: python3
 ---
 
-```{include} ../_templates/nav.html
+```{include} ./_templates/nav.html
 ```
 
 # Columns
 
-In this chapter we'll begin our analysis by learning how to inspect a column from a DataFrame.
+In this chapter we’ll begin our analysis by learning how to inspect a column from a DataFrame.
+
+```{contents} Sections
+  :depth: 1
+  :local:
+```
 
 ## Accessing a column
 
@@ -35,35 +40,37 @@ committee_list = pd.read_csv("https://raw.githubusercontent.com/california-civic
 committee_list.prop_name
 ```
 
-That will list the column out as a Series, just like the ones we created from scratch in {doc}`chapter three </pandas/index>`.
+That will list the column out as a Series, just like the ones we created from scratch in [chapter two](pandas.md).
 
-And, just as we did {doc}`then </pandas/index>`, you can now start tacking on additional methods that will analyze the contents of the column.
+And, just as we did then, you can now start tacking on additional methods that will analyze the contents of the column.
 
-In this case, the column is filled with characters. So we don't want to calculate statistics like the median and average, as we did before.
-
+````{note}
 You can also access columns a second way, like this:
 
-```{code-cell}
+```bash
 committee_list['prop_name']
 ```
 
 This method isn't as pretty, but it's required if your column has a space in its name, which would break the simpler dot-based method.
+````
 
-## Counting a column's values
+## Count a column's values
+
+In this case, the column is filled with characters. So we don't want to calculate statistics like the median and average, as we did before.
 
 There's another built-in pandas tool that will total up the frequency of values in a column. In this case that could be used to answer the question: Which proposition had the most committees?
 
-The method is called `` `value_counts `` and it's just as easy to use as sum, min or max. All you need to do it is add a period after the column name and chain it on the tail end of your cell.
+The method is called `value_counts ` and it's just as easy to use as sum, min or max. All you need to do it is add a period after the column name and chain it on the tail end of your cell.
+
+Run the code and you should see the lengthy proposition names ranked by their number of committees.
 
 ```{code-cell}
 committee_list.prop_name.value_counts()
 ```
 
-Run the code and you should see the lengthy proposition names ranked by their number of committees.
+## Reset a DataFrame
 
-## Resetting a DataFrame
-
-You may have noticed that even though the result has two columns, pandas did not return a clean-looking table in the same way as head did for our DataFrame.
+You may have noticed that even though the result has two columns, pandas did not return a clean-looking table in the same way as `head` did for our DataFrame.
 
 That's because our column, a Series, acts a little bit different than the DataFrame created by `read_csv`.
 

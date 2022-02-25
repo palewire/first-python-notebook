@@ -3,6 +3,13 @@
 
 # Money in politics
 
+```{contents} Sections
+  :depth: 1
+  :local:
+```
+
+## Meet Democracy in California 
+
 In November 2016, California voters had a lot of decisions to make.
 
 Millions of votes [were cast](http://graphics.latimes.com/la-na-pol-2016-election-results-california/) across the state to choose who should be America's next president, to send more than 50 members off to Congress, to select a new U.S. senator and to refill most of the seats in the Sacramento statehouse.
