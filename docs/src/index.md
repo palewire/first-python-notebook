@@ -29,9 +29,9 @@ This course is free. If you've tried Python once or twice, have good attitude an
 
 jupyter_desktop
 notebook
-pandas/index
-money/index
-dataframe/index
+pandas
+money
+dataframe
 value_counts/index
 filter/index
 merge/index

@@ -1,4 +1,4 @@
-```{include} ../_templates/nav.html
+```{include} ./_templates/nav.html
 ```
 
 # Money in politics
@@ -54,7 +54,7 @@ The coalition's effort has drawn hundreds of contributions from developers and j
 :width: 350px
 ```
 
-Experimental versions of the coalition's data files enabled [the Los Angeles Times](http://www.latimes.com/politics/la-pol-ca-road-map-california-2018-campaign-spending-20170219-story.html?foo=bar) to calculate the \$500 million figure quoted earlier in this chapter. It has also powered [interactive graphics](http://www.latimes.com/projects/la-pol-ca-california-governor-2018-money/) and [several](http://www.latimes.com/local/politics/la-me-pol-brown-money-20141031-story.html) [other](http://www.latimes.com/politics/la-pol-ca-newsom-waterfront-governor-20170519-story.html) investigations into the role of money in state politics.
+Experimental versions of the coalition's data files enabled [the Los Angeles Times](http://www.latimes.com/politics/la-pol-ca-road-map-california-2018-campaign-spending-20170219-story.html?foo=bar) to calculate the \$500 million figure quoted earlier in this chapter. It’s work has also powered [interactive graphics](http://www.latimes.com/projects/la-pol-ca-california-governor-2018-money/) and [several](http://www.latimes.com/local/politics/la-me-pol-brown-money-20141031-story.html) [other](http://www.latimes.com/politics/la-pol-ca-newsom-waterfront-governor-20170519-story.html) investigations into the role of money in state politics.
 
 You can review, install and contribute to the coalition's open-source codebase [on GitHub](https://www.github.com/california-civic-data-coalition).
 
