@@ -14,7 +14,7 @@ kernelspec:
 ```{include} ./_templates/nav.html
 ```
 
-# Sorting
+# Sort
 
 Another simple but common technique for analyzing data is sorting.
 

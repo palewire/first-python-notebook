@@ -14,7 +14,7 @@ kernelspec:
 ```{include} ./_templates/nav.html
 ```
 
-# Filters
+# Filter
 
 ```{contents} Sections
   :depth: 1

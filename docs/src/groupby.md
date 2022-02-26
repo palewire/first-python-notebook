@@ -14,7 +14,7 @@ kernelspec:
 ```{include} ./_templates/nav.html
 ```
 
-# Grouping
+# Group
 
 To take the next steps in our investigation, we’ll need to learn a new trick.
 
