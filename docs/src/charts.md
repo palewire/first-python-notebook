@@ -11,15 +11,19 @@ kernelspec:
   name: python3
 ---
 
-```{include} ../_templates/nav.html
+```{include} ./_templates/nav.html
 ```
 
 # Charts
 
 Python has a number of charting tools that can work hand-in-hand with pandas. [Altair](https://altair-viz.github.io/) is a relative newbie, but it's got good documentation and can display charts right in your Jupyter Notebook — plus it can export to lots of other formats.
 
-Let's take it for a spin.
+Let’s take it for a spin.
 
+```{contents} Sections
+  :depth: 1
+  :local:
+```
 
 ## Make a basic bar chart
 
@@ -28,6 +32,8 @@ Head back to the import cell at the top of your notebook and add Altair. We'll u
 ```{code-cell}
 :tags: [hide-cell]
 
+import warnings
+warnings.simplefilter("ignore")
 import pandas as pd
 committee_list = pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/src/_static/committees.csv")
 contrib_list = pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/src/_static/contributions.csv")
@@ -43,9 +49,7 @@ merged_prop["in_state"] = merged_prop["contributor_state"] == "CA"
 import altair as alt
 ```
 
-Now rerun the entire notebook, as we learned above. You will need to do this when you halt and restart your notebook on the command line. Reminder, you can do this by pulling down the `Cell` menu at the top of the notebook and selecting the `Run all` option.
-
-Let's pick up where we last left off in {doc}`the groupby chapter </groupby/index>`. If we want to chart out how much the top supporters of the proposition spent, we first need to select them from the dataset. Using the grouping and sorting tricks we learned earlier, the top 10 can be returned like this:
+Once that’s run, we can pick up where we last left off at the bottom of the notebook. If we want to chart out how much the top supporters of the proposition spent, we first need to select them from the dataset. Using the grouping and sorting tricks we learned earlier, the top 10 can be returned like this:
 
 ```{code-cell}
 top_supporters = support.groupby(
@@ -54,7 +58,21 @@ top_supporters = support.groupby(
 ).amount.sum().reset_index().sort_values("amount", ascending=False).head(10)
 ```
 
-Now that we have `altair` imported, we can pop that dataframe into a quick chart. Let's step through the building blocks of a chart.
+Now that we have `altair` imported, we can pop that dataframe into a quick chart. Let’s step through the building blocks of a chart.
+
+First feed the data to Altair.
+
+```{code-cell}
+alt.Chart(top_supporters)
+```
+
+From that error, it looks like Altair wants a little more. Let’s tell it we want it to draw bars, which is Altair calls a “mark.”
+
+```{code-cell}
+alt.Chart(top_supporters).mark_bar()
+```
+
+An improvement, but we’re not there yet. At a minimum, we also need to tell Altair what to put on the x- and y-axes.
 
 ```{code-cell}
 alt.Chart(top_supporters).mark_bar().encode(
@@ -63,7 +81,7 @@ alt.Chart(top_supporters).mark_bar().encode(
 )
 ```
 
-Look at that chart!
+Look at that chart! That’s more like it.
 
 Here's an idea — maybe we want to do horizontal, not vertical bars. How would you rewrite this chart code to reverse those bars?
 
@@ -74,7 +92,7 @@ alt.Chart(top_supporters).mark_bar().encode(
 )
 ```
 
-What if we wanted to focus on the top five records? We can use that ``head`` command we already know.
+What if we wanted to focus on the top five records? We can use that `head` command we already know.
 
 ```{code-cell}
 alt.Chart(top_supporters.head(5)).mark_bar().encode(
@@ -87,7 +105,7 @@ This chart is an okay start, but it's sorted alphabetically by y-axis value, whi
 
 We want to sort the y-axis values by their corresponding x values. We've been using the shorthand syntax to pass in our axis columns so far, but to add more customization to our chart we'll have to switch to the longform way of defining the y axis.
 
-To do that, we'll use a syntax you may recognize from the way in the first place: `alt.Y(column_name, arg="value")`. There are lots of arguments that you might want to pass in, like ones that will sum or average your data on the fly or limit the number range you want your axis to display. In this case, we'll be using the `sort` command.
+To do that, we'll use a syntax like this: `alt.Y(column_name, arg="value")`. There are lots more arguments that you might want to pass in, like ones that will sum or average your data on the fly or limit the number range you want your axis to display. In this case, we'll stick to using the `sort` command.
 
 ```{code-cell}
 alt.Chart(top_supporters.head(5)).mark_bar().encode(
@@ -109,9 +127,9 @@ alt.Chart(top_supporters.head(5)).mark_bar().encode(
 
 Yay, we made a chart!
 
-Now, we have a good idea of who spent the most in support of Prop. 64. What if we wanted to see who spent money on both sides?
+Now, we have a good idea of who spent the most in support of Prop. 64. What if we wanted to see who spent money on both sides? To do that, we’ll need to get a little fancier.
 
-## Adding visual complexity
+## Add a `color`
 
 Add a new cell and a new dataframe, `top_contributors`, summing up the top contributors in our whole `merged_prop` dataframe. We're going to repeat a lot of the pandas functions we've stepped through before, all in one go this time.
 
@@ -133,7 +151,7 @@ alt.Chart(top_contributors).mark_bar().encode(
 
 What facet of the data is this chart *not* showing? How might we add additional context?
 
-We have that `committee_position` column in our dataframe now. Let's try an altair option that we haven't used yet: color. Can you guess where we should add that in?
+We have that `committee_position` column in our dataframe now. Let's try an altair option that we haven't used yet: `color`. Can you guess where we should add that in?
 
 ```{code-cell}
 alt.Chart(top_contributors).mark_bar().encode(
@@ -145,7 +163,7 @@ alt.Chart(top_contributors).mark_bar().encode(
 
 Hey now! That wasn't too hard, was it?
 
-## Charting datetime data
+## Chart `datetime` data
 
 One thing you'll almost certainly find yourself grappling with time and time again is date (and time) fields, so let's talk about how to handle them.
 
@@ -153,29 +171,31 @@ With campaign finance data, looking at contributions over time can be a very use
 
 ```{code-cell}
 merged_small = merged_prop[[
-  "date_received","committee_name_x","committee_position",
-  "contributor_lastname","contributor_firstname",
-  "contributor_state","in_state",
+  "date_received",
+  "committee_position",
+  "contributor_lastname",
+  "contributor_firstname",
+  "in_state",
   "amount"
 ]]
 ```
-Now, let's just check to see what data types Pandas has assigned to each column. On import, it will take a guess at column types — for example, `integer`, `float`, `boolean`, `datetime` or `string` - but it will default to a generic `object` type, which will generally behave like a string, or text, field.
+Now, let's just check to see what data types pandas has assigned to each column. On import, it will take a guess at column types — for example, `integer`, `float`, `boolean`, `datetime` or `string` — but it will default to a generic `object` type, which will generally behave like a string, or text, field.
 
-To do that, we can print out a list of `dtypes`, or data types, for each column. This is a good habit to get into — often when a column isn't behaving as you expect it to, it's because Pandas did not guess the data type correctly.
+To do that, we can print out a list of `dtypes`, or data types, for each column. This is a good habit to get into — often when a column isn't behaving as you expect it to, it's because pandas did not guess the data type correctly.
 
 ```{code-cell}
 merged_small.dtypes
 ```
 
-So, you'll notice there that Pandas isn't treating our `date_received` column as a date column, but we can change that.
+So, you'll notice there that pandas isn't treating our `date_received` column as a date column, but we can fix that. The [`to_datetime`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html) method can get the job done.
 
 ```{code-cell}
 merged_small['date_received'] = pd.to_datetime(merged_small['date_received'])
 ```
 
-This redefines each object in that column as a date. If your dates are in an unusual or ambiguous format, you may have to [pass in a specific formatter](https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html), but in this case Pandas should be able to guess correctly.
+This redefines each object in that column as a date. If your dates are in an unusual or ambiguous format, you may have to [pass in a specific formatter](https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html), but in this case pandas should be able to guess correctly.
 
-Now that we've got that out of the way, let's see what it looks like! You know how to make a bar chart now, so which columns should we visualize here?
+Now that we've got that out of the way, let’s see what it looks like. You know how to make a bar chart now, so which columns should we visualize here? If we want a timeseries, we've got to look to `date_received`.
 
 ```{code-cell}
 alt.Chart(merged_small).mark_bar().encode(
@@ -183,9 +203,12 @@ alt.Chart(merged_small).mark_bar().encode(
   y="amount"
 )
 ```
+
+## Aggregate with Altair
+
 This is great on the x axis, but it's not quite accurate on the y. What do you think happens here if there are multiple donations on the same day?
 
-Altair doesnt know what to do with multiple amounts on the same day, so it'll just stack them all on top of each other. To make sure this chart is accurate, we'll need to aggregate the y axis in some way.
+Altair doesnt know what to do with multiple amounts on the same day, so it’ll just stack them all on top of each other. To make sure this chart is accurate, we'll need to aggregate the y axis in some way.
 
 We could back out and create a new dataset grouped by date, but Altair actually lets us do some of that grouping on the fly. We want to add everything that happens on the same date, so we'll pop in a `sum` function on that column.
 
@@ -194,12 +217,13 @@ alt.Chart(merged_small).mark_bar().encode(
   x="date_received",
   y="sum(amount)"
 )
+
 ```
 This is getting there. But sometimes plotting on a day-by-day basis isn't all that useful — especially over a long period of time, like we have here.
 
 Again, we could back out and create a new dataframe grouping by month, but we don't have to — in addition to standard operations (sum, mean, median, etc.), Altair gives us some handy datetime aggregation options. You can find a list of options in the library documentation [here](https://altair-viz.github.io/user_guide/transform/timeunit.html).
 
-In this case, we have a multi-year time span, so let's try grouping by `yearmonth` (we can't just use `month`, because that will, for example, group all January dates together regardless of what year they occurred in).
+In this case, we have a multi-year time span, so let's try grouping by `yearmonth`.
 
 ```{code-cell}
 alt.Chart(merged_small).mark_bar().encode(
@@ -208,11 +232,15 @@ alt.Chart(merged_small).mark_bar().encode(
 )
 ```
 
+```{note}
+We can't just use `month` because that will group all January dates together regardless of what year they occurred in.
+```
+
 This is great for showing the pattern of donations over time, but it doesn't give us a whole lot of additional information that might be useful. For example, we almost certainly want to break these numbers down by whether they were in support of or against our proposition.
 
 We could do that by adding a color encoding, like we did on the last chart. Remember how you'd do that?
 
-In this case, though, stacking those bars makes it a little hard to focus on support/oppose amounts individually. What can do instead is to facet, which will separate this into two separate charts.
+In this case, though, stacking those bars makes it a little hard to focus on amounts individually. What can do instead is to facet, which will create two separate chart, one for the supporting side and another for the opposition.
 
 ```{code-cell}
 alt.Chart(merged_small).mark_bar().encode(
@@ -225,7 +253,7 @@ Interesting! And heck, let's throw in a color encoding for our `in_state` column
 
 ```{code-cell}
 alt.Chart(merged_small).mark_bar().encode(
-    x=alt.X("yearmonth(date_received):T"),
+    x=alt.X("yearmonth(date_received)"),
     y=alt.Y("sum(amount)"),
     facet="committee_position",
     color="in_state",
@@ -238,7 +266,7 @@ For now, though, let's take an easier route and just make this chart interactive
 
 ```{code-cell}
 alt.Chart(merged_small).mark_bar().encode(
-    x=alt.X("yearmonth(date_received):T"),
+    x=alt.X("yearmonth(date_received)"),
     y=alt.Y("sum(amount)"),
     facet="committee_position",
     color="in_state",
@@ -247,7 +275,7 @@ alt.Chart(merged_small).mark_bar().encode(
 
 Hey, we did it!
 
-## Taking it to production
+## Do it live
 
 These charts give us plenty of areas where we might want to dig in and ask more questions, but none are polished enough to pop into a news story quite yet. But there *are* lots of additional labeling, formatting and design options that you can dig into in the [Altair docs](https://altair-viz.github.io/index.html) — you can even create Altair themes to specify default color schemes and fonts.
 

@@ -40,7 +40,7 @@ sorting
 groupby
 compute
 remix
-charts/index
+charts
 ```
 
 ```{toctree}
@@ -50,5 +50,5 @@ charts/index
 :numbered:
 
 appendix/index
-about/index
+about
 ```
