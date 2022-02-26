@@ -29,7 +29,7 @@ It’s called [`groupby`](https://pandas.pydata.org/pandas-docs/stable/reference
 
 As we've been digging through the data, I’m sure a few questions have popped into your mind. One interesting field in the contributions list is the home state of the contributor. A natural question follows: How much of the money came from outside of California?
 
-If you scroll back up and look carefully as the `info` command we ran after merging out data, you will noticed it includes a column named `contributor_state`.
+If you scroll back up and look carefully at the `info` command we ran after merging out data, you will noticed it includes a column named `contributor_state`.
 
 That's the field we want to group with here. Here's how you do it.
 
@@ -61,10 +61,6 @@ Again our data has come back as an ugly Series. To reformat it as a pretty DataF
 
 ```{code-cell}
 merged_prop.groupby("contributor_state").amount.sum().reset_index()
-```
-
-```{note}
-If you're into databases and SQL, [groupby](https://pandas.pydata.org/pandas-docs/stable/getting_started/comparison/comparison_with_sql.html#group-by) may sound familiar.
 ```
 
 Next re-sort totals from highest to lowest. Remember the [`sort_values`](sorting.md) trick we learned earlier? That’ll do it.
