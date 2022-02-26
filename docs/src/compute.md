@@ -18,6 +18,11 @@ kernelspec:
 
 This chapter will show how you can create a new column based on the data in other columns, a process sometimes known as "computing."
 
+```{contents} Sections
+  :depth: 1
+  :local:
+```
+
 ```{code-cell}
 :tags: [hide-cell]
 
@@ -36,7 +41,7 @@ oppose = merged_prop[merged_prop.committee_position == 'OPPOSE']
 
 ## Create a column
 
-Let's say we wanted to take an extra step beyond last chapter to learn whether which side got more money from outside of California.
+Let's say we wanted to take an extra step beyond last chapter to learn which side got more money from outside of California.
 
 As before, we could start by adding the `contributor_state` column to the `groupby` statement.
 
@@ -50,7 +55,7 @@ We could try grouping by state alone instead, to get a better sense of it.
 merged_prop.groupby("contributor_state", dropna=False).amount.sum().reset_index().sort_values("amount", ascending=False)
 ```
 
-Or we could filter to just to California donors.
+Or we could filter to just California donors.
 
 ```{code-cell}
 merged_prop[merged_prop["contributor_state"] == "CA"]["amount"].sum()
@@ -62,15 +67,15 @@ And then filter again to those outside of California.
 merged_prop[merged_prop["contributor_state"] != "CA"]["amount"].sum()
 ```
 
-Each one of these methods has its place. But to advance to another level of sophistication, and to simplify our code, it’s often helpful to create a new column that stores values calculated off other fields on-the-fly. Then we can group by that new column and get the answers we’re after.
+Each one of these methods has its place. But to advance to another level of sophistication, and to simplify our code, it’s often helpful to create a new column that stores values calculated off other fields. Then we can group by the new column to get the answers we’re after.
 
-There are a few ways to achieve this. We're going to start with an expression that tests the state field and returns true or false, much like the ones we’ve used before in filters.
+There are a few ways to achieve this. We're going to start with an expression that tests the `contributor_state` field and returns true or false, much like the ones we’ve used before in filters.
 
 ```{code-cell}
 merged_prop["in_state"] = merged_prop.contributor_state == "CA"
 ```
 
-This basically says, "Create a new column `in_state`. using `contributor_state` as the basis. When a row in `contributor_state` equals `CA`, that means `in_state` should be `True`. In all other circumstances, `in_state` will equal `False`."
+This basically says, "Create a new column name `in_state` using `contributor_state` as the basis. When a row in `contributor_state` equals `CA`, that means `in_state` should be `True`. In all other circumstances, `in_state` will equal `False`."
 
 Now, we can see our new column in the DataFrame. It will show up on the far right of the table.
 
@@ -78,23 +83,25 @@ Now, we can see our new column in the DataFrame. It will show up on the far righ
 merged_prop.head()
 ```
 
-## Analyze with groupby
+## Analyze with `groupby`
 
-Let's use our `groupby` and `sum` method on the `in_state` flag.
+Let’s use our `groupby` and `sum` method on the `in_state` flag.
 
 ```{code-cell}
 merged_prop.groupby("in_state", dropna=False).amount.sum().reset_index().sort_values("amount", ascending=False)
 ```
 
-Notice that these totals match our "California" vs. "not-California" sum totals that we calculated with the filtered calculations up above. That's good! This is one way to verify your new column. If your totals don’t match, it means you should go back and doublecheck your conditional statement that’s creating the new column.
+```{note}
+Notice that these totals match the totals that we calculated with the filtered calculations above. That's good! This is one way to verify your new column. If your totals don’t match, it means you should go back and doublecheck your conditional statement that’s creating the new column.
+```
 
-Let’s do a little more. We can now create new DataFrame for just in-state donors.
+Let’s do a little more. We can now create a new DataFrame for just in-state donors.
 
 ```{code-cell}
 in_state = merged_prop[merged_prop.in_state == True]
 ```
 
-And check what proportion of the funding came from in-state, overall.
+And check the overall proportion of funding that came from inside the state.
 
 ```{code-cell}
 in_state.amount.sum() / merged_prop.amount.sum()
@@ -106,11 +113,14 @@ We can also easily create ranked lists of the top donors from within the state.
 in_state.groupby(["contributor_firstname", "contributor_lastname"], dropna=False).amount.sum().reset_index().sort_values("amount", ascending=False)
 ```
 
-And do the same the for those outside the state.
+And do the same the for those outside the state. First by making a DataFrame.
 
 ```{code-cell}
 out_state = merged_prop[merged_prop.in_state == False]
-out_state.groupby(["contributor_firstname", "contributor_lastname"], dropna=False).amount.sum().reset_index().sort_values("amount", ascending=False)
 ```
 
-You can use conditionals to create any number of similar flags, which will let you slice and dice your contributor list. This can be a powerful tool to look at data from different angles, narrow an existing analysis or answer specific reporting questions.
+Then by swapping our new variable into the line of code above.
+
+```{code-cell}
+out_state.groupby(["contributor_firstname", "contributor_lastname"], dropna=False).amount.sum().reset_index().sort_values("amount", ascending=False)
+```
