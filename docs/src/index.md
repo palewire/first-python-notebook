@@ -36,7 +36,7 @@ columns
 filters
 merge
 totals
-sort_values/index
+sorting
 groupby/index
 compute
 remix/index
