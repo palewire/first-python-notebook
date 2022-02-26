@@ -39,7 +39,7 @@ totals
 sorting
 groupby
 compute
-remix/index
+remix
 charts/index
 ```
 
