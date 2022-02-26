@@ -37,7 +37,7 @@ filters
 merge
 totals
 sorting
-groupby/index
+groupby
 compute
 remix/index
 charts/index
