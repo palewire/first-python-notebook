@@ -35,7 +35,7 @@ dataframe
 columns
 filters
 merge
-totals/index
+totals
 sort_values/index
 groupby/index
 compute
