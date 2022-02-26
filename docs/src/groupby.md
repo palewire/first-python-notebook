@@ -77,11 +77,13 @@ Finding the top contributors is almost as easy, but since the first and last nam
 merged_prop.groupby(["contributor_firstname", "contributor_lastname"]).amount.sum().reset_index().sort_values("amount", ascending=False)
 ```
 
-You should be noticing that several of the top contributors appear to be the same person with their name entered in slightly different ways.
+```{note}
+You may notice that several of the top contributors appear to be the same person with their name entered in slightly different ways.
 
 This is another important lesson of campaign contributions data. Virtually none of the data is standardized by the campaigns or the government.
 
 The onus is on the analyst to show caution and responsibly combine records where the name fields refer to the same person.
+```
 
 To find out if each contributor supported or opposed the measure, you simply add the `committee_position` field to our `groupby` method.
 
@@ -89,7 +91,7 @@ To find out if each contributor supported or opposed the measure, you simply add
 merged_prop.groupby(["contributor_firstname", "contributor_lastname", "committee_position"]).amount.sum().reset_index().sort_values("amount", ascending=False)
 ```
 
-If you want the top supporters or opponents alone, run those same commands with the `support` and `oppose` datasets we [filtered down to earlier](filters.md). Everything else about the commands would be the same as the first one above.
+If you want the top supporters or opponents alone, run those same commands with the `support` and `oppose` datasets we [filtered earlier](filters.md). Everything else about the commands would be the same as the first one above.
 
 For the supporters:
 
