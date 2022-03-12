@@ -173,6 +173,7 @@ nav .shingle a:hover {
     nav .shingle {
         float: left;
         margin-bottom: 5px;
+        padding-left: 0;
    }
 }
 nav .links {
@@ -193,7 +194,7 @@ nav .links li {
 }
 
 @media (max-width: 550px) {
-  li {
+  nav .links li {
     font-size: .825em;
   }
 }
