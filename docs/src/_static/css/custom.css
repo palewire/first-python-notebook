@@ -132,12 +132,12 @@ pre {
     overflow: hidden;
 }
 .row .fivecol {
-    width: 40%;
+    width: 43%;
     float: right;
     min-height: 1px;
 }
 .row .sevencol {
-    width: 40%;
+    width: 37%;
     float: left;
     min-height: 1px;
 }
