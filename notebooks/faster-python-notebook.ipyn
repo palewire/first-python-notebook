@@ -1,0 +1,3689 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "45f6ab66-37c2-454a-925e-346931e1c3a7",
+   "metadata": {
+    "tags": []
+   },
+   "source": [
+    "# (_Faster_) First Python Notebook\n",
+    "\n",
+    "An accelerated guide to analyzing data with Python and the Jupyter notebook\n",
+    "\n",
+    "By [Ben Welsh](https://palewi.re/who-is-ben-welsh/)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "78f5946d-3e22-4eff-85a8-f066109c41b0",
+   "metadata": {},
+   "source": [
+    "First developed in 2016, \"First Python Notebook\" guides students through a data-driven investigation of money in California politics. It is most commonly taught as a six-hour in-person class. This document, the _FASTER EDITON_, is an abbreviated spin off intended to be taught online in two hours or less. The full course can be found at [palewi.re/docs/first-python-notebook/](https://palewi.re/docs/first-python-notebook/)."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "db188ce8-2e8b-4c48-a7b3-d9d98788e345",
+   "metadata": {
+    "jp-MarkdownHeadingCollapsed": true,
+    "tags": []
+   },
+   "source": [
+    "## Meet the Jupyter Notebook"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d6129fc8-71b6-40ed-a8c5-e18f50a5d981",
+   "metadata": {},
+   "source": [
+    "A [Jupyter](https://jupyter.org/) notebook is a browser-based interface where you can write, run, remix and republish code. It is free software you can install and run like any other open-source library.\n",
+    "\n",
+    "[Scientists](https://nbviewer.jupyter.org/github/robertodealmeida/notebooks/blob/master/earth_day_data_challenge/Analyzing%20whale%20tracks.ipynb), [scholars](https://nbviewer.jupyter.org/github/nealcaren/workshop_2014/blob/master/notebooks/5_Times_API.ipynb), [investors](https://github.com/rsvp/fecon235/blob/master/nb/fred-debt-pop.ipynb) and corporations use Jupyter to create and share their research. It is also used by journalists to develop stories and show their work. Examples include:\n",
+    "\n",
+    "* [“The Tennis Racket”](https://github.com/BuzzFeedNews/2016-01-tennis-betting-analysis/blob/master/notebooks/tennis-analysis.ipynb) by BuzzFeed and the BBC\n",
+    "* [“Machine bias”](https://github.com/propublica/compas-analysis/blob/master/Compas%20Analysis.ipynb) by ProPublica\n",
+    "* [“As Opioid Crisis Ramped Up, Pills Flowed Into Vermont by the Millions”](https://github.com/asuozzo/arcos-opioid-analysis-vt) by Seven Days\n",
+    "* [More than 35 different notebooks](https://github.com/datadesk/notebooks) published by the Los Angeles Times\n",
+    "\n",
+    "There are numerous ways to install and configure Jupyter notebooks. If don't have one running already, consult [the guide in the full edition of \"First Python Notebook.'](https://palewi.re/docs/first-python-notebook/jupyter_desktop.html)\n",
+    "\n",
+    "Once you have this notebook set up and running, you're ready to write Python in a code cell.\n",
+    "\n",
+    "Do not stress. There is nothing too fancy about it. You can start by just doing a little simple math.\n",
+    "\n",
+    "Select the box below, then hit the play button in the toolbar above the notebook or hit `SHIFT+ENTER` on your keyboard."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "a08c8290-2248-44eb-ac49-c558e16fd473",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "4"
+      ]
+     },
+     "execution_count": 3,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "2+2"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "aed7d280-9237-4c24-9f43-ed5b4464a8d8",
+   "metadata": {},
+   "source": [
+    "There. You have just run your first Python code. You have entered two integers and added them together using the plus sign operator.\n",
+    "\n",
+    "Not so bad, right?"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2c6b8af9-aad3-4ab6-b688-c0d755991845",
+   "metadata": {},
+   "source": [
+    "This to-and-fro of writing Python code in a cell and then running it with the play button is the rhythm of working in a notebook If you get an error after you run a cell, look carefully at your code and see that it exactly matches what’s been written in the example."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "6aa5381f-2daf-40a7-bfa1-9e0c62ac3a5c",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "SyntaxError",
+     "evalue": "invalid syntax (4150814810.py, line 1)",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;36m  Input \u001b[0;32mIn [6]\u001b[0;36m\u001b[0m\n\u001b[0;31m    2+2+\u001b[0m\n\u001b[0m        ^\u001b[0m\n\u001b[0;31mSyntaxError\u001b[0m\u001b[0;31m:\u001b[0m invalid syntax\n"
+     ]
+    }
+   ],
+   "source": [
+    "2+2+"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "8d75df45-7b74-4c47-8683-0e8fb69e7898",
+   "metadata": {},
+   "source": [
+    "Don’t worry. Code crashes are a normal part of life for computer programmers. They’re usually caused by small typos that can be quickly corrected."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "e530e3a5-85bc-4326-a55d-54dbafc58ff6",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "6"
+      ]
+     },
+     "execution_count": 9,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "2+2+2"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2c48af4c-0230-4624-accd-81589e0293cc",
+   "metadata": {},
+   "source": [
+    "Over time you will gradually stack cells to organize an analysis that runs from top to bottom. The cells can contain variables, functions and other Python tools.\n",
+    "\n",
+    "> Note: If you’ve never written Python before, we recommend [\"An Informal Introduction to Python\"](https://docs.python.org/3/tutorial/introduction.html) and subsequent sections of python.org’s tutorial.\n",
+    "\n",
+    "A simple example would be storing your number in a variable in one cell:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "44987e01-120e-4920-9140-8ab5c5ee0acb",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "number = 2"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ce101254-99ae-4b0a-b062-18324d70e134",
+   "metadata": {},
+   "source": [
+    "Then adding it to another number in the next:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "4ca3b2e7-07db-4db3-b1b9-6c09ad8ad365",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "5"
+      ]
+     },
+     "execution_count": 11,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "number + 3"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7b403eaa-d83e-4819-871f-2e8606936f71",
+   "metadata": {},
+   "source": [
+    "Change the number value to 3 and run both cells again and it should output 6."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "b33b8643-b444-4253-b38a-4be2732ddbdb",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "number = 3"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "00f55723-8907-4797-ba39-854a77c6a28c",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "6"
+      ]
+     },
+     "execution_count": 13,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "number + 3"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "997aa7c1-aa6c-4f5b-a8de-802990e87122",
+   "metadata": {},
+   "source": [
+    "Once you’ve got the hang of making the notebook run, you’re ready to introduce pandas, the powerful Python analysis library that can do a whole lot more than add a few numbers together."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "16b19ddf-3cd0-4b48-a635-4bdf44546d64",
+   "metadata": {
+    "jp-MarkdownHeadingCollapsed": true,
+    "tags": []
+   },
+   "source": [
+    "## Introducing pandas"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6a769ba4-a9a9-4c26-bbfd-a14ea202b81a",
+   "metadata": {},
+   "source": [
+    "Lucky for us, Python is filled with functions to do pretty much anything you’d ever want to do with a programming language: [navigate the web](http://docs.python-requests.org/), [parse data](https://docs.python.org/2/library/csv.html), [interact with a database](http://www.sqlalchemy.org/), [run fancy statistics](https://www.scipy.org/), [build a pretty website](https://www.djangoproject.com/) and [so](https://www.crummy.com/software/BeautifulSoup/) [much](http://www.nltk.org/) [more](https://pillow.readthedocs.io/en/stable/).\n",
+    "\n",
+    "Creative people have put these tools to work to get a [wide range of things](https://www.python.org/about/success/) done in the academy, the laboratory and even in outer space.\n",
+    "\n",
+    "Some of those tools are included in a toolbox that comes with the language, known as the standard library. Others have been built by members of Python’s developer community and need to be downloaded and installed from the web. One third-party tool that’s important for this class is called [pandas](https://pandas.pydata.org/). It is a tool invented at a [financial investment firm](https://www.aqr.com/) that has become a leading open-source library for accessing and analyzing data in many different fields.\n",
+    "\n",
+    "Here’s how to use pandas yourself. Type in the following and hit the play button to import the library for use in our notebook. "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "d9441941-4326-4e9a-850a-c5c175259dd6",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pandas"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f05db38a-f532-4ba6-bd9f-0f7700a2eeb6",
+   "metadata": {},
+   "source": [
+    "If nothing happens, that’s good. It means you have pandas installed and ready as to use.\n",
+    "\n",
+    "> Note: Since pandas is created by a third party independent from the core Python developers, it may not be available by default if you manually installed Python and Jupyter. It’s available here because our students are using JupyterLab Desktop, whose developers have pre-selected a curated list of common utilities to include with their installation. Consult our [advanced installation guide](https://palewi.re/docs/first-python-notebook/appendix/index.html) if the cell above threw an error.\n",
+    "\n",
+    "Now let's run the same code again, but with a small addition."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "bd9c5ff8-a7f4-409d-a7e2-550787b1dd33",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pandas as pd"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "81953ecf-f91a-4289-a7ea-b03289767de4",
+   "metadata": {},
+   "source": [
+    "This will alias the pandas library at the shorter variable name of `pd`. This is standard practice in the pandas community. You will frequently see examples of pandas code online using pd as shorthand. It’s not required, but it’s good to get in the habit so that your code will be understood by other computer programmers.\n",
+    "\n",
+    "Those two little letters contain dozens of data analysis tools that we’ll use in future lessons.\n",
+    "\n",
+    "They can import massive data files, compute advanced statistics, filter, sort, rank and do just about anything else you’d want to do.\n",
+    "\n",
+    "We’ll get to all of that soon enough, but let’s start out with something simple.\n",
+    "\n",
+    "Let’s make a list of numbers in a new notebook cell. To keep things simple, enter all of the even numbers between zero and ten. Press play.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "id": "76408f89-55ed-4996-ac0e-c520c91cb9f5",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "my_list = [2, 4, 6, 8]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "85362e2b-756e-4f9e-bfa6-550311636793",
+   "metadata": {},
+   "source": [
+    "If you’re a skilled Python programmer, you can do some cool stuff with any list, and even run some stats. But if you hand over to pandas instead, you’ll be impressed by how easily you can analyze the data without knowing much computer code at all.\n",
+    "\n",
+    "In this case, it’s as simple as converting that plain Python list into what pandas calls a Series. Here’s how to make it happen in your next cell."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "id": "2855d3fe-4886-4715-ad7a-38bf0f8852dc",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "my_series = pd.Series(my_list)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6f121e7f-7abf-4f00-aae0-cc7dddadee05",
+   "metadata": {},
+   "source": [
+    "Once the data becomes a Series, you can immediately run a wide range of [descriptive statistics](https://en.wikipedia.org/wiki/Descriptive_statistics). Let’s try a few.\n",
+    "\n",
+    "First, let’s sum all the numbers. Make a new cell and run this. It should spit out the total."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "id": "756d433a-5379-4df9-acea-252067ff7fff",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "20"
+      ]
+     },
+     "execution_count": 20,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "my_series.sum()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "68da125e-beac-4b1e-b13a-08d1c264598b",
+   "metadata": {},
+   "source": [
+    "Then find the maximum value in the next."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "id": "8f62ab11-b0bc-4565-9c3b-ce48d9229414",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "8"
+      ]
+     },
+     "execution_count": 21,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "my_series.max()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e8500cb7-657d-4dad-923c-71c13006ebda",
+   "metadata": {},
+   "source": [
+    "The minimum value in the next."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "id": "9b3036dd-b239-4f08-903f-989989c257f8",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "2"
+      ]
+     },
+     "execution_count": 22,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "my_series.min()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "fe3fcf04-09c1-4acd-a924-85cf44e99146",
+   "metadata": {},
+   "source": [
+    "How about the average, which also known as the mean?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "id": "3c4cfda5-eb9c-4279-ade2-12df439c3f81",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "5.0"
+      ]
+     },
+     "execution_count": 26,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "my_series.mean()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9f6c00db-188a-407a-ad38-dcf987c6182a",
+   "metadata": {},
+   "source": [
+    "The median?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "id": "5e4cd26c-a2e3-495f-818d-339b10a91040",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "5.0"
+      ]
+     },
+     "execution_count": 27,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "my_series.median()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "10ce7ebc-ae19-40a7-b235-9dce865ad33d",
+   "metadata": {},
+   "source": [
+    "The standard deviation?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 28,
+   "id": "b94eb9e9-a92d-4651-8861-9a40545f2de1",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "2.581988897471611"
+      ]
+     },
+     "execution_count": 28,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "my_series.std()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "56b13286-bc88-43c9-a972-51da525a5cd0",
+   "metadata": {},
+   "source": [
+    "Finally, all of the above, plus a little more about the distribution, in one simple command."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "id": "46aab258-f53c-4e01-9f10-67ed52ffb659",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "count    4.000000\n",
+       "mean     5.000000\n",
+       "std      2.581989\n",
+       "min      2.000000\n",
+       "25%      3.500000\n",
+       "50%      5.000000\n",
+       "75%      6.500000\n",
+       "max      8.000000\n",
+       "dtype: float64"
+      ]
+     },
+     "execution_count": 29,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "my_series.describe()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "feb421c5-3519-42f3-a4f1-94d1d285f8c8",
+   "metadata": {},
+   "source": [
+    "Substitute in a series of 10 million records at the top of the notebook — or even just the odd numbers between zero and ten — and your notebook would calculate all those same statistics without you needing to write any more code. Once your data, however large or complex, is imported into pandas, there’s little limit to what you can do to filter, merge, group, aggregate, compute or chart using simple methods like the ones above."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d6bcc0a9-7d4e-4ebc-b555-e262d28ed8c6",
+   "metadata": {
+    "jp-MarkdownHeadingCollapsed": true,
+    "tags": []
+   },
+   "source": [
+    "## Reading in a DataFrame"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2f2d5836-d7da-482d-a5f0-b1d96c845269",
+   "metadata": {},
+   "source": [
+    "Now it’s time to get our hands on some real data. The [News Homepages project](https://homepages.news/) is an open-source archive that gathers, saves and shares front pages from sites around the world. It [publishes daily exports of data](https://palewi.re/docs/news-homepages/extracts.html) gathered by the system, which can be used to analyze news coverage. We'll use its roster of sites to demonstrate the power of pandas.\n",
+    "\n",
+    "The data are structured in rows of comma-separated values. This is known as a [CSV file](https://en.wikipedia.org/wiki/Comma-separated_values). It is the most common way you will find data published online.\n",
+    "\n",
+    "The pandas library is able to read in files from a variety formats, including CSV. In our next cell, we'll use pandas' `read_csv` method to read in `sites.csv` from the archive."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 30,
+   "id": "a74158dc-ca44-4fa7-abc6-1f88248fa339",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>handle</th>\n",
+       "      <th>name</th>\n",
+       "      <th>url</th>\n",
+       "      <th>location</th>\n",
+       "      <th>timezone</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>100Reporters</td>\n",
+       "      <td>100Reporters</td>\n",
+       "      <td>http://100r.org/</td>\n",
+       "      <td>Washington</td>\n",
+       "      <td>America/New_York</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>11AliveNews</td>\n",
+       "      <td>11Alive News</td>\n",
+       "      <td>https://www.11alive.com</td>\n",
+       "      <td>Atlanta</td>\n",
+       "      <td>America/New_York</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>12NewsNow</td>\n",
+       "      <td>12 News Now</td>\n",
+       "      <td>https://www.12newsnow.com/</td>\n",
+       "      <td>Beaumont</td>\n",
+       "      <td>America/Chicago</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>13wmaznews</td>\n",
+       "      <td>13WMAZ News</td>\n",
+       "      <td>https://www.13wmaz.com</td>\n",
+       "      <td>Macon</td>\n",
+       "      <td>America/New_York</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>14eastmag</td>\n",
+       "      <td>14 East</td>\n",
+       "      <td>http://fourteeneastmag.com/</td>\n",
+       "      <td>Chicago</td>\n",
+       "      <td>America/Chicago</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>...</th>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>555</th>\n",
+       "      <td>wttw</td>\n",
+       "      <td>WTTW</td>\n",
+       "      <td>https://www.wttw.com/</td>\n",
+       "      <td>Chicago</td>\n",
+       "      <td>America/Chicago</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>556</th>\n",
+       "      <td>WTVM</td>\n",
+       "      <td>WTVM News Leader 9</td>\n",
+       "      <td>https://www.wtvm.com</td>\n",
+       "      <td>Columbus</td>\n",
+       "      <td>America/New_York</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>557</th>\n",
+       "      <td>YahooNews</td>\n",
+       "      <td>Yahoo! News</td>\n",
+       "      <td>https://news.yahoo.com/</td>\n",
+       "      <td>New York City</td>\n",
+       "      <td>America/New_York</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>558</th>\n",
+       "      <td>zerohedge</td>\n",
+       "      <td>ZeroHedge</td>\n",
+       "      <td>https://www.zerohedge.com/</td>\n",
+       "      <td>New York City</td>\n",
+       "      <td>America/New_York</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>559</th>\n",
+       "      <td>zn_ua</td>\n",
+       "      <td>ZN.UA</td>\n",
+       "      <td>https://zn.ua/</td>\n",
+       "      <td>Kiev</td>\n",
+       "      <td>Europe/Kiev</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "<p>560 rows × 5 columns</p>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "           handle                name                          url  \\\n",
+       "0    100Reporters        100Reporters             http://100r.org/   \n",
+       "1     11AliveNews        11Alive News      https://www.11alive.com   \n",
+       "2       12NewsNow         12 News Now   https://www.12newsnow.com/   \n",
+       "3      13wmaznews         13WMAZ News       https://www.13wmaz.com   \n",
+       "4       14eastmag             14 East  http://fourteeneastmag.com/   \n",
+       "..            ...                 ...                          ...   \n",
+       "555          wttw                WTTW        https://www.wttw.com/   \n",
+       "556          WTVM  WTVM News Leader 9         https://www.wtvm.com   \n",
+       "557     YahooNews         Yahoo! News      https://news.yahoo.com/   \n",
+       "558     zerohedge           ZeroHedge   https://www.zerohedge.com/   \n",
+       "559         zn_ua               ZN.UA               https://zn.ua/   \n",
+       "\n",
+       "          location          timezone  \n",
+       "0       Washington  America/New_York  \n",
+       "1          Atlanta  America/New_York  \n",
+       "2         Beaumont   America/Chicago  \n",
+       "3            Macon  America/New_York  \n",
+       "4          Chicago   America/Chicago  \n",
+       "..             ...               ...  \n",
+       "555        Chicago   America/Chicago  \n",
+       "556       Columbus  America/New_York  \n",
+       "557  New York City  America/New_York  \n",
+       "558  New York City  America/New_York  \n",
+       "559           Kiev       Europe/Kiev  \n",
+       "\n",
+       "[560 rows x 5 columns]"
+      ]
+     },
+     "execution_count": 30,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "pd.read_csv(\"https://raw.githubusercontent.com/palewire/news-homepages/main/extracts/csv/sites.csv\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b595fc09-d269-4452-8edc-0d9d4b3bcded",
+   "metadata": {},
+   "source": [
+    "You should see a big table like the one above. It is a DataFrame where pandas has structured the CSV data into rows and columns, just like Excel or other spreadsheet software might.\n",
+    "\n",
+    "The advantage here is that rather than manipulating the data through a haphazard series of clicks and keypunches we will be gradually grinding down the data using a computer programming script that is 100% transparent and reproducible.\n",
+    "\n",
+    "In order to do more with your DataFrame, we need to store it so it can be reused in subsequent cells. We can do this by saving in a variable, which is a fancy computer programming word for a named shortcut where we save our work as we go."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 31,
+   "id": "35eec507-f2f1-4f41-8876-7e23580ea936",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "site_list = pd.read_csv(\"https://raw.githubusercontent.com/palewire/news-homepages/main/extracts/csv/sites.csv\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "90b4cd4e-308e-4415-8a27-8f0d279c7eca",
+   "metadata": {},
+   "source": [
+    "After you run it, you shouldn’t see anything. That’s a good thing. It means our DataFrame has been saved under the name `site_list`, which we can now begin interacting with in the cells that follow.\n",
+    "\n",
+    "We can do this by calling [“methods”](https://en.wikipedia.org/wiki/Method_(computer_programming)) that pandas makes available to all DataFrames.\n",
+    "\n",
+    "You may not have known it at the time, but `read_csv` is one of these methods. There are dozens more that can do all sorts of interesting things. Let’s start with some easy ones that analysts use all the time."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b42a1df8-d966-42f5-abae-f5b1c1477454",
+   "metadata": {},
+   "source": [
+    "To preview the first few rows of the dataset, try the [`head`](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.head.html) method."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 33,
+   "id": "64ff2b46-590e-4b47-8fb5-ed034fad8a1c",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>handle</th>\n",
+       "      <th>name</th>\n",
+       "      <th>url</th>\n",
+       "      <th>location</th>\n",
+       "      <th>timezone</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>100Reporters</td>\n",
+       "      <td>100Reporters</td>\n",
+       "      <td>http://100r.org/</td>\n",
+       "      <td>Washington</td>\n",
+       "      <td>America/New_York</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>11AliveNews</td>\n",
+       "      <td>11Alive News</td>\n",
+       "      <td>https://www.11alive.com</td>\n",
+       "      <td>Atlanta</td>\n",
+       "      <td>America/New_York</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>12NewsNow</td>\n",
+       "      <td>12 News Now</td>\n",
+       "      <td>https://www.12newsnow.com/</td>\n",
+       "      <td>Beaumont</td>\n",
+       "      <td>America/Chicago</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>13wmaznews</td>\n",
+       "      <td>13WMAZ News</td>\n",
+       "      <td>https://www.13wmaz.com</td>\n",
+       "      <td>Macon</td>\n",
+       "      <td>America/New_York</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>14eastmag</td>\n",
+       "      <td>14 East</td>\n",
+       "      <td>http://fourteeneastmag.com/</td>\n",
+       "      <td>Chicago</td>\n",
+       "      <td>America/Chicago</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "         handle          name                          url    location  \\\n",
+       "0  100Reporters  100Reporters             http://100r.org/  Washington   \n",
+       "1   11AliveNews  11Alive News      https://www.11alive.com     Atlanta   \n",
+       "2     12NewsNow   12 News Now   https://www.12newsnow.com/    Beaumont   \n",
+       "3    13wmaznews   13WMAZ News       https://www.13wmaz.com       Macon   \n",
+       "4     14eastmag       14 East  http://fourteeneastmag.com/     Chicago   \n",
+       "\n",
+       "           timezone  \n",
+       "0  America/New_York  \n",
+       "1  America/New_York  \n",
+       "2   America/Chicago  \n",
+       "3  America/New_York  \n",
+       "4   America/Chicago  "
+      ]
+     },
+     "execution_count": 33,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "site_list.head()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "93f961f8-ec17-48e8-99fa-27198993e556",
+   "metadata": {},
+   "source": [
+    "It does the first five by default. If you want a different number, submit it as an input."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 34,
+   "id": "a41bb56e-466b-4399-a3a3-1cd488c5f435",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>handle</th>\n",
+       "      <th>name</th>\n",
+       "      <th>url</th>\n",
+       "      <th>location</th>\n",
+       "      <th>timezone</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>100Reporters</td>\n",
+       "      <td>100Reporters</td>\n",
+       "      <td>http://100r.org/</td>\n",
+       "      <td>Washington</td>\n",
+       "      <td>America/New_York</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "         handle          name               url    location          timezone\n",
+       "0  100Reporters  100Reporters  http://100r.org/  Washington  America/New_York"
+      ]
+     },
+     "execution_count": 34,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "site_list.head(1)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e96ac71f-9a87-4dce-933d-c11438fbfdd6",
+   "metadata": {},
+   "source": [
+    "To get a look at all of the columns and what type of data they store, try the [`info`](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.info.html) method."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 35,
+   "id": "e97c9296-d55b-439c-a692-7929b1e46be7",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<class 'pandas.core.frame.DataFrame'>\n",
+      "RangeIndex: 560 entries, 0 to 559\n",
+      "Data columns (total 5 columns):\n",
+      " #   Column    Non-Null Count  Dtype \n",
+      "---  ------    --------------  ----- \n",
+      " 0   handle    560 non-null    object\n",
+      " 1   name      560 non-null    object\n",
+      " 2   url       560 non-null    object\n",
+      " 3   location  560 non-null    object\n",
+      " 4   timezone  560 non-null    object\n",
+      "dtypes: object(5)\n",
+      "memory usage: 22.0+ KB\n"
+     ]
+    }
+   ],
+   "source": [
+    "site_list.info()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a378b483-4e55-4b3d-a6bc-10436f8f7931",
+   "metadata": {},
+   "source": [
+    "Look carefully at the results and you'll see we have more than 550 sites."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "48dda7eb-0236-4823-99f8-4e2398be1b0c",
+   "metadata": {
+    "jp-MarkdownHeadingCollapsed": true,
+    "tags": []
+   },
+   "source": [
+    "## Accessing columns"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "8b2f1387-f380-4be5-9df5-9944fb2238cd",
+   "metadata": {},
+   "source": [
+    "To see the contents of a column separate from the rest of the DataFrame, add the column’s name to the DataFrame’s variable following a period. We’ll begin with the `location` column where the hometown of the news organization is stored"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 38,
+   "id": "34aa8c96-1ae8-4e86-b8fe-eae3ade27d77",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "0         Washington\n",
+       "1            Atlanta\n",
+       "2           Beaumont\n",
+       "3              Macon\n",
+       "4            Chicago\n",
+       "           ...      \n",
+       "555          Chicago\n",
+       "556         Columbus\n",
+       "557    New York City\n",
+       "558    New York City\n",
+       "559             Kiev\n",
+       "Name: location, Length: 560, dtype: object"
+      ]
+     },
+     "execution_count": 38,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "site_list.location"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b2aabf7e-fb8a-4b67-af2b-da22baac22ba",
+   "metadata": {},
+   "source": [
+    "That will list the column out as a Series, just like the ones we created from scratch earlier. Just as we did then, you can now start tacking on additional methods that will analyze the contents of the column.\n",
+    "\n",
+    "> Note: You can also access columns a second way, like this: `site_list['location']`. This method isn’t as pretty, but it’s required if your column has a space in its name, which would break the simpler dot-based method.\n",
+    "\n",
+    "In this case, the column is filled with characters. So we don’t want to calculate statistics like the median and average, as we did before.\n",
+    "\n",
+    "There’s another built-in pandas tool that will total up the frequency of values in a column. In this case that could be used to answer the question: Which proposition had the most committees? The method is called `value_counts` and it’s just as easy to use as sum, min or max. All you need to do it is add a period after the column name and chain it on the tail end of your cell.\n",
+    "\n",
+    "Run the code and you should see the locations ranked by their number of committees."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 40,
+   "id": "b37fbaa3-6edf-4854-8c7e-e6806d921d24",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "New York         62\n",
+       "Washington       47\n",
+       "Los Angeles      20\n",
+       "Chicago          16\n",
+       "New York City    16\n",
+       "                 ..\n",
+       "Stamford          1\n",
+       "Bakersfield       1\n",
+       "Bogota            1\n",
+       "Montevideo        1\n",
+       "Wisconsin         1\n",
+       "Name: location, Length: 199, dtype: int64"
+      ]
+     },
+     "execution_count": 40,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "site_list.location.value_counts()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "4e59c465-9813-48b8-98c0-d926516bda1a",
+   "metadata": {},
+   "source": [
+    "You may have noticed that even though the result has two columns, pandas did not return a clean-looking table in the same way as head did for our DataFrame. That’s because our column, a Series, acts a little bit different than the DataFrame created by `read_csv`.\n",
+    "\n",
+    "In most instances, if you have an ugly Series generated by a method like `value_counts` and you want to convert it into a pretty DataFrame you can do so by tacking on the `reset_index` method onto the tail end."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 41,
+   "id": "b53c601c-09e2-475e-90e7-2aeaae4e51a7",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>index</th>\n",
+       "      <th>location</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>New York</td>\n",
+       "      <td>62</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>Washington</td>\n",
+       "      <td>47</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>Los Angeles</td>\n",
+       "      <td>20</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>Chicago</td>\n",
+       "      <td>16</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>New York City</td>\n",
+       "      <td>16</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>...</th>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>194</th>\n",
+       "      <td>Stamford</td>\n",
+       "      <td>1</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>195</th>\n",
+       "      <td>Bakersfield</td>\n",
+       "      <td>1</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>196</th>\n",
+       "      <td>Bogota</td>\n",
+       "      <td>1</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>197</th>\n",
+       "      <td>Montevideo</td>\n",
+       "      <td>1</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>198</th>\n",
+       "      <td>Wisconsin</td>\n",
+       "      <td>1</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "<p>199 rows × 2 columns</p>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "             index  location\n",
+       "0         New York        62\n",
+       "1       Washington        47\n",
+       "2      Los Angeles        20\n",
+       "3          Chicago        16\n",
+       "4    New York City        16\n",
+       "..             ...       ...\n",
+       "194       Stamford         1\n",
+       "195    Bakersfield         1\n",
+       "196         Bogota         1\n",
+       "197     Montevideo         1\n",
+       "198      Wisconsin         1\n",
+       "\n",
+       "[199 rows x 2 columns]"
+      ]
+     },
+     "execution_count": 41,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "site_list.location.value_counts().reset_index()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "4910f7c0-238e-4a5b-b2ca-c72d69602711",
+   "metadata": {},
+   "source": [
+    "Why do Series and DataFrames behave differently? Why does `reset_index` have such a weird name?\n",
+    "\n",
+    "Like so much in computer programming, the answer is simply, “because the people who created the library said so.” It’s important to learn that all open-source programming tools are made by humans, and humans have their quirks. Over time you’ll see pandas has more than a few.\n",
+    "\n",
+    "As a beginner, you should just accept the oddities and keep moving. As you get more advanced, if there’s something about the system you think could be improved you should consider [contributing](https://pandas.pydata.org/pandas-docs/stable/development/contributing.html) to the Python code that operates the library."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6bf77f2d-b2c2-4355-aa2c-80fffc10f693",
+   "metadata": {
+    "jp-MarkdownHeadingCollapsed": true,
+    "tags": []
+   },
+   "source": [
+    "## Filtering"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "bd7530b6-c16c-44b5-85b1-f7689f797204",
+   "metadata": {},
+   "source": [
+    "The most common way to filter a DataFrame is to pass an expression as an “index” that can be used to decide which records should be kept and which discarded. You write the expression by combining a column on your DataFrame with an [“operator”](https://en.wikipedia.org/wiki/Operator_(computer_programming)) like == or > or < and a value to compare against each row.\n",
+    "\n",
+    "> Note: If you are familiar with writing [SQL](https://en.wikipedia.org/wiki/SQL) to manipulate databases, pandas’ filtering system is somewhat similar to a WHERE query. The [official pandas documentation](https://pandas.pydata.org/pandas-docs/stable/getting_started/comparison/comparison_with_sql.html#where) offers direct translations between the two.\n",
+    "\n",
+    "Let's try filtering against the `location` field. Save one of the values listed above into a variable. This will allow us to reuse it later."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 42,
+   "id": "8124142e-b9da-448d-8b42-35115c0c5a26",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "my_location = \"Cedar Rapids\""
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b09cb284-7783-446c-ab58-1c5b83ad2e13",
+   "metadata": {},
+   "source": [
+    "In the next cell we will ask pandas to narrow down our list of sites to just those that list the location we’re interested in. We will create a filter expression and place it between two flat brackets following the DataFrame we wish to filter."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 43,
+   "id": "a3e3cf0f-fe6f-4ffe-a273-f8853a8db957",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>handle</th>\n",
+       "      <th>name</th>\n",
+       "      <th>url</th>\n",
+       "      <th>location</th>\n",
+       "      <th>timezone</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>192</th>\n",
+       "      <td>gazettedotcom</td>\n",
+       "      <td>Cedar Rapids Gazette</td>\n",
+       "      <td>https://www.thegazette.com/</td>\n",
+       "      <td>Cedar Rapids</td>\n",
+       "      <td>America/Chicago</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>246</th>\n",
+       "      <td>KCRG</td>\n",
+       "      <td>KCRG</td>\n",
+       "      <td>https://www.kcrg.com/</td>\n",
+       "      <td>Cedar Rapids</td>\n",
+       "      <td>America/Chicago</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "            handle                  name                          url  \\\n",
+       "192  gazettedotcom  Cedar Rapids Gazette  https://www.thegazette.com/   \n",
+       "246           KCRG                  KCRG        https://www.kcrg.com/   \n",
+       "\n",
+       "         location         timezone  \n",
+       "192  Cedar Rapids  America/Chicago  \n",
+       "246  Cedar Rapids  America/Chicago  "
+      ]
+     },
+     "execution_count": 43,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "site_list[site_list.location == my_location]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e090ee5e-7e21-4519-b877-e2adc714fa55",
+   "metadata": {},
+   "source": [
+    "Run it and it outputs the filtered dataset, just those sites located in Cedar Rapids."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7ee09fc6-4a83-441c-962c-295d2b73fb48",
+   "metadata": {},
+   "source": [
+    "Now we should save the results of that filter into a new variable separate from the full list we imported from the CSV file. Since it includes only the sites for the location we’re interested in let’s call it `my_sites`."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 44,
+   "id": "86104389-e9ab-499f-b6da-246f1985133e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "my_sites = site_list[site_list.location == my_location]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3484a0bd-eacc-43c0-ae84-a7cb67672abe",
+   "metadata": {},
+   "source": [
+    "To check our work and find out how many committees are left after the filter, let’s run the DataFrame inspection commands we learned earlier.\n",
+    "\n",
+    "First `head`."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 45,
+   "id": "643adbc8-8d71-4f20-9da5-dadb54a1c254",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>handle</th>\n",
+       "      <th>name</th>\n",
+       "      <th>url</th>\n",
+       "      <th>location</th>\n",
+       "      <th>timezone</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>192</th>\n",
+       "      <td>gazettedotcom</td>\n",
+       "      <td>Cedar Rapids Gazette</td>\n",
+       "      <td>https://www.thegazette.com/</td>\n",
+       "      <td>Cedar Rapids</td>\n",
+       "      <td>America/Chicago</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>246</th>\n",
+       "      <td>KCRG</td>\n",
+       "      <td>KCRG</td>\n",
+       "      <td>https://www.kcrg.com/</td>\n",
+       "      <td>Cedar Rapids</td>\n",
+       "      <td>America/Chicago</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "            handle                  name                          url  \\\n",
+       "192  gazettedotcom  Cedar Rapids Gazette  https://www.thegazette.com/   \n",
+       "246           KCRG                  KCRG        https://www.kcrg.com/   \n",
+       "\n",
+       "         location         timezone  \n",
+       "192  Cedar Rapids  America/Chicago  \n",
+       "246  Cedar Rapids  America/Chicago  "
+      ]
+     },
+     "execution_count": 45,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "my_sites.head()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 46,
+   "id": "8953e98e-0efe-49ac-bf46-0f84118524ff",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<class 'pandas.core.frame.DataFrame'>\n",
+      "Int64Index: 2 entries, 192 to 246\n",
+      "Data columns (total 5 columns):\n",
+      " #   Column    Non-Null Count  Dtype \n",
+      "---  ------    --------------  ----- \n",
+      " 0   handle    2 non-null      object\n",
+      " 1   name      2 non-null      object\n",
+      " 2   url       2 non-null      object\n",
+      " 3   location  2 non-null      object\n",
+      " 4   timezone  2 non-null      object\n",
+      "dtypes: object(5)\n",
+      "memory usage: 96.0+ bytes\n"
+     ]
+    }
+   ],
+   "source": [
+    "my_sites.info()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "4d102a4a-ac3c-4194-b0bc-047cb2586e97",
+   "metadata": {
+    "jp-MarkdownHeadingCollapsed": true,
+    "tags": []
+   },
+   "source": [
+    "## Merging"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6bbe468b-5d97-4b59-aede-03cf742c90f4",
+   "metadata": {},
+   "source": [
+    "Next we'll cover how to merge two DataFrames together into a combined table. Before we can do that, we need to read in a second file. Let' use the [`screenshot-files.csv`](https://palewi.re/docs/news-homepages/extracts.html#screenshot-files-csv) extracts published by News Homepages.\n",
+    "\n",
+    "We can read it in the say was the site roster, with `read_csv`."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 48,
+   "id": "383a663a-b266-4b3c-867a-1b7e28ecd862",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "screenshot_list = pd.read_csv(\"https://raw.githubusercontent.com/palewire/news-homepages/main/extracts/csv/screenshot-files.csv\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6729aad0-6b1c-43a8-a6e4-426e6b29a595",
+   "metadata": {},
+   "source": [
+    "When joining two tables together, the first step is to look carefully at the columns in each table to find a common column that can be joined. We can do that with the `info` command we learned earlier."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 49,
+   "id": "0917e775-d606-486d-bbb3-5b8a0d371a77",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<class 'pandas.core.frame.DataFrame'>\n",
+      "RangeIndex: 41929 entries, 0 to 41928\n",
+      "Data columns (total 8 columns):\n",
+      " #   Column      Non-Null Count  Dtype \n",
+      "---  ------      --------------  ----- \n",
+      " 0   identifier  41929 non-null  object\n",
+      " 1   handle      41929 non-null  object\n",
+      " 2   file_name   41929 non-null  object\n",
+      " 3   url         41929 non-null  object\n",
+      " 4   mtime       41929 non-null  object\n",
+      " 5   size        41929 non-null  int64 \n",
+      " 6   md5         41929 non-null  object\n",
+      " 7   sha1        41929 non-null  object\n",
+      "dtypes: int64(1), object(7)\n",
+      "memory usage: 2.6+ MB\n"
+     ]
+    }
+   ],
+   "source": [
+    "screenshot_list.info()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2c00fce9-7c29-475f-8800-5bf81efda68d",
+   "metadata": {},
+   "source": [
+    "You can see that each table contains the `handle` column, which the documentation tells us acts as the unique identifier for a site. We can therefore join the two files using the pandas [`merge`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html) method.\n",
+    "\n",
+    "> Note: If you are familar with traditional databases, you may recognize that the merge method in pandas is similar to SQL’s JOIN statement. If you dig into [merge’s documentation](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html) you will see it has many of the same options."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "320296bf-c1a3-4613-aaed-ebf6ce8e9f14",
+   "metadata": {},
+   "source": [
+    "Merging two DataFrames is as simple as passing both to pandas built-in `merge` method and specifying which field we’d like to use to connect them together. We will save the result into another new variable, which I'm going to call `merged_list`."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 54,
+   "id": "72a861a4-7241-4448-81ca-b928286e3d7c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "merged_list = pd.merge(site_list, screenshot_list, on=\"handle\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "82814158-efcf-47ca-ac63-96a5f96ff50c",
+   "metadata": {},
+   "source": [
+    "That new DataFrame can be inspected like any other."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 55,
+   "id": "b35fedea-3788-413f-85c1-c5fcc1430e03",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>handle</th>\n",
+       "      <th>name</th>\n",
+       "      <th>url_x</th>\n",
+       "      <th>location</th>\n",
+       "      <th>timezone</th>\n",
+       "      <th>identifier</th>\n",
+       "      <th>file_name</th>\n",
+       "      <th>url_y</th>\n",
+       "      <th>mtime</th>\n",
+       "      <th>size</th>\n",
+       "      <th>md5</th>\n",
+       "      <th>sha1</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>100Reporters</td>\n",
+       "      <td>100Reporters</td>\n",
+       "      <td>http://100r.org/</td>\n",
+       "      <td>Washington</td>\n",
+       "      <td>America/New_York</td>\n",
+       "      <td>100reporters-2022</td>\n",
+       "      <td>100reporters-2022-07-08T23:55:17.494439-04:00.jpg</td>\n",
+       "      <td>https://archive.org/download/100reporters-2022...</td>\n",
+       "      <td>2022-07-09 03:55:23</td>\n",
+       "      <td>309491</td>\n",
+       "      <td>df3b7a37cdf271db5168168699c97c08</td>\n",
+       "      <td>787c2345f89bf7057b50316a3b00a52066d5a870</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>100Reporters</td>\n",
+       "      <td>100Reporters</td>\n",
+       "      <td>http://100r.org/</td>\n",
+       "      <td>Washington</td>\n",
+       "      <td>America/New_York</td>\n",
+       "      <td>100reporters-2022</td>\n",
+       "      <td>100reporters-2022-07-09T11:38:11.645272-04:00.jpg</td>\n",
+       "      <td>https://archive.org/download/100reporters-2022...</td>\n",
+       "      <td>2022-07-09 15:38:13</td>\n",
+       "      <td>308475</td>\n",
+       "      <td>3f1ed73406110916ebee38ce759451b4</td>\n",
+       "      <td>1024fdad5527ab2b718eeef75dd044ed70f195ca</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>100Reporters</td>\n",
+       "      <td>100Reporters</td>\n",
+       "      <td>http://100r.org/</td>\n",
+       "      <td>Washington</td>\n",
+       "      <td>America/New_York</td>\n",
+       "      <td>100reporters-2022</td>\n",
+       "      <td>100reporters-2022-07-10T00:02:09.536240-04:00.jpg</td>\n",
+       "      <td>https://archive.org/download/100reporters-2022...</td>\n",
+       "      <td>2022-07-10 04:02:11</td>\n",
+       "      <td>309197</td>\n",
+       "      <td>be1353896dfc4f3206eba7ae2a3dd57e</td>\n",
+       "      <td>b6db35a3b20dd91c73d62349ea4c525ec9de52ba</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>100Reporters</td>\n",
+       "      <td>100Reporters</td>\n",
+       "      <td>http://100r.org/</td>\n",
+       "      <td>Washington</td>\n",
+       "      <td>America/New_York</td>\n",
+       "      <td>100reporters-2022</td>\n",
+       "      <td>100reporters-2022-07-10T11:38:45.973753-04:00.jpg</td>\n",
+       "      <td>https://archive.org/download/100reporters-2022...</td>\n",
+       "      <td>2022-07-10 15:38:47</td>\n",
+       "      <td>308719</td>\n",
+       "      <td>f127ef0f9dc638b40c512103e5f88cb5</td>\n",
+       "      <td>c0c84cced1b6b1d67b52cd30ab1229d5c0af359d</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>100Reporters</td>\n",
+       "      <td>100Reporters</td>\n",
+       "      <td>http://100r.org/</td>\n",
+       "      <td>Washington</td>\n",
+       "      <td>America/New_York</td>\n",
+       "      <td>100reporters-2022</td>\n",
+       "      <td>100reporters-2022-07-11T00:03:32.353709-04:00.jpg</td>\n",
+       "      <td>https://archive.org/download/100reporters-2022...</td>\n",
+       "      <td>2022-07-11 04:03:34</td>\n",
+       "      <td>308478</td>\n",
+       "      <td>06573ed3defc4901105a895d9bd3a7fc</td>\n",
+       "      <td>8450782e88d80dc0bd9198598fc16d91e773f20a</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "         handle          name             url_x    location          timezone  \\\n",
+       "0  100Reporters  100Reporters  http://100r.org/  Washington  America/New_York   \n",
+       "1  100Reporters  100Reporters  http://100r.org/  Washington  America/New_York   \n",
+       "2  100Reporters  100Reporters  http://100r.org/  Washington  America/New_York   \n",
+       "3  100Reporters  100Reporters  http://100r.org/  Washington  America/New_York   \n",
+       "4  100Reporters  100Reporters  http://100r.org/  Washington  America/New_York   \n",
+       "\n",
+       "          identifier                                          file_name  \\\n",
+       "0  100reporters-2022  100reporters-2022-07-08T23:55:17.494439-04:00.jpg   \n",
+       "1  100reporters-2022  100reporters-2022-07-09T11:38:11.645272-04:00.jpg   \n",
+       "2  100reporters-2022  100reporters-2022-07-10T00:02:09.536240-04:00.jpg   \n",
+       "3  100reporters-2022  100reporters-2022-07-10T11:38:45.973753-04:00.jpg   \n",
+       "4  100reporters-2022  100reporters-2022-07-11T00:03:32.353709-04:00.jpg   \n",
+       "\n",
+       "                                               url_y                mtime  \\\n",
+       "0  https://archive.org/download/100reporters-2022...  2022-07-09 03:55:23   \n",
+       "1  https://archive.org/download/100reporters-2022...  2022-07-09 15:38:13   \n",
+       "2  https://archive.org/download/100reporters-2022...  2022-07-10 04:02:11   \n",
+       "3  https://archive.org/download/100reporters-2022...  2022-07-10 15:38:47   \n",
+       "4  https://archive.org/download/100reporters-2022...  2022-07-11 04:03:34   \n",
+       "\n",
+       "     size                               md5  \\\n",
+       "0  309491  df3b7a37cdf271db5168168699c97c08   \n",
+       "1  308475  3f1ed73406110916ebee38ce759451b4   \n",
+       "2  309197  be1353896dfc4f3206eba7ae2a3dd57e   \n",
+       "3  308719  f127ef0f9dc638b40c512103e5f88cb5   \n",
+       "4  308478  06573ed3defc4901105a895d9bd3a7fc   \n",
+       "\n",
+       "                                       sha1  \n",
+       "0  787c2345f89bf7057b50316a3b00a52066d5a870  \n",
+       "1  1024fdad5527ab2b718eeef75dd044ed70f195ca  \n",
+       "2  b6db35a3b20dd91c73d62349ea4c525ec9de52ba  \n",
+       "3  c0c84cced1b6b1d67b52cd30ab1229d5c0af359d  \n",
+       "4  8450782e88d80dc0bd9198598fc16d91e773f20a  "
+      ]
+     },
+     "execution_count": 55,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "merged_list.head()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d5c12f2c-c888-40ee-9316-afd3b0b5db1b",
+   "metadata": {},
+   "source": [
+    "By looking at the columns you can check how many rows survived the merge."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 56,
+   "id": "ac1a378c-1978-4e2f-bd18-90ce8faafa69",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<class 'pandas.core.frame.DataFrame'>\n",
+      "Int64Index: 41929 entries, 0 to 41928\n",
+      "Data columns (total 12 columns):\n",
+      " #   Column      Non-Null Count  Dtype \n",
+      "---  ------      --------------  ----- \n",
+      " 0   handle      41929 non-null  object\n",
+      " 1   name        41929 non-null  object\n",
+      " 2   url_x       41929 non-null  object\n",
+      " 3   location    41929 non-null  object\n",
+      " 4   timezone    41929 non-null  object\n",
+      " 5   identifier  41929 non-null  object\n",
+      " 6   file_name   41929 non-null  object\n",
+      " 7   url_y       41929 non-null  object\n",
+      " 8   mtime       41929 non-null  object\n",
+      " 9   size        41929 non-null  int64 \n",
+      " 10  md5         41929 non-null  object\n",
+      " 11  sha1        41929 non-null  object\n",
+      "dtypes: int64(1), object(11)\n",
+      "memory usage: 4.2+ MB\n"
+     ]
+    }
+   ],
+   "source": [
+    "merged_list.info()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "8b5c6b93-d97b-4230-93db-808f23e50f56",
+   "metadata": {},
+   "source": [
+    "You can also see that the DataFrame now contains all of the columns in both tables. Columns with the same name have had a suffix of `_x` or `_y` automatically appended to indicate whether they came from the first or second DataFrame submitted to the merge."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "648b3dc6-fe70-4ad9-be7e-2f2eee2759a3",
+   "metadata": {
+    "jp-MarkdownHeadingCollapsed": true,
+    "tags": []
+   },
+   "source": [
+    "## Totals"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b38bb123-cc0b-41f1-9982-3b771c074d23",
+   "metadata": {},
+   "source": [
+    "Using only tricks we learned so far, we can now start to ask an answer questions.\n",
+    "\n",
+    "For instance, what is the average size of a screenshot file?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 64,
+   "id": "bbe04ad5-1c75-47f0-b9f6-359f84d193b6",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "503148.0"
+      ]
+     },
+     "execution_count": 64,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "merged_list.size.mean()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3fc09a1c-49a8-472c-9e9a-2a654b2af8ae",
+   "metadata": {},
+   "source": [
+    "What site has the most screenshots?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 66,
+   "id": "752ca0b1-d331-4d4f-8579-0ab5c026e2f3",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "New York Times        807\n",
+       "CNN                   603\n",
+       "Los Angeles Times     459\n",
+       "MSNBC                 458\n",
+       "Fox News              458\n",
+       "                     ... \n",
+       "Humans of New York      1\n",
+       "Athletic                1\n",
+       "Freethink               1\n",
+       "Gainesville Sun         1\n",
+       "New Republic            1\n",
+       "Name: name, Length: 557, dtype: int64"
+      ]
+     },
+     "execution_count": 66,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "merged_list.name.value_counts()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "4af9236d-94fe-4239-bd2f-24ec018340f0",
+   "metadata": {},
+   "source": [
+    "What is the total number of screenshots from sites in Cedar Rapids"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 62,
+   "id": "9234051d-4208-4c16-a16c-2b5eb1c73a28",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<class 'pandas.core.frame.DataFrame'>\n",
+      "Int64Index: 357 entries, 12730 to 16607\n",
+      "Data columns (total 12 columns):\n",
+      " #   Column      Non-Null Count  Dtype \n",
+      "---  ------      --------------  ----- \n",
+      " 0   handle      357 non-null    object\n",
+      " 1   name        357 non-null    object\n",
+      " 2   url_x       357 non-null    object\n",
+      " 3   location    357 non-null    object\n",
+      " 4   timezone    357 non-null    object\n",
+      " 5   identifier  357 non-null    object\n",
+      " 6   file_name   357 non-null    object\n",
+      " 7   url_y       357 non-null    object\n",
+      " 8   mtime       357 non-null    object\n",
+      " 9   size        357 non-null    int64 \n",
+      " 10  md5         357 non-null    object\n",
+      " 11  sha1        357 non-null    object\n",
+      "dtypes: int64(1), object(11)\n",
+      "memory usage: 36.3+ KB\n"
+     ]
+    }
+   ],
+   "source": [
+    "merged_list[merged_list.location == my_location].info()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "cd3d7d9a-e6b1-43b8-a82a-a19582cb1517",
+   "metadata": {
+    "jp-MarkdownHeadingCollapsed": true,
+    "tags": []
+   },
+   "source": [
+    "## Sorting"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1c1c4b7b-a821-480f-ac51-45653942e830",
+   "metadata": {},
+   "source": [
+    "Another simple but common technique for analyzing data is sorting. This can be useful for ranking the DataFrame to show the highest and lowest members of the group according toa particular column. The [`sort_values`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sort_values.html) is how pandas doesit."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 67,
+   "id": "7e160012-886f-45a5-9225-f312b54ecdf0",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>handle</th>\n",
+       "      <th>name</th>\n",
+       "      <th>url_x</th>\n",
+       "      <th>location</th>\n",
+       "      <th>timezone</th>\n",
+       "      <th>identifier</th>\n",
+       "      <th>file_name</th>\n",
+       "      <th>url_y</th>\n",
+       "      <th>mtime</th>\n",
+       "      <th>size</th>\n",
+       "      <th>md5</th>\n",
+       "      <th>sha1</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>18935</th>\n",
+       "      <td>laist</td>\n",
+       "      <td>LAist</td>\n",
+       "      <td>https://laist.com/</td>\n",
+       "      <td>Los Angeles</td>\n",
+       "      <td>America/Los_Angeles</td>\n",
+       "      <td>laist-2022</td>\n",
+       "      <td>laist-2022-06-24T18:37:43.658736-07:00.jpg</td>\n",
+       "      <td>https://archive.org/download/laist-2022/laist-...</td>\n",
+       "      <td>2022-06-25 01:37:45</td>\n",
+       "      <td>13138</td>\n",
+       "      <td>ea987d5a23910acc5fc3afce720baed4</td>\n",
+       "      <td>c82e951aeb3af7b182407e2bb14a05efe6928b4d</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>37899</th>\n",
+       "      <td>ukrinform</td>\n",
+       "      <td>Ukrinform</td>\n",
+       "      <td>https://www.ukrinform.ua/</td>\n",
+       "      <td>Kiev</td>\n",
+       "      <td>Europe/Kiev</td>\n",
+       "      <td>ukrinform-2022</td>\n",
+       "      <td>ukrinform-2022-03-24T15:38:42.807929+02:00.jpg</td>\n",
+       "      <td>https://archive.org/download/ukrinform-2022/uk...</td>\n",
+       "      <td>2022-03-24 13:38:43</td>\n",
+       "      <td>14755</td>\n",
+       "      <td>74383537eb3be7d4007c86ac3d6402a7</td>\n",
+       "      <td>5bcb8e0fce59e4973b64bb12c0d7ce8e7b259eea</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>24810</th>\n",
+       "      <td>News3LV</td>\n",
+       "      <td>KSNV News 3</td>\n",
+       "      <td>https://news3lv.com/</td>\n",
+       "      <td>Las Vegas</td>\n",
+       "      <td>America/Los_Angeles</td>\n",
+       "      <td>news3lv-2022</td>\n",
+       "      <td>news3lv-2022-07-08T19:08:35.222676-07:00.jpg</td>\n",
+       "      <td>https://archive.org/download/news3lv-2022/news...</td>\n",
+       "      <td>2022-07-09 02:08:37</td>\n",
+       "      <td>16092</td>\n",
+       "      <td>0594aafe3e1d3df37d5ff4ca86821be3</td>\n",
+       "      <td>e07d1aa839b245ab410fba97015a441995e2fe52</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>22481</th>\n",
+       "      <td>mercnews</td>\n",
+       "      <td>Mercury News</td>\n",
+       "      <td>https://www.mercurynews.com/</td>\n",
+       "      <td>San Jose</td>\n",
+       "      <td>America/Los_Angeles</td>\n",
+       "      <td>mercnews-2022</td>\n",
+       "      <td>mercnews-2022-05-02T06:45:41.641250-07:00.jpg</td>\n",
+       "      <td>https://archive.org/download/mercnews-2022/mer...</td>\n",
+       "      <td>2022-05-02 13:45:43</td>\n",
+       "      <td>16104</td>\n",
+       "      <td>fb6547e22027b350c61b8f3ff961ea71</td>\n",
+       "      <td>8adcfd939075ff57d0e958379944f0305dadf92a</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>18385</th>\n",
+       "      <td>KyivPost</td>\n",
+       "      <td>KyivPost</td>\n",
+       "      <td>https://www.kyivpost.com/</td>\n",
+       "      <td>Kiev</td>\n",
+       "      <td>Europe/Kiev</td>\n",
+       "      <td>kyivpost-2022</td>\n",
+       "      <td>kyivpost-2022-04-21T16:42:48.004499+03:00.jpg</td>\n",
+       "      <td>https://archive.org/download/kyivpost-2022/kyi...</td>\n",
+       "      <td>2022-04-21 13:42:49</td>\n",
+       "      <td>18029</td>\n",
+       "      <td>c17661c54118426112255a15f2fe111a</td>\n",
+       "      <td>4b6a6e78edd14d48da2da1f86b974cd7e78db8a7</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>...</th>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>41172</th>\n",
+       "      <td>wsj</td>\n",
+       "      <td>Wall Street Journal</td>\n",
+       "      <td>https://www.wsj.com/</td>\n",
+       "      <td>New York</td>\n",
+       "      <td>America/New_York</td>\n",
+       "      <td>wsj-2022</td>\n",
+       "      <td>wsj-2022-03-29T08:07:00.175132-04:00.jpg</td>\n",
+       "      <td>https://archive.org/download/wsj-2022/wsj-2022...</td>\n",
+       "      <td>2022-03-29 12:07:04</td>\n",
+       "      <td>552327</td>\n",
+       "      <td>7bae2324810b20b529f1a649bab721e6</td>\n",
+       "      <td>a2495f64a18beb18c0dd1311ab040d8e1ee1c996</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>41257</th>\n",
+       "      <td>wsj</td>\n",
+       "      <td>Wall Street Journal</td>\n",
+       "      <td>https://www.wsj.com/</td>\n",
+       "      <td>New York</td>\n",
+       "      <td>America/New_York</td>\n",
+       "      <td>wsj-2022</td>\n",
+       "      <td>wsj-2022-05-17T08:07:02.756004-04:00.jpg</td>\n",
+       "      <td>https://archive.org/download/wsj-2022/wsj-2022...</td>\n",
+       "      <td>2022-05-17 12:07:07</td>\n",
+       "      <td>569445</td>\n",
+       "      <td>533fc96be915658c123ade2c2707f4f7</td>\n",
+       "      <td>2f3d3012c0d3c7b4106c88cb2f046c58ad0b7919</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>10086</th>\n",
+       "      <td>fastcompany</td>\n",
+       "      <td>Fast Company</td>\n",
+       "      <td>https://www.fastcompany.com/</td>\n",
+       "      <td>New York</td>\n",
+       "      <td>America/New_York</td>\n",
+       "      <td>fastcompany-2022</td>\n",
+       "      <td>fastcompany-2022-07-19T22:16:19.926420-04:00.jpg</td>\n",
+       "      <td>https://archive.org/download/fastcompany-2022/...</td>\n",
+       "      <td>2022-07-20 02:16:21</td>\n",
+       "      <td>584409</td>\n",
+       "      <td>9c32beefe1fd8b2ca109dd42ec3614ef</td>\n",
+       "      <td>7af1fe7285af0cdcfd59a258b51ded54d1f49fd3</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>10083</th>\n",
+       "      <td>fastcompany</td>\n",
+       "      <td>Fast Company</td>\n",
+       "      <td>https://www.fastcompany.com/</td>\n",
+       "      <td>New York</td>\n",
+       "      <td>America/New_York</td>\n",
+       "      <td>fastcompany-2022</td>\n",
+       "      <td>fastcompany-2022-07-18T13:44:59.403155-04:00.jpg</td>\n",
+       "      <td>https://archive.org/download/fastcompany-2022/...</td>\n",
+       "      <td>2022-07-18 17:45:02</td>\n",
+       "      <td>680645</td>\n",
+       "      <td>84d2132c066f50aeadda10f71edcdd33</td>\n",
+       "      <td>7ac5a6a7293cc5323114ae219dc94e68e3952038</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>10084</th>\n",
+       "      <td>fastcompany</td>\n",
+       "      <td>Fast Company</td>\n",
+       "      <td>https://www.fastcompany.com/</td>\n",
+       "      <td>New York</td>\n",
+       "      <td>America/New_York</td>\n",
+       "      <td>fastcompany-2022</td>\n",
+       "      <td>fastcompany-2022-07-18T22:22:49.761458-04:00.jpg</td>\n",
+       "      <td>https://archive.org/download/fastcompany-2022/...</td>\n",
+       "      <td>2022-07-19 02:22:50</td>\n",
+       "      <td>682426</td>\n",
+       "      <td>44f890d84a0d92ff4ae28993dde0e627</td>\n",
+       "      <td>463a6c808e34785bca0a082f332cf0aced853340</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "<p>41929 rows × 12 columns</p>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "            handle                 name                         url_x  \\\n",
+       "18935        laist                LAist            https://laist.com/   \n",
+       "37899    ukrinform            Ukrinform     https://www.ukrinform.ua/   \n",
+       "24810      News3LV          KSNV News 3          https://news3lv.com/   \n",
+       "22481     mercnews         Mercury News  https://www.mercurynews.com/   \n",
+       "18385     KyivPost             KyivPost     https://www.kyivpost.com/   \n",
+       "...            ...                  ...                           ...   \n",
+       "41172          wsj  Wall Street Journal          https://www.wsj.com/   \n",
+       "41257          wsj  Wall Street Journal          https://www.wsj.com/   \n",
+       "10086  fastcompany         Fast Company  https://www.fastcompany.com/   \n",
+       "10083  fastcompany         Fast Company  https://www.fastcompany.com/   \n",
+       "10084  fastcompany         Fast Company  https://www.fastcompany.com/   \n",
+       "\n",
+       "          location             timezone        identifier  \\\n",
+       "18935  Los Angeles  America/Los_Angeles        laist-2022   \n",
+       "37899         Kiev          Europe/Kiev    ukrinform-2022   \n",
+       "24810    Las Vegas  America/Los_Angeles      news3lv-2022   \n",
+       "22481     San Jose  America/Los_Angeles     mercnews-2022   \n",
+       "18385         Kiev          Europe/Kiev     kyivpost-2022   \n",
+       "...            ...                  ...               ...   \n",
+       "41172     New York     America/New_York          wsj-2022   \n",
+       "41257     New York     America/New_York          wsj-2022   \n",
+       "10086     New York     America/New_York  fastcompany-2022   \n",
+       "10083     New York     America/New_York  fastcompany-2022   \n",
+       "10084     New York     America/New_York  fastcompany-2022   \n",
+       "\n",
+       "                                              file_name  \\\n",
+       "18935        laist-2022-06-24T18:37:43.658736-07:00.jpg   \n",
+       "37899    ukrinform-2022-03-24T15:38:42.807929+02:00.jpg   \n",
+       "24810      news3lv-2022-07-08T19:08:35.222676-07:00.jpg   \n",
+       "22481     mercnews-2022-05-02T06:45:41.641250-07:00.jpg   \n",
+       "18385     kyivpost-2022-04-21T16:42:48.004499+03:00.jpg   \n",
+       "...                                                 ...   \n",
+       "41172          wsj-2022-03-29T08:07:00.175132-04:00.jpg   \n",
+       "41257          wsj-2022-05-17T08:07:02.756004-04:00.jpg   \n",
+       "10086  fastcompany-2022-07-19T22:16:19.926420-04:00.jpg   \n",
+       "10083  fastcompany-2022-07-18T13:44:59.403155-04:00.jpg   \n",
+       "10084  fastcompany-2022-07-18T22:22:49.761458-04:00.jpg   \n",
+       "\n",
+       "                                                   url_y                mtime  \\\n",
+       "18935  https://archive.org/download/laist-2022/laist-...  2022-06-25 01:37:45   \n",
+       "37899  https://archive.org/download/ukrinform-2022/uk...  2022-03-24 13:38:43   \n",
+       "24810  https://archive.org/download/news3lv-2022/news...  2022-07-09 02:08:37   \n",
+       "22481  https://archive.org/download/mercnews-2022/mer...  2022-05-02 13:45:43   \n",
+       "18385  https://archive.org/download/kyivpost-2022/kyi...  2022-04-21 13:42:49   \n",
+       "...                                                  ...                  ...   \n",
+       "41172  https://archive.org/download/wsj-2022/wsj-2022...  2022-03-29 12:07:04   \n",
+       "41257  https://archive.org/download/wsj-2022/wsj-2022...  2022-05-17 12:07:07   \n",
+       "10086  https://archive.org/download/fastcompany-2022/...  2022-07-20 02:16:21   \n",
+       "10083  https://archive.org/download/fastcompany-2022/...  2022-07-18 17:45:02   \n",
+       "10084  https://archive.org/download/fastcompany-2022/...  2022-07-19 02:22:50   \n",
+       "\n",
+       "         size                               md5  \\\n",
+       "18935   13138  ea987d5a23910acc5fc3afce720baed4   \n",
+       "37899   14755  74383537eb3be7d4007c86ac3d6402a7   \n",
+       "24810   16092  0594aafe3e1d3df37d5ff4ca86821be3   \n",
+       "22481   16104  fb6547e22027b350c61b8f3ff961ea71   \n",
+       "18385   18029  c17661c54118426112255a15f2fe111a   \n",
+       "...       ...                               ...   \n",
+       "41172  552327  7bae2324810b20b529f1a649bab721e6   \n",
+       "41257  569445  533fc96be915658c123ade2c2707f4f7   \n",
+       "10086  584409  9c32beefe1fd8b2ca109dd42ec3614ef   \n",
+       "10083  680645  84d2132c066f50aeadda10f71edcdd33   \n",
+       "10084  682426  44f890d84a0d92ff4ae28993dde0e627   \n",
+       "\n",
+       "                                           sha1  \n",
+       "18935  c82e951aeb3af7b182407e2bb14a05efe6928b4d  \n",
+       "37899  5bcb8e0fce59e4973b64bb12c0d7ce8e7b259eea  \n",
+       "24810  e07d1aa839b245ab410fba97015a441995e2fe52  \n",
+       "22481  8adcfd939075ff57d0e958379944f0305dadf92a  \n",
+       "18385  4b6a6e78edd14d48da2da1f86b974cd7e78db8a7  \n",
+       "...                                         ...  \n",
+       "41172  a2495f64a18beb18c0dd1311ab040d8e1ee1c996  \n",
+       "41257  2f3d3012c0d3c7b4106c88cb2f046c58ad0b7919  \n",
+       "10086  7af1fe7285af0cdcfd59a258b51ded54d1f49fd3  \n",
+       "10083  7ac5a6a7293cc5323114ae219dc94e68e3952038  \n",
+       "10084  463a6c808e34785bca0a082f332cf0aced853340  \n",
+       "\n",
+       "[41929 rows x 12 columns]"
+      ]
+     },
+     "execution_count": 67,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "merged_list.sort_values(\"size\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a477fd22-aa08-4758-afa2-e36ff8d5df26",
+   "metadata": {},
+   "source": [
+    "Note that returns the DataFrame resorted in ascending order from lowest to highest. That is pandas default way of sorting. Here's how you reverse it to show the largest values first."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 68,
+   "id": "08d5a720-0b17-4ff6-884d-a6c0995ca9f4",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>handle</th>\n",
+       "      <th>name</th>\n",
+       "      <th>url_x</th>\n",
+       "      <th>location</th>\n",
+       "      <th>timezone</th>\n",
+       "      <th>identifier</th>\n",
+       "      <th>file_name</th>\n",
+       "      <th>url_y</th>\n",
+       "      <th>mtime</th>\n",
+       "      <th>size</th>\n",
+       "      <th>md5</th>\n",
+       "      <th>sha1</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>10084</th>\n",
+       "      <td>fastcompany</td>\n",
+       "      <td>Fast Company</td>\n",
+       "      <td>https://www.fastcompany.com/</td>\n",
+       "      <td>New York</td>\n",
+       "      <td>America/New_York</td>\n",
+       "      <td>fastcompany-2022</td>\n",
+       "      <td>fastcompany-2022-07-18T22:22:49.761458-04:00.jpg</td>\n",
+       "      <td>https://archive.org/download/fastcompany-2022/...</td>\n",
+       "      <td>2022-07-19 02:22:50</td>\n",
+       "      <td>682426</td>\n",
+       "      <td>44f890d84a0d92ff4ae28993dde0e627</td>\n",
+       "      <td>463a6c808e34785bca0a082f332cf0aced853340</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>10083</th>\n",
+       "      <td>fastcompany</td>\n",
+       "      <td>Fast Company</td>\n",
+       "      <td>https://www.fastcompany.com/</td>\n",
+       "      <td>New York</td>\n",
+       "      <td>America/New_York</td>\n",
+       "      <td>fastcompany-2022</td>\n",
+       "      <td>fastcompany-2022-07-18T13:44:59.403155-04:00.jpg</td>\n",
+       "      <td>https://archive.org/download/fastcompany-2022/...</td>\n",
+       "      <td>2022-07-18 17:45:02</td>\n",
+       "      <td>680645</td>\n",
+       "      <td>84d2132c066f50aeadda10f71edcdd33</td>\n",
+       "      <td>7ac5a6a7293cc5323114ae219dc94e68e3952038</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>10086</th>\n",
+       "      <td>fastcompany</td>\n",
+       "      <td>Fast Company</td>\n",
+       "      <td>https://www.fastcompany.com/</td>\n",
+       "      <td>New York</td>\n",
+       "      <td>America/New_York</td>\n",
+       "      <td>fastcompany-2022</td>\n",
+       "      <td>fastcompany-2022-07-19T22:16:19.926420-04:00.jpg</td>\n",
+       "      <td>https://archive.org/download/fastcompany-2022/...</td>\n",
+       "      <td>2022-07-20 02:16:21</td>\n",
+       "      <td>584409</td>\n",
+       "      <td>9c32beefe1fd8b2ca109dd42ec3614ef</td>\n",
+       "      <td>7af1fe7285af0cdcfd59a258b51ded54d1f49fd3</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>41257</th>\n",
+       "      <td>wsj</td>\n",
+       "      <td>Wall Street Journal</td>\n",
+       "      <td>https://www.wsj.com/</td>\n",
+       "      <td>New York</td>\n",
+       "      <td>America/New_York</td>\n",
+       "      <td>wsj-2022</td>\n",
+       "      <td>wsj-2022-05-17T08:07:02.756004-04:00.jpg</td>\n",
+       "      <td>https://archive.org/download/wsj-2022/wsj-2022...</td>\n",
+       "      <td>2022-05-17 12:07:07</td>\n",
+       "      <td>569445</td>\n",
+       "      <td>533fc96be915658c123ade2c2707f4f7</td>\n",
+       "      <td>2f3d3012c0d3c7b4106c88cb2f046c58ad0b7919</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>41172</th>\n",
+       "      <td>wsj</td>\n",
+       "      <td>Wall Street Journal</td>\n",
+       "      <td>https://www.wsj.com/</td>\n",
+       "      <td>New York</td>\n",
+       "      <td>America/New_York</td>\n",
+       "      <td>wsj-2022</td>\n",
+       "      <td>wsj-2022-03-29T08:07:00.175132-04:00.jpg</td>\n",
+       "      <td>https://archive.org/download/wsj-2022/wsj-2022...</td>\n",
+       "      <td>2022-03-29 12:07:04</td>\n",
+       "      <td>552327</td>\n",
+       "      <td>7bae2324810b20b529f1a649bab721e6</td>\n",
+       "      <td>a2495f64a18beb18c0dd1311ab040d8e1ee1c996</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>...</th>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>18385</th>\n",
+       "      <td>KyivPost</td>\n",
+       "      <td>KyivPost</td>\n",
+       "      <td>https://www.kyivpost.com/</td>\n",
+       "      <td>Kiev</td>\n",
+       "      <td>Europe/Kiev</td>\n",
+       "      <td>kyivpost-2022</td>\n",
+       "      <td>kyivpost-2022-04-21T16:42:48.004499+03:00.jpg</td>\n",
+       "      <td>https://archive.org/download/kyivpost-2022/kyi...</td>\n",
+       "      <td>2022-04-21 13:42:49</td>\n",
+       "      <td>18029</td>\n",
+       "      <td>c17661c54118426112255a15f2fe111a</td>\n",
+       "      <td>4b6a6e78edd14d48da2da1f86b974cd7e78db8a7</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>22481</th>\n",
+       "      <td>mercnews</td>\n",
+       "      <td>Mercury News</td>\n",
+       "      <td>https://www.mercurynews.com/</td>\n",
+       "      <td>San Jose</td>\n",
+       "      <td>America/Los_Angeles</td>\n",
+       "      <td>mercnews-2022</td>\n",
+       "      <td>mercnews-2022-05-02T06:45:41.641250-07:00.jpg</td>\n",
+       "      <td>https://archive.org/download/mercnews-2022/mer...</td>\n",
+       "      <td>2022-05-02 13:45:43</td>\n",
+       "      <td>16104</td>\n",
+       "      <td>fb6547e22027b350c61b8f3ff961ea71</td>\n",
+       "      <td>8adcfd939075ff57d0e958379944f0305dadf92a</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>24810</th>\n",
+       "      <td>News3LV</td>\n",
+       "      <td>KSNV News 3</td>\n",
+       "      <td>https://news3lv.com/</td>\n",
+       "      <td>Las Vegas</td>\n",
+       "      <td>America/Los_Angeles</td>\n",
+       "      <td>news3lv-2022</td>\n",
+       "      <td>news3lv-2022-07-08T19:08:35.222676-07:00.jpg</td>\n",
+       "      <td>https://archive.org/download/news3lv-2022/news...</td>\n",
+       "      <td>2022-07-09 02:08:37</td>\n",
+       "      <td>16092</td>\n",
+       "      <td>0594aafe3e1d3df37d5ff4ca86821be3</td>\n",
+       "      <td>e07d1aa839b245ab410fba97015a441995e2fe52</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>37899</th>\n",
+       "      <td>ukrinform</td>\n",
+       "      <td>Ukrinform</td>\n",
+       "      <td>https://www.ukrinform.ua/</td>\n",
+       "      <td>Kiev</td>\n",
+       "      <td>Europe/Kiev</td>\n",
+       "      <td>ukrinform-2022</td>\n",
+       "      <td>ukrinform-2022-03-24T15:38:42.807929+02:00.jpg</td>\n",
+       "      <td>https://archive.org/download/ukrinform-2022/uk...</td>\n",
+       "      <td>2022-03-24 13:38:43</td>\n",
+       "      <td>14755</td>\n",
+       "      <td>74383537eb3be7d4007c86ac3d6402a7</td>\n",
+       "      <td>5bcb8e0fce59e4973b64bb12c0d7ce8e7b259eea</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>18935</th>\n",
+       "      <td>laist</td>\n",
+       "      <td>LAist</td>\n",
+       "      <td>https://laist.com/</td>\n",
+       "      <td>Los Angeles</td>\n",
+       "      <td>America/Los_Angeles</td>\n",
+       "      <td>laist-2022</td>\n",
+       "      <td>laist-2022-06-24T18:37:43.658736-07:00.jpg</td>\n",
+       "      <td>https://archive.org/download/laist-2022/laist-...</td>\n",
+       "      <td>2022-06-25 01:37:45</td>\n",
+       "      <td>13138</td>\n",
+       "      <td>ea987d5a23910acc5fc3afce720baed4</td>\n",
+       "      <td>c82e951aeb3af7b182407e2bb14a05efe6928b4d</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "<p>41929 rows × 12 columns</p>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "            handle                 name                         url_x  \\\n",
+       "10084  fastcompany         Fast Company  https://www.fastcompany.com/   \n",
+       "10083  fastcompany         Fast Company  https://www.fastcompany.com/   \n",
+       "10086  fastcompany         Fast Company  https://www.fastcompany.com/   \n",
+       "41257          wsj  Wall Street Journal          https://www.wsj.com/   \n",
+       "41172          wsj  Wall Street Journal          https://www.wsj.com/   \n",
+       "...            ...                  ...                           ...   \n",
+       "18385     KyivPost             KyivPost     https://www.kyivpost.com/   \n",
+       "22481     mercnews         Mercury News  https://www.mercurynews.com/   \n",
+       "24810      News3LV          KSNV News 3          https://news3lv.com/   \n",
+       "37899    ukrinform            Ukrinform     https://www.ukrinform.ua/   \n",
+       "18935        laist                LAist            https://laist.com/   \n",
+       "\n",
+       "          location             timezone        identifier  \\\n",
+       "10084     New York     America/New_York  fastcompany-2022   \n",
+       "10083     New York     America/New_York  fastcompany-2022   \n",
+       "10086     New York     America/New_York  fastcompany-2022   \n",
+       "41257     New York     America/New_York          wsj-2022   \n",
+       "41172     New York     America/New_York          wsj-2022   \n",
+       "...            ...                  ...               ...   \n",
+       "18385         Kiev          Europe/Kiev     kyivpost-2022   \n",
+       "22481     San Jose  America/Los_Angeles     mercnews-2022   \n",
+       "24810    Las Vegas  America/Los_Angeles      news3lv-2022   \n",
+       "37899         Kiev          Europe/Kiev    ukrinform-2022   \n",
+       "18935  Los Angeles  America/Los_Angeles        laist-2022   \n",
+       "\n",
+       "                                              file_name  \\\n",
+       "10084  fastcompany-2022-07-18T22:22:49.761458-04:00.jpg   \n",
+       "10083  fastcompany-2022-07-18T13:44:59.403155-04:00.jpg   \n",
+       "10086  fastcompany-2022-07-19T22:16:19.926420-04:00.jpg   \n",
+       "41257          wsj-2022-05-17T08:07:02.756004-04:00.jpg   \n",
+       "41172          wsj-2022-03-29T08:07:00.175132-04:00.jpg   \n",
+       "...                                                 ...   \n",
+       "18385     kyivpost-2022-04-21T16:42:48.004499+03:00.jpg   \n",
+       "22481     mercnews-2022-05-02T06:45:41.641250-07:00.jpg   \n",
+       "24810      news3lv-2022-07-08T19:08:35.222676-07:00.jpg   \n",
+       "37899    ukrinform-2022-03-24T15:38:42.807929+02:00.jpg   \n",
+       "18935        laist-2022-06-24T18:37:43.658736-07:00.jpg   \n",
+       "\n",
+       "                                                   url_y                mtime  \\\n",
+       "10084  https://archive.org/download/fastcompany-2022/...  2022-07-19 02:22:50   \n",
+       "10083  https://archive.org/download/fastcompany-2022/...  2022-07-18 17:45:02   \n",
+       "10086  https://archive.org/download/fastcompany-2022/...  2022-07-20 02:16:21   \n",
+       "41257  https://archive.org/download/wsj-2022/wsj-2022...  2022-05-17 12:07:07   \n",
+       "41172  https://archive.org/download/wsj-2022/wsj-2022...  2022-03-29 12:07:04   \n",
+       "...                                                  ...                  ...   \n",
+       "18385  https://archive.org/download/kyivpost-2022/kyi...  2022-04-21 13:42:49   \n",
+       "22481  https://archive.org/download/mercnews-2022/mer...  2022-05-02 13:45:43   \n",
+       "24810  https://archive.org/download/news3lv-2022/news...  2022-07-09 02:08:37   \n",
+       "37899  https://archive.org/download/ukrinform-2022/uk...  2022-03-24 13:38:43   \n",
+       "18935  https://archive.org/download/laist-2022/laist-...  2022-06-25 01:37:45   \n",
+       "\n",
+       "         size                               md5  \\\n",
+       "10084  682426  44f890d84a0d92ff4ae28993dde0e627   \n",
+       "10083  680645  84d2132c066f50aeadda10f71edcdd33   \n",
+       "10086  584409  9c32beefe1fd8b2ca109dd42ec3614ef   \n",
+       "41257  569445  533fc96be915658c123ade2c2707f4f7   \n",
+       "41172  552327  7bae2324810b20b529f1a649bab721e6   \n",
+       "...       ...                               ...   \n",
+       "18385   18029  c17661c54118426112255a15f2fe111a   \n",
+       "22481   16104  fb6547e22027b350c61b8f3ff961ea71   \n",
+       "24810   16092  0594aafe3e1d3df37d5ff4ca86821be3   \n",
+       "37899   14755  74383537eb3be7d4007c86ac3d6402a7   \n",
+       "18935   13138  ea987d5a23910acc5fc3afce720baed4   \n",
+       "\n",
+       "                                           sha1  \n",
+       "10084  463a6c808e34785bca0a082f332cf0aced853340  \n",
+       "10083  7ac5a6a7293cc5323114ae219dc94e68e3952038  \n",
+       "10086  7af1fe7285af0cdcfd59a258b51ded54d1f49fd3  \n",
+       "41257  2f3d3012c0d3c7b4106c88cb2f046c58ad0b7919  \n",
+       "41172  a2495f64a18beb18c0dd1311ab040d8e1ee1c996  \n",
+       "...                                         ...  \n",
+       "18385  4b6a6e78edd14d48da2da1f86b974cd7e78db8a7  \n",
+       "22481  8adcfd939075ff57d0e958379944f0305dadf92a  \n",
+       "24810  e07d1aa839b245ab410fba97015a441995e2fe52  \n",
+       "37899  5bcb8e0fce59e4973b64bb12c0d7ce8e7b259eea  \n",
+       "18935  c82e951aeb3af7b182407e2bb14a05efe6928b4d  \n",
+       "\n",
+       "[41929 rows x 12 columns]"
+      ]
+     },
+     "execution_count": 68,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "merged_list.sort_values(\"size\", ascending=False)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7003ea56-a316-497c-a201-0aae89b149d1",
+   "metadata": {},
+   "source": [
+    "You can limit the result to the top five by chaining the head method at the end."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 69,
+   "id": "67908c5e-d65b-455c-8b75-a1673ec71b08",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>handle</th>\n",
+       "      <th>name</th>\n",
+       "      <th>url_x</th>\n",
+       "      <th>location</th>\n",
+       "      <th>timezone</th>\n",
+       "      <th>identifier</th>\n",
+       "      <th>file_name</th>\n",
+       "      <th>url_y</th>\n",
+       "      <th>mtime</th>\n",
+       "      <th>size</th>\n",
+       "      <th>md5</th>\n",
+       "      <th>sha1</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>10084</th>\n",
+       "      <td>fastcompany</td>\n",
+       "      <td>Fast Company</td>\n",
+       "      <td>https://www.fastcompany.com/</td>\n",
+       "      <td>New York</td>\n",
+       "      <td>America/New_York</td>\n",
+       "      <td>fastcompany-2022</td>\n",
+       "      <td>fastcompany-2022-07-18T22:22:49.761458-04:00.jpg</td>\n",
+       "      <td>https://archive.org/download/fastcompany-2022/...</td>\n",
+       "      <td>2022-07-19 02:22:50</td>\n",
+       "      <td>682426</td>\n",
+       "      <td>44f890d84a0d92ff4ae28993dde0e627</td>\n",
+       "      <td>463a6c808e34785bca0a082f332cf0aced853340</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>10083</th>\n",
+       "      <td>fastcompany</td>\n",
+       "      <td>Fast Company</td>\n",
+       "      <td>https://www.fastcompany.com/</td>\n",
+       "      <td>New York</td>\n",
+       "      <td>America/New_York</td>\n",
+       "      <td>fastcompany-2022</td>\n",
+       "      <td>fastcompany-2022-07-18T13:44:59.403155-04:00.jpg</td>\n",
+       "      <td>https://archive.org/download/fastcompany-2022/...</td>\n",
+       "      <td>2022-07-18 17:45:02</td>\n",
+       "      <td>680645</td>\n",
+       "      <td>84d2132c066f50aeadda10f71edcdd33</td>\n",
+       "      <td>7ac5a6a7293cc5323114ae219dc94e68e3952038</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>10086</th>\n",
+       "      <td>fastcompany</td>\n",
+       "      <td>Fast Company</td>\n",
+       "      <td>https://www.fastcompany.com/</td>\n",
+       "      <td>New York</td>\n",
+       "      <td>America/New_York</td>\n",
+       "      <td>fastcompany-2022</td>\n",
+       "      <td>fastcompany-2022-07-19T22:16:19.926420-04:00.jpg</td>\n",
+       "      <td>https://archive.org/download/fastcompany-2022/...</td>\n",
+       "      <td>2022-07-20 02:16:21</td>\n",
+       "      <td>584409</td>\n",
+       "      <td>9c32beefe1fd8b2ca109dd42ec3614ef</td>\n",
+       "      <td>7af1fe7285af0cdcfd59a258b51ded54d1f49fd3</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>41257</th>\n",
+       "      <td>wsj</td>\n",
+       "      <td>Wall Street Journal</td>\n",
+       "      <td>https://www.wsj.com/</td>\n",
+       "      <td>New York</td>\n",
+       "      <td>America/New_York</td>\n",
+       "      <td>wsj-2022</td>\n",
+       "      <td>wsj-2022-05-17T08:07:02.756004-04:00.jpg</td>\n",
+       "      <td>https://archive.org/download/wsj-2022/wsj-2022...</td>\n",
+       "      <td>2022-05-17 12:07:07</td>\n",
+       "      <td>569445</td>\n",
+       "      <td>533fc96be915658c123ade2c2707f4f7</td>\n",
+       "      <td>2f3d3012c0d3c7b4106c88cb2f046c58ad0b7919</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>41172</th>\n",
+       "      <td>wsj</td>\n",
+       "      <td>Wall Street Journal</td>\n",
+       "      <td>https://www.wsj.com/</td>\n",
+       "      <td>New York</td>\n",
+       "      <td>America/New_York</td>\n",
+       "      <td>wsj-2022</td>\n",
+       "      <td>wsj-2022-03-29T08:07:00.175132-04:00.jpg</td>\n",
+       "      <td>https://archive.org/download/wsj-2022/wsj-2022...</td>\n",
+       "      <td>2022-03-29 12:07:04</td>\n",
+       "      <td>552327</td>\n",
+       "      <td>7bae2324810b20b529f1a649bab721e6</td>\n",
+       "      <td>a2495f64a18beb18c0dd1311ab040d8e1ee1c996</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "            handle                 name                         url_x  \\\n",
+       "10084  fastcompany         Fast Company  https://www.fastcompany.com/   \n",
+       "10083  fastcompany         Fast Company  https://www.fastcompany.com/   \n",
+       "10086  fastcompany         Fast Company  https://www.fastcompany.com/   \n",
+       "41257          wsj  Wall Street Journal          https://www.wsj.com/   \n",
+       "41172          wsj  Wall Street Journal          https://www.wsj.com/   \n",
+       "\n",
+       "       location          timezone        identifier  \\\n",
+       "10084  New York  America/New_York  fastcompany-2022   \n",
+       "10083  New York  America/New_York  fastcompany-2022   \n",
+       "10086  New York  America/New_York  fastcompany-2022   \n",
+       "41257  New York  America/New_York          wsj-2022   \n",
+       "41172  New York  America/New_York          wsj-2022   \n",
+       "\n",
+       "                                              file_name  \\\n",
+       "10084  fastcompany-2022-07-18T22:22:49.761458-04:00.jpg   \n",
+       "10083  fastcompany-2022-07-18T13:44:59.403155-04:00.jpg   \n",
+       "10086  fastcompany-2022-07-19T22:16:19.926420-04:00.jpg   \n",
+       "41257          wsj-2022-05-17T08:07:02.756004-04:00.jpg   \n",
+       "41172          wsj-2022-03-29T08:07:00.175132-04:00.jpg   \n",
+       "\n",
+       "                                                   url_y                mtime  \\\n",
+       "10084  https://archive.org/download/fastcompany-2022/...  2022-07-19 02:22:50   \n",
+       "10083  https://archive.org/download/fastcompany-2022/...  2022-07-18 17:45:02   \n",
+       "10086  https://archive.org/download/fastcompany-2022/...  2022-07-20 02:16:21   \n",
+       "41257  https://archive.org/download/wsj-2022/wsj-2022...  2022-05-17 12:07:07   \n",
+       "41172  https://archive.org/download/wsj-2022/wsj-2022...  2022-03-29 12:07:04   \n",
+       "\n",
+       "         size                               md5  \\\n",
+       "10084  682426  44f890d84a0d92ff4ae28993dde0e627   \n",
+       "10083  680645  84d2132c066f50aeadda10f71edcdd33   \n",
+       "10086  584409  9c32beefe1fd8b2ca109dd42ec3614ef   \n",
+       "41257  569445  533fc96be915658c123ade2c2707f4f7   \n",
+       "41172  552327  7bae2324810b20b529f1a649bab721e6   \n",
+       "\n",
+       "                                           sha1  \n",
+       "10084  463a6c808e34785bca0a082f332cf0aced853340  \n",
+       "10083  7ac5a6a7293cc5323114ae219dc94e68e3952038  \n",
+       "10086  7af1fe7285af0cdcfd59a258b51ded54d1f49fd3  \n",
+       "41257  2f3d3012c0d3c7b4106c88cb2f046c58ad0b7919  \n",
+       "41172  a2495f64a18beb18c0dd1311ab040d8e1ee1c996  "
+      ]
+     },
+     "execution_count": 69,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "merged_list.sort_values(\"size\", ascending=False).head(5)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0a257a0d-fd23-4907-b320-43e8c8b65457",
+   "metadata": {
+    "tags": []
+   },
+   "source": [
+    "## Grouping"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "aa783e17-3f62-4972-aea8-5aa94344fb81",
+   "metadata": {},
+   "source": [
+    "The [`groupby`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html) method allows you to group a DataFrame by a column and then calculate a sum, or any other statistic, for each unique value. This functions much like the [\"pivot table\"](https://en.wikipedia.org/wiki/Pivot_table) feature found in most spreadsheets.\n",
+    "\n",
+    "Let's use it to analyze the timezone field, which show where the organizations indexed by News Homepages are based. You start by passing its name to the function."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 70,
+   "id": "8d2911ad-52d9-4fca-9131-7bf1d472422e",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "<pandas.core.groupby.generic.DataFrameGroupBy object at 0x7f3f257d02b0>"
+      ]
+     },
+     "execution_count": 70,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "merged_list.groupby(\"timezone\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f7a4e89d-05ef-442f-a898-90ba4c107ba7",
+   "metadata": {},
+   "source": [
+    "A nice start but you’ll notice you don’t get much back. The data’s been grouped, but we haven’t chosen what to do with it yet. If we wanted the file size total by zone, we would sum the `size` field the same way we did earlier for the entire DataFrame."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 72,
+   "id": "eb3d9e7a-9b4b-4e78-a813-c6eb7a941fe3",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "timezone\n",
+       "America/Bogota            19756896\n",
+       "America/Buenos_Aires      24430270\n",
+       "America/Chicago         2212507265\n",
+       "America/Denver           322278123\n",
+       "America/Edmonton          18777819\n",
+       "America/Los_Angeles     2346638662\n",
+       "America/Mexico_City      347903242\n",
+       "America/Montevideo         6809848\n",
+       "America/New_York        4502208105\n",
+       "America/Phoenix           55382938\n",
+       "America/Vancouver         36697465\n",
+       "Asia/Beirut               24756810\n",
+       "Asia/Qatar                21116392\n",
+       "Asia/Tbilisi              28240795\n",
+       "Asia/Tokyo                95109957\n",
+       "Europe/Berlin              1996871\n",
+       "Europe/Dublin             13940741\n",
+       "Europe/Kiev              349554405\n",
+       "Europe/London            794718540\n",
+       "Europe/Madrid             27563766\n",
+       "Europe/Moscow             54892135\n",
+       "Europe/Oslo                6038710\n",
+       "Europe/Paris             569944173\n",
+       "Europe/Riga               75887769\n",
+       "US/Eastern               213806272\n",
+       "US/Hawaii                  4532393\n",
+       "Name: size, dtype: int64"
+      ]
+     },
+     "execution_count": 72,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "merged_list.groupby(\"timezone\")['size'].sum()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7dd31d6e-d6c5-41f0-adf9-3f3541a0432d",
+   "metadata": {},
+   "source": [
+    "Again our data has come back as an ugly Series. To reformat it as a pretty DataFrame use the `reset_index` method again."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 73,
+   "id": "f39e35b3-b67e-4578-aaca-a006a01fd9ed",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>timezone</th>\n",
+       "      <th>size</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>America/Bogota</td>\n",
+       "      <td>19756896</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>America/Buenos_Aires</td>\n",
+       "      <td>24430270</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>America/Chicago</td>\n",
+       "      <td>2212507265</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>America/Denver</td>\n",
+       "      <td>322278123</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>America/Edmonton</td>\n",
+       "      <td>18777819</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>5</th>\n",
+       "      <td>America/Los_Angeles</td>\n",
+       "      <td>2346638662</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>6</th>\n",
+       "      <td>America/Mexico_City</td>\n",
+       "      <td>347903242</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>7</th>\n",
+       "      <td>America/Montevideo</td>\n",
+       "      <td>6809848</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>8</th>\n",
+       "      <td>America/New_York</td>\n",
+       "      <td>4502208105</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>9</th>\n",
+       "      <td>America/Phoenix</td>\n",
+       "      <td>55382938</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>10</th>\n",
+       "      <td>America/Vancouver</td>\n",
+       "      <td>36697465</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>11</th>\n",
+       "      <td>Asia/Beirut</td>\n",
+       "      <td>24756810</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>12</th>\n",
+       "      <td>Asia/Qatar</td>\n",
+       "      <td>21116392</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>13</th>\n",
+       "      <td>Asia/Tbilisi</td>\n",
+       "      <td>28240795</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>14</th>\n",
+       "      <td>Asia/Tokyo</td>\n",
+       "      <td>95109957</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>15</th>\n",
+       "      <td>Europe/Berlin</td>\n",
+       "      <td>1996871</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>16</th>\n",
+       "      <td>Europe/Dublin</td>\n",
+       "      <td>13940741</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>17</th>\n",
+       "      <td>Europe/Kiev</td>\n",
+       "      <td>349554405</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>18</th>\n",
+       "      <td>Europe/London</td>\n",
+       "      <td>794718540</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>19</th>\n",
+       "      <td>Europe/Madrid</td>\n",
+       "      <td>27563766</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>20</th>\n",
+       "      <td>Europe/Moscow</td>\n",
+       "      <td>54892135</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>21</th>\n",
+       "      <td>Europe/Oslo</td>\n",
+       "      <td>6038710</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>22</th>\n",
+       "      <td>Europe/Paris</td>\n",
+       "      <td>569944173</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>23</th>\n",
+       "      <td>Europe/Riga</td>\n",
+       "      <td>75887769</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>24</th>\n",
+       "      <td>US/Eastern</td>\n",
+       "      <td>213806272</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>25</th>\n",
+       "      <td>US/Hawaii</td>\n",
+       "      <td>4532393</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "                timezone        size\n",
+       "0         America/Bogota    19756896\n",
+       "1   America/Buenos_Aires    24430270\n",
+       "2        America/Chicago  2212507265\n",
+       "3         America/Denver   322278123\n",
+       "4       America/Edmonton    18777819\n",
+       "5    America/Los_Angeles  2346638662\n",
+       "6    America/Mexico_City   347903242\n",
+       "7     America/Montevideo     6809848\n",
+       "8       America/New_York  4502208105\n",
+       "9        America/Phoenix    55382938\n",
+       "10     America/Vancouver    36697465\n",
+       "11           Asia/Beirut    24756810\n",
+       "12            Asia/Qatar    21116392\n",
+       "13          Asia/Tbilisi    28240795\n",
+       "14            Asia/Tokyo    95109957\n",
+       "15         Europe/Berlin     1996871\n",
+       "16         Europe/Dublin    13940741\n",
+       "17           Europe/Kiev   349554405\n",
+       "18         Europe/London   794718540\n",
+       "19         Europe/Madrid    27563766\n",
+       "20         Europe/Moscow    54892135\n",
+       "21           Europe/Oslo     6038710\n",
+       "22          Europe/Paris   569944173\n",
+       "23           Europe/Riga    75887769\n",
+       "24            US/Eastern   213806272\n",
+       "25             US/Hawaii     4532393"
+      ]
+     },
+     "execution_count": 73,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "merged_list.groupby(\"timezone\")['size'].sum().reset_index()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "87caf213-f7a6-4129-b2e6-188d4f34946e",
+   "metadata": {},
+   "source": [
+    "Next re-sort totals from highest to lowest. Remember the `sort_values` trick we learned earlier? That’ll do it."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 74,
+   "id": "49d91b3a-a623-4378-9e94-1068822784c8",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>timezone</th>\n",
+       "      <th>size</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>8</th>\n",
+       "      <td>America/New_York</td>\n",
+       "      <td>4502208105</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>5</th>\n",
+       "      <td>America/Los_Angeles</td>\n",
+       "      <td>2346638662</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>America/Chicago</td>\n",
+       "      <td>2212507265</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>18</th>\n",
+       "      <td>Europe/London</td>\n",
+       "      <td>794718540</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>22</th>\n",
+       "      <td>Europe/Paris</td>\n",
+       "      <td>569944173</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>17</th>\n",
+       "      <td>Europe/Kiev</td>\n",
+       "      <td>349554405</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>6</th>\n",
+       "      <td>America/Mexico_City</td>\n",
+       "      <td>347903242</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>America/Denver</td>\n",
+       "      <td>322278123</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>24</th>\n",
+       "      <td>US/Eastern</td>\n",
+       "      <td>213806272</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>14</th>\n",
+       "      <td>Asia/Tokyo</td>\n",
+       "      <td>95109957</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>23</th>\n",
+       "      <td>Europe/Riga</td>\n",
+       "      <td>75887769</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>9</th>\n",
+       "      <td>America/Phoenix</td>\n",
+       "      <td>55382938</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>20</th>\n",
+       "      <td>Europe/Moscow</td>\n",
+       "      <td>54892135</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>10</th>\n",
+       "      <td>America/Vancouver</td>\n",
+       "      <td>36697465</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>13</th>\n",
+       "      <td>Asia/Tbilisi</td>\n",
+       "      <td>28240795</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>19</th>\n",
+       "      <td>Europe/Madrid</td>\n",
+       "      <td>27563766</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>11</th>\n",
+       "      <td>Asia/Beirut</td>\n",
+       "      <td>24756810</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>America/Buenos_Aires</td>\n",
+       "      <td>24430270</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>12</th>\n",
+       "      <td>Asia/Qatar</td>\n",
+       "      <td>21116392</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>America/Bogota</td>\n",
+       "      <td>19756896</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>America/Edmonton</td>\n",
+       "      <td>18777819</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>16</th>\n",
+       "      <td>Europe/Dublin</td>\n",
+       "      <td>13940741</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>7</th>\n",
+       "      <td>America/Montevideo</td>\n",
+       "      <td>6809848</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>21</th>\n",
+       "      <td>Europe/Oslo</td>\n",
+       "      <td>6038710</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>25</th>\n",
+       "      <td>US/Hawaii</td>\n",
+       "      <td>4532393</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>15</th>\n",
+       "      <td>Europe/Berlin</td>\n",
+       "      <td>1996871</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "                timezone        size\n",
+       "8       America/New_York  4502208105\n",
+       "5    America/Los_Angeles  2346638662\n",
+       "2        America/Chicago  2212507265\n",
+       "18         Europe/London   794718540\n",
+       "22          Europe/Paris   569944173\n",
+       "17           Europe/Kiev   349554405\n",
+       "6    America/Mexico_City   347903242\n",
+       "3         America/Denver   322278123\n",
+       "24            US/Eastern   213806272\n",
+       "14            Asia/Tokyo    95109957\n",
+       "23           Europe/Riga    75887769\n",
+       "9        America/Phoenix    55382938\n",
+       "20         Europe/Moscow    54892135\n",
+       "10     America/Vancouver    36697465\n",
+       "13          Asia/Tbilisi    28240795\n",
+       "19         Europe/Madrid    27563766\n",
+       "11           Asia/Beirut    24756810\n",
+       "1   America/Buenos_Aires    24430270\n",
+       "12            Asia/Qatar    21116392\n",
+       "0         America/Bogota    19756896\n",
+       "4       America/Edmonton    18777819\n",
+       "16         Europe/Dublin    13940741\n",
+       "7     America/Montevideo     6809848\n",
+       "21           Europe/Oslo     6038710\n",
+       "25             US/Hawaii     4532393\n",
+       "15         Europe/Berlin     1996871"
+      ]
+     },
+     "execution_count": 74,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "merged_list.groupby(\"timezone\")['size'].sum().reset_index().sort_values(\"size\", ascending=False)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ca095f38-aad7-484f-b859-41695bf23454",
+   "metadata": {
+    "jp-MarkdownHeadingCollapsed": true,
+    "tags": []
+   },
+   "source": [
+    "## Computing"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "bbbf5ff6-64cc-41ee-9374-ddcb76fe3e94",
+   "metadata": {},
+   "source": [
+    "Here's how you can create a new column based on the data in other columns, a process sometimes known as “computing.”\n",
+    "\n",
+    "Let's say you want to take an extra step beyond the last chapter and figure out the screenshot totals by month. One approach would be to create a column and fill it with the month of each screenshot. Then to group and count on that field.\n",
+    "\n",
+    "One problem, before we can extract the month from the `mtime` field we need to convert it into a Python datetime object. Run `info` again and you'll see that pandas read it in as a string, which pandas prefers to call an `object`."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 78,
+   "id": "fdbfa386-93b2-44db-a88a-aca23e049608",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<class 'pandas.core.frame.DataFrame'>\n",
+      "Int64Index: 41929 entries, 0 to 41928\n",
+      "Data columns (total 12 columns):\n",
+      " #   Column      Non-Null Count  Dtype \n",
+      "---  ------      --------------  ----- \n",
+      " 0   handle      41929 non-null  object\n",
+      " 1   name        41929 non-null  object\n",
+      " 2   url_x       41929 non-null  object\n",
+      " 3   location    41929 non-null  object\n",
+      " 4   timezone    41929 non-null  object\n",
+      " 5   identifier  41929 non-null  object\n",
+      " 6   file_name   41929 non-null  object\n",
+      " 7   url_y       41929 non-null  object\n",
+      " 8   mtime       41929 non-null  object\n",
+      " 9   size        41929 non-null  int64 \n",
+      " 10  md5         41929 non-null  object\n",
+      " 11  sha1        41929 non-null  object\n",
+      "dtypes: int64(1), object(11)\n",
+      "memory usage: 4.2+ MB\n"
+     ]
+    }
+   ],
+   "source": [
+    "merged_list.info()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "958499a7-b2cd-48b0-8ced-33cb0500a5d1",
+   "metadata": {},
+   "source": [
+    "Thankfully, pandas comes with a utility that is highly skilled at translating strings into timestamp. It's called `pd.to_datetime` and it expects a Series as an input. Using it to convert mtime looks something like this:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 77,
+   "id": "ac58227a-a44c-4dba-9532-623306340a80",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "0       2022-07-09 03:55:23\n",
+       "1       2022-07-09 15:38:13\n",
+       "2       2022-07-10 04:02:11\n",
+       "3       2022-07-10 15:38:47\n",
+       "4       2022-07-11 04:03:34\n",
+       "                ...        \n",
+       "41924   2022-07-19 04:30:31\n",
+       "41925   2022-07-19 17:05:28\n",
+       "41926   2022-07-20 04:25:48\n",
+       "41927   2022-07-20 16:51:07\n",
+       "41928   2022-07-21 04:34:37\n",
+       "Name: mtime, Length: 41929, dtype: datetime64[ns]"
+      ]
+     },
+     "execution_count": 77,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "pd.to_datetime(merged_list.mtime)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "8b162c20-606e-4852-82aa-1e9c24fa640a",
+   "metadata": {},
+   "source": [
+    "The result of that new column can be attached to the DataFrame by assigning to it a new column. We could call it anything. Let's go with `datetime`."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 79,
+   "id": "c2579843-5d74-4ca2-8ae3-d75fe04b6d24",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "merged_list['datetime'] = pd.to_datetime(merged_list.mtime)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "99eb5e68-0272-4102-bd07-67588647b6f3",
+   "metadata": {},
+   "source": [
+    "If you run `info` again you'll see the new column and the preferred data type."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 80,
+   "id": "7469f458-1e25-4780-857b-8c8da0a4920f",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<class 'pandas.core.frame.DataFrame'>\n",
+      "Int64Index: 41929 entries, 0 to 41928\n",
+      "Data columns (total 13 columns):\n",
+      " #   Column      Non-Null Count  Dtype         \n",
+      "---  ------      --------------  -----         \n",
+      " 0   handle      41929 non-null  object        \n",
+      " 1   name        41929 non-null  object        \n",
+      " 2   url_x       41929 non-null  object        \n",
+      " 3   location    41929 non-null  object        \n",
+      " 4   timezone    41929 non-null  object        \n",
+      " 5   identifier  41929 non-null  object        \n",
+      " 6   file_name   41929 non-null  object        \n",
+      " 7   url_y       41929 non-null  object        \n",
+      " 8   mtime       41929 non-null  object        \n",
+      " 9   size        41929 non-null  int64         \n",
+      " 10  md5         41929 non-null  object        \n",
+      " 11  sha1        41929 non-null  object        \n",
+      " 12  datetime    41929 non-null  datetime64[ns]\n",
+      "dtypes: datetime64[ns](1), int64(1), object(11)\n",
+      "memory usage: 4.5+ MB\n"
+     ]
+    }
+   ],
+   "source": [
+    "merged_list.info()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d750a376-2963-487e-83bc-19e862a0b67c",
+   "metadata": {},
+   "source": [
+    "Now that Python is treating the column as a datetime object, we can extract the month from each record the series by accessing the `dt` attribute put there by pandas."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 82,
+   "id": "5b48da12-5981-446b-8eba-40b62bd10e47",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "0        7\n",
+       "1        7\n",
+       "2        7\n",
+       "3        7\n",
+       "4        7\n",
+       "        ..\n",
+       "41924    7\n",
+       "41925    7\n",
+       "41926    7\n",
+       "41927    7\n",
+       "41928    7\n",
+       "Name: datetime, Length: 41929, dtype: int64"
+      ]
+     },
+     "execution_count": 82,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "merged_list.datetime.dt.month"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7edb7c33-3767-4fad-b923-fd36af8bdc44",
+   "metadata": {},
+   "source": [
+    "Those values can be saved into their own new computed column."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 84,
+   "id": "bcfa494b-4151-4c56-a396-58b1c15b817b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "merged_list['month'] = merged_list.datetime.dt.month"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "928cec46-9fb6-426e-b37e-7f255c0d6771",
+   "metadata": {},
+   "source": [
+    "Which will not be found by `info`."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 85,
+   "id": "c408e546-5826-4ea5-8887-cd9cb4164f1d",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<class 'pandas.core.frame.DataFrame'>\n",
+      "Int64Index: 41929 entries, 0 to 41928\n",
+      "Data columns (total 14 columns):\n",
+      " #   Column      Non-Null Count  Dtype         \n",
+      "---  ------      --------------  -----         \n",
+      " 0   handle      41929 non-null  object        \n",
+      " 1   name        41929 non-null  object        \n",
+      " 2   url_x       41929 non-null  object        \n",
+      " 3   location    41929 non-null  object        \n",
+      " 4   timezone    41929 non-null  object        \n",
+      " 5   identifier  41929 non-null  object        \n",
+      " 6   file_name   41929 non-null  object        \n",
+      " 7   url_y       41929 non-null  object        \n",
+      " 8   mtime       41929 non-null  object        \n",
+      " 9   size        41929 non-null  int64         \n",
+      " 10  md5         41929 non-null  object        \n",
+      " 11  sha1        41929 non-null  object        \n",
+      " 12  datetime    41929 non-null  datetime64[ns]\n",
+      " 13  month       41929 non-null  int64         \n",
+      "dtypes: datetime64[ns](1), int64(2), object(11)\n",
+      "memory usage: 4.8+ MB\n"
+     ]
+    }
+   ],
+   "source": [
+    "merged_list.info()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "27ea7a97-5969-4bf8-9b68-8f97fb5de4e2",
+   "metadata": {},
+   "source": [
+    "Finally, summing the number of screenshots by month will require going back to `groupby`. We will introduce the `size` method, which can count the number of records in each group. Again, `reset_index` tranlates the result into a DataFrame."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 87,
+   "id": "66bb90f9-c55f-4ad4-9c5e-93465793c2bc",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>month</th>\n",
+       "      <th>0</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>3</td>\n",
+       "      <td>1080</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>4</td>\n",
+       "      <td>4510</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>5</td>\n",
+       "      <td>4623</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>6</td>\n",
+       "      <td>12567</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>7</td>\n",
+       "      <td>19149</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "   month      0\n",
+       "0      3   1080\n",
+       "1      4   4510\n",
+       "2      5   4623\n",
+       "3      6  12567\n",
+       "4      7  19149"
+      ]
+     },
+     "execution_count": 87,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "merged_list.groupby(\"month\").size().reset_index()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c8d1236d-525a-4f52-a76f-1997246fc458",
+   "metadata": {
+    "jp-MarkdownHeadingCollapsed": true,
+    "tags": []
+   },
+   "source": [
+    "## Further reading\n",
+    "\n",
+    "With that, we've covered the basic skills necessary to access and analyze data with pandas. Or at least everything we could fit in two quick hours. If you'd like to learn more, consult [the full edition of \"First Python Notebook\"](https://palewi.re/docs/first-python-notebook/)."
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.13"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
