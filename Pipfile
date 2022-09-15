@@ -12,6 +12,10 @@ sphinx = "*"
 sphinx-autobuild = "*"
 myst-nb = "*"
 sphinx-multitoc-numbering = "*"
+jupyterlite = "*"
 
 [requires]
 python_version = "3.9"
+
+[pipenv]
+allow_prereleases = true
