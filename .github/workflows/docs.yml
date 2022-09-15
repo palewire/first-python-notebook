@@ -11,14 +11,19 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - uses: ammaraskar/sphinx-action@master
-      with:
-        docs-folder: "docs/"
-        build-command: "sphinx-build -b html src _build"
-
     - uses: actions/setup-python@v4
       with:
         python-version: '3.9'
+
+    - name: Install Sphinx dependencies
+      run: |
+        pip install --upgrade pip
+        pip install docs/requirements.txt
+      shell: bash
+
+    - name: Build docs
+      run: cd docs && sphinx-build -b html src _build
+      shell: bash
 
     - name: Install Jupyter Lite
       run: pip install --pre jupyterlite
