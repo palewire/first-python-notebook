@@ -30,11 +30,13 @@ jobs:
       shell: bash
 
     - name: Build Jupyter Lite
-      run: jupyter lite build --contents notebooks
+      run: jupyter lite build --contents jupyterlite/faster-python-notebook
       shell: bash
 
     - name: Copy Jupyter Lite into Sphinx build
-      run: mv _output docs/_build/_extra
+      run: |
+        mkdir -p docs/_build/_extra/fast-python-notebook
+        mv _output docs/_build/_extra/fast-python-notebook
       shell: bash
 
     - uses: actions/upload-artifact@v3
