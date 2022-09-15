@@ -30,7 +30,7 @@ jobs:
       shell: bash
 
     - name: Build Jupyter Lite
-      run: pipenv run jupyter lite build --contents notebooks
+      run: jupyter lite build --contents notebooks
       shell: bash
 
     - name: Copy Jupyter Lite into Sphinx build
