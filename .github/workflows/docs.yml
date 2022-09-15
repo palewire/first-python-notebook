@@ -9,14 +9,30 @@ jobs:
     name: "Build and deploy"
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    
+    - uses: actions/checkout@v3
+
     - uses: ammaraskar/sphinx-action@master
       with:
         docs-folder: "docs/"
         build-command: "sphinx-build -b html src _build"
-        
-    - uses: actions/upload-artifact@v1
+
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install Jupyter Lite
+      run: pip install --pre jupyterlite
+      shell: bash
+
+    - name: Build Jupyter Lite
+      run: pipenv run jupyter lite build --contents notebooks
+      shell: bash
+
+    - name: Copy Jupyter Lite into Sphinx build
+      run: mv _output docs/_build/_extra
+      shell: bash
+
+    - uses: actions/upload-artifact@v3
       with:
         name: documentation-html
         path: docs/_build/

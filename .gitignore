@@ -1,3 +1,5 @@
+.jupyterlite.doit.db
+_output
 docs/jupyter_execute
 *.DS_Store
 *.~lock*
