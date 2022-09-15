@@ -36,7 +36,7 @@ jobs:
     - name: Copy Jupyter Lite into Sphinx build
       run: |
         mkdir -p docs/_build/_extra/fast-python-notebook
-        mv _output docs/_build/_extra/fast-python-notebook
+        mv _output/ docs/_build/_extra/fast-python-notebook
       shell: bash
 
     - uses: actions/upload-artifact@v3
