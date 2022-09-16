@@ -39,11 +39,6 @@ jobs:
         mv _output docs/_build/_extra/fast-python-notebook
       shell: bash
 
-    - uses: actions/upload-artifact@v3
-      with:
-        name: documentation-html
-        path: docs/_build/
-
     - uses: shallwefootball/s3-upload-action@master
       with:
         aws_key_id: ${{ secrets.PALEWIRE_DOCS_AWS_ACCESS_KEY_ID }}
