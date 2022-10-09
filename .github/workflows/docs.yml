@@ -29,12 +29,18 @@ jobs:
       run: pip install --pre jupyterlite
       shell: bash
 
-    - name: Build Jupyter Lite
-      run: |
-        mkdir _dist/
-        jupyter lite build --contents ./jupyterlite/fast-python-notebook --output-dir=./_dist/fast-python-notebook
-        jupyter lite build --contents ./jupyterlite/stanford-fall-2022 --output-dir=./_dist/stanford-fall-2022
+    - name: Create _dist directory
+      run: mkdir _dist
       shell: bash
+
+    - name: Build Fast Python Notebook
+      run: jupyter lite build --contents ./jupyterlite/fast-python-notebook --output-dir=./_dist/fast-python-notebook
+      shell: bash
+
+    - name: Build Stanford Fall 2022
+      run: jupyter lite build --contents ./jupyterlite/stanford-fall-2022 --output-dir=./_dist/stanford-fall-2022
+      shell: bash
+
 
     - name: Copy Jupyter Lite into Sphinx build
       run: |
