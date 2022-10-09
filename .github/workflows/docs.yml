@@ -38,9 +38,10 @@ jobs:
       shell: bash
 
     - name: Build Stanford Fall 2022
-      run: jupyter lite build --contents ./jupyterlite/stanford-fall-2022 --output-dir=./_dist/stanford-fall-2022
+      run: |
+        rm .jupyterlite.doit.db
+        jupyter lite build --contents ./jupyterlite/stanford-fall-2022 --output-dir=./_dist/stanford-fall-2022
       shell: bash
-
 
     - name: Copy Jupyter Lite into Sphinx build
       run: |
