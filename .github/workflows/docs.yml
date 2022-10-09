@@ -30,13 +30,16 @@ jobs:
       shell: bash
 
     - name: Build Jupyter Lite
-      run: jupyter lite build --contents ./jupyterlite/fast-python-notebook
+      run: |
+        jupyter lite build --contents ./jupyterlite/fast-python-notebook
+        jupyter lite build --contents ./jupyterlite/stanford-fall-2022
       shell: bash
 
     - name: Copy Jupyter Lite into Sphinx build
       run: |
         mkdir -p docs/_build/_extra/
         mv _output docs/_build/_extra/fast-python-notebook
+        mv _output docs/_build/_extra/stanford-fall-2022
       shell: bash
 
     - uses: shallwefootball/s3-upload-action@master
