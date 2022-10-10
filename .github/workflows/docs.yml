@@ -34,7 +34,7 @@ jobs:
         mkdir -p docs/_build/_extra/
         mkdir _dist/
         jupyter lite build --contents ./jupyterlite/ --output-dir=./_dist/
-        mv ./_dist/ docs/_build/_extra/
+        mv ./_dist/* docs/_build/_extra/
       shell: bash
 
     - uses: shallwefootball/s3-upload-action@master
