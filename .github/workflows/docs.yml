@@ -37,10 +37,15 @@ jobs:
       run: jupyter lite build --contents ./jupyterlite/fast-python-notebook --output-dir=./_dist/fast-python-notebook
       shell: bash
 
-    - name: Build Stanford Fall 2022
+    - name: Remove JupyterLite db and cache
       run: |
-        rm .jupyterlite.doit.db
-        jupyter lite build --contents ./jupyterlite/stanford-fall-2022 --output-dir=./_dist/stanford-fall-2022
+        rm ./.jupyterlite.doit.db
+        rm ./_dist/
+        mkdir ./_dist/
+      shell: bash
+
+    - name: Build Stanford Fall 2022
+      run: jupyter lite build --contents ./jupyterlite/stanford-fall-2022 --output-dir=./_dist/stanford-fall-2022
       shell: bash
 
     - name: Copy Jupyter Lite into Sphinx build
