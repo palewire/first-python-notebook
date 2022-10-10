@@ -29,12 +29,9 @@ jobs:
       run: pip install --pre jupyterlite
       shell: bash
 
-    - name: Create JupyterLite directories
-      run: mkdir -p docs/_build/_extra/
-      shell: bash
-
-    - name: Build Stanford Fall 2022
+    - name: Build JupyterLite
       run: |
+        mkdir -p docs/_build/_extra/
         mkdir _dist/
         jupyter lite build --contents ./jupyterlite/ --output-dir=./_dist/
         mv ./_dist/ docs/_build/_extra/
