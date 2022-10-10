@@ -29,30 +29,26 @@ jobs:
       run: pip install --pre jupyterlite
       shell: bash
 
-    - name: Create _dist directory
-      run: mkdir _dist
+    - name: Create JupyterLite directories
+      run: mkdir -p docs/_build/_extra/
       shell: bash
 
     - name: Build Stanford Fall 2022
-      run: jupyter lite build --contents ./jupyterlite/stanford-fall-2022 --output-dir=./_dist/stanford-fall-2022
-      shell: bash
-
-    - name: Remove JupyterLite db and cache
       run: |
+        mkdir _dist/
+        jupyter lite build --contents ./jupyterlite/stanford-fall-2022 --output-dir=./_dist/stanford-fall-2022
+        mv ./_dist/stanford-fall-2022 docs/_build/_extra/stanford-fall-2022
         rm ./.jupyterlite.doit.db
         rm -rf ./_dist/
-        mkdir ./_dist/
       shell: bash
 
     - name: Build Fast Python Notebook
-      run: jupyter lite build --contents ./jupyterlite/fast-python-notebook --output-dir=./_dist/fast-python-notebook
-      shell: bash
-
-    - name: Copy Jupyter Lite into Sphinx build
       run: |
-        mkdir -p docs/_build/_extra/
+        mkdir _dist/
+        jupyter lite build --contents ./jupyterlite/fast-python-notebook --output-dir=./_dist/fast-python-notebook
         mv ./_dist/fast-python-notebook docs/_build/_extra/fast-python-notebook
-        mv ./_dist/stanford-fall-2022 docs/_build/_extra/stanford-fall-2022
+        rm ./.jupyterlite.doit.db
+        rm -rf ./_dist/
       shell: bash
 
     - uses: shallwefootball/s3-upload-action@master
