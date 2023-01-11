@@ -1,0 +1,27 @@
+name: Test
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  docs:
+    name: Test build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+    - run: pip install --upgrade pip
+    - run: pip install -r docs/requirements.txt
+    - run: cd docs && sphinx-build -b html src _build
+    - run: pip install --pre jupyterlite
+    - run: |
+        mkdir -p docs/_build/_extra/
+        mkdir _dist/
+        jupyter lite build --contents ./jupyterlite/ --output-dir=./_dist/
+        mv ./_dist/* docs/_build/_extra/
+    - uses: actions/upload-artifact@v3
+      with:
+        name: release-candidate
+        path: _dist/
