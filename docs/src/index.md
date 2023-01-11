@@ -7,13 +7,13 @@ A step-by-step guide to analyzing data with Python and the Jupyter notebook.
 
 ## What you will learn
 
-This textbook will guide you through a data-driven investigation of money in California politics.
+This textbook will teach you:
 
-You will learn just enough of the [Python](https://www.python.org/) computer programming language to work with the [pandas](http://pandas.pydata.org/) library, a popular open-source tool for analyzing data. The course will teach you how to read, filter, join, group, aggregate and rank structured data.
+* Just enough of the [Python](https://www.python.org/) computer-programming language to read, filter, join, group, aggregate and rank structured data with [pandas](http://pandas.pydata.org/), a popular open-source tool for statistical analysis
 
-You will also learn how to record, remix and republish your analysis using [Project Jupyter’s computational notebook](http://jupyter.org/), a browser-based interface for writing code that is emerging as the standard for sharing reproducible research.
+* How to record, remix and republish your work using [Project Jupyter](http://jupyter.org/), a browser-based interface for writing code that is emerging as the standard for generating reproducible research
 
-You will also learn how to plot and chart your data inside the notebook using the [Altair data visualization](https://altair-viz.github.io/) library, a Python package that offers a simple, structured grammar for generating graphics.
+* How to explore data using using [Altair](https://altair-viz.github.io/), a Python package that offers a simple, structured grammar for generating charts.
 
 ## Who can take it
 
