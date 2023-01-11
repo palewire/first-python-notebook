@@ -12,6 +12,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
     - run: pip install --upgrade pip
     - run: pip install -r docs/requirements.txt
     - run: cd docs && sphinx-build -b html src _build
@@ -21,7 +23,8 @@ jobs:
         mkdir _dist/
         jupyter lite build --contents ./jupyterlite/ --output-dir=./_dist/
         mv ./_dist/* docs/_build/_extra/
+    - run: ls -alF
     - uses: actions/upload-artifact@v3
       with:
         name: release-candidate
-        path: _dist/
+        path: ./_dist/
