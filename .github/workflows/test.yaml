@@ -6,25 +6,39 @@ on:
   workflow_dispatch:
 
 jobs:
-  docs:
-    name: Test build
+  test:
+    name: Test
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v4
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
       with:
         python-version: '3.9'
-    - run: pip install --upgrade pip
-    - run: pip install -r docs/requirements.txt
-    - run: cd docs && sphinx-build -b html src _build
-    - run: pip install --pre jupyterlite
-    - run: |
+
+    - name: Upgrade pip
+      run: pip install --upgrade pip
+
+    - name: Install Python requirements
+      run: pip install -r docs/requirements.txt
+
+    - name: Build Sphinx site
+      run: cd docs && sphinx-build -b html src _build
+
+    - name: Install Jupyterlite
+      run: pip install --pre jupyterlite
+
+    - name: Build Jupyterlite notebooks
+      run: |
         mkdir -p docs/_build/_extra/
         mkdir _dist/
         jupyter lite build --contents ./jupyterlite/ --output-dir=./_dist/
         mv ./_dist/* docs/_build/_extra/
-    - run: ls -alF
-    - uses: actions/upload-artifact@v3
+
+    - name: Upload release candidate
+      uses: actions/upload-artifact@v3
       with:
         name: release-candidate
-        path: ./_dist/
+        path: ./docs/
