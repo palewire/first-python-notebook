@@ -6,8 +6,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  test:
-    name: Test
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -18,24 +18,8 @@ jobs:
       with:
         python-version: '3.9'
 
-    - name: Upgrade pip
-      run: pip install --upgrade pip
-
-    - name: Install Python requirements
-      run: pip install -r docs/requirements.txt
-
-    - name: Build Sphinx site
-      run: cd docs && sphinx-build -b html src _build
-
-    - name: Install Jupyterlite
-      run: pip install --pre jupyterlite
-
-    - name: Build Jupyterlite notebooks
-      run: |
-        mkdir -p docs/_build/_extra/
-        mkdir _dist/
-        jupyter lite build --contents ./jupyterlite/ --output-dir=./_dist/
-        mv ./_dist/* docs/_build/_extra/
+    - name: Build site
+      run: make build
 
     - name: Upload release candidate
       uses: actions/upload-artifact@v3
