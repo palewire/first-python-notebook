@@ -30,7 +30,6 @@ This course is free. If you've tried Python once or twice, have good attitude an
 jupyter_desktop
 notebook
 pandas
-money
 dataframe
 columns
 filters
@@ -39,7 +38,6 @@ totals
 sorting
 groupby
 compute
-remix
 charts
 ```
 
