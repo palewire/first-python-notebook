@@ -7,8 +7,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
-    name: Build and deploy
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -17,27 +17,24 @@ jobs:
       with:
         python-version: '3.9'
 
-    - name: Install Sphinx dependencies
-      run: |
-        pip install --upgrade pip
-        pip install -r docs/requirements.txt
-      shell: bash
+    - name: Build site
+      run: make build
 
-    - name: Build docs
-      run: cd docs && sphinx-build -b html src _build
-      shell: bash
+    - name: Upload release candidate
+      uses: actions/upload-artifact@v3
+      with:
+        name: release-candidate
+        path: ./docs/
 
-    - name: Install Jupyter Lite
-      run: pip install --pre jupyterlite
-      shell: bash
-
-    - name: Build JupyterLite
-      run: |
-        mkdir -p docs/_build/_extra/
-        mkdir _dist/
-        jupyter lite build --contents ./jupyterlite/ --output-dir=./_dist/
-        mv ./_dist/* docs/_build/_extra/
-      shell: bash
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download release candidate
+      uses: actions/download-artifact@v3
+      with:
+        name: release-candidate
+        path: ./docs/
 
     - uses: shallwefootball/s3-upload-action@master
       with:
