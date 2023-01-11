@@ -6,3 +6,4 @@ A step-by-step guide to analyzing data with Python and the Jupyter notebook. Tak
 
 * [More about this class](https://palewi.re/docs/first-python-notebook/about.html)
 * [How to contribute](https://github.com/palewire/first-python-notebook/blob/main/CONTRIBUTING.md)
+* [Other classes in this series](https://palewi.re/docs/)
