@@ -22,7 +22,7 @@ In 2018, the Los Angeles Times published an investigation headlined, [“The Rob
 
 It reported that Robinson’s R44 led all major models with the highest fatal accident rate from 2006 to 2016. The analysis was [published on GitHub](https://github.com/datadesk/helicopter-accident-analysis) as a series of Jupyter notebooks.
 
-The analysis was based on two key datasets:
+The findings were drawn from two key datasets:
 
 1. The National Transportation Safety Board's [Aviation Accident Database](https://www.ntsb.gov/_layouts/ntsb.aviation/index.aspx)
 2. The Federal Aviation Administration's [General Aviation and Part 135 Activity Survey](https://www.faa.gov/data_research/aviation_data_statistics/general_aviation/)
