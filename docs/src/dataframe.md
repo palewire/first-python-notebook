@@ -18,11 +18,6 @@ kernelspec:
 
 Now it's time to get our hands on some real data.
 
-```{contents} Sections
-  :depth: 1
-  :local:
-```
-
 The coalition has created simplified data files containing the disclosure forms that committees campaigning either for against one of the 17 propositions on the ballot in November 2016 filed with the state of California.
 
 They are:
