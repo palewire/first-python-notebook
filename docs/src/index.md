@@ -33,10 +33,10 @@ pandas
 dataframe
 columns
 filters
+groupby
 merge
 totals
 sorting
-groupby
 compute
 charts
 ```
