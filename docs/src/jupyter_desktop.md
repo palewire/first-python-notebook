@@ -11,7 +11,11 @@ It is also used by journalists to develop stories and show their work. Examples 
 
 * [“The Tennis Racket”](https://github.com/BuzzFeedNews/2016-01-tennis-betting-analysis/blob/master/notebooks/tennis-analysis.ipynb) by BuzzFeed and the BBC
 * [“Machine bias”](https://github.com/propublica/compas-analysis/blob/master/Compas%20Analysis.ipynb) by ProPublica
+* [“The Big Mac Index”](https://github.com/theeconomist/big-mac-data/blob/master/Big%20Mac%20data%20generator.ipynb) by The Economist
 * [“As Opioid Crisis Ramped Up, Pills Flowed Into Vermont by the Millions”](https://github.com/asuozzo/arcos-opioid-analysis-vt) by Seven Days
+* [“Demographic district similiarty maps”](https://github.com/The-Politico/politico-2018-district-similarity-maps/blob/master/demographic_similarity.ipynb) by POLITICO
+* [“How We Uncovered Disparities in Internet Deals”](https://github.com/the-markup/investigation-isp) by The Markup
+
 * [More than 35 different notebooks](https://github.com/datadesk/notebooks) published by the Los Angeles Times
 
 There are numerous ways to install and configure Jupyter notebooks. Since this tutorial is designed for beginners, it will demonstrate how to use [JupyterLab Desktop](https://github.com/jupyterlab/jupyterlab-desktop), a self-contained application that provides a ready-to-use Python environment with several popular libraries bundled in. It can be installed on any operating system with a simple point-and-click interface.
