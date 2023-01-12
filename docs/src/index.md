@@ -35,9 +35,8 @@ columns
 filters
 groupby
 merge
-totals
-sorting
 compute
+sorting
 charts
 ```
 

@@ -71,3 +71,4 @@ Now pick another state and try running the code again. See if you can write filt
 1. Which state recorded more accidents, Iowa or Missouri?
 2. How many accidents reported more than one fatality?
 3. How many accidents happened in California in 2015?
+4. What percentage of the total fatalities occured in California?
