@@ -89,8 +89,8 @@ accident_list.head(1)
 To get a look at all of the columns and what type of data they store, add another cell and try the [info](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.info.html) method. Look carefully at the results and you'll see we have 163 fatal accidents to review.
 
 ```{code-cell}
-accident_list.info()
 :tags: [hide-output,show-input]
+accident_list.info()
 ```
 
 Now that you've got some data imported, we’re ready to begin our analysis.
