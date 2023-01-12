@@ -18,11 +18,6 @@ kernelspec:
 
 This chapter will show how you can create a new column based on the data in other columns, a process sometimes known as "computing."
 
-```{contents} Sections
-  :depth: 1
-  :local:
-```
-
 ```{code-cell}
 :tags: [hide-cell]
 

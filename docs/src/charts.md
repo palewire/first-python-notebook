@@ -20,11 +20,6 @@ Python has a number of charting tools that can work hand-in-hand with pandas. [A
 
 Let’s take it for a spin.
 
-```{contents} Sections
-  :depth: 1
-  :local:
-```
-
 ## Make a basic bar chart
 
 Head back to the import cell at the top of your notebook and add Altair. We'll usually import it with the alias `alt` so we don't have to type out the whole thing every time we make a chart.

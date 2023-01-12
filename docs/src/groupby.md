@@ -20,11 +20,6 @@ To take the next steps in our investigation, we’ll need to learn a new trick.
 
 It’s called [`groupby`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html), a pandas method that allows you to group a DataFrame by a column and then calculate a sum, or any other statistic, for each unique value.
 
-```{contents} Sections
-  :depth: 1
-  :local:
-```
-
 ## Group by one field
 
 As we've been digging through the data, I’m sure a few questions have popped into your mind. One interesting field in the contributions list is the home state of the contributor. A natural question follows: How much of the money came from outside of California?

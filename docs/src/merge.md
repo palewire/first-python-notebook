@@ -18,11 +18,6 @@ kernelspec:
 
 Our next job is to filter down the contributions list, which includes all disclosed contributions to all proposition campaigns, to just those linked to Proposition 64.
 
-```{contents} Sections
-  :depth: 1
-  :local:
-```
-
 ## Inspect DataFrames
 
 When joining two tables together, the first step is to look carefully at the columns in each table. We can do that with the `info` command we learned earlier.

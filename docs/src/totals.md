@@ -20,11 +20,6 @@ In some ways, your database is no different from a human source. Getting a good 
 
 In this section we will use pandas to interview our data as we continue our quest to find out the biggest donors for and against Proposition 64.
 
-```{contents} Sections
-  :depth: 1
-  :local:
-```
-
 ## Sum a column
 
 Using tricks we learned as far back as [chapter two](pandas.md), we can start off by answering a simple question: What is the total sum of Proposition 64 contributions that have been reported?

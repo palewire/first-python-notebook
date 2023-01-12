@@ -16,11 +16,6 @@ kernelspec:
 
 # Filter
 
-```{contents} Sections
-  :depth: 1
-  :local:
-```
-
 ## Our next mission
 
 Until November 2016, the use and sale of marijuana for recreational purposes was illegal in California. That changed when voters approved Proposition 64, which asked if the practice ought to be legalized.

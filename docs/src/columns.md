@@ -18,11 +18,6 @@ kernelspec:
 
 In this chapter we’ll begin our analysis by learning how to inspect a column from a DataFrame.
 
-```{contents} Sections
-  :depth: 1
-  :local:
-```
-
 ## Accessing a column
 
 We'll begin with the `prop_name` column where the proposition each committee sought to influence is stored.
