@@ -18,6 +18,8 @@ kernelspec:
 
 Python is filled with functions to do pretty much anything you’d ever want to do with a programming language: [navigate the web](http://docs.python-requests.org/), [parse data](https://docs.python.org/2/library/csv.html), [interact with a database](http://www.sqlalchemy.org/), [run fancy statistics](https://www.scipy.org/), [build a pretty website](https://www.djangoproject.com/) and [so](https://www.crummy.com/software/BeautifulSoup/) [much](http://www.nltk.org/) [more](https://pillow.readthedocs.io/en/stable/).
 
+![pandas on PyPI](https://palewi.re/docs/first-python-notebook/_static/img/pandas-pypi.png)
+
 Creative people have put these tools to work to get [a wide range of things done](https://www.python.org/about/success/) in the academy, the laboratory and even in outer space. Some are included in a toolbox that comes with the language, known as the standard library. Others have been built by members of Python’s developer community and need to be downloaded and installed from the web.
 
 One third-party tool that's important for this class is called [pandas](http://pandas.pydata.org/). It was invented for use at a [financial investment firm](https://www.aqr.com/) and has become the leading open-source library for accessing and analyzing data in many different fields.
