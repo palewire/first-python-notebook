@@ -43,6 +43,8 @@ Your computer's operating system might flag the JupyterLab Desktop installer as 
 If your system is blocking you from installing the tool, you'll likely need to work around its barriers. For instance, on MacOS, this might require [visiting your system’s security settings](https://www.wikihow.com/Install-Software-from-Unsigned-Developers-on-a-Mac) to allow the installation. 
 ```
 
+## Open a Python 3 notebook
+
 Once the program is installed, you can accept the installation wizard's offer to immediately open the program, or you can search for "Jupyter Lab" in your operating system’s application finder.
 
 That will open up a new window that looks something like this:
