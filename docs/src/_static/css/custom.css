@@ -1,7 +1,7 @@
 .dr@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,700;0,800;1,400;1,800&display=swap');
 
 div.document {
-    margin-top: 0;
+    margin-top: 0 !important;
 }
 
 div.body {
