@@ -16,22 +16,22 @@ kernelspec:
 
 # Data
 
-Now it's time to get our hands on some real data.
+Now it’s time to get our hands on some real data. In 2018, the Los Angeles Times published an investigation headlined, [“The Robinson R44, the world’s best-selling civilian helicopter, has a long history of deadly crashes.”](https://www.latimes.com/projects/la-me-robinson-helicopters/)
 
-The coalition has created simplified data files containing the disclosure forms that committees campaigning either for against one of the 17 propositions on the ballot in November 2016 filed with the state of California.
+![jupyterlab desktop download](/_static/R44-story.png)
 
-They are:
+It reported that Robinson’s R44 led all major models with the highest fatal accident rate from 2006 to 2016. The analysis was [published on GitHub](https://github.com/datadesk/helicopter-accident-analysis) as a series of Jupyter notebooks.
 
-| Name                | Description                                                                   |
-| ------------------- | ----------------------------------------------------------------------------- |
-| [committees.csv](https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/src/_static/committees.csv)    | Committees active in the election linked to propositions supported or opposed |
-| [contributions.csv](https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/src/_static/contributions.csv) | Donors reported by each of the committees                                     |
+The analysis was based on two key datasets:
 
-The data are structured in rows of comma-separated values. This is known as a [CSV file](https://en.wikipedia.org/wiki/Comma-separated_values). It is the most common way you will find data published online.
+1. The National Transportation Safety Board's [Aviation Accident Database](https://www.ntsb.gov/_layouts/ntsb.aviation/index.aspx)
+2. The Federal Aviation Administration's [General Aviation and Part 135 Activity Survey](https://www.faa.gov/data_research/aviation_data_statistics/general_aviation/)
+
+After a significant amount of work gathering and cleaning the source data, the number of accidents for each helicopter model were normalized using the flight hours estimates in the survey. For the purposes of this demonstration, we will read in tidied versions of each file that are ready for analysis.
+
+The data are structured in rows of comma-separated values. This is known as a [CSV file](https://en.wikipedia.org/wiki/Comma-separated\_values). It is the most common way you will find data published online. The pandas library is able to read in files from a variety formats, including CSV.
 
 ## Create a DataFrame
-
-The pandas library is able to read in files from a variety formats, including CSV.
 
 Scroll down to the first open cell. There we will import the first CSV file listed above using the [read_csv](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html) function included with pandas.
 
