@@ -213,6 +213,10 @@ nav .links li a:hover {
     width: 100%;
 }
 
+.tag_hide-cell {
+  display: none !important;
+}
+
 a:link,
 div.sphinxsidebar a,
 div.sphinxsidebar a:link {
