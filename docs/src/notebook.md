@@ -21,9 +21,7 @@ You should see a new panel with an empty box at the top. That means you are all 
 Type the following into the box, then hit the play button in the toolbar above the notebook (or hit `SHIFT+ENTER` on your keyboard). The number four should appear.
 
 ```{code-cell}
----
-tags: [hide-output,show-input]
----
+:tags: [hide-output,show-input]
 2+2
 ```
 
@@ -46,9 +44,7 @@ number = 2
 Then adding it to another value in the next cell:
 
 ```{code-cell}
----
-tags: [hide-output,show-input]
----
+:tags: [hide-output,show-input]
 number + 3
 ```
 
