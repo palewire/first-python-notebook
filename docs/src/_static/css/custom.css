@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,700;0,800;1,400;1,800&display=swap');
 
 div.document {
-    margin-top: 0;
+    margin-top: 0 !important;
 }
 
 div.body {
@@ -192,13 +192,11 @@ nav .links li {
     font-weight: 300;
     margin-bottom: 0;
 }
-
 @media (max-width: 550px) {
-  nav .links li {
-    font-size: .825em;
-  }
+    nav .links li {
+       font-size: .825em;
+    }
 }
-
 nav .links li a {
     text-decoration: none;
 }
@@ -215,18 +213,80 @@ nav .links li a:hover {
     width: 100%;
 }
 
-a:link {
+.tag_hide-cell {
+  display: none !important;
+}
+
+a:link,
+div.sphinxsidebar a,
+div.sphinxsidebar a:link {
   text-decoration: none;
   color: #686868;
+  border-bottom: none;
 }
-a:visited {
+a:visited,
+div.sphinxsidebar a:visited {
   text-decoration: none;
   color: #686868;
+  border-bottom: none;
 }
-a:hover {
+a:hover,
+div.sphinxsidebar a:hover {
   text-decoration: underline;
+  border-bottom: none;
 }
-a:active {
+a:active,
+div.sphinxsidebar a:active {
   text-decoration: underline;
   color: #000;
+  border-bottom: none;
+}
+a.reference {
+  border-bottom: 0;
+}
+a.reference,
+a.internal {
+ border-bottom: 0;
+}
+a.reference:hover,
+a.internal:hover {
+ border-bottom: 0;
+}
+h1.logo a {
+  color: black;
+}
+
+h2+p {
+    margin-top: 5px;
+}
+
+table.align-default {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.latest-parent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.latest-child {
+    width: 212px;
+    margin: 0 8px 8px 0;
+}
+
+.latest-child p {
+    margin-top: 0;
+}
+
+@media (max-width: 550px) {
+  .latest-child {
+    width: 190px;
+  }
+}
+
+.cell_output {
+  padding-left: 0;
+  margin-top: 0;
 }
