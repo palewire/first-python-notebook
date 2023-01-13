@@ -27,17 +27,13 @@ Head back to the import cell at the top of your notebook and add Altair. We'll u
 ```{code-cell}
 :tags: [hide-cell]
 
-import warnings
-warnings.simplefilter("ignore")
 import pandas as pd
-committee_list = pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/src/_static/committees.csv")
-contrib_list = pd.read_csv("https://raw.githubusercontent.com/california-civic-data-coalition/first-python-notebook/master/docs/src/_static/contributions.csv")
-my_prop = 'PROPOSITION 064- MARIJUANA LEGALIZATION. INITIATIVE STATUTE.'
-merged_everything = pd.merge(committee_list, contrib_list, on="calaccess_committee_id")
-merged_prop = merged_everything[merged_everything.prop_name == my_prop]
-support = merged_prop[merged_prop.committee_position == 'SUPPORT']
-oppose = merged_prop[merged_prop.committee_position == 'OPPOSE']
-merged_prop["in_state"] = merged_prop["contributor_state"] == "CA"
+accident_list = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/stanford-january-2023/docs/src/_static/ntsb-accidents.csv")
+accident_counts = accident_list.groupby("latimes_make_and_model").size().reset_index().rename(columns={0: "accidents"})
+survey = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/stanford-january-2023/docs/src/_static/faa-survey.csv")
+merged_list = pd.merge(accident_counts, survey, on="latimes_make_and_model")
+merged_list['per_hour'] = merged_list.accidents / merged_list.total_hours
+merged_list['per_100k_hours'] = (merged_list.accidents / merged_list.total_hours) * 100_000
 ```
 
 ```{code-cell}
@@ -46,33 +42,26 @@ import altair as alt
 
 Once that’s run, we can pick up where we last left off at the bottom of the notebook. If we want to chart out how much the top supporters of the proposition spent, we first need to select them from the dataset. Using the grouping and sorting tricks we learned earlier, the top 10 can be returned like this:
 
-```{code-cell}
-top_supporters = support.groupby(
-    ["contributor_firstname", "contributor_lastname"],
-    dropna=False
-).amount.sum().reset_index().sort_values("amount", ascending=False).head(10)
-```
-
 Now that we have `altair` imported, we can pop that dataframe into a quick chart. Let’s step through the building blocks of a chart.
 
 First feed the data to Altair.
 
 ```{code-cell}
-alt.Chart(top_supporters)
+alt.Chart(merged_list)
 ```
 
 From that error, it looks like Altair wants a little more. Let’s tell it we want it to draw bars, which is Altair calls a “mark.”
 
 ```{code-cell}
-alt.Chart(top_supporters).mark_bar()
+alt.Chart(merged_list).mark_bar()
 ```
 
 An improvement, but we’re not there yet. At a minimum, we also need to tell Altair what to put on the x- and y-axes.
 
 ```{code-cell}
-alt.Chart(top_supporters).mark_bar().encode(
-    x="contributor_lastname",
-    y="amount"
+alt.Chart(merged_list).mark_bar().encode(
+    x="latimes_make_and_model",
+    y="per_100k_hours"
 )
 ```
 
@@ -81,18 +70,9 @@ Look at that chart! That’s more like it.
 Here's an idea — maybe we want to do horizontal, not vertical bars. How would you rewrite this chart code to reverse those bars?
 
 ```{code-cell}
-alt.Chart(top_supporters).mark_bar().encode(
-    x="amount",
-    y="contributor_lastname"
-)
-```
-
-What if we wanted to focus on the top five records? We can use that `head` command we already know.
-
-```{code-cell}
-alt.Chart(top_supporters.head(5)).mark_bar().encode(
-    x="amount",
-    y="contributor_lastname"
+alt.Chart(merged_list).mark_bar().encode(
+    x="per_100k_hours",
+    y="latimes_make_and_model"
 )
 ```
 
@@ -103,20 +83,20 @@ We want to sort the y-axis values by their corresponding x values. We've been us
 To do that, we'll use a syntax like this: `alt.Y(column_name, arg="value")`. There are lots more arguments that you might want to pass in, like ones that will sum or average your data on the fly or limit the number range you want your axis to display. In this case, we'll stick to using the `sort` command.
 
 ```{code-cell}
-alt.Chart(top_supporters.head(5)).mark_bar().encode(
-    x="amount",
-    y=alt.Y("contributor_lastname", sort="-x")
+alt.Chart(merged_list).mark_bar().encode(
+    x="per_100k_hours",
+    y=alt.Y("latimes_make_and_model", sort="-x")
 )
 ```
 
 And we can't have a chart without context. Let's throw in a title for good measure.
 
 ```{code-cell}
-alt.Chart(top_supporters.head(5)).mark_bar().encode(
-    x="amount",
-    y=alt.Y("contributor_lastname", sort="-x")
+alt.Chart(merged_list).mark_bar().encode(
+    x="per_100k_hours",
+    y=alt.Y("latimes_make_and_model", sort="-x")
 ).properties(
-    title="Top Spenders in Support of Proposition 64"
+    title="Helicopter accident rates"
 )
 ```
 
@@ -126,37 +106,29 @@ Now, we have a good idea of who spent the most in support of Prop. 64. What if w
 
 ## Add a `color`
 
-Add a new cell and a new dataframe, `top_contributors`, summing up the top contributors in our whole `merged_prop` dataframe. We're going to repeat a lot of the pandas functions we've stepped through before, all in one go this time.
-
-```{code-cell}
-top_contributors = merged_prop.groupby(
-    ["contributor_firstname", "contributor_lastname","committee_position"],
-    dropna=True
-).amount.sum().reset_index().sort_values("amount", ascending=False).head(10)
-```
 
 Now pop `top_contributors` into a chart, just like we did before. Remember that sort function!
 
 ```{code-cell}
-alt.Chart(top_contributors).mark_bar().encode(
-    x="amount",
-    y=alt.Y("contributor_lastname",sort="-x"),
+alt.Chart(merged_list).mark_bar().encode(
+    x="per_100k_hours",
+    y=alt.Y("latimes_make_and_model",sort="-x"),
 )
 ```
 
-What facet of the data is this chart *not* showing? How might we add additional context?
+<!--What facet of the data is this chart *not* showing? How might we add additional context?
 
 We have that `committee_position` column in our dataframe now. Let's try an altair option that we haven't used yet: `color`. Can you guess where we should add that in?
 
 ```{code-cell}
-alt.Chart(top_contributors).mark_bar().encode(
-    x="amount",
-    y=alt.Y("contributor_lastname",sort="-x"),
-    color="committee_position"
+alt.Chart(merged_list).mark_bar().encode(
+    x="per_100k_hours",
+    y=alt.Y("latimes_make_and_model",sort="-x"),
+    color="latimes_make"
 )
 ```
 
-Hey now! That wasn't too hard, was it?
+ Hey now! That wasn't too hard, was it?
 
 ## Chart `datetime` data
 
@@ -284,4 +256,4 @@ Guess what? It's this easy.
 
 ```{code-cell}
 top_supporters.to_csv("top_supporters.csv")
-```
+``` -->
