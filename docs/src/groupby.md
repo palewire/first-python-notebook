@@ -24,7 +24,7 @@ Let's use it to total up the accidents by make and model. You start by passing t
 :tags: [hide-cell]
 
 import pandas as pd
-accident_list = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/stanford-january-2023/docs/src/_static/ntsb-accidents.csv")
+accident_list = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/main/docs/src/_static/ntsb-accidents.csv")
 ```
 
 ```{code-cell}
@@ -39,7 +39,7 @@ A nice start but you’ll notice you don’t get much back. The data’s been gr
 accident_list.groupby("latimes_make_and_model").size()
 ```
 
-The result is much like `value_counts`, but we're allowed run to all kinds of statistical operations on the group, like `sum`, `mean` and `std`. For instance, we could sum the total number of fatalities for each maker by string that field on the end followed by the statistical method.
+The result is much like `value_counts`, but we're allowed run to all kinds of statistical operations on the group, like `sum`, `mean` and `std`. For instance, we could sum the total number of fatalities for each maker by stringing that field on the end followed by the statistical method.
 
 ```{code-cell}
 :tags: [show-input]

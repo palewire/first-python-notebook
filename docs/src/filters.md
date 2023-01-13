@@ -28,7 +28,7 @@ Let's try filtering against the `state` field. Save a postal code into a variabl
 :tags: [hide-cell]
 
 import pandas as pd
-accident_list = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/stanford-january-2023/docs/src/_static/ntsb-accidents.csv")
+accident_list = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/main/docs/src/_static/ntsb-accidents.csv")
 ```
 
 ```{code-cell}
@@ -50,7 +50,7 @@ Now we should save the results of that filter into a new variable separate from 
 my_accidents = accident_list[accident_list.state == my_state]
 ```
 
-To check our work and find out how many committees are left after the filter, let's run the DataFrame inspection commands we learned earlier.
+To check our work and find out how many records are left after the filter, let's run the DataFrame inspection commands we learned earlier.
 
 First `head`.
 
@@ -69,6 +69,6 @@ my_accidents.info()
 Now pick another state and try running the code again. See if you can write filters that will answer the following questions:
 
 1. Which state recorded more accidents, Iowa or Missouri?
-2. How many accidents reported more than one fatality?
+2. How many accidents recorded more than one fatality?
 3. How many accidents happened in California in 2015?
 4. What percentage of the total fatalities occured in California?

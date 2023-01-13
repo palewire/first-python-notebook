@@ -20,13 +20,13 @@ kernelspec:
 :tags: [hide-cell]
 
 import pandas as pd
-accident_list = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/stanford-january-2023/docs/src/_static/ntsb-accidents.csv")
+accident_list = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/main/docs/src/_static/ntsb-accidents.csv")
 accident_counts = accident_list.groupby("latimes_make_and_model").size().reset_index().rename(columns={0: "accidents"})
-survey = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/stanford-january-2023/docs/src/_static/faa-survey.csv")
+survey = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/main/docs/src/_static/faa-survey.csv")
 merged_list = pd.merge(accident_counts, survey, on="latimes_make_and_model")
 ```
 
-The calculate an accident rate, we'll need to create a new column based on the data in other columns, a process sometimes known as “computing.”
+To calculate an accident rate, we’ll need to create a new column based on the data in other columns, a process sometimes known as “computing.”
 
 In many cases, it’s no more complicated than combining two series using a mathematical operator. That's true in this case, where our goal is to divide the total number of accidents in each row into the total hours. That can accomplished with the following:
 
