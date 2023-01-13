@@ -18,9 +18,9 @@ kernelspec:
 
 Python is filled with functions to do pretty much anything you’d ever want to do with a programming language: [navigate the web](http://docs.python-requests.org/), [parse data](https://docs.python.org/2/library/csv.html), [interact with a database](http://www.sqlalchemy.org/), [run fancy statistics](https://www.scipy.org/), [build a pretty website](https://www.djangoproject.com/) and [so](https://www.crummy.com/software/BeautifulSoup/) [much](http://www.nltk.org/) [more](https://pillow.readthedocs.io/en/stable/).
 
-![pandas on PyPI](https://palewi.re/docs/first-python-notebook/_static/img/pandas-pypi.png)
-
 Creative people have put these tools to work to get [a wide range of things done](https://www.python.org/about/success/) in the academy, the laboratory and even in outer space. Some are included in a toolbox that comes with the language, known as the standard library. Others have been built by members of Python’s developer community and need to be downloaded and installed from the web.
+
+![pandas on PyPI](https://palewi.re/docs/first-python-notebook/_static/img/pandas-pypi.png)
 
 One third-party tool that's important for this class is called [pandas](http://pandas.pydata.org/). It was invented for use at a [financial investment firm](https://www.aqr.com/) and has become the leading open-source library for accessing and analyzing data in many different fields.
 
@@ -37,7 +37,7 @@ If nothing happens, that's good. It means you have pandas installed and ready as
 ```{note}
 Since pandas is created by a third party independent from the core Python developers, it wouldn't be installed by default if you followed our [our advanced installation](/appendix/index.md) instructions.
 
-It's available to you because the JupyterLab Desktop developers have pre-selected a curated list of common utilities to include with their installation, another reason to love their easy installer.
+It's available to you because the JupyterLab Desktop developers have pre-selected a curated list of common utilities to include with the package, another reason to love their easy installer.
 ```
 
 Return to the cell with the import and rewrite it like this.
@@ -70,7 +70,7 @@ my_series = pd.Series(my_list)
 
 Once the data becomes a Series, you can immediately run a wide range of [descriptive statistics](https://en.wikipedia.org/wiki/Descriptive_statistics). Let's try a few.
 
-First, sum all the numbers. Make a new cell and run this. It should spit out the total.
+How about summing all the numbers? Make a new cell and run this. It should spit out the total.
 
 ```{code-cell}
 :tags: [show-input]
@@ -119,6 +119,6 @@ Finally, all of the above, plus a little more about the distribution, in one sim
 my_series.describe()
 ```
 
-Before you move on, go back the my_list variable and change the list. Maybe add a few more values. Or switch to odds. Then rerun all the cells above. You'll see all the statistics update to reflect the different dataset.
+Before you move on, go back the `my_list` variable and change the list. Maybe add a few more values. Or switch to odds. Then rerun all the cells above. You'll see all the statistics update to reflect the different dataset.
 
 If you substituted in a series of 10 million records, your notebook would calculate all those same statistics without you needing to write any more code. Once your data, however large or complex, is imported into pandas, there's little limit to what you can do to filter, merge, group, aggregate, compute or chart using simple methods like the ones above. In the chapter to come we’ll start doing just using that with data from a real Los Angeles Times investigation.

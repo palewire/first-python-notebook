@@ -22,9 +22,9 @@ Saving the dataframes you’ve created to your computer requires one final panda
 :tags: [hide-cell]
 
 import pandas as pd
-accident_list = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/stanford-january-2023/docs/src/_static/ntsb-accidents.csv")
+accident_list = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/main/docs/src/_static/ntsb-accidents.csv")
 accident_counts = accident_list.groupby(["latimes_make", "latimes_make_and_model"]).size().reset_index().rename(columns={0: "accidents"})
-survey = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/stanford-january-2023/docs/src/_static/faa-survey.csv")
+survey = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/main/docs/src/_static/faa-survey.csv")
 merged_list = pd.merge(accident_counts, survey, on="latimes_make_and_model")
 merged_list['per_hour'] = merged_list.accidents / merged_list.total_hours
 merged_list['per_100k_hours'] = (merged_list.accidents / merged_list.total_hours) * 100_000

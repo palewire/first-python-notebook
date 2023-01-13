@@ -39,11 +39,11 @@ import pandas as pd
 
 ## The `read_csv` method
 
-Scroll down to the first open cell. There we will import the first CSV file using the [read_csv](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html) function included with pandas.
+Scroll down to the first open cell. There we will import the first CSV file using the [`read_csv`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html) function included with pandas.
 
 ```{code-cell}
 :tags: [show-input]
-pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/stanford-january-2023/docs/src/_static/ntsb-accidents.csv")
+pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/main/docs/src/_static/ntsb-accidents.csv")
 ```
 
 ```{warning}
@@ -54,23 +54,21 @@ After you run the cell, you should see a big table output to your notebook. It i
 
 A major advantage of Jupyter over spreadsheets is that rather than manipulating the data through a haphazard series of clicks and keypunches we will be gradually grinding it down using a computer programming script that is transparent and reproducible.
 
-In order to do more with your DataFrame, we need to store it so it can be reused in subsequent cells. We can do this by saving in a variable, which is a fancy computer programming word for a named shortcut where we save our work as we go.
+In order to do more with your DataFrame, we need to store it so it can be reused in subsequent cells. We can do this by saving in a variable, just as we did in with our `number` in chapter two.
 
-In order to do more with your DataFrame, we need to store it so it can be reused in subsequent cells. We can do this by saving it in a variable, just as we did in with our `number` in chapter two.
-
-Go back to your initial cell and change it to this. Then rerun it.
+Go back to your latest cell and change it to this. Rerun it.
 
 ```{code-cell}
-accident_list = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/stanford-january-2023/docs/src/_static/ntsb-accidents.csv")
+accident_list = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/main/docs/src/_static/ntsb-accidents.csv")
 ```
 
-After you run it, you shouldn't see anything. That's a good thing. It means our DataFrame has been saved under the name `accident_list`, which we can now begin interacting with in the cells that follow.
+You shouldn't see anything. That's a good thing. It means our DataFrame has been saved under the name `accident_list`, which we can now begin interacting with in the cells that follow.
 
 We can do this by calling ["methods"](https://en.wikipedia.org/wiki/Method_(computer_programming)) that pandas makes available to all DataFrames. You may not have known it at the time, but `read_csv` is one of these methods. There are dozens more that can do all sorts of interesting things. Let’s start with some easy ones that analysts use all the time.
 
 ## The `head` method
 
-To preview the first few rows of the dataset, try the [head](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.head.html) method. Add a new cell and type this in and hit the play button again.
+To preview the first few rows of the dataset, try the [`head`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.head.html) method. Add a new cell and type this in and hit the play button again.
 
 ```{code-cell}
 :tags: [show-input]

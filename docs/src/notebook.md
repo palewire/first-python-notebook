@@ -29,7 +29,7 @@ There. Not so bad, right? You have just written your first code. In the jargon o
 
 Now try writing in your own math problem in the next cell. Maybe `2+3` or `2+200`. Whatever strikes your fancy. After you've typed it in, hit the play button or `SHIFT+ENTER`.
 
-The to-and-fro of writing Python code in a cell and then running it with the play button is the rhythm of working in a notebook.
+This to-and-fro of writing Python code in a cell and then running it with the play button is the rhythm of working in a notebook.
 
 If you get an error after you run a cell, look carefully at your code and see that it exactly matches what’s been written in the example. Here's an example of a error that I've added intentionally:
 

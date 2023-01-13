@@ -28,9 +28,9 @@ Head back to the import cell at the top of your notebook and add Altair. In the 
 import warnings
 warnings.simplefilter('ignore')
 import pandas as pd
-accident_list = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/stanford-january-2023/docs/src/_static/ntsb-accidents.csv")
+accident_list = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/main/docs/src/_static/ntsb-accidents.csv")
 accident_counts = accident_list.groupby(["latimes_make", "latimes_make_and_model"]).size().reset_index().rename(columns={0: "accidents"})
-survey = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/stanford-january-2023/docs/src/_static/faa-survey.csv")
+survey = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/main/docs/src/_static/faa-survey.csv")
 merged_list = pd.merge(accident_counts, survey, on="latimes_make_and_model")
 merged_list['per_hour'] = merged_list.accidents / merged_list.total_hours
 merged_list['per_100k_hours'] = (merged_list.accidents / merged_list.total_hours) * 100_000
@@ -42,7 +42,7 @@ import altair as alt
 
 Once that’s run, we can pick up where we last left off at the bottom of the notebook. Let's try to plot our accident rate ranking as a bar chart.
 
-With `altair` imported, we can feed it our DataFrame to start charting.
+With Altair imported, we can now feed it our DataFrame to start charting.
 
 ```{code-cell}
 alt.Chart(merged_list)
@@ -78,7 +78,7 @@ This chart is an okay start, but it's sorted alphabetically by y-axis value, whi
 
 We want to sort the y-axis values by their corresponding x values. We've been using the shorthand syntax to pass in our axis columns so far, but to add more customization to our chart we'll have to switch to the longform way of defining the y axis.
 
-To do that, we'll use a syntax like this: `alt.Y(column_name, arg="value")`. There are lots more arguments that you might want to pass in, like ones that will sum or average your data on the fly or limit the number range you want your axis to display. In this case, we'll stick to using the `sort` command.
+To do that, we'll use a syntax like this: `alt.Y(column_name, arg="value")`. There are lots more arguments that you might want to pass in, like ones that will sum or average your data on the fly or limit the range you want your axis to display. In this case, we'll stick to using the `sort` option.
 
 ```{code-cell}
 alt.Chart(merged_list).mark_bar().encode(
@@ -100,20 +100,17 @@ alt.Chart(merged_list).mark_bar().encode(
 
 Yay, we made a chart!
 
-Now, we have a good idea of who spent the most in support of Prop. 64. What if we wanted to see who spent money on both sides? To do that, we’ll need to get a little fancier.
-
-
 ## Add a `color`
 
 What important facet of the data is this chart *not* showing? There are two Robinson models in the ranking. It might be nice to emphasize them.
 
-We have that `latimes_make` column in our original dataframe, but it got lost when we created our ranking because we didn't include it in our `groupby` command. We can fix that by scrolling back up our notebook and adding it to the command.
+We have that `latimes_make` column in our original dataframe, but it got lost when we created our ranking because we didn't include it in our `groupby` command. We can fix that by scrolling back up our notebook and adding it to the command. You will need to replace what's there with a list containing both columns we want to keep.
 
 ```{code-cell}
 accident_counts = accident_list.groupby(["latimes_make", "latimes_make_and_model"]).size().reset_index()
 ```
 
-Rerun all of the cells below to all the work that depends on its variable. Now if you inspect our ranking you should see the `latimes_make` column included.
+Rerun all of the cells below to update everything you're working with. Now if you inspect the ranking you should see the `latimes_make` column included.
 
 ```{code-cell}
 merged_list.info()
@@ -126,12 +123,14 @@ alt.Chart(merged_list).mark_bar().encode(
     x="per_100k_hours",
     y=alt.Y("latimes_make_and_model",sort="-x"),
     color="latimes_make"
+).properties(
+    title="Helicopter accident rates"
 )
 ```
 
  Hey now! That wasn't too hard, was it? But now there's too many colors. We would be better off if we emphasized the Robinson bars, but left the rest of the makers the default color.
 
- We cand accomplish that by taking advantage of `alt.condition`, Altair's method for adding logic to the configuration of the chart. In this case, we want to set the chart one color if Robinson is the maker, and another if it isn't. Here's how to do that:
+ We can accomplish that by taking advantage of `alt.condition`, Altair's method for adding logic to the configuration of the chart. In this case, we want to set the chart one color if Robinson is the maker, and another if it isn't. Here's how to do that:
 
 ```{code-cell}
 alt.Chart(merged_list).mark_bar().encode(
@@ -142,6 +141,8 @@ alt.Chart(merged_list).mark_bar().encode(
         alt.value("orange"),
         alt.value("steelblue")
     )
+).properties(
+    title="Helicopter accident rates"
 )
 ```
 
@@ -155,7 +156,7 @@ Let’s see if we can do that with our original DataFrame, the `accident_list` t
 accident_list.info()
 ```
 
-When you import a CSV file with `read_csv` it will take a guess at column types — for example, `integer`, `float`, `boolean`, `datetime` or `string` — but it will default to a generic `object` type, which will generally behave like a string, or text, field. You cann see the data types that pandas assigned to our accident list on the right hand side of the `info` table.
+When you import a CSV file with `read_csv` it will take a guess at column types — for example, `integer`, `float`, `boolean`, `datetime` or `string` — but it will default to a generic `object` type, which will generally behave like a string, or text, field. You can see the data types that pandas assigned to our accident list on the right hand side of the `info` table.
 
 Take a look above and you'll see that pandas is treating our `date` column as an object. That means we can't chart it using Python's system for working with dates.
 
@@ -173,7 +174,7 @@ Run `info` again and you'll notice a change. The data type for `date` has change
 accident_list.info()
 ```
 
-Now that we've got that out of the way, let’s see what it looks like. You know how to make a bar chart now, so which columns should we visualize here? If we want a timeseries, we've got to look to `date`. Let's see if we can count the total fatalities over time.
+Now that we've got that out of the way, let’s see if we can chart with it. Let's see if we can count the total fatalities over time.
 
 ```{code-cell}
 alt.Chart(accident_list).mark_bar().encode(
@@ -182,7 +183,7 @@ alt.Chart(accident_list).mark_bar().encode(
 )
 ```
 
-This is great on the x axis, but it's not quite accurate on the y. What do you think happens here if there are multiple accidents on the same day? To make sure this chart is accurate, we'll need to aggregate the y axis in some way.
+This is great on the x axis, but it's not quite accurate on the y. To make sure this chart is accurate, we'll need to aggregate the y axis in some way.
 
 ## Aggregate with Altair
 
