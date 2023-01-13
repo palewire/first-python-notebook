@@ -29,26 +29,26 @@ accident_counts = accident_list.groupby("latimes_make_and_model").size().reset_i
 ```
 
 ```{code-cell}
-:tags: [hide-output,show-input]
+:tags: [show-input]
 survey = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/stanford-january-2023/docs/src/_static/faa-survey.csv")
 ```
 
 Before you do anything, take a peek at it with with the `head`.
 
 ```{code-cell}
-:tags: [hide-output,show-input]
+:tags: [show-input]
 survey.head()
 ```
 
 When joining two tables together, the first step is to look carefully at the columns in each table to find a common column that can be joined. We can do that with the `info` command we learned earlier.
 
 ```{code-cell}
-:tags: [hide-output,show-input]
+:tags: [show-input]
 accident_counts.info()
 ```
 
 ```{code-cell}
-:tags: [hide-output,show-input]
+:tags: [show-input]
 survey.info()
 ```
 
@@ -61,21 +61,21 @@ If you are familar with traditional databases, you may recognize that the merge 
 Merging two DataFrames is as simple as passing both to pandas built-in `merge` method and specifying which field we’d like to use to connect them together. We will save the result into another new variable, which I'm going to call `merged_list`.
 
 ```{code-cell}
-:tags: [hide-output,show-input]
+:tags: [show-input]
 merged_list = pd.merge(accident_counts, survey, on="latimes_make_and_model")
 ```
 
 That new DataFrame can be inspected like any other.
 
 ```{code-cell}
-:tags: [hide-output,show-input]
+:tags: [show-input]
 merged_list.head()
 ```
 
 By looking at the columns you can check how many rows survived the merge, a precaution you should take every time you join two tables.
 
 ```{code-cell}
-:tags: [hide-output,show-input]
+:tags: [show-input]
 merged_list.info()
 ```
 

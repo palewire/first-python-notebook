@@ -73,49 +73,49 @@ Once the data becomes a Series, you can immediately run a wide range of [descrip
 First, sum all the numbers. Make a new cell and run this. It should spit out the total.
 
 ```{code-cell}
-:tags: [hide-output,show-input]
+:tags: [show-input]
 my_series.sum()
 ```
 
 Then find the maximum value in the next.
 
 ```{code-cell}
-:tags: [hide-output,show-input]
+:tags: [show-input]
 my_series.max()
 ```
 
 The minimum value in the next.
 
 ```{code-cell}
-:tags: [hide-output,show-input]
+:tags: [show-input]
 my_series.min()
 ```
 
 How about the average, which also known as the mean?
 
 ```{code-cell}
-:tags: [hide-output,show-input]
+:tags: [show-input]
 my_series.mean()
 ```
 
 The median?
 
 ```{code-cell}
-:tags: [hide-output,show-input]
+:tags: [show-input]
 my_series.median()
 ```
 
 The standard deviation?
 
 ```{code-cell}
-:tags: [hide-output,show-input]
+:tags: [show-input]
 my_series.std()
 ```
 
 Finally, all of the above, plus a little more about the distribution, in one simple command.
 
 ```{code-cell}
-:tags: [hide-output,show-input]
+:tags: [show-input]
 my_series.describe()
 ```
 

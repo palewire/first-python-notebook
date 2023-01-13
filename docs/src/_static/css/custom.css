@@ -285,3 +285,8 @@ table.align-default {
     width: 190px;
   }
 }
+
+.cell_output {
+  padding-left: 0;
+  margin-top: 0;
+}

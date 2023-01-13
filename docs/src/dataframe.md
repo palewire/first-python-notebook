@@ -42,7 +42,7 @@ import pandas as pd
 Scroll down to the first open cell. There we will import the first CSV file using the [read_csv](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html) function included with pandas.
 
 ```{code-cell}
-:tags: [hide-output,show-input]
+:tags: [show-input]
 pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/stanford-january-2023/docs/src/_static/ntsb-accidents.csv")
 ```
 
@@ -73,14 +73,14 @@ We can do this by calling ["methods"](https://en.wikipedia.org/wiki/Method_(comp
 To preview the first few rows of the dataset, try the [head](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.head.html) method. Add a new cell and type this in and hit the play button again.
 
 ```{code-cell}
-:tags: [hide-output,show-input]
+:tags: [show-input]
 accident_list.head()
 ```
 
 It does the first five by default. If you want a different number, submit it as an input.
 
 ```{code-cell}
-:tags: [hide-output,show-input]
+:tags: [show-input]
 accident_list.head(1)
 ```
 
@@ -89,7 +89,7 @@ accident_list.head(1)
 To get a look at all of the columns and what type of data they store, add another cell and try the [info](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.info.html) method. Look carefully at the results and you'll see we have 163 fatal accidents to review.
 
 ```{code-cell}
-:tags: [hide-output,show-input]
+:tags: [show-input]
 accident_list.info()
 ```
 

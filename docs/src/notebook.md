@@ -21,7 +21,7 @@ You should see a new panel with an empty box at the top. That means you are all 
 Type the following into the box, then hit the play button in the toolbar above the notebook (or hit `SHIFT+ENTER` on your keyboard). The number four should appear.
 
 ```{code-cell}
-:tags: [hide-output,show-input]
+:tags: [show-input]
 2+2
 ```
 
@@ -34,14 +34,14 @@ The to-and-fro of writing Python code in a cell and then running it with the pla
 If you get an error after you run a cell, look carefully at your code and see that it exactly matches what’s been written in the example. Here's an example of a error that I've added intentionally:
 
 ```{code-cell}
-:tags: [hide-output,show-input,raises-exception]
+:tags: [show-input,raises-exception]
 2+2+
 ```
 
 Don’t worry. Code crashes are a normal part of life for computer programmers. They’re usually caused by small typos that can be quickly corrected. 
 
 ```{code-cell}
-:tags: [hide-output,show-input]
+:tags: [show-input]
 2+2+2
 ```
 
@@ -56,7 +56,7 @@ number = 2
 Then adding it to another value in the next cell:
 
 ```{code-cell}
-:tags: [hide-output,show-input]
+:tags: [show-input]
 number + 3
 ```
 
@@ -73,7 +73,7 @@ number = 3
 Then this:
 
 ```{code-cell}
-:tags: [hide-output,show-input]
+:tags: [show-input]
 number + 3
 ```
 

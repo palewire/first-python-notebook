@@ -33,14 +33,14 @@ merged_list['per_100k_hours'] = (merged_list.accidents / merged_list.total_hours
 The [`sort_values`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sort_values.html) is how pandas does it. It expects that you provide it with the name of the column to sort by in quotes. Try sorting by our computed field.
 
 ```{code-cell}
-:tags: [show-output,show-input]
+:tags: [show-input]
 merged_list.sort_values("per_100k_hours")
 ```
 
 Note that returns the DataFrame resorted in ascending order from lowest to highest. That is pandas default way of sorting. You reverse it to show the largest values first by passing in an optional keyword argument called `ascending`. When it is set to `False`, the DataFrame is sorted in descending order.
 
 ```{code-cell}
-:tags: [show-output,show-input]
+:tags: [show-input]
 merged_list.sort_values("per_100k_hours", ascending=False)
 ```
 
