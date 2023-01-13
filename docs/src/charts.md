@@ -29,7 +29,7 @@ Head back to the import cell at the top of your notebook and add Altair. We'll u
 
 import pandas as pd
 accident_list = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/stanford-january-2023/docs/src/_static/ntsb-accidents.csv")
-accident_counts = accident_list.groupby("latimes_make_and_model").size().reset_index().rename(columns={0: "accidents"})
+accident_counts = accident_list.groupby(["latimes_make", "latimes_make_and_model"]).size().reset_index().rename(columns={0: "accidents"})
 survey = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/stanford-january-2023/docs/src/_static/faa-survey.csv")
 merged_list = pd.merge(accident_counts, survey, on="latimes_make_and_model")
 merged_list['per_hour'] = merged_list.accidents / merged_list.total_hours
@@ -107,16 +107,7 @@ Now, we have a good idea of who spent the most in support of Prop. 64. What if w
 ## Add a `color`
 
 
-Now pop `top_contributors` into a chart, just like we did before. Remember that sort function!
-
-```{code-cell}
-alt.Chart(merged_list).mark_bar().encode(
-    x="per_100k_hours",
-    y=alt.Y("latimes_make_and_model",sort="-x"),
-)
-```
-
-<!--What facet of the data is this chart *not* showing? How might we add additional context?
+What facet of the data is this chart *not* showing? How might we add additional context?
 
 We have that `committee_position` column in our dataframe now. Let's try an altair option that we haven't used yet: `color`. Can you guess where we should add that in?
 
@@ -128,9 +119,55 @@ alt.Chart(merged_list).mark_bar().encode(
 )
 ```
 
+```{code-cell}
+alt.Chart(merged_list).mark_bar().encode(
+    x="per_100k_hours",
+    y=alt.Y("latimes_make_and_model",sort="-x"),
+    color=alt.condition(
+        alt.datum.latimes_make == "ROBINSON",
+        alt.value("orange"),
+        alt.value("steelblue")
+    )
+)
+```
+
  Hey now! That wasn't too hard, was it?
 
-## Chart `datetime` data
+```{code-cell}
+accident_list.info()
+```
+
+```{code-cell}
+accident_list['date'] = pd.to_datetime(accident_list['date'])
+```
+
+```{code-cell}
+accident_list.info()
+```
+
+```{code-cell}
+alt.Chart(accident_list).mark_bar().encode(
+  x="date",
+  y="total_fatalities"
+)
+```
+
+```{code-cell}
+alt.Chart(accident_list).mark_bar().encode(
+  x="date",
+  y="sum(total_fatalities)"
+)
+```
+
+```{code-cell}
+alt.Chart(accident_list).mark_bar().encode(
+  x="yearmonth(date)",
+  y="sum(total_fatalities)",
+  facet="latimes_make"
+)
+```
+
+<!--## Chart `datetime` data
 
 One thing you'll almost certainly find yourself grappling with time and time again is date (and time) fields, so let's talk about how to handle them.
 
@@ -244,16 +281,12 @@ Hey, we did it!
 
 ## Do it live
 
-These charts give us plenty of areas where we might want to dig in and ask more questions, but none are polished enough to pop into a news story quite yet. But there *are* lots of additional labeling, formatting and design options that you can dig into in the [Altair docs](https://altair-viz.github.io/index.html) — you can even create Altair themes to specify default color schemes and fonts.
+ -->
+
+ These charts give us plenty of areas where we might want to dig in and ask more questions, but none are polished enough to pop into a news story quite yet. But there *are* lots of additional labeling, formatting and design options that you can dig into in the [Altair docs](https://altair-viz.github.io/index.html) — you can even create Altair themes to specify default color schemes and fonts.
 
 But you may not want to do all that tweaking in Altair, especially if you're just working on a one-off graphic. If you wanted to hand this chart off to a graphics department, all you'd have to do is head to the top right corner of your chart.
 
 See those three dots? Click on that, and you'll see lots of options. Downloading the file as an SVG will let anyone with graphics software like Adobe Illustrator take this file and tweak the design.
 
-Want to recreate a chart you make in a tool like [Datawrapper](https://www.datawrapper.de/)?  In that case, you'll want to export the relevant dataframe to a spreadsheet.
-
-Guess what? It's this easy.
-
-```{code-cell}
-top_supporters.to_csv("top_supporters.csv")
-``` -->
+To get the raw data out, you'll need to learn one last pandas trick. It's covered in our final chapter.

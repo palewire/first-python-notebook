@@ -38,6 +38,7 @@ merge
 compute
 sorting
 charts
+export
 ```
 
 ```{toctree}
