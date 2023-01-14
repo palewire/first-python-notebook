@@ -119,6 +119,6 @@ Finally, all of the above, plus a little more about the distribution, in one sim
 my_series.describe()
 ```
 
-Before you move on, go back the `my_list` variable and change the list. Maybe add a few more values. Or switch to odds. Then rerun all the cells above. You'll see all the statistics update to reflect the different dataset.
+Before you move on, go back to the cell with your `my_list` variable and change what's in the list. Maybe add a few more values. Or switch from evens to odds. Then rerun all the cells below it. You'll see all the statistics update to reflect the different dataset.
 
 If you substituted in a series of 10 million records, your notebook would calculate all those same statistics without you needing to write any more code. Once your data, however large or complex, is imported into pandas, there's little limit to what you can do to filter, merge, group, aggregate, compute or chart using simple methods like the ones above. In the chapter to come we’ll start doing just using that with data from a real Los Angeles Times investigation.
