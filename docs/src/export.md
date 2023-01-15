@@ -16,7 +16,7 @@ kernelspec:
 
 # Export
 
-Saving the dataframes you’ve created to your computer requires one final pandas method. It’s [`to_csv`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_csv.html), the exporting companion to `read_csv`. Append it to any dataframe and provide a filepath. That's all it takes.
+Saving the dataframes you’ve created to your computer requires one final pandas method. It’s [`to_csv`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_csv.html), an exporting companion to `read_csv`. Append it to any dataframe and provide a filepath. That's all it takes.
 
 ```{code-cell}
 :tags: [hide-cell]
@@ -33,5 +33,14 @@ merged_list['per_100k_hours'] = (merged_list.accidents / merged_list.total_hours
 ```{code-cell}
 merged_list.to_csv("accident-rate-ranking.csv")
 ```
+
+The `to_csv()` method takes several optional arguments, but the most important one is the filename argument, which is used to specify the path and name of the CSV file to be created. The `index=False` argument tells pandas to not write the index column of the DataFrame to the CSV file. You can also specify the separator used by the CSV file by passing the sep parameter. By default it's ",".
+
+
+```{code-cell}
+merged_list.to_csv("accident-rate-ranking.csv", index=False, sep=";")
+```
+
+This will create a CSV file without the index with semicolons as the separator between values.
 
 And with that, you've completed “First Python Notebook.” If you have any questions or critiques, you can get involved on [our GitHub repository](https://github.com/palewire/first-python-notebook), where all of the code that powers this site is available as open source.
