@@ -34,7 +34,7 @@ merged_list['per_100k_hours'] = (merged_list.accidents / merged_list.total_hours
 merged_list.to_csv("accident-rate-ranking.csv")
 ```
 
-The `to_csv()` method takes several optional arguments, but the most important one is the filename argument, which is used to specify the path and name of the CSV file to be created. The `index=False` keyword argument tells pandas to exclude the index column of the DataFrame. You can also specify the separator by passing the `sep` parameter. By default it's a comma.
+The `to_csv()` method takes several optional arguments, but the most important one is the filename argument, which is used to specify the path and name of the CSV file to be created. The `index=False` keyword argument tells pandas to exclude the index column of the DataFrame. You can also specify the separator by passing the `sep` parameter.
 
 
 ```{code-cell}
