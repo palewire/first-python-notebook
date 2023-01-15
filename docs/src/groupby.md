@@ -68,6 +68,8 @@ When you execute a cell, the code or text inside it will be processed and the ou
 accident_counts.rename(columns={0: "accidents"}, inplace=True)
 ```
 
+The result is a DataFrame with the accident totals we'll want to merge with the FAA survey data to calculate rates.
+
 ```{note}
 You may notice that we've configured `rename` differently than other methods so far. These are what Python calls keyword arguments. They are inputs that are passed to a function or method by explicitly specifying the name of the argument, followed by an equal sign and the value being passed. Here we used `columns` and `inplace`.
 
@@ -76,7 +78,7 @@ Keyword arguments are different from positional arguments, which are passed to a
 Also, keyword arguments are often used to specify default values for a function's parameters, this way if an argument is not passed, the default value will be used. For this reason, they are often used in pandas to override the default behavior and provide customizations beyond the out-of-the-box behavior of a method. Visiting the pandas documentation for any method, here's the page for [`rename`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rename.html), will reveal what options are available.
 ```
 
-The result is a DataFrame with the accident totals we'll want to merge with the FAA survey data to calculate rates.
+To see the result, inspect the DataFrame with `head`.
 
 ```{code-cell}
 :tags: [show-input]
