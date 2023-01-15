@@ -52,7 +52,9 @@ You will need to precisely type in the URL to the file. Feel free to copy and pa
 
 After you run the cell, you should see a big table output to your notebook. It is a “DataFrame” where pandas has structured the CSV data into rows and columns, just like Excel or other spreadsheet software might. Take a moment to look at the columns and rows in the output, which contain the data we'll use in our analysis.
 
-On the right-hand side, you'll see an bolded number incrementing up from zero that present in our source data file. This what pandas calls the [index](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Index.html). It is a separate column created automatically that is used to identify each row. The index is not considered part of the data, but is used to reference the rows of the DataFrame or Series in advanced operations that are beyond the scope of this class.
+```{note}
+On the left-hand side, you'll see an bolded number incrementing up from zero that present in our source data file. This what pandas calls the [index](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Index.html). It is a separate column created automatically that is used to identify each row. The index is not considered part of the data, but is used to reference the rows of the DataFrame or Series in advanced operations that are beyond the scope of this class.
+```
 
 A major advantage of Jupyter over spreadsheets is that rather than manipulating the data through a haphazard series of clicks and keypunches we will be gradually grinding it down using a computer programming script that is transparent and reproducible.
 
