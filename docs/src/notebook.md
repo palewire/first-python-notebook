@@ -18,18 +18,16 @@ kernelspec:
 
 You should see a new panel with an empty box at the top. That means you are all set up and ready to write Python. If you‘ve never done it before, you can remain calm. We can start out slow with some simple math.
 
-Type the following into the box, then hit the play button in the toolbar above the notebook (or hit `SHIFT+ENTER` on your keyboard). The number four should appear.
+Type the following into the box, then hit the play button in the toolbar above the notebook or hit `SHIFT+ENTER` on your keyboard. The number four should appear.
 
 ```{code-cell}
 :tags: [show-input]
 2+2
 ```
 
-There. Not so bad, right? You have just written your first code. In the jargon of Python, you have entered two [integers](https://docs.python.org/3/library/functions.html#int) and combined them using [the addition operator](https://docs.python.org/3/library/operator.html#mapping-operators-to-functions).
+There. Not so bad, right? You have just written your first code. When you execute a cell, the text inside it will be processed and the output will be displayed below the cell. If the cell contains code, it will be run by the Jupyter notebook's underlying programming language. In the jargon of Python, you have entered two [integers](https://docs.python.org/3/library/functions.html#int) and combined them using [the addition operator](https://docs.python.org/3/library/operator.html#mapping-operators-to-functions).
 
-Now try writing in your own math problem in the next cell. Maybe `2+3` or `2+200`. Whatever strikes your fancy. After you've typed it in, hit the play button or `SHIFT+ENTER`.
-
-This to-and-fro of writing Python code in a cell and then running it with the play button is the rhythm of working in a notebook.
+Now try writing in your own math problem in the next cell. Maybe `2+3` or `2+200`. Whatever strikes your fancy. After you've typed it in, hit the play button or `SHIFT+ENTER`. This to-and-fro of writing Python code in a cell and then running it with the play button is the rhythm of working in a notebook.
 
 If you get an error after you run a cell, look carefully at your code and see that it exactly matches what’s been written in the example. Here's an example of a error that I've added intentionally:
 
@@ -78,6 +76,10 @@ number + 3
 ```
 
 Now try defining your own numeric variable and doing some math with it. You can name it whatever you want. Want to try some other math operations? The `-` sign does subtraction. Multipication is `*`. Division is `/`.
+
+To add a cell in a Jupyter notebook, you can use the "Insert" menu at the top of the page and select "Insert Cell Above" or "Insert Cell Below". Alternatively, you can use the keyboard shortcut "a" to insert a cell above the current cell or "b" to insert a cell below the current cell. You can also use the "+" button in the toolbar above the notebook to insert a cell below the current cell.
+
+To remove a cell, you can select the cell and press the "dd" key. Alternatively, you can use the "Edit" menu at the top of the page and select "Delete Cells" or you can use the "scissors" button in the toolbar above the notebook to delete the selected cell. Note that when you delete a cell, everything in that cell will be lost and it cannot be undone.
 
 ```{note}
 Cells can contain variables, functions or imports. If you’ve never written code before and are unfamiliar with those terms, we recommend [“An Informal Introduction to Python”](https://docs.python.org/3/tutorial/introduction.html) and subsequent sections of python.org's official tutorial.
