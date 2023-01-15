@@ -48,6 +48,12 @@ import pandas as pd
 
 This will import the pandas library at the shorter variable name of `pd`. This is standard practice in the pandas community. You will frequently see examples of pandas code online using `pd` as shorthand. It's not required, but it's good to get in the habit so that your code is more likely to be quickly understood by other computer programmers.
 
+```{note}
+In Python, a variable is a way to store a value in memory for later use. A variable is a named location in the computer's memory where a value can be stored and retrieved. Variables are used to store data values, such as numbers, strings, lists, or objects, and they can be used throughout the program to refer to the stored value.
+
+To create your own variable in Python, you use the assignment operator (=) to assign a value to a variable. The variable name is on the left side of the assignment operator and the value is on the right side.
+```
+
 ## Conduct a simple data analysis
 
 Those two little letters contain dozens of data analysis tools that we'll use in future lessons. They can read in millions of records, compute advanced statistics, filter, sort, rank and do just about anything else you'd want to do with data.
