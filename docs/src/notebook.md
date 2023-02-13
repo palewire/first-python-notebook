@@ -77,6 +77,13 @@ number + 3
 
 Now try defining your own numeric variable and doing some math with it. You can name it whatever you want. Want to try some other math operations? The `-` sign does subtraction. Multipication is `*`. Division is `/`.
 
+Sometimes it is helpful to describe what the code is doing in case you want to share it with a colleague or return to it after some time. You can add comments in the cell by putting a hash `#` in front of the text. So, for example, we could use a comment to add extra information about the number variable.
+
+```{code-cell}
+# This is a random number
+number = 3
+```
+
 To add a cell in a Jupyter notebook, you can use the "Insert" menu at the top of the page and select "Insert Cell Above" or "Insert Cell Below". Alternatively, you can use the keyboard shortcut "a" to insert a cell above the current cell or "b" to insert a cell below the current cell. You can also use the "+" button in the toolbar above the notebook to insert a cell below the current cell.
 
 To remove a cell, you can select the cell and press the "dd" key. Alternatively, you can use the "Edit" menu at the top of the page and select "Delete Cells" or you can use the "scissors" button in the toolbar above the notebook to delete the selected cell. Note that when you delete a cell, everything in that cell will be lost and it cannot be undone.
@@ -84,5 +91,20 @@ To remove a cell, you can select the cell and press the "dd" key. Alternatively,
 ```{note}
 Cells can contain variables, functions or imports. If you’ve never written code before and are unfamiliar with those terms, we recommend [“An Informal Introduction to Python”](https://docs.python.org/3/tutorial/introduction.html) and subsequent sections of python.org's official tutorial.
 ```
+
+Everything we have done so far has been in code cells, the default cell type. We can also make text cells, which are useful for giving our notebooks some structure and organization. In the menu, there is a dropdown arrow where you can change a cell from code to Markdown — text that is styled using Markdown syntax. 
+
+These cells allow you to create headers, write descriptions, add links, and more to add context to your code. ["The Ultimate Markdown Guide"](https://medium.com/analytics-vidhya/the-ultimate-markdown-guide-for-jupyter-notebook-d5e5abf728fd) is a reference on all of the styling you can include but for now, let's try adding a heading and a bulleted list.
+
+```none
+## Hashes make headings
+- Dashes make
+- Bulleted lists
+```
+
+## Hashes make headings
+
+- Dashes make
+- Bulleted lists
 
 Once you've got the hang of making the notebook run, you’re ready to introduce pandas, the powerful Python analysis library that can do a whole lot more than add a few numbers together.
