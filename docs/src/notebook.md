@@ -92,7 +92,7 @@ To remove a cell, you can select the cell and press the "dd" key. Alternatively,
 Cells can contain variables, functions or imports. If you’ve never written code before and are unfamiliar with those terms, we recommend [“An Informal Introduction to Python”](https://docs.python.org/3/tutorial/introduction.html) and subsequent sections of python.org's official tutorial.
 ```
 
-Everything we have done so far has been in code cells, the default cell type. We can also make text cells, which are useful for giving our notebooks some structure and organization. In the menu, there is a dropdown arrow where you can change a cell from code to Markdown — text that is styled using Markdown syntax. 
+Everything we have done so far has been in code cells, the default cell type. We can also make text cells, which are useful for giving our notebooks some structure and organization. You can do this by manipulating the pulldown menu in the toolbar directly above the notebook. By default the input is set to "Code." Click the dropdown arrow and change it to ["Markdown,"](https://en.wikipedia.org/wiki/Markdown) a markup language for formatting text similar to HTML.  
 
 These cells allow you to create headers, write descriptions, add links, and more to add context to your code. ["The Ultimate Markdown Guide"](https://medium.com/analytics-vidhya/the-ultimate-markdown-guide-for-jupyter-notebook-d5e5abf728fd) is a reference on all of the styling you can include but for now, let's try adding a heading and a bulleted list.
 
