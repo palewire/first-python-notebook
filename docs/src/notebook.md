@@ -94,7 +94,7 @@ Cells can contain variables, functions or imports. If you’ve never written cod
 
 Everything we have done so far has been in code cells, the default cell type. We can also make text cells, which are useful for giving our notebooks some structure and organization. You can do this by manipulating the pulldown menu in the toolbar directly above the notebook. By default the input is set to "Code." Click the dropdown arrow and change it to ["Markdown,"](https://en.wikipedia.org/wiki/Markdown) a markup language for formatting text similar to HTML.  
 
-These cells allow you to create headers, write descriptions, add links, and more to add context to your code. ["The Ultimate Markdown Guide"](https://medium.com/analytics-vidhya/the-ultimate-markdown-guide-for-jupyter-notebook-d5e5abf728fd) is a reference on all of the styling you can include but for now, let's try adding a heading and a bulleted list.
+These cells allow you to create headers, write descriptions, add links and more to add context to your code. ["The Ultimate Markdown Guide"](https://medium.com/analytics-vidhya/the-ultimate-markdown-guide-for-jupyter-notebook-d5e5abf728fd) is a reference on all of the styling that you can draw from. For now, let's try adding a heading and a bulleted list.
 
 ```none
 ## Hashes make headings
