@@ -10,7 +10,7 @@ master_doc = "index"
 
 project = 'First Python Notebook'
 year = datetime.now().year
-copyright = f'{year} Ben Welsh'
+copyright = f'{year} palewi.re'
 
 exclude_patterns = ["_build"]
 
