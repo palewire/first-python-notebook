@@ -42,19 +42,19 @@ import altair as alt
 
 Once that’s run, we can pick up where we last left off at the bottom of the notebook. Let's try to plot our accident rate ranking as a bar chart.
 
-With Altair imported, we can now feed it our DataFrame to start charting.
+With Altair imported, we can now feed it our DataFrame to start charting. Let's take a look at the basic building block of an Altair chart: the `Chart` object. We'll tell it that we want to create a chart from `merged_list` by passing the dataframe in, like so:
 
 ```{code-cell}
 alt.Chart(merged_list)
 ```
 
-From that error, it looks like Altair wants a little more. Let’s tell it we want it to draw bars, which is Altair calls a “mark.”
+OK! We got an error, but don't panic. The error says that Altair needs a "mark" — that is to say, it needs to know not only what data we want to visualize, but also _how_ to represent that data visually. There are lots of different marks that Altair can use (You can [check them all out here](https://altair-viz.github.io/user_guide/marks.html)). But let's try out the most versatile mark in our visualization toolbox: the bar.
 
 ```{code-cell}
 alt.Chart(merged_list).mark_bar()
 ```
 
-An improvement, but we’re not there yet. At a minimum, we also need to tell Altair what to put on the x- and y-axes. We can do that by chaining on the `encode` method.
+That's an improvement, but we've got a new error: Altair doesn't know what columns of our dataframe to look at! At a minimum, we also need to define the column to use for the x- and y-axes. We can do that by chaining in the `encode` method.
 
 ```{code-cell}
 alt.Chart(merged_list).mark_bar().encode(
@@ -78,7 +78,7 @@ This chart is an okay start, but it's sorted alphabetically by y-axis value, whi
 
 We want to sort the y-axis values by their corresponding x values. We've been using the shorthand syntax to pass in our axis columns so far, but to add more customization to our chart we'll have to switch to the longform way of defining the y axis.
 
-To do that, we'll use a syntax like this: `alt.Y(column_name, arg="value")`. There are lots more arguments that you might want to pass in, like ones that will sum or average your data on the fly or limit the range you want your axis to display. In this case, we'll stick to using the `sort` option.
+To do that, we'll use a syntax like this: `alt.Y(column_name, arg="value")`. Instead of passing a string to `y`, this lets us pass in a string and then any number of named arguments. There are lots more arguments that you might want to pass in, like ones that will sum or average your data on the fly, or limit the range you want your axis to display. In this case, we'll try out the `sort` option.
 
 ```{code-cell}
 alt.Chart(merged_list).mark_bar().encode(
@@ -218,6 +218,32 @@ alt.Chart(accident_list).mark_bar().encode(
   facet="latimes_make"
 )
 ```
+
+## More marks
+The building blocks we've covered so far will get you a long way.
+
+But what if we wanted to switch it up and show this data in a slightly different form? For example, in the [LA Times story](https://www.latimes.com/projects/la-me-robinson-helicopters/), the fatal accident rate is shown as a scaled circle.
+
+We can try that out with just a few small tweaks, using Altair's `mark_circle` option. We'll keep the `y` encoding, since we still want to split out our chart by make and model. Instead of an `x` encoding, though, we'll pass in a `size` encoding, which will pin the radius of each circle to that rate calculation. And hey, while we're at it, let's throw in an interactive tooltip.
+
+```{code-cell}
+alt.Chart(merged_list).mark_circle().encode(
+    size="per_100k_hours",
+    y="latimes_make_and_model",
+     tooltip="per_100k_hours"
+)
+```
+A nice little change from all the bar charts! But once again, this is by default sorted alphabetically by name. Instead, it would be really nice to sort this by rate, as we did with the bar chart. How would we go about that?
+
+```{code-cell}
+alt.Chart(merged_list).mark_circle().encode(
+    size="per_100k_hours",
+    y=alt.Y("latimes_make_and_model",sort='-size'),
+    tooltip="per_100k_hours"
+)
+```
+
+## Polishing your chart
 
 These charts give us plenty of areas where we might want to dig in and ask more questions, but none are polished enough to pop into a news story quite yet. But there *are* lots of additional labeling, formatting and design options that you can dig into in the [Altair docs](https://altair-viz.github.io/index.html) — you can even create Altair themes to specify default color schemes and fonts.
 
