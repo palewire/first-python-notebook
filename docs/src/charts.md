@@ -29,7 +29,7 @@ import warnings
 warnings.simplefilter('ignore')
 import pandas as pd
 accident_list = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/main/docs/src/_static/ntsb-accidents.csv")
-accident_counts = accident_list.groupby(["latimes_make", "latimes_make_and_model"]).size().reset_index().rename(columns={0: "accidents"})
+accident_counts = accident_list.groupby(["latimes_make", "latimes_make_and_model"]).size().rename("accidents").reset_index()
 survey = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/main/docs/src/_static/faa-survey.csv")
 merged_list = pd.merge(accident_counts, survey, on="latimes_make_and_model")
 merged_list['per_hour'] = merged_list.accidents / merged_list.total_hours
@@ -99,6 +99,29 @@ alt.Chart(merged_list).mark_bar().encode(
 ```
 
 Yay, we made a chart!
+
+## Other marks
+
+What if we wanted to switch it up and show this data in a slightly different form? For example, in the [LA Times story](https://www.latimes.com/projects/la-me-robinson-helicopters/), the fatal accident rate is shown as a scaled circle.
+
+We can try that out with just a few small tweaks, using Altair's `mark_circle` option. We'll keep the `y` encoding, since we still want to split out our chart by make and model. Instead of an `x` encoding, though, we'll pass in a `size` encoding, which will pin the radius of each circle to that rate calculation. And hey, while we're at it, let's throw in an interactive tooltip.
+
+```{code-cell}
+alt.Chart(merged_list).mark_circle().encode(
+    size="per_100k_hours",
+    y="latimes_make_and_model",
+    tooltip="per_100k_hours"
+)
+```
+A nice little change from all the bar charts! But once again, this is by default sorted alphabetically by name. Instead, it would be really nice to sort this by rate, as we did with the bar chart. How would we go about that?
+
+```{code-cell}
+alt.Chart(merged_list).mark_circle().encode(
+    size="per_100k_hours",
+    y=alt.Y("latimes_make_and_model", sort='-size'),
+    tooltip="per_100k_hours"
+)
+```
 
 ## Add a `color`
 
@@ -216,30 +239,6 @@ alt.Chart(accident_list).mark_bar().encode(
   x="yearmonth(date)",
   y="sum(total_fatalities)",
   facet="latimes_make"
-)
-```
-
-## More marks
-The building blocks we've covered so far will get you a long way.
-
-But what if we wanted to switch it up and show this data in a slightly different form? For example, in the [LA Times story](https://www.latimes.com/projects/la-me-robinson-helicopters/), the fatal accident rate is shown as a scaled circle.
-
-We can try that out with just a few small tweaks, using Altair's `mark_circle` option. We'll keep the `y` encoding, since we still want to split out our chart by make and model. Instead of an `x` encoding, though, we'll pass in a `size` encoding, which will pin the radius of each circle to that rate calculation. And hey, while we're at it, let's throw in an interactive tooltip.
-
-```{code-cell}
-alt.Chart(merged_list).mark_circle().encode(
-    size="per_100k_hours",
-    y="latimes_make_and_model",
-     tooltip="per_100k_hours"
-)
-```
-A nice little change from all the bar charts! But once again, this is by default sorted alphabetically by name. Instead, it would be really nice to sort this by rate, as we did with the bar chart. How would we go about that?
-
-```{code-cell}
-alt.Chart(merged_list).mark_circle().encode(
-    size="per_100k_hours",
-    y=alt.Y("latimes_make_and_model",sort='-size'),
-    tooltip="per_100k_hours"
 )
 ```
 
