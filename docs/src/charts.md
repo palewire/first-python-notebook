@@ -102,7 +102,7 @@ Yay, we made a chart!
 
 ## Other marks
 
-What if we wanted to switch it up and show this data in a slightly different form? For example, in the [LA Times story](https://www.latimes.com/projects/la-me-robinson-helicopters/), the fatal accident rate is shown as a scaled circle.
+What if we wanted to switch it up and show this data in a slightly different form? For example, in the [Los Angeles Times story](https://www.latimes.com/projects/la-me-robinson-helicopters/), the fatal accident rate is shown as a scaled circle.
 
 We can try that out with just a few small tweaks, using Altair's `mark_circle` option. We'll keep the `y` encoding, since we still want to split out our chart by make and model. Instead of an `x` encoding, though, we'll pass in a `size` encoding, which will pin the radius of each circle to that rate calculation. And hey, while we're at it, let's throw in an interactive tooltip.
 
