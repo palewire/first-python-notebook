@@ -16,7 +16,7 @@ kernelspec:
 
 # Columns
 
-We’ll begin with the `latimes_make_and_model` column, which records the standardized name of each helicopter that crashed. To access its contents separate from the rest of the DataFrame, append a period to the variable followed by the column’s name. 
+We’ll begin with the `latimes_make_and_model` column, which records the standardized name of each helicopter that crashed. To access its contents separate from the rest of the DataFrame, append a pair of flat brackets with the column’s name in quotes inside. 
 
 ```{code-cell}
 :tags: [hide-cell]
@@ -27,13 +27,13 @@ accident_list = pd.read_csv("https://raw.githubusercontent.com/palewire/first-py
 
 ```{code-cell}
 :tags: [show-input]
-accident_list.latimes_make_and_model
+accident_list['latimes_make_and_model']
 ```
 
 That will list the column out as a `Series`, just like the ones we created from scratch earlier. Just as we did then, you can now start tacking on additional methods that will analyze the contents of the column.
 
 ````{note}
-You can also access columns a second way, like this: `accident_list['latimes_make_and_model']`. This method isn’t as pretty, but it’s required if your column has a space in its name, which would break the simpler dot-based method.
+You can also access columns a second way, like this: `accident_list.latimes_make_and_model`. This method is quicker to type, but it won't work if your column has a space in its name. So we're teaching the universal bracket method instead.
 ````
 
 ## Count a column's values
@@ -44,7 +44,7 @@ There’s another built-in pandas tool that will total up the frequency of value
 
 ```{code-cell}
 :tags: [show-input]
-accident_list.latimes_make_and_model.value_counts()
+accident_list['latimes_make_and_model'].value_counts()
 ```
 
 Congratulations, you've made your first finding. With that little line of code, you've calculated an important fact: During the period being studied, the Robinson R44 had more fatal accidents than any other helicopter.
@@ -55,7 +55,7 @@ You may notice that even though the result has two columns, pandas did not retur
 
 ```{code-cell}
 :tags: [show-input]
-accident_list.latimes_make_and_model.value_counts().reset_index()
+accident_list['latimes_make_and_model'].value_counts().reset_index()
 ```
 
 Why does a Series behave differently than a DataFrame? Why does `reset_index` have such a weird name?

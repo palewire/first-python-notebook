@@ -130,7 +130,7 @@ What important facet of the data is this chart *not* showing? There are two Robi
 We have that `latimes_make` column in our original dataframe, but it got lost when we created our ranking because we didn't include it in our `groupby` command. We can fix that by scrolling back up our notebook and adding it to the command. You will need to replace what's there with a list containing both columns we want to keep.
 
 ```{code-cell}
-accident_counts = accident_list.groupby(["latimes_make", "latimes_make_and_model"]).size().reset_index()
+accident_counts = accident_list.groupby(["latimes_make", "latimes_make_and_model"]).size().rename("accidents").reset_index()
 ```
 
 Rerun all of the cells below to update everything you're working with. Now if you inspect the ranking you should see the `latimes_make` column included.

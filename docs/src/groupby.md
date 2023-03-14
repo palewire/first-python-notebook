@@ -43,7 +43,7 @@ The result is much like `value_counts`, but we're allowed run to all kinds of st
 
 ```{code-cell}
 :tags: [show-input]
-accident_list.groupby("latimes_make_and_model").total_fatalities.sum()
+accident_list.groupby("latimes_make_and_model")['total_fatalities'].sum()
 ```
 
 Again our data has come back as an ugly Series. To reformat it as a pretty DataFrame use the `reset_index` method again.
@@ -53,18 +53,18 @@ Again our data has come back as an ugly Series. To reformat it as a pretty DataF
 accident_list.groupby("latimes_make_and_model").size().reset_index()
 ```
 
+You can clean up the `0` column name assigned by pandas with the `rename` method.
+
+```{code-cell}
+:tags: [show-input]
+accident_list.groupby("latimes_make_and_model").size().rename("accidents").reset_index()
+```
+
 Now save that as a variable.
 
 ```{code-cell}
 :tags: [show-input]
-accident_counts = accident_list.groupby("latimes_make_and_model").size().reset_index()
-```
-
-You can clean up the `0` column name assigned by pandas with the `rename` method. The `inplace` option, found on many pandas methods, will save the change to your variable automatically.
-
-```{code-cell}
-:tags: [show-input]
-accident_counts.rename(columns={0: "accidents"}, inplace=True)
+accident_counts = accident_list.groupby("latimes_make_and_model").size().rename("accidents").reset_index()
 ```
 
 The result is a DataFrame with the accident totals we'll want to merge with the FAA survey data to calculate rates.

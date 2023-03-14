@@ -32,14 +32,14 @@ In many cases, it’s no more complicated than combining two series using a math
 
 ```{code-cell}
 :tags: [show-input]
-merged_list.accidents / merged_list.total_hours
+merged_list['accidents'] / merged_list['total_hours']
 ```
 
 The resulting series can be added to your dataframe by assigning it to a new column. You name your column by providing it as a quoted string inside of flat brackets. Let's call this column something brief and clear like `per_hour`.
 
 ```{code-cell}
 :tags: [show-input]
-merged_list['per_hour'] = merged_list.accidents / merged_list.total_hours
+merged_list['per_hour'] = merged_list['accidents'] / merged_list['total_hours']
 ```
 
 Which, like everything else, you can inspect with the `head` command.
@@ -53,5 +53,5 @@ You can see that the result is in [scientific notation](https://en.wikipedia.org
 
 ```{code-cell}
 :tags: [show-input]
-merged_list['per_100k_hours'] = (merged_list.accidents / merged_list.total_hours) * 100_000
+merged_list['per_100k_hours'] = merged_list['per_hour'] * 100_000
 ```

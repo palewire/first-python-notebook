@@ -40,14 +40,14 @@ In the next cell we will ask pandas to narrow down our list of accidents to just
 
 ```{code-cell}
 :tags: [show-input]
-accident_list[accident_list.state == my_state]
+accident_list[accident_list['state'] == my_state]
 ```
 
 Now we should save the results of that filter into a new variable separate from the full list we imported from the CSV file. Since it includes only the sites for the state we want, let’s call it `my_accidents`.
 
 ```{code-cell}
 :tags: [show-input]
-my_accidents = accident_list[accident_list.state == my_state]
+my_accidents = accident_list[accident_list['state'] == my_state]
 ```
 
 To check our work and find out how many records are left after the filter, let's run the DataFrame inspection commands we learned earlier.
