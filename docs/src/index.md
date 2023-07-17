@@ -17,7 +17,7 @@ This textbook will teach you:
 
 ## Who can take it
 
-This course is free. If you've tried Python once or twice, have good attitude and know how to take a few code crashes in stride, you are qualified.
+This course is free. If you've tried Python once or twice, have a good attitude and know how to take a few code crashes in stride, you are qualified.
 
 ## Table of contents
 
