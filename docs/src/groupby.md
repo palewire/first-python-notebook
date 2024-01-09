@@ -67,17 +67,7 @@ Now save that as a variable.
 accident_counts = accident_list.groupby("latimes_make_and_model").size().rename("accidents").reset_index()
 ```
 
-The result is a DataFrame with the accident totals we'll want to merge with the FAA survey data to calculate rates.
-
-```{note}
-You may notice that we've configured `rename` differently than other methods so far. These are what Python calls keyword arguments. They are inputs that are passed to a function or method by explicitly specifying the name of the argument, followed by an equal sign and the value being passed. Here we used `columns` and `inplace`.
-
-Keyword arguments are different from positional arguments, which are passed to a function in the order that they are defined. Keyword arguments can be useful because they make it clear which argument is being passed and also they can be passed in any order, as long as the name of the argument is specified.
-
-Also, keyword arguments are often used to specify default values for a function's parameters, this way if an argument is not passed, the default value will be used. For this reason, they are often used in pandas to override the default behavior and provide customizations beyond the out-of-the-box behavior of a method. Visiting the pandas documentation for any method, here's the page for [`rename`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rename.html), will reveal what options are available.
-```
-
-To see the result, inspect the DataFrame with `head`.
+That will return a DataFrame with the accident totals we need to calculate a rate. Inspect it with `head`.
 
 ```{code-cell}
 :tags: [show-input]
