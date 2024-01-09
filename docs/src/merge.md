@@ -68,7 +68,9 @@ merged_list = pd.merge(accident_counts, survey, on="latimes_make_and_model")
 ```{note}
 You may notice something new with the `on="latimes_make_and_model"` bit above. It is what Python calls a [keyword argument](https://docs.python.org/3/glossary.html#term-argument). Keyword arguments are inputs passed to a function or method after explicitly specifying the name of the argument, followed by an equals sign.
 
-Keyword arguments can be useful because they make it clear which argument is being passed and also they can be passed in any order, as long as the name of the argument is specified. When creating a function, they can be used to specify a default value for a parameter. For this reason, they are commonly used in pandas to provide overrides of a method's out-of-the-box behavior. The pandas documentation for [`merge`]([https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rename.html](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.merge.html)), reveals all the keyword options available.
+Keyword arguments can be passed in any order, as long as the name of the argument is specified. When creating a function, they can be used to specify a default value for a parameter. For this reason, they are commonly to provide overrides of a method's out-of-the-box behavior.
+
+The pandas documentation for [`merge`]([https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rename.html](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.merge.html)) reveals all of the keyword options available, as well as their defaults.
 ```
 
 That new DataFrame can be inspected like any other.
