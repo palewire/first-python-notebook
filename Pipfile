@@ -14,7 +14,7 @@ myst-nb = "*"
 sphinx-multitoc-numbering = "*"
 jupyterlite = "*"
 pyarrow = "*"
-sphinx-palewire-theme = {ref = "main", git = "https://github.com/palewire/sphinx-palewire-theme"}
+sphinx-palewire-theme = "==0.0.14"
 
 [requires]
 python_version = "3.11"
