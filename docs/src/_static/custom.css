@@ -1,0 +1,10 @@
+.cell_output {
+    padding-left: 0 !important;
+    margin-top: 0 !important;
+    overflow: auto !important;
+  }
+  
+  .tag_hide-cell {
+    overflow: auto !important;
+    display: none !important;
+  }

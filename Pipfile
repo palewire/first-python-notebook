@@ -13,8 +13,8 @@ sphinx-autobuild = "*"
 myst-nb = "*"
 sphinx-multitoc-numbering = "*"
 jupyterlite = "*"
-sphinx-palewire-theme = "==0.0.13"
 pyarrow = "*"
+sphinx-palewire-theme = {ref = "main", git = "https://github.com/palewire/sphinx-palewire-theme"}
 
 [requires]
 python_version = "3.11"
