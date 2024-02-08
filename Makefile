@@ -75,11 +75,10 @@ serve: ## Test the site
 
 build: ## Build a release candidate
 	$(call banner,🏗️ Building release candidate 🏗️)
-	@cd docs && sphinx-build -b html src _build
-	@pip install --pre jupyterlite
+	@cd docs && pipenv run sphinx-build -b html src _build
 	@mkdir -p docs/_build/_extra/
 	@mkdir _dist/
-	@jupyter lite build --contents ./jupyterlite/ --output-dir=./_dist/
+	@pipenv run jupyter lite build --contents ./jupyterlite/ --output-dir=./_dist/
 	@mv ./_dist/* docs/_build/_extra/
 
 #
