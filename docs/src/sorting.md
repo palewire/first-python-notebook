@@ -11,9 +11,6 @@ kernelspec:
   name: python3
 ---
 
-```{include} ./_templates/nav.html
-```
-
 # Sort
 
 Another simple but common technique for analyzing data is sorting. This can be useful for ranking the DataFrame to show the first and last members of the table according to a particular column.

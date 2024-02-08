@@ -72,10 +72,9 @@ serve: ## Test the site
 	@rm -rf docs/jupyter_execute
 	@cd docs && $(PIPENV) make livehtml
 
+
 build: ## Build a release candidate
 	$(call banner,🏗️ Building release candidate 🏗️)
-	@pip install --upgrade pip
-	@pip install -r docs/requirements.txt
 	@cd docs && sphinx-build -b html src _build
 	@pip install --pre jupyterlite
 	@mkdir -p docs/_build/_extra/

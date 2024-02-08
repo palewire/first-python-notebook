@@ -11,9 +11,6 @@ kernelspec:
   name: python3
 ---
 
-```{include} ./_templates/nav.html
-```
-
 # Data
 
 In 2018, the Los Angeles Times published an investigation headlined, [“The Robinson R44, the world’s best-selling civilian helicopter, has a long history of deadly crashes.”](https://www.latimes.com/projects/la-me-robinson-helicopters/)

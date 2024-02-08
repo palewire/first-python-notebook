@@ -11,9 +11,6 @@ kernelspec:
   name: python3
 ---
 
-```{include} ./_templates/nav.html
-```
-
 # Export
 
 Saving the dataframes you’ve created to your computer requires one final pandas method. It’s [`to_csv`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_csv.html), an exporting companion to `read_csv`. Append it to any dataframe and provide a filepath. That's all it takes.

@@ -11,9 +11,6 @@ kernelspec:
   name: python3
 ---
 
-```{include} ./_templates/nav.html
-```
-
 # Columns
 
 We’ll begin with the `latimes_make_and_model` column, which records the standardized name of each helicopter that crashed. To access its contents separate from the rest of the DataFrame, append a pair of flat brackets with the column’s name in quotes inside. 

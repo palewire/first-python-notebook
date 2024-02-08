@@ -11,9 +11,6 @@ kernelspec:
   name: python3
 ---
 
-```{include} ./_templates/nav.html
-```
-
 # Group
 
 The [`groupby`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html) method allows you to group a DataFrame by a column and then calculate a sum, or any other statistic, for each unique value. This functions much like the ["pivot table"](https://en.wikipedia.org/wiki/Pivot_table) feature found in most spreadsheets.

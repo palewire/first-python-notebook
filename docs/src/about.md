@@ -1,6 +1,3 @@
-```{include} ./_templates/nav.html
-```
-
 # About this class
 
 This course was first developed by [Ben Welsh](https://palewi.re/who-is-ben-welsh/) for an October 2016 ["watchdog workshop"](http://www.californiacivicdata.org/2016/10/08/first-python-notebook/) organized by Investigative Reporters and Editors at San Diego State University's school of journalism.

@@ -11,9 +11,6 @@ kernelspec:
   name: python3
 ---
 
-```{include} ./_templates/nav.html
-```
-
 # Charts
 
 Python has a number of charting tools that can work hand-in-hand with pandas. While [Altair](https://altair-viz.github.io/) is a relative newbie compared to veterans like [matplotlib](https://matplotlib.org/), it’s got great documentation and is easy to configure. Let’s take it for a spin.

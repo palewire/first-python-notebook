@@ -11,9 +11,6 @@ kernelspec:
   name: python3
 ---
 
-```{include} ./_templates/nav.html
-```
-
 # Filter
 
 The most common way to filter a DataFrame is to pass an expression as an “index” that can be used to decide which records should be kept and which discarded. You write the expression by combining a column on your DataFrame with an “operator” like `==` or `>` or `<` and a value to compare against each row.

@@ -1,6 +1,3 @@
-```{include} ./_templates/nav.html
-```
-
 # JupyterLab
 
 A [Jupyter](http://jupyter.org/) notebook is a browser-based interface where you can write, run, remix and republish code.
