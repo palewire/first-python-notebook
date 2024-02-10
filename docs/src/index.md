@@ -4,8 +4,6 @@ A step-by-step guide to analyzing data with Python and the Jupyter notebook.
 
 ## What you will learn
 
-This textbook will teach you:
-
 * Just enough of the [Python](https://www.python.org/) computer-programming language to read, filter, join, group, aggregate and rank structured data with [pandas](http://pandas.pydata.org/), a popular tool for statistical analysis
 
 * How to record, remix and republish your work using [Project Jupyter](http://jupyter.org/), the emerging standard for generating reproducible research
