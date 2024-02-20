@@ -64,14 +64,17 @@ We need to change the column names from the 2024 data, so that they match previo
 
 Luckily, there's a way to do that. 
 
-Write out any column names you want to be changed in this format. The old names go to the left of the column, and the new names go to the right. Then, rename your columns in the original dataframe, *before* you concatenated it. (If you rename the columns after concatenating, you'll just end up with two columns with the same name and different variables.)
+Write out any column names you want to be changed in this format. The old names go to the left of the column, and the new names go to the right. Then, rename your columns in the dataframe containing the updated 2024 data, *before* you concatenated it with the older data. 
+
+(If you rename the columns after concatenating, you'll just end up with two columns with the same name and different variables.)
 
 ```{code-cell}
 :tags: [show-input]
 
 bad_columns = {'ntsb-model' : 'ntsb_model',
                'ntsb-number' : 'ntsb_number',
-               'total-fatalities' : 'total_fatalities'}
+               'total-fatalities' : 'total_fatalities',
+               'x' : 'y'}
 
 new_accident_list.rename(columns=bad_columns, inplace=True)
 ```
