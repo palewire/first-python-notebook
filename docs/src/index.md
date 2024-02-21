@@ -34,6 +34,7 @@ compute
 sorting
 charts
 export
+concat
 ```
 
 ```{toctree}
