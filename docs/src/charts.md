@@ -120,6 +120,45 @@ alt.Chart(merged_list).mark_circle().encode(
 )
 ```
 
+## `datetime` data
+
+One thing you'll almost certainly find yourself grappling with time and time again is date (and time) fields, so let's talk about how to handle them.
+
+Let’s see if we can do that with our original DataFrame, the `accident_list` that contains one record for every helicopter accident. We can remind ourselves what it contains with the `info` command.
+
+```{code-cell}
+accident_list.info()
+```
+
+When you import a CSV file with `read_csv` it will take a guess at column types — for example, `integer`, `float`, `boolean`, `datetime` or `string` — but it will default to a generic `object` type, which will generally behave like a string, or text, field. You can see the data types that pandas assigned to our accident list on the right hand side of the `info` table.
+
+Take a look above and you'll see that pandas is treating our `date` column as an object. That means we can't chart it using Python's system for working with dates.
+
+But we can fix that. The [`to_datetime`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html) method included with `pandas` can handle the conversion. Here's how to reassign the `date` column after making the change.
+
+```{code-cell}
+accident_list['date'] = pd.to_datetime(accident_list['date'])
+```
+
+This redefines each object in that column as a date. If your dates are in an unusual or ambiguous format, you may have to [pass in a specific formatter](https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html), but in this case pandas should be able to guess correctly.
+
+Run `info` again and you'll notice a change. The data type for `date` has changed.
+
+```{code-cell}
+accident_list.info()
+```
+
+Now that we've got that out of the way, let’s see if we can chart with it. Let's see if we can count the total fatalities over time.
+
+```{code-cell}
+alt.Chart(accident_list).mark_bar().encode(
+  x="date",
+  y="total_fatalities"
+)
+```
+
+This is great on the x axis, but it's not quite accurate on the y. To make sure this chart is accurate, we'll need to aggregate the y axis in some way.
+
 ## Add a `color`
 
 What important facet of the data is this chart *not* showing? There are two Robinson models in the ranking. It might be nice to emphasize them.
@@ -165,45 +204,6 @@ alt.Chart(merged_list).mark_bar().encode(
     title="Helicopter accident rates"
 )
 ```
-
-## `datetime` data
-
-One thing you'll almost certainly find yourself grappling with time and time again is date (and time) fields, so let's talk about how to handle them.
-
-Let’s see if we can do that with our original DataFrame, the `accident_list` that contains one record for every helicopter accident. We can remind ourselves what it contains with the `info` command.
-
-```{code-cell}
-accident_list.info()
-```
-
-When you import a CSV file with `read_csv` it will take a guess at column types — for example, `integer`, `float`, `boolean`, `datetime` or `string` — but it will default to a generic `object` type, which will generally behave like a string, or text, field. You can see the data types that pandas assigned to our accident list on the right hand side of the `info` table.
-
-Take a look above and you'll see that pandas is treating our `date` column as an object. That means we can't chart it using Python's system for working with dates.
-
-But we can fix that. The [`to_datetime`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html) method included with `pandas` can handle the conversion. Here's how to reassign the `date` column after making the change.
-
-```{code-cell}
-accident_list['date'] = pd.to_datetime(accident_list['date'])
-```
-
-This redefines each object in that column as a date. If your dates are in an unusual or ambiguous format, you may have to [pass in a specific formatter](https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html), but in this case pandas should be able to guess correctly.
-
-Run `info` again and you'll notice a change. The data type for `date` has changed.
-
-```{code-cell}
-accident_list.info()
-```
-
-Now that we've got that out of the way, let’s see if we can chart with it. Let's see if we can count the total fatalities over time.
-
-```{code-cell}
-alt.Chart(accident_list).mark_bar().encode(
-  x="date",
-  y="total_fatalities"
-)
-```
-
-This is great on the x axis, but it's not quite accurate on the y. To make sure this chart is accurate, we'll need to aggregate the y axis in some way.
 
 ## Aggregate with Altair
 
