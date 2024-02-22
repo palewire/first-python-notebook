@@ -64,7 +64,7 @@ You can access it by chaining `.str` and your desired manipulation method after 
 accident_list['latimes_make_and_model'].str.upper()
 ```
 
-While it's not useful to use in this case, we can try out the companion `lower` method to see it do the opposite.
+While it's not useful in this case, we can try out the companion `lower` method to see it do the opposite.
 
 ```{code-cell}
 :tags: [show-input]
