@@ -105,4 +105,4 @@ Before we move on to the next chapter, here's a challenge. See if you can answer
 3. What was the total number of helicopter accidents by year?
 4. Which state had the most helicopter accidents?
 
-Once you’ve written code answered those, you’re ready to move on to the next chapter.
+Once you’ve written code that generates the answers, you’re ready to move on to the next chapter.
