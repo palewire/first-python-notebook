@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# Concat
+# Concatenate
 
 ```{code-cell}
 :tags: [hide-cell]
