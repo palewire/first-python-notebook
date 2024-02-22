@@ -94,7 +94,7 @@ accident_list['latimes_make_and_model'].value_counts()
 
 Much better! We have a clean list of helicopter models and their frequencies.
 
-While this example is simple, it's a good illustration of how data cleaning is handled. In the real world, you will almost always need to clean your data before you can analyze it, and the challenges will typically be much more complex than this one. Pandas offers a wide range of tools to help you clean your data, but the basic process is always the same: Identify the problem, fix it, and then check your work. The `value_counts` method is one of the most useful tools in this process.
+In the real world, you will almost always need to clean your data before you can analyze it, though the challenges will typically be more complex than this one. Pandas offers a wide range of tools to help you clean your data, but the basic process is always the same: Identify the problem, fix it, and then check your work. The `value_counts` method is one of the most useful tools in this process.
 
 ## Pop quiz
 
