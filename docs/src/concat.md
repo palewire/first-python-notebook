@@ -31,7 +31,14 @@ Let's crack open the old notebook and see what we can do.
 ```{code-cell}
 :tags: [show-input]
 
-new_accident_list = pd.read_csv("../src/_static/ntsb-accidents-update.csv")
+new_accident_list = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/main/docs/src/_static/ntsb-accidents-update.csv")
+```
+
+Now that we've imported it, let's peek at the new data using our familiar `head()` method.
+
+```{code-cell}
+:tags: [show-input]
+
 new_accident_list.head()
 ```
 
@@ -42,6 +49,8 @@ Our columns are in a slightly different order. This happens a lot from year-to-y
 We could fix this manually. But that introduces some possibilities for error. And if the same problem happens again *next* year, where does that leave us? We just have to do it all over again.
 
 Luckily, Pandas has a built-in method for dealing with problems like this: `concat`. 
+
+This method *concatenates* multiple dataframes into one single dataframe by combining their rows and columns.
 
 ```{code-cell}
 :tags: [show-input]
@@ -72,8 +81,7 @@ Write out any column names you want to be changed in this format.
 
 bad_columns = {'ntsb-model' : 'ntsb_model',
                'ntsb-number' : 'ntsb_number',
-               'total-fatalities' : 'total_fatalities',
-               'x' : 'y'}
+               'total-fatalities' : 'total_fatalities'}
 ```
 
 This is called a `dictionary`. It's a very useful data type built into Python. It basically functions like a list, except each list item has a `key` that maps to a `value`. In our case, we'll be using the `key` to look for the current column name and the `value` to assign a new column name. 
@@ -91,7 +99,7 @@ Next, rename your columns in the dataframe containing the updated 2024 data, *be
 ```{code-cell}
 :tags: [show-input]
 
-new_accident_list.rename(columns=bad_columns, inplace=True)
+new_accident_list = new_accident_list.rename(columns=bad_columns)
 ```
 
 Okay, let's see how that worked.
@@ -103,19 +111,19 @@ new_accident_list.count()
 ```
 *This* looks more like what we want to put together. 
 
-```{note}
-
-If you're feeling really fancy, and there's a simple pattern like this, you can try using [`regex`](https://docs.python.org/3/library/re.html) and a [`lambda`](https://pandas.pydata.org/pandas-docs/version/0.19/generated/pandas.DataFrame.rename.html) function instead, to the same effect. (That's a fun one to read up on in your own time.)
-
-`df.rename(columns=lambda x: re.sub('-','_',x), inplace=True)`
-```
-
 Let's try the `concat` step again.
 
 ```{code-cell}
 :tags: [show-input]
 
 updated_accident_list = pd.concat([accident_list, new_accident_list])
+```
+
+And check our work with `count`.
+
+```{code-cell}
+:tags: [show-input]
+
 updated_accident_list.count()
 ```
 
