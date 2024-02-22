@@ -22,6 +22,7 @@ We can read it in the same way as the NTSB accident list, with `read_csv`.
 
 import pandas as pd
 accident_list = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/main/docs/src/_static/ntsb-accidents.csv")
+accident_list['latimes_make_and_model'] = accident_list['latimes_make_and_model'].str.upper()
 accident_counts = accident_list.groupby("latimes_make_and_model").size().reset_index().rename(columns={0: "accidents"})
 ```
 

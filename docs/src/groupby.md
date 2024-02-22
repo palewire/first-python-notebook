@@ -22,6 +22,7 @@ Let's use it to total up the accidents by make and model. You start by passing t
 
 import pandas as pd
 accident_list = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/main/docs/src/_static/ntsb-accidents.csv")
+accident_list['latimes_make_and_model'] = accident_list['latimes_make_and_model'].str.upper()
 ```
 
 ```{code-cell}
