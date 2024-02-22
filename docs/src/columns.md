@@ -46,6 +46,40 @@ accident_list['latimes_make_and_model'].value_counts()
 
 Congratulations, you've made your first finding. With that little line of code, you've calculated an important fact: During the period being studied, the Robinson R44 had more fatal accidents than any other helicopter.
 
+But wait. Before we congratulate ourselves, let's take a closer look at the data. Our value counts operation has turned up an imperfection that was buried in the data. Can you see it?
+
+## Cleaning data columns
+
+On closer inspection, we can see that Bell 206 helicopter is listed two different ways, as `BELL 206` and `bell 206`. The variation in capitalization is causing pandas to treat them as two distinct values, when they really ought to be tallied together into one total.
+
+This is a common problem and a simple example of how "dirty" data can trip up a computer program. The solution is to clean up the column prior to analysis.
+
+In this case, we can use the `str` method. A pandas string method is a special kind of method that can be used to manipulate text data. You can call it by adding `.str` after the column name, and then chaining the string method you want to use. In this case, we want to use the `upper` method, which will convert all of the text in the column to uppercase.
+
+```{code-cell}
+:tags: [show-input]
+
+accident_list['latimes_make_and_model'] = accident_list['latimes_make_and_model'].str.upper()
+```
+
+```{note}
+The `str` method has a lot of useful tools for cleaning up text data. You can find a full list of them in the [pandas documentation](https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html#string-methods).
+```
+
+Then we can run `value_counts` again to see if the problem has been fixed.
+
+```{code-cell}
+:tags: [show-input]
+
+accident_list['latimes_make_and_model'].value_counts()
+```
+
+Much better! Now we have a clean list of helicopter models and their frequencies.
+
+While this example is simple, it's a good illustration of how data cleaning is handled. In the real world, you will almost always need to clean your data before you can analyze it, and the challenges will typically be much more complex than this one. Pandas offers a wide range of tools to help you clean your data, but the basic process is always the same: Identify the problem, fix it, and then check your work. The `value_counts` method is one of the most useful tools in this process.
+
+## Pop quiz
+
 Before we move on to the next chapter, here's a challenge. See if you can answer a few more questions a journalist might ask about our dataset. All four of the questions below can be answered using only tricks we've covered thus far. See if you can do it.
 
 1. What was the total number of fatalities?

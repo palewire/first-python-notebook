@@ -80,7 +80,6 @@ This is called a `dictionary`. It's a very useful data type built into Python. I
 That means the old names go to the left of the column, and the new names go to the right. 
 
 ```{note}
-
 Renaming columns in a dictionary can get really handy for larger datasets. You can even create a default, reusable dictionary that renames standard or common strings to your newsroom's house style, or that changes all instances of "number" to "#". This dataset is small, but when you start analyzing datasets with thousands of columns, this can save you a lot of pain.
 ```
 
