@@ -56,7 +56,23 @@ This is a common problem and a simple example of how "dirty" data can trip up a 
 
 In this case, we can use the `str` method, which is short for string. In many computer programming languages, string is the technical term used to refer to text. Thus, the pandas `str` method is designed to manipulate a column of text. It can change the casing of text, find and replace different patterns and conduct many other useful operations.
 
-You can access by chaining `.str` and your desired manipulation method after the column name. In this case, we want to use the `upper` method, which will convert all of the text in the column to uppercase. We'll assign the result of the operation to our existing column, which will overwrite what's there with the result.
+You can access by chaining `.str` and your desired manipulation method after the column name. In this case, we want to use the `upper` method, which will convert all of the text in the column to uppercase.
+
+```{code-cell}
+:tags: [show-input]
+
+accident_list['latimes_make_and_model'].str.upper()
+```
+
+It's not useful to use in this case, but we can try out the companion `lower` method to see it do the opposite.
+
+```{code-cell}
+:tags: [show-input]
+
+accident_list['latimes_make_and_model'].str.lower()
+```
+
+To correct the bug, we need to assign the result of the `upper` operation to our existing column and overwrite what's there. We can do that with the `=` operator.
 
 ```{code-cell}
 :tags: [show-input]
