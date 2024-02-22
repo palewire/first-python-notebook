@@ -42,4 +42,4 @@ Note that returns the DataFrame resorted in ascending order from lowest to highe
 merged_list.sort_values("per_100k_hours", ascending=False)
 ```
 
-Congratulations. With that, you've recreated the heart of the analysis published in the Los Angeles Times and covered most of the basic skills necessary to access and analyze data with pandas. In our next chapter, we will show how you can chart the data with Altair.
+Congratulations. With that, you've recreated the heart of the analysis published in the Los Angeles Times and covered most of the basic skills necessary to access and analyze data with pandas. In our next chapter, we will show another pandas trick that's sure to come in handy.
