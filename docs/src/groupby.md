@@ -43,12 +43,20 @@ The result is much like `value_counts`, but we're allowed run to all kinds of st
 accident_list.groupby("latimes_make_and_model")['total_fatalities'].sum()
 ```
 
-Again our data has come back as an ugly Series. To reformat it as a pretty DataFrame use the `reset_index` method again.
+## Reset a DataFrame
+
+You may notice that even though the result of a `groupby` has two columns, pandas does not return a clean-looking table the same way other operations like `head` do. In most instances, you can convert ugly tables like the ones above into a pretty DataFrame by tacking on the `reset_index` method on the end of your code.
 
 ```{code-cell}
 :tags: [show-input]
 accident_list.groupby("latimes_make_and_model").size().reset_index()
 ```
+
+Why doesn't `groupby` return a DataFrame? Why does `reset_index` have such a weird name?
+
+Like so much in computer programming, the answer is simply, “because the people who created the library said so.” It’s important to learn that all open-source programming tools are made by humans, and humans have their quirks. Over time you’ll see pandas has more than a few.
+
+As a beginner, you should just accept the oddities and keep moving. As you get more advanced, if there’s something about the system you think could be improved you should consider [contributing](https://pandas.pydata.org/pandas-docs/stable/development/contributing.html) to the Python code that operates the library.
 
 You can clean up the `0` column name assigned by pandas with the `rename` method.
 

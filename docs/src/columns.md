@@ -46,21 +46,6 @@ accident_list['latimes_make_and_model'].value_counts()
 
 Congratulations, you've made your first finding. With that little line of code, you've calculated an important fact: During the period being studied, the Robinson R44 had more fatal accidents than any other helicopter.
 
-## Reset a DataFrame
-
-You may notice that even though the result has two columns, pandas did not return a clean-looking table in the same way as `head` did for our DataFrame. That’s because our column, a Series, acts a little bit different than the DataFrame created by `read_csv`. In most instances, you can convert ugly Series into a pretty DataFrame by tacking on the `reset_index` method on the end.
-
-```{code-cell}
-:tags: [show-input]
-accident_list['latimes_make_and_model'].value_counts().reset_index()
-```
-
-Why does a Series behave differently than a DataFrame? Why does `reset_index` have such a weird name?
-
-Like so much in computer programming, the answer is simply, “because the people who created the library said so.” It’s important to learn that all open-source programming tools are made by humans, and humans have their quirks. Over time you’ll see pandas has more than a few.
-
-As a beginner, you should just accept the oddities and keep moving. As you get more advanced, if there’s something about the system you think could be improved you should consider [contributing](https://pandas.pydata.org/pandas-docs/stable/development/contributing.html) to the Python code that operates the library.
-    
 Before we move on to the next chapter, here's a challenge. See if you can answer a few more questions a journalist might ask about our dataset. All four of the questions below can be answered using only tricks we've covered thus far. See if you can do it.
 
 1. What was the total number of fatalities?
