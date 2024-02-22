@@ -98,7 +98,7 @@ In the real world, you will almost always need to clean your data before you can
 
 ## Pop quiz
 
-Before we move on to the next chapter, here's a challenge. See if you can answer a few more questions a journalist might ask about our dataset. All four of the questions below can be answered using only tricks we've covered thus far. See if you can do it.
+Before we move on to the next chapter, here's a challenge. See if you can answer a few more questions a journalist might ask about our dataset. All four of the questions below can be answered using only tricks we've covered thus far.
 
 1. What was the total number of fatalities?
 2. Which helicopter maker had the most accidents?
