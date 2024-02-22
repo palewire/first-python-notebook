@@ -249,19 +249,46 @@ alt.Chart(merged_list).mark_bar().encode(
 )
 ```
 
- Hey now! That wasn't too hard, was it? But now there's too many colors. We would be better off if we emphasized the Robinson bars, but left the rest of the makers the default color.
+Hey now! That wasn't too hard, was it? But now there are too many colors. It would be easier to read this chart and highlight information we want readers to notice if we used one color for the Robinson bars and made everything else a different color.
 
- We can accomplish that by taking advantage of `alt.condition`, Altair's method for adding logic to the configuration of the chart. In this case, we want to set the chart one color if Robinson is the maker, and another if it isn't. Here's how to do that:
+The simplest way to do this is to hand Altair a dataframe with a column that has the values we want to color-code on. We already have the `latimes_make` columns, but in this case we don't want that many values; we just want that column to contain one value for the Robinson rows, and another value for all the other rows. It doesn't really matter what those two values are! 
+
+How might we go about creating that column? (Hint: We can adapt the technique we learned about in the Filters chapter!)
+
+One way to do this is to create a test for whether or not each row's `latimes_make` value is equal to "ROBINSON", like so:
+
+```{code-cell}
+merged_list["latimes_make"] == "ROBINSON"
+```
+That will give us a true/false list. In the Filters chapter, we used that list to filter the dataframe to only rows that matched this test. But we can also simply define a new column and save that list to it. Let's call the new column `robinson`.
+
+```{code-cell}
+merged_list["robinson"] = merged_list["latimes_make"] == "ROBINSON"
+```
+If you take a look at our `merged_list` dataframe, you should now see that new column.
+
+```{code-cell}
+merged_list.head()
+```
+Now, we can alter our chart to use that new column.
 
 ```{code-cell}
 alt.Chart(merged_list).mark_bar().encode(
     x="per_100k_hours",
     y=alt.Y("latimes_make_and_model",sort="-x"),
-    color=alt.condition(
-        alt.datum.latimes_make == "ROBINSON",
-        alt.value("orange"),
-        alt.value("steelblue")
-    )
+    color="robinson"
+).properties(
+    title="Helicopter accident rates"
+)
+```
+
+_Bonus: This is fine for exploratory use, but we don't really need that legend, since it's adding a highlight to information that's already included in the names of the helicopters. To hide it, we can use that more advanced syntax and instruct Altair to skip creating a legend._
+
+```{code-cell}
+alt.Chart(merged_list).mark_bar().encode(
+    x="per_100k_hours",
+    y=alt.Y("latimes_make_and_model",sort="-x"),
+    color=alt.Color("robinson", legend=None)
 ).properties(
     title="Helicopter accident rates"
 )
