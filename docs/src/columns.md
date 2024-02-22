@@ -76,7 +76,7 @@ accident_list['latimes_make_and_model'].str.lower()
 You can find a full list of `str` methods, along with useful examples, in the [pandas documentation](https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html#string-methods).
 ```
 
-To correct the bug, we need to assign the result of the `upper` operation to our existing column and overwrite what's there. We can do that with the `=` operator.
+To correct the bug, we need to assign the result of the `upper` method to our existing column and overwrite what's there. We can do that with the `=` operator.
 
 ```{code-cell}
 :tags: [show-input]
