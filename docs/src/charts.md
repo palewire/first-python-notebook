@@ -76,9 +76,9 @@ This chart is an okay start, but it's sorted alphabetically by y-axis value, whi
 
 We want to sort the y-axis values by their corresponding x values. We know how to do that in Pandas, but Altair has its own opinions about how to sort a dataframe, so it will override any sort order on the dataframe we pass in.
 
-Until now, we've been using the shorthand syntax to pass in our axis columns, but to add more customization to our chart we'll have to switch to the longform way of defining the y axis.
+Until now, we've been using the shorthand syntax to create our axes, but to add more customization to our chart we'll have to switch to the longform way of defining the y axis.
 
-To do that, we'll use a syntax like this: `alt.Y(column_name)`. Instead of passing a string to `y` and letting Altair do the rest, this lets us create an axis object and then give it additional instructions.
+To do that, we'll use a syntax like this: `alt.Y(column_name)`. Instead of passing a string to `y` and letting Altair do the rest, this lets us create a y axis object and then give it additional instructions.
 
 ```{code-cell}
 alt.Chart(merged_list).mark_bar().encode(
@@ -86,7 +86,7 @@ alt.Chart(merged_list).mark_bar().encode(
     y=alt.Y("latimes_make_and_model")
 )
 ```
-This chart should look identical to when you created the y axis in the simpler way, but it opens up new options! Now we can 
+This chart should look identical to when you created the y axis in the simpler way, but it opens up new options! Now we can instruct Altair to sort the y axis by the x axis values.
 
 ```{code-cell}
 alt.Chart(merged_list).mark_bar().encode(
