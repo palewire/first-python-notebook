@@ -111,7 +111,7 @@ And we can't have a chart without context. Let's throw in a title for good measu
 ```{code-cell}
 alt.Chart(merged_list).mark_bar().encode(
     x="per_100k_hours",
-    y=alt.Y("latimes_make_and_model", sort="-x")
+    y=alt.Y("latimes_make_and_model").sort("-x")
 ).properties(
     title="Helicopter accident rates"
 )
@@ -137,7 +137,7 @@ A nice little change from all the bar charts! But once again, this is by default
 ```{code-cell}
 alt.Chart(merged_list).mark_circle().encode(
     size="per_100k_hours",
-    y=alt.Y("latimes_make_and_model", sort='-size'),
+    y=alt.Y("latimes_make_and_model").sort('-size'),
     tooltip="per_100k_hours"
 )
 ```
@@ -242,7 +242,7 @@ Let's put that to use with an Altair option that we haven't used yet: `color`.
 ```{code-cell}
 alt.Chart(merged_list).mark_bar().encode(
     x="per_100k_hours",
-    y=alt.Y("latimes_make_and_model",sort="-x"),
+    y=alt.Y("latimes_make_and_model").sort("-x"),
     color="latimes_make"
 ).properties(
     title="Helicopter accident rates"
@@ -275,7 +275,7 @@ Now, we can alter our chart to use that new column.
 ```{code-cell}
 alt.Chart(merged_list).mark_bar().encode(
     x="per_100k_hours",
-    y=alt.Y("latimes_make_and_model",sort="-x"),
+    y=alt.Y("latimes_make_and_model").sort("-x"),
     color="robinson"
 ).properties(
     title="Helicopter accident rates"
@@ -287,7 +287,7 @@ _Bonus: This is fine for exploratory use, but we don't really need that legend, 
 ```{code-cell}
 alt.Chart(merged_list).mark_bar().encode(
     x="per_100k_hours",
-    y=alt.Y("latimes_make_and_model",sort="-x"),
+    y=alt.Y("latimes_make_and_model").sort("-x"),
     color=alt.Color("robinson", legend=None)
 ).properties(
     title="Helicopter accident rates"
