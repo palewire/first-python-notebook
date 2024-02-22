@@ -64,12 +64,16 @@ You can access by chaining `.str` and your desired manipulation method after the
 accident_list['latimes_make_and_model'].str.upper()
 ```
 
-It's not useful to use in this case, but we can try out the companion `lower` method to see it do the opposite.
+While it's not useful to use in this case, we can try out the companion `lower` method to see it do the opposite.
 
 ```{code-cell}
 :tags: [show-input]
 
 accident_list['latimes_make_and_model'].str.lower()
+```
+
+```{note}
+You can find a full list of `str` methods, along with useful examples, in the [pandas documentation](https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html#string-methods).
 ```
 
 To correct the bug, we need to assign the result of the `upper` operation to our existing column and overwrite what's there. We can do that with the `=` operator.
@@ -78,10 +82,6 @@ To correct the bug, we need to assign the result of the `upper` operation to our
 :tags: [show-input]
 
 accident_list['latimes_make_and_model'] = accident_list['latimes_make_and_model'].str.upper()
-```
-
-```{note}
-You can find a full list of `str` methods, along with useful examples, in the [pandas documentation](https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html#string-methods).
 ```
 
 Now we can run `value_counts` again to see if the problem has been fixed.
