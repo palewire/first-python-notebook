@@ -221,11 +221,17 @@ What important facet of the data is this chart *not* showing? There are two Robi
 
 We have that `latimes_make` column in our original dataframe, but it got lost when we created our ranking because we didn't include it in our `groupby` command. We can fix that by scrolling back up our notebook and adding it to the command. You will need to replace what's there with a list containing both columns we want to keep.
 
+```{note}
+Remember how, if we change a variable, future cells that use that variable won't change unless we run them again? When you go back and make these changes, make sure to run all of the cells that come after them, otherwise you may not get the results you're expecting.
+
+This is one reason that it can be good to clear cell outputs and rerun your analysis every so often. If you've been going back and forth, editing cells and tweaking your analysis, you may have saved variables in memory that are no longer accurate. One way to do that is to clear your "kernel" and rerun the whole notebook to make sure everything still runs as you expect it to (In the Jupyter menu, `Kernel` > `Restart Kernel and Clear All Outputs`, or `Restart Kernel and Run Up to Selected Cell`).
+```
+
 ```{code-cell}
 accident_counts = accident_list.groupby(["latimes_make", "latimes_make_and_model"]).size().rename("accidents").reset_index()
 ```
 
-Rerun all of the cells below to update everything you're working with. Now if you inspect the ranking you should see the `latimes_make` column included.
+Rerun __all__ of the cells after that one to update everything you're working with and add the new column. Now, when you inspect your `merged_list` variable the ranking you should see the `latimes_make` column included.
 
 ```{code-cell}
 merged_list.info()
