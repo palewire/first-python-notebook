@@ -54,7 +54,9 @@ On closer inspection, we can see that Bell 206 helicopter is listed two differen
 
 This is a common problem and a simple example of how "dirty" data can trip up a computer program. The solution is to clean up the column prior to analysis.
 
-In this case, we can use the `str` method. A pandas string method is a special kind of method that can be used to manipulate text data. You can call it by adding `.str` after the column name, and then chaining the string method you want to use. In this case, we want to use the `upper` method, which will convert all of the text in the column to uppercase.
+In this case, we can use the `str` method, which is short for string. In many computer programming languages, string is the technical term used to refer to text. Thus, the pandas `str` method is designed to manipulate a column of text. It can change the casing of text, find and replace different patterns and conduct many other useful operations.
+
+You can access by chaining `.str` and your desired manipulation method after the column name. In this case, we want to use the `upper` method, which will convert all of the text in the column to uppercase. We'll assign the result of the operation to our existing column, which will overwrite what's there with the result.
 
 ```{code-cell}
 :tags: [show-input]
@@ -63,10 +65,10 @@ accident_list['latimes_make_and_model'] = accident_list['latimes_make_and_model'
 ```
 
 ```{note}
-The `str` method has a lot of useful tools for cleaning up text data. You can find a full list of them in the [pandas documentation](https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html#string-methods).
+You can find a full list of `str` methods, along with useful examples, in the [pandas documentation](https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html#string-methods).
 ```
 
-Then we can run `value_counts` again to see if the problem has been fixed.
+Now we can run `value_counts` again to see if the problem has been fixed.
 
 ```{code-cell}
 :tags: [show-input]
