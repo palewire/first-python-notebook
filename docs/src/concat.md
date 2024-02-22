@@ -46,8 +46,6 @@ Okay, so we have three new accidents that we want to add in. But, hang on. Can y
 
 Our columns are in a slightly different order. This happens a lot from year-to-year in state datasets: a new data person starts, and they decide to reformat everything, but we're still using previous years (or they don't reformat previous years at all).
 
-We could fix this manually. But that introduces some possibilities for error. And if the same problem happens again *next* year, where does that leave us? We just have to do it all over again.
-
 Luckily, Pandas has a built-in method for dealing with problems like this: `concat`. 
 
 This method *concatenates* multiple dataframes into one single dataframe by combining their rows and columns.
