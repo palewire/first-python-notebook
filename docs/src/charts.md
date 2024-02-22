@@ -40,9 +40,7 @@ import altair as alt
 In a typical analysis, you'd import all of your libraries in one cell at the top of the file. That way, if you need to install or make changes to the packages a notebook uses, you know where to find them and you won't hit errors importing a package midway through running a file.
 ```
 
-Once that’s run, we can jump right in. Let's try to plot our accident rate ranking as a bar chart.
-
-With Altair imported, we can now feed it our DataFrame to start charting. Let's take a look at the basic building block of an Altair chart: the `Chart` object. We'll tell it that we want to create a chart from `merged_list` by passing the dataframe in, like so:
+With Altair imported, we can now feed it our DataFrame to make a simple bar chart. Let's take a look at the basic building block of an Altair chart: the `Chart` object. We'll tell it that we want to create a chart from `merged_list` by passing the dataframe in, like so:
 
 ```{code-cell}
 alt.Chart(merged_list)
