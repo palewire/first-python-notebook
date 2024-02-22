@@ -56,7 +56,7 @@ This is a common problem and a simple example of how "dirty" data can trip up a 
 
 In this case, we can use the `str` method, which is short for string. In many computer programming languages, string is the technical term used to refer to text. Thus, the pandas `str` method is designed to manipulate a column of text. It can change the casing of text, find and replace different patterns and conduct many other useful operations.
 
-You can access by chaining `.str` and your desired manipulation method after the column name. In this case, we want to use the `upper` method, which will convert all of the text in the column to uppercase.
+You can access it by chaining `.str` and your desired manipulation method after the column name. In this case, we want to use the `upper` method, which will convert all of the text in the column to uppercase.
 
 ```{code-cell}
 :tags: [show-input]
