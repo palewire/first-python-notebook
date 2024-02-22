@@ -181,6 +181,40 @@ alt.Chart(accident_list).mark_bar().encode(
 
 This is great on the x axis, but it's not quite accurate on the y. To make sure this chart is accurate, we'll need to aggregate the y axis in some way.
 
+## Aggregate with Altair
+
+We could back out and create a new dataset grouped by date, but Altair actually lets us do some of that grouping on the fly. We want to add everything that happens on the same date, so we'll pop in a `sum` function on our y column.
+
+```{code-cell}
+alt.Chart(accident_list).mark_bar().encode(
+  x="date",
+  y="sum(total_fatalities)"
+)
+```
+
+This is getting there. But sometimes plotting on a day-by-day basis isn't all that useful — especially over a long period of time, like we have here.
+
+Again, we could back out and create a new dataframe grouping by month, but we don't have to — in addition to standard operations (sum, mean, median, etc.), Altair gives us some handy datetime aggregation options. You can find a list of options in the [library documentation](https://altair-viz.github.io/user_guide/transform/timeunit.html).
+
+```{code-cell}
+alt.Chart(accident_list).mark_bar().encode(
+  x="yearmonth(date)",
+  y="sum(total_fatalities)",
+)
+```
+
+This is great for showing the pattern of fatalities over time, but it doesn't give us additional information that might be useful. For example, we almost certainly want to investigate the trend for each manufacturer.
+
+We could do that by adding a color encoding, like we did on the last chart. In this case, though, stacking those bars makes it a little hard to focus on amounts individually. What can do instead is to facet, which will create separate charts, one for each helicopter maker.
+
+```{code-cell}
+alt.Chart(accident_list).mark_bar().encode(
+  x="yearmonth(date)",
+  y="sum(total_fatalities)",
+  facet="latimes_make"
+)
+```
+
 ## Add a `color`
 
 What important facet of the data is this chart *not* showing? There are two Robinson models in the ranking. It might be nice to emphasize them.
@@ -224,40 +258,6 @@ alt.Chart(merged_list).mark_bar().encode(
     )
 ).properties(
     title="Helicopter accident rates"
-)
-```
-
-## Aggregate with Altair
-
-We could back out and create a new dataset grouped by date, but Altair actually lets us do some of that grouping on the fly. We want to add everything that happens on the same date, so we'll pop in a `sum` function on our y column.
-
-```{code-cell}
-alt.Chart(accident_list).mark_bar().encode(
-  x="date",
-  y="sum(total_fatalities)"
-)
-```
-
-This is getting there. But sometimes plotting on a day-by-day basis isn't all that useful — especially over a long period of time, like we have here.
-
-Again, we could back out and create a new dataframe grouping by month, but we don't have to — in addition to standard operations (sum, mean, median, etc.), Altair gives us some handy datetime aggregation options. You can find a list of options in the [library documentation](https://altair-viz.github.io/user_guide/transform/timeunit.html).
-
-```{code-cell}
-alt.Chart(accident_list).mark_bar().encode(
-  x="yearmonth(date)",
-  y="sum(total_fatalities)",
-)
-```
-
-This is great for showing the pattern of fatalities over time, but it doesn't give us additional information that might be useful. For example, we almost certainly want to investigate the trend for each manufacturer.
-
-We could do that by adding a color encoding, like we did on the last chart. In this case, though, stacking those bars makes it a little hard to focus on amounts individually. What can do instead is to facet, which will create separate charts, one for each helicopter maker.
-
-```{code-cell}
-alt.Chart(accident_list).mark_bar().encode(
-  x="yearmonth(date)",
-  y="sum(total_fatalities)",
-  facet="latimes_make"
 )
 ```
 
