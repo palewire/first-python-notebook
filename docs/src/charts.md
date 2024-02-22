@@ -17,7 +17,7 @@ Python has a number of charting tools that can work hand-in-hand with pandas. Wh
 
 ## Make a basic bar chart
 
-Head back to the import cell at the top of your notebook and add Altair. In the tradition of pandas, we'll import it with the alias `alt` to reduce how much we need to type later on. 
+The first thing we need to do is to import Altair. In the tradition of pandas, we'll import it with the alias `alt` to reduce how much we need to type later on. 
 
 ```{code-cell}
 :tags: [hide-cell]
@@ -37,10 +37,11 @@ merged_list['per_100k_hours'] = (merged_list.accidents / merged_list.total_hours
 ```{code-cell}
 import altair as alt
 ```
+```{note}
+In a typical analysis, you'd import all of your libraries in one cell at the top of the file. That way, if you need to install or make changes to the packages a notebook uses, you know where to find them and you won't hit errors importing a package midway through running a file.
+```
 
-Once that’s run, we can pick up where we last left off at the bottom of the notebook. Let's try to plot our accident rate ranking as a bar chart.
-
-With Altair imported, we can now feed it our DataFrame to start charting. Let's take a look at the basic building block of an Altair chart: the `Chart` object. We'll tell it that we want to create a chart from `merged_list` by passing the dataframe in, like so:
+With Altair imported, we can now feed it our DataFrame to make a simple bar chart. Let's take a look at the basic building block of an Altair chart: the `Chart` object. We'll tell it that we want to create a chart from `merged_list` by passing the dataframe in, like so:
 
 ```{code-cell}
 alt.Chart(merged_list)
@@ -74,14 +75,33 @@ alt.Chart(merged_list).mark_bar().encode(
 
 This chart is an okay start, but it's sorted alphabetically by y-axis value, which is pretty sloppy and hard to visually parse. Let's fix that.
 
-We want to sort the y-axis values by their corresponding x values. We've been using the shorthand syntax to pass in our axis columns so far, but to add more customization to our chart we'll have to switch to the longform way of defining the y axis.
+We want to sort the y-axis values by their corresponding x values. We know how to do that in Pandas, but Altair has its own opinions about how to sort a dataframe, so it will override any sort order on the dataframe we pass in.
 
-To do that, we'll use a syntax like this: `alt.Y(column_name, arg="value")`. Instead of passing a string to `y`, this lets us pass in a string and then any number of named arguments. There are lots more arguments that you might want to pass in, like ones that will sum or average your data on the fly, or limit the range you want your axis to display. In this case, we'll try out the `sort` option.
+Until now, we've been using the shorthand syntax to create our axes, but to add more customization to our chart we'll have to switch to the longform way of defining the y axis.
+
+To do that, we'll use a syntax like this: `alt.Y(column_name)`. Instead of passing a string to `y` and letting Altair do the rest, this lets us create a y axis object and then give it additional instructions.
 
 ```{code-cell}
 alt.Chart(merged_list).mark_bar().encode(
     x="per_100k_hours",
-    y=alt.Y("latimes_make_and_model", sort="-x")
+    y=alt.Y("latimes_make_and_model")
+)
+```
+This chart should look identical to when you created the y axis in the simpler way, but it opens up new options! Now we can instruct Altair to sort the y axis by the x axis values.
+
+```{code-cell}
+alt.Chart(merged_list).mark_bar().encode(
+    x="per_100k_hours",
+    y=alt.Y("latimes_make_and_model").sort("x")
+)
+```
+
+That's looking a lot neater! By default, the sort order will be small to large. Visually, if we want to feature the highest accident rates, it probably makes sense to reverse that order. We can do that by adding a negative before the axis name.
+
+```{code-cell}
+alt.Chart(merged_list).mark_bar().encode(
+    x="per_100k_hours",
+    y=alt.Y("latimes_make_and_model").sort("-x")
 )
 ```
 
@@ -90,7 +110,7 @@ And we can't have a chart without context. Let's throw in a title for good measu
 ```{code-cell}
 alt.Chart(merged_list).mark_bar().encode(
     x="per_100k_hours",
-    y=alt.Y("latimes_make_and_model", sort="-x")
+    y=alt.Y("latimes_make_and_model").sort("-x")
 ).properties(
     title="Helicopter accident rates"
 )
@@ -116,54 +136,8 @@ A nice little change from all the bar charts! But once again, this is by default
 ```{code-cell}
 alt.Chart(merged_list).mark_circle().encode(
     size="per_100k_hours",
-    y=alt.Y("latimes_make_and_model", sort='-size'),
+    y=alt.Y("latimes_make_and_model").sort('-size'),
     tooltip="per_100k_hours"
-)
-```
-
-## Add a `color`
-
-What important facet of the data is this chart *not* showing? There are two Robinson models in the ranking. It might be nice to emphasize them.
-
-We have that `latimes_make` column in our original dataframe, but it got lost when we created our ranking because we didn't include it in our `groupby` command. We can fix that by scrolling back up our notebook and adding it to the command. You will need to replace what's there with a list containing both columns we want to keep.
-
-```{code-cell}
-accident_counts = accident_list.groupby(["latimes_make", "latimes_make_and_model"]).size().rename("accidents").reset_index()
-```
-
-Rerun all of the cells below to update everything you're working with. Now if you inspect the ranking you should see the `latimes_make` column included.
-
-```{code-cell}
-merged_list.info()
-```
-
-Let's put that to use with an Altair option that we haven't used yet: `color`.
-
-```{code-cell}
-alt.Chart(merged_list).mark_bar().encode(
-    x="per_100k_hours",
-    y=alt.Y("latimes_make_and_model",sort="-x"),
-    color="latimes_make"
-).properties(
-    title="Helicopter accident rates"
-)
-```
-
- Hey now! That wasn't too hard, was it? But now there's too many colors. We would be better off if we emphasized the Robinson bars, but left the rest of the makers the default color.
-
- We can accomplish that by taking advantage of `alt.condition`, Altair's method for adding logic to the configuration of the chart. In this case, we want to set the chart one color if Robinson is the maker, and another if it isn't. Here's how to do that:
-
-```{code-cell}
-alt.Chart(merged_list).mark_bar().encode(
-    x="per_100k_hours",
-    y=alt.Y("latimes_make_and_model",sort="-x"),
-    color=alt.condition(
-        alt.datum.latimes_make == "ROBINSON",
-        alt.value("orange"),
-        alt.value("steelblue")
-    )
-).properties(
-    title="Helicopter accident rates"
 )
 ```
 
@@ -237,6 +211,85 @@ alt.Chart(accident_list).mark_bar().encode(
   x="yearmonth(date)",
   y="sum(total_fatalities)",
   facet="latimes_make"
+)
+```
+
+## Add a `color`
+
+What important facet of the data is this chart *not* showing? There are two Robinson models in the ranking. It might be nice to emphasize them.
+
+We have that `latimes_make` column in our original dataframe, but it got lost when we created our ranking because we didn't include it in our `groupby` command. We can fix that by scrolling back up our notebook and adding it to the command. You will need to replace what's there with a list containing both columns we want to keep.
+
+```{note}
+Remember how, if we change a variable, future cells that use that variable won't change unless we run them again? When you go back and make these changes, make sure to run all of the cells that come after them, otherwise you may not get the results you're expecting.
+
+This is one reason that it can be good to clear cell outputs and rerun your analysis every so often. If you've been going back and forth, editing cells and tweaking your analysis, you may have saved variables in memory that are no longer accurate. One way to do that is to clear your "kernel" and rerun the whole notebook to make sure everything still runs as you expect it to (In the Jupyter menu, `Kernel` > `Restart Kernel and Clear All Outputs`, or `Restart Kernel and Run Up to Selected Cell`).
+```
+
+```{code-cell}
+accident_counts = accident_list.groupby(["latimes_make", "latimes_make_and_model"]).size().rename("accidents").reset_index()
+```
+
+Rerun __all__ of the cells after that one to update everything you're working with and add the new column. Now, when you inspect your `merged_list` variable the ranking you should see the `latimes_make` column included.
+
+```{code-cell}
+merged_list.info()
+```
+
+Let's put that to use with an Altair option that we haven't used yet: `color`.
+
+```{code-cell}
+alt.Chart(merged_list).mark_bar().encode(
+    x="per_100k_hours",
+    y=alt.Y("latimes_make_and_model").sort("-x"),
+    color="latimes_make"
+).properties(
+    title="Helicopter accident rates"
+)
+```
+
+Hey now! That wasn't too hard, was it? But now there are too many colors. It would be easier to read this chart and highlight information we want readers to notice if we used one color for the Robinson bars and made everything else a different color.
+
+The simplest way to do this is to hand Altair a dataframe with a column that has the values we want to color-code on. We already have the `latimes_make` columns, but in this case we don't want that many values; we just want that column to contain one value for the Robinson rows, and another value for all the other rows. It doesn't really matter what those two values are! 
+
+How might we go about creating that column? (Hint: We can adapt the technique we learned about in the Filters chapter!)
+
+One way to do this is to create a test for whether or not each row's `latimes_make` value is equal to "ROBINSON", like so:
+
+```{code-cell}
+merged_list["latimes_make"] == "ROBINSON"
+```
+That will give us a true/false list. In the Filters chapter, we used that list to filter the dataframe to only rows that matched this test. But we can also simply define a new column and save that list to it. Let's call the new column `robinson`.
+
+```{code-cell}
+merged_list["robinson"] = merged_list["latimes_make"] == "ROBINSON"
+```
+If you take a look at our `merged_list` dataframe, you should now see that new column.
+
+```{code-cell}
+merged_list.head()
+```
+Now, we can alter our chart to use that new column.
+
+```{code-cell}
+alt.Chart(merged_list).mark_bar().encode(
+    x="per_100k_hours",
+    y=alt.Y("latimes_make_and_model").sort("-x"),
+    color="robinson"
+).properties(
+    title="Helicopter accident rates"
+)
+```
+
+_Bonus: This is fine for exploratory use, but we don't really need that legend, since it's adding a highlight to information that's already included in the names of the helicopters. To hide it, we can use that more advanced syntax and instruct Altair to skip creating a legend._
+
+```{code-cell}
+alt.Chart(merged_list).mark_bar().encode(
+    x="per_100k_hours",
+    y=alt.Y("latimes_make_and_model").sort("-x"),
+    color=alt.Color("robinson", legend=None)
+).properties(
+    title="Helicopter accident rates"
 )
 ```
 
