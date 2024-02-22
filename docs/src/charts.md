@@ -17,7 +17,7 @@ Python has a number of charting tools that can work hand-in-hand with pandas. Wh
 
 ## Make a basic bar chart
 
-Head back to the import cell at the top of your notebook and add Altair. In the tradition of pandas, we'll import it with the alias `alt` to reduce how much we need to type later on. 
+The first thing we need to do is to import Altair. In the tradition of pandas, we'll import it with the alias `alt` to reduce how much we need to type later on. 
 
 ```{code-cell}
 :tags: [hide-cell]
@@ -36,8 +36,11 @@ merged_list['per_100k_hours'] = (merged_list.accidents / merged_list.total_hours
 ```{code-cell}
 import altair as alt
 ```
+```{note}
+In a typical analysis, you'd import all of your libraries in one cell at the top of the file. That way, if you need to install or make changes to the packages a notebook uses, you know where to find them and you won't hit errors importing a package midway through running a file.
+```
 
-Once that’s run, we can pick up where we last left off at the bottom of the notebook. Let's try to plot our accident rate ranking as a bar chart.
+Once that’s run, we can jump right in. Let's try to plot our accident rate ranking as a bar chart.
 
 With Altair imported, we can now feed it our DataFrame to start charting. Let's take a look at the basic building block of an Altair chart: the `Chart` object. We'll tell it that we want to create a chart from `merged_list` by passing the dataframe in, like so:
 
