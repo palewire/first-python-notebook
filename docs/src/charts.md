@@ -76,14 +76,33 @@ alt.Chart(merged_list).mark_bar().encode(
 
 This chart is an okay start, but it's sorted alphabetically by y-axis value, which is pretty sloppy and hard to visually parse. Let's fix that.
 
-We want to sort the y-axis values by their corresponding x values. We've been using the shorthand syntax to pass in our axis columns so far, but to add more customization to our chart we'll have to switch to the longform way of defining the y axis.
+We want to sort the y-axis values by their corresponding x values. We know how to do that in Pandas, but Altair has its own opinions about how to sort a dataframe, so it will override any sort order on the dataframe we pass in.
 
-To do that, we'll use a syntax like this: `alt.Y(column_name, arg="value")`. Instead of passing a string to `y`, this lets us pass in a string and then any number of named arguments. There are lots more arguments that you might want to pass in, like ones that will sum or average your data on the fly, or limit the range you want your axis to display. In this case, we'll try out the `sort` option.
+Until now, we've been using the shorthand syntax to pass in our axis columns, but to add more customization to our chart we'll have to switch to the longform way of defining the y axis.
+
+To do that, we'll use a syntax like this: `alt.Y(column_name)`. Instead of passing a string to `y` and letting Altair do the rest, this lets us create an axis object and then give it additional instructions.
 
 ```{code-cell}
 alt.Chart(merged_list).mark_bar().encode(
     x="per_100k_hours",
-    y=alt.Y("latimes_make_and_model", sort="-x")
+    y=alt.Y("latimes_make_and_model")
+)
+```
+This chart should look identical to when you created the y axis in the simpler way, but it opens up new options! Now we can 
+
+```{code-cell}
+alt.Chart(merged_list).mark_bar().encode(
+    x="per_100k_hours",
+    y=alt.Y("latimes_make_and_model").sort("x")
+)
+```
+
+That's looking a lot neater! By default, the sort order will be small to large. Visually, if we want to feature the highest accident rates, it probably makes sense to reverse that order. We can do that by adding a negative before the axis name.
+
+```{code-cell}
+alt.Chart(merged_list).mark_bar().encode(
+    x="per_100k_hours",
+    y=alt.Y("latimes_make_and_model").sort("-x")
 )
 ```
 
