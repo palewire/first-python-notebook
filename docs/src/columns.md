@@ -46,26 +46,63 @@ accident_list['latimes_make_and_model'].value_counts()
 
 Congratulations, you've made your first finding. With that little line of code, you've calculated an important fact: During the period being studied, the Robinson R44 had more fatal accidents than any other helicopter.
 
-## Reset a DataFrame
+But wait. Before we congratulate ourselves, let's take a closer look at the data. Our value counts operation has turned up an imperfection that was buried in the data. Can you see it?
 
-You may notice that even though the result has two columns, pandas did not return a clean-looking table in the same way as `head` did for our DataFrame. That’s because our column, a Series, acts a little bit different than the DataFrame created by `read_csv`. In most instances, you can convert ugly Series into a pretty DataFrame by tacking on the `reset_index` method on the end.
+## Cleaning data columns
+
+On closer inspection, we can see that Bell 206 helicopter is listed two different ways, as `BELL 206` and `bell 206`. The variation in capitalization is causing pandas to treat them as two distinct values, when they really ought to be tallied together into one total.
+
+This is a common problem and a simple example of how "dirty" data can trip up a computer program. The solution is to clean up the column prior to analysis.
+
+In this case, we can use the `str` method, which is short for string. In many computer programming languages, string is the technical term used to refer to text. Thus, the pandas `str` method is designed to manipulate a column of text. It can change the casing of text, find and replace different patterns and conduct many other useful operations.
+
+You can access it by chaining `.str` and your desired manipulation method after the column name. In this case, we want to use the `upper` method, which will convert all of the text in the column to uppercase.
 
 ```{code-cell}
 :tags: [show-input]
-accident_list['latimes_make_and_model'].value_counts().reset_index()
+
+accident_list['latimes_make_and_model'].str.upper()
 ```
 
-Why does a Series behave differently than a DataFrame? Why does `reset_index` have such a weird name?
+While it's not useful in this case, we can try out the companion `lower` method to see it do the opposite.
 
-Like so much in computer programming, the answer is simply, “because the people who created the library said so.” It’s important to learn that all open-source programming tools are made by humans, and humans have their quirks. Over time you’ll see pandas has more than a few.
+```{code-cell}
+:tags: [show-input]
 
-As a beginner, you should just accept the oddities and keep moving. As you get more advanced, if there’s something about the system you think could be improved you should consider [contributing](https://pandas.pydata.org/pandas-docs/stable/development/contributing.html) to the Python code that operates the library.
-    
-Before we move on to the next chapter, here's a challenge. See if you can answer a few more questions a journalist might ask about our dataset. All four of the questions below can be answered using only tricks we've covered thus far. See if you can do it.
+accident_list['latimes_make_and_model'].str.lower()
+```
+
+```{note}
+You can find a full list of `str` methods, along with useful examples, in the [pandas documentation](https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html#string-methods).
+```
+
+To correct the bug, we need to assign the result of the `upper` method to our existing column and overwrite what's there. We can do that with the `=` operator.
+
+```{code-cell}
+:tags: [show-input]
+
+accident_list['latimes_make_and_model'] = accident_list['latimes_make_and_model'].str.upper()
+```
+
+Now we can run `value_counts` again to see if the problem has been fixed.
+
+```{code-cell}
+:tags: [show-input]
+
+accident_list['latimes_make_and_model'].value_counts()
+```
+
+Much better! We have a clean list of helicopter models and their frequencies.
+
+In the real world, you will almost always need to clean your data before you can analyze it, though the challenges will typically be more complex than this one. Pandas offers a wide range of tools to help you clean your data, but the basic process is always the same: Identify the problem, fix it, and then check your work. The `value_counts` method is one of the most useful tools in this process.
+
+## Pop quiz
+
+Before we move on to the next chapter, here's a challenge. See if you can answer a few more questions a journalist might ask about our dataset. All four of the questions below can be answered using only tricks we've covered thus far.
 
 1. What was the total number of fatalities?
 2. Which helicopter maker had the most accidents?
 3. What was the total number of helicopter accidents by year?
 4. Which state had the most helicopter accidents?
 
-Once you’ve written code answered those, you’re ready to move on to the next chapter.
+Once you’ve written code that generates the answers, you’re ready to move on to the next chapter.

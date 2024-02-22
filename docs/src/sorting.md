@@ -20,6 +20,7 @@ Another simple but common technique for analyzing data is sorting. This can be u
 
 import pandas as pd
 accident_list = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/main/docs/src/_static/ntsb-accidents.csv")
+accident_list['latimes_make_and_model'] = accident_list['latimes_make_and_model'].str.upper()
 accident_counts = accident_list.groupby("latimes_make_and_model").size().reset_index().rename(columns={0: "accidents"})
 survey = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/main/docs/src/_static/faa-survey.csv")
 merged_list = pd.merge(accident_counts, survey, on="latimes_make_and_model")
@@ -41,4 +42,4 @@ Note that returns the DataFrame resorted in ascending order from lowest to highe
 merged_list.sort_values("per_100k_hours", ascending=False)
 ```
 
-Congratulations. With that, you've recreated the heart of the analysis published in the Los Angeles Times and covered most of the basic skills necessary to access and analyze data with pandas. In our next chapter, we will show how you can chart the data with Altair.
+Congratulations. With that, you've recreated the heart of the analysis published in the Los Angeles Times and covered most of the basic skills necessary to access and analyze data with pandas. In our next chapter, we will show another pandas trick that's sure to come in handy.

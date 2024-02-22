@@ -32,6 +32,7 @@ groupby
 merge
 compute
 sorting
+concat
 charts
 export
 ```

@@ -20,6 +20,7 @@ Saving the dataframes you’ve created to your computer requires one final panda
 
 import pandas as pd
 accident_list = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/main/docs/src/_static/ntsb-accidents.csv")
+accident_list['latimes_make_and_model'] = accident_list['latimes_make_and_model'].str.upper()
 accident_counts = accident_list.groupby(["latimes_make", "latimes_make_and_model"]).size().reset_index().rename(columns={0: "accidents"})
 survey = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/main/docs/src/_static/faa-survey.csv")
 merged_list = pd.merge(accident_counts, survey, on="latimes_make_and_model")

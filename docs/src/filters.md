@@ -26,6 +26,7 @@ Let's try filtering against the `state` field. Save a postal code into a variabl
 
 import pandas as pd
 accident_list = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/main/docs/src/_static/ntsb-accidents.csv")
+accident_list['latimes_make_and_model'] = accident_list['latimes_make_and_model'].str.upper()
 ```
 
 ```{code-cell}
