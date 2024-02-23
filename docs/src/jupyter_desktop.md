@@ -11,7 +11,7 @@ Andrea Suozzo
 * [“A frenzy of well drilling is depleting aquifers in California farmland.”](https://github.com/datadesk/groundwater-analysis) by Gabrielle LaMarr LeMee
 * [“What it’s like to go to school when dozens have been killed nearby”](https://github.com/datadesk/highschool-homicide-analysis) by Iris Lee
 * [“City of Chicago Parking and Camera Ticket Data”](https://github.com/propublica/il-tickets-notebooks) by David Eads
-* [“Snow-Related 311 Complaints in Chicago“](https://github.com/reliablerascal/snow-clearance) by Rob Reid
+* [“Chicago's Sidewalk Snow Clearance: The North Side Complains, the South Side Gets Fined“](https://github.com/reliablerascal/snow-clearance) by Rob Reid
 
 You can find hundreds of other examples [on GitHub](https://github.com/search?q=language%3A%22Jupyter+Notebook%22&type=Repositories&ref=advsearch&l=Jupyter+Notebook&l=&s=updated&o=desc), including work by [Buzzfeed](https://github.com/BuzzFeedNews/2016-01-tennis-betting-analysis/blob/master/notebooks/tennis-analysis.ipynb), [ProPublica](https://github.com/propublica/compas-analysis/blob/master/Compas%20Analysis.ipynb), [The Economist](https://github.com/theeconomist/big-mac-data/blob/master/Big%20Mac%20data%20generator.ipynb), [POLITICO](https://github.com/The-Politico/politico-2018-district-similarity-maps/blob/master/demographic_similarity.ipynb), [The Markup](https://github.com/the-markup/investigation-isp) and [the Los Angeles Times](https://github.com/datadesk/notebooks).
 
