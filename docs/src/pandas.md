@@ -35,6 +35,8 @@ If nothing happens, that's good. It means you have pandas installed and ready as
 Since pandas is created by a third party independent from the core Python developers, it wouldn't be installed by default if you followed our [our advanced installation](/appendix/index.md) instructions.
 
 It's available to you because the JupyterLab Desktop developers have pre-selected a curated list of common utilities to include with the package, another reason to love their easy installer.
+
+If your notebook doesn't have pandas, you can install it by running `%pip install pandas` in a cell. This will download and install the library using the [pip](https://pip.pypa.io/en/stable/) package manager and Jupyter's built-in [magic command](https://ipython.readthedocs.io/en/stable/interactive/magics.html).
 ```
 
 Return to the cell with the import and rewrite it like this.
