@@ -39,7 +39,7 @@ import altair as alt
 ```
 
 ```{note}
-If the import triggers an error that says your notebook doesn't have altair, you can install it by running `%pip install altair` in a cell. This will download and install the library using the [pip](https://pip.pypa.io/en/stable/) package manager and Jupyter's built-in [magic command](https://ipython.readthedocs.io/en/stable/interactive/magics.html).
+If the import triggers an error that says your notebook doesn't have Altair, you can install it by running `%pip install altair` in a cell. This will download and install the library using the [pip](https://pip.pypa.io/en/stable/) package manager and Jupyter's built-in [magic command](https://ipython.readthedocs.io/en/stable/interactive/magics.html).
 ```
 
 In a typical analysis, you'd import all of your libraries in one cell at the top of the file. That way, if you need to install or make changes to the packages a notebook uses, you know where to find them and you won't hit errors importing a package midway through running a file.
