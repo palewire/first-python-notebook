@@ -31,13 +31,6 @@ accident_counts = accident_list.groupby("latimes_make_and_model").size().reset_i
 survey = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/main/docs/src/_static/faa-survey.csv")
 ```
 
-Before you do anything, take a peek at it with `head`.
-
-```{code-cell}
-:tags: [show-input]
-survey.head()
-```
-
 When joining two tables together, the first step is to look carefully at the columns in each table to find a common column that can be joined. We can do that with the `info` command we learned earlier.
 
 ```{code-cell}
@@ -78,7 +71,48 @@ That new DataFrame can be inspected like any other.
 merged_list.head()
 ```
 
-By looking at the columns you can check how many rows survived the merge, a precaution you should take every time you join two tables.
+Gasp! There's nothing there! What happened? Let's go back and inspect the datasets we're trying to merge.
+
+First, there were the accident counts.
+
+```{code-cell}
+:tags: [show-input]
+accident_counts.head()
+```
+
+Then, there was the FAA survey dataset.
+
+```{code-cell}
+:tags: [show-input]
+survey.head()
+```
+
+It looks like, even though the `latimes_make_and_model` column represents the same data in each dataset, the casing is messy in the FAA survey data. Raw data is usually messy (even if this particular example is a bit contrived). It's always important to inspect your data thoroughly and know how to clean it up before analyzing.
+
+Since the accident counts data is more consistent (all the text is upper case), let's modify the FAA data to match. There are a handful of ways to do this, but perhaps the most straightforward is just replacing everything in the `latimes_make_and_model` column with an uppercase copy of itself.
+
+```{code-cell}
+:tags: [show-input]
+survey['latimes_make_and_model'] = survey['latimes_make_and_model'].str.upper()
+```
+
+The `.str` bit casts the column values to a "string" (an object type in most coding languages that represents text), and then the `.upper()` function transforms the string to upper case.
+
+Now, let's try merging our data again.
+
+```{code-cell}
+:tags: [show-input]
+merged_list = pd.merge(accident_counts, survey, on="latimes_make_and_model")
+```
+
+Take a peek:
+
+```{code-cell}
+:tags: [show-input]
+merged_list.head()
+```
+
+By looking at the columns, you can check how many rows survived the merge, a precaution you should take every time you join two tables.
 
 ```{code-cell}
 :tags: [show-input]
