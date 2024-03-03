@@ -31,7 +31,7 @@ accident_counts = accident_list.groupby("latimes_make_and_model").size().reset_i
 survey = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/main/docs/src/_static/faa-survey.csv")
 ```
 
-Before you do anything, take a peek at it with with the `head`.
+Before you do anything, take a peek at it with `head`.
 
 ```{code-cell}
 :tags: [show-input]
