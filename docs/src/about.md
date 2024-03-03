@@ -1,7 +1,9 @@
-# About this class
+# First Python Notebook
 
-This course was first developed by [Ben Welsh](https://palewi.re/who-is-ben-welsh/) for an October 2016 ["watchdog workshop"](http://www.californiacivicdata.org/2016/10/08/first-python-notebook/) organized by Investigative Reporters and Editors at San Diego State University's school of journalism.
+A step-by-step guide to analyzing data with Python and the Jupyter notebook.
 
-Since then it has grown into a six-hour, hands-on training that has been taught as a massive, open online course [at the University of Texas at Austin](https://knightcenter.utexas.edu/blog/00-18396-sign-now-our-new-online-course-data-journalism-python-data-journalists-analyzing-money), become part of Stanford’s curriculum and been offered at an unbroken string of annual conferences organized by the National Institute for Computer-Assisted Reporting. Several classes have been streamed live, with [more](https://www.youtube.com/watch?v=x-y7tRpq7xM) than [one](https://www.youtube.com/watch?v=2RgPoy05AnA) available as a recording.
+.. raw:: html
 
-The class has frequently been taught with and by others, including [James Gordon](https://journalism.missouri.edu/people/james-gordon/), [Andrea Suozzo](https://andreasuozzo.com/), [Cheryl Phillips](https://comm.stanford.edu/faculty-phillips/), [Iris Lee](https://www.latimes.com/people/iris-lee), [Gabrielle LaMarr LeMee](https://linktr.ee/lamarrlemee), [Melissa Lewis](https://melissalewis.codes/), [Aaron Williams](https://acwx.net/), [Derek Willis](http://thescoop.org/), [Joe Germuska](https://about.me/joegermuska), [Kae Petrin](https://petrinkae.github.io), [Eric Sagara](https://www.linkedin.com/in/esagara), [Serdar Tumgoren](https://twitter.com/zstumgoren), [Simon Willison](https://simonwillison.net/), [David Eads](http://www.recoveredfactory.net/) and [Amy Schmitz Weiss](https://californiacivicdata.org/2017/07/12/first-python-notebook-at-sdsu/).
+    <script type="text/javascript">
+        window.location.replace('https://palewi.re/docs/first-python-notebook/');
+    </script>
