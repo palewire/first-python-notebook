@@ -23,13 +23,13 @@ Advanced users like to take advantage of Python’s power tools to have more con
 
 ## Install JupyterLab Desktop
 
-The first step is to visit [JupyterLab Desktop’s homepage on GitHub](https://github.com/jupyterlab/jupyterlab-desktop#download) in your web browser.
+The first step is to visit [JupyterLab Desktop’s homepage on GitHub](https://github.com/jupyterlab/jupyterlab-desktop) in your web browser.
 
-![jupterlab desktop homepage](/_static/jupyterlabdesktop-homepage.png)
+![Jupterlab Desktop homepage](/_static/jupyter-desktop-repo.png)
 
-Scroll down to the documentation below the code until you reach the [Download](https://github.com/jupyterlab/jupyterlab-desktop#download) section.
+Scroll down to the documentation below the code until you reach the [Installation](https://github.com/jupyterlab/jupyterlab-desktop) section.
 
-![jupyterlab desktop download](/_static/jupyterlabdesktop-download.png)
+![jupyterlab desktop download](/_static/jupyter-desktop-install.png)
 
 Then pick the link appropriate for your operating system. The installation file is large so the download might take a while.
 
@@ -47,6 +47,10 @@ Once the program is installed, you can accept the installation wizard's offer to
 
 That will open up a new window that looks something like this:
 
-![jupyterlab desktop](/_static/jupyterlabdesktop.png)
+![jupyterlab desktop splash screen](/_static/jupyter-desktop-splash.png)
 
-Hit the "Python 3" button in the launcher panel on the right and you're ready to move on to our next chapter.
+click the “New notebook…” button to open the Python interface.
+
+![jupyterlab new notebook](/_static/jupyter-desktop-blank.png)
+
+Now you're ready to move on to our next chapter.
