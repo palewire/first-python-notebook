@@ -81,9 +81,9 @@ Sometimes it is helpful to describe what the code is doing in case you want to s
 number = 3
 ```
 
-To add a cell in a Jupyter notebook, you can use the "Insert" menu at the top of the page and select "Insert Cell Above" or "Insert Cell Below". Alternatively, you can use the keyboard shortcut "a" to insert a cell above the current cell or "b" to insert a cell below the current cell. You can also use the "+" button in the toolbar above the notebook to insert a cell below the current cell.
+To add a cell in a Jupyter notebook, you can use the "+" plus button in the toolbar just above the cells. Alternatively, you can use the keyboard shortcut "a" to insert a cell above the current cell or "b" to insert a cell below the current cell.
 
-To remove a cell, you can select the cell and press the "dd" key. Alternatively, you can use the "Edit" menu at the top of the page and select "Delete Cells" or you can use the "scissors" button in the toolbar above the notebook to delete the selected cell. Note that when you delete a cell, everything in that cell will be lost and it cannot be undone.
+To remove a cell, you can select the cell and press the "d" key twice in a row. Alternatively, you can use the "Edit" menu at the top of the page and select "Delete Cells" or you can use the "scissors" button in the toolbar above the notebook to delete the selected cell. Note that when you delete a cell, everything in that cell will be lost and it cannot be undone.
 
 ```{note}
 Cells can contain variables, functions or imports. If you’ve never written code before and are unfamiliar with those terms, we recommend [“An Informal Introduction to Python”](https://docs.python.org/3/tutorial/introduction.html) and subsequent sections of python.org's official tutorial.
