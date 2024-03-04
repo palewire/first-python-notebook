@@ -21,6 +21,7 @@ accident_list = pd.read_csv("https://raw.githubusercontent.com/palewire/first-py
 accident_list['latimes_make_and_model'] = accident_list['latimes_make_and_model'].str.upper()
 accident_counts = accident_list.groupby("latimes_make_and_model").size().reset_index().rename(columns={0: "accidents"})
 survey = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/main/docs/src/_static/faa-survey.csv")
+survey['latimes_make_and_model'] = survey['latimes_make_and_model'].str.upper()
 merged_list = pd.merge(accident_counts, survey, on="latimes_make_and_model")
 ```
 
