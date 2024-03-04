@@ -21,6 +21,7 @@ accident_list = pd.read_csv("https://raw.githubusercontent.com/palewire/first-py
 accident_list['latimes_make_and_model'] = accident_list['latimes_make_and_model'].str.upper()
 accident_counts = accident_list.groupby("latimes_make_and_model").size().reset_index().rename(columns={0: "accidents"})
 survey = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/main/docs/src/_static/faa-survey.csv")
+survey['latimes_make_and_model'] = survey['latimes_make_and_model'].str.upper()
 merged_list = pd.merge(accident_counts, survey, on="latimes_make_and_model")
 ```
 
@@ -53,3 +54,12 @@ You can see that the result is in [scientific notation](https://en.wikipedia.org
 :tags: [show-input]
 merged_list['per_100k_hours'] = merged_list['per_hour'] * 100_000
 ```
+
+Have a look at the result with `head` again.
+
+```{code-cell}
+:tags: [show-input]
+merged_list.head()
+```
+
+Much better! Now lets move on to the next step, sorting our data into a ranking.
