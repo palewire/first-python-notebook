@@ -89,6 +89,46 @@ To remove a cell, you can select the cell and press the "d" key twice in a row. 
 Cells can contain variables, functions or imports. If you’ve never written code before and are unfamiliar with those terms, we recommend [“An Informal Introduction to Python”](https://docs.python.org/3/tutorial/introduction.html) and subsequent sections of python.org's official tutorial.
 ```
 
+Now let's make a list of numbers in a new notebook cell. A list is another tool Python offers for working with figures. Creating one is as simple as stringing together a set of values surrounded by brackets and separated by commas. 
+
+Lets start simple. Enter all of the even numbers between zero and ten. Name its variable something plain like `my_list`. Press play.
+
+```{code-cell}
+my_list = [2, 4, 6, 8]
+```
+
+You can do cool stuff with any list, even calculate statistics. One built-in Python function that's always available is `sum`, which adds up all the items in the list.
+
+```{code-cell}
+sum(my_list)
+```
+
+Another is `len`, an abbreviation for length, which returns how many values are contained in the list.
+
+```{code-cell}
+len(my_list)
+```
+
+Using the simple math operators we explored earlier, you can calculate the basic formula for an average by dividing the result of those two options in another cell.
+
+```{code-cell}
+sum(my_list) / len(my_list)
+```
+
+Now go back to your list and replace the even numbers with all of the odds betwee zero and ten. When you rerun all the subsequent cells you statistics should update to reflect the new values.
+
+```{code-cell}
+my_list = [1, 3, 5, 7, 9]
+```
+
+Add a very large number like 999 to the end of the list and you should see your average value shoot way up, a common issue with the statistic called and outlier or a skew. 
+
+```{code-cell}
+my_list = [1, 3, 5, 7, 9, 999]
+```
+
+The most common way to address that problem in journalism is to substitute in a different statistic for the average, typically a median. While a skilled Python programmer could conjure up some code to run that calculation here, there's no simple built-in tool like `sum` or `len`.
+
 Everything we have done so far has been in code cells, the default cell type. We can also make text cells, which are useful for giving our notebooks some structure and organization. You can do this by manipulating the pulldown menu in the toolbar directly above the notebook. By default the input is set to "Code." Click the dropdown arrow and change it to ["Markdown,"](https://en.wikipedia.org/wiki/Markdown) a markup language for formatting text similar to HTML.  
 
 These cells allow you to create headers, write descriptions, add links and more to add context to your code. ["The Ultimate Markdown Guide"](https://medium.com/analytics-vidhya/the-ultimate-markdown-guide-for-jupyter-notebook-d5e5abf728fd) is a reference on all of the styling that you can draw from. For now, let's try adding a heading and a bulleted list.

@@ -26,6 +26,12 @@ One third-party tool that's important for this class is called [pandas](http://p
 Create a new cell at the top of your notebook where we will import pandas for our use. Type in the following and hit the play button.
 
 ```{code-cell}
+:tags: [hide-cell]
+
+my_list = [1, 3, 5, 7, 9, 999]
+```
+
+```{code-cell}
 import pandas
 ```
 
@@ -57,17 +63,9 @@ To create your own variable in Python, you use the assignment operator (=) to as
 
 Those two little letters contain dozens of data analysis tools that we'll use in future lessons. They can read in millions of records, compute advanced statistics, filter, sort, rank and do just about anything else you'd want to do with data.
 
-We'll get to all of that soon enough, but let's start out with something simple.
+As we saw with the list in the last chapter, Python can do quite a bit on its own. The advantage of pandas is that it saves time by offering a even more options. 
 
-Let's make a list of numbers in a new notebook cell. To keep things simple, enter all of the even numbers between zero and ten. Name its variable something plain like `my_list`. Press play.
-
-```{code-cell}
-my_list = [2, 4, 6, 8]
-```
-
-You can do cool stuff with any list, even calculate advanced statistics, if you're a skilled Python programmer who is ready and willing to write a big chunk of code. The advantage of pandas is that it saves time by quickly and easily analyzing data with hardly any computer code at all.
-
-In this case, it's as simple as converting that plain Python list into what pandas calls a [Series](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html). Here's how to make it happen in your next cell. Let’s stick with simple variables and name it `my_series`.
+We can start to get a look at its powers by converting that plain Python list into what pandas calls a [Series](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html). Here's how to make it happen in your next cell. Let’s stick with simple variables and name it `my_series`.
 
 ```{code-cell}
 my_series = pd.Series(my_list)
@@ -75,7 +73,7 @@ my_series = pd.Series(my_list)
 
 Once the data becomes a Series, you can immediately run a wide range of [descriptive statistics](https://en.wikipedia.org/wiki/Descriptive_statistics). Let's try a few.
 
-How about summing all the numbers? Make a new cell and run this. It should spit out the total.
+How about summing all the numbers? Make a new cell and run this. It should spit out the total, just like the `sum()` function in the last chapter.
 
 ```{code-cell}
 :tags: [show-input]
@@ -96,21 +94,21 @@ The minimum value in the next.
 my_series.min()
 ```
 
-How about the average, which also known as the mean?
+How about the average?
 
 ```{code-cell}
 :tags: [show-input]
 my_series.mean()
 ```
 
-The median?
+And how about the median, which we didn't have a way to do with just Python?
 
 ```{code-cell}
 :tags: [show-input]
 my_series.median()
 ```
 
-The standard deviation?
+Let's go further. How about the standard deviation?
 
 ```{code-cell}
 :tags: [show-input]
@@ -118,24 +116,6 @@ my_series.std()
 ```
 
 Finally, all of the above, plus a little more about the distribution, in one simple command.
-
-```{code-cell}
-:tags: [show-input]
-my_series.describe()
-```
-
-Before you move on, go back to the cell with your `my_list` variable and change what's in the list. Here I'll change the values from evens to odds.
-
-```{code-cell}
-my_list = [1, 3, 5, 7, 9]
-```
-
-Then rerun all the cells below it. You'll see all the statistics update to reflect the different dataset, for instance, the final describe call change to:
-
-```{code-cell}
-:tags: [hide-cell]
-my_series = pd.Series(my_list)
-```
 
 ```{code-cell}
 :tags: [show-input]
