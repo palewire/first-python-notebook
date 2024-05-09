@@ -2,7 +2,7 @@
 
 A [Jupyter](http://jupyter.org/) notebook is a browser-based interface where you can write, run, remix and republish code.
 
-It is free software you can install and run like any other open-source library. It is used by [scientists](http://nbviewer.jupyter.org/github/robertodealmeida/notebooks/blob/master/earth_day_data_challenge/Analyzing%20whale%20tracks.ipynb), [scholars](http://nbviewer.jupyter.org/github/nealcaren/workshop_2014/blob/master/notebooks/5_Times_API.ipynb), [investors](https://github.com/rsvp/fecon235/blob/master/nb/fred-debt-pop.ipynb) and corporations to create and share their research.
+It is free software that anyone can install and run. It is used by [scientists](http://nbviewer.jupyter.org/github/robertodealmeida/notebooks/blob/master/earth_day_data_challenge/Analyzing%20whale%20tracks.ipynb), [scholars](http://nbviewer.jupyter.org/github/nealcaren/workshop_2014/blob/master/notebooks/5_Times_API.ipynb), [investors](https://github.com/rsvp/fecon235/blob/master/nb/fred-debt-pop.ipynb) and corporations to create and share their research.
 
 It is also used by journalists to develop stories and show their work. Examples published by past students and teachers of this class include:
 
@@ -13,12 +13,12 @@ Andrea Suozzo
 * [“City of Chicago Parking and Camera Ticket Data”](https://github.com/propublica/il-tickets-notebooks) by David Eads
 * [“Chicago's Sidewalk Snow Clearance: The North Side Complains, the South Side Gets Fined“](https://github.com/reliablerascal/snow-clearance) by Rob Reid
 
-You can find hundreds of other examples [on GitHub](https://github.com/search?q=language%3A%22Jupyter+Notebook%22&type=Repositories&ref=advsearch&l=Jupyter+Notebook&l=&s=updated&o=desc), including work by [Buzzfeed](https://github.com/BuzzFeedNews/2016-01-tennis-betting-analysis/blob/master/notebooks/tennis-analysis.ipynb), [ProPublica](https://github.com/propublica/compas-analysis/blob/master/Compas%20Analysis.ipynb), [The Economist](https://github.com/theeconomist/big-mac-data/blob/master/Big%20Mac%20data%20generator.ipynb), [POLITICO](https://github.com/The-Politico/politico-2018-district-similarity-maps/blob/master/demographic_similarity.ipynb), [The Markup](https://github.com/the-markup/investigation-isp) and [the Los Angeles Times](https://github.com/datadesk/notebooks).
+You can find hundreds of other examples [on GitHub](https://github.com/search?q=language%3A%22Jupyter+Notebook%22&type=Repositories&ref=advsearch&l=Jupyter+Notebook&l=&s=updated&o=desc), including notebooks published by [Buzzfeed](https://github.com/BuzzFeedNews/2016-01-tennis-betting-analysis/blob/master/notebooks/tennis-analysis.ipynb), [ProPublica](https://github.com/propublica/compas-analysis/blob/master/Compas%20Analysis.ipynb), [The Economist](https://github.com/theeconomist/big-mac-data/blob/master/Big%20Mac%20data%20generator.ipynb), [POLITICO](https://github.com/The-Politico/politico-2018-district-similarity-maps/blob/master/demographic_similarity.ipynb), [The Markup](https://github.com/the-markup/investigation-isp) and [the Los Angeles Times](https://github.com/datadesk/notebooks).
 
 There are numerous ways to install and configure Jupyter notebooks. Since this tutorial is designed for beginners, it will demonstrate how to use [JupyterLab Desktop](https://github.com/jupyterlab/jupyterlab-desktop), a self-contained application that provides a ready-to-use Python environment with several popular libraries bundled in. It can be installed on any operating system with a simple point-and-click interface.
 
 ```{note}
-Advanced users like to take advantage of Python’s power tools to have more control over when and where code is installed on their system. Readers interested in the techniques preferred by the pros should consult [our appendix](/appendix/index.md). It requires use of your computer’s command-line interface.
+Advanced users like to have more control over when and where code is installed on their system. Readers interested in the techniques preferred by the pros should consult [our appendix](/appendix/index.md). It requires use of your computer’s command-line interface.
 ```
 
 ## Install JupyterLab Desktop
@@ -49,8 +49,12 @@ That will open up a new window that looks something like this:
 
 ![jupyterlab desktop splash screen](/_static/jupyter-desktop-splash.png)
 
-click the “New notebook…” button to open the Python interface.
+```{warning}
+If you see a warning bar at the bottom of the screen that says you need to install Python, click the link provided to make that happen.
+```
+
+Click the “New notebook…” button to open the Python interface.
 
 ![jupyterlab new notebook](/_static/jupyter-desktop-blank.png)
 
-Now you're ready to move on to our next chapter.
+Welcome to your first Jupyter notebook. Now you're ready to move on to our next chapter and start writing code.

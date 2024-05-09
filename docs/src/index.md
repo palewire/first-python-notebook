@@ -12,7 +12,7 @@ A step-by-step guide to analyzing data with Python and the Jupyter notebook.
 
 ## Who can take it
 
-This course is free. If you've tried Python once or twice, have a good attitude and know how to take a few code crashes in stride, you are qualified.
+This course is free. All you need is a good attitude.
 
 ## Table of contents
 
