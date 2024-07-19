@@ -13,6 +13,10 @@ kernelspec:
 
 # Filter
 
+<div class="responsive-iframe-container">
+    <iframe class="responsive-iframe" src="https://www.youtube.com/embed/_Yfda9nIzVo?si=K4i1T6DQWfljTZjl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
 The most common way to filter a DataFrame is to pass an expression as an “index” that can be used to decide which records should be kept and which discarded. You write the expression by combining a column on your DataFrame with an “operator” like `==` or `>` or `<` and a value to compare against each row.
 
 ```{note}

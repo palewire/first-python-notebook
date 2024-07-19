@@ -13,6 +13,10 @@ kernelspec:
 
 # Group
 
+<div class="responsive-iframe-container">
+    <iframe class="responsive-iframe" src="https://www.youtube.com/embed/L27IfY7PZD0?si=WiYeGHh8DTDzoSbz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
 The [`groupby`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html) method allows you to group a DataFrame by a column and then calculate a sum, or any other statistic, for each unique value. This functions much like the ["pivot table"](https://en.wikipedia.org/wiki/Pivot_table) feature found in most spreadsheets.
 
 Let's use it to total up the accidents by make and model. You start by passing the field you want to group on to the function.

@@ -36,6 +36,10 @@ import pandas as pd
 
 ## The `read_csv` method
 
+<div class="responsive-iframe-container">
+    <iframe class="responsive-iframe" src="https://www.youtube.com/embed/XWqRkIx-BzQ?si=tXxS-F_KdzOIbp1F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
 Scroll down to the first open cell. There we will import the first CSV file using the [`read_csv`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html) function included with pandas.
 
 ```{code-cell}

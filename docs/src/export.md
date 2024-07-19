@@ -13,6 +13,10 @@ kernelspec:
 
 # Export
 
+<div class="responsive-iframe-container">
+    <iframe class="responsive-iframe" src="https://www.youtube.com/embed/m9LTVLETSeo?si=XqHQp8XQ91hP90wm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
 Saving the dataframes you’ve created to your computer requires one final pandas method. It’s [`to_csv`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_csv.html), an exporting companion to `read_csv`. Append it to any dataframe and provide a filepath. That's all it takes.
 
 ```{code-cell}

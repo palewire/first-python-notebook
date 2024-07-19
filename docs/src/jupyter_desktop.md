@@ -23,6 +23,10 @@ Advanced users like to have more control over when and where code is installed o
 
 ## Install JupyterLab Desktop
 
+<div class="responsive-iframe-container">
+    <iframe class="responsive-iframe" src="https://www.youtube.com/embed/578B63wZ7rI?si=0G3M2pFHt71J8irv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
 The first step is to visit [JupyterLab Desktop’s homepage on GitHub](https://github.com/jupyterlab/jupyterlab-desktop) in your web browser.
 
 ![Jupterlab Desktop homepage](/_static/jupyter-desktop-repo.png)
@@ -40,21 +44,3 @@ Your computer's operating system might flag the JupyterLab Desktop installer as 
 
 If your system is blocking you from installing the tool, you'll likely need to work around its barriers. For instance, on MacOS, this might require [visiting your system’s security settings](https://www.wikihow.com/Install-Software-from-Unsigned-Developers-on-a-Mac) to allow the installation. 
 ```
-
-## Open a Python 3 notebook
-
-Once the program is installed, you can accept the installation wizard's offer to immediately open the program, or you can search for "Jupyter Lab" in your operating system’s application finder.
-
-That will open up a new window that looks something like this:
-
-![jupyterlab desktop splash screen](/_static/jupyter-desktop-splash.png)
-
-```{warning}
-If you see a warning bar at the bottom of the screen that says you need to install Python, click the link provided to make that happen.
-```
-
-Click the “New notebook…” button to open the Python interface.
-
-![jupyterlab new notebook](/_static/jupyter-desktop-blank.png)
-
-Welcome to your first Jupyter notebook. Now you're ready to move on to our next chapter and start writing code.

@@ -13,6 +13,26 @@ kernelspec:
 
 # Notebooks
 
+<div class="responsive-iframe-container">
+    <iframe class="responsive-iframe"  src="https://www.youtube.com/embed/u7RC61O2B1o?si=vjhTAgGkGWhc-dPs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+Once JupyterLab Desktop is installed, you can accept the installation wizard's offer to immediately open the program, or you can search for "Jupyter Lab" in your operating system’s application finder.
+
+That will open up a new window that looks something like this:
+
+![jupyterlab desktop splash screen](/_static/jupyter-desktop-splash.png)
+
+```{warning}
+If you see a warning bar at the bottom of the screen that says you need to install Python, click the link provided to make that happen.
+```
+
+Click the “New notebook…” button to open the Python interface.
+
+![jupyterlab new notebook](/_static/jupyter-desktop-blank.png)
+
+Welcome to your first Jupyter notebook. Now you're ready to move on to writing code.
+
 You should see a new panel with an empty box at the top. That means you are all set up and ready to write Python. If you‘ve never done it before, you can remain calm. We can start out slow with some simple math.
 
 Type the following into the box, then hit the play button in the toolbar above the notebook or hit `SHIFT+ENTER` on your keyboard. The number four should appear.
@@ -23,6 +43,10 @@ Type the following into the box, then hit the play button in the toolbar above t
 ```
 
 There. Not so bad, right? You have just written your first code. When you execute a cell, the text inside it will be processed and the output will be displayed below the cell. If the cell contains code, it will be run by the Jupyter notebook's underlying programming language. In the jargon of Python, you have entered two [integers](https://docs.python.org/3/library/functions.html#int) and combined them using [the addition operator](https://docs.python.org/3/library/operator.html#mapping-operators-to-functions).
+
+<div class="responsive-iframe-container">
+    <iframe class="responsive-iframe" src="https://www.youtube.com/embed/g_pJejF0GmU?si=Dw5X91-vINPaSBOQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 Now try writing in your own math problem in the next cell. Maybe `2+3` or `2+200`. Whatever strikes your fancy. After you've typed it in, hit the play button or `SHIFT+ENTER`. This to-and-fro of writing Python code in a cell and then running it with the play button is the rhythm of working in a notebook.
 

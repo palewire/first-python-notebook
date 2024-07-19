@@ -13,6 +13,10 @@ kernelspec:
 
 # Compute
 
+<div class="responsive-iframe-container">
+    <iframe class="responsive-iframe" src="https://www.youtube.com/embed/JEzzfG8DetU?si=7dkoC3mqkk2WVCm8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
 ```{code-cell}
 :tags: [hide-cell]
 

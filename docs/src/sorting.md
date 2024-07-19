@@ -13,6 +13,10 @@ kernelspec:
 
 # Sort
 
+<div class="responsive-iframe-container">
+    <iframe class="responsive-iframe" src="https://www.youtube.com/embed/LN_P0qT5adY?si=xIG9OccCQvM2nxRw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
 Another simple but common technique for analyzing data is sorting. This can be useful for ranking the DataFrame to show the first and last members of the table according to a particular column.
 
 ```{code-cell}
