@@ -100,13 +100,12 @@ Much better! We have a clean list of helicopter models and their frequencies.
 
 In the real world, you will almost always need to clean your data before you can analyze it, though the challenges will typically be more complex than this one. Pandas offers a wide range of tools to help you clean your data, but the basic process is always the same: Identify the problem, fix it, and then check your work. The `value_counts` method is one of the most useful tools in this process.
 
-## Pop quiz
-
-Before we move on to the next chapter, here's a challenge. See if you can answer a few more questions a journalist might ask about our dataset. All four of the questions below can be answered using only tricks we've covered thus far.
+Before we move on to the next chapter, here's a challenge. See if you can answer a few more questions a journalist might ask about our dataset. All of the questions below can be answered using only tricks we've covered thus far.
 
 1. What was the total number of fatalities?
-2. Which helicopter maker had the most accidents?
-3. What was the total number of helicopter accidents by year?
-4. Which state had the most helicopter accidents?
+2. What helicopter maker had the most fatal accidents?
+3. What year had the most fatal helicopter accidents?
+4. How many fatal helicopter accidents occurred in Texas?
+5. How many different helicopter makers are in the dataset?
 
 Once you’ve written code that generates the answers, you’re ready to move on to the next chapter.

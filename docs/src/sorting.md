@@ -47,4 +47,11 @@ Note that returns the DataFrame resorted in ascending order from lowest to highe
 merged_list.sort_values("per_100k_hours", ascending=False)
 ```
 
-Congratulations. With that, you've recreated the heart of the analysis published in the Los Angeles Times and covered most of the basic skills necessary to access and analyze data with pandas. In our next chapter, we will show another pandas trick that's sure to come in handy.
+Congratulations. With that, you've recreated the heart of the analysis published in the Los Angeles Times and covered most of the basic skills necessary to access and analyze data with pandas.
+
+Before we move on, here's another quiz for you. You can answer all of these questions using only tricks we've learned thus far.
+
+1. What’s the date of the most recent fatal helicopter accident in Texas? 
+2. How many total fatalities occurred in Texas accidents?
+3. What helicopter model logged the most flight hours? 
+4. Where did the accident with the NTSB number `ERA13LA057` occur?
