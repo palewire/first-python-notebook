@@ -35,7 +35,7 @@ Scroll down to the documentation below the code until you reach the [Installatio
 
 ![jupyterlab desktop download](/_static/jupyter-desktop-install.png)
 
-Then pick the link appropriate for your operating system. The installation file is large so the download might take a while.
+Then pick the link appropriate for your operating system. The installation file is large, so the download might take a while.
 
 Find the file in your downloads directory and double click it to begin the installation process. Follow the instructions presented by the pop-up windows, sticking to the default options. 
 

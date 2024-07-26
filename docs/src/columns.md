@@ -17,7 +17,7 @@ kernelspec:
     <iframe class="responsive-iframe" src="https://www.youtube.com/embed/o_uJTbpMzJk?si=WFJS4fU5a9dl4j0w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
-We’ll begin with the `latimes_make_and_model` column, which records the standardized name of each helicopter that crashed. To access its contents separate from the rest of the DataFrame, append a pair of flat brackets with the column’s name in quotes inside. 
+We’ll begin with the `latimes_make_and_model` column, which records the standardized name of each helicopter that crashed. To access its contents separate from the rest of the DataFrame, append a pair of square brackets with the column’s name in quotes inside. 
 
 ```{code-cell}
 :tags: [hide-cell]
@@ -28,7 +28,7 @@ accident_list = pd.read_csv("https://raw.githubusercontent.com/palewire/first-py
 
 ```{code-cell}
 :tags: [show-input]
-accident_list['latimes_make_and_model']
+accident_list["latimes_make_and_model"]
 ```
 
 That will list the column out as a `Series`, just like the ones we created from scratch earlier. Just as we did then, you can now start tacking on additional methods that will analyze the contents of the column.
@@ -45,7 +45,7 @@ There’s another built-in pandas tool that will total up the frequency of value
 
 ```{code-cell}
 :tags: [show-input]
-accident_list['latimes_make_and_model'].value_counts()
+accident_list["latimes_make_and_model"].value_counts()
 ```
 
 Congratulations, you've made your first finding. With that little line of code, you've calculated an important fact: During the period being studied, the Robinson R44 had more fatal accidents than any other helicopter.
@@ -54,7 +54,7 @@ But wait. Before we congratulate ourselves, let's take a closer look at the data
 
 ## Cleaning data columns
 
-On closer inspection, we can see that Bell 206 helicopter is listed two different ways, as `BELL 206` and `bell 206`. The variation in capitalization is causing pandas to treat them as two distinct values, when they really ought to be tallied together into one total.
+On closer inspection, we can see that Bell 206 helicopter is listed two different ways, as `BELL 206` and `bell 206`. The variation in capitalization is causing pandas to treat them as two distinct values.
 
 This is a common problem and a simple example of how "dirty" data can trip up a computer program. The solution is to clean up the column prior to analysis.
 
@@ -65,7 +65,7 @@ You can access it by chaining `.str` and your desired manipulation method after 
 ```{code-cell}
 :tags: [show-input]
 
-accident_list['latimes_make_and_model'].str.upper()
+accident_list["latimes_make_and_model"].str.upper()
 ```
 
 While it's not useful in this case, we can try out the companion `lower` method to see it do the opposite.
@@ -73,7 +73,7 @@ While it's not useful in this case, we can try out the companion `lower` method 
 ```{code-cell}
 :tags: [show-input]
 
-accident_list['latimes_make_and_model'].str.lower()
+accident_list["latimes_make_and_model"].str.lower()
 ```
 
 ```{note}
@@ -85,7 +85,7 @@ To correct the bug, we need to assign the result of the `upper` method to our ex
 ```{code-cell}
 :tags: [show-input]
 
-accident_list['latimes_make_and_model'] = accident_list['latimes_make_and_model'].str.upper()
+accident_list["latimes_make_and_model"] = accident_list["latimes_make_and_model"].str.upper()
 ```
 
 Now we can run `value_counts` again to see if the problem has been fixed.
@@ -93,7 +93,7 @@ Now we can run `value_counts` again to see if the problem has been fixed.
 ```{code-cell}
 :tags: [show-input]
 
-accident_list['latimes_make_and_model'].value_counts()
+accident_list["latimes_make_and_model"].value_counts()
 ```
 
 Much better! We have a clean list of helicopter models and their frequencies.
@@ -103,8 +103,8 @@ In the real world, you will almost always need to clean your data before you can
 Before we move on to the next chapter, here's a challenge. See if you can answer a few more questions a journalist might ask about our dataset. All of the questions below can be answered using only tricks we've covered thus far.
 
 1. What was the total number of fatalities?
-2. What helicopter maker had the most fatal accidents?
-3. What year had the most fatal helicopter accidents?
+2. Which helicopter maker had the most fatal accidents?
+3. Which year had the most fatal helicopter accidents?
 4. How many fatal helicopter accidents occurred in Texas?
 5. How many different helicopter makers are in the dataset?
 

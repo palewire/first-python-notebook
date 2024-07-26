@@ -42,7 +42,7 @@ Type the following into the box, then hit the play button in the toolbar above t
 2+2
 ```
 
-There. Not so bad, right? You have just written your first code. When you execute a cell, the text inside it will be processed and the output will be displayed below the cell. If the cell contains code, it will be run by the Jupyter notebook's underlying programming language. In the jargon of Python, you have entered two [integers](https://docs.python.org/3/library/functions.html#int) and combined them using [the addition operator](https://docs.python.org/3/library/operator.html#mapping-operators-to-functions).
+There. Not so bad, right? You have just written your first line of code. When you execute a cell, the text inside it will be processed and the output will be displayed below the cell. If the cell contains code, it will be run by the Jupyter notebook's underlying programming language. In the jargon of Python, you have entered two [integers](https://docs.python.org/3/library/functions.html#int) and combined them using [the addition operator](https://docs.python.org/3/library/operator.html#mapping-operators-to-functions).
 
 <div class="responsive-iframe-container">
     <iframe class="responsive-iframe" src="https://www.youtube.com/embed/g_pJejF0GmU?si=Dw5X91-vINPaSBOQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -50,7 +50,7 @@ There. Not so bad, right? You have just written your first code. When you execut
 
 Now try writing in your own math problem in the next cell. Maybe `2+3` or `2+200`. Whatever strikes your fancy. After you've typed it in, hit the play button or `SHIFT+ENTER`. This to-and-fro of writing Python code in a cell and then running it with the play button is the rhythm of working in a notebook.
 
-If you get an error after you run a cell, look carefully at your code and see that it exactly matches what’s been written in the example. Here's an example of a error that I've added intentionally:
+If you get an error after you run a cell, look carefully at your code and check whether it exactly matches what’s been written in the example. Here's an example of a error that I've added intentionally:
 
 ```{code-cell}
 :tags: [show-input,raises-exception]
@@ -79,7 +79,7 @@ Then adding it to another value in the next cell:
 number + 3
 ```
 
-Run those two cells in succession and the notebook should output the number five. 
+Run those two cells in succession and the notebook should output the number 5. 
 
 Change the `number` value to 3 and run both cells again. Instead of 5, it should now output 6.
 
@@ -113,9 +113,9 @@ To remove a cell, you can select the cell and press the "d" key twice in a row. 
 Cells can contain variables, functions or imports. If you’ve never written code before and are unfamiliar with those terms, we recommend [“An Informal Introduction to Python”](https://docs.python.org/3/tutorial/introduction.html) and subsequent sections of python.org's official tutorial.
 ```
 
-Now let's make a list of numbers in a new notebook cell. A list is another tool Python offers for working with figures. Creating one is as simple as stringing together a set of values surrounded by brackets and separated by commas. 
+Now let's make a list of numbers in a new notebook cell. A list is another tool Python offers for working with figures. Creating one is as simple as stringing together a set of values surrounded by square brackets and separated by commas. 
 
-Lets start simple. Enter all of the even numbers between zero and ten. Name its variable something plain like `my_list`. Press play.
+Let's start simple. Enter all of the even numbers between zero and ten. Name its variable something plain like `my_list`. Press play.
 
 ```{code-cell}
 my_list = [2, 4, 6, 8]
@@ -139,13 +139,13 @@ Using the simple math operators we explored earlier, you can calculate the basic
 sum(my_list) / len(my_list)
 ```
 
-Now go back to your list and replace the even numbers with all of the odds betwee zero and ten. When you rerun all the subsequent cells you statistics should update to reflect the new values.
+Now go back to your list and replace the even numbers with all of the odds between zero and ten. When you rerun all the subsequent cells your statistics should update to reflect the new values.
 
 ```{code-cell}
 my_list = [1, 3, 5, 7, 9]
 ```
 
-Add a very large number like 999 to the end of the list and you should see your average value shoot way up, a common issue with the statistic called and outlier or a skew. 
+Add a very large number like 999 to the end of the list and you should see your average value shoot way up, a common issue in statistics called an outlier or a skew. 
 
 ```{code-cell}
 my_list = [1, 3, 5, 7, 9, 999]
