@@ -24,7 +24,7 @@ The findings were drawn from two key datasets:
 1. The National Transportation Safety Board's [Aviation Accident Database](https://www.ntsb.gov/_layouts/ntsb.aviation/index.aspx)
 2. The Federal Aviation Administration's [General Aviation and Part 135 Activity Survey](https://www.faa.gov/data_research/aviation_data_statistics/general_aviation/)
 
-After a significant amount of work gathering and cleaning the source data, the number of accidents for each helicopter model were normalized using the flight hours estimates in the survey. For the purposes of this demonstration, we will read in tidied versions of each file that are ready for analysis.
+After a significant amount of work gathering and cleaning the source data, the number of accidents for each helicopter model were normalized using the flight hour estimates in the survey. For the purposes of this demonstration, we will read in tidied versions of each file that are ready for analysis.
 
 The data are structured in rows of comma-separated values. This is known as a [CSV file](https://en.wikipedia.org/wiki/Comma-separated\_values). It is the most common way you will find data published online. The pandas library is able to read in files from a variety formats, including CSV.
 
@@ -48,18 +48,18 @@ pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/ma
 ```
 
 ```{warning}
-You will need to precisely type in the URL to the file. Feel free to copy and paste it from the example above into your notebook.
+You will exact URL shared in the above example to access the file. While you could laboriously type it out, feel free to copy and paste it from the example into your notebook.
 ```
 
 After you run the cell, you should see a big table output to your notebook. It is a “DataFrame” where pandas has structured the CSV data into rows and columns, just like Excel or other spreadsheet software might. Take a moment to look at the columns and rows in the output, which contain the data we'll use in our analysis.
 
 ```{note}
-On the left-hand side, you'll see an bolded number incrementing up from zero that present in our source data file. This what pandas calls the [index](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Index.html). It is a separate column created automatically that is used to identify each row. The index is not considered part of the data, but is used to reference the rows of the DataFrame or Series in advanced operations that are beyond the scope of this class.
+On the left-hand side, you'll see an bolded number incrementing upward from zero that's present in our source data file. This what pandas calls the [index](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Index.html). It is a separate column created automatically and used to identify each row. The index is not considered part of the data, but it is used to reference the rows of the DataFrame or Series in advanced operations that are beyond the scope of this class.
 ```
 
-A major advantage of Jupyter over spreadsheets is that rather than manipulating the data through a haphazard series of clicks and keypunches we will be gradually grinding it down using a computer programming script that is transparent and reproducible.
+A major advantage of Jupyter over spreadsheets is that rather than manipulating the data through a haphazard series of clicks and keypunches, we will be gradually grinding it down using a computer programming script that is transparent and reproducible.
 
-In order to do more with your DataFrame, we need to store it so it can be reused in subsequent cells. We can do this by saving in a variable, just as we did in with our `number` in chapter two.
+In order to do more with your DataFrame, we need to store it so it can be reused in subsequent cells. We can do this by saving it in a variable, just as we did in with our `number` in Chapter 2.
 
 Go back to your latest cell and change it to this. Rerun it.
 
@@ -73,14 +73,14 @@ We can do this by calling ["methods"](https://en.wikipedia.org/wiki/Method_(comp
 
 ## The `head` method
 
-To preview the first few rows of the dataset, try the [`head`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.head.html) method. Add a new cell and type this in and hit the play button again.
+To preview the first few rows of the dataset, try the [`head`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.head.html) method. Add a new cell, type this in and hit the play button again.
 
 ```{code-cell}
 :tags: [show-input]
 accident_list.head()
 ```
 
-It does the first five by default. If you want a different number, submit it as an input.
+It serves up the first five rows by default. If you want a different number, submit it as an input.
 
 ```{code-cell}
 :tags: [show-input]

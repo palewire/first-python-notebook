@@ -24,7 +24,7 @@ pipenv install
 
 ## Contributing
 
-To start a test server the previews the site, use the following command:
+To start a test server that previews the site, use the following command:
 
 ```bash
 make serve

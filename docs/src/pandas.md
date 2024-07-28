@@ -39,10 +39,10 @@ my_list = [1, 3, 5, 7, 9, 999]
 import pandas
 ```
 
-If nothing happens, that's good. It means you have pandas installed and ready as to use.
+If nothing happens, that's good. It means you have pandas installed and ready to use.
 
 ```{note}
-Since pandas is created by a third party independent from the core Python developers, it wouldn't be installed by default if you followed our [our advanced installation](/appendix/index.md) instructions.
+Since pandas is created by a third party independent from the core Python developers, it wouldn't be installed by default if you followed our [advanced installation](/appendix/index.md) instructions.
 
 It's available to you because the JupyterLab Desktop developers have pre-selected a curated list of common utilities to include with the package, another reason to love their easy installer.
 
@@ -60,14 +60,14 @@ This will import the pandas library at the shorter variable name of `pd`. This i
 ```{note}
 In Python, a variable is a way to store a value in memory for later use. A variable is a named location in the computer's memory where a value can be stored and retrieved. Variables are used to store data values, such as numbers, strings, lists, or objects, and they can be used throughout the program to refer to the stored value.
 
-To create your own variable in Python, you use the assignment operator (=) to assign a value to a variable. The variable name is on the left side of the assignment operator and the value is on the right side.
+To create your own variable in Python, you use the assignment operator (`=`) to assign a value to a variable. The variable name is on the left side of the assignment operator and the value is on the right side.
 ```
 
 ## Conduct a simple data analysis
 
 Those two little letters contain dozens of data analysis tools that we'll use in future lessons. They can read in millions of records, compute advanced statistics, filter, sort, rank and do just about anything else you'd want to do with data.
 
-As we saw with the list in the last chapter, Python can do quite a bit on its own. The advantage of pandas is that it saves time by offering a even more options. 
+As we saw with the list in the last chapter, Python can do quite a bit on its own. The advantage of pandas is that it saves time by offering even more options. 
 
 We can start to get a look at its powers by converting that plain Python list into what pandas calls a [Series](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html). Here's how to make it happen in your next cell. Let’s stick with simple variables and name it `my_series`.
 

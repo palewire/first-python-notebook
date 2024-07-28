@@ -47,7 +47,7 @@ Interested in learning more about how to publish data online? Check out ["First 
 ```
 
 
-The `to_csv()` method accepts several additional optional arguments. The most important one is the filename input, which is used to specify the path and name of the file that will be created. The `index=False` keyword argument tells pandas to exclude the index column of the DataFrame. You can also specify the separator by passing the `sep` parameter.
+The `to_csv()` method accepts several optional arguments. The most important one is the filename input, which is used to specify the path and name of the file that will be created. The `index=False` keyword argument tells pandas to exclude the index column of the DataFrame. You can also specify the separator by passing the `sep` parameter.
 
 
 ```{code-cell}

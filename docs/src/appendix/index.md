@@ -5,7 +5,7 @@
 
 While there are numerous ways to install and configure Jupyter notebooks, advanced users like to take advantage of Python’s power tools to have more control over when and where code is installed on their system.
 
-This guide will demonstrate how to install everything you computer needs to play like the pros.
+This guide will demonstrate how to install everything your computer needs to play like the pros.
 
 ```{contents} Sections
   :depth: 1
@@ -46,7 +46,7 @@ If you see a number starting with 2, like say ...
 Python 2.7.12
 ```
 
-...then you have an outdated version of Python and will need to upgrade to a version starting with a three. You can probably complete the class without doing so, but the maintainers of Python are gradually phasing out version two and officially recommend you upgrade.
+...then you have an outdated version of Python and will need to upgrade to a version starting with a 3. You can probably complete the class without doing so, but the maintainers of Python are gradually phasing out version 2 and officially recommend you upgrade.
 
 Instructions for both new installations and upgrades can be found [here](https://docs.python-guide.org/starting/installation/).
 
@@ -58,7 +58,7 @@ By default, Python's third-party packages are all installed in a shared "global"
 
 This approach is fine for your first experiments with Python, but it quickly falls apart when you start to get serious about coding.
 
-For instance, say you develop a web application today with [Flask](https://palletsprojects.com/p/flask/) version 1.1. What if, a year from now, you want to start a new project and use a newer version of Flask? Your old app is still live and requires occasional patches, but you don't have time to re-write all of your old to make it compatible with the latest version of Flask.
+For instance, say you develop a web application today with [Flask](https://palletsprojects.com/p/flask/) version 1.1. What if, a year from now, you want to start a new project and use a newer version of Flask? Your old app is still live and requires occasional patches, but you don't have time to re-write all of your old code to make it compatible with the latest version of Flask.
 
 Open-source projects are changing every day and such conflicts are common, especially when you factor in the sub-dependencies of your project’s direct dependencies, as well as the sub-dependencies of those sub-dependencies.
 
@@ -106,7 +106,7 @@ If you see that version number now, you know you're okay.
 
 ### Create a code directory
 
-Now let’s create a common folder where all you of your projects will be stored starting with this one. This is also where our virtualenv will be configured.
+Now let’s create a common folder where all of your projects will be stored starting with this one. This is also where our virtualenv will be configured.
 
 Depending on your operating system and personal preferences, open up a terminal program. It will start you off in your computer’s home directory, just like your file explorer. Enter the [`ls`](https://en.wikipedia.org/wiki/Ls) command and press enter to see all of the folders there now.
 
@@ -141,7 +141,7 @@ Now let's make a folder for your work in this class.
 mkdir first-python-notebook
 ```
 
-Then, jump into project directory:
+Then, jump into that project directory:
 
 ```bash
 cd first-python-notebook
@@ -149,7 +149,7 @@ cd first-python-notebook
 
 This is where you'll store a local copy of all the code and files you create for this project.
 
-It isn't necessary to change directories one level at a time. You can also specify the full path of directory you want to change into. For instance, from your home directory you could running the following to move directly into your project directory.
+It isn't necessary to change directories one level at a time. You can also specify the full path of directory you want to change into. For instance, from your home directory you could run the following to move directly into your project directory.
 
 ```bash
 cd Code/first-python-notebook
