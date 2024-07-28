@@ -48,18 +48,18 @@ pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/ma
 ```
 
 ```{warning}
-You will exact URL shared in the above example to access the file. While you could laboriously type it out, feel free to copy and paste it from the example into your notebook.
+You need the exact URL shared in the example to access the file. While you could laboriously type it out, feel free to copy and paste it into your notebook.
 ```
 
 After you run the cell, you should see a big table output to your notebook. It is a “DataFrame” where pandas has structured the CSV data into rows and columns, just like Excel or other spreadsheet software might. Take a moment to look at the columns and rows in the output, which contain the data we'll use in our analysis.
 
 ```{note}
-On the left-hand side, you'll see an bolded number incrementing upward from zero that's present in our source data file. This what pandas calls the [index](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Index.html). It is a separate column created automatically and used to identify each row. The index is not considered part of the data, but it is used to reference the rows of the DataFrame or Series in advanced operations that are beyond the scope of this class.
+On the left-hand side, you'll see a bolded number incrementing upward from zero that's not present in our source data file. This is what pandas calls the [index](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Index.html). It is a separate column created automatically and used to identify each row. The index is not considered part of the data, but it is used to reference the rows of the DataFrame or Series in advanced operations that are beyond the scope of this class.
 ```
 
 A major advantage of Jupyter over spreadsheets is that rather than manipulating the data through a haphazard series of clicks and keypunches, we will be gradually grinding it down using a computer programming script that is transparent and reproducible.
 
-In order to do more with your DataFrame, we need to store it so it can be reused in subsequent cells. We can do this by saving it in a variable, just as we did in with our `number` in Chapter 2.
+To do more with your DataFrame, we need to store it so it can be reused in subsequent cells. We can do this by saving it in a variable, just as we did in with our `number` in Chapter 2.
 
 Go back to your latest cell and change it to this. Rerun it.
 
@@ -67,7 +67,7 @@ Go back to your latest cell and change it to this. Rerun it.
 accident_list = pd.read_csv("https://raw.githubusercontent.com/palewire/first-python-notebook/main/docs/src/_static/ntsb-accidents.csv")
 ```
 
-You shouldn't see anything. That's a good thing. It means our DataFrame has been saved under the name `accident_list`, which we can now begin interacting with in the cells that follow.
+You shouldn't see anything. That's a good thing. It means our DataFrame has been saved under the name `accident_list`, which we can now begin interacting with in the following cells.
 
 We can do this by calling ["methods"](https://en.wikipedia.org/wiki/Method_(computer_programming)) that pandas makes available to all DataFrames. You may not have known it at the time, but `read_csv` is one of these methods. There are dozens more that can do all sorts of interesting things. Let’s start with some easy ones that analysts use all the time.
 
