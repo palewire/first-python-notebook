@@ -536,11 +536,11 @@
         },
         "importlib-metadata": {
             "hashes": [
-                "sha256:66f342cc6ac9818fc6ff340576acd24d65ba0b3efabb2b4ac08b598965a4a2f1",
-                "sha256:9a547d3bc3608b025f93d403fdd1aae741c24fbb8314df4b155675742ce303c5"
+                "sha256:45e54197d28b7a7f1559e60b95e7c567032b602131fbd588f1497f47880aa68b",
+                "sha256:71522656f0abace1d072b9e5481a48f07c138e00f079c38c8f883823f9c26bd7"
             ],
             "markers": "python_version >= '3.8'",
-            "version": "==8.4.0"
+            "version": "==8.5.0"
         },
         "ipykernel": {
             "hashes": [
@@ -698,19 +698,18 @@
         },
         "jupyterlite": {
             "hashes": [
-                "sha256:355391d4aa174b6586a917b0ab32dcea5fe267c797931b3fdba3d890e2b10933",
-                "sha256:a27ff00dade260457a717730b48f06d2d9c6af6572745af5066f232bd5cf07cb"
+                "sha256:1eeb272ecee46af4c4154ec62a0e1fbce55dcc698e6ca7aa0a188c94a642186e",
+                "sha256:3cdc69982b4ce08da0031c53cb9b540a300d185fca3b432aba2ff760fd69180b"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.8'",
-            "version": "==0.4.0"
+            "version": "==0.4.1"
         },
         "jupyterlite-core": {
             "hashes": [
                 "sha256:62dba3adf1e379596c629226389353992804cd8d2c5907dcddee06218c6d8cdd",
                 "sha256:7d9e308316cc9c237726b0a15c2ad4e0432b8962d3040cd83fd1451de06e790a"
             ],
-            "index": "pypi",
             "markers": "python_version >= '3.8'",
             "version": "==0.4.1"
         },
@@ -1021,11 +1020,11 @@
         },
         "platformdirs": {
             "hashes": [
-                "sha256:2d7a1657e36a80ea911db832a8a6ece5ee53d8de21edd5cc5879af6530b1bfee",
-                "sha256:38b7b51f512eed9e84a22788b4bce1de17c0adb134d6becb09836e37d8654cd3"
+                "sha256:357fb2acbc885b0419afd3ce3ed34564c13c9b95c89360cd9563f73aa5e2b907",
+                "sha256:73e575e1408ab8103900836b97580d5307456908a03e92031bab39e4554cc3fb"
             ],
             "markers": "python_version >= '3.8'",
-            "version": "==4.2.2"
+            "version": "==4.3.6"
         },
         "prometheus-client": {
             "hashes": [
@@ -1998,11 +1997,11 @@
         },
         "zipp": {
             "hashes": [
-                "sha256:9960cd8967c8f85a56f920d5d507274e74f9ff813a0ab8889a5b5be2daf44064",
-                "sha256:c22b14cc4763c5a5b04134207736c107db42e9d3ef2d9779d465f5f1bcba572b"
+                "sha256:a817ac80d6cf4b23bf7f2828b7cabf326f15a001bea8b1f9b49631780ba28350",
+                "sha256:bc9eb26f4506fda01b81bcde0ca78103b6e62f991b381fec825435c836edbc29"
             ],
             "markers": "python_version >= '3.8'",
-            "version": "==3.20.1"
+            "version": "==3.20.2"
         }
     },
     "develop": {}
