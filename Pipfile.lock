@@ -35,11 +35,11 @@
         },
         "anyio": {
             "hashes": [
-                "sha256:137b4559cbb034c477165047febb6ff83f390fc3b20bf181c1fc0a728cb8beeb",
-                "sha256:c7d2e9d63e31599eeb636c8c5c03a7e108d73b345f064f1c19fdc87b79036a9a"
+                "sha256:4c8bc31ccdb51c7f7bd251f51c609e038d63e34219b44aa86e47576389880b4c",
+                "sha256:6d170c36fba3bdd840c73d3868c1e777e33676a69c3a72cf0a0d5d6d8009b61d"
             ],
             "markers": "python_version >= '3.9'",
-            "version": "==4.6.0"
+            "version": "==4.6.2.post1"
         },
         "appnope": {
             "hashes": [
@@ -1712,11 +1712,12 @@
         },
         "starlette": {
             "hashes": [
-                "sha256:134dd6deb655a9775991d352312d53f1879775e5cc8a481f966e83416a2c3f71",
-                "sha256:caaa3b87ef8518ef913dac4f073dea44e85f73343ad2bdc17941931835b2a26a"
+                "sha256:1a3139688fb298ce5e2d661d37046a66ad996ce94be4d4983be019a23a04ea35",
+                "sha256:c494a22fae73805376ea6bf88439783ecfba9aac88a43911b48c653437e784c4"
             ],
+            "index": "pypi",
             "markers": "python_version >= '3.8'",
-            "version": "==0.39.2"
+            "version": "==0.40.0"
         },
         "tabulate": {
             "hashes": [
