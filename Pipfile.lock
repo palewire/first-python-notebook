@@ -342,11 +342,11 @@
         },
         "cloudpickle": {
             "hashes": [
-                "sha256:81a929b6e3c7335c863c771d673d105f02efdb89dfaba0c90495d1c64796601b",
-                "sha256:fe11acda67f61aaaec473e3afe030feb131d78a43461b718185363384f1ba12e"
+                "sha256:b216fa8ae4019d5482a8ac3c95d8f6346115d8835911fd4aefd1a445e4242c64",
+                "sha256:c8c5a44295039331ee9dad40ba100a9c7297b6f988e50e87ccdf3765a668350e"
             ],
             "markers": "python_version >= '3.8'",
-            "version": "==3.1.0"
+            "version": "==3.1.1"
         },
         "colorama": {
             "hashes": [
@@ -571,11 +571,11 @@
         },
         "importlib-metadata": {
             "hashes": [
-                "sha256:45e54197d28b7a7f1559e60b95e7c567032b602131fbd588f1497f47880aa68b",
-                "sha256:71522656f0abace1d072b9e5481a48f07c138e00f079c38c8f883823f9c26bd7"
+                "sha256:02a89390c1e15fdfdc0d7c6b25cb3e62650d0494005c97d6f148bf5b9787525e",
+                "sha256:310b41d755445d74569f993ccfc22838295d9fe005425094fad953d7f15c8580"
             ],
-            "markers": "python_version >= '3.8'",
-            "version": "==8.5.0"
+            "markers": "python_version >= '3.9'",
+            "version": "==8.6.1"
         },
         "ipykernel": {
             "hashes": [
@@ -733,20 +733,20 @@
         },
         "jupyterlite": {
             "hashes": [
-                "sha256:4533b6f255b6dba6b04b03813f10e5c582214350abb5d6f9646f020147fb8437",
-                "sha256:aac034c0e02f23f8fdf512790406f2ae2507ce9e327dd285849b2fd5341fd8c7"
+                "sha256:a2e618dbe223d254edf7a04916356b5ff15b88cf514401a7913c8853154fc43b",
+                "sha256:a932da364e22017d6e81f9924b91d85762764c925df456eb3cdd1c787763101d"
             ],
             "index": "pypi",
-            "markers": "python_version >= '3.8'",
-            "version": "==0.4.4"
+            "markers": "python_version >= '3.9'",
+            "version": "==0.5.1"
         },
         "jupyterlite-core": {
             "hashes": [
-                "sha256:652b156c9e0a1236109393c954923305cd347f10673ac373f89a69e4460c6c47",
-                "sha256:cb64b5649c8171027cfaceed7d1615098a5c6db270cb8be281ca3f4b6caa4094"
+                "sha256:200472a587e7a9fc8b456de63b774502a86adec8b2a9d6c3fb88fcc888ec03e2",
+                "sha256:9a7d75ad67e61e19e42e39c6b25b20f61ef69fe9bfb9bd2c6e263b193d9becd6"
             ],
-            "markers": "python_version >= '3.8'",
-            "version": "==0.4.4"
+            "markers": "python_version >= '3.9'",
+            "version": "==0.6.0a0"
         },
         "jupyterlite-javascript-kernel": {
             "hashes": [
