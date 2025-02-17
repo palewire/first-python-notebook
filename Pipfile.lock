@@ -26,12 +26,12 @@
         },
         "altair": {
             "hashes": [
-                "sha256:0ce8c2e66546cb327e5f2d7572ec0e7c6feece816203215613962f0ec1d76a82",
-                "sha256:0fb130b8297a569d08991fb6fe763582e7569f8a04643bbd9212436e3be04aef"
+                "sha256:91a310b926508d560fe0148d02a194f38b824122641ef528113d029fcd129f8c",
+                "sha256:d960ebe6178c56de3855a68c47b516be38640b73fb3b5111c2a9ca90546dd73d"
             ],
             "index": "pypi",
-            "markers": "python_version >= '3.8'",
-            "version": "==5.4.1"
+            "markers": "python_version >= '3.9'",
+            "version": "==5.5.0"
         },
         "anyio": {
             "hashes": [
@@ -603,7 +603,6 @@
                 "sha256:8fefff8dc3034e27bb80d67c671eb8a9bc424c0ef4c0826edbff304cceff43bb",
                 "sha256:aba0f4dc9ed8013c424088f68a5c226f7d6097ed89b246d7749c2ec4175c6adb"
             ],
-            "index": "pypi",
             "markers": "python_version >= '3.7'",
             "version": "==3.1.5"
         },
@@ -880,11 +879,11 @@
         },
         "narwhals": {
             "hashes": [
-                "sha256:0b0d12f994ac7832c70af29241c32a4f7afddc1cf669f40f6318533d52204595",
-                "sha256:4ec5b248998ae552491bc1f497448e94f0f539f5664428a31ddf662c5d46c244"
+                "sha256:68505d0cee1e6c00382ac8b65e922f8b694a11cbe482a057fa63139de8d0ea03",
+                "sha256:71e4a126007886e3dd9d71d0d5921ebd2e8c1f9be9c405fe11850ece2b066c59"
             ],
             "markers": "python_version >= '3.8'",
-            "version": "==1.6.0"
+            "version": "==1.27.1"
         },
         "nbclient": {
             "hashes": [
