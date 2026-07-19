@@ -8,7 +8,7 @@ A step-by-step guide to analyzing data with Python and the Jupyter notebook.
 
 * How to record, remix and republish your work using [Project Jupyter](http://jupyter.org/), the emerging standard for generating reproducible research
 
-* How to explore data using using [Altair](https://altair-viz.github.io/), a Python package that offers a simple, structured grammar for generating charts.
+* How to explore data using [Altair](https://altair-viz.github.io/), a Python package that offers a simple, structured grammar for generating charts.
 
 ## Who can take it
 
