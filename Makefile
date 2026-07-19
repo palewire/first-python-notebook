@@ -59,8 +59,8 @@ endef
 # Python helpers
 #
 
-PIPENV := pipenv run
-PYTHON := python -W ignore -m
+UV := uv run
+PYTHON := $(UV) python -W ignore -m
 
 #
 # Commands
@@ -70,15 +70,15 @@ serve: ## Test the site
 	$(call banner,  🧪 Serving test site 🧪)
 	@rm -rf docs/_build
 	@rm -rf docs/jupyter_execute
-	@cd docs && $(PIPENV) make livehtml
+	@cd docs && $(UV) make livehtml
 
 
 build: ## Build a release candidate
 	$(call banner,🏗️ Building release candidate 🏗️)
-	@cd docs && pipenv run sphinx-build -b html src _build
+	@cd docs && uv run sphinx-build -b html src _build
 	@mkdir -p docs/_build/_extra/
 	@mkdir _dist/
-	@pipenv run jupyter lite build --contents ./jupyterlite/ --output-dir=./_dist/
+	@uv run jupyter lite build --contents ./jupyterlite/ --output-dir=./_dist/
 	@mv ./_dist/* docs/_build/_extra/
 
 #
@@ -87,7 +87,7 @@ build: ## Build a release candidate
 
 format: ## automatically format Python code with black
 	$(call banner,       🪥 Cleaning code 🪥)
-	@$(PIPENV) black .
+	@$(UV) black .
 
 
 help: ## Show this help. Example: make help
