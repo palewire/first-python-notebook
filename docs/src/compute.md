@@ -52,7 +52,7 @@ Like everything else, you can inspect with the `head` command.
 merged_list.head()
 ```
 
-You can see that the result is in [scientific notation](https://en.wikipedia.org/wiki/Scientific_notation). As is common when calculating per capita statistics, let's multiple the per-hour results by a common number to make the figures more legible. That's as easy as tacking some multiplication at the end of a computation. Here we'll multiply by 100,000 hours.
+You can see that the result is in [scientific notation](https://en.wikipedia.org/wiki/Scientific_notation). As is common when calculating per capita statistics, let's multiply the per-hour results by a common number to make the figures more legible. That's as easy as tacking some multiplication at the end of a computation. Here we'll multiply by 100,000 hours.
 
 ```{code-cell}
 :tags: [show-input]
@@ -66,4 +66,4 @@ Have a look at the result with `head` again.
 merged_list.head()
 ```
 
-Much better! Now lets move on to the next step, sorting our data into a ranking.
+Much better! Now let’s move on to the next step, sorting our data into a ranking.
