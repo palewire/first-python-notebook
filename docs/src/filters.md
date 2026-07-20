@@ -73,6 +73,6 @@ Now pick another state and try running the code again. See if you can write filt
 1. Which state recorded more accidents: Iowa or Missouri?
 2. How many accidents recorded more than one fatality?
 3. How many accidents happened in California in 2015?
-4. What percentage of the total fatalities occured in California?
+4. What percentage of the total fatalities occurred in California?
 
 Once you’ve written code that generates the answers, you’re ready to move on to the next chapter.
