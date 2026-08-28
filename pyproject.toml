@@ -20,7 +20,7 @@ dependencies = [
     "pyarrow",
     "sphinx",
     "sphinx-autobuild",
-    "sphinx-palewire-theme>=0.1.3",
+    "sphinx-palewire-theme>=0.1.10",
 ]
 classifiers = [
     "Programming Language :: Python :: 3",
